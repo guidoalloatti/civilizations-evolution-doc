@@ -89,5 +89,5 @@ Leé el **original** cuando la decisión sea importante; los resúmenes no reemp
 ## Notas operativas
 
 - **Build:** `SimCore` con CMake; el proyecto UE con `Build.bat CivilizationSimulatorEditor Win64 Development` (editor cerrado).
-- **No** hay repositorio Git en el checkout de trabajo: no existe red de seguridad de versiones. Cuidado con sobrescrituras; leé antes de editar.
+- **Git:** el proyecto UE (`civilizations-evolution/`) tiene su **propio** repositorio git (historia hasta el commit `HANDOFF`); la documentación/diseño se versiona en un repo **aparte** en la raíz. El trabajo **posterior al HANDOFF** (arreglos de esta sesión + gameplay nuevo) está **sin commitear**: commiteá en cada checkpoint verde. Con dos sesiones sobre el mismo árbol, cuidado con sobrescrituras; leé antes de editar.
 - La carpeta `BACKUP_PRE_AUDIT_2026-11-03/` y los GDD originales **no se editan**.

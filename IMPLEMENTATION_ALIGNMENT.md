@@ -56,7 +56,7 @@ Arranque con **town hall** + **20 settlers animados (KayKit)**. El jugador **sel
 1. **Doble modelo de población/economía** (SimCore agregado ↔ UE-side individual). Duplica entidades/recursos, contra el Maestro ("no copias por sistema"). Decidir: ¿la colonia/settlers bajan a SimCore (recomendado por testabilidad/escala) o SimCore pasa a ser legado?
 2. **Gameplay en la capa UE** reduce cobertura de tests y acopla simulación a actores renderizados.
 3. **Un Actor por settler** no escala; faltará un nivel agregado (LOD de simulación) como pide el GDD.
-4. **Sin control de versiones (Git)** en el checkout de trabajo, con dos sesiones editando: el plan técnico pide inicializar Git **antes** de gameplay sustancial. Alto riesgo de pérdida/colisión.
+4. **Trabajo sin commitear** (no es falta de Git). El proyecto UE **sí** tiene repo git propio (historia hasta `HANDOFF`) y la documentación ahora tiene repo aparte. El riesgo real: **todo lo posterior al HANDOFF** (los arreglos de build de esta sesión + el gameplay nuevo, ~27 cambios) está **sin commitear**, con dos sesiones editando el mismo árbol. Mitigación: commitear en cada checkpoint verde.
 5. **Sin modelo de Entidades/Relaciones** compartido: los ids ad-hoc dificultarán propiedad, historia y relaciones futuras.
 6. **Contenido hardcodeado** en C++: migrar a datos (Data Tables/Assets) facilitará el diseño data-driven que pide el plan.
 
