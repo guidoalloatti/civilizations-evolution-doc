@@ -4,7 +4,7 @@
 > **Trazabilidad:** las DR- NO son del GDD; son decisiones operativas tomadas por el asistente bajo delegación del usuario, **abiertas y reversibles**. Al aplicarlas a un GDD dueño, registrar responsable/fecha/versión y actualizar el resumen del Maestro. Si en el futuro contradicen una fuente, prevalece lo que el usuario decida.
 > Versión 1.1 · Última actualización: 2026-11-04 · Fuentes: [DOCUMENTATION_INDEX.md](DOCUMENTATION_INDEX.md). Hallazgos: [DESIGN_CONSISTENCY_AUDIT.md](DESIGN_CONSISTENCY_AUDIT.md).
 
-**Estados:** `confirmed` · `unresolved` · `confirmed` ✓ (delegada) (recomendación pendiente) · `deprecated`.
+**Estados:** `confirmed` (por GDD) · `confirmed` ✓ (delegada) (adoptada bajo delegación, reversible) · `confirmed` ✓✓ (ratificada por el usuario, con fecha) · `unresolved` · `deprecated`.
 
 ## Parte 1 — Decisiones confirmadas (transcritas de los GDD)
 
@@ -35,12 +35,12 @@
 - **Propuesta:** adoptar este registro como fuente única; al confirmar algo, anotar responsable+fecha+versión y actualizar GDD dueño → Maestro.
 - **Afecta:** gobernanza documental. **Consecuencia:** evita tratar supuestos como confirmados.
 
-### DR-01 — Fecha de corte histórico `confirmed` ✓ (delegada)
+### DR-01 — Fecha de corte histórico `confirmed` ✓✓ (ratificada por el usuario 2026-11-04)
 - **Hallazgo:** F-01 (CX). **Afecta:** Progresión, Tiempo, Tecnología, Economía, contenido.
 - **Propuesta (recomendada):** definir el corte como **"inicio de la Revolución Industrial", ~1760–1780**, usado como **límite opcional** (no etapa jugable); después, sandbox sin nuevas etapas industriales. No fijar un año exacto en UI hasta tu OK.
 - **Consecuencia:** acota cronología, contenidos y finalización sin cerrar la continuación sandbox.
 
-### DR-02 — Perfil del mundo inicial (plano vs relieve) `confirmed` ✓ (delegada)
+### DR-02 — Perfil del mundo inicial (plano vs relieve) `confirmed` ✓✓ (ratificada por el usuario 2026-11-04)
 - **Hallazgo:** F-02 (CX). **Afecta:** Generación, Geografía, Construcción, Logística.
 - **Propuesta:** interpretar "mapas planos" como **preset opcional** (mundo sin relieve marcado / proyección simple), y usar por **defecto relieve coherente** (como ya hace el código actual, con colinas). "Plano" = una opción de generación, no el valor por defecto.
 - **Consecuencia:** elimina la contradicción; ambos GDD quedan compatibles vía presets.
@@ -55,17 +55,17 @@
 - **Propuesta:** usar **"Civilization Evolutions"** como nombre de trabajo oficial y unificar documentación/UI; el nombre de módulo técnico `CivilizationSimulator` puede quedar como identificador interno.
 - **Consecuencia:** coherencia de marca; sin cambios de código obligatorios.
 
-### DR-05 — Rol y poder del jugador `confirmed` ✓ (delegada)
+### DR-05 — Rol y poder del jugador `confirmed` ✓✓ (ratificada por el usuario 2026-11-04)
 - **Hallazgo:** F-05 (CX). **Afecta:** Política, Economía, Diplomacia, Interfaz, IA.
 - **Propuesta:** el jugador es una **dirección/abstracción** con intervención amplia; sus acciones se clasifican: **directas** (construcción, asignación, economía propia), **de política** (leyes/impuestos vía gobierno, con resistencia/consecuencias) y **consultivas** (donde hay autonomía social/privada/externa). No es un cargo diegético.
 - **Consecuencia:** define límites para Política/Diplomacia futuras sin reducir la agencia confirmada.
 
-### DR-06 — Límites de escala (prototipo) `confirmed` ✓ (delegada)
+### DR-06 — Límites de escala (prototipo) `confirmed` ✓✓ (ratificada por el usuario 2026-11-04)
 - **Hallazgo:** F-15 (MD). **Afecta:** todos (rendimiento).
 - **Propuesta (solo objetivos de prototipo, revisables):** 1 mapa; **20–100** habitantes con simulación individual; pasar a agregado por encima de ~cientos; **2–3** civilizaciones autónomas en el primer mundo vivo. Son metas de producto, no cambios de arquitectura.
 - **Consecuencia:** hace verificable el rendimiento y condiciona DR-10 (LOD).
 
-### DR-07 — Modelo común de propiedad/titularidad `confirmed` ✓ (delegada)
+### DR-07 — Modelo común de propiedad/titularidad `confirmed` ✓✓ (ratificada por el usuario 2026-11-04)
 - **Hallazgo:** F-07/F-17 (MD). **Afecta:** Economía, Entidades, Recursos, Población, Política.
 - **Propuesta (capas, conceptual; detalle en SHARED_DATA_MODEL):** separar **(a) titularidad del recurso natural** (Estado/civilización), **(b) derechos de explotación**, **(c) propiedad del edificio**, **(d) control operativo** (quién lo opera), **(e) ubicación del inventario**. Mantener "propiedad mixta" (DC-05) como confirmada.
 - **Consecuencia:** evita duplicar titularidad por sistema; base para fiscalidad/herencia futuras.
@@ -95,16 +95,18 @@
 - **Propuesta:** el primer playable integra **Tiempo, Generación/Geografía mínima, Recursos, Entidades, Construcción, Población (individual chica), Producción, Logística, Economía básica, Tecnología básica, UI mínima**; deja fuera Cultura/Religión/Política/Diplomacia/IA/Guerra/Progresión avanzada. Detalle en [DEVELOPMENT_ROADMAP.md](DEVELOPMENT_ROADMAP.md).
 - **Consecuencia:** alinea el MVP transversal con los MVP por sistema.
 
-### DR-13 — Completar el GDD de Diplomacia `unresolved`
+### DR-13 — Completar el GDD de Diplomacia `proposed` (borrador a validar, 2026-11-04)
 - **Hallazgo:** F-22. El archivo fuente está **truncado** (corta en §18). **Afecta:** Diplomacia, IA, Guerra.
-- **Acción:** recuperar/rehacer la parte faltante (desde §18: personalidad de líderes, MVP, decisiones confirmadas). **No** la invento. Requiere tu material o tu OK para proponerla.
+- **Estado:** el usuario autorizó (2026-11-04) **proponer** un borrador del faltante. Redactado en [DIPLOMACIA_PROPUESTA_COMPLETADO.md](DIPLOMACIA_PROPUESTA_COMPLETADO.md), **marcado como propuesto, a validar** — NO es canónico ni se incorporó al GDD original (que no se edita). Derivado de lo que ya fijan el propio GDD (hasta §18), IA (DC-11) y Guerra (DC-10); cada supuesto va señalado.
+- **Pendiente:** tu validación para promoverlo a confirmado y recién entonces volcarlo al GDD dueño. No bloquea el prototipo (Diplomacia es etapa E5).
 
 ---
 
 ## Índice de estado
 
 - **Confirmadas por GDD:** DC-01…DC-15.
-- **Confirmadas por delegación (2026-11-04):** DR-00…DR-12 (en efecto para avanzar; reversibles a tu pedido).
-- **Sin resolver (falta material, no una elección):** DR-13 (GDD de Diplomacia **truncado**) — no se fabrica contenido faltante; no bloquea el prototipo (Diplomacia es etapa E5).
+- **Ratificadas por el usuario (2026-11-04):** DR-01, DR-02, DR-05, DR-06, DR-07 (las de visión/irreversibles que requerían confirmación humana explícita).
+- **Confirmadas por delegación (2026-11-04):** DR-00, DR-03, DR-04, DR-08, DR-09, DR-10, DR-11, DR-12 (en efecto para avanzar; reversibles a tu pedido).
+- **Propuesta a validar:** DR-13 → borrador en [DIPLOMACIA_PROPUESTA_COMPLETADO.md](DIPLOMACIA_PROPUESTA_COMPLETADO.md) (no canónico hasta tu OK).
 
 > Las DR- de mayor impacto en implementación: **DR-02** (relieve por defecto), **DR-03** (estaciones afectan agricultura; clima avanzado post-MVP), **DR-06** (escala del prototipo), **DR-07** (propiedad en capas), **DR-10** (LOD individuo↔agregado), **DR-12** (alcance del primer playable).

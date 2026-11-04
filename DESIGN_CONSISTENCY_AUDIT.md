@@ -114,7 +114,7 @@
 | F-27 | AR | **High** | No | RISK-05 |
 | F-28 | AR | Medium | No | RISK-04 |
 
-**Pendientes de confirmación humana explícita (no basta la delegación):** F-01, F-02, F-05, F-07/F-17, F-15, F-22. Son decisiones de **visión o irreversibles**; las demás quedan cubiertas por la delegación (reversibles) o son reglas documentales/arquitectónicas.
+**Estado de la confirmación humana (actualizado 2026-11-04):** F-01, F-02, F-05, F-07/F-17 y F-15 fueron **ratificados por el usuario** (ver DR-01/02/05/07/06). F-22 (Diplomacia truncada) tiene un **borrador propuesto a validar** ([DIPLOMACIA_PROPUESTA_COMPLETADO.md](DIPLOMACIA_PROPUESTA_COMPLETADO.md)); sigue sin ser canónico. Las demás quedan cubiertas por la delegación (reversibles) o son reglas documentales/arquitectónicas.
 
 ---
 
