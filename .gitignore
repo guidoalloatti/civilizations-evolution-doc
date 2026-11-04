@@ -1,0 +1,21 @@
+# Unreal Engine (transitorios / generados)
+Binaries/
+Intermediate/
+Saved/
+DerivedDataCache/
+.vs/
+*.sln
+*.VC.db
+*.opensdf
+*.sdf
+*.suo
+# SimCore build
+civilizations-evolution/SimCore/build/
+# Assets crudos descargados (pesados, regenerables)
+civilizations-evolution/ArtStaging/
+# OS
+Thumbs.db
+.DS_Store
+
+# El proyecto UE tiene su propio repositorio git (se versiona aparte)
+civilizations-evolution/

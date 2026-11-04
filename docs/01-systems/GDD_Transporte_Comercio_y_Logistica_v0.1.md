@@ -1,0 +1,918 @@
+> **Control documental:** 0.1 | Estado: diseño conceptual; las decisiones marcadas como confirmadas se preservan desde la fuente. **Alcance:** este GDD es fuente de detalle de su dominio; el GDD Maestro establece la visión común. Los conflictos intersistema se registran en AUDIT_REPORT.md y no se resuelven implícitamente.
+
+---
+
+# GDD — Sistema de Transporte, Comercio y Logística
+**Versión:** 0.1  
+**Estado:** Diseño conceptual  
+**Período histórico:** Paleolítico – comienzos de la Revolución Industrial
+
+---
+
+# 1. Visión general
+
+El sistema de Transporte, Comercio y Logística será uno de los principales componentes de la simulación económica y territorial.
+
+Su función será conectar físicamente los diferentes elementos de la civilización: productores, consumidores, almacenes, mercados, ciudades, regiones y otras civilizaciones.
+
+Los recursos no aparecerán mágicamente donde se necesitan. Deberán trasladarse mediante personas, animales, vehículos, embarcaciones e infraestructura, utilizando los medios disponibles en cada momento histórico.
+
+El sistema deberá evolucionar desde el transporte manual de pequeñas comunidades hasta complejas redes terrestres y marítimas de comercio internacional.
+
+### Principios fundamentales
+
+1. **Transporte físico:** los recursos deben desplazarse entre sus puntos de origen y destino.
+2. **Distancia relevante:** transportar recursos tiene costos, tiempos y limitaciones.
+3. **Evolución histórica:** los medios e infraestructuras evolucionan según los conocimientos y las condiciones de cada civilización.
+4. **Autonomía económica:** comerciantes, productores y organizaciones pueden desarrollar actividades logísticas sin intervención constante del jugador.
+5. **Control del jugador:** el jugador puede establecer prioridades, restricciones y rutas específicas.
+6. **Geografía determinante:** ríos, mares, montañas, bosques y llanuras influyen en las posibilidades de transporte.
+7. **Complejidad configurable:** desde una logística prácticamente automática hasta una administración detallada.
+8. **Representación visual:** el transporte y el comercio deben poder observarse en el mundo.
+
+---
+
+# 2. Modelo general de transporte
+
+El transporte será necesario para conectar las distintas etapas de la economía.
+
+Ejemplo:
+
+1. Una cantera extrae piedra.
+2. La piedra se transporta a un almacén.
+3. Un constructor necesita piedra.
+4. El sistema identifica una fuente disponible.
+5. Se organiza el transporte.
+6. La piedra llega a la construcción.
+7. La obra puede continuar.
+
+Si no existe una conexión logística viable, la construcción deberá esperar.
+
+Este modelo se aplicará a todos los recursos que necesiten desplazarse.
+
+### 2.1. Modalidades de transporte
+
+Se contemplarán dos modalidades principales:
+
+**Transporte propio**
+
+- Los edificios cuentan con trabajadores que realizan tareas de transporte.
+- Pueden trasladar productos a almacenes, mercados u otros edificios.
+- Su capacidad depende de la cantidad de trabajadores, herramientas y medios disponibles.
+
+**Transporte especializado**
+
+- Trabajadores dedicados específicamente al traslado de mercancías.
+- Transportistas independientes.
+- Organizaciones comerciales y logísticas.
+- Servicios especializados que aparecen con el desarrollo económico.
+
+Ambas modalidades podrán coexistir.
+
+La organización dependerá de la época, la tecnología, la economía y las características de la sociedad.
+
+### 2.2. Asignación logística
+
+El sistema deberá decidir automáticamente cómo transportar cada mercancía considerando:
+
+- Disponibilidad de recursos.
+- Distancia.
+- Tiempo estimado.
+- Capacidad de transporte.
+- Costo.
+- Prioridad del destino.
+- Disponibilidad de trabajadores.
+- Estado de las rutas.
+- Medios de transporte disponibles.
+
+El jugador podrá establecer prioridades y restricciones.
+
+---
+
+# 3. Evolución de los medios de transporte
+
+El sistema incluirá diferentes medios de transporte, que aparecerán progresivamente según el desarrollo histórico y tecnológico.
+
+### 3.1. Transporte terrestre
+
+Categorías previstas:
+
+- Transporte manual.
+- Cestos y recipientes.
+- Trineos.
+- Animales de carga.
+- Carretas primitivas.
+- Carros de dos ruedas.
+- Carros de cuatro ruedas.
+- Carretas tiradas por bueyes.
+- Carros tirados por caballos.
+- Vehículos especializados para mercancías.
+
+Cada medio tendrá características propias:
+
+- Capacidad de carga.
+- Velocidad.
+- Costo de construcción.
+- Costo de mantenimiento.
+- Necesidades de trabajadores.
+- Necesidades de animales.
+- Terrenos transitables.
+- Eficiencia según el tipo de camino.
+
+### 3.2. Transporte fluvial
+
+Se podrán desarrollar embarcaciones adaptadas a ríos, lagos y canales.
+
+Su disponibilidad dependerá de:
+- Geografía.
+- Conocimientos navales.
+- Materiales.
+- Técnicas de construcción.
+- Capacidad productiva.
+
+### 3.3. Transporte marítimo
+
+Incluirá:
+- Embarcaciones costeras.
+- Barcos mercantes.
+- Barcos de carga especializada.
+- Grandes embarcaciones comerciales.
+- Flotas mercantiles.
+- Embarcaciones de apoyo logístico.
+
+Las embarcaciones tendrán capacidades, velocidades, costos y necesidades de mantenimiento diferentes.
+
+### 3.4. Características de los vehículos
+
+Cada vehículo podrá tener:
+
+- Capacidad de carga.
+- Velocidad.
+- Resistencia.
+- Durabilidad.
+- Consumo de recursos.
+- Necesidades de mantenimiento.
+- Cantidad de tripulantes o trabajadores.
+- Requisitos tecnológicos.
+
+Los medios antiguos no desaparecerán automáticamente. Podrán seguir utilizándose cuando sean convenientes.
+
+---
+
+# 4. Infraestructura de transporte
+
+El jugador podrá construir y desarrollar infraestructura logística.
+
+La disponibilidad dependerá de los materiales, técnicas, conocimientos y condiciones históricas.
+
+### 4.1. Infraestructura terrestre
+
+- Senderos.
+- Caminos de tierra.
+- Caminos mejorados.
+- Calzadas.
+- Caminos pavimentados.
+- Caminos de montaña.
+- Puentes.
+- Pasarelas.
+- Estaciones de postas.
+
+### 4.2. Infraestructura fluvial y marítima
+
+- Muelles.
+- Puertos.
+- Puertos comerciales.
+- Puertos especializados.
+- Canales.
+- Esclusas.
+- Faros.
+- Astilleros.
+- Depósitos portuarios.
+- Infraestructura de carga y descarga.
+
+### 4.3. Infraestructura de almacenamiento
+
+- Almacenes.
+- Graneros.
+- Silos.
+- Depósitos comerciales.
+- Depósitos portuarios.
+- Depósitos militares.
+- Instalaciones especializadas según el producto.
+
+### 4.4. Evolución de infraestructura
+
+La infraestructura podrá mejorarse con el tiempo.
+
+Por ejemplo, un camino de tierra podrá convertirse en una calzada mejorada.
+
+Las mejoras serán opcionales y dependerán de:
+- Tecnología.
+- Recursos.
+- Capacidad económica.
+- Necesidades logísticas.
+- Decisiones del jugador.
+
+La infraestructura antigua podrá conservarse si sigue siendo útil o si el jugador desea preservar su valor histórico.
+
+---
+
+# 5. Sistema de caminos y circulación
+
+Los caminos serán mucho más que conexiones visuales entre edificios.
+
+Su calidad afectará directamente la eficiencia logística.
+
+### 5.1. Factores que afectan el transporte
+
+- Distancia.
+- Pendiente.
+- Tipo de terreno.
+- Estado del camino.
+- Clima.
+- Estaciones.
+- Capacidad de circulación.
+- Congestión.
+- Mantenimiento.
+
+### 5.2. Calidad de las rutas
+
+Se podrán diferenciar distintos niveles de infraestructura.
+
+Un sendero tendrá menor capacidad y velocidad que una calzada bien construida.
+
+### 5.3. Congestión
+
+Las rutas podrán experimentar congestión cuando exista demasiado tránsito para su capacidad.
+
+Esto podrá provocar:
+- Retrasos.
+- Menor eficiencia.
+- Mayor tiempo de transporte.
+- Necesidad de ampliar o mejorar caminos.
+
+La congestión tendrá mayor relevancia en ciudades grandes y centros comerciales.
+
+### 5.4. Mantenimiento
+
+Los caminos y puentes se deteriorarán según su uso y las condiciones ambientales.
+
+El jugador podrá establecer políticas de mantenimiento.
+
+---
+
+# 6. Logística urbana
+
+Las ciudades deberán desarrollar sistemas de abastecimiento acordes con su tamaño y organización.
+
+Se contemplarán:
+
+- Mercados.
+- Almacenes.
+- Depósitos.
+- Zonas comerciales.
+- Distritos productivos.
+- Puertos urbanos.
+- Calles y caminos de circulación.
+- Infraestructura de carga y descarga.
+
+### 6.1. Abastecimiento urbano
+
+Los edificios necesitarán recibir los recursos correspondientes.
+
+Los mercados deberán abastecerse para satisfacer las necesidades de la población.
+
+Las industrias y talleres necesitarán materias primas.
+
+Las construcciones necesitarán materiales.
+
+### 6.2. Especialización urbana
+
+Con el crecimiento de las ciudades podrán aparecer zonas especializadas:
+
+- Barrios comerciales.
+- Distritos artesanales.
+- Zonas industriales preindustriales.
+- Centros de almacenamiento.
+- Distritos portuarios.
+
+La organización urbana influirá en la eficiencia logística.
+
+### 6.3. Representación visual
+
+El jugador podrá observar:
+- Trabajadores transportando mercancías.
+- Animales de carga.
+- Carretas circulando.
+- Mercancías entrando y saliendo de almacenes.
+- Mercados abasteciéndose.
+- Actividad portuaria.
+
+La representación será visualmente importante, aunque la simulación no dependerá de mostrar cada operación individual.
+
+---
+
+# 7. Comercio local, regional e internacional
+
+El comercio se organizará en tres escalas.
+
+### 7.1. Comercio local
+
+Intercambios dentro de una ciudad o asentamiento.
+
+Incluye:
+- Mercados.
+- Comerciantes.
+- Intercambio de productos.
+- Abastecimiento cotidiano.
+- Distribución de recursos.
+
+### 7.2. Comercio regional
+
+Intercambio entre asentamientos y ciudades de una misma civilización.
+
+Permitirá:
+- Especialización regional.
+- Distribución de excedentes.
+- Abastecimiento de regiones deficitarias.
+- Desarrollo de centros comerciales.
+- Integración económica territorial.
+
+### 7.3. Comercio internacional
+
+Intercambio entre civilizaciones.
+
+Permitirá:
+- Exportaciones.
+- Importaciones.
+- Tratados comerciales.
+- Aranceles.
+- Embargos.
+- Monopolios.
+- Acuerdos de intercambio.
+- Desarrollo de mercados internacionales.
+
+La intensidad del comercio dependerá de las relaciones diplomáticas, las condiciones económicas, la infraestructura y la tecnología.
+
+---
+
+# 8. Sistema de precios y mercados
+
+Los precios se determinarán dinámicamente mediante oferta y demanda.
+
+### 8.1. Factores que influyen en los precios
+
+- Producción regional.
+- Consumo.
+- Disponibilidad de recursos.
+- Escasez.
+- Excedentes.
+- Costos de transporte.
+- Distancia.
+- Impuestos.
+- Aranceles.
+- Condiciones comerciales.
+- Conflictos y bloqueos.
+
+### 8.2. Diferencias regionales
+
+Los precios podrán variar entre regiones.
+
+Por ejemplo:
+
+Una ciudad agrícola con abundancia de trigo tendrá precios relativamente bajos.
+
+Una ciudad distante con escasa producción agrícola podrá tener precios más elevados debido a la escasez y al costo de transporte.
+
+### 8.3. Integración económica
+
+La eficiencia del transporte podrá reducir las diferencias de precios entre regiones conectadas.
+
+Sin embargo, nunca se asumirá que los mercados están perfectamente integrados.
+
+La distancia, los costos y las limitaciones logísticas seguirán teniendo importancia.
+
+---
+
+# 9. Rutas comerciales dinámicas
+
+Las rutas comerciales serán una de las principales características del sistema.
+
+No serán conexiones permanentes e inmutables.
+
+Podrán surgir, modificarse, expandirse o desaparecer según las condiciones económicas.
+
+### 9.1. Formación de rutas
+
+Las rutas podrán desarrollarse cuando existan:
+
+- Diferencias regionales de oferta y demanda.
+- Recursos comercializables.
+- Infraestructura suficiente.
+- Medios de transporte.
+- Incentivos económicos.
+- Condiciones políticas y de seguridad favorables.
+
+### 9.2. Administración del jugador
+
+El jugador podrá establecer rutas manualmente.
+
+Podrá definir:
+- Origen.
+- Destino.
+- Productos.
+- Cantidades.
+- Frecuencia.
+- Medios de transporte.
+- Prioridades.
+- Condiciones comerciales.
+
+También podrá permitir que el sistema genere rutas automáticamente.
+
+### 9.3. Evolución de las rutas
+
+Las rutas podrán cambiar cuando:
+- Aparezcan nuevos mercados.
+- Cambien los precios.
+- Se desarrollen nuevas infraestructuras.
+- Surjan conflictos.
+- Cambien las condiciones políticas.
+- Se descubran nuevos territorios.
+- Aparezcan mejores medios de transporte.
+
+---
+
+# 10. Comercio marítimo
+
+El comercio marítimo será fundamental para las civilizaciones con acceso al mar, ríos y lagos navegables.
+
+### 10.1. Desarrollo naval
+
+Las civilizaciones podrán desarrollar:
+- Flotas comerciales.
+- Puertos especializados.
+- Barcos de distintas capacidades.
+- Rutas marítimas.
+- Centros de intercambio.
+- Colonias comerciales.
+- Grandes redes de comercio internacional.
+
+### 10.2. Navegación y condiciones naturales
+
+En etapas tecnológicas tempranas, los factores naturales tendrán una influencia importante:
+
+- Vientos.
+- Corrientes.
+- Mareas.
+- Tormentas.
+- Estaciones.
+- Condiciones marítimas.
+
+A medida que mejore la tecnología naval, la navegación se volverá progresivamente más segura y predecible.
+
+Estos factores no desaparecerán por completo, pero tendrán un impacto menor en civilizaciones tecnológicamente avanzadas.
+
+### 10.3. Puertos
+
+Los puertos podrán evolucionar en capacidad, infraestructura y especialización.
+
+Un puerto pequeño podrá convertirse en un gran centro comercial.
+
+Su desarrollo dependerá de:
+- Ubicación.
+- Tráfico comercial.
+- Tecnología.
+- Inversión.
+- Recursos.
+- Conexiones terrestres.
+- Relaciones internacionales.
+
+---
+
+# 11. Comerciantes y organizaciones comerciales
+
+El comercio podrá desarrollarse tanto mediante intervención del jugador como de forma autónoma.
+
+### 11.1. Comerciantes individuales
+
+Personajes que realizan actividades comerciales.
+
+Podrán tener:
+- Capital.
+- Propiedades.
+- Relaciones.
+- Especialización.
+- Experiencia.
+- Reputación.
+- Rutas comerciales.
+
+### 11.2. Organizaciones comerciales
+
+Con el desarrollo económico podrán aparecer:
+
+- Familias comerciales.
+- Gremios.
+- Asociaciones mercantiles.
+- Compañías comerciales.
+- Sociedades mercantiles.
+- Grandes redes de comerciantes.
+
+### 11.3. Autonomía comercial
+
+Los comerciantes privados podrán tomar decisiones según sus intereses económicos.
+
+El jugador podrá influir mediante:
+- Impuestos.
+- Incentivos.
+- Subsidios.
+- Regulaciones.
+- Restricciones.
+- Políticas comerciales.
+- Tratados.
+
+El sistema será coherente con el modelo de propiedad mixta definido en el sistema económico.
+
+---
+
+# 12. Almacenamiento y conservación
+
+El almacenamiento será una parte esencial de la logística.
+
+Los recursos deberán guardarse en instalaciones apropiadas.
+
+### 12.1. Tipos de almacenamiento
+
+- Almacenes generales.
+- Graneros.
+- Silos.
+- Depósitos especializados.
+- Almacenes comerciales.
+- Depósitos portuarios.
+- Depósitos militares.
+
+### 12.2. Conservación de productos
+
+Los recursos podrán sufrir deterioro por:
+- Humedad.
+- Plagas.
+- Condiciones ambientales.
+- Mala conservación.
+- Robos.
+- Manipulación inadecuada.
+
+Sin embargo, las pérdidas ordinarias deberán mantenerse muy reducidas para no generar una carga excesiva de gestión.
+
+Las pérdidas importantes deberán estar asociadas principalmente a condiciones desfavorables o problemas específicos.
+
+### 12.3. Capacidad y organización
+
+Cada instalación tendrá:
+- Capacidad máxima.
+- Tipos de productos admitidos.
+- Velocidad de carga y descarga.
+- Personal disponible.
+- Condiciones de conservación.
+- Costos de mantenimiento.
+
+---
+
+# 13. Problemas y riesgos logísticos
+
+El sistema contemplará problemas logísticos que podrán afectar la economía.
+
+Ejemplos:
+
+- Caminos bloqueados.
+- Puentes destruidos.
+- Puertos congestionados.
+- Falta de transportistas.
+- Escasez de animales de carga.
+- Robos.
+- Piratería.
+- Clima adverso.
+- Distancias excesivas.
+- Interrupciones comerciales.
+
+### 13.1. Configuración opcional
+
+Los problemas logísticos podrán configurarse individualmente.
+
+El jugador podrá elegir una experiencia más tranquila o una simulación más exigente.
+
+Esto permitirá que los desafíos logísticos no sean obligatorios para quienes prefieran concentrarse en la construcción y evolución de su civilización.
+
+---
+
+# 14. Transporte de personas
+
+El desplazamiento de personas estará contemplado, pero tendrá una simulación limitada.
+
+No se pretende convertir el juego en un simulador detallado de viajes individuales.
+
+Se considerarán principalmente:
+
+- Migraciones.
+- Desplazamientos laborales.
+- Viajes comerciales.
+- Peregrinaciones.
+- Viajes diplomáticos.
+- Movimientos militares.
+
+Las distancias, los costos y los medios de transporte podrán influir en estos desplazamientos.
+
+La simulación deberá integrarse con el sistema de población y sociedad sin generar una carga innecesaria.
+
+---
+
+# 15. Logística militar
+
+Aunque la guerra no sea el eje principal del juego, las operaciones militares necesitarán una infraestructura logística.
+
+Se contemplarán:
+
+- Abastecimiento de ejércitos.
+- Transporte de alimentos.
+- Transporte de armas.
+- Transporte de materiales.
+- Abastecimiento de fortificaciones.
+- Construcción de caminos militares.
+- Transporte fluvial y marítimo.
+
+La logística militar utilizará la infraestructura y los medios de transporte generales.
+
+No será un sistema completamente independiente.
+
+---
+
+# 16. Evolución histórica y tecnológica
+
+El transporte evolucionará según los conocimientos, recursos y condiciones de cada civilización.
+
+No existirán desbloqueos automáticos por época.
+
+### 16.1. Evolución no lineal
+
+Cada civilización podrá desarrollar diferentes especializaciones.
+
+Por ejemplo:
+
+- Una civilización puede desarrollar una red terrestre avanzada sin tener una navegación importante.
+- Otra puede tener una tradición marítima muy desarrollada, pero caminos terrestres limitados.
+- Una sociedad montañosa puede desarrollar soluciones adaptadas a su geografía.
+- Una civilización fluvial puede aprovechar sus ríos como principales corredores comerciales.
+
+### 16.2. Factores determinantes
+
+- Conocimientos tecnológicos.
+- Materiales.
+- Geografía.
+- Recursos naturales.
+- Necesidades económicas.
+- Especialistas.
+- Instituciones.
+- Intercambio cultural.
+- Contacto con otras civilizaciones.
+
+### 16.3. Convivencia tecnológica
+
+Los medios antiguos podrán continuar utilizándose.
+
+El jugador no estará obligado a reemplazar toda su infraestructura cuando aparezcan alternativas mejores.
+
+---
+
+# 17. Control del jugador y automatización
+
+El sistema tendrá tres niveles de administración, siguiendo la configuración general del juego.
+
+### Básico
+
+- Transporte automático.
+- Distribución de recursos.
+- Rutas generadas por el sistema.
+- Comercio automático.
+- Pocas decisiones logísticas.
+
+### Intermedio
+
+- Prioridades de abastecimiento.
+- Administración de inventarios.
+- Control de rutas.
+- Políticas comerciales.
+- Gestión de importaciones y exportaciones.
+
+### Avanzado
+
+- Rutas específicas.
+- Asignación de vehículos.
+- Administración de flotas.
+- Cantidades y frecuencias.
+- Contratos.
+- Precios.
+- Aranceles.
+- Gestión detallada de inventarios.
+- Políticas logísticas.
+
+El jugador podrá modificar el nivel de complejidad según sus preferencias.
+
+La automatización no deberá eliminar las reglas fundamentales de la simulación.
+
+---
+
+# 18. Interfaz y visualización
+
+La interfaz deberá permitir comprender cómo se mueve la economía.
+
+### 18.1. Panel logístico general
+
+Incluirá:
+- Recursos transportados.
+- Capacidad logística.
+- Medios de transporte disponibles.
+- Costos.
+- Rutas.
+- Problemas de abastecimiento.
+- Eficiencia de transporte.
+
+### 18.2. Paneles regionales
+
+Permitirá analizar:
+- Producción regional.
+- Consumo.
+- Excedentes.
+- Déficits.
+- Comercio.
+- Conectividad.
+- Costos de transporte.
+
+### 18.3. Visualización del mapa
+
+Se podrán consultar capas específicas:
+
+- Caminos.
+- Rutas comerciales.
+- Puertos.
+- Conexiones regionales.
+- Flujos de mercancías.
+- Áreas con problemas logísticos.
+
+### 18.4. Información contextual
+
+Al seleccionar una ruta o instalación, el jugador podrá consultar su funcionamiento, capacidad, costos y eficiencia.
+
+---
+
+# 19. Integración con otros sistemas
+
+Este sistema tendrá conexiones profundas con prácticamente todos los componentes del juego.
+
+| Sistema | Interacción |
+|---|---|
+| Economía | Costos, precios, oferta, demanda y comercio. |
+| Producción y trabajo | Traslado de insumos y productos. |
+| Construcción | Abastecimiento de materiales. |
+| Población y sociedad | Movilidad, migraciones y empleo. |
+| Tecnología | Desarrollo de vehículos e infraestructura. |
+| Política | Impuestos, regulaciones y tratados. |
+| Cultura | Intercambio y difusión cultural. |
+| Religión | Peregrinaciones y centros religiosos. |
+| Diplomacia | Relaciones y acuerdos comerciales. |
+| Guerra | Abastecimiento militar y bloqueos. |
+| Medioambiente | Terreno, clima y condiciones naturales. |
+
+El transporte será un sistema transversal: los cambios en cualquier área podrán modificar las necesidades y posibilidades logísticas.
+
+---
+
+# 20. Principio fundamental: la distancia importa
+
+Este principio será una de las reglas centrales del juego.
+
+La disponibilidad de un recurso no significa que pueda utilizarse inmediatamente.
+
+Su ubicación, distancia y accesibilidad determinarán su valor económico real.
+
+Ejemplos:
+
+**Región minera**
+
+Una región puede tener grandes reservas de hierro, pero necesitar caminos, transportistas e infraestructura para aprovecharlas.
+
+**Ciudad portuaria**
+
+Una ciudad con pocos recursos naturales puede prosperar gracias a su ubicación y sus conexiones comerciales.
+
+**Región aislada**
+
+Una región fértil puede tener dificultades para desarrollarse si carece de conexiones eficientes.
+
+**Centro comercial**
+
+Una ciudad ubicada en un cruce de caminos o rutas fluviales puede convertirse en un importante centro económico.
+
+La geografía deberá tener consecuencias económicas concretas.
+
+---
+
+# 21. MVP — Primera implementación
+
+El MVP deberá demostrar que el transporte físico funciona y que tiene consecuencias económicas.
+
+### Escenario inicial
+
+Una aldea de aproximadamente 30 habitantes.
+
+### Elementos incluidos
+
+**Infraestructura**
+- Caminos básicos.
+- Almacén.
+- Edificios productivos.
+- Viviendas.
+
+**Medios de transporte**
+- Transporte manual.
+- Transporte mediante trabajadores.
+
+**Recursos**
+- Madera.
+- Piedra.
+- Bayas.
+- Carne.
+- Trigo.
+- Harina.
+- Pan.
+
+**Mecánicas**
+- Transporte entre edificios.
+- Almacenamiento.
+- Abastecimiento de construcciones.
+- Distribución de recursos.
+- Priorización de destinos.
+- Costos y tiempos simplificados.
+- Problemas básicos de abastecimiento.
+
+### Objetivo del MVP
+
+Demostrar que una economía necesita una red logística funcional.
+
+Por ejemplo, que una panadería no pueda producir si la harina no llega hasta ella, aunque exista harina disponible en otra parte del asentamiento.
+
+La arquitectura deberá permitir incorporar posteriormente animales, carretas, caminos avanzados, comercio regional y transporte marítimo sin tener que reconstruir el sistema desde cero.
+
+---
+
+# 22. Decisiones confirmadas
+
+| Área | Decisión |
+|---|---|
+| Transporte físico | Todos los recursos deberán transportarse físicamente. |
+| Organización | Transporte propio y transportistas especializados. |
+| Medios | Todos los medios históricos relevantes. |
+| Infraestructura | Amplia variedad de infraestructura terrestre y marítima. |
+| Caminos | Distancia, terreno, clima, capacidad y mantenimiento tendrán consecuencias. |
+| Logística urbana | Mercados, depósitos y circulación de mercancías. |
+| Escalas comerciales | Local, regional e internacional. |
+| Comercio | Tres niveles de complejidad. |
+| Precios | Dinámicos y determinados por condiciones económicas reales. |
+| Rutas | Dinámicas y adaptables a las circunstancias. |
+| Comercio marítimo | Flotas, puertos, rutas y centros comerciales. |
+| Navegación | Influencia de condiciones naturales decreciente con el avance tecnológico. |
+| Comercio internacional | Todas las modalidades comerciales propuestas. |
+| Comerciantes | Actividad privada y autónoma, además de intervención del jugador. |
+| Almacenamiento | Diversos tipos de instalaciones y pérdidas muy reducidas. |
+| Problemas logísticos | Configurables y opcionales. |
+| Transporte de personas | Incluido, pero limitado. |
+| Logística militar | Integrada al sistema general. |
+| Evolución histórica | Flexible, no lineal y condicionada por la realidad. |
+| Control | Configurable, desde automático hasta avanzado. |
+| Visualización | Visible en el mundo, sin ser un requisito central de la experiencia. |
+| Geografía | La distancia y la accesibilidad tendrán consecuencias económicas reales. |
+
+---
+
+# 23. Temas para futuras iteraciones
+
+No es necesario resolverlos ahora, pero podrán desarrollarse cuando avancemos en el diseño detallado:
+
+1. Modelado específico de costos y tiempos de transporte.
+2. Algoritmos de selección de rutas.
+3. Capacidad y congestión de redes.
+4. Funcionamiento detallado de los mercados.
+5. Administración avanzada de flotas.
+6. Modelado de contratos y organizaciones comerciales.
+7. Relaciones entre comercio, diplomacia y conflictos.
+8. Simulación de grandes redes comerciales.
+9. Optimización de rendimiento en mapas extensos.
+
+---
+
+# 24. Visión final
+
+El sistema de Transporte, Comercio y Logística deberá hacer que el mundo se sienta conectado y económicamente vivo.
+
+Los recursos tendrán origen, destino y recorrido. Las ciudades dependerán de sus conexiones. Las regiones desarrollarán especializaciones. Los comerciantes buscarán oportunidades. Los puertos podrán convertirse en centros de prosperidad y las rutas comerciales podrán transformar el destino económico de una civilización.
+
+El jugador deberá poder observar cómo su territorio se conecta y evoluciona a lo largo de los siglos.
+
+**Principio rector: una civilización no prospera solamente por lo que produce, sino también por su capacidad de mover, intercambiar y distribuir aquello que necesita.**

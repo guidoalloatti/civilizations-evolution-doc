@@ -1,0 +1,789 @@
+> **Control documental:** 0.1 | Estado: diseño conceptual; las decisiones marcadas como confirmadas se preservan desde la fuente. **Alcance:** este GDD es fuente de detalle de su dominio; el GDD Maestro establece la visión común. Los conflictos intersistema se registran en AUDIT_REPORT.md y no se resuelven implícitamente.
+
+---
+
+# GDD — EVENTOS, ACONTECIMIENTOS Y EVOLUCIÓN HISTÓRICA
+
+**Versión:** 0.1  
+**Estado:** Definición conceptual consolidada  
+**Proyecto:** Simulador histórico de civilizaciones
+
+---
+
+## 1. Visión general
+
+Este sistema será responsable de generar, conectar, registrar y representar los acontecimientos que construyen la historia del mundo.
+
+El objetivo es que cada partida produzca una historia propia, resultado de las condiciones geográficas, económicas, sociales, políticas, culturales y tecnológicas de las civilizaciones.
+
+Los acontecimientos no estarán predeterminados por una secuencia histórica obligatoria. Surgirán principalmente de las condiciones del mundo, las acciones de sus habitantes y las interacciones entre civilizaciones.
+
+Se combinarán:
+- Acontecimientos históricos posibles.
+- Eventos dinámicos generados por la simulación.
+- Casualidades y situaciones inesperadas.
+- Eventos extraordinarios poco frecuentes.
+- Consecuencias de decisiones del jugador.
+- Procesos históricos de largo plazo.
+
+El sistema deberá conectar acontecimientos aparentemente independientes y permitir que produzcan consecuencias que se extiendan durante generaciones.
+
+**Principio fundamental:**
+
+La historia no será una sucesión de eventos programados. Será el resultado emergente de todo lo que sucede en el mundo.
+
+## 2. Generación de acontecimientos
+
+### 2.1. Modelo de generación
+
+Se utilizará un modelo mixto:
+
+**Eventos históricos posibles**
+
+El sistema dispondrá de acontecimientos plausibles para diferentes períodos y contextos históricos.
+
+No serán obligatorios. Podrán suceder si se presentan las condiciones adecuadas.
+
+**Eventos dinámicos**
+
+Se generarán a partir de las condiciones reales de la simulación.
+
+Ejemplos:
+- Una ciudad crece rápidamente por su actividad comercial.
+- Una familia adquiere influencia política durante varias generaciones.
+- Una región se especializa en determinada producción.
+- Un líder impulsa una reforma.
+- Una nueva ruta comercial transforma una región.
+- Una civilización desarrolla una tradición cultural particular.
+
+**Eventos aleatorios**
+
+Existirá un componente de azar moderado para introducir incertidumbre y situaciones inesperadas.
+
+El azar no deberá sustituir las causas históricas ni producir acontecimientos importantes sin una explicación mínimamente coherente.
+
+**Eventos extraordinarios**
+
+Se contemplarán acontecimientos excepcionales, con frecuencias y probabilidades configurables.
+
+### 2.2. Causalidad
+
+Los acontecimientos importantes deberán tener causas identificables.
+
+Por ejemplo:
+
+Una sequía puede provocar:
+1. Reducción de cosechas.
+2. Escasez de alimentos.
+3. Aumento de precios.
+4. Migraciones.
+5. Problemas sociales.
+6. Intervenciones políticas.
+7. Cambios en la producción agrícola.
+
+El sistema deberá conectar estos procesos sin obligar a que todos ocurran siempre.
+
+Las consecuencias dependerán de la capacidad de respuesta de cada sociedad.
+
+### 2.3. Escalas de acontecimientos
+
+Los eventos podrán producirse en diferentes escalas:
+
+- Individual: personas y familias.
+- Local: barrios y asentamientos.
+- Regional: varias ciudades o territorios.
+- Civilizacional: toda una civilización.
+- Internacional: múltiples civilizaciones.
+
+Un acontecimiento local podrá convertirse en un proceso de alcance internacional si las circunstancias lo permiten.
+
+## 3. Categorías de acontecimientos
+
+El sistema contemplará todas las categorías principales.
+
+### 3.1. Naturales y ambientales
+
+- Sequías.
+- Inundaciones.
+- Terremotos.
+- Erupciones volcánicas.
+- Incendios.
+- Tormentas.
+- Deslizamientos.
+- Cambios ambientales.
+- Alteraciones de ecosistemas.
+- Fenómenos climáticos extremos.
+
+Los desastres estarán sujetos a la configuración definida en el sistema de Geografía, Clima y Medioambiente.
+
+### 3.2. Demográficos
+
+- Epidemias.
+- Hambrunas.
+- Migraciones.
+- Crecimiento poblacional.
+- Cambios demográficos.
+- Movimientos migratorios.
+- Formación de nuevos asentamientos.
+- Transformaciones familiares.
+
+### 3.3. Económicos
+
+- Crisis económicas.
+- Períodos de prosperidad.
+- Escasez.
+- Descubrimiento de recursos.
+- Expansión comercial.
+- Quiebras.
+- Cambios productivos.
+- Aparición de nuevas actividades.
+- Transformaciones de mercados.
+
+### 3.4. Políticos
+
+- Reformas.
+- Cambios de gobierno.
+- Sucesiones.
+- Golpes de Estado.
+- Revoluciones.
+- Movimientos políticos.
+- Nuevas instituciones.
+- Crisis de legitimidad.
+- Transformaciones administrativas.
+
+### 3.5. Sociales
+
+- Conflictos sociales.
+- Movimientos populares.
+- Cambios de clases sociales.
+- Movilidad social.
+- Nuevas organizaciones.
+- Protestas.
+- Reformas sociales.
+- Transformaciones de las relaciones familiares.
+
+### 3.6. Religiosos
+
+- Aparición de nuevos movimientos espirituales.
+- Profetas y fundadores.
+- Reformas religiosas.
+- Cismas.
+- Nuevas corrientes filosóficas.
+- Conflictos religiosos.
+- Peregrinaciones.
+- Transformaciones institucionales.
+
+### 3.7. Culturales
+
+- Nuevas tradiciones.
+- Movimientos artísticos.
+- Cambios lingüísticos.
+- Nuevas formas arquitectónicas.
+- Festividades.
+- Transformaciones gastronómicas.
+- Nuevas corrientes intelectuales.
+- Modas y tendencias.
+
+### 3.8. Tecnológicos y científicos
+
+- Inventos.
+- Descubrimientos.
+- Innovaciones productivas.
+- Avances científicos.
+- Nuevas técnicas.
+- Mejoras agrícolas.
+- Descubrimientos médicos.
+- Desarrollo de materiales.
+- Nuevos sistemas de construcción.
+
+### 3.9. Diplomáticos
+
+- Alianzas.
+- Tratados.
+- Rupturas.
+- Encuentros.
+- Uniones políticas.
+- Acuerdos comerciales.
+- Negociaciones territoriales.
+- Nuevas organizaciones.
+
+### 3.10. Militares
+
+- Invasiones.
+- Guerras.
+- Rebeliones.
+- Batallas.
+- Victorias.
+- Derrotas.
+- Independencias.
+- Ocupaciones.
+- Armisticios.
+- Tratados de paz.
+
+### 3.11. Personales
+
+- Nacimientos.
+- Muertes.
+- Matrimonios.
+- Descendencia.
+- Traiciones.
+- Rivalidades.
+- Alianzas familiares.
+- Ascensos sociales.
+- Logros individuales.
+- Acontecimientos extraordinarios de personajes.
+
+### 3.12. Exploración y descubrimiento
+
+- Nuevas rutas.
+- Regiones desconocidas.
+- Recursos naturales.
+- Nuevas especies.
+- Contacto con civilizaciones.
+- Descubrimientos arqueológicos.
+- Nuevas rutas marítimas.
+- Expediciones exitosas.
+
+## 4. Balance entre acontecimientos positivos y negativos
+
+El sistema deberá ofrecer una experiencia histórica variada.
+
+Se dará mayor presencia relativa a acontecimientos positivos y oportunidades de desarrollo, sin eliminar los problemas y conflictos propios de una simulación histórica.
+
+Se contemplarán:
+
+**Positivos**
+- Prosperidad.
+- Descubrimientos.
+- Innovaciones.
+- Crecimiento cultural.
+- Nuevas oportunidades comerciales.
+- Personajes destacados.
+- Mejoras sociales.
+- Grandes construcciones.
+- Acuerdos diplomáticos.
+- Períodos de estabilidad.
+
+**Negativos**
+- Crisis.
+- Epidemias.
+- Escasez.
+- Conflictos.
+- Desastres.
+- Inestabilidad.
+- Derrotas.
+- Destrucción.
+- Crisis políticas.
+
+Los acontecimientos extraordinarios podrán ser positivos o negativos y tendrán frecuencia configurable.
+
+El objetivo no es convertir la simulación en una sucesión de desgracias ni en una civilización permanentemente próspera, sino producir historias interesantes y plausibles.
+
+## 5. Cadenas de acontecimientos y consecuencias
+
+### 5.1. Eventos encadenados
+
+Los eventos podrán generar consecuencias que desencadenen otros acontecimientos.
+
+El sistema deberá reconocer relaciones causales entre diferentes módulos.
+
+Ejemplo:
+
+**Descubrimiento de un yacimiento mineral**
+
+1. Una expedición identifica un yacimiento.
+2. Se comunica el descubrimiento.
+3. Aparecen oportunidades económicas.
+4. Se desarrolla una actividad extractiva.
+5. Se construyen caminos y almacenes.
+6. Aparece un nuevo asentamiento.
+7. Llegan trabajadores y comerciantes.
+8. Se transforma la economía regional.
+9. Surgen nuevos intereses políticos y comerciales.
+
+Este proceso podrá extenderse durante décadas o siglos.
+
+### 5.2. Consecuencias inmediatas y de largo plazo
+
+Los acontecimientos podrán producir:
+
+- Consecuencias inmediatas.
+- Consecuencias progresivas.
+- Efectos acumulativos.
+- Consecuencias indirectas.
+- Cambios permanentes.
+
+Las decisiones del jugador podrán tener efectos que no sean evidentes inicialmente.
+
+### 5.3. Integración entre sistemas
+
+Los acontecimientos no deberán implementarse como efectos aislados.
+
+Un evento importante deberá comunicar sus consecuencias a los sistemas correspondientes.
+
+Por ejemplo, un descubrimiento tecnológico podrá modificar simultáneamente:
+- Producción.
+- Economía.
+- Construcción.
+- Transporte.
+- Sociedad.
+- Cultura.
+- Militar.
+- Educación.
+
+Se reutilizará el principio de arquitectura compartida definido en el GDD de Tecnología, Ciencia e Innovación.
+
+## 6. Personajes históricos y figuras destacadas
+
+### 6.1. Generación de personajes
+
+Los personajes importantes surgirán mediante una combinación de generación procedural y desarrollo orgánico.
+
+Podrán aparecer por:
+- Sus capacidades individuales.
+- Su educación.
+- Su experiencia.
+- Sus relaciones.
+- Sus oportunidades.
+- Su contexto social.
+- Las instituciones existentes.
+- Acontecimientos históricos.
+- Necesidades de la civilización.
+
+No todos los personajes importantes deberán aparecer por una decisión del jugador.
+
+### 6.2. Categorías
+
+Se contemplarán:
+
+- Gobernantes.
+- Generales.
+- Científicos.
+- Inventores.
+- Filósofos.
+- Artistas.
+- Exploradores.
+- Comerciantes.
+- Líderes religiosos.
+- Reformadores.
+- Pensadores políticos.
+- Arquitectos.
+- Ingenieros.
+
+También podrán surgir figuras relevantes en campos no contemplados inicialmente.
+
+### 6.3. Biografías e historias personales
+
+Los personajes importantes tendrán biografías.
+
+Se registrarán:
+- Nacimiento.
+- Familia.
+- Relaciones.
+- Educación.
+- Profesiones.
+- Experiencias.
+- Logros.
+- Rivalidades.
+- Decisiones relevantes.
+- Descendencia.
+- Muerte.
+- Legado.
+
+Los personajes podrán tener vidas complejas y relaciones con otros individuos.
+
+Sus atributos y experiencias se integrarán con los sistemas de población, sociedad, política, religión, tecnología y cultura.
+
+### 6.4. Legado histórico
+
+Los personajes podrán dejar legados.
+
+Ejemplos:
+- Un científico introduce un descubrimiento que continúa utilizándose siglos después.
+- Un gobernante funda una dinastía.
+- Un filósofo inspira una corriente de pensamiento.
+- Un explorador abre una nueva ruta.
+- Un arquitecto desarrolla un estilo que se replica durante generaciones.
+- Un líder religioso funda una institución que perdura.
+
+El legado será importante, pero su profundidad podrá configurarse.
+
+La influencia de una persona podrá disminuir gradualmente, transformarse o permanecer durante siglos.
+
+## 7. Memoria histórica de las civilizaciones
+
+### 7.1. Registro de acontecimientos
+
+Cada civilización tendrá un registro histórico generado automáticamente.
+
+Se conservarán dos niveles:
+
+**Historia completa**
+
+Registro de acontecimientos relevantes a nivel individual, local, regional y civilizacional, sujeto a los límites de detalle y rendimiento.
+
+**Historia resumida**
+
+Registro de los acontecimientos más importantes, destinado a consultas rápidas y presentación general.
+
+El jugador podrá consultar ambos niveles según las opciones de complejidad.
+
+### 7.2. Enciclopedia histórica
+
+El juego contará con una enciclopedia histórica resumida.
+
+Incluirá:
+
+- Cronologías.
+- Personajes destacados.
+- Guerras.
+- Dinastías.
+- Descubrimientos.
+- Construcciones históricas.
+- Cambios culturales.
+- Religiones.
+- Tratados.
+- Acontecimientos relevantes.
+- Evolución territorial.
+- Grandes transformaciones sociales.
+
+La enciclopedia se construirá automáticamente a partir de los registros de simulación.
+
+No será necesario que el jugador escriba manualmente la historia de su civilización.
+
+### 7.3. Memoria del mundo
+
+Además de las historias individuales, existirá una memoria histórica general del mundo.
+
+Permitirá reconocer acontecimientos compartidos entre civilizaciones.
+
+Por ejemplo:
+- Una guerra internacional.
+- La difusión de una religión.
+- La aparición de una tecnología.
+- Una gran ruta comercial.
+- Una migración de gran escala.
+- Una alianza entre civilizaciones.
+
+Las diferentes civilizaciones podrán interpretar y recordar el mismo acontecimiento de maneras distintas.
+
+## 8. Huellas históricas en el mundo
+
+Los acontecimientos podrán dejar marcas permanentes en el entorno.
+
+Ejemplos:
+
+- Monumentos conmemorativos.
+- Murallas destruidas.
+- Ciudades abandonadas.
+- Ruinas.
+- Campos de batalla históricos.
+- Construcciones religiosas.
+- Monumentos a personajes.
+- Cambios arquitectónicos.
+- Nuevos barrios.
+- Sitios arqueológicos.
+- Lugares de peregrinación.
+
+La permanencia dependerá de la naturaleza del acontecimiento y de las decisiones posteriores.
+
+Un jugador podrá conservar un edificio histórico, restaurarlo, transformarlo o dejarlo en ruinas, de acuerdo con el sistema de Construcción y Arquitectura.
+
+La historia deberá poder reconocerse visualmente en las ciudades y regiones.
+
+## 9. Intervención del jugador
+
+### 9.1. Capacidad de intervención
+
+El jugador podrá intervenir directamente en los acontecimientos.
+
+No estará limitado a observar lo que sucede.
+
+La intervención podrá incluir:
+- Dar órdenes.
+- Financiar iniciativas.
+- Modificar políticas.
+- Apoyar movimientos.
+- Tomar decisiones estratégicas.
+- Promover descubrimientos.
+- Intervenir en conflictos.
+- Impulsar reformas.
+- Responder ante crisis.
+
+La capacidad de intervención estará condicionada por el tipo de acontecimiento y los sistemas involucrados.
+
+### 9.2. Decisiones importantes
+
+Existirán acontecimientos que presentarán decisiones al jugador.
+
+Ejemplos:
+
+- Cómo responder ante una hambruna.
+- Si financiar una expedición.
+- Cómo actuar ante una rebelión.
+- Si apoyar una reforma religiosa.
+- Cómo responder ante una epidemia.
+- Qué hacer frente a una crisis diplomática.
+- Si financiar una nueva institución científica.
+- Cómo gestionar una crisis económica.
+
+La frecuencia de estas decisiones será moderada.
+
+No se busca interrumpir constantemente el juego con ventanas de eventos.
+
+Se priorizarán los acontecimientos realmente importantes.
+
+### 9.3. Consecuencias de las decisiones
+
+Las decisiones tendrán consecuencias inmediatas y de largo plazo.
+
+Podrán modificar:
+- Economía.
+- Población.
+- Estabilidad.
+- Relaciones políticas.
+- Cultura.
+- Religión.
+- Tecnología.
+- Territorio.
+- Diplomacia.
+- Reputación histórica.
+
+No todas las consecuencias serán conocidas al momento de tomar la decisión.
+
+El sistema deberá evitar que las decisiones se reduzcan a opciones claramente correctas o incorrectas.
+
+## 10. Ritmo de evolución histórica
+
+### 10.1. Evolución libre
+
+La historia evolucionará de manera configurable.
+
+Podrá seguir procesos históricos plausibles sin estar obligada a reproducir la secuencia real.
+
+Los períodos históricos serán referencias, no etapas obligatorias.
+
+Una civilización podrá desarrollar determinadas instituciones antes que otra, permanecer en determinadas formas de organización durante siglos o seguir caminos tecnológicos particulares.
+
+### 10.2. Ritmo de acontecimientos
+
+Se utilizará un modelo mixto:
+
+- Acontecimientos pequeños y cotidianos.
+- Procesos graduales.
+- Eventos importantes ocasionales.
+- Acontecimientos extraordinarios poco frecuentes.
+
+No deberá existir una cantidad fija de acontecimientos por año.
+
+El ritmo dependerá de las condiciones de cada civilización.
+
+### 10.3. Historia de otras civilizaciones
+
+Las civilizaciones del mundo tendrán sus propios procesos históricos.
+
+Sin embargo, el nivel de detalle podrá depender de su relación con el jugador.
+
+Se priorizarán:
+- Civilizaciones cercanas.
+- Civilizaciones con relaciones diplomáticas.
+- Civilizaciones comercialmente conectadas.
+- Civilizaciones rivales.
+- Civilizaciones cuyos acontecimientos puedan afectar al jugador.
+
+Esto permitirá mantener autonomía histórica sin exigir el mismo nivel de simulación detallada para todo el mundo.
+
+## 11. Presentación de acontecimientos
+
+### 11.1. Canales de comunicación
+
+Los eventos se comunicarán mediante una combinación de:
+
+- Notificaciones.
+- Noticias.
+- Crónicas históricas.
+- Representaciones visuales.
+- Indicadores dentro del mundo.
+- Entradas en la enciclopedia.
+
+La presentación dependerá de la importancia y naturaleza del acontecimiento.
+
+### 11.2. Noticias y crónicas
+
+Los acontecimientos relevantes podrán generar textos narrativos.
+
+Por ejemplo:
+
+"Tras varios años de prosperidad comercial, la ciudad de Valdoria se ha convertido en uno de los principales centros mercantiles de la región. La llegada de comerciantes extranjeros ha impulsado nuevas construcciones y transformado la vida de sus habitantes."
+
+Estas crónicas se generarán a partir de datos reales de la simulación.
+
+No deberán inventar resultados ni acontecimientos que no hayan ocurrido.
+
+### 11.3. Representación visual
+
+Cuando sea posible, los acontecimientos tendrán una manifestación dentro del mundo.
+
+Ejemplos:
+- Celebraciones públicas.
+- Construcciones conmemorativas.
+- Llegada de refugiados.
+- Nuevas construcciones.
+- Procesiones.
+- Manifestaciones.
+- Movimientos militares.
+- Cambios urbanos.
+- Ceremonias religiosas.
+
+La representación visual deberá estar integrada con los sistemas de animación, personajes, edificios y ciudades.
+
+## 12. Cronología histórica navegable
+
+El jugador podrá consultar una cronología resumida.
+
+Permitirá:
+- Revisar acontecimientos importantes.
+- Consultar períodos anteriores.
+- Identificar personajes destacados.
+- Consultar guerras y tratados.
+- Revisar descubrimientos.
+- Observar transformaciones territoriales.
+- Consultar la historia de ciudades y regiones.
+
+La cronología podrá filtrarse por:
+- Civilización.
+- Región.
+- Ciudad.
+- Personaje.
+- Categoría de evento.
+- Período histórico.
+
+No será necesario simular nuevamente el pasado para consultarlo: el sistema utilizará los registros históricos acumulados.
+
+## 13. Configuración y complejidad
+
+Cada categoría podrá configurarse independientemente.
+
+| Módulo | Configuración |
+|---|---|
+| Eventos históricos posibles | Activados/desactivados |
+| Eventos dinámicos | Activados/desactivados |
+| Aleatoriedad | Baja, media o alta |
+| Eventos extraordinarios | Frecuencia configurable |
+| Cadenas de consecuencias | Simplificadas o desarrolladas |
+| Eventos naturales | Configurables |
+| Eventos económicos | Configurables |
+| Eventos sociales | Configurables |
+| Eventos políticos | Configurables |
+| Eventos religiosos | Configurables |
+| Eventos culturales | Configurables |
+| Eventos tecnológicos | Configurables |
+| Eventos militares | Configurables |
+| Personajes históricos | Configurables |
+| Biografías | Básicas o completas |
+| Legados | Simplificados o desarrollados |
+| Memoria histórica | Resumida o completa |
+| Enciclopedia | Activada/desactivada |
+| Huellas visuales | Configurables |
+| Decisiones del jugador | Frecuencia configurable |
+| Cronología | Activada/desactivada |
+
+El sistema ofrecerá presets sencillos, intermedios y avanzados.
+
+## 14. MVP — Primera versión jugable
+
+El MVP deberá incorporar:
+
+- Sistema básico de eventos dinámicos.
+- Eventos positivos y negativos.
+- Acontecimientos naturales y económicos.
+- Eventos sociales y demográficos.
+- Cadenas sencillas de consecuencias.
+- Personajes importantes básicos.
+- Registro histórico por civilización.
+- Notificaciones.
+- Decisiones ocasionales del jugador.
+- Integración con economía, población, tecnología y política.
+
+Quedarán para versiones posteriores:
+
+- Biografías completas.
+- Legados históricos avanzados.
+- Enciclopedia histórica.
+- Cronología navegable.
+- Crónicas generadas dinámicamente.
+- Grandes acontecimientos extraordinarios.
+- Huellas visuales avanzadas.
+- Memoria histórica internacional detallada.
+
+## 15. Integración con otros sistemas
+
+Este sistema será transversal.
+
+No deberá convertirse en un sistema independiente que duplique las funciones de los demás módulos.
+
+| Sistema | Integración |
+|---|---|
+| Geografía y medioambiente | Desastres y cambios ambientales |
+| Población y sociedad | Crisis, migraciones y transformaciones demográficas |
+| Economía | Prosperidad, crisis y oportunidades |
+| Producción | Innovaciones y cambios productivos |
+| Construcción | Monumentos, destrucción y huellas históricas |
+| Tecnología | Descubrimientos e innovaciones |
+| Política | Reformas, sucesiones y revoluciones |
+| Religión | Reformas, profetas y movimientos espirituales |
+| Cultura | Tradiciones, movimientos y transformaciones |
+| Diplomacia | Tratados, encuentros y conflictos |
+| Exploración | Descubrimientos y nuevas rutas |
+| Guerra | Campañas, victorias, derrotas y consecuencias |
+| Transporte | Nuevas conexiones y transformaciones logísticas |
+
+La arquitectura deberá permitir que los acontecimientos sean generados por los sistemas correspondientes y registrados por el sistema histórico común.
+
+## 16. Visión final
+
+Después de varios siglos de simulación, cada civilización deberá tener una historia reconocible.
+
+Habrá fundadores, personajes destacados, descubrimientos, construcciones, períodos de prosperidad, crisis, reformas, tradiciones y transformaciones.
+
+El jugador podrá consultar cómo se desarrolló su civilización y comprender por qué llegó a ser lo que es.
+
+Dos partidas con el mismo punto de partida deberán poder producir historias completamente diferentes.
+
+**Principio de diseño:**
+
+*El jugador no escribirá una historia predeterminada. Construirá las condiciones para que una historia única pueda suceder.*
+
+---
+
+## 17. Decisiones confirmadas
+
+| Área | Decisión |
+|---|---|
+| Generación | Modelo mixto: histórico, dinámico y aleatorio |
+| Aleatoriedad | Moderada |
+| Cadenas de consecuencias | Sí, simplificadas |
+| Escalas | Todas |
+| Categorías | Todas las propuestas |
+| Balance | Mayor presencia relativa de acontecimientos positivos |
+| Eventos extraordinarios | Sí, configurables |
+| Personajes | Generación mixta |
+| Tipos de personajes | Todas las categorías propuestas |
+| Legado | Sí, simplificado |
+| Biografías | Completas para personajes importantes |
+| Historia de civilizaciones | Registro completo y resumido |
+| Enciclopedia | Sí, resumida |
+| Huellas históricas | Sí, con importancia moderada |
+| Intervención del jugador | Directa |
+| Decisiones importantes | Pocas y significativas |
+| Consecuencias | Inmediatas y de largo plazo |
+| Configuración de eventos | Totalmente configurable |
+| Evolución histórica | Libre y configurable |
+| Ritmo | Actividad cotidiana y grandes acontecimientos ocasionales |
+| Otras civilizaciones | Historia autónoma, con simulación priorizada por relevancia |
+| Presentación | Notificaciones, crónicas y representación visual |
+| Cronología | Sí, resumida y navegable |
+| Marcas históricas | Sí, siempre que tenga sentido |
+| Complejidad | Configurable por categorías y módulos |
+
+**Estado:** GDD conceptual v0.1 consolidado.

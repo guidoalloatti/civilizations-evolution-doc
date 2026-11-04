@@ -1,0 +1,283 @@
+# GDD — INTERFAZ DE USUARIO Y EXPERIENCIA DE JUEGO (UI/UX)
+
+**Versión:** 0.1  
+**Estado:** Definición conceptual consolidada
+
+## 1. Visión general
+
+La interfaz deberá permitir gestionar una civilización compleja sin interferir con la experiencia visual del mundo.
+
+El diseño priorizará una interfaz moderna, contextual y adaptable.
+
+El jugador interactuará principalmente con el mundo 3D, seleccionando edificios, habitantes, unidades y regiones para consultar información y realizar acciones.
+
+Los paneles generales y menús permitirán acceder a información global y administrar sistemas que no se pueden controlar cómodamente desde el mapa.
+
+**Principio fundamental:**
+
+El mundo será la interfaz principal. Los menús y paneles estarán al servicio de la experiencia, no al revés.
+
+## 2. Estilo visual
+
+Se utilizará una interfaz moderna, limpia y organizada.
+
+Características:
+- Paneles contextuales.
+- Ventanas flotantes.
+- Información jerarquizada.
+- Iconografía clara.
+- Indicadores visuales.
+- Transiciones suaves.
+- Uso moderado de elementos permanentes.
+- Buena integración con el entorno 3D.
+
+La interfaz no deberá ocupar innecesariamente la pantalla.
+
+## 3. Interacción con el mundo
+
+La interacción directa será fundamental.
+
+El jugador podrá seleccionar:
+
+- Edificios.
+- Habitantes.
+- Familias.
+- Unidades militares.
+- Recursos.
+- Vehículos.
+- Regiones.
+- Infraestructura.
+- Elementos naturales relevantes.
+
+Cada elemento ofrecerá información y acciones contextuales.
+
+Ejemplos:
+
+**Seleccionar una granja**
+- Producción actual.
+- Trabajadores.
+- Recursos utilizados.
+- Rendimiento.
+- Estado del edificio.
+- Mejoras disponibles.
+- Opciones de gestión.
+
+**Seleccionar un ciudadano**
+- Nombre.
+- Edad.
+- Familia.
+- Profesión.
+- Habilidades.
+- Necesidades.
+- Relaciones.
+- Historia personal.
+
+**Seleccionar una región**
+- Población.
+- Economía.
+- Producción.
+- Presupuesto.
+- Infraestructura.
+- Administración.
+- Características regionales.
+
+## 4. Información y estadísticas
+
+Se combinarán dos modalidades:
+
+**Información contextual:** aparece al seleccionar un elemento.
+
+**Información global:** permite consultar el estado general de la civilización.
+
+Los paneles globales contemplarán:
+- Economía.
+- Población.
+- Producción.
+- Recursos.
+- Tecnología.
+- Cultura.
+- Religión.
+- Política.
+- Diplomacia.
+- Territorios.
+- Transporte.
+- Militar.
+- Medioambiente.
+
+La información deberá permitir navegar desde los indicadores generales hasta los elementos concretos que los generan.
+
+## 5. Navegación
+
+Se utilizará una combinación de menús principales y paneles contextuales.
+
+Los menús generales permitirán acceder a los diferentes sistemas.
+
+Los paneles contextuales aparecerán al seleccionar elementos del mundo.
+
+La navegación deberá mantener una estructura coherente para que el jugador pueda encontrar información sin memorizar demasiados recorridos.
+
+## 6. Mapas e indicadores visuales
+
+Los mapas temáticos tendrán mucha importancia.
+
+El jugador podrá activar diferentes visualizaciones:
+
+- Fertilidad del suelo.
+- Recursos naturales.
+- Densidad poblacional.
+- Actividad económica.
+- Producción.
+- Influencia religiosa.
+- Influencia cultural.
+- Seguridad.
+- Felicidad y bienestar.
+- Infraestructura.
+- Redes de transporte.
+- Territorios y fronteras.
+- Influencia política.
+- Condiciones ambientales.
+
+Se podrán combinar determinados indicadores cuando tenga sentido.
+
+La interfaz deberá evitar mostrar demasiada información simultáneamente.
+
+## 7. Notificaciones
+
+El sistema de notificaciones será configurable.
+
+El jugador podrá determinar:
+- Qué categorías generan notificaciones.
+- Qué acontecimientos se consideran importantes.
+- Qué eventos requieren intervención.
+- Qué información puede acumularse en un registro.
+- Qué notificaciones pueden permanecer visibles.
+
+Se distinguirán acontecimientos informativos, advertencias y decisiones que requieren atención.
+
+Las notificaciones deberán ser útiles y no convertirse en una interrupción constante.
+
+## 8. Tutoriales y ayuda contextual
+
+Se incorporarán ambos mecanismos.
+
+**Tutorial inicial**
+- Explicará los controles básicos.
+- Introducirá la construcción.
+- Presentará la economía inicial.
+- Explicará la población.
+- Introducirá los principales sistemas.
+
+**Ayuda contextual**
+- Explicaciones al seleccionar elementos.
+- Descripción de indicadores.
+- Información sobre mecánicas.
+- Recomendaciones.
+- Acceso a documentación de sistemas.
+
+El jugador podrá consultar ayuda cuando la necesite, sin depender exclusivamente del tutorial inicial.
+
+## 9. Personalización
+
+La interfaz tendrá un nivel amplio de personalización.
+
+Se contemplará:
+- Reorganización de paneles.
+- Indicadores visibles.
+- Accesos directos.
+- Escalado de interfaz.
+- Tamaños de texto.
+- Preferencias de notificaciones.
+- Configuración de mapas temáticos.
+- Información contextual visible.
+- Atajos de teclado.
+
+El objetivo es permitir diferentes estilos de juego y preferencias de presentación.
+
+## 10. Información detallada
+
+El jugador podrá acceder a información profunda al seleccionar cualquier elemento relevante.
+
+No se limitará a mostrar resúmenes.
+
+Los edificios, habitantes, regiones y unidades podrán ofrecer información específica según su naturaleza.
+
+La información se organizará por secciones para evitar paneles excesivamente desordenados.
+
+Se podrá navegar desde información resumida hacia detalles más específicos.
+
+## 11. Accesibilidad y comodidad
+
+La accesibilidad será una prioridad.
+
+Se contemplarán:
+- Escalado de interfaz.
+- Tamaños de texto.
+- Contraste.
+- Alternativas visuales para distinguir información.
+- Configuración de colores.
+- Atajos de teclado.
+- Opciones de comodidad.
+- Controles configurables.
+- Ayudas visuales.
+
+La interfaz deberá poder adaptarse a diferentes resoluciones y tamaños de pantalla.
+
+## 12. Adaptación a la complejidad
+
+La interfaz se adaptará al nivel de complejidad elegido por el jugador.
+
+**Simple**
+- Información resumida.
+- Automatizaciones visibles.
+- Menos indicadores.
+- Acciones simplificadas.
+
+**Intermedio**
+- Estadísticas adicionales.
+- Más opciones de gestión.
+- Paneles regionales y económicos.
+- Información contextual ampliada.
+
+**Avanzado**
+- Datos detallados.
+- Estadísticas profundas.
+- Mayor control sobre los sistemas.
+- Indicadores especializados.
+- Información técnica y administrativa.
+
+La complejidad de la interfaz deberá poder configurarse independientemente cuando corresponda.
+
+## 13. MVP — Primera versión jugable
+
+- Selección de edificios.
+- Panel contextual de edificios.
+- Información básica de habitantes.
+- Panel general de recursos.
+- Panel de población.
+- Panel de producción.
+- Panel de construcción.
+- Notificaciones básicas.
+- Pausa y aceleración del tiempo.
+- Indicadores de selección.
+- Mapa básico.
+- Ayuda contextual inicial.
+
+Los mapas temáticos avanzados, la personalización completa y los paneles históricos detallados se incorporarán progresivamente.
+
+## 14. Decisiones confirmadas
+
+| Área | Decisión |
+|---|---|
+| Estilo | Moderno y contextual |
+| Interacción | Mundo 3D como interfaz principal |
+| Información | Contextual y global |
+| Navegación | Menús y paneles combinados |
+| Mapas temáticos | Muy importantes |
+| Notificaciones | Configurables |
+| Tutoriales | Inicial y contextual |
+| Personalización | Completa |
+| Información de elementos | Detallada |
+| Accesibilidad | Prioridad alta |
+| Complejidad | Adaptable al jugador |
+
+**Estado:** GDD conceptual v0.1 consolidado.

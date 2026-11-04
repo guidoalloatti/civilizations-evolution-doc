@@ -1,0 +1,1241 @@
+> **Control documental:** 0.1 — Documento de diseño conceptual | Estado: diseño conceptual; las decisiones marcadas como confirmadas se preservan desde la fuente. **Alcance:** este GDD es fuente de detalle de su dominio; el GDD Maestro establece la visión común. Los conflictos intersistema se registran en AUDIT_REPORT.md y no se resuelven implícitamente.
+
+---
+
+# GDD — Sistema de Construcción y Arquitectura
+## Versión 0.1 — Documento de diseño conceptual
+
+---
+
+# 1. Visión general
+
+El Sistema de Construcción y Arquitectura define cómo el jugador construye, organiza, transforma y desarrolla físicamente sus asentamientos a lo largo de la historia.
+
+Su objetivo no es simplemente permitir la colocación de edificios, sino representar visual y funcionalmente la evolución de una civilización durante miles de años.
+
+La ciudad será el principal testimonio del progreso del jugador.
+
+Una aldea inicial puede convertirse en una gran ciudad siglos después. Sus edificios, calles, barrios, monumentos e infraestructuras reflejarán las distintas etapas de su historia.
+
+El jugador deberá poder reconocer su propia obra incluso después de cientos o miles de años.
+
+## 1.1. Principios fundamentales
+
+1. **Libertad de construcción:** el jugador debe tener libertad para diseñar sus asentamientos.
+2. **Evolución histórica:** los edificios y las ciudades cambian con el desarrollo tecnológico, social y cultural.
+3. **Continuidad histórica:** las construcciones pueden conservar elementos de épocas anteriores.
+4. **Identidad arquitectónica:** la arquitectura refleja cultura, geografía, religión, riqueza y tecnología.
+5. **Belleza y urbanismo:** la estética de la ciudad tiene consecuencias sobre su funcionamiento.
+6. **Construcción funcional:** cada construcción requiere recursos, trabajadores, tiempo y mantenimiento.
+7. **Crecimiento orgánico:** la población puede desarrollar construcciones y barrios por iniciativa propia.
+8. **Libertad de conservación:** el jugador puede preservar edificios, barrios y estilos antiguos.
+9. **Complejidad configurable:** cada jugador decide cuánto quiere intervenir en el desarrollo urbano.
+10. **Evolución visible:** el paso del tiempo debe resultar evidente en el aspecto de las ciudades.
+
+---
+
+# 2. Sistema de construcción y colocación
+
+## 2.1. Construcción libre
+
+El sistema utilizará un modelo de construcción libre con herramientas opcionales de alineación y cuadrícula.
+
+El jugador podrá:
+- Colocar edificios libremente.
+- Ajustar su orientación.
+- Utilizar herramientas de alineación.
+- Activar una cuadrícula opcional.
+- Ajustar construcciones a caminos y otras estructuras.
+- Copiar y pegar edificios.
+- Guardar y reutilizar diseños.
+
+La cuadrícula será una herramienta de asistencia, no una limitación obligatoria.
+
+## 2.2. Rotación
+
+Los edificios podrán rotarse según su naturaleza.
+
+Se contemplan:
+- Rotación en intervalos de 90 grados.
+- Rotación libre.
+- Orientaciones específicas para determinados edificios.
+
+El sistema deberá evitar que las restricciones de colocación limiten innecesariamente la creatividad.
+
+## 2.3. Dimensiones variables
+
+Algunos edificios tendrán dimensiones predeterminadas, mientras que otros permitirán configuraciones variables.
+
+Por ejemplo:
+- Viviendas pequeñas y grandes.
+- Granjas con diferentes extensiones.
+- Talleres con distintas superficies.
+- Mercados con diferentes dimensiones.
+- Complejos productivos ampliables.
+
+Las dimensiones influirán sobre capacidad, costos, trabajadores, consumo de materiales y eficiencia.
+
+## 2.4. Personalización estética
+
+La personalización será importante para la identidad visual de las ciudades.
+
+Se contemplan:
+- Jardines.
+- Cercos.
+- Patios.
+- Fuentes.
+- Mobiliario exterior.
+- Carteles.
+- Decoraciones.
+- Estatuas.
+- Elementos religiosos.
+- Plazas y espacios públicos.
+- Vegetación ornamental.
+- Iluminación.
+
+Estos elementos podrán contribuir a la belleza de un edificio o de su entorno.
+
+---
+
+# 3. Proceso de construcción
+
+## 3.1. Construcción mediante obras
+
+Los edificios no aparecerán instantáneamente.
+
+El jugador ordenará una construcción y esta comenzará un proceso de obra que requerirá:
+- Materiales.
+- Trabajadores.
+- Tiempo.
+- Transporte.
+- Herramientas.
+- Conocimientos técnicos.
+
+La duración dependerá del tamaño, complejidad, materiales, tecnología disponible y mano de obra.
+
+## 3.2. Construcción por etapas
+
+Los edificios podrán construirse y ampliarse progresivamente.
+
+Por ejemplo, una vivienda puede comenzar como una construcción pequeña y posteriormente incorporar:
+- Habitaciones.
+- Segundos pisos.
+- Patios.
+- Talleres.
+- Depósitos.
+- Mejoras estructurales.
+
+La construcción por etapas será especialmente importante para representar la evolución histórica de los asentamientos.
+
+## 3.3. Mano de obra
+
+El sistema evolucionará históricamente.
+
+Se contemplan:
+- Trabajo comunitario.
+- Mano de obra familiar.
+- Constructores especializados.
+- Cuadrillas de trabajadores.
+- Oficios de construcción.
+- Empresas constructoras en períodos avanzados.
+
+El modelo será mixto y permitirá que trabajadores de diferentes profesiones participen temporalmente en las obras cuando corresponda.
+
+La disponibilidad de trabajadores especializados dependerá del desarrollo económico y tecnológico.
+
+## 3.4. Falta de materiales
+
+Si una construcción no dispone de los materiales necesarios:
+1. La obra se detiene.
+2. El sistema intenta conseguir los materiales faltantes.
+3. Se pueden buscar materiales alternativos cuando sean técnicamente viables.
+4. El jugador recibe información sobre el problema.
+
+La sustitución de materiales no será automática cuando afecte significativamente la calidad o la seguridad de la construcción.
+
+## 3.5. Calidad constructiva
+
+La calidad dependerá de:
+- Materiales.
+- Experiencia de los trabajadores.
+- Tecnología.
+- Herramientas.
+- Tiempo disponible.
+- Condiciones laborales.
+- Diseño arquitectónico.
+- Mantenimiento posterior.
+
+Una construcción de baja calidad podrá deteriorarse más rápidamente o presentar problemas estructurales.
+
+---
+
+# 4. Evolución arquitectónica
+
+Este es uno de los sistemas centrales del proyecto.
+
+Los edificios no serán elementos estáticos que simplemente se desbloquean y reemplazan.
+
+Serán construcciones que evolucionan junto con la civilización.
+
+## 4.1. Desencadenantes de evolución
+
+Una construcción podrá recibir opciones de mejora cuando se produzcan cambios en:
+- Tecnología.
+- Período histórico.
+- Cultura.
+- Religión.
+- Organización social.
+- Política.
+- Economía.
+- Disponibilidad de materiales.
+- Necesidades de la población.
+- Influencias de otras civilizaciones.
+
+## 4.2. Decisión del jugador
+
+Cuando una mejora esté disponible, el jugador recibirá una notificación.
+
+Podrá consultar:
+- Nombre de la mejora.
+- Cambios arquitectónicos.
+- Nuevas funcionalidades.
+- Requisitos tecnológicos.
+- Materiales necesarios.
+- Costos.
+- Tiempo de obra.
+- Beneficios y desventajas.
+
+El jugador decidirá cuándo aplicar la transformación.
+
+Las mejoras no serán obligatorias.
+
+## 4.3. Profundidad de las transformaciones
+
+Las transformaciones podrán ser pequeñas, importantes o radicales.
+
+Ejemplos:
+- Una vivienda de madera incorpora nuevas habitaciones.
+- Una casa de barro se transforma en una construcción de ladrillo.
+- Una herrería artesanal incorpora maquinaria hidráulica.
+- Un templo pequeño se convierte en un complejo religioso.
+- Una antigua estructura defensiva se transforma en una fortificación moderna.
+
+La transformación dependerá del edificio, la época y las condiciones disponibles.
+
+## 4.4. Conservación de estructuras antiguas
+
+Las mejoras podrán:
+- Mantener elementos originales.
+- Sustituir partes de la estructura.
+- Ampliar el edificio.
+- Incorporar nuevos materiales.
+- Cambiar completamente su apariencia.
+
+No todos los edificios deberán conservar su arquitectura original.
+
+Sin embargo, el sistema deberá permitir que determinadas construcciones mantengan elementos históricos durante siglos.
+
+## 4.5. Edificios históricos
+
+Algunos edificios podrán adquirir la categoría de **Históricos**.
+
+El jugador podrá conservarlos sin modificaciones, incluso cuando existan alternativas tecnológicamente superiores.
+
+Estos edificios podrán representar:
+- Construcciones fundacionales.
+- Monumentos.
+- Templos antiguos.
+- Palacios.
+- Edificios políticos.
+- Construcciones vinculadas a acontecimientos históricos.
+- Edificios de importancia cultural.
+
+Los edificios históricos podrán tener valor cultural, simbólico y turístico según el desarrollo de la civilización.
+
+## 4.6. Evolución no obligatoria
+
+Un edificio antiguo podrá continuar funcionando aunque existan versiones más modernas.
+
+Sus desventajas podrán incluir:
+- Menor eficiencia.
+- Mayor mantenimiento.
+- Menor capacidad.
+- Costos operativos superiores.
+- Limitaciones tecnológicas.
+
+El jugador podrá mantenerlo por razones económicas, culturales, históricas o estéticas.
+
+---
+
+# 5. Ampliaciones y construcción modular
+
+Los edificios podrán incorporar módulos o sectores adicionales.
+
+Esto permitirá desarrollar construcciones sin necesidad de reemplazarlas completamente.
+
+Ejemplos:
+- Una herrería incorpora un sector de fundición.
+- Una granja agrega establos y depósitos.
+- Un aserradero incorpora nuevos espacios de procesamiento.
+- Una vivienda incorpora habitaciones y pisos.
+- Un mercado agrega puestos y depósitos.
+
+## 5.1. Características de los módulos
+
+Cada módulo podrá tener:
+- Requisitos tecnológicos.
+- Costos.
+- Materiales.
+- Espacio requerido.
+- Capacidad adicional.
+- Beneficios funcionales.
+- Impacto estético.
+
+## 5.2. Restricciones
+
+Las ampliaciones estarán limitadas por:
+- Espacio disponible.
+- Terreno.
+- Materiales.
+- Tecnología.
+- Mano de obra.
+- Capacidad estructural.
+- Recursos económicos.
+
+## 5.3. Evolución visual
+
+Los módulos deberán integrarse visualmente con el edificio original.
+
+Dependiendo de la época, podrán presentar estilos y materiales diferentes.
+
+Una construcción podrá mostrar claramente las distintas etapas en las que fue ampliada.
+
+---
+
+# 6. Materiales de construcción
+
+Los materiales tendrán consecuencias funcionales y estéticas.
+
+## 6.1. Propiedades
+
+Cada material podrá tener características relacionadas con:
+- Resistencia.
+- Durabilidad.
+- Aislamiento.
+- Peso.
+- Costo.
+- Disponibilidad.
+- Facilidad de transporte.
+- Mantenimiento.
+- Resistencia al fuego.
+- Resistencia a condiciones ambientales.
+
+## 6.2. Materiales históricos
+
+La disponibilidad y utilización de materiales evolucionará históricamente.
+
+Entre otros:
+- Madera.
+- Barro.
+- Adobe.
+- Piedra.
+- Paja.
+- Ladrillo.
+- Tejas.
+- Cal.
+- Vidrio.
+- Metales.
+- Hormigón.
+- Acero.
+
+La lista se ampliará según el desarrollo histórico del juego.
+
+## 6.3. Disponibilidad regional
+
+La geografía influirá sobre los materiales disponibles.
+
+Una región con abundante madera podrá desarrollar una arquitectura diferente de otra con grandes reservas de piedra.
+
+El comercio permitirá conseguir materiales que no estén disponibles localmente.
+
+## 6.4. Materiales alternativos
+
+Determinados edificios podrán construirse con diferentes materiales.
+
+Las alternativas tendrán consecuencias sobre:
+- Costos.
+- Durabilidad.
+- Calidad.
+- Apariencia.
+- Eficiencia.
+- Mantenimiento.
+
+## 6.5. Conservación de técnicas antiguas
+
+El desarrollo tecnológico no eliminará necesariamente los materiales y técnicas anteriores.
+
+El jugador podrá seguir construyendo con técnicas tradicionales cuando tenga sentido económico, cultural o estético.
+
+---
+
+# 7. Arquitectura vertical
+
+La arquitectura evolucionará en altura y complejidad.
+
+## 7.1. Construcciones de varios pisos
+
+La posibilidad de construir varios pisos dependerá de:
+- Tecnología.
+- Materiales.
+- Técnicas constructivas.
+- Capacidad estructural.
+- Cultura.
+- Época histórica.
+
+La arquitectura vertical tendrá una evolución histórica progresiva.
+
+## 7.2. Altura configurable
+
+Algunos edificios permitirán que el jugador tenga influencia sobre su altura.
+
+La libertad estará condicionada por los conocimientos técnicos, los materiales y la estructura.
+
+## 7.3. Sótanos y subsuelos
+
+Determinados edificios podrán incorporar:
+- Bodegas.
+- Depósitos subterráneos.
+- Sótanos.
+- Espacios de almacenamiento.
+- Instalaciones productivas.
+- Refugios.
+
+Su disponibilidad dependerá del tipo de edificio, terreno y tecnología.
+
+## 7.4. Evolución histórica
+
+La arquitectura vertical deberá reflejar los avances de cada período.
+
+No se trata solamente de desbloquear edificios más altos, sino de representar los cambios en las técnicas, materiales y necesidades urbanas.
+
+---
+
+# 8. Urbanismo y crecimiento de las ciudades
+
+El desarrollo urbano combinará planificación del jugador y crecimiento orgánico.
+
+## 8.1. Crecimiento mixto
+
+El jugador podrá construir y organizar los asentamientos.
+
+Sin embargo, la población también podrá desarrollar construcciones de manera espontánea.
+
+Esto permitirá representar:
+- Crecimiento de viviendas.
+- Aparición de comercios.
+- Formación de barrios.
+- Expansión de zonas productivas.
+- Nuevas actividades económicas.
+
+El crecimiento orgánico estará influenciado por las políticas, regulaciones, disponibilidad de terrenos y condiciones económicas.
+
+El jugador tendrá herramientas para orientar este desarrollo.
+
+## 8.2. Barrios
+
+Las ciudades podrán desarrollar barrios con identidades propias.
+
+Ejemplos:
+- Residenciales.
+- Comerciales.
+- Artesanales.
+- Industriales.
+- Religiosos.
+- Administrativos.
+- Portuarios.
+- Militares.
+- Culturales.
+
+Los barrios podrán surgir espontáneamente o desarrollarse mediante intervención del jugador.
+
+## 8.3. Densidad urbana
+
+La densidad será una mecánica importante.
+
+El crecimiento poblacional podrá producir:
+- Mayor concentración de viviendas.
+- Construcciones más altas.
+- Calles más estrechas.
+- Mayor actividad comercial.
+- Nuevos espacios públicos.
+- Problemas de congestión.
+- Necesidad de infraestructura.
+
+El desarrollo urbano deberá reflejar las transformaciones sociales y económicas.
+
+## 8.4. Influencia de edificios sobre el entorno
+
+Los edificios podrán modificar el atractivo y desarrollo de sus alrededores.
+
+Ejemplos:
+- Los mercados atraen comercios.
+- Los templos generan actividad religiosa.
+- Los edificios administrativos atraen población y servicios.
+- Los monumentos aumentan el atractivo de una zona.
+- Las industrias pueden generar contaminación y molestias.
+- Los parques mejoran la calidad del entorno.
+
+## 8.5. Centros urbanos históricos
+
+Las ciudades podrán desarrollar centros históricos que mantengan su importancia durante siglos.
+
+El jugador tendrá libertad para modificarlos, conservarlos o transformarlos.
+
+La existencia de un centro histórico no impondrá restricciones automáticas, salvo que el jugador decida protegerlo.
+
+---
+
+# 9. Belleza y atractivo urbano
+
+La belleza será una mecánica propia del juego y tendrá consecuencias reales.
+
+No será solamente una valoración estética.
+
+## 9.1. Dos niveles de belleza
+
+El sistema tendrá dos indicadores principales:
+
+**Belleza global de la ciudad**
+
+Representa la calidad estética general del asentamiento.
+
+**Belleza local o zonal**
+
+Representa la calidad estética de un área determinada de la ciudad.
+
+Una ciudad podrá tener una belleza global elevada, pero contener barrios desagradables o poco atractivos.
+
+También podrá tener barrios muy bellos dentro de una ciudad visualmente desorganizada.
+
+## 9.2. Factores que influyen en la belleza
+
+Entre otros:
+- Arquitectura de los edificios.
+- Armonía entre construcciones.
+- Decoración.
+- Jardines.
+- Plazas.
+- Monumentos.
+- Fuentes.
+- Espacios públicos.
+- Paisajismo.
+- Orden urbanístico.
+- Materiales.
+- Limpieza.
+- Conservación de edificios.
+- Relación entre construcciones y entorno natural.
+
+## 9.3. Factores negativos
+
+Podrán reducir la belleza:
+- Edificios deteriorados.
+- Construcciones abandonadas.
+- Acumulación de residuos.
+- Industrias contaminantes.
+- Desorden urbano.
+- Construcciones incompatibles con el entorno.
+- Infraestructura descuidada.
+- Espacios públicos degradados.
+
+## 9.4. Consecuencias
+
+La belleza podrá proporcionar bonificaciones y penalizaciones.
+
+Posibles efectos:
+- Satisfacción de la población.
+- Prestigio de la ciudad.
+- Atracción de inmigrantes.
+- Atractivo comercial.
+- Turismo en períodos históricos avanzados.
+- Valor de determinadas propiedades.
+- Influencia cultural.
+
+La intensidad de estos efectos deberá depender del nivel de complejidad seleccionado.
+
+---
+
+# 10. Infraestructura
+
+La infraestructura será parte integral de la construcción y el desarrollo urbano.
+
+No será simplemente decoración.
+
+## 10.1. Tipos de infraestructura
+
+El sistema contemplará, entre otros:
+
+**Transporte**
+- Senderos.
+- Caminos.
+- Calles.
+- Avenidas.
+- Puentes.
+- Puertos.
+- Muelles.
+- Canales.
+- Ferrocarriles.
+
+**Defensa**
+- Murallas.
+- Torres.
+- Fortificaciones.
+- Puertas.
+- Puentes defensivos.
+
+**Agua**
+- Pozos.
+- Canales.
+- Acueductos.
+- Redes de distribución.
+- Sistemas de drenaje.
+- Alcantarillado.
+
+**Servicios**
+- Mercados.
+- Espacios públicos.
+- Redes eléctricas.
+- Infraestructura de comunicaciones en épocas avanzadas.
+
+La lista podrá ampliarse a medida que se desarrollen los sistemas históricos.
+
+## 10.2. Construcción de caminos
+
+Los caminos tendrán trazado libre con herramientas automáticas de conexión.
+
+El jugador podrá:
+- Dibujar caminos.
+- Conectar edificios.
+- Crear intersecciones.
+- Construir plazas.
+- Definir recorridos.
+- Modificar trazados.
+
+## 10.3. Evolución histórica
+
+Los caminos evolucionarán según la tecnología y el período histórico.
+
+Por ejemplo:
+- Senderos naturales.
+- Caminos de tierra.
+- Caminos mejorados.
+- Calzadas de piedra.
+- Calles pavimentadas.
+- Avenidas modernas.
+
+La evolución será principalmente automática, según las condiciones y el desarrollo de la ciudad.
+
+## 10.4. Capacidad y funcionamiento
+
+La infraestructura tendrá límites físicos simplificados.
+
+Ejemplos:
+- Congestión en caminos.
+- Capacidad de puentes.
+- Capacidad de canales.
+- Capacidad de transporte.
+- Deterioro de caminos.
+- Necesidades de mantenimiento.
+
+La simulación será configurable para evitar micromanagement innecesario.
+
+---
+
+# 11. Arquitectura regional y cultural
+
+La arquitectura será resultado de la interacción entre múltiples factores.
+
+## 11.1. Factores determinantes
+
+Los estilos arquitectónicos estarán influenciados por:
+- Época histórica.
+- Geografía.
+- Clima.
+- Cultura.
+- Civilización.
+- Religión.
+- Materiales disponibles.
+- Tecnología.
+- Riqueza.
+- Clase social.
+- Influencias externas.
+
+## 11.2. Identidad arquitectónica
+
+Cada civilización podrá desarrollar una identidad arquitectónica propia.
+
+Sin embargo, las culturas no estarán completamente aisladas.
+
+El comercio, las migraciones, las conquistas y los intercambios culturales podrán producir influencias arquitectónicas.
+
+## 11.3. Intercambio de estilos
+
+Las civilizaciones podrán adoptar:
+- Técnicas constructivas.
+- Materiales.
+- Diseños.
+- Decoraciones.
+- Estilos religiosos.
+- Elementos arquitectónicos.
+
+La adopción dependerá de las condiciones culturales, políticas, tecnológicas y económicas.
+
+## 11.4. Diferencias sociales
+
+La riqueza y la posición social se reflejarán en la arquitectura.
+
+Podrán existir diferencias entre:
+- Viviendas humildes.
+- Viviendas familiares.
+- Casas de artesanos.
+- Residencias de comerciantes.
+- Viviendas de clases acomodadas.
+- Palacios.
+- Edificios públicos.
+- Monumentos religiosos.
+
+Estas diferencias evolucionarán históricamente.
+
+---
+
+# 12. Terreno y adaptación ambiental
+
+## 12.1. Adaptación al terreno
+
+Los edificios podrán adaptarse parcialmente a terrenos irregulares.
+
+Se contemplan:
+- Construcciones sobre pendientes.
+- Plataformas.
+- Terrazas.
+- Escalones.
+- Fundaciones adaptadas.
+- Estructuras elevadas.
+
+Las posibilidades dependerán de la tecnología y las características de cada construcción.
+
+## 12.2. Modificación del terreno
+
+El jugador podrá modificar el terreno mediante obras.
+
+Por ejemplo:
+- Nivelación.
+- Excavación.
+- Relleno.
+- Terrazas.
+- Plataformas.
+- Modificación de pendientes.
+- Recuperación de terrenos inundables.
+- Ganancia de terreno sobre el agua.
+
+Estas acciones tendrán costos y limitaciones.
+
+## 12.3. Adaptación climática
+
+La arquitectura podrá reflejar las condiciones ambientales.
+
+Ejemplos:
+- Techos inclinados en regiones lluviosas.
+- Construcciones adaptadas al calor.
+- Protección contra vientos.
+- Aislamiento en regiones frías.
+- Elevación de viviendas en zonas inundables.
+
+En la primera etapa, la adaptación tendrá principalmente consecuencias visuales, con posibilidad de incorporar efectos funcionales más profundos.
+
+## 12.4. Desastres naturales
+
+Los edificios podrán verse afectados por:
+- Incendios.
+- Terremotos.
+- Inundaciones.
+- Tormentas.
+- Otros fenómenos naturales.
+
+Los desastres podrán causar daños, destrucción y deterioro.
+
+El jugador podrá deshabilitar los desastres naturales desde la configuración de la partida.
+
+---
+
+# 13. Deterioro, abandono y ruinas
+
+Las construcciones necesitarán mantenimiento.
+
+Cuando un edificio no pueda sostenerse económicamente, podrá deteriorarse progresivamente.
+
+## 13.1. Causas del deterioro
+
+- Falta de mantenimiento.
+- Falta de recursos.
+- Abandono.
+- Daños estructurales.
+- Desastres naturales.
+- Envejecimiento de materiales.
+- Obsolescencia funcional.
+
+## 13.2. Estados de conservación
+
+Un edificio podrá atravesar distintos estados:
+
+1. Excelente.
+2. Bueno.
+3. Deteriorado.
+4. Muy deteriorado.
+5. Abandonado.
+6. Ruina.
+
+## 13.3. Edificios abandonados
+
+Las construcciones que no tengan utilidad o no puedan sostener sus costos podrán quedar abandonadas.
+
+El sistema deberá contemplar situaciones donde el jugador decida no mantener un edificio costoso que ya no cumple una función importante.
+
+## 13.4. Ruinas
+
+Las ruinas serán elementos persistentes del paisaje.
+
+Podrán:
+- Permanecer durante siglos.
+- Convertirse en parte del patrimonio histórico.
+- Ser recuperadas.
+- Ser reconstruidas.
+- Ser demolidas.
+- Ser reutilizadas como materiales.
+
+Su presencia también podrá influir sobre la belleza y la identidad de determinadas zonas.
+
+---
+
+# 14. Demolición, traslado y conservación
+
+## 14.1. Demolición
+
+El jugador podrá demoler construcciones, pero hacerlo tendrá costos y consecuencias.
+
+Posibles consecuencias:
+- Costos de demolición.
+- Recuperación parcial de materiales.
+- Pérdida de patrimonio.
+- Modificación de la belleza.
+- Impacto cultural.
+- Descontento de determinados grupos.
+
+## 14.2. Traslado
+
+Algunos edificios podrán trasladarse.
+
+El sistema contemplará:
+- Edificios pequeños.
+- Construcciones desmontables.
+- Estructuras transportables.
+- Edificios que puedan trasladarse mediante técnicas especializadas.
+
+El traslado tendrá costos y limitaciones.
+
+## 14.3. Patrimonio histórico
+
+Los edificios podrán adquirir valor patrimonial.
+
+Su importancia dependerá de:
+- Antigüedad.
+- Acontecimientos históricos.
+- Relevancia religiosa.
+- Importancia cultural.
+- Valor arquitectónico.
+- Significado para la población.
+
+## 14.4. Áreas históricas protegidas
+
+El jugador podrá definir áreas históricas.
+
+Dentro de estas áreas podrá establecer reglas de conservación:
+- Prohibir demoliciones.
+- Impedir modificaciones arquitectónicas.
+- Restringir ampliaciones.
+- Conservar materiales y estilos.
+- Limitar nuevas construcciones.
+- Permitir restauraciones controladas.
+
+El objetivo es que el jugador pueda preservar sectores completos de la ciudad.
+
+La protección histórica será una decisión del jugador, no una imposición general del sistema.
+
+---
+
+# 15. Herramientas de construcción
+
+La interfaz inicial tendrá una complejidad intermedia.
+
+Se priorizará la facilidad de uso sin renunciar a herramientas útiles.
+
+## 15.1. Herramientas iniciales
+
+- Colocación de edificios.
+- Rotación.
+- Alineación.
+- Cuadrícula opcional.
+- Selección múltiple.
+- Copiar y pegar.
+- Demolición.
+- Construcción de caminos.
+- Herramientas de conexión.
+- Guardado de planos.
+- Reutilización de diseños.
+
+## 15.2. Planos y diseños
+
+El jugador podrá guardar configuraciones de edificios y estructuras.
+
+Ejemplos:
+- Granjas.
+- Barrios.
+- Mercados.
+- Complejos productivos.
+- Fortificaciones.
+- Conjuntos residenciales.
+
+Estos diseños podrán reutilizarse y adaptarse.
+
+## 15.3. Evolución de las herramientas
+
+Las herramientas podrán ampliarse con el tiempo, incorporando funcionalidades urbanísticas más avanzadas.
+
+---
+
+# 16. Cámara y visualización
+
+La cámara deberá permitir observar la ciudad desde diferentes perspectivas.
+
+## 16.1. Modos de cámara
+
+- Vista general.
+- Vista isométrica.
+- Cámara libre.
+- Rotación.
+- Zoom.
+- Vista cercana.
+- Vista a nivel de calle.
+
+## 16.2. Nivel de detalle
+
+El nivel de detalle cambiará según la distancia de observación.
+
+A corta distancia:
+- Detalles arquitectónicos.
+- Ciudadanos.
+- Mobiliario.
+- Animaciones.
+- Actividades cotidianas.
+
+A media distancia:
+- Edificios.
+- Barrios.
+- Calles.
+- Infraestructura.
+
+A gran distancia:
+- Silueta urbana.
+- Densidad.
+- Distribución de barrios.
+- Evolución general de la ciudad.
+
+La transición deberá ser fluida y mantener la identidad visual del asentamiento.
+
+---
+
+# 17. Escala y rendimiento
+
+El sistema deberá soportar asentamientos de diferentes dimensiones.
+
+Desde pequeñas aldeas hasta grandes ciudades.
+
+## 17.1. Escalabilidad
+
+Se contemplan:
+- Aldeas de decenas de habitantes.
+- Pueblos de cientos.
+- Ciudades de miles.
+- Grandes centros urbanos de decenas o cientos de miles.
+
+## 17.2. Simulación agregada
+
+Para evitar problemas de rendimiento, se combinarán diferentes niveles de simulación.
+
+Los edificios cercanos y relevantes podrán tener mayor detalle.
+
+Los sectores alejados podrán utilizar representaciones simplificadas.
+
+La misma filosofía se aplicará a los ciudadanos y a los procesos urbanos.
+
+## 17.3. Escalabilidad visual
+
+El nivel de detalle deberá adaptarse a la cámara y a la importancia de los elementos.
+
+La ciudad deberá seguir siendo visualmente atractiva tanto cuando se observa una vivienda como cuando se contempla una metrópolis completa.
+
+---
+
+# 18. Configuración de complejidad
+
+El sistema permitirá configurar el nivel de intervención del jugador.
+
+## 18.1. Nivel básico
+
+- Crecimiento urbano principalmente automático.
+- Influencia simplificada de los edificios.
+- Infraestructura con pocos parámetros.
+- Construcción sencilla.
+- Gestión reducida de mantenimiento.
+- Belleza calculada automáticamente.
+
+## 18.2. Nivel intermedio
+
+- Mayor control de barrios.
+- Gestión de mantenimiento.
+- Mejoras de infraestructura.
+- Control de áreas históricas.
+- Indicadores de belleza local y global.
+- Mayor influencia sobre el crecimiento urbano.
+
+## 18.3. Nivel avanzado
+
+- Planificación urbana detallada.
+- Control avanzado de infraestructura.
+- Gestión de densidad.
+- Regulaciones de construcción.
+- Influencia detallada de edificios.
+- Gestión patrimonial.
+- Análisis de congestión y capacidad.
+- Control de expansión urbana.
+
+Los diferentes niveles deberán mantener las mismas reglas fundamentales. La diferencia estará en el grado de control y detalle que se presenta al jugador.
+
+---
+
+# 19. Integración con otros sistemas
+
+El Sistema de Construcción y Arquitectura estará conectado con:
+
+**Economía**
+- Costos.
+- Materiales.
+- Mantenimiento.
+- Propiedad.
+- Inversión.
+- Patrimonio.
+
+**Producción y trabajo**
+- Mano de obra.
+- Profesiones.
+- Materiales.
+- Herramientas.
+- Construcción de instalaciones productivas.
+
+**Población**
+- Viviendas.
+- Densidad.
+- Barrios.
+- Necesidades.
+- Crecimiento orgánico.
+
+**Tecnología**
+- Nuevos materiales.
+- Nuevas técnicas.
+- Arquitectura vertical.
+- Infraestructura avanzada.
+
+**Cultura y religión**
+- Estilos arquitectónicos.
+- Monumentos.
+- Templos.
+- Patrimonio.
+- Identidad urbana.
+
+**Política**
+- Regulaciones.
+- Protección histórica.
+- Planificación urbana.
+- Inversión pública.
+
+**Medioambiente**
+- Terreno.
+- Clima.
+- Recursos.
+- Desastres.
+- Contaminación.
+
+---
+
+# 20. MVP — Primera versión jugable
+
+El objetivo del MVP no será implementar toda la complejidad del sistema, sino construir una base técnica que permita evolucionar hacia ella.
+
+## 20.1. Funcionalidades iniciales
+
+- Construcción libre.
+- Cuadrícula opcional.
+- Rotación.
+- Construcción mediante trabajadores y materiales.
+- Caminos básicos.
+- Viviendas.
+- Edificios productivos.
+- Almacenes.
+- Materiales de construcción.
+- Demolición.
+- Mantenimiento básico.
+- Mejoras de edificios.
+- Ampliaciones modulares sencillas.
+- Belleza local y global simplificada.
+- Cámara con zoom y rotación.
+
+## 20.2. Edificios iniciales
+
+- Vivienda.
+- Recolector.
+- Leñador.
+- Cantera.
+- Granja.
+- Molino.
+- Panadería.
+- Almacén.
+
+## 20.3. Materiales iniciales
+
+- Madera.
+- Piedra.
+- Barro.
+- Paja.
+
+## 20.4. Escenario de prueba
+
+Una aldea inicial de aproximadamente 30 habitantes.
+
+El jugador deberá poder:
+1. Seleccionar un terreno.
+2. Construir viviendas.
+3. Construir instalaciones productivas.
+4. Crear caminos.
+5. Asignar trabajadores.
+6. Obtener materiales.
+7. Ampliar construcciones.
+8. Mejorar edificios.
+9. Observar cómo evoluciona visualmente el asentamiento.
+
+La arquitectura técnica deberá contemplar desde el comienzo la evolución histórica de los edificios, aunque el MVP implemente pocas variantes.
+
+---
+
+# 21. Principios técnicos y de diseño
+
+1. Los edificios deberán estar preparados para múltiples variantes visuales y funcionales.
+2. Las mejoras deberán ser configurables y no depender de reemplazar necesariamente el edificio original.
+3. Las construcciones históricas deberán poder conservarse.
+4. Las ampliaciones deberán integrarse con la estructura existente.
+5. Los materiales y estilos deberán poder combinarse según reglas históricas y culturales.
+6. La simulación deberá soportar diferentes escalas de ciudades.
+7. La belleza deberá poder calcularse tanto localmente como globalmente.
+8. Las herramientas de construcción deberán ser independientes de la complejidad de simulación.
+9. El sistema deberá permitir incorporar nuevas épocas sin rediseñar su arquitectura central.
+10. La evolución visual deberá ser una prioridad desde las primeras etapas de desarrollo.
+
+---
+
+# 22. Decisiones confirmadas
+
+| Tema | Decisión |
+|---|---|
+| Construcción | Libre con cuadrícula opcional |
+| Rotación | Libre y por intervalos |
+| Dimensiones | Variables en determinados edificios |
+| Decoración | Personalización profunda |
+| Proceso de obra | Construcción mediante trabajadores y materiales |
+| Construcción por etapas | Sí, con evolución progresiva |
+| Mano de obra | Modelo mixto y evolutivo |
+| Falta de materiales | La obra se detiene y busca alternativas |
+| Evolución arquitectónica | Decisión del jugador |
+| Transformaciones | Desde pequeñas hasta radicales |
+| Conservación histórica | Edificios históricos protegibles |
+| Edificios obsoletos | Pueden seguir funcionando |
+| Abandono | Deterioro y posibilidad de ruinas |
+| Materiales | Funcionales y estéticos |
+| Disponibilidad regional | Comercio permite compensar limitaciones |
+| Materiales alternativos | Sí, en determinados edificios |
+| Técnicas antiguas | Pueden conservarse |
+| Arquitectura vertical | Evolución histórica |
+| Alturas | Influencia del jugador |
+| Crecimiento urbano | Mixto, orientado por el jugador |
+| Barrios | Desarrollo orgánico |
+| Densidad | Mecánica importante |
+| Influencia urbana | Configurable |
+| Centros históricos | Libres para modificar |
+| Infraestructura | Amplia y evolutiva |
+| Caminos | Trazado libre con conexiones automáticas |
+| Evolución de caminos | Principalmente automática |
+| Capacidad de infraestructura | Simulación simplificada |
+| Estilos arquitectónicos | Cultura, geografía, época y otros factores |
+| Intercambio cultural | Sí, condicionado |
+| Diferencias sociales | Reflejadas en la arquitectura |
+| Terreno | Adaptación parcial |
+| Modificación del terreno | Con costos y límites |
+| Clima | Principalmente visual inicialmente |
+| Desastres | Configurables y deshabilitables |
+| Demolición | Libre con costos y consecuencias |
+| Traslado | Permitido con limitaciones |
+| Patrimonio | Sistema de protección histórica |
+| Herramientas | Complejidad intermedia inicialmente |
+| Planos | Sí |
+| Copiar y pegar | Sí |
+| Cámara | Múltiples perspectivas |
+| Escala | Desde aldeas hasta grandes ciudades |
+| Rendimiento | Simulación agregada |
+| Complejidad | Configurable |
+| Experiencia principal | Civilización integrada |
+
+---
+
+# 23. Temas para profundizar durante el desarrollo
+
+Los siguientes aspectos quedan abiertos a una especificación posterior:
+
+- Cálculo matemático de belleza.
+- Sistema de valoración patrimonial.
+- Reglas de protección de áreas históricas.
+- Algoritmos de crecimiento orgánico.
+- Generación automática de barrios.
+- Reglas de evolución arquitectónica por civilización.
+- Sistema de adaptación de edificios al terreno.
+- Capacidad y congestión de infraestructura.
+- Gestión de materiales alternativos.
+- Modelado de transformaciones visuales.
+- Rendimiento de grandes ciudades.
+- Generación de ruinas y restauraciones.
+
+---
+
+# 24. Visión final
+
+La construcción y la arquitectura deben convertirse en uno de los elementos más memorables de la experiencia.
+
+El jugador no debería sentir que está colocando edificios de diferentes épocas.
+
+Debería sentir que está construyendo una civilización.
+
+Una ciudad que comenzó con unas pocas viviendas puede convertirse en una metrópolis con barrios históricos, grandes avenidas, templos, monumentos, edificios modernos y construcciones que sobrevivieron a siglos de transformaciones.
+
+El jugador debe poder decidir si quiere modernizar su ciudad, conservar su arquitectura tradicional o combinar ambas cosas.
+
+Una antigua vivienda puede convertirse en un edificio moderno, pero también puede permanecer intacta durante mil años porque el jugador decidió preservarla.
+
+Las ruinas, los barrios antiguos y las construcciones históricas no serán elementos decorativos sin significado: serán parte de la identidad de la civilización.
+
+**La ciudad debe contar su propia historia. Y esa historia debe ser la historia del jugador.**

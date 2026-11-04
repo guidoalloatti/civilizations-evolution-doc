@@ -1,0 +1,1378 @@
+# GDD — Sistema de Población y Sociedad
+## Versión 0.1 — Documento de diseño conceptual
+
+# 1. Visión general
+
+El Sistema de Población y Sociedad define cómo viven, se reproducen, trabajan, aprenden, se relacionan y evolucionan los habitantes de una civilización.
+
+La población no será simplemente un número que aumenta o disminuye. Será el componente humano de la simulación.
+
+El jugador comenzará con una pequeña comunidad donde podrá observar individuos, familias y relaciones personales. A medida que la civilización crezca, la sociedad se volverá más compleja y comenzará a organizarse en grupos, clases sociales, instituciones y movimientos colectivos.
+
+El jugador pasará progresivamente de gestionar una comunidad a dirigir una sociedad compleja.
+
+## 1.1. Principios fundamentales
+
+1. La población estará formada por individuos con características propias.
+2. Las familias serán unidades sociales fundamentales.
+3. Cada individuo tendrá un ciclo de vida.
+4. La demografía responderá a condiciones económicas, sociales, sanitarias y culturales.
+5. Las necesidades evolucionarán históricamente.
+6. La sociedad desarrollará clases, profesiones, culturas y grupos de interés.
+7. Existirá movilidad social, condicionada por las características de cada sociedad.
+8. La educación y el conocimiento impulsarán el desarrollo.
+9. La religión y la cultura influirán sobre las costumbres y las relaciones sociales.
+10. La migración podrá transformar la composición de la población.
+11. Los grupos sociales tendrán intereses propios y capacidad de organización.
+12. La sociedad adquirirá autonomía progresivamente.
+13. El jugador podrá intervenir mediante políticas, instituciones y decisiones.
+14. La complejidad será configurable.
+15. La evolución social será libre, pero deberá mantener coherencia histórica.
+
+---
+
+# 2. Individuos y modelo poblacional
+
+## 2.1. Individuos
+
+Cada individuo tendrá información propia.
+
+Entre sus características se contemplan:
+
+- Nombre y apellido.
+- Edad.
+- Sexo.
+- Familia.
+- Relaciones familiares.
+- Profesión principal.
+- Habilidades secundarias.
+- Experiencia.
+- Nivel económico.
+- Salud.
+- Educación.
+- Religión.
+- Cultura.
+- Origen.
+- Opiniones políticas.
+- Personalidad.
+- Felicidad.
+- Satisfacción.
+- Condiciones de vida.
+
+La información disponible y su importancia dependerán del período histórico y del nivel de simulación.
+
+## 2.2. Ciclo de vida
+
+Cada individuo tendrá un ciclo de vida:
+
+1. Nacimiento.
+2. Infancia.
+3. Crecimiento.
+4. Educación y aprendizaje.
+5. Incorporación al trabajo.
+6. Formación de relaciones.
+7. Formación de una familia.
+8. Madurez.
+9. Envejecimiento.
+10. Muerte.
+
+La duración de cada etapa dependerá de las condiciones demográficas de la sociedad.
+
+## 2.3. Individualidad y protagonismo
+
+La importancia de los individuos evolucionará con la civilización.
+
+En sociedades pequeñas:
+- Los individuos serán visibles.
+- Tendrán relaciones identificables.
+- Sus habilidades tendrán impacto directo.
+- Las familias serán fácilmente reconocibles.
+- La pérdida de un individuo podrá tener consecuencias importantes.
+
+En sociedades grandes:
+- La simulación individual perderá protagonismo.
+- Los individuos se agruparán en sectores.
+- Las estadísticas colectivas serán más importantes.
+- Los grupos sociales tendrán representantes.
+- El jugador se concentrará en tendencias e intereses colectivos.
+
+## 2.4. Modelo híbrido de simulación
+
+El sistema combinará simulación individual y agregada.
+
+**Pequeñas comunidades**
+
+Simulación detallada de individuos y familias.
+
+**Asentamientos medianos**
+
+Individuos identificables, con determinadas actividades agrupadas.
+
+**Grandes ciudades**
+
+Mayor representación por familias, profesiones, sectores y clases sociales.
+
+**Civilizaciones extensas**
+
+Simulación agregada de grupos poblacionales, regiones e instituciones.
+
+La transición deberá ser progresiva y transparente para el jugador.
+
+El objetivo es preservar la profundidad histórica sin exigir simulación individual completa de cientos de miles de habitantes.
+
+---
+
+# 3. Familias y estructura demográfica
+
+## 3.1. Familias como entidades
+
+Las familias serán entidades propias dentro del sistema social.
+
+Podrán tener:
+- Integrantes.
+- Relaciones familiares.
+- Generaciones.
+- Vivienda.
+- Patrimonio.
+- Profesiones.
+- Nivel económico.
+- Identidad cultural.
+- Tradiciones.
+- Linajes.
+
+Las familias podrán tener continuidad durante generaciones.
+
+## 3.2. Hogares
+
+La composición de las viviendas dependerá de:
+- Cultura.
+- Época.
+- Nivel económico.
+- Tipo de vivienda.
+- Costumbres familiares.
+- Condiciones demográficas.
+
+Podrán existir:
+- Hogares individuales.
+- Familias nucleares.
+- Familias extendidas.
+- Familias multigeneracionales.
+- Hogares compartidos.
+
+## 3.3. Formación de nuevas familias
+
+Los individuos podrán formar nuevas familias automáticamente.
+
+El proceso estará condicionado por:
+- Edad.
+- Cultura.
+- Tradiciones.
+- Situación económica.
+- Disponibilidad de vivienda.
+- Relaciones personales.
+- Condiciones sociales.
+
+El jugador podrá influir indirectamente mediante políticas y condiciones de vida.
+
+## 3.4. Natalidad
+
+La natalidad dependerá de múltiples factores:
+
+- Edad de la población.
+- Estructura familiar.
+- Cultura.
+- Religión.
+- Alimentación.
+- Salud.
+- Condiciones económicas.
+- Disponibilidad de vivienda.
+- Educación.
+- Políticas gubernamentales.
+
+El sistema deberá permitir que las civilizaciones desarrollen diferentes patrones demográficos.
+
+## 3.5. Mortalidad
+
+La mortalidad estará influenciada por:
+- Edad.
+- Enfermedades.
+- Alimentación.
+- Higiene.
+- Condiciones sanitarias.
+- Guerras.
+- Accidentes.
+- Desastres.
+- Calidad de vida.
+
+La mortalidad infantil y la esperanza de vida evolucionarán históricamente.
+
+## 3.6. Transición demográfica
+
+La sociedad podrá atravesar diferentes etapas demográficas.
+
+Por ejemplo:
+- Alta natalidad y mortalidad.
+- Reducción de la mortalidad.
+- Crecimiento poblacional acelerado.
+- Reducción de la natalidad.
+- Envejecimiento poblacional.
+- Estabilización demográfica.
+
+Estas transformaciones no estarán predeterminadas por una secuencia obligatoria.
+
+## 3.7. Políticas demográficas
+
+El jugador podrá implementar políticas orientadas a modificar las tendencias demográficas.
+
+Ejemplos:
+- Incentivos familiares.
+- Ayudas económicas.
+- Acceso a vivienda.
+- Mejoras sanitarias.
+- Educación.
+- Políticas migratorias.
+- Apoyo a la infancia.
+- Programas sociales.
+
+Las políticas tendrán costos y consecuencias no siempre inmediatas.
+
+---
+
+# 4. Necesidades de la población
+
+Las necesidades serán uno de los principales motores de la simulación.
+
+No serán estáticas: evolucionarán junto con la complejidad de la civilización.
+
+## 4.1. Categorías de necesidades
+
+Se contemplan cinco grandes categorías.
+
+**Necesidades básicas**
+- Alimentación.
+- Agua.
+- Vivienda.
+- Vestimenta.
+- Descanso.
+- Protección.
+
+**Necesidades sociales**
+- Familia.
+- Relaciones personales.
+- Vida comunitaria.
+- Seguridad.
+- Integración social.
+- Reconocimiento.
+
+**Necesidades culturales**
+- Arte.
+- Música.
+- Tradiciones.
+- Educación.
+- Festividades.
+- Actividades culturales.
+
+**Necesidades religiosas y espirituales**
+- Prácticas religiosas.
+- Espacios de culto.
+- Rituales.
+- Celebraciones.
+- Identidad espiritual.
+
+**Necesidades de bienestar y desarrollo**
+- Salud.
+- Higiene.
+- Entretenimiento.
+- Libertad.
+- Participación.
+- Servicios.
+- Comodidad.
+
+## 4.2. Evolución histórica
+
+Las necesidades evolucionarán con:
+- Tecnología.
+- Cultura.
+- Educación.
+- Religión.
+- Organización social.
+- Tipo de gobierno.
+- Desarrollo económico.
+- Condiciones históricas.
+
+Una comunidad primitiva tendrá necesidades relativamente simples.
+
+Una sociedad avanzada desarrollará expectativas mucho más complejas.
+
+Las necesidades básicas continuarán existiendo, pero se incorporarán nuevas dimensiones de bienestar.
+
+## 4.3. Necesidades individuales y colectivas
+
+En comunidades pequeñas, las necesidades podrán calcularse individualmente.
+
+A medida que la sociedad crezca, se utilizarán grupos poblacionales.
+
+Los grupos podrán compartir determinadas necesidades y expectativas, sin perder completamente la diversidad individual.
+
+## 4.4. Necesidades insatisfechas
+
+Las necesidades insatisfechas podrán producir consecuencias según su gravedad y duración.
+
+Ejemplos:
+- Reducción de felicidad.
+- Menor productividad.
+- Enfermedades.
+- Migración.
+- Conflictos.
+- Protestas.
+- Inestabilidad social.
+
+No todas las necesidades tendrán las mismas consecuencias.
+
+## 4.5. Necesidades básicas y bienestar
+
+Las necesidades se diferenciarán entre:
+- Supervivencia.
+- Seguridad y estabilidad.
+- Integración social.
+- Desarrollo personal.
+- Bienestar avanzado.
+
+La supervivencia tendrá prioridad en las primeras etapas históricas.
+
+A medida que se satisfagan las necesidades básicas, otras adquirirán mayor importancia.
+
+---
+
+# 5. Felicidad, satisfacción y calidad de vida
+
+## 5.1. Felicidad individual
+
+Los individuos tendrán un indicador propio de felicidad.
+
+Este dependerá de:
+- Alimentación.
+- Vivienda.
+- Salud.
+- Seguridad.
+- Ingresos.
+- Trabajo.
+- Familia.
+- Relaciones sociales.
+- Belleza del entorno.
+- Educación.
+- Religión.
+- Cultura.
+- Libertad.
+- Entretenimiento.
+- Estabilidad política.
+
+La importancia relativa de cada factor dependerá de la cultura, época y características individuales.
+
+## 5.2. Felicidad de la sociedad
+
+Las sociedades tendrán indicadores agregados de felicidad y satisfacción.
+
+En ciudades grandes, la felicidad individual dejará de ser un indicador central para la gestión del jugador.
+
+Se utilizarán estadísticas colectivas.
+
+## 5.3. Expectativas
+
+Las personas tendrán expectativas diferentes.
+
+Estas dependerán de:
+- Clase social.
+- Cultura.
+- Educación.
+- Riqueza.
+- Época.
+- Religión.
+- Condiciones de vida.
+
+Una persona puede estar satisfecha con condiciones que otra considera insuficientes.
+
+## 5.4. Calidad de vida
+
+Existirá un indicador general de calidad de vida.
+
+Podrá integrar:
+- Salud.
+- Ingresos.
+- Educación.
+- Vivienda.
+- Seguridad.
+- Bienestar.
+- Acceso a servicios.
+
+También existirán indicadores individuales para analizar sus componentes.
+
+## 5.5. Desigualdad
+
+La desigualdad tendrá influencia moderada sobre la satisfacción general.
+
+No obstante, podrá generar tensiones sociales cuando se combine con:
+- Pobreza.
+- Falta de oportunidades.
+- Privilegios.
+- Discriminación.
+- Inestabilidad.
+- Diferencias extremas en las condiciones de vida.
+
+---
+
+# 6. Clases sociales y estratificación
+
+Las clases sociales representarán las diferencias económicas, políticas y culturales de la población.
+
+Su estructura evolucionará según la época y las características de cada civilización.
+
+## 6.1. Clases sociales posibles
+
+Entre otras:
+- Esclavos y personas dependientes.
+- Campesinos.
+- Artesanos.
+- Comerciantes.
+- Trabajadores.
+- Militares.
+- Clero.
+- Nobleza.
+- Burguesía.
+- Funcionarios.
+- Empresarios.
+- Profesionales.
+- Élites económicas.
+
+No todas existirán en todas las sociedades.
+
+## 6.2. Formación de clases
+
+Las clases surgirán de la evolución económica, política y social.
+
+No serán categorías completamente predeterminadas.
+
+## 6.3. Movilidad social
+
+Los individuos podrán cambiar de posición social.
+
+La movilidad estará condicionada por:
+- Educación.
+- Riqueza.
+- Profesión.
+- Herencia.
+- Cultura.
+- Leyes.
+- Estructura política.
+- Oportunidades económicas.
+- Instituciones.
+
+Algunas sociedades tendrán mayor movilidad que otras.
+
+## 6.4. Intereses colectivos
+
+Las clases sociales tendrán intereses propios.
+
+Ejemplos:
+
+**Campesinos**
+- Acceso a tierras.
+- Seguridad.
+- Menores impuestos.
+- Estabilidad productiva.
+
+**Comerciantes**
+- Libertad comercial.
+- Infraestructura.
+- Seguridad de rutas.
+- Estabilidad monetaria.
+
+**Artesanos**
+- Acceso a materiales.
+- Protección de oficios.
+- Mercados.
+- Formación profesional.
+
+**Trabajadores**
+- Salarios.
+- Condiciones laborales.
+- Seguridad.
+- Protección social.
+
+**Nobleza**
+- Privilegios.
+- Propiedad.
+- Influencia política.
+- Continuidad de sus derechos.
+
+**Clero**
+- Libertad religiosa.
+- Recursos.
+- Influencia cultural.
+- Autonomía institucional.
+
+Los intereses podrán cambiar históricamente.
+
+## 6.5. Representación política
+
+Los grupos podrán tener representación política dependiendo del tipo de gobierno.
+
+Podrán influir sobre:
+- Decisiones gubernamentales.
+- Reformas.
+- Impuestos.
+- Leyes.
+- Distribución de recursos.
+- Conflictos sociales.
+
+---
+
+# 7. Salud y medicina
+
+La salud será un componente fundamental del desarrollo de la civilización.
+
+## 7.1. Salud individual
+
+Cada individuo tendrá un estado sanitario simplificado o detallado según el nivel de simulación.
+
+## 7.2. Factores sanitarios
+
+La salud dependerá de:
+- Alimentación.
+- Agua.
+- Higiene.
+- Vivienda.
+- Condiciones laborales.
+- Contaminación.
+- Medicina.
+- Educación.
+- Clima.
+- Densidad urbana.
+
+## 7.3. Enfermedades
+
+El sistema contemplará enfermedades, inicialmente mediante indicadores poblacionales y eventos sanitarios.
+
+La simulación podrá representar:
+- Enfermedades comunes.
+- Enfermedades endémicas.
+- Enfermedades contagiosas.
+- Epidemias.
+- Problemas derivados de deficiencias nutricionales.
+- Enfermedades asociadas al trabajo y al entorno.
+
+## 7.4. Epidemias
+
+Las epidemias podrán generar impactos demográficos, económicos y sociales.
+
+Su intensidad será configurable.
+
+## 7.5. Medicina e instituciones sanitarias
+
+La medicina evolucionará históricamente.
+
+Podrán desarrollarse:
+- Curanderos.
+- Sanadores.
+- Médicos.
+- Centros de atención.
+- Hospitales.
+- Instituciones sanitarias.
+- Sistemas públicos de salud.
+
+## 7.6. Políticas sanitarias
+
+El jugador podrá desarrollar políticas como:
+- Agua potable.
+- Higiene urbana.
+- Limpieza.
+- Cuarentenas.
+- Hospitales.
+- Campañas sanitarias.
+- Sistemas de alcantarillado.
+- Prevención de enfermedades.
+
+Estas políticas tendrán costos y efectos sobre la población.
+
+---
+
+# 8. Educación y conocimiento
+
+La educación será uno de los motores fundamentales del progreso social y tecnológico.
+
+## 8.1. Transmisión del conocimiento
+
+El conocimiento podrá transmitirse mediante:
+- Familia.
+- Maestros.
+- Artesanos.
+- Aprendizaje laboral.
+- Escuelas.
+- Instituciones religiosas.
+- Universidades.
+- Academias.
+- Centros científicos.
+
+Cada forma tendrá relevancia según la época.
+
+## 8.2. Niveles educativos
+
+Se contemplan:
+- Educación básica.
+- Educación técnica.
+- Educación superior.
+- Investigación científica.
+
+Su disponibilidad dependerá de la tecnología, la cultura y la organización social.
+
+## 8.3. Acceso a la educación
+
+El acceso dependerá de:
+- Recursos disponibles.
+- Instituciones.
+- Políticas públicas.
+- Cultura.
+- Clase social.
+- Religión.
+- Tipo de gobierno.
+
+El jugador podrá ampliar el acceso mediante políticas e inversión.
+
+## 8.4. Educación y movilidad social
+
+La educación podrá permitir que personas de origen humilde accedan a nuevas profesiones y posiciones sociales.
+
+Su influencia estará condicionada por las oportunidades y restricciones de cada sociedad.
+
+## 8.5. Alfabetización
+
+La alfabetización será una variable poblacional.
+
+Su evolución dependerá de:
+- Instituciones educativas.
+- Cultura.
+- Tecnología.
+- Religión.
+- Gobierno.
+- Acceso a materiales de escritura.
+- Desarrollo económico.
+
+---
+
+# 9. Cultura e identidad
+
+La cultura será una característica dinámica de cada civilización.
+
+## 9.1. Componentes culturales
+
+Se contemplan:
+- Idioma.
+- Gastronomía.
+- Vestimenta.
+- Arquitectura.
+- Música.
+- Arte.
+- Tradiciones.
+- Costumbres.
+- Valores sociales.
+- Festividades.
+- Organización familiar.
+- Rituales.
+
+## 9.2. Evolución cultural
+
+Las culturas podrán evolucionar mediante:
+- Cambios sociales.
+- Tecnología.
+- Educación.
+- Migración.
+- Comercio.
+- Conquista.
+- Intercambio cultural.
+- Reformas políticas.
+- Transformaciones religiosas.
+
+Los cambios podrán producirse mediante acontecimientos y procesos graduales.
+
+## 9.3. Integración cultural
+
+Los individuos de origen extranjero podrán adoptar progresivamente la cultura local.
+
+La integración dependerá de:
+- Tiempo de residencia.
+- Relaciones sociales.
+- Educación.
+- Matrimonios.
+- Instituciones.
+- Políticas.
+- Aceptación social.
+
+La integración no implicará necesariamente la desaparición de las identidades originales.
+
+## 9.4. Tradiciones
+
+Las tradiciones podrán sobrevivir durante siglos.
+
+Algunas permanecerán prácticamente intactas, mientras otras evolucionarán o desaparecerán.
+
+## 9.5. Identidad civilizatoria
+
+La identidad cultural de una civilización podrá transformarse profundamente sin desaparecer.
+
+El jugador podrá observar la continuidad y los cambios de las costumbres a lo largo de generaciones.
+
+---
+
+# 10. Religión y espiritualidad
+
+La religión tendrá una dimensión espiritual, cultural, social, política y económica.
+
+## 10.1. Creencias individuales
+
+Los individuos podrán tener diferentes creencias dentro de una misma sociedad.
+
+Podrá existir una religión predominante y otras minoritarias.
+
+## 10.2. Pluralidad religiosa
+
+La coexistencia religiosa dependerá de:
+- Cultura.
+- Políticas.
+- Gobierno.
+- Instituciones.
+- Tradiciones.
+- Relaciones entre comunidades.
+
+Podrá producir convivencia, cooperación, tensiones o conflictos.
+
+## 10.3. Influencia cotidiana
+
+La religión podrá influir sobre:
+- Alimentación.
+- Vestimenta.
+- Matrimonios.
+- Festividades.
+- Educación.
+- Trabajo.
+- Costumbres.
+- Leyes.
+- Organización familiar.
+
+La intensidad dependerá de la época y la sociedad.
+
+## 10.4. Secularización
+
+Las sociedades podrán desarrollar procesos de secularización.
+
+La religión podrá perder influencia sobre determinadas dimensiones de la vida pública y privada.
+
+La secularización no será una religión ni una creencia uniforme, sino un proceso social y cultural.
+
+---
+
+# 11. Migración y diversidad poblacional
+
+La migración permitirá que la población cambie mediante el movimiento de personas.
+
+## 11.1. Migración interna
+
+Los habitantes podrán trasladarse entre asentamientos y regiones.
+
+Ejemplos:
+- Población rural que migra a ciudades.
+- Trabajadores que se trasladan a regiones productivas.
+- Familias que buscan mejores condiciones de vida.
+
+## 11.2. Inmigración externa
+
+Podrán llegar personas desde otras civilizaciones.
+
+Entre ellas:
+- Comerciantes.
+- Artesanos.
+- Trabajadores.
+- Familias.
+- Refugiados.
+- Especialistas.
+- Grupos religiosos.
+
+## 11.3. Factores de atracción
+
+La migración dependerá de:
+- Empleo.
+- Salarios.
+- Seguridad.
+- Calidad de vida.
+- Libertad religiosa.
+- Oportunidades.
+- Estabilidad política.
+- Belleza urbana.
+- Vivienda.
+- Condiciones económicas.
+
+## 11.4. Políticas migratorias
+
+El jugador podrá establecer políticas migratorias.
+
+Podrá:
+- Favorecer la inmigración.
+- Restringir la entrada.
+- Promover la llegada de trabajadores especializados.
+- Facilitar el asentamiento de familias.
+- Regular la residencia.
+- Establecer requisitos de integración.
+
+La complejidad será configurable.
+
+## 11.5. Diversidad cultural
+
+La presencia de diferentes orígenes podrá generar diversidad cultural.
+
+La diversidad tendrá consecuencias sociales y culturales, que dependerán de las condiciones de integración y convivencia.
+
+---
+
+# 12. Organización social y política
+
+La sociedad no será pasiva.
+
+Los grupos sociales podrán desarrollar intereses, organizarse y ejercer presión sobre las instituciones.
+
+## 12.1. Representantes sociales
+
+Los grupos podrán tener representantes.
+
+Estos expresarán:
+- Demandas.
+- Intereses.
+- Reivindicaciones.
+- Inconformidades.
+- Objetivos colectivos.
+
+## 12.2. Organización colectiva
+
+Los grupos podrán organizarse y actuar colectivamente.
+
+Según la época y la sociedad, podrán surgir:
+- Asociaciones.
+- Consejos.
+- Gremios.
+- Movimientos sociales.
+- Sindicatos.
+- Organizaciones religiosas.
+- Movimientos políticos.
+
+## 12.3. Conflictos sociales
+
+Podrán surgir conflictos relacionados con:
+- Desigualdad.
+- Pobreza.
+- Tierras.
+- Impuestos.
+- Religión.
+- Condiciones laborales.
+- Privilegios.
+- Discriminación.
+- Reformas políticas.
+
+La intensidad dependerá de la gravedad de los problemas y de la capacidad de las instituciones para gestionarlos.
+
+## 12.4. Libertades
+
+La sociedad tendrá diferentes dimensiones de libertad.
+
+Entre otras:
+- Libertad de expresión.
+- Libertad de asociación.
+- Libertad religiosa.
+- Libertad de movimiento.
+- Libertad económica.
+
+Su alcance dependerá del tipo de gobierno y las leyes.
+
+## 12.5. Opiniones políticas
+
+Los individuos y grupos podrán desarrollar preferencias políticas.
+
+En poblaciones pequeñas podrán simularse individualmente.
+
+En sociedades grandes se representarán principalmente mediante grupos sociales.
+
+---
+
+# 13. Seguridad y criminalidad
+
+## 13.1. Criminalidad
+
+La criminalidad se representará inicialmente mediante indicadores agregados.
+
+Podrá incluir delitos individuales y, en etapas avanzadas, organizaciones criminales.
+
+## 13.2. Factores
+
+La criminalidad dependerá de:
+- Pobreza.
+- Desigualdad.
+- Desempleo.
+- Educación.
+- Inestabilidad.
+- Seguridad.
+- Densidad urbana.
+- Condiciones sociales.
+
+## 13.3. Fuerzas de seguridad
+
+La evolución histórica podrá contemplar:
+- Guardias.
+- Patrullas.
+- Milicias urbanas.
+- Autoridades locales.
+- Fuerzas policiales.
+- Instituciones de seguridad modernas.
+
+## 13.4. Seguridad por zonas
+
+Los diferentes barrios podrán tener niveles de seguridad propios.
+
+Esto podrá influir sobre:
+- Calidad de vida.
+- Comercio.
+- Migración.
+- Valor de las propiedades.
+- Felicidad.
+
+## 13.5. Consecuencias
+
+La criminalidad podrá generar consecuencias económicas y sociales.
+
+La simulación será configurable para evitar un exceso de micromanagement.
+
+---
+
+# 14. Evolución histórica de la sociedad
+
+## 14.1. Evolución libre
+
+Las sociedades no estarán obligadas a seguir una secuencia histórica predeterminada.
+
+Podrán desarrollar trayectorias diferentes.
+
+La evolución deberá mantener coherencia con:
+- Tecnología.
+- Geografía.
+- Economía.
+- Cultura.
+- Política.
+- Religión.
+- Demografía.
+
+## 14.2. Cambios graduales
+
+Los cambios sociales normalmente serán graduales.
+
+Sin embargo, determinados acontecimientos podrán acelerarlos.
+
+## 14.3. Acontecimientos transformadores
+
+Entre otros:
+- Revoluciones.
+- Guerras.
+- Epidemias.
+- Migraciones masivas.
+- Crisis económicas.
+- Descubrimientos científicos.
+- Reformas religiosas.
+- Cambios políticos.
+- Revoluciones industriales.
+
+Los acontecimientos podrán modificar la estructura social.
+
+## 14.4. Características sociales únicas
+
+Las civilizaciones podrán desarrollar características particulares.
+
+Por ejemplo:
+- Sociedades comerciales.
+- Sociedades agrícolas.
+- Sociedades militares.
+- Sociedades religiosas.
+- Sociedades científicas.
+- Sociedades jerárquicas.
+- Sociedades igualitarias.
+
+Estas características podrán surgir de las decisiones del jugador y de la evolución de la sociedad.
+
+## 14.5. Continuidad de identidad
+
+Una civilización podrá transformar profundamente su organización social sin perder necesariamente su identidad cultural.
+
+El sistema deberá representar tanto la continuidad como la transformación.
+
+---
+
+# 15. Interfaz y análisis social
+
+El jugador deberá disponer de herramientas para comprender la situación de su población.
+
+## 15.1. Panel general
+
+Se contemplan indicadores como:
+- Población total.
+- Nacimientos.
+- Muertes.
+- Crecimiento.
+- Esperanza de vida.
+- Distribución por edades.
+- Distribución por género.
+- Clases sociales.
+- Profesiones.
+- Educación.
+- Salud.
+- Felicidad.
+- Calidad de vida.
+- Religiones.
+- Culturas.
+- Migración.
+- Desempleo.
+- Desigualdad.
+- Criminalidad.
+
+## 15.2. Grupos sociales
+
+El jugador podrá consultar cada grupo.
+
+Por ejemplo:
+- Cantidad de integrantes.
+- Distribución económica.
+- Necesidades.
+- Felicidad.
+- Intereses.
+- Demandas.
+- Evolución histórica.
+- Influencia política.
+
+## 15.3. Información territorial
+
+Se podrán consultar indicadores por barrios y regiones.
+
+Esto permitirá comparar:
+- Calidad de vida.
+- Salud.
+- Seguridad.
+- Educación.
+- Composición social.
+- Densidad.
+- Distribución económica.
+
+## 15.4. Individuos y familias
+
+En asentamientos pequeños se podrá seleccionar a un individuo o familia y consultar su información.
+
+En sociedades grandes, estas herramientas tendrán un papel secundario frente a las estadísticas agregadas.
+
+---
+
+# 16. Complejidad configurable
+
+El jugador podrá elegir el grado de profundidad de la simulación.
+
+## 16.1. Nivel básico
+
+- Población.
+- Necesidades básicas.
+- Felicidad.
+- Salud simplificada.
+- Crecimiento demográfico.
+- Migración automática.
+
+## 16.2. Nivel intermedio
+
+- Familias.
+- Clases sociales.
+- Educación.
+- Salud.
+- Cultura.
+- Religión.
+- Movilidad social.
+- Grupos sociales.
+
+## 16.3. Nivel avanzado
+
+- Individuos detallados.
+- Linajes.
+- Opiniones políticas.
+- Intereses colectivos.
+- Migración detallada.
+- Movilidad social.
+- Criminalidad.
+- Organización social.
+- Demografía avanzada.
+
+## 16.4. Configuración individual
+
+El jugador podrá habilitar o deshabilitar sistemas específicos.
+
+Por ejemplo:
+- Epidemias.
+- Criminalidad.
+- Simulación individual.
+- Conflictos sociales.
+- Migración avanzada.
+- Determinados eventos demográficos.
+
+La configuración no deberá alterar la coherencia general del juego.
+
+---
+
+# 17. Autonomía progresiva de la sociedad
+
+Este principio merece una sección propia porque define una característica central del proyecto.
+
+## 17.1. Evolución del protagonismo
+
+En las primeras etapas, el jugador tendrá una relación cercana con cada individuo.
+
+Podrá observar familias, profesiones, necesidades y relaciones.
+
+A medida que la población crezca:
+- Aparecerán grupos sociales.
+- Se desarrollarán instituciones.
+- Se consolidarán clases.
+- Surgirán representantes.
+- Los grupos expresarán intereses.
+- La sociedad adquirirá capacidad de organización.
+
+El jugador dejará de intervenir directamente sobre individuos y comenzará a influir mediante políticas, leyes, instituciones y decisiones generales.
+
+## 17.2. Sociedad activa
+
+La sociedad podrá:
+- Reaccionar a las políticas.
+- Expresar demandas.
+- Organizar movimientos.
+- Generar conflictos.
+- Modificar tendencias culturales.
+- Impulsar reformas.
+- Influir sobre el gobierno.
+
+## 17.3. Equilibrio entre jugador y sociedad
+
+El jugador no tendrá control absoluto sobre todos los acontecimientos.
+
+Sus decisiones influirán sobre la sociedad, pero las personas y los grupos también tendrán intereses propios.
+
+La autonomía social será una consecuencia del desarrollo histórico.
+
+---
+
+# 18. Integración con otros sistemas
+
+El sistema estará conectado con:
+
+**Economía**
+- Consumo.
+- Ingresos.
+- Propiedad.
+- Desigualdad.
+- Necesidades.
+
+**Producción y trabajo**
+- Profesiones.
+- Habilidades.
+- Empleo.
+- Productividad.
+- Salarios.
+
+**Construcción y arquitectura**
+- Vivienda.
+- Densidad.
+- Barrios.
+- Belleza.
+- Servicios urbanos.
+
+**Tecnología**
+- Medicina.
+- Educación.
+- Comunicación.
+- Productividad.
+- Transporte.
+
+**Política**
+- Leyes.
+- Representación.
+- Derechos.
+- Instituciones.
+- Conflictos.
+
+**Religión**
+- Creencias.
+- Tradiciones.
+- Instituciones.
+- Costumbres.
+
+**Cultura**
+- Identidad.
+- Educación.
+- Arte.
+- Idioma.
+- Tradiciones.
+
+**Medioambiente**
+- Salud.
+- Recursos.
+- Clima.
+- Desastres.
+- Calidad de vida.
+
+---
+
+# 19. MVP — Primera versión jugable
+
+El objetivo será probar la transición desde una pequeña comunidad hacia un asentamiento organizado.
+
+## 19.1. Escenario inicial
+
+Una comunidad de aproximadamente 30 habitantes.
+
+## 19.2. Funcionalidades iniciales
+
+- Individuos identificables.
+- Familias.
+- Ciclo de vida simplificado.
+- Natalidad y mortalidad.
+- Necesidades básicas.
+- Vivienda.
+- Alimentación.
+- Salud simplificada.
+- Profesiones.
+- Felicidad.
+- Crecimiento poblacional.
+- Formación de nuevas familias.
+- Relaciones entre individuos.
+- Indicadores generales de población.
+
+## 19.3. Evolución inicial
+
+El jugador deberá observar cómo:
+1. Se organiza la comunidad.
+2. Se forman familias.
+3. Nacen nuevos habitantes.
+4. Los niños crecen.
+5. Los individuos aprenden profesiones.
+6. Aparecen nuevas viviendas.
+7. Se desarrollan nuevas necesidades.
+8. La población aumenta.
+9. La comunidad comienza a organizarse socialmente.
+
+## 19.4. Arquitectura técnica
+
+Aunque el MVP sea sencillo, el sistema deberá estar preparado para incorporar:
+- Clases sociales.
+- Culturas.
+- Religiones.
+- Educación.
+- Salud avanzada.
+- Instituciones.
+- Representantes sociales.
+- Movimientos colectivos.
+
+---
+
+# 20. Decisiones confirmadas
+
+| Tema | Decisión |
+|---|---|
+| Individuos | Información individual completa |
+| Ciclo de vida | Simulado según escala |
+| Protagonismo individual | Alto inicialmente, decreciente con el crecimiento |
+| Seguimiento individual | Principalmente en poblaciones pequeñas |
+| Familias | Entidades propias |
+| Hogares | Dependientes de cultura y época |
+| Formación familiar | Automática |
+| Estructuras familiares | Diversas |
+| Natalidad y mortalidad | Influenciadas por múltiples factores |
+| Demografía | Evolución profunda |
+| Políticas demográficas | Sí |
+| Necesidades | Básicas, sociales, culturales, religiosas y otras |
+| Evolución de necesidades | Histórica y progresiva |
+| Simulación de necesidades | Híbrida |
+| Necesidades insatisfechas | Consecuencias según gravedad |
+| Felicidad | Individual y agregada |
+| Expectativas | Según cultura, época y posición social |
+| Calidad de vida | Indicador complementario |
+| Desigualdad | Influencia moderada |
+| Clases sociales | Sí, según época y cultura |
+| Movilidad social | Condicionada |
+| Intereses de clases | Sí, propios |
+| Representación política | Según gobierno |
+| Salud | Sistema poblacional inicialmente |
+| Enfermedades | Simulación simplificada |
+| Epidemias | Sí, configurables |
+| Medicina | Evolución histórica |
+| Políticas sanitarias | Sí |
+| Educación | Múltiples formas históricas |
+| Niveles educativos | Todos, según contexto |
+| Acceso educativo | Influenciado por recursos y políticas |
+| Alfabetización | Sí |
+| Cultura | Dinámica y con influencias externas |
+| Integración cultural | Progresiva |
+| Tradiciones | Pueden sobrevivir durante siglos |
+| Religión | Influencia multidimensional |
+| Pluralidad religiosa | Sí |
+| Secularización | Sí |
+| Migración interna | Sí |
+| Inmigración externa | Sí, condicionada |
+| Minorías | No prioritarias inicialmente |
+| Políticas migratorias | Configurables |
+| Representantes sociales | Sí |
+| Organización colectiva | Sí |
+| Conflictos sociales | Sí, simplificados inicialmente |
+| Libertades | Diferentes dimensiones |
+| Opiniones políticas | Individuales y agregadas |
+| Criminalidad | Indicadores agregados |
+| Seguridad | Por zonas |
+| Evolución histórica | Libre y coherente |
+| Cambios sociales | Graduales, con posibles aceleraciones |
+| Identidad civilizatoria | Puede transformarse conservando continuidad |
+| Interfaz | Información detallada y territorial |
+| Complejidad | Configurable |
+| Autonomía social | Creciente |
+
+---
+
+# 21. Temas pendientes para profundizar
+
+Algunos aspectos deberán desarrollarse en documentos o etapas posteriores:
+
+- Modelo matemático de necesidades.
+- Cálculo de felicidad y calidad de vida.
+- Algoritmos demográficos.
+- Formación y evolución de linajes.
+- Representación de grupos sociales.
+- Modelado de movilidad social.
+- Instituciones educativas y sanitarias.
+- Integración cultural.
+- Modelado de creencias individuales.
+- Representación política de grupos.
+- Autonomía y comportamiento colectivo.
+- Escalabilidad de la simulación poblacional.
+
+---
+
+# 22. Visión final
+
+La población debe ser mucho más que un recurso económico.
+
+Es el elemento humano que da sentido a la civilización.
+
+El jugador comenzará con unas pocas familias que luchan por sobrevivir. Con el paso del tiempo, esas familias crecerán, se dividirán, se mezclarán con otras y formarán nuevas generaciones.
+
+Surgirán profesiones, clases sociales, religiones, culturas, instituciones y movimientos.
+
+La sociedad cambiará sus necesidades, sus valores y sus expectativas.
+
+Una civilización podrá comenzar siendo una comunidad agrícola, transformarse en una sociedad comercial, desarrollar una cultura urbana y convertirse siglos después en una potencia industrial.
+
+El jugador tendrá influencia sobre ese proceso, pero no control absoluto.
+
+**La civilización no será solamente lo que el jugador construya. También será lo que sus habitantes hagan con ella.**

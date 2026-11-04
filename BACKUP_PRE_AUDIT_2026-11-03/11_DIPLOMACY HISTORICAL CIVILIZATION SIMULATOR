@@ -1,0 +1,627 @@
+# GDD — Sistema de Diplomacia y Relaciones Internacionales
+
+**Versión:** 0.1  
+**Estado:** Diseño conceptual  
+**Período histórico:** Paleolítico – comienzos de la Revolución Industrial
+
+---
+
+# 1. Visión general
+
+El sistema de Diplomacia y Relaciones Internacionales permitirá que las distintas civilizaciones del mundo interactúen, cooperen, compitan, negocien y eventualmente entren en conflicto.
+
+Las relaciones internacionales evolucionarán históricamente, desde los primeros contactos entre pequeñas comunidades hasta complejas redes diplomáticas, tratados internacionales y organizaciones supranacionales.
+
+El sistema deberá funcionar de manera autónoma: las civilizaciones podrán desarrollar relaciones entre ellas incluso cuando el jugador no participe directamente.
+
+El jugador tendrá una capacidad importante para dirigir la política exterior de su civilización, pero deberá convivir con gobernantes, diplomáticos, instituciones y organizaciones que tendrán intereses y características propias.
+
+### Principios fundamentales
+
+1. Relaciones multidimensionales y dinámicas.
+2. Memoria histórica de las relaciones.
+3. Evolución diplomática histórica.
+4. Autonomía de las civilizaciones.
+5. Intervención amplia del jugador.
+6. Influencia limitada de personalidades individuales.
+7. Cooperación y resolución pacífica de conflictos.
+8. Integración con economía, política, cultura, religión y tecnología.
+9. Complejidad configurable.
+10. Evolución no lineal.
+
+---
+
+# 2. Modelo de relaciones internacionales
+
+Las relaciones entre civilizaciones no estarán representadas mediante una única puntuación de amistad.
+
+Cada civilización evaluará a las demás mediante múltiples dimensiones.
+
+### 2.1. Dimensiones de las relaciones
+
+- Confianza.
+- Respeto.
+- Temor.
+- Rivalidad.
+- Hostilidad.
+- Afinidad cultural.
+- Afinidad religiosa.
+- Intereses económicos.
+- Intereses territoriales.
+- Cooperación histórica.
+- Reputación.
+- Prestigio internacional.
+
+Estas dimensiones podrán evolucionar independientemente.
+
+Dos civilizaciones pueden tener una relación comercial excelente y, al mismo tiempo, competir territorialmente.
+
+### 2.2. Relaciones dinámicas
+
+Las relaciones cambiarán según:
+
+- Decisiones políticas.
+- Tratados.
+- Guerras.
+- Comercio.
+- Conflictos territoriales.
+- Relaciones culturales.
+- Diferencias religiosas.
+- Acciones diplomáticas.
+- Comportamiento de los líderes.
+- Acontecimientos históricos.
+
+Las relaciones no serán estáticas ni estarán determinadas exclusivamente por una puntuación.
+
+---
+
+# 3. Memoria histórica
+
+Las civilizaciones recordarán sus relaciones pasadas.
+
+Ejemplos:
+
+- Una guerra puede generar resentimiento durante generaciones.
+- Una alianza prolongada puede construir confianza.
+- Una traición puede deteriorar relaciones durante décadas.
+- Una cooperación económica exitosa puede fortalecer vínculos.
+- Una invasión territorial puede generar reclamaciones históricas.
+- Un tratado respetado puede aumentar la reputación internacional.
+
+### 3.1. Evolución de los recuerdos
+
+Los acontecimientos históricos no tendrán necesariamente una influencia permanente.
+
+Su importancia podrá disminuir gradualmente según:
+
+- Tiempo transcurrido.
+- Cambios generacionales.
+- Cambios políticos.
+- Transformaciones culturales.
+- Nuevos acuerdos.
+- Acontecimientos posteriores.
+
+Algunos acontecimientos extraordinarios podrán conservar influencia durante siglos.
+
+La memoria histórica deberá ser relevante, pero no impedir que las relaciones puedan transformarse.
+
+---
+
+# 4. Evolución histórica de la diplomacia
+
+Las prácticas diplomáticas evolucionarán según el desarrollo social, político y tecnológico.
+
+### 4.1. Primeras comunidades
+
+- Contactos entre tribus.
+- Reuniones entre líderes.
+- Intercambio de regalos.
+- Acuerdos de cooperación.
+- Pactos de no agresión.
+- Resolución de disputas.
+
+### 4.2. Primeras civilizaciones
+
+- Mensajeros.
+- Representantes políticos.
+- Tratados escritos.
+- Acuerdos comerciales.
+- Matrimonios entre familias gobernantes.
+- Alianzas militares.
+
+### 4.3. Sociedades organizadas
+
+- Embajadores.
+- Misiones diplomáticas.
+- Cortes diplomáticas.
+- Tratados internacionales.
+- Acuerdos de vasallaje.
+- Cooperación institucional.
+
+### 4.4. Sociedades avanzadas
+
+- Diplomacia permanente.
+- Congresos internacionales.
+- Redes de embajadas.
+- Organizaciones supranacionales.
+- Tratados multilaterales.
+- Sistemas diplomáticos complejos.
+
+La evolución no será obligatoriamente lineal. Cada civilización desarrollará sus propias instituciones y prácticas.
+
+---
+
+# 5. Embajadores y diplomáticos
+
+Los diplomáticos serán personajes identificables.
+
+Podrán tener:
+
+- Habilidad diplomática.
+- Inteligencia.
+- Carisma.
+- Lealtad.
+- Experiencia.
+- Conocimiento cultural.
+- Idiomas.
+- Reputación.
+- Relaciones personales.
+
+### 5.1. Funciones
+
+- Negociar tratados.
+- Transmitir propuestas.
+- Resolver disputas.
+- Representar a su civilización.
+- Mejorar relaciones.
+- Obtener información.
+- Participar en congresos.
+- Mediar en conflictos.
+
+### 5.2. Resultados diplomáticos
+
+Las capacidades individuales podrán influir en el resultado de las negociaciones.
+
+Sin embargo, la diplomacia no dependerá exclusivamente de los atributos del personaje.
+
+Los intereses, el poder relativo, las circunstancias y las condiciones del acuerdo tendrán mayor importancia.
+
+---
+
+# 6. Tratados y acuerdos internacionales
+
+El sistema permitirá diferentes modalidades de acuerdos.
+
+### 6.1. Acuerdos políticos
+
+- Pactos de no agresión.
+- Alianzas políticas.
+- Acuerdos de cooperación.
+- Reconocimiento diplomático.
+- Uniones políticas.
+- Confederaciones.
+
+### 6.2. Acuerdos económicos
+
+- Tratados comerciales.
+- Acuerdos de tránsito.
+- Acceso a mercados.
+- Acuerdos de intercambio.
+- Reducción de aranceles.
+- Cooperación económica.
+
+### 6.3. Acuerdos militares
+
+- Alianzas militares.
+- Pactos defensivos.
+- Asistencia militar.
+- Acceso a territorios.
+- Cooperación estratégica.
+
+### 6.4. Acuerdos territoriales
+
+- Reconocimiento de fronteras.
+- Transferencias territoriales.
+- Derechos de tránsito.
+- Administración compartida.
+- Acuerdos sobre regiones disputadas.
+
+### 6.5. Acuerdos religiosos y culturales
+
+- Protección de minorías.
+- Cooperación religiosa.
+- Intercambio cultural.
+- Protección de peregrinos.
+- Reconocimiento de instituciones.
+
+### 6.6. Relaciones de dependencia
+
+- Vasallaje.
+- Tributación.
+- Protectorados.
+- Estados clientes.
+- Colonias y territorios dependientes.
+- Uniones dinásticas.
+
+Estas relaciones podrán evolucionar, modificarse o desaparecer.
+
+---
+
+# 7. Duración y cumplimiento de tratados
+
+Los tratados podrán tener diferentes modalidades.
+
+- Duración determinada.
+- Duración indefinida.
+- Renovación automática.
+- Renovación mediante negociación.
+- Condiciones específicas de finalización.
+
+Los acuerdos podrán incumplirse, pero hacerlo tendrá consecuencias.
+
+### 7.1. Consecuencias del incumplimiento
+
+- Pérdida de confianza.
+- Deterioro de reputación.
+- Sanciones.
+- Ruptura de relaciones.
+- Suspensión de acuerdos.
+- Reacciones de otras civilizaciones.
+
+La importancia de estas consecuencias dependerá del tipo de tratado y de las circunstancias.
+
+---
+
+# 8. Sistema de negociaciones
+
+Las negociaciones podrán funcionar con diferentes niveles de intervención.
+
+### Básico
+
+- Propuestas automáticas.
+- Aceptación o rechazo.
+- Opciones simplificadas.
+
+### Intermedio
+
+- Selección de acuerdos.
+- Condiciones generales.
+- Concesiones.
+- Intercambio de recursos.
+
+### Avanzado
+
+- Negociaciones detalladas.
+- Cantidades y recursos.
+- Territorios.
+- Duración.
+- Compromisos.
+- Condiciones especiales.
+- Garantías.
+- Compensaciones.
+- Cláusulas de incumplimiento.
+
+El jugador podrá elegir cuánto desea intervenir.
+
+Las otras civilizaciones negociarán considerando sus intereses y circunstancias reales.
+
+---
+
+# 9. Objetivos e intereses de las civilizaciones
+
+Cada civilización tendrá objetivos diplomáticos propios.
+
+Ejemplos:
+
+- Expandir su territorio.
+- Conseguir recursos.
+- Obtener aliados.
+- Mantener la paz.
+- Expandir su religión.
+- Aumentar su influencia.
+- Conseguir acceso al mar.
+- Controlar rutas comerciales.
+- Proteger sus fronteras.
+- Debilitar rivales.
+- Obtener conocimientos tecnológicos.
+- Garantizar su seguridad.
+
+### 9.1. Determinantes de los objetivos
+
+Los intereses dependerán de:
+
+- Gobierno.
+- Cultura.
+- Religión.
+- Economía.
+- Geografía.
+- Historia.
+- Tecnología.
+- Recursos.
+- Población.
+- Líderes.
+- Situación internacional.
+
+Los objetivos podrán cambiar a medida que evolucionen las circunstancias.
+
+---
+
+# 10. Fronteras y disputas territoriales
+
+Las relaciones internacionales incluirán conflictos y negociaciones territoriales.
+
+### 10.1. Situaciones territoriales
+
+- Reclamaciones.
+- Disputas fronterizas.
+- Territorios compartidos.
+- Regiones disputadas.
+- Derechos históricos.
+- Conflictos por recursos.
+- Fronteras no reconocidas.
+- Zonas de influencia.
+
+### 10.2. Resolución de disputas
+
+Podrán resolverse mediante:
+
+- Negociaciones.
+- Tratados.
+- Intercambios.
+- Compensaciones.
+- Mediación.
+- Arbitraje.
+- Conflictos militares.
+
+Las fronteras evolucionarán según el desarrollo territorial, los acuerdos y los acontecimientos históricos.
+
+---
+
+# 11. Influencia y prestigio internacional
+
+Las civilizaciones podrán competir por influencia sin necesidad de recurrir a la guerra.
+
+### 11.1. Fuentes de influencia
+
+- Poder económico.
+- Influencia cultural.
+- Influencia religiosa.
+- Prestigio político.
+- Poder militar.
+- Desarrollo tecnológico.
+- Capacidad diplomática.
+- Alcance comercial.
+- Estabilidad institucional.
+
+### 11.2. Consecuencias
+
+Una civilización influyente podrá:
+
+- Conseguir mejores acuerdos.
+- Atraer aliados.
+- Influir sobre otras sociedades.
+- Liderar organizaciones.
+- Mediar en conflictos.
+- Establecer estándares culturales o comerciales.
+
+El prestigio internacional será dinámico y dependerá de múltiples factores.
+
+---
+
+# 12. Espionaje e inteligencia
+
+El espionaje estará incluido como un sistema configurable.
+
+Podrá utilizarse para obtener información, influir en otras civilizaciones y proteger los intereses propios.
+
+### 12.1. Operaciones de inteligencia
+
+- Espionaje económico.
+- Espionaje militar.
+- Robo de conocimientos.
+- Infiltración.
+- Sabotaje.
+- Desestabilización política.
+- Apoyo clandestino a facciones.
+- Contraespionaje.
+
+### 12.2. Riesgos
+
+Las operaciones podrán fracasar y ser descubiertas.
+
+Esto podrá generar:
+
+- Crisis diplomáticas.
+- Pérdida de confianza.
+- Sanciones.
+- Represalias.
+- Deterioro de relaciones.
+
+La profundidad del sistema podrá habilitarse o deshabilitarse.
+
+---
+
+# 13. Religión y diplomacia
+
+Las relaciones religiosas podrán influir en las relaciones internacionales.
+
+Se contemplarán:
+
+- Afinidad religiosa.
+- Diferencias doctrinales.
+- Conflictos religiosos.
+- Protección de minorías.
+- Peregrinaciones internacionales.
+- Influencia de autoridades religiosas.
+- Expansión de religiones.
+- Cooperación entre instituciones religiosas.
+
+La religión podrá facilitar alianzas, pero también generar tensiones.
+
+La influencia religiosa dependerá de la época, la cultura, el gobierno y las circunstancias.
+
+Este sistema estará integrado con el GDD de Religión y Espiritualidad.
+
+---
+
+# 14. Cultura y diplomacia
+
+La afinidad cultural podrá facilitar las relaciones internacionales.
+
+Factores relevantes:
+
+- Idiomas compartidos.
+- Tradiciones similares.
+- Orígenes culturales.
+- Costumbres.
+- Educación.
+- Intercambio artístico.
+- Matrimonios dinásticos.
+- Experiencias históricas compartidas.
+
+Las diferencias culturales podrán generar incomprensión o desconfianza, pero no serán necesariamente negativas.
+
+La afinidad cultural tendrá una influencia moderada y contextual.
+
+Una cultura diferente no implicará automáticamente hostilidad.
+
+---
+
+# 15. Organizaciones internacionales
+
+Podrán surgir organizaciones que agrupen varias civilizaciones.
+
+Su existencia dependerá del desarrollo histórico, político y económico.
+
+### 15.1. Tipos de organizaciones
+
+- Ligas comerciales.
+- Confederaciones.
+- Alianzas militares.
+- Ligas religiosas.
+- Uniones políticas.
+- Organizaciones diplomáticas.
+- Sistemas de cooperación.
+
+### 15.2. Características
+
+Cada organización podrá tener:
+
+- Miembros.
+- Objetivos.
+- Reglas.
+- Instituciones.
+- Autoridades.
+- Recursos.
+- Mecanismos de decisión.
+- Condiciones de ingreso.
+- Condiciones de salida.
+
+### 15.3. Configuración
+
+El sistema será configurable.
+
+Los jugadores podrán habilitar o deshabilitar determinados tipos de organizaciones y su nivel de complejidad.
+
+No todas las partidas deberán desarrollar necesariamente organizaciones internacionales.
+
+---
+
+# 16. Estados dependientes y relaciones de subordinación
+
+Las relaciones entre civilizaciones podrán incluir diferentes niveles de dependencia.
+
+### 16.1. Modalidades
+
+- Vasallaje.
+- Tributación.
+- Protectorados.
+- Estados clientes.
+- Confederaciones.
+- Uniones dinásticas.
+- Colonias.
+- Territorios dependientes.
+
+### 16.2. Evolución
+
+Estas relaciones podrán transformarse.
+
+Un territorio dependiente podrá:
+
+- Obtener autonomía.
+- Integrarse completamente.
+- Convertirse en un estado independiente.
+- Cambiar de protector.
+- Rebelarse.
+- Participar en una unión política.
+
+Las relaciones de dependencia deberán reflejar las estructuras políticas y sociales de cada período histórico.
+
+---
+
+# 17. Diplomacia, guerra y paz
+
+La diplomacia tendrá un papel importante en la prevención y resolución de conflictos.
+
+Las guerras no deberán ser el resultado inevitable de cualquier deterioro diplomático.
+
+### 17.1. Causas de conflicto
+
+- Disputas territoriales.
+- Competencia por recursos.
+- Rivalidades históricas.
+- Conflictos religiosos.
+- Incumplimientos de tratados.
+- Amenazas percibidas.
+- Intereses políticos.
+- Conflictos comerciales.
+- Cuestiones de seguridad.
+
+### 17.2. Escalada diplomática
+
+Los conflictos podrán evolucionar progresivamente:
+
+1. Deterioro de relaciones.
+2. Protestas y reclamos.
+3. Exigencias diplomáticas.
+4. Ultimátums.
+5. Mediación.
+6. Sanciones.
+7. Ruptura de relaciones.
+8. Conflicto militar, si las circunstancias lo determinan.
+
+No todos los conflictos recorrerán todas estas etapas.
+
+### 17.3. Resolución pacífica
+
+Se podrán utilizar:
+
+- Negociaciones.
+- Mediación.
+- Arbitraje.
+- Compensaciones.
+- Concesiones.
+- Tratados de paz.
+- Acuerdos territoriales.
+- Reparaciones.
+
+El sistema deberá favorecer la existencia de soluciones diplomáticas cuando sean razonables.
+
+### 17.4. Filosofía de diseño
+
+La diplomacia debe ser una herramienta real para gestionar intereses, prevenir conflictos y construir relaciones duraderas.
+
+La guerra será una posibilidad, no el objetivo principal de las relaciones internacionales.
+
+---
+
+# 18. Personalidad de los líderes
+
+Los gobernantes y líderes tendrán características individuales que influirán en las relaciones diplomáticas.
+
+Ejemplos:
+
+- Ambición.
+- Pragmatismo.
+- Desconfianza.
+- Carisma

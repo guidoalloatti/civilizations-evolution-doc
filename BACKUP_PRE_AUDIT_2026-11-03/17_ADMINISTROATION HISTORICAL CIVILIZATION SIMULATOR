@@ -1,0 +1,213 @@
+# GDD — ADMINISTRACIÓN TERRITORIAL Y GESTIÓN DE REGIONES
+
+**Versión:** 0.1  
+**Estado:** Definición conceptual simplificada
+
+## 1. Visión general
+
+Este sistema define cómo se organizan y administran los territorios de una civilización a medida que crece.
+
+El objetivo es permitir que el jugador gestione desde pequeñas comunidades hasta grandes civilizaciones sin necesidad de controlar individualmente cada asentamiento.
+
+La administración combinará decisiones centrales del jugador con gestión autónoma de ciudades y regiones.
+
+**Principio fundamental:**
+
+El jugador establece el rumbo de su civilización. Las regiones y sus administradores se encargan de desarrollar y gestionar los territorios.
+
+## 2. Organización territorial
+
+Se utilizará un modelo mixto:
+
+- Las ciudades y asentamientos conservarán su identidad y funcionamiento individual.
+- Varias ciudades podrán agruparse en regiones o provincias.
+- Las regiones podrán tener características económicas, culturales y geográficas propias.
+- La organización territorial evolucionará históricamente.
+
+La estructura podrá variar según la época y el sistema político.
+
+## 3. Administración regional
+
+La administración combinará intervención directa y autonomía.
+
+El jugador podrá:
+- Definir políticas regionales.
+- Establecer prioridades económicas.
+- Asignar presupuestos.
+- Determinar prioridades de construcción.
+- Regular impuestos.
+- Definir objetivos de desarrollo.
+- Establecer políticas de seguridad y bienestar.
+
+Los administradores regionales ejecutarán las políticas y tomarán decisiones cotidianas dentro de los límites establecidos.
+
+Podrán existir gobernadores, representantes, consejos u otras figuras según la organización histórica.
+
+## 4. Gestión de las regiones
+
+Cada región podrá gestionar de manera simplificada:
+
+- Impuestos y presupuesto.
+- Economía y producción.
+- Construcción e infraestructura.
+- Seguridad y defensa.
+- Servicios y bienestar.
+
+El jugador podrá intervenir directamente o dejar que la administración regional tome decisiones.
+
+La gestión utilizará los sistemas económicos, productivos, sociales y constructivos existentes, sin duplicar sus funcionalidades.
+
+## 5. Identidad y especialización regional
+
+Las regiones podrán desarrollar identidades propias.
+
+Por ejemplo:
+- Regiones agrícolas.
+- Regiones ganaderas.
+- Regiones mineras.
+- Regiones comerciales.
+- Regiones industriales preindustriales.
+- Regiones religiosas.
+- Centros culturales.
+- Regiones militares o estratégicas.
+
+Las especializaciones podrán surgir orgánicamente o ser impulsadas por el jugador.
+
+Estarán condicionadas por geografía, recursos, población, infraestructura, tecnología y oportunidades económicas.
+
+Las regiones no estarán obligadas a mantener una única especialización.
+
+## 6. Autonomía regional
+
+La autonomía será configurable.
+
+Se contemplarán:
+- Control centralizado.
+- Autonomía administrativa limitada.
+- Autonomía regional amplia.
+- Modelos mixtos.
+
+La autonomía podrá variar según el sistema político, la época y las decisiones del jugador.
+
+Las regiones podrán desarrollar intereses propios y solicitar cambios en sus condiciones administrativas.
+
+## 7. Impuestos y economía regional
+
+El sistema tributario permitirá diferentes niveles de gestión:
+
+- Tasa general para toda la civilización.
+- Tasas diferenciadas por región.
+- Impuestos según actividades económicas.
+
+El jugador podrá establecer políticas generales y excepciones regionales.
+
+Los presupuestos regionales podrán financiar infraestructura, servicios, seguridad y desarrollo económico.
+
+La administración deberá mostrar ingresos, gastos y resultados de manera clara, evitando una contabilidad excesivamente detallada.
+
+## 8. Relaciones entre regiones
+
+Las regiones podrán colaborar y competir orgánicamente.
+
+**Colaboración:**
+- Intercambio de recursos.
+- Comercio.
+- Infraestructura compartida.
+- Especialización complementaria.
+- Movilidad de trabajadores.
+- Cooperación económica.
+
+**Competencia:**
+- Atracción de población.
+- Inversiones.
+- Actividades comerciales.
+- Recursos.
+- Influencia política.
+- Prestigio.
+
+Estas relaciones podrán generar oportunidades y tensiones, pero no deberán convertirse en un sistema de gestión independiente demasiado complejo.
+
+## 9. Evolución histórica
+
+La organización territorial evolucionará junto con las instituciones y la tecnología.
+
+Se contemplarán diferentes formas históricas:
+
+- Comunidades y territorios tribales.
+- Ciudades y territorios asociados.
+- Reinos y dominios.
+- Provincias.
+- Regiones administrativas.
+- Territorios dependientes.
+- Sistemas federativos y otras formas de organización.
+
+El jugador podrá influir en las transformaciones, mientras que las instituciones también podrán evolucionar orgánicamente.
+
+No existirá una secuencia histórica obligatoria.
+
+## 10. Distancia y administración
+
+La distancia respecto del centro de poder tendrá poca importancia como penalización directa.
+
+No se busca que administrar regiones alejadas sea innecesariamente complicado.
+
+Podrá influir moderadamente en:
+- Comunicación.
+- Transporte.
+- Coordinación.
+- Tiempo de respuesta.
+
+La autonomía regional permitirá resolver buena parte de estos problemas sin micromanagement.
+
+## 11. Complejidad configurable
+
+El sistema tendrá tres enfoques:
+
+**Simple**
+- Administración automática.
+- Políticas generales.
+- Pocas decisiones regionales.
+
+**Intermedio**
+- Presupuestos regionales.
+- Administradores.
+- Prioridades económicas y de infraestructura.
+- Autonomía limitada.
+
+**Avanzado**
+- Control tributario diferenciado.
+- Autonomía regional.
+- Especialización.
+- Competencia y cooperación.
+- Mayor intervención del jugador.
+
+La automatización podrá configurarse por región o por módulo.
+
+## 12. MVP — Primera versión jugable
+
+- Agrupación básica de ciudades en regiones.
+- Presupuestos regionales simplificados.
+- Prioridades de producción y construcción.
+- Políticas tributarias generales.
+- Administradores automáticos.
+- Especialización regional básica.
+- Integración con economía y población.
+
+Las estructuras políticas regionales avanzadas y los modelos complejos de autonomía quedarán para versiones posteriores.
+
+## 13. Decisiones confirmadas
+
+| Área | Decisión |
+|---|---|
+| Organización | Ciudades individuales agrupadas en regiones |
+| Administración | Modelo mixto |
+| Herramientas de gestión | Todas, simplificadas |
+| Identidad regional | Orgánica e influenciable |
+| Autonomía | Configurable |
+| Impuestos | Generales y diferenciados |
+| Relaciones regionales | Cooperación y competencia |
+| Evolución histórica | Automática e influenciable |
+| Distancia administrativa | Importancia baja |
+| Complejidad | Configurable, con automatización |
+
+**Estado:** GDD conceptual v0.1 consolidado.

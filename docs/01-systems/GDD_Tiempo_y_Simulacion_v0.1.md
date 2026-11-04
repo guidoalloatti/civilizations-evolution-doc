@@ -1,0 +1,249 @@
+> **Control documental:** 0.1 | Estado: diseño conceptual; las decisiones marcadas como confirmadas se preservan desde la fuente. **Alcance:** este GDD es fuente de detalle de su dominio; el GDD Maestro establece la visión común. Los conflictos intersistema se registran en AUDIT_REPORT.md y no se resuelven implícitamente.
+
+---
+
+# GDD — Sistema de Tiempo y Simulación
+
+**Versión:** 0.1  
+**Estado:** Diseño conceptual
+
+## 1. Visión general
+
+El juego utilizará un modelo de tiempo continuo combinado con ciclos internos de simulación.
+
+Existirá un reloj global que determinará el paso del tiempo del mundo. Los diferentes sistemas utilizarán ese reloj para ejecutar sus procesos con frecuencias y precisiones independientes.
+
+El objetivo es simular una civilización durante siglos sin necesidad de procesar todos sus elementos con la misma frecuencia.
+
+El tiempo será una dimensión fundamental de la experiencia: afectará la población, economía, producción, agricultura, clima, tecnología, cultura, política y acontecimientos históricos.
+
+## 2. Reloj global
+
+El juego tendrá un reloj central que representará el tiempo transcurrido.
+
+Este reloj deberá permitir:
+- Avanzar continuamente.
+- Pausar.
+- Acelerar y desacelerar.
+- Mantener sincronizados todos los sistemas.
+- Registrar fechas y acontecimientos históricos.
+- Ejecutar procesos periódicos.
+- Gestionar calendarios configurables.
+
+Los sistemas no tendrán relojes independientes que puedan generar inconsistencias.
+
+## 3. Calendario
+
+El calendario será configurable.
+
+Podrá utilizar:
+- Segundos y minutos de simulación.
+- Horas y días.
+- Semanas.
+- Meses.
+- Estaciones.
+- Años.
+- Décadas y siglos.
+
+La precisión y presentación dependerán de la época y configuración de partida.
+
+El calendario tendrá consecuencias funcionales en:
+- Agricultura y cosechas.
+- Clima y estaciones.
+- Producción estacional.
+- Migraciones.
+- Festividades.
+- Religión.
+- Comercio.
+- Impuestos y administración.
+- Natalidad y mortalidad.
+- Eventos históricos.
+
+No todas las regiones tendrán necesariamente las mismas estaciones o ciclos ambientales.
+
+## 4. Velocidad de juego
+
+El jugador podrá controlar la velocidad mediante:
+- Pausa.
+- Velocidad normal.
+- Velocidades aceleradas.
+- Velocidad muy acelerada.
+
+La cantidad de velocidades será configurable.
+
+También podrá existir aceleración automática ante acontecimientos relevantes, según las preferencias del jugador.
+
+La aceleración no deberá modificar artificialmente los resultados de la simulación: solamente cambiará la velocidad con la que transcurre el tiempo.
+
+## 5. Ciclos internos de simulación
+
+Cada sistema tendrá una frecuencia de actualización apropiada.
+
+Ejemplos:
+
+- Población: procesos individuales y actualizaciones demográficas agregadas.
+- Producción: ciclos de trabajo y procesamiento de recetas.
+- Economía: actualización de inventarios, oferta, demanda y precios.
+- Agricultura: procesos diarios, estacionales y de cosecha.
+- Clima: evolución continua simplificada y ciclos ambientales.
+- Tecnología: investigación y revisiones periódicas de oportunidades.
+- Diplomacia: evaluación periódica y reacción ante acontecimientos.
+- Cultura: transformaciones graduales y acontecimientos específicos.
+- Política: procesos institucionales y cambios según condiciones.
+- Eventos: detección continua de condiciones y evaluación periódica.
+
+Las frecuencias podrán variar según la complejidad configurada y la relevancia de cada elemento.
+
+## 6. Población y envejecimiento
+
+La población utilizará una simulación híbrida.
+
+Los individuos relevantes podrán tener procesos detallados:
+- Envejecimiento.
+- Nacimiento.
+- Necesidades.
+- Trabajo.
+- Relaciones.
+- Salud.
+- Migración.
+- Muerte.
+
+A medida que crezca la población, determinados procesos podrán agregarse por familias, grupos, profesiones o regiones.
+
+La transición entre simulación individual y agregada deberá preservar la coherencia demográfica.
+
+## 7. Producción y edificios
+
+Los edificios no necesitarán actualizarse constantemente.
+
+Los procesos productivos se ejecutarán según:
+- Tiempo de producción.
+- Disponibilidad de trabajadores.
+- Insumos.
+- Capacidad.
+- Transporte.
+- Estado del edificio.
+- Condiciones ambientales.
+- Tecnología.
+
+Los acontecimientos relevantes podrán modificar inmediatamente las condiciones de producción.
+
+Los edificios conservarán su estado y progreso productivo cuando corresponda, evitando reinicios artificiales.
+
+## 8. Estaciones y ciclos naturales
+
+Las estaciones tendrán efectos configurables según región.
+
+Podrán influir sobre:
+- Temperatura y precipitaciones.
+- Cultivos y cosechas.
+- Ganadería.
+- Disponibilidad de alimentos.
+- Transporte.
+- Navegación.
+- Actividades laborales.
+- Enfermedades.
+- Festividades y costumbres.
+
+Las regiones tropicales, polares, templadas, mediterráneas y otras tendrán ciclos diferentes.
+
+La intensidad de estos efectos dependerá de la complejidad seleccionada.
+
+## 9. Acontecimientos históricos
+
+Los acontecimientos combinarán procesos espontáneos y evaluaciones periódicas.
+
+Podrán ocurrir cuando se cumplan determinadas condiciones o cuando una revisión del sistema detecte oportunidades y situaciones relevantes.
+
+Ejemplos:
+- Fundación de una ciudad.
+- Descubrimiento tecnológico.
+- Aparición de una epidemia.
+- Cambio de gobierno.
+- Migración.
+- Crisis económica.
+- Reforma religiosa.
+- Guerra.
+- Tratado diplomático.
+
+Las fechas no estarán predeterminadas salvo en escenarios históricos específicos.
+
+Los acontecimientos deberán registrarse con su fecha y consecuencias.
+
+## 10. Pausa y planificación
+
+Cuando el jugador pause:
+- Se detendrá el avance del mundo.
+- Se detendrán los ciclos de simulación.
+- Se conservarán los estados actuales.
+- El jugador podrá construir, planificar, consultar información y administrar.
+- Las órdenes podrán quedar preparadas para ejecutarse al reanudar, cuando corresponda.
+
+La pausa no deberá provocar avances ocultos en otros sistemas.
+
+## 11. Aceleración y rendimiento
+
+Durante velocidades elevadas se podrá simplificar la simulación.
+
+Se contemplan dos mecanismos:
+
+1. **Simplificación de procesos secundarios:** algunos cálculos podrán agruparse o ejecutarse con menor frecuencia.
+2. **Simulación por relevancia:** elementos lejanos, poco relevantes o sin interacción inmediata podrán utilizar modelos agregados.
+
+Los procesos importantes para el jugador deberán conservar resultados coherentes.
+
+La aceleración no deberá provocar saltos demográficos, económicos o productivos inexplicables.
+
+## 12. Configuración
+
+El jugador podrá configurar:
+- Velocidad normal y aceleraciones.
+- Calendario y presentación temporal.
+- Precisión de estaciones.
+- Frecuencias de actualización.
+- Simulación individual o agregada.
+- Nivel de detalle durante aceleraciones.
+- Complejidad por sistema.
+
+La configuración de tiempo y simulación deberá estar separada de la dificultad general.
+
+## 13. Integración
+
+Este sistema será transversal y estará conectado con todos los sistemas del juego.
+
+El reloj global será la referencia temporal común para:
+- Economía.
+- Producción.
+- Población.
+- Construcción.
+- Agricultura.
+- Tecnología.
+- Cultura.
+- Religión.
+- Política.
+- Diplomacia.
+- Exploración.
+- Guerra.
+- Eventos.
+- Administración territorial.
+- IA de civilizaciones.
+
+## 14. MVP
+
+Primera implementación:
+
+- Reloj global.
+- Calendario básico.
+- Pausa y tres velocidades.
+- Ciclos internos de simulación.
+- Actualización periódica de producción.
+- Envejecimiento y crecimiento demográfico básico.
+- Estaciones.
+- Registro de acontecimientos.
+- Construcción y planificación durante la pausa.
+
+El objetivo será comprobar que los sistemas pueden avanzar sincronizados durante períodos prolongados.
+
+## 15. Principio rector
+
+**El tiempo debe sentirse continuo para el jugador, pero la simulación debe ser inteligente respecto de cuándo y con qué nivel de detalle necesita actualizar cada proceso.**

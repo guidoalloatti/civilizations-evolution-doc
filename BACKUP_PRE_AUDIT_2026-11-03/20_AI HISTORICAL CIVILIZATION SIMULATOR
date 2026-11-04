@@ -1,0 +1,306 @@
+# GDD — Inteligencia Artificial y Autonomía de Civilizaciones
+**Versión:** 0.1  
+**Estado:** Documento conceptual
+
+## 1. Visión general
+
+Las civilizaciones del mundo deberán funcionar como sociedades autónomas, con objetivos, intereses, personalidades, instituciones, líderes e historias propias.
+
+No serán simples competidores controlados por una IA que busca ganar una partida. Serán sociedades que intentan prosperar según sus condiciones geográficas, económicas, culturales, tecnológicas, políticas y sociales.
+
+Cada civilización podrá desarrollar una trayectoria histórica diferente. Algunas se convertirán en potencias comerciales, otras en centros culturales o religiosos, otras expandirán sus territorios y algunas permanecerán pequeñas y relativamente aisladas.
+
+El objetivo es construir un mundo que continúe evolucionando incluso cuando el jugador no interviene.
+
+## 2. Autonomía de las civilizaciones
+
+La autonomía será configurable globalmente y por civilización.
+
+Las civilizaciones podrán gestionar autónomamente:
+
+- Construcción y desarrollo de ciudades.
+- Producción, economía y comercio.
+- Asignación de trabajadores y recursos.
+- Investigación científica y desarrollo tecnológico.
+- Exploración y descubrimiento.
+- Expansión territorial y colonización.
+- Desarrollo cultural y religioso.
+- Organización política y cambios institucionales.
+- Diplomacia, tratados y alianzas.
+- Fuerzas militares, defensa y conflictos.
+- Migraciones y relaciones con otras poblaciones.
+- Administración regional y territorial.
+
+El jugador no tendrá que intervenir para que estas actividades ocurran.
+
+## 3. Personalidad, objetivos e intereses
+
+Cada civilización tendrá una identidad estratégica propia, construida mediante una combinación de:
+
+- Personalidad colectiva.
+- Objetivos a corto y largo plazo.
+- Necesidades económicas y territoriales.
+- Condiciones geográficas.
+- Recursos disponibles.
+- Cultura y religión.
+- Instituciones políticas.
+- Relaciones internacionales.
+- Experiencias históricas.
+
+Podrán existir tendencias comerciales, diplomáticas, expansionistas, militares, religiosas, científicas, culturales, aislacionistas y otras.
+
+Estas tendencias no serán categorías rígidas. Una civilización podrá cambiar de orientación a medida que evoluciona.
+
+Por ejemplo, una sociedad inicialmente aislacionista podría abrirse al comercio después de desarrollar infraestructura marítima, o una potencia comercial podría adoptar una política expansionista ante una escasez de recursos.
+
+## 4. Toma de decisiones
+
+La IA combinará personalidades y objetivos propios con una evaluación de las condiciones reales.
+
+Las decisiones deberán considerar:
+- Recursos y capacidades disponibles.
+- Necesidades de la población.
+- Situación económica.
+- Tecnología e infraestructura.
+- Geografía y accesibilidad.
+- Amenazas y oportunidades.
+- Relaciones diplomáticas.
+- Intereses de grupos sociales y políticos.
+- Personalidad del líder.
+- Experiencias y memoria histórica.
+
+La IA no deberá tomar decisiones arbitrarias ni actuar como si conociera el futuro.
+
+Tampoco deberá disponer de información que su civilización no haya descubierto o recibido legítimamente.
+
+## 5. Líderes y personajes
+
+Las civilizaciones tendrán líderes identificables con personalidades, atributos, intereses, relaciones y trayectorias propias.
+
+Los líderes podrán influir significativamente en:
+- Diplomacia y relaciones internacionales.
+- Prioridades económicas.
+- Expansión territorial.
+- Política militar.
+- Reformas institucionales.
+- Religión y cultura.
+- Decisiones extraordinarias.
+
+Sus características podrán favorecer o dificultar determinadas decisiones.
+
+Los líderes cambiarán a través de sucesiones, elecciones, golpes de Estado, revoluciones u otros mecanismos históricos, según la forma de gobierno.
+
+La personalidad del líder tendrá influencia importante, pero no podrá anular completamente las necesidades, capacidades e intereses estructurales de la sociedad.
+
+Los personajes destacados podrán dejar legados que afecten a la identidad y trayectoria de su civilización.
+
+## 6. Competencia y cooperación
+
+Las civilizaciones interactuarán en múltiples dimensiones:
+
+- Economía y comercio.
+- Tecnología y conocimiento.
+- Cultura e influencia.
+- Religión.
+- Diplomacia.
+- Territorio y recursos.
+- Prestigio internacional.
+- Poder militar.
+
+La cooperación tendrá un papel central.
+
+Se contemplarán:
+- Acuerdos comerciales.
+- Intercambio de conocimientos.
+- Alianzas y pactos de no agresión.
+- Cooperación científica y cultural.
+- Tratados de defensa.
+- Uniones políticas y dinásticas.
+- Confederaciones y organizaciones supranacionales.
+- Acuerdos de infraestructura y explotación de recursos.
+
+La competencia no implicará necesariamente hostilidad. Dos civilizaciones podrán mantener relaciones mutuamente beneficiosas durante siglos.
+
+La diplomacia deberá favorecer soluciones pacíficas cuando sean razonables. La guerra será una posibilidad contextual, no el comportamiento predeterminado de las civilizaciones.
+
+## 7. Evolución histórica diferenciada
+
+Las civilizaciones podrán seguir trayectorias completamente diferentes.
+
+No existirá una obligación de alcanzar los mismos niveles de desarrollo ni de reproducir una secuencia histórica universal.
+
+Algunos ejemplos:
+- Una civilización marítima con una extensa red comercial.
+- Una sociedad agrícola organizada alrededor de grandes centros religiosos.
+- Una confederación de comunidades relativamente pequeñas.
+- Un imperio territorial con administración centralizada.
+- Una potencia artesanal y cultural.
+- Una sociedad aislada con desarrollo tecnológico más lento.
+- Una civilización que se especialice en navegación, metalurgia o arquitectura.
+
+Las posibilidades dependerán de las condiciones reales del mundo y de las decisiones acumuladas.
+
+## 8. Simulación según distancia e importancia
+
+La profundidad de simulación será configurable.
+
+Se contemplarán distintos niveles:
+- **Simulación detallada:** para civilizaciones cercanas, conectadas o relevantes para el jugador.
+- **Simulación intermedia:** para civilizaciones con relaciones indirectas o importancia regional.
+- **Simulación simplificada:** para sociedades lejanas con poca interacción.
+
+La reducción de detalle no deberá producir resultados incoherentes. Las civilizaciones lejanas continuarán teniendo evolución económica, demográfica, tecnológica, política e histórica, aunque ciertos procesos se calculen de forma agregada.
+
+La simulación podrá aumentar su nivel de detalle cuando una civilización entre en contacto con el jugador o adquiera relevancia.
+
+## 9. Nacimiento, transformación y desaparición
+
+El mundo podrá generar nuevas civilizaciones a lo largo de la partida.
+
+Su origen podrá incluir:
+- Pueblos y comunidades que se organizan.
+- Confederaciones de asentamientos.
+- Separaciones de civilizaciones existentes.
+- Movimientos migratorios.
+- Independencias.
+- Fragmentación de grandes estados.
+- Transformaciones políticas y culturales.
+
+Las civilizaciones también podrán debilitarse, fragmentarse, ser absorbidas o desaparecer.
+
+La desaparición deberá ser posible, pero no excesivamente frecuente. Se evitará que el mundo se vuelva inestable por una sucesión constante de colapsos.
+
+Las comunidades y culturas podrán sobrevivir a la desaparición de sus estructuras políticas, conservando tradiciones, conocimientos e identidades.
+
+## 10. Influencia del jugador
+
+El jugador podrá influir sobre otras civilizaciones mediante múltiples mecanismos:
+
+- Diplomacia y tratados.
+- Comercio e inversiones.
+- Intercambio tecnológico.
+- Influencia cultural.
+- Influencia religiosa.
+- Alianzas y cooperación.
+- Apoyo a facciones o movimientos.
+- Presión económica y política.
+- Espionaje y contraespionaje.
+- Intervención militar y territorial.
+
+La influencia podrá ser directa o indirecta.
+
+Las demás civilizaciones conservarán su autonomía y podrán aceptar, rechazar o reinterpretar las iniciativas del jugador según sus propios intereses.
+
+## 11. Dificultad de la IA
+
+La dificultad combinará calidad de decisiones y posibles ventajas artificiales.
+
+Se podrán configurar:
+- Capacidad de planificación.
+- Calidad de evaluación de oportunidades.
+- Gestión económica.
+- Desarrollo tecnológico.
+- Diplomacia.
+- Expansión y administración territorial.
+- Comportamiento militar.
+- Nivel de bonificaciones económicas o productivas.
+
+Las ventajas artificiales serán opcionales y configurables.
+
+La dificultad no deberá convertir a la IA en una entidad omnisciente ni permitirle ignorar las reglas del mundo.
+
+## 12. Integración con otros sistemas
+
+La IA no será un sistema aislado. Deberá utilizar los mismos sistemas y reglas que el jugador.
+
+Integraciones principales:
+
+- **Economía y producción:** las civilizaciones producen, consumen, almacenan y comercian utilizando las mismas reglas.
+- **Población y sociedad:** sus habitantes tienen necesidades, grupos sociales, clases, movilidad y conflictos.
+- **Construcción:** sus ciudades evolucionan con las mismas reglas arquitectónicas y materiales.
+- **Tecnología:** investigan, descubren y adoptan conocimientos mediante el sistema tecnológico común.
+- **Cultura y religión:** desarrollan identidades propias y pueden influir sobre otras sociedades.
+- **Diplomacia:** mantienen relaciones, tratados, memoria histórica y objetivos internacionales.
+- **Exploración:** descubren territorios, recursos y otras civilizaciones.
+- **Administración territorial:** gestionan ciudades y regiones.
+- **Guerra:** organizan fuerzas y conflictos utilizando la logística y las reglas militares generales.
+- **Eventos históricos:** experimentan acontecimientos y generan sus propias historias.
+
+Los acontecimientos importantes deberán generar consecuencias coordinadas en todos los sistemas relevantes.
+
+## 13. Memoria y conocimiento
+
+Cada civilización tendrá una memoria histórica que influirá en sus decisiones.
+
+Podrá recordar:
+- Guerras y conflictos.
+- Tratados incumplidos.
+- Alianzas duraderas.
+- Intercambios comerciales.
+- Migraciones y desplazamientos.
+- Ayudas recibidas.
+- Traiciones y rivalidades.
+- Contactos culturales y religiosos.
+- Conflictos territoriales.
+
+La memoria perderá influencia gradualmente, aunque algunos acontecimientos podrán dejar huellas duraderas.
+
+La IA distinguirá entre información conocida, rumores, relatos y territorios todavía desconocidos.
+
+## 14. Configuración y complejidad
+
+La autonomía y complejidad serán configurables de manera independiente.
+
+El jugador podrá elegir:
+- Autonomía de cada civilización.
+- Profundidad de simulación de sociedades lejanas.
+- Nivel de inteligencia y dificultad.
+- Capacidad de expansión autónoma.
+- Frecuencia de aparición de nuevas civilizaciones.
+- Posibilidad de fragmentación y desaparición.
+- Nivel de interacción diplomática.
+- Intensidad de competencia y cooperación.
+- Nivel de intervención del jugador.
+
+Se podrán configurar módulos individualmente para permitir partidas más livianas o simulaciones históricas profundas.
+
+## 15. Interfaz y presentación
+
+La información sobre otras civilizaciones deberá estar disponible sin obligar al jugador a administrar cada una.
+
+Se contemplarán:
+- Fichas de civilización.
+- Perfil de personalidad y objetivos conocidos.
+- Información sobre líderes.
+- Relaciones diplomáticas.
+- Indicadores económicos, demográficos y tecnológicos.
+- Mapa político y territorial.
+- Cronología histórica.
+- Noticias y acontecimientos.
+- Información sobre acuerdos y conflictos.
+- Indicadores de influencia y prestigio.
+
+La información mostrada dependerá del conocimiento que tenga el jugador. No se revelarán automáticamente todos los datos internos de otras sociedades.
+
+## 16. MVP
+
+Primera implementación funcional:
+
+- Dos o tres civilizaciones autónomas.
+- Identidad y objetivos básicos.
+- Personalidades diferenciadas.
+- Construcción y desarrollo económico simplificados.
+- Producción y consumo.
+- Investigación tecnológica básica.
+- Exploración y expansión territorial.
+- Relaciones diplomáticas.
+- Comercio y acuerdos básicos.
+- Líderes con atributos y personalidad.
+- Memoria de relaciones.
+- Simulación simplificada de civilizaciones lejanas.
+
+El objetivo inicial será comprobar que otras sociedades pueden desarrollarse de forma independiente y generar relaciones e historias interesantes sin intervención constante del jugador.
+
+## 17. Principio rector
+
+**El mundo no existe para oponerse al jugador ni para servirle. Las civilizaciones son sociedades con historia, intereses y destinos propios. El jugador es parte de ese mundo y puede influir profundamente en él, pero no es el único responsable de lo que sucede.**

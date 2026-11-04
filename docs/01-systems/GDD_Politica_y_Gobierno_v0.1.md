@@ -1,0 +1,312 @@
+> **Control documental:** 0.1 | Estado: diseño conceptual; las decisiones marcadas como confirmadas se preservan desde la fuente. **Alcance:** este GDD es fuente de detalle de su dominio; el GDD Maestro establece la visión común. Los conflictos intersistema se registran en AUDIT_REPORT.md y no se resuelven implícitamente.
+
+---
+
+# GDD — Sistema Político y de Gobierno v0.1
+
+## 1. Visión general
+
+El sistema político representa cómo las sociedades organizan el poder, toman decisiones colectivas, establecen normas y administran sus territorios a lo largo de la historia.
+
+El jugador no representa a un rey, presidente, emperador, jefe tribal ni líder religioso. Es una entidad externa que guía y moldea el desarrollo de la civilización.
+
+Su capacidad de intervención debe ser siempre considerable. Aunque las sociedades desarrollen instituciones, líderes y estructuras políticas complejas, el jugador nunca debe sentir que perdió las herramientas necesarias para dirigir su civilización.
+
+**Principio fundamental:** el mundo político debe tener autonomía y consecuencias propias, pero nunca debe quitarle al jugador su capacidad de orientar el destino de su civilización.
+
+## 2. El papel del jugador
+
+El jugador puede:
+
+- Establecer o modificar sistemas de gobierno.
+- Crear, modificar o eliminar leyes.
+- Definir políticas públicas.
+- Influir sobre las instituciones.
+- Establecer impuestos y regulaciones.
+- Determinar derechos y libertades.
+- Intervenir en conflictos políticos.
+- Favorecer determinados grupos sociales.
+- Promover reformas y transformaciones institucionales.
+- Orientar la evolución política de la civilización.
+
+El jugador no necesita ocupar formalmente ningún cargo para realizar estas acciones.
+
+Su intervención puede ser directa o indirecta, según el sistema y la época.
+
+## 3. Formas de gobierno
+
+El juego contemplará todas las formas de organización política históricamente relevantes.
+
+Entre ellas:
+
+- Jefaturas tribales.
+- Consejos comunitarios.
+- Monarquías.
+- Monarquías absolutas y constitucionales.
+- Imperios.
+- Aristocracias.
+- Oligarquías.
+- Repúblicas.
+- Democracias.
+- Teocracias.
+- Dictaduras.
+- Estados socialistas.
+- Federaciones y confederaciones.
+- Sistemas políticos híbridos.
+
+Estas formas no serán necesariamente excluyentes. Una civilización podrá desarrollar estructuras políticas particulares que combinen elementos de diferentes modelos.
+
+Su aparición y evolución dependerán de la época, cultura, tecnología, economía, religión, organización social y decisiones del jugador.
+
+## 4. Evolución política
+
+La civilización podrá transformar profundamente su organización política.
+
+Por ejemplo:
+
+- Una comunidad tribal puede desarrollar una jefatura.
+- Una jefatura puede convertirse en una monarquía.
+- Una monarquía puede evolucionar hacia una monarquía constitucional.
+- Una sociedad puede establecer una república.
+- Una república puede desarrollar instituciones democráticas.
+- Un imperio puede fragmentarse en diferentes estados.
+
+El jugador podrá promover estos cambios.
+
+Sin embargo, las transformaciones importantes tendrán consecuencias lógicas. Podrán producir resistencia, crisis institucionales, conflictos sociales, rebeliones o guerras civiles.
+
+Los cambios políticos no serán simples botones de actualización: representarán transformaciones reales de la sociedad.
+
+## 5. Instituciones políticas
+
+Las civilizaciones podrán desarrollar instituciones según su organización política y su evolución histórica.
+
+Ejemplos:
+
+- Consejos tribales.
+- Asambleas.
+- Parlamentos.
+- Senados.
+- Consejos de nobles.
+- Tribunales.
+- Administración pública.
+- Instituciones religiosas.
+- Gobiernos regionales.
+- Organismos administrativos.
+
+El jugador conservará un control amplio sobre estas instituciones.
+
+No se busca crear un sistema donde el jugador deba negociar constantemente para poder actuar. Las instituciones pueden tener funciones, características e intereses propios, pero no deben convertirse en una barrera permanente para la intervención del jugador.
+
+## 6. Leyes y políticas públicas
+
+El jugador podrá establecer, modificar y eliminar leyes individualmente.
+
+Las leyes abarcarán diferentes dimensiones de la sociedad:
+
+| Categoría | Ejemplos |
+|---|---|
+| Económica | Impuestos, propiedad privada, comercio, aranceles. |
+| Social | Derechos laborales, movilidad social, ciudadanía. |
+| Religiosa | Libertad religiosa, religión oficial, tolerancia. |
+| Educativa | Educación pública, alfabetización, obligatoriedad. |
+| Militar | Servicio militar, reclutamiento, organización del ejército. |
+| Civil | Matrimonio, herencia, derechos individuales. |
+| Territorial | Administración regional, autonomía local. |
+| Penal | Delitos, castigos, justicia. |
+| Política | Derechos políticos, representación, participación. |
+
+Las leyes tendrán consecuencias sobre la población, economía, cultura, religión, estabilidad y desarrollo de la civilización.
+
+El sistema deberá contemplar tanto efectos positivos como negativos y posibles consecuencias inesperadas.
+
+Por ejemplo:
+- Aumentar impuestos puede generar mayores ingresos, pero reducir la satisfacción de ciertos grupos.
+- Establecer educación obligatoria puede mejorar la alfabetización, pero requerir inversiones importantes.
+- Restringir una religión puede fortalecer otra institución, pero generar tensiones sociales.
+- Ampliar derechos laborales puede mejorar el bienestar, pero incrementar determinados costos productivos.
+
+## 7. Consejeros y grupos de poder
+
+Los grupos sociales y económicos podrán influir en el desarrollo político.
+
+Sin embargo, su influencia será principalmente consultiva.
+
+El jugador podrá recibir recomendaciones de:
+- Consejeros económicos.
+- Autoridades religiosas.
+- Funcionarios.
+- Comerciantes.
+- Militares.
+- Representantes de trabajadores.
+- Nobles.
+- Intelectuales.
+- Otros grupos relevantes según la época.
+
+Estos personajes y grupos podrán expresar intereses, advertencias y propuestas.
+
+El jugador podrá escucharlos o ignorarlos.
+
+No tendrán capacidad para bloquear permanentemente sus decisiones.
+
+## 8. Oposición y movimientos políticos
+
+Las sociedades podrán desarrollar:
+- Facciones políticas.
+- Movimientos ideológicos.
+- Partidos políticos.
+- Grupos opositores.
+- Movimientos reformistas.
+- Movimientos separatistas.
+- Organizaciones revolucionarias.
+
+Su aparición dependerá del desarrollo histórico y político.
+
+Su importancia será variable según la forma de gobierno.
+
+Por ejemplo, los partidos políticos tendrán relevancia en determinadas sociedades modernas, mientras que en otras épocas existirán facciones cortesanas, movimientos religiosos o disputas entre grupos aristocráticos.
+
+El jugador podrá influir sobre su desarrollo y sobre las condiciones que favorecen su aparición.
+
+## 9. Líderes y gobernantes
+
+Las civilizaciones tendrán personajes políticos identificables.
+
+Dependiendo de la época podrán ser:
+- Jefes tribales.
+- Reyes.
+- Emperadores.
+- Presidentes.
+- Primeros ministros.
+- Líderes religiosos.
+- Gobernadores.
+- Funcionarios importantes.
+
+Cada personaje podrá tener atributos propios:
+
+- Personalidad.
+- Habilidades administrativas.
+- Ambiciones.
+- Ideología.
+- Popularidad.
+- Legitimidad.
+- Relaciones personales.
+- Influencia política.
+- Lealtades.
+- Herederos, cuando corresponda.
+
+Estos personajes podrán cambiar con el tiempo y afectar el desarrollo de la civilización.
+
+Su existencia permitirá que la historia política tenga protagonistas reconocibles, sin convertir al jugador en uno de ellos.
+
+## 10. Conflictos políticos
+
+El sistema podrá representar diferentes niveles de inestabilidad:
+
+- Crisis gubernamentales.
+- Conflictos institucionales.
+- Rebeliones.
+- Golpes de Estado.
+- Revoluciones.
+- Guerras civiles.
+- Separatismo.
+- Disputas sucesorias.
+- Crisis constitucionales.
+
+Estos acontecimientos tendrán causas relacionadas con las condiciones sociales, económicas, culturales y políticas.
+
+Su profundidad será configurable.
+
+Para las primeras etapas del juego, el sistema comenzará con una simulación sencilla de estabilidad e inestabilidad.
+
+Los conflictos más complejos se incorporarán progresivamente.
+
+## 11. Configuración y complejidad
+
+El sistema tendrá distintos niveles de simulación:
+
+**Básico**
+- Gobierno y estabilidad general.
+- Algunas políticas fundamentales.
+- Intervención directa del jugador.
+- Consecuencias simplificadas.
+
+**Intermedio**
+- Instituciones.
+- Líderes.
+- Grupos de interés.
+- Leyes individuales.
+- Conflictos políticos.
+
+**Avanzado**
+- Instituciones complejas.
+- Facciones y partidos.
+- Procesos legislativos.
+- Relaciones de poder.
+- Crisis políticas detalladas.
+- Conflictos institucionales y constitucionales.
+
+El jugador podrá configurar la complejidad y activar o desactivar determinadas mecánicas.
+
+## 12. Integración con otros sistemas
+
+El sistema político estará conectado con:
+
+- **Población y sociedad:** clases sociales, necesidades, libertades, movimientos y estabilidad.
+- **Economía:** impuestos, propiedad, comercio, regulaciones y gasto público.
+- **Religión:** relación entre poder político e instituciones religiosas.
+- **Cultura:** ideologías, tradiciones, valores y legitimidad.
+- **Producción:** regulaciones laborales, propiedad y organización productiva.
+- **Construcción:** planificación territorial, infraestructura y edificios públicos.
+- **Tecnología:** nuevas formas de administración y organización estatal.
+- **Militar:** organización, reclutamiento y conflictos internos.
+
+La política será un sistema transversal que conectará prácticamente todos los aspectos de la civilización.
+
+## 13. MVP — Primera implementación
+
+La primera versión no necesita implementar todas las mecánicas.
+
+Se propone comenzar con:
+
+- Una estructura política inicial sencilla.
+- Un indicador de estabilidad.
+- Un conjunto reducido de políticas.
+- Sistema básico de impuestos.
+- Algunos tipos de gobierno.
+- Personajes políticos identificables.
+- Consejeros con recomendaciones.
+- Consecuencias sociales y económicas de las decisiones.
+- Posibilidad de cambiar el sistema político.
+
+La arquitectura deberá permitir incorporar posteriormente instituciones, partidos, revoluciones, conflictos y otras mecánicas sin reconstruir el sistema desde cero.
+
+## 14. Decisiones confirmadas
+
+| Tema | Decisión |
+|---|---|
+| Rol del jugador | Entidad superior que guía la civilización. |
+| Poder del jugador | Siempre amplio y significativo. |
+| Formas de gobierno | Todas las históricamente relevantes. |
+| Cambios políticos | Permitidos, con consecuencias posibles. |
+| Instituciones | Existen, pero el jugador conserva el control. |
+| Leyes | Modificables individualmente. |
+| Consecuencias | Deben ser lógicas y afectar otros sistemas. |
+| Grupos de poder | Influencia limitada; pueden aconsejar. |
+| Oposición | Sí, adaptada a cada época. |
+| Líderes | Personajes identificables con atributos propios. |
+| Conflictos | Todos los niveles, configurables. |
+| Complejidad inicial | Estabilidad e inestabilidad básicas. |
+| Evolución histórica | Progresiva, flexible y no lineal. |
+
+## 15. Visión final
+
+El sistema político debe permitir que el jugador observe cómo su pequeña comunidad se transforma, a lo largo de siglos, en una civilización con instituciones, leyes, líderes, ideologías y estructuras de poder complejas.
+
+El jugador no gobierna personalmente esa civilización: la guía.
+
+Los gobernantes nacen, ascienden, toman decisiones, cometen errores y desaparecen. Las instituciones cambian, las leyes evolucionan y las sociedades transforman sus formas de organización.
+
+Pero el jugador conserva siempre la capacidad de influir sobre ese proceso.
+
+**La política debe darle profundidad y autonomía a la civilización, no quitarle protagonismo al jugador.**

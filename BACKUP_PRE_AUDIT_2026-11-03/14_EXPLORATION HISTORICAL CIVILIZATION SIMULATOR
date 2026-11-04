@@ -1,0 +1,508 @@
+# GDD — EXPLORACIÓN, DESCUBRIMIENTO Y EXPANSIÓN TERRITORIAL
+
+**Versión:** 0.1  
+**Estado:** Definición conceptual consolidada  
+**Proyecto:** Simulador histórico de civilizaciones
+
+---
+
+## 1. Visión general
+
+Este sistema define cómo las civilizaciones conocen, exploran, ocupan, desarrollan y controlan el mundo.
+
+La exploración y la expansión territorial serán procesos históricos dinámicos. Las civilizaciones podrán descubrir nuevas regiones, establecer asentamientos, desarrollar rutas, migrar, comerciar, conquistar territorios y establecer diferentes formas de dependencia política.
+
+El sistema deberá permitir tanto la expansión dirigida por el jugador como el crecimiento autónomo de las sociedades.
+
+No se busca que el jugador tenga que controlar cada expedición, cada migración o cada asentamiento. La población y las instituciones podrán desarrollar iniciativas propias, mientras que el jugador conserva herramientas para orientar y modificar esos procesos.
+
+**Principio fundamental:**
+
+La expansión de una civilización no será solamente una conquista territorial. Será un proceso de exploración, migración, asentamiento, integración y transformación histórica.
+
+## 2. Exploración del mundo
+
+### 2.1. Modalidad de exploración
+
+El sistema permitirá configurar cómo explora cada civilización.
+
+Se contemplarán tres modalidades:
+
+- Exploración autónoma.
+- Exploración dirigida por el jugador.
+- Modelo mixto.
+
+La autonomía podrá configurarse individualmente.
+
+Las civilizaciones podrán explorar regiones por motivos económicos, demográficos, estratégicos, científicos, religiosos o políticos.
+
+El jugador podrá establecer prioridades y objetivos generales sin necesidad de controlar cada movimiento.
+
+### 2.2. Unidades exploradoras
+
+La exploración podrá realizarse mediante diferentes grupos y unidades según la época:
+
+- Exploradores especializados.
+- Grupos de población.
+- Comerciantes.
+- Caravanas.
+- Ejércitos.
+- Navegantes.
+- Expediciones marítimas.
+- Viajeros y diplomáticos.
+- Grupos migratorios.
+
+No todas las unidades tendrán las mismas capacidades.
+
+Por ejemplo, una caravana comercial podrá descubrir rutas terrestres, mientras que una expedición marítima podrá explorar costas, islas y regiones lejanas.
+
+### 2.3. Expediciones y logística
+
+La logística de exploración será simplificada.
+
+Las expediciones cercanas no requerirán una gestión detallada de suministros.
+
+Las expediciones lejanas podrán considerar:
+
+- Duración estimada.
+- Alimentos.
+- Agua.
+- Equipamiento.
+- Medios de transporte.
+- Condiciones climáticas.
+- Distancia.
+- Riesgos geográficos.
+- Tecnología disponible.
+
+Estos factores tendrán consecuencias simplificadas, evitando convertir la exploración en micromanagement.
+
+El sistema reutilizará la infraestructura de transporte y logística ya definida.
+
+## 3. Descubrimiento de regiones
+
+### 3.1. Información descubierta
+
+La exploración podrá revelar:
+
+- Geografía y topografía.
+- Ríos, lagos y costas.
+- Clima y biomas.
+- Suelos y fertilidad.
+- Recursos naturales.
+- Flora y fauna.
+- Especies domesticables.
+- Otras civilizaciones.
+- Asentamientos.
+- Rutas comerciales.
+- Ruinas y vestigios.
+- Lugares de interés histórico, cultural o religioso.
+
+La información disponible dependerá del tipo de exploración y de la tecnología de la civilización.
+
+### 3.2. Descubrimientos relevantes
+
+El sistema generará acontecimientos especiales cuando se produzcan descubrimientos importantes.
+
+Ejemplos:
+
+- Descubrimiento de una nueva ruta comercial.
+- Identificación de un paso montañoso.
+- Descubrimiento de una región rica en minerales.
+- Localización de nuevas tierras fértiles.
+- Descubrimiento de especies domesticables.
+- Contacto con una civilización desconocida.
+- Descubrimiento de ruinas o antiguos asentamientos.
+- Identificación de rutas marítimas alternativas.
+
+Los descubrimientos podrán generar notificaciones y oportunidades para la civilización.
+
+No todos los descubrimientos serán necesariamente acontecimientos extraordinarios: muchos formarán parte del proceso cotidiano de exploración.
+
+## 4. Conocimiento geográfico y cartografía
+
+### 4.1. Niveles de conocimiento
+
+El conocimiento del mundo tendrá distintos niveles de precisión.
+
+Se contemplarán tres estados:
+
+1. **Desconocido:** no existe información relevante sobre la región.
+2. **Conocido:** existen relatos, referencias o información general.
+3. **Cartografiado:** existe información geográfica más precisa.
+
+Una región puede ser conocida por comerciantes o viajeros sin haber sido explorada directamente por la civilización.
+
+### 4.2. Mapas y transmisión de información
+
+Cada civilización desarrollará su propio conocimiento geográfico.
+
+La información podrá transmitirse mediante:
+
+- Exploradores.
+- Comerciantes.
+- Migraciones.
+- Diplomáticos.
+- Viajeros.
+- Conquistas.
+- Relaciones culturales.
+- Intercambios de mapas.
+- Relatos y tradiciones.
+
+La información compartida no tendrá necesariamente la misma precisión que la obtenida mediante exploración directa.
+
+La cartografía evolucionará junto con las capacidades tecnológicas y científicas.
+
+### 4.3. Integración tecnológica
+
+La exploración se relacionará con los avances en:
+
+- Navegación.
+- Cartografía.
+- Astronomía.
+- Construcción naval.
+- Instrumentos de orientación.
+- Transporte.
+- Ingeniería.
+
+Una civilización podrá explorar regiones que antes resultaban inaccesibles gracias a nuevos conocimientos y tecnologías.
+
+## 5. Expansión territorial
+
+### 5.1. Formas de expansión
+
+Las civilizaciones podrán expandirse mediante diferentes mecanismos:
+
+- Fundación de asentamientos.
+- Expansión gradual desde territorios existentes.
+- Migración.
+- Colonización.
+- Conquista.
+- Tratados.
+- Incorporación voluntaria.
+- Uniones políticas.
+- Dependencias territoriales.
+- Establecimiento de puestos comerciales.
+
+Todas estas modalidades estarán integradas con los sistemas económico, político y diplomático.
+
+### 5.2. Control territorial
+
+El control territorial utilizará un modelo mixto.
+
+Existirán fronteras reconocidas y territorios delimitados, pero también zonas donde el control será gradual o variable.
+
+El sistema podrá representar:
+
+- Territorio central.
+- Región administrada.
+- Territorio fronterizo.
+- Zona de influencia.
+- Territorio disputado.
+- Territorio ocupado.
+- Territorio dependiente.
+
+Estos niveles serán configurables y no requerirán una simulación administrativa extremadamente compleja.
+
+La influencia y el control podrán cambiar según población, presencia institucional, infraestructura, relaciones políticas y capacidad de administración.
+
+### 5.3. Fronteras
+
+Las fronteras podrán surgir y modificarse mediante:
+
+- Expansión de asentamientos.
+- Acuerdos diplomáticos.
+- Conquistas.
+- Migraciones.
+- Conflictos.
+- Tratados.
+- Cambios de dependencia política.
+- Abandono de regiones.
+
+Las fronteras naturales, como montañas, ríos y mares, podrán influir en su formación.
+
+La geografía tendrá un papel importante, pero no determinará automáticamente los límites políticos.
+
+## 6. Fundación de nuevos asentamientos
+
+### 6.1. Fundación dirigida y autónoma
+
+El jugador podrá elegir libremente dónde fundar nuevos asentamientos.
+
+El sistema también podrá recomendar ubicaciones según:
+
+- Disponibilidad de agua.
+- Fertilidad.
+- Recursos naturales.
+- Clima.
+- Accesibilidad.
+- Seguridad.
+- Proximidad a rutas comerciales.
+- Distancia respecto de otros asentamientos.
+- Posibilidades de expansión.
+
+La población también podrá fundar asentamientos autónomamente.
+
+Estos procesos dependerán de las condiciones demográficas, económicas, sociales y políticas.
+
+### 6.2. Desarrollo de asentamientos
+
+Los asentamientos podrán evolucionar gradualmente.
+
+Una pequeña comunidad podrá convertirse en aldea, luego en pueblo y eventualmente en ciudad.
+
+Su desarrollo dependerá de:
+
+- Crecimiento poblacional.
+- Actividad económica.
+- Recursos disponibles.
+- Infraestructura.
+- Conectividad.
+- Instituciones.
+- Tecnología.
+- Decisiones políticas.
+- Características geográficas.
+
+La evolución estará integrada con los sistemas de población, construcción, economía y producción.
+
+### 6.3. Autonomía e independencia
+
+Los asentamientos podrán tener diferentes niveles de autonomía.
+
+Dependiendo de su evolución, podrán:
+
+- Permanecer bajo control directo.
+- Obtener autonomía administrativa.
+- Desarrollar instituciones propias.
+- Convertirse en centros regionales.
+- Integrarse a otras entidades políticas.
+- Independizarse.
+
+La independencia podrá producirse mediante procesos políticos, económicos, culturales o conflictos.
+
+No será un resultado obligatorio de la distancia o del crecimiento.
+
+## 7. Migración y colonización
+
+### 7.1. Migraciones
+
+La migración podrá ser dirigida por el jugador o surgir autónomamente.
+
+Los grupos de población podrán desplazarse buscando mejores oportunidades.
+
+Las migraciones podrán ser:
+
+- Internas.
+- Entre asentamientos.
+- Hacia nuevas regiones.
+- Hacia colonias.
+- Entre civilizaciones.
+- Forzadas por conflictos o crisis.
+
+Se integrarán con el sistema demográfico y social.
+
+### 7.2. Factores de colonización
+
+La fundación y el crecimiento de asentamientos dependerán de:
+
+- Recursos disponibles.
+- Distancia y accesibilidad.
+- Clima y fertilidad.
+- Seguridad.
+- Presencia de otras civilizaciones.
+- Costos logísticos.
+- Tecnología disponible.
+- Intereses económicos y políticos.
+
+Estos factores no funcionarán como requisitos rígidos. Serán variables que influirán en las decisiones de población e instituciones.
+
+### 7.3. Relaciones con poblaciones existentes
+
+Cuando una civilización se expanda hacia regiones habitadas, podrán producirse diferentes resultados:
+
+- Integración cultural y social.
+- Comercio y convivencia.
+- Cooperación.
+- Competencia económica.
+- Conflictos.
+- Desplazamientos.
+- Conquista.
+- Sometimiento.
+- Acuerdos políticos.
+- Integración gradual.
+
+El resultado dependerá de las características de las sociedades involucradas, sus intereses, su capacidad militar, sus relaciones y sus condiciones históricas.
+
+Se evitará que la colonización tenga siempre un resultado predeterminado.
+
+## 8. Administración territorial y autonomía
+
+### 8.1. Control y autonomía
+
+La autonomía territorial será configurable.
+
+El jugador podrá elegir entre:
+
+- Control directo.
+- Autonomía limitada.
+- Autonomía progresiva.
+- Administración regional con capacidad de decisión propia.
+
+El nivel de autonomía dependerá de las preferencias del jugador y podrá evolucionar con el tiempo.
+
+### 8.2. Distancia respecto del centro de poder
+
+La distancia tendrá consecuencias, pero su impacto será moderado y configurable.
+
+Podrá influir en:
+
+- Tiempo de comunicación.
+- Capacidad administrativa.
+- Costos de transporte.
+- Abastecimiento.
+- Coordinación política.
+- Seguridad.
+- Respuesta ante conflictos.
+
+No se busca que administrar territorios lejanos se convierta en una tarea excesivamente difícil.
+
+### 8.3. Asentamientos espontáneos
+
+Los asentamientos podrán surgir espontáneamente.
+
+Por ejemplo, familias, comerciantes o trabajadores podrán instalarse cerca de una mina, un río, una ruta comercial o una región agrícola.
+
+El jugador podrá intervenir, apoyar, regular o desalentar estos procesos.
+
+La expansión autónoma será una parte importante de la evolución histórica de las civilizaciones.
+
+## 9. Autonomía de otras civilizaciones
+
+Las civilizaciones no controladas por el jugador explorarán y expandirán sus territorios según sus propios intereses.
+
+Su comportamiento podrá considerar:
+
+- Necesidades demográficas.
+- Recursos.
+- Oportunidades económicas.
+- Presiones territoriales.
+- Seguridad.
+- Tecnología.
+- Relaciones diplomáticas.
+- Conflictos.
+- Condiciones geográficas.
+
+El jugador podrá influir en sus decisiones mediante diplomacia, comercio, acuerdos y otras herramientas.
+
+La autonomía será configurable.
+
+Las civilizaciones no deben limitarse a reaccionar ante el jugador: deberán desarrollar historias propias.
+
+## 10. Integración con otros sistemas
+
+| Sistema | Integración |
+|---|---|
+| Geografía | Regiones, relieve, recursos y accesibilidad |
+| Población | Migraciones, crecimiento y asentamientos |
+| Economía | Nuevos recursos, mercados y territorios |
+| Transporte | Expediciones, rutas y conexiones |
+| Tecnología | Navegación, cartografía y exploración |
+| Diplomacia | Contactos, tratados y territorios |
+| Política | Administración, autonomía e independencia |
+| Cultura | Intercambio, integración y transformación |
+| Religión | Expansión religiosa y lugares de importancia espiritual |
+| Militar | Conquista, ocupación y defensa territorial |
+| Construcción | Fundación y desarrollo de asentamientos |
+
+## 11. Complejidad configurable
+
+El sistema tendrá tres niveles generales:
+
+**Sencillo**
+- Exploración simplificada.
+- Expansión territorial automática.
+- Fundación de asentamientos mediante órdenes simples.
+- Control territorial básico.
+
+**Intermedio**
+- Exploración con objetivos.
+- Distintos niveles de conocimiento.
+- Colonización y migraciones autónomas.
+- Control territorial diferenciado.
+- Autonomía regional.
+
+**Avanzado**
+- Expediciones con logística.
+- Cartografía más detallada.
+- Administración territorial más profunda.
+- Mayor autonomía de asentamientos.
+- Procesos de expansión y colonización más complejos.
+
+La configuración podrá realizarse por módulo, evitando que la complejidad de un área obligue a utilizarla en todas las demás.
+
+## 12. MVP — Primera versión jugable
+
+El MVP deberá incluir:
+
+- Exploración básica del mapa.
+- Estados de territorio desconocido, conocido y explorado.
+- Unidades exploradoras sencillas.
+- Descubrimiento de recursos y otras civilizaciones.
+- Contacto entre civilizaciones.
+- Fundación de nuevos asentamientos.
+- Expansión territorial básica.
+- Migración simplificada.
+- Ubicación autónoma de asentamientos.
+- Control territorial inicial.
+- Integración con geografía, población y economía.
+
+Quedarán para versiones posteriores:
+
+- Expediciones avanzadas.
+- Cartografía detallada.
+- Exploración marítima compleja.
+- Colonización avanzada.
+- Independencia y autonomía territorial profunda.
+- Administración regional detallada.
+- Sistemas avanzados de influencia territorial.
+
+## 13. Visión final
+
+La exploración y la expansión deberán generar historias diferentes en cada partida.
+
+Una civilización podrá permanecer durante siglos en su región original, desarrollar una red de asentamientos interiores, expandirse mediante el comercio, colonizar islas o construir un extenso territorio continental.
+
+Otras civilizaciones podrán seguir caminos completamente diferentes.
+
+El jugador podrá intervenir directamente o permitir que su civilización evolucione de manera más autónoma.
+
+**Principio de diseño:**
+
+*Una civilización no crece solamente cuando conquista territorios. Crece cuando descubre nuevas oportunidades, se desplaza, establece comunidades y transforma regiones en parte de su historia.*
+
+---
+
+## 14. Decisiones confirmadas
+
+| Área | Decisión |
+|---|---|
+| Exploración | Configurable |
+| Unidades exploradoras | Todos los tipos relevantes según época |
+| Logística | Simplificada, especialmente para expediciones lejanas |
+| Descubrimientos | Todos los tipos de información |
+| Acontecimientos especiales | Sí |
+| Cartografía | Distintos niveles de precisión |
+| Expansión | Todos los mecanismos históricos relevantes |
+| Control territorial | Modelo mixto |
+| Niveles de control | Sí, simplificados y configurables |
+| Colonias | Autonomía e independencia posibles |
+| Fundación de asentamientos | Manual, recomendada y autónoma |
+| Migraciones | Dirigidas y autónomas |
+| Colonización | Condicionada por factores geográficos, económicos y políticos |
+| Relaciones con poblaciones existentes | Todas las posibilidades según contexto |
+| Autonomía regional | Configurable |
+| Asentamientos espontáneos | Sí, con intervención del jugador |
+| Distancia administrativa | Consecuencias moderadas |
+| Otras civilizaciones | Autonomía configurable |
+| Complejidad | Configurable |
+
+**Estado:** GDD conceptual v0.1 consolidado.

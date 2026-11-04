@@ -1,0 +1,368 @@
+> **Control documental:** 0.1 | Estado: diseño conceptual; las decisiones marcadas como confirmadas se preservan desde la fuente. **Alcance:** este GDD es fuente de detalle de su dominio; el GDD Maestro establece la visión común. Los conflictos intersistema se registran en AUDIT_REPORT.md y no se resuelven implícitamente.
+
+---
+
+# GDD — Sistema Global de Recursos y Materiales
+
+**Versión:** 0.1  
+**Estado:** Diseño conceptual
+
+## 1. Visión general
+
+El juego utilizará un sistema global y unificado de recursos.
+
+Cada recurso tendrá una identidad única y podrá ser utilizado por todos los sistemas que lo necesiten: economía, producción, construcción, población, comercio, transporte, tecnología, instituciones y actividades militares.
+
+No existirán recursos duplicados para representar un mismo material en diferentes sistemas.
+
+Por ejemplo, la madera producida por un leñador será la misma que puede utilizar una construcción, consumir una industria, almacenar un depósito o transportar un comerciante.
+
+El catálogo, detalle y complejidad serán configurables.
+
+## 2. Clasificación de recursos
+
+Los recursos tendrán dos clasificaciones complementarias.
+
+### 2.1. Por naturaleza y categoría
+
+- Recursos naturales.
+- Recursos agrícolas.
+- Recursos ganaderos.
+- Recursos pesqueros.
+- Alimentos y bebidas.
+- Materiales de construcción.
+- Metales y minerales.
+- Combustibles y fuentes de energía.
+- Materias primas textiles.
+- Productos manufacturados.
+- Herramientas y equipamiento.
+- Bienes de consumo.
+- Productos comerciales especiales.
+- Recursos estratégicos.
+
+### 2.2. Por función económica
+
+- **Materias primas:** recursos extraídos o producidos directamente de la naturaleza.
+- **Productos intermedios:** materiales transformados que sirven como insumos.
+- **Productos finales:** bienes destinados al consumo, construcción, comercio o utilización directa.
+
+Un mismo recurso podrá cumplir distintas funciones según su utilización.
+
+## 3. Nivel de detalle
+
+El nivel de detalle será configurable.
+
+La configuración intermedia será la referencia inicial.
+
+Ejemplos:
+- Madera.
+- Piedra.
+- Arcilla.
+- Arena.
+- Hierro.
+- Cobre.
+- Estaño.
+- Trigo.
+- Harina.
+- Pan.
+- Carne.
+- Pieles.
+- Lana.
+- Cuero.
+
+En configuraciones más avanzadas podrán existir variedades y propiedades adicionales.
+
+El catálogo podrá ampliarse con el progreso tecnológico, comercial y cultural, sin necesidad de reemplazar los recursos básicos.
+
+## 4. Calidad y propiedades
+
+Los recursos podrán adquirir calidad y propiedades diferenciadas.
+
+La calidad aparecerá progresivamente según el desarrollo histórico y tecnológico.
+
+Podrá depender de:
+- Características naturales.
+- Procedencia.
+- Técnicas de extracción.
+- Métodos de producción.
+- Herramientas utilizadas.
+- Especialización laboral.
+- Procesamiento.
+- Conservación.
+- Tecnología.
+
+En etapas iniciales, las diferencias podrán ser simplificadas. Con el desarrollo de la civilización podrán incorporarse distinciones más precisas.
+
+La calidad podrá influir sobre:
+- Precio.
+- Durabilidad.
+- Rendimiento.
+- Eficiencia productiva.
+- Valor comercial.
+- Prestigio.
+- Preferencias de consumo.
+
+No todos los recursos necesitarán tener calidad de la misma manera.
+
+## 5. Recursos naturales
+
+Los recursos naturales tendrán comportamientos diferentes según su naturaleza.
+
+Se contemplarán:
+- Recursos renovables.
+- Recursos parcialmente renovables.
+- Recursos no renovables.
+- Recursos agotables.
+- Recursos regenerables bajo determinadas condiciones.
+
+La explotación podrá provocar:
+- Deforestación.
+- Agotamiento de suelos.
+- Sobrepesca.
+- Reducción de fauna.
+- Agotamiento de depósitos.
+- Degradación ambiental.
+
+Los recursos renovables podrán agotarse temporalmente o degradarse si su explotación supera su capacidad de regeneración.
+
+La recuperación dependerá de las características ambientales y de las prácticas de explotación.
+
+## 6. Almacenamiento
+
+El almacenamiento evolucionará históricamente.
+
+Podrán existir:
+- Depósitos generales.
+- Graneros.
+- Silos.
+- Almacenes especializados.
+- Bodegas.
+- Depósitos comerciales.
+- Almacenes portuarios.
+- Instalaciones especiales.
+
+Las capacidades y condiciones dependerán de la infraestructura y tecnología.
+
+Los recursos almacenados podrán estar sujetos a:
+- Capacidad máxima.
+- Deterioro.
+- Plagas.
+- Humedad.
+- Robos.
+- Pérdidas.
+- Costos de mantenimiento.
+
+El nivel de detalle será configurable.
+
+## 7. Deterioro y conservación
+
+Los recursos podrán deteriorarse según sus propiedades.
+
+Los factores posibles incluyen:
+- Naturaleza del producto.
+- Tiempo de almacenamiento.
+- Temperatura.
+- Humedad.
+- Instalaciones.
+- Técnicas de conservación.
+- Embalaje.
+- Transporte.
+
+Alimentos, bebidas, materiales orgánicos y ciertos productos químicos o manufacturados podrán tener comportamientos específicos.
+
+La complejidad y frecuencia de deterioro serán configurables.
+
+## 8. Consumo y utilización
+
+Los recursos se utilizarán mediante dos mecanismos integrados:
+
+1. Consumo asociado a necesidades de población, hogares, instituciones y organizaciones.
+2. Consumo asociado a actividades productivas, construcciones, mantenimiento, transporte y otras operaciones.
+
+Los sistemas deberán consultar el inventario común.
+
+El consumo dependerá de:
+- Necesidades.
+- Capacidad económica.
+- Disponibilidad.
+- Prioridades.
+- Tecnología.
+- Calidad.
+- Condiciones locales.
+
+Las necesidades insatisfechas podrán generar consecuencias sociales y económicas según su importancia y duración.
+
+## 9. Distribución geográfica
+
+Los recursos tendrán distribuciones geográficas diferenciadas.
+
+La disponibilidad dependerá de:
+- Geología.
+- Biomas.
+- Suelos.
+- Clima.
+- Hidrología.
+- Flora y fauna.
+- Recursos marinos.
+- Condiciones ambientales.
+
+La configuración del mundo permitirá ajustar abundancia y distribución.
+
+La ubicación de recursos generará ventajas y limitaciones regionales, influyendo en asentamientos, especialización productiva y comercio.
+
+## 10. Sustitución de recursos
+
+Los procesos productivos y construcciones podrán utilizar sustitutos cuando sea posible.
+
+Las alternativas podrán depender de:
+- Tecnología.
+- Disponibilidad.
+- Precio.
+- Distancia.
+- Calidad.
+- Propiedades físicas.
+- Tradiciones constructivas o productivas.
+
+Ejemplos:
+- Distintos materiales para construcción.
+- Combustibles alternativos.
+- Herramientas fabricadas con diferentes materiales.
+- Insumos agrícolas alternativos.
+
+La sustitución no será universal: deberá respetar las limitaciones físicas y técnicas de cada actividad.
+
+## 11. Propiedad y control
+
+Los recursos pertenecerán al Estado o a la civilización.
+
+Esto no significa que todas las actividades productivas deban ser administradas directamente por el gobierno.
+
+Los productores podrán operar autónomamente y gestionar sus actividades mediante mecanismos económicos.
+
+El sistema deberá permitir:
+- Asignación de recursos.
+- Inventarios públicos.
+- Presupuestos.
+- Compras y ventas.
+- Impuestos.
+- Subsidios.
+- Incentivos.
+- Prioridades productivas.
+- Regulaciones.
+- Reservas estratégicas.
+
+La propiedad privada de edificios y empresas podrá existir como modalidad organizativa, pero no modificará la regla general de titularidad de los recursos.
+
+## 12. Recursos especiales y estratégicos
+
+Existirán recursos con importancia comercial, cultural, económica o estratégica.
+
+Ejemplos:
+- Sal.
+- Especias.
+- Seda.
+- Tintes.
+- Piedras preciosas.
+- Caballos.
+- Metales especiales.
+- Productos medicinales.
+- Bienes artesanales de lujo.
+
+Estos recursos podrán generar:
+- Rutas comerciales.
+- Especialización regional.
+- Prestigio.
+- Ingresos.
+- Dependencias económicas.
+- Intereses diplomáticos.
+- Conflictos por acceso o control.
+
+No todos los recursos estratégicos tendrán importancia militar: algunos serán relevantes principalmente por su valor económico o cultural.
+
+## 13. Dinero y unidad monetaria
+
+El juego utilizará una unidad monetaria universal desde el comienzo.
+
+No será obligatorio simular la transición histórica desde el trueque hacia los sistemas monetarios.
+
+La unidad monetaria permitirá:
+- Valorar recursos.
+- Establecer precios.
+- Pagar salarios.
+- Calcular impuestos.
+- Gestionar presupuestos.
+- Financiar construcciones.
+- Realizar comercio.
+- Medir riqueza y actividad económica.
+
+Los precios podrán evolucionar según oferta, demanda, escasez, distancia, transporte, calidad y condiciones comerciales.
+
+La existencia de una unidad monetaria común será una abstracción del modelo económico, no una afirmación histórica de que todas las sociedades utilizaron dinero de la misma manera.
+
+## 14. Unidades y contabilización
+
+Los recursos utilizarán unidades abstractas como representación principal.
+
+Esto permitirá mantener consistencia y rendimiento sin obligar a convertir cada operación a kilogramos, litros o toneladas.
+
+Las unidades podrán representar cantidades físicas aproximadas cuando sea útil para la interfaz.
+
+La escala de unidades deberá ser consistente entre:
+- Producción.
+- Consumo.
+- Construcción.
+- Almacenamiento.
+- Transporte.
+- Comercio.
+
+La precisión será configurable.
+
+## 15. Integración con otros sistemas
+
+El sistema global de recursos será compartido por:
+
+- Economía.
+- Producción y trabajo.
+- Construcción y arquitectura.
+- Población y sociedad.
+- Transporte y logística.
+- Comercio.
+- Tecnología.
+- Agricultura y ganadería.
+- Geografía y medioambiente.
+- Administración territorial.
+- Diplomacia.
+- Guerra.
+
+Todos los sistemas utilizarán el mismo catálogo y las mismas reglas generales.
+
+## 16. MVP
+
+Primera implementación:
+
+- Catálogo básico de recursos.
+- Clasificación por categoría y función.
+- Unidades abstractas.
+- Inventarios compartidos.
+- Producción y consumo.
+- Almacenamiento.
+- Recursos naturales renovables y agotables.
+- Precios básicos.
+- Sustitutos definidos para algunas recetas.
+- Deterioro simplificado de alimentos.
+
+Recursos iniciales:
+- Madera.
+- Piedra.
+- Arcilla.
+- Bayas.
+- Carne.
+- Trigo.
+- Harina.
+- Pan.
+
+El sistema deberá permitir que una misma cantidad de recursos sea utilizada y contabilizada coherentemente en toda la simulación.
+
+## 17. Principio rector
+
+**Cada recurso representa algo real dentro del mundo simulado. No debe existir una versión diferente del mismo material para cada sistema: la economía, la producción, la construcción y el comercio comparten una única realidad material.**

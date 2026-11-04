@@ -1,0 +1,1073 @@
+# HISTORICAL CIVILIZATION SIMULATOR
+## Game Design Document (GDD)
+**Versión:** 0.1  
+**Estado:** Diseño conceptual inicial  
+**Período histórico:** Desde el Paleolítico hasta 1800 d.C.  
+**Género:** Real-Time Strategy / City Builder / Historical Civilization Simulator  
+**Motor propuesto:** Unreal Engine 5  
+**Plataforma inicial:** PC (Windows)
+
+---
+
+# 1. VISIÓN DEL JUEGO (GAME VISION)
+
+## 1.1. Concepto
+
+Desarrollar un videojuego de estrategia y simulación histórica en tiempo real donde el jugador comienza con una pequeña comunidad durante la Edad de Piedra y desarrolla una civilización a lo largo de miles de años.
+
+El jugador deberá construir asentamientos, administrar recursos, desarrollar una economía, gestionar la población, investigar tecnologías y definir la organización política, cultural y religiosa de su sociedad.
+
+La civilización evolucionará desde sociedades primitivas hasta sociedades preindustriales, aproximadamente hasta el año 1800 d.C.
+
+El juego no buscará reproducir exactamente la historia de la humanidad. Permitirá desarrollar civilizaciones alternativas, con diferentes caminos tecnológicos, económicos, políticos y culturales.
+
+La historia real funcionará como referencia de coherencia y contexto, pero no como una secuencia obligatoria de acontecimientos.
+
+## 1.2. Inspiraciones principales
+
+- Anno 1800: construcción, economía, cadenas productivas y expansión territorial.
+- Farthest Frontier: simulación de población, estaciones y supervivencia.
+- Age of Empires: generación de mapas y estrategia en tiempo real.
+- Civilization II: evolución histórica, tecnologías y sistemas políticos.
+- Cities: Skylines: construcción urbana y simulación de ciudades.
+
+El objetivo es combinar estos conceptos en una experiencia nueva.
+
+## 1.3. Pilares fundamentales
+
+El desarrollo deberá respetar cinco pilares:
+
+1. **Evolución histórica:** una misma civilización debe poder evolucionar durante miles de años.
+2. **Libertad de construcción:** el jugador decide dónde y cómo construir sus ciudades.
+3. **Simulación económica:** producción, consumo, comercio y recursos deben estar interconectados.
+4. **Evolución social:** la población, la cultura, la religión y la política deben evolucionar de manera dinámica.
+5. **Libertad estratégica:** no debe existir un único camino correcto para desarrollar una civilización.
+
+Las guerras y conquistas territoriales serán sistemas complementarios, no el eje principal.
+
+---
+
+# 2. MUNDO Y GENERACIÓN DE MAPAS
+
+## 2.1. Generación procedural
+
+Cada partida tendrá un mundo generado proceduralmente.
+
+El generador deberá permitir crear diferentes configuraciones geográficas, con parámetros modificables por el jugador.
+
+La referencia principal será el generador de mapas de Age of Empires, ampliado para permitir mundos mucho más grandes y geográficamente complejos.
+
+## 2.2. Tipos de mapas
+
+Se contemplan los siguientes tipos:
+
+| Tipo | Descripción |
+|---|---|
+| Continental | Grandes masas continentales |
+| Islas | Varias islas de diferentes tamaños |
+| Archipiélago | Gran cantidad de islas pequeñas |
+| Pangea | Un único gran continente |
+| Mediterráneo | Costas, penínsulas e islas |
+| Lacustre | Grandes lagos y sistemas fluviales |
+| Montañoso | Grandes cadenas montañosas |
+| Histórico | Geografías basadas en regiones reales |
+| Personalizado | Configuración libre |
+
+## 2.3. Parámetros configurables
+
+- Tamaño del mapa.
+- Distribución de tierra y agua.
+- Altitud y relieve.
+- Cantidad de montañas.
+- Ríos y lagos.
+- Fertilidad del suelo.
+- Distribución de minerales.
+- Bosques y vegetación.
+- Temperatura.
+- Precipitaciones.
+- Climas.
+- Recursos naturales.
+- Cantidad de civilizaciones.
+
+## 2.4. Biomas
+
+El mundo deberá incluir diferentes biomas:
+
+- Bosques templados.
+- Selvas tropicales.
+- Praderas.
+- Llanuras.
+- Desiertos.
+- Tundras.
+- Regiones montañosas.
+- Zonas costeras.
+- Humedales.
+
+Cada bioma tendrá consecuencias sobre la agricultura, los recursos disponibles, las enfermedades, la población y las actividades económicas.
+
+## 2.5. Geografía dinámica
+
+El territorio deberá condicionar las posibilidades de desarrollo.
+
+Ejemplos:
+
+- Los ríos favorecen la agricultura y el transporte.
+- Las montañas concentran determinados recursos minerales.
+- Las costas favorecen la pesca y el comercio marítimo.
+- Las llanuras permiten desarrollar agricultura extensiva.
+- Los bosques proporcionan madera, alimentos y otros recursos.
+
+A futuro se evaluará incorporar cambios ambientales, erosión, deforestación y modificaciones del paisaje.
+
+---
+
+# 3. EVOLUCIÓN HISTÓRICA
+
+## 3.1. Período temporal
+
+El juego comenzará en sociedades paleolíticas y finalizará aproximadamente en 1800 d.C.
+
+La progresión histórica será principalmente libre.
+
+No todas las civilizaciones deberán desarrollar las mismas tecnologías ni atravesar las mismas transformaciones al mismo tiempo.
+
+## 3.2. Grandes períodos históricos
+
+| Período | Características principales |
+|---|---|
+| Paleolítico | Caza, recolección y nomadismo |
+| Neolítico | Agricultura, domesticación y sedentarismo |
+| Edad de Bronce | Metalurgia, especialización y ciudades |
+| Edad de Hierro | Desarrollo urbano, herramientas y comercio |
+| Antigüedad | Instituciones, ingeniería y grandes ciudades |
+| Edad Media | Feudalismo, gremios y expansión religiosa |
+| Edad Moderna | Navegación, ciencia y comercio internacional |
+| Preindustrial | Manufactura, urbanización y primeras máquinas |
+
+Los períodos serán referencias históricas, no restricciones absolutas.
+
+## 3.3. Sistema de evolución
+
+La civilización evolucionará en función de:
+
+- Conocimientos científicos.
+- Tecnologías disponibles.
+- Recursos.
+- Desarrollo económico.
+- Organización social.
+- Educación.
+- Instituciones.
+- Intercambio cultural.
+
+El jugador podrá desarrollar tecnologías en órdenes alternativos siempre que existan los conocimientos y condiciones necesarios.
+
+Por ejemplo, una sociedad con acceso temprano a determinados minerales y una fuerte especialización artesanal podría desarrollar una metalurgia avanzada antes que otras sociedades.
+
+---
+
+# 4. SISTEMA DE CONSTRUCCIÓN
+
+## 4.1. Construcción libre
+
+El jugador podrá construir libremente en el territorio disponible.
+
+No se utilizará una grilla obligatoria para ubicar edificios.
+
+Los edificios deberán adaptarse al terreno y respetar determinadas condiciones físicas.
+
+Ejemplos:
+
+- Pendientes.
+- Acceso a caminos.
+- Proximidad a recursos.
+- Disponibilidad de agua.
+- Distancias de transporte.
+- Superficie disponible.
+
+## 4.2. Evolución de edificios
+
+Una de las características centrales será que los edificios evolucionen junto con la civilización.
+
+Un edificio podrá tener diferentes versiones históricas y tecnológicas.
+
+Ejemplo: vivienda.
+
+| Período | Tipo de vivienda |
+|---|---|
+| Paleolítico | Refugio primitivo |
+| Neolítico | Choza de madera y barro |
+| Edad de Bronce | Casa de adobe |
+| Antigüedad | Vivienda de piedra |
+| Edad Media | Casa de madera y piedra |
+| Edad Moderna | Casa de ladrillo |
+| Preindustrial | Vivienda urbana avanzada |
+
+## 4.3. Evolución arquitectónica
+
+La evolución de un edificio podrá modificar:
+
+- Apariencia.
+- Materiales.
+- Capacidad.
+- Productividad.
+- Consumo de recursos.
+- Necesidades de mantenimiento.
+- Condiciones de trabajo.
+
+La evolución no será necesariamente automática.
+
+Podrá depender de:
+
+- Tecnología disponible.
+- Materiales.
+- Mano de obra especializada.
+- Capacidad económica.
+- Condiciones locales.
+
+## 4.4. Edificios históricos
+
+Se contemplarán diferentes categorías:
+
+- Viviendas.
+- Agricultura.
+- Ganadería.
+- Extracción.
+- Industria.
+- Comercio.
+- Almacenamiento.
+- Infraestructura.
+- Religión.
+- Educación.
+- Administración.
+- Cultura.
+- Salud.
+- Defensa.
+
+Los edificios antiguos podrán coexistir con construcciones modernas.
+
+Esto permitirá que las ciudades desarrollen una identidad arquitectónica propia.
+
+---
+
+# 5. SISTEMA DE POBLACIÓN
+
+## 5.1. Simulación híbrida
+
+La población tendrá tres niveles de representación.
+
+### Nivel individual
+
+Para asentamientos pequeños.
+
+Cada ciudadano podrá tener:
+
+- Nombre.
+- Edad.
+- Sexo.
+- Familia.
+- Profesión.
+- Vivienda.
+- Necesidades.
+- Condiciones económicas.
+
+### Nivel grupal
+
+A medida que aumenta la población, se utilizarán grupos estadísticos.
+
+Ejemplos:
+
+- Campesinos.
+- Artesanos.
+- Comerciantes.
+- Trabajadores.
+- Intelectuales.
+- Clero.
+- Nobles.
+
+Cada grupo tendrá características, necesidades e intereses propios.
+
+### Nivel de representantes
+
+Los grupos podrán tener representantes que expresen sus intereses.
+
+Ejemplos:
+
+- Gremios.
+- Asociaciones comerciales.
+- Nobleza.
+- Instituciones religiosas.
+- Organizaciones campesinas.
+
+Estos representantes podrán ejercer influencia económica, cultural y política.
+
+## 5.2. Crecimiento demográfico
+
+El crecimiento poblacional dependerá de:
+
+- Alimentación.
+- Vivienda.
+- Salud.
+- Mortalidad.
+- Natalidad.
+- Enfermedades.
+- Condiciones ambientales.
+- Seguridad.
+- Estabilidad económica.
+
+## 5.3. Necesidades de la población
+
+Las necesidades evolucionarán históricamente.
+
+En las primeras etapas serán fundamentalmente:
+
+- Alimentos.
+- Agua.
+- Refugio.
+- Seguridad.
+
+Con el desarrollo social aparecerán necesidades adicionales:
+
+- Vestimenta.
+- Herramientas.
+- Educación.
+- Servicios.
+- Cultura.
+- Religión.
+- Entretenimiento.
+- Comodidades.
+
+---
+
+# 6. SISTEMA ECONÓMICO
+
+## 6.1. Principios generales
+
+La economía será uno de los sistemas más importantes del juego.
+
+Se utilizará un modelo basado en producción, consumo, oferta, demanda y distribución.
+
+Los recursos no serán simplemente números acumulados por el jugador.
+
+Deberán existir cadenas productivas y necesidades reales de consumo.
+
+## 6.2. Recursos
+
+Se contemplan inicialmente las siguientes categorías:
+
+**Recursos naturales**
+- Madera.
+- Piedra.
+- Arcilla.
+- Agua.
+- Minerales.
+- Animales.
+- Vegetación.
+
+**Recursos agrícolas**
+- Trigo.
+- Cebada.
+- Maíz.
+- Frutas.
+- Verduras.
+- Fibras textiles.
+
+**Productos manufacturados**
+- Herramientas.
+- Armas.
+- Cerámica.
+- Textiles.
+- Muebles.
+- Materiales de construcción.
+
+**Recursos económicos**
+- Moneda.
+- Capital.
+- Crédito.
+- Impuestos.
+
+La disponibilidad de recursos y productos evolucionará históricamente.
+
+## 6.3. Cadenas productivas
+
+Cada industria tendrá una cadena productiva.
+
+Ejemplo: producción de pan.
+
+1. Agricultura: trigo.
+2. Transporte: traslado al molino.
+3. Molino: producción de harina.
+4. Transporte: traslado a la panadería.
+5. Panadería: producción de pan.
+6. Mercado: distribución.
+7. Población: consumo.
+
+Cada etapa tendrá costos, trabajadores, tiempos y requerimientos.
+
+## 6.4. Oferta y demanda
+
+Los precios deberán responder a las condiciones del mercado.
+
+Variables:
+
+- Oferta.
+- Demanda.
+- Disponibilidad.
+- Costos de producción.
+- Transporte.
+- Impuestos.
+- Distancia.
+- Escasez.
+
+El jugador podrá influir sobre los precios y la producción mediante sus decisiones económicas.
+
+## 6.5. Sistema comercial configurable
+
+Se contemplarán tres niveles de gestión.
+
+**Nivel básico**
+- Mercados automáticos.
+- Distribución local.
+- Comercialización de excedentes.
+- Importación y exportación automática.
+
+**Nivel intermedio**
+- Selección de productos.
+- Prioridades de importación.
+- Límites de exportación.
+- Contratos comerciales.
+- Gestión de almacenes.
+
+**Nivel avanzado**
+- Rutas comerciales.
+- Vehículos y barcos.
+- Capacidad logística.
+- Precios objetivo.
+- Costos de transporte.
+- Aranceles.
+- Optimización de rutas.
+- Contratos de suministro.
+
+Todos los niveles deberán utilizar el mismo sistema económico.
+
+El objetivo es permitir distintos grados de complejidad sin obligar al jugador a administrar cada operación.
+
+---
+
+# 7. CIENCIA Y TECNOLOGÍA
+
+## 7.1. Investigación
+
+El desarrollo tecnológico será acumulativo.
+
+Las tecnologías permitirán desbloquear:
+
+- Edificios.
+- Mejoras.
+- Materiales.
+- Métodos productivos.
+- Infraestructura.
+- Instituciones.
+- Nuevas formas de organización social.
+
+## 7.2. Ramas tecnológicas
+
+Se contemplan inicialmente:
+
+1. Agricultura.
+2. Ganadería.
+3. Metalurgia.
+4. Construcción.
+5. Ingeniería.
+6. Medicina.
+7. Matemáticas.
+8. Astronomía.
+9. Navegación.
+10. Comercio.
+11. Manufactura.
+12. Energía.
+13. Comunicación.
+14. Filosofía y conocimiento.
+
+## 7.3. Relaciones tecnológicas
+
+Las tecnologías estarán interconectadas.
+
+Ejemplo:
+
+La rotación de cultivos puede aumentar la productividad agrícola, liberar mano de obra, favorecer la especialización y acelerar la urbanización.
+
+El desarrollo científico deberá tener consecuencias sobre el resto de los sistemas.
+
+---
+
+# 8. SISTEMA POLÍTICO
+
+## 8.1. Organización política
+
+El jugador podrá definir el modelo político de su civilización.
+
+Los sistemas deberán respetar determinadas condiciones históricas, sociales y tecnológicas.
+
+Modelos iniciales:
+
+- Organización tribal.
+- Jefaturas.
+- Monarquías.
+- Repúblicas.
+- Democracias.
+- Oligarquías.
+- Feudalismo.
+- Imperios.
+- Teocracias.
+- Monarquías constitucionales.
+
+## 8.2. Dimensiones políticas
+
+Para permitir combinaciones, el sistema contemplará diferentes dimensiones:
+
+- Forma de gobierno.
+- Distribución del poder.
+- Organización territorial.
+- Derechos políticos.
+- Sistema administrativo.
+- Participación ciudadana.
+
+## 8.3. Cambios de gobierno
+
+Los cambios políticos tendrán consecuencias.
+
+Podrán provocar:
+
+- Resistencia de grupos sociales.
+- Inestabilidad.
+- Revoluciones.
+- Conflictos institucionales.
+- Reformas económicas.
+- Redistribución del poder.
+
+No se permitirá cambiar libremente de gobierno en cualquier momento sin consecuencias.
+
+Se contemplarán períodos de estabilidad, costos de transición y requisitos históricos.
+
+---
+
+# 9. RELIGIÓN Y CULTURA
+
+## 9.1. Evolución religiosa
+
+Las religiones evolucionarán junto con las sociedades.
+
+Se contemplarán:
+
+- Animismo.
+- Cultos a la naturaleza.
+- Politeísmo.
+- Religiones institucionalizadas.
+- Monoteísmo.
+- Reformas religiosas.
+- Pluralismo religioso.
+- Secularización.
+
+No se impondrá una evolución universal.
+
+Las sociedades podrán conservar tradiciones antiguas o desarrollar sistemas de creencias alternativos.
+
+## 9.2. Pensamiento filosófico
+
+Se desarrollará independientemente de la religión.
+
+Corrientes iniciales:
+
+- Tradicionalismo.
+- Racionalismo.
+- Humanismo.
+- Pensamiento científico.
+- Materialismo.
+- Escepticismo.
+
+## 9.3. Variables culturales
+
+- Religiosidad.
+- Tradiciones.
+- Educación.
+- Arte.
+- Filosofía.
+- Identidad cultural.
+- Cohesión social.
+- Pluralismo.
+- Influencia institucional.
+
+## 9.4. Instituciones religiosas
+
+Las instituciones religiosas podrán:
+
+- Administrar edificios.
+- Influir sobre las leyes.
+- Participar en educación.
+- Gestionar recursos.
+- Organizar festividades.
+- Ejercer influencia política.
+
+La religión será un componente de la sociedad, no simplemente una bonificación.
+
+---
+
+# 10. CIUDADES Y TERRITORIOS
+
+El jugador podrá fundar múltiples asentamientos dentro del mismo mapa.
+
+Cada ciudad tendrá:
+
+- Población.
+- Economía.
+- Infraestructura.
+- Recursos.
+- Especialización.
+- Instituciones.
+- Identidad cultural.
+
+Las ciudades podrán especializarse en diferentes actividades:
+
+- Agricultura.
+- Minería.
+- Comercio.
+- Industria.
+- Navegación.
+- Administración.
+- Cultura.
+
+La distribución territorial permitirá desarrollar economías regionales interconectadas.
+
+---
+
+# 11. OTRAS CIVILIZACIONES
+
+El mundo podrá contener civilizaciones independientes controladas por inteligencia artificial.
+
+Se contemplarán desde el diseño inicial, aunque su implementación será posterior al primer prototipo.
+
+Cada civilización tendrá:
+
+- Territorio.
+- Población.
+- Economía.
+- Tecnología.
+- Cultura.
+- Religión.
+- Gobierno.
+- Instituciones.
+- Relaciones diplomáticas.
+
+Las civilizaciones evolucionarán independientemente.
+
+Podrán desarrollar tecnologías, establecer relaciones comerciales, competir por recursos y expandirse territorialmente.
+
+Se buscará evitar que todas las civilizaciones sigan el mismo camino histórico.
+
+---
+
+# 12. SISTEMA DE TIEMPO
+
+## 12.1. Tiempo real
+
+El juego funcionará en tiempo real con posibilidad de pausar y acelerar.
+
+Velocidades propuestas:
+
+- Pausa.
+- x1.
+- x2.
+- x3.
+- x5.
+
+## 12.2. Estaciones
+
+Se contemplarán cuatro estaciones:
+
+- Primavera.
+- Verano.
+- Otoño.
+- Invierno.
+
+Las estaciones tendrán consecuencias sobre agricultura, producción, transporte y necesidades de la población.
+
+## 12.3. Calendario histórico
+
+El juego tendrá un calendario expresado en años.
+
+Los acontecimientos, construcciones, investigaciones y transformaciones sociales tendrán una duración temporal.
+
+La escala exacta de tiempo deberá ajustarse durante el desarrollo y las pruebas de jugabilidad.
+
+---
+
+# 13. EVENTOS Y DESAFÍOS
+
+El juego tendrá acontecimientos históricos, ambientales, sociales y económicos.
+
+Ejemplos:
+
+- Sequías.
+- Inundaciones.
+- Epidemias.
+- Migraciones.
+- Crisis alimentarias.
+- Conflictos sociales.
+- Descubrimientos científicos.
+- Cambios religiosos.
+- Nuevas rutas comerciales.
+- Crisis políticas.
+
+Los acontecimientos podrán ser aleatorios o depender del contexto de la civilización.
+
+No se buscará reproducir acontecimientos históricos obligatorios.
+
+---
+
+# 14. SISTEMA MILITAR
+
+El sistema militar será complementario.
+
+Se contemplarán:
+
+- Defensa territorial.
+- Unidades militares.
+- Fortificaciones.
+- Conflictos entre civilizaciones.
+- Guerras.
+- Ocupación territorial.
+
+La profundidad militar será menor que la de la economía y la administración social.
+
+El objetivo será permitir conflictos coherentes con el período histórico sin convertir el juego en un RTS militar tradicional.
+
+---
+
+# 15. DIRECCIÓN ARTÍSTICA
+
+## 15.1. Estilo visual
+
+Se buscará un estilo 3D realista, históricamente reconocible y con alto nivel de detalle.
+
+No se buscará realismo fotográfico extremo ni una estética caricaturesca.
+
+## 15.2. Cámara
+
+Se contemplará:
+
+- Cámara isométrica.
+- Rotación.
+- Zoom.
+- Vista panorámica.
+- Acercamiento a edificios.
+- Visualización de unidades y ciudadanos.
+
+## 15.3. Evolución visual
+
+El mundo deberá transformarse con el paso de los siglos.
+
+Cambiarán:
+
+- Arquitectura.
+- Materiales.
+- Vestimenta.
+- Vehículos.
+- Infraestructura.
+- Vegetación cultivada.
+- Paisaje urbano.
+
+El jugador deberá poder reconocer visualmente la evolución de su civilización.
+
+---
+
+# 16. ARQUITECTURA TÉCNICA
+
+## 16.1. Motor
+
+Unreal Engine 5.
+
+## 16.2. Lenguajes
+
+- C++: simulación, economía y sistemas principales.
+- Blueprints: configuración, prototipado y lógica complementaria.
+
+## 16.3. Herramientas
+
+- Blender: modelado 3D.
+- Substance Painter: texturas.
+- Git: control de versiones.
+
+## 16.4. Módulos principales
+
+**WORLD**
+- Terrain.
+- Map Generation.
+- Biomes.
+- Resources.
+- Hydrology.
+
+**SIMULATION**
+- Time.
+- Seasons.
+- Population.
+- Economy.
+- Production.
+- Transportation.
+
+**CIVILIZATION**
+- Technology.
+- Culture.
+- Religion.
+- Politics.
+- Institutions.
+
+**CONSTRUCTION**
+- Buildings.
+- Placement.
+- Upgrades.
+- Architecture.
+- Infrastructure.
+
+**AI**
+- Citizens.
+- Settlements.
+- Civilizations.
+- Diplomacy.
+
+**PRESENTATION**
+- Rendering.
+- Animation.
+- UI.
+- Audio.
+
+## 16.5. Principio arquitectónico
+
+La simulación deberá estar desacoplada de la representación gráfica.
+
+Los habitantes, las cadenas productivas, la economía y las instituciones no dependerán de que sus elementos estén permanentemente renderizados.
+
+Esto permitirá escalar la simulación sin comprometer innecesariamente el rendimiento gráfico.
+
+---
+
+# 17. ROADMAP DE DESARROLLO
+
+El proyecto se desarrollará progresivamente.
+
+## Fase 1 — Fundación técnica
+
+Objetivo: tener un mundo 3D funcional.
+
+- Configuración de Unreal Engine.
+- Generación de mapas.
+- Terreno procedural.
+- Recursos naturales.
+- Cámara.
+- Sistema básico de construcción.
+
+## Fase 2 — Primer asentamiento
+
+Objetivo: construir una aldea funcional.
+
+- Viviendas.
+- Ciudadanos.
+- Trabajos.
+- Necesidades.
+- Agricultura.
+- Recolección.
+- Almacenamiento.
+
+## Fase 3 — Economía
+
+Objetivo: desarrollar una economía funcional.
+
+- Producción.
+- Consumo.
+- Cadenas productivas.
+- Mercados.
+- Oferta y demanda.
+- Distribución.
+
+## Fase 4 — Evolución histórica
+
+Objetivo: validar la evolución de una civilización.
+
+- Tecnologías.
+- Desbloqueos.
+- Edificios evolutivos.
+- Mejoras productivas.
+- Cambios arquitectónicos.
+
+## Fase 5 — Expansión
+
+Objetivo: desarrollar múltiples asentamientos.
+
+- Nuevas ciudades.
+- Infraestructura.
+- Comercio regional.
+- Rutas comerciales.
+- Especialización territorial.
+
+## Fase 6 — Sociedad
+
+Objetivo: incorporar profundidad social.
+
+- Grupos sociales.
+- Representantes.
+- Cultura.
+- Religión.
+- Instituciones.
+- Política.
+
+## Fase 7 — Mundo vivo
+
+Objetivo: incorporar otras civilizaciones.
+
+- Inteligencia artificial.
+- Economía independiente.
+- Diplomacia.
+- Comercio internacional.
+- Conflictos.
+
+## Fase 8 — Producto completo
+
+Objetivo: preparar el lanzamiento.
+
+- Balance.
+- Optimización.
+- Animaciones.
+- Sonido.
+- Interfaz.
+- Tutoriales.
+- Testing.
+- Contenido histórico.
+
+---
+
+# 18. ALCANCE DEL PRIMER PROTOTIPO (MVP)
+
+El primer prototipo no intentará representar toda la visión del juego.
+
+Su objetivo será demostrar que las mecánicas fundamentales funcionan juntas.
+
+### Contenido
+
+**Mundo**
+- Un mapa procedural.
+- Terreno 3D.
+- Bosques.
+- Ríos.
+- Recursos.
+
+**Construcción**
+- Construcción libre.
+- Viviendas.
+- Almacenes.
+- Campos agrícolas.
+- Edificios productivos.
+
+**Población**
+- Entre 20 y 100 ciudadanos individuales.
+- Profesiones.
+- Viviendas.
+- Necesidades.
+- Desplazamientos básicos.
+
+**Economía**
+- Agricultura.
+- Recolección.
+- Almacenamiento.
+- Producción.
+- Consumo.
+
+**Tecnología**
+- Primeros descubrimientos.
+- Desbloqueo de edificios.
+- Mejoras productivas.
+
+**Tiempo**
+- Ciclo día/noche.
+- Estaciones.
+- Aceleración y pausa.
+
+### Criterio de éxito
+
+El prototipo será satisfactorio cuando el jugador pueda:
+
+1. Comenzar con un pequeño grupo de habitantes.
+2. Construir una aldea.
+3. Asignar trabajos.
+4. Producir y distribuir alimentos.
+5. Hacer crecer la población.
+6. Desarrollar nuevas tecnologías.
+7. Mejorar sus edificios.
+8. Observar cómo evoluciona visualmente el asentamiento.
+
+El objetivo no será tener muchos contenidos, sino comprobar que la simulación es entretenida y coherente.
+
+---
+
+# 19. PRINCIPIOS DE DISEÑO NO NEGOCIABLES
+
+Estos principios deberán orientar las decisiones futuras.
+
+1. La libertad del jugador tendrá prioridad sobre la reproducción exacta de la historia.
+2. Los sistemas económicos y sociales deberán estar interconectados.
+3. La construcción será libre y no dependerá de una grilla obligatoria.
+4. Los edificios deberán evolucionar visual y funcionalmente.
+5. La geografía tendrá consecuencias reales.
+6. La complejidad de gestión será configurable.
+7. El jugador podrá desarrollar civilizaciones históricamente alternativas.
+8. La población deberá tener comportamientos y necesidades propias.
+9. Los sistemas políticos y religiosos tendrán consecuencias.
+10. El desarrollo tecnológico deberá transformar la sociedad.
+11. Las guerras no serán el eje principal.
+12. La simulación deberá poder escalar a grandes poblaciones.
+
+---
+
+# 20. DECISIONES PENDIENTES
+
+Las siguientes cuestiones deberán definirse durante las próximas etapas:
+
+| Tema | Estado |
+|---|---|
+| Nombre definitivo | Pendiente |
+| Tamaño máximo de mapa | Pendiente |
+| Cantidad máxima de habitantes | Pendiente |
+| Cantidad de civilizaciones | Pendiente |
+| Escala temporal exacta | Pendiente |
+| Sistema monetario | Pendiente |
+| Sistema de propiedad | Pendiente |
+| Sistema impositivo | Pendiente |
+| Sistema de educación | Pendiente |
+| Sistema de salud | Pendiente |
+| Migraciones | Pendiente |
+| Herencia y familias | Pendiente |
+| Sistema de leyes | Pendiente |
+| Diplomacia | Pendiente |
+| Sistema militar | Pendiente |
+| Condiciones de victoria | Pendiente |
+| Multijugador | Fuera del alcance inicial |
+
+---
+
+# 21. VISIÓN FINAL
+
+El objetivo es crear un simulador donde el jugador no solamente construya ciudades, sino que desarrolle una civilización completa.
+
+Una civilización que nace de un pequeño asentamiento, desarrolla agricultura, especialización laboral, comercio, instituciones, ciencia y cultura.
+
+Que pueda convertirse en una sociedad comercial, agrícola, científica, religiosa o industrial.
+
+Que pueda adoptar diferentes modelos políticos y atravesar transformaciones sociales.
+
+Que pueda desarrollar varias ciudades, cada una con características propias, conectadas mediante una economía común.
+
+Y que, después de miles de años, el jugador pueda observar el resultado de todas sus decisiones.
+
+**La historia no será el camino que el jugador debe recorrer. Será el universo de posibilidades que tendrá para construir su propia civilización.**
+
+---
+
+**FIN DEL DOCUMENTO — VERSIÓN 0.1**

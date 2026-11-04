@@ -1,0 +1,852 @@
+# GDD — Sistema de Tecnología, Ciencia e Innovación v0.1
+
+## 1. Visión general
+
+El sistema de Tecnología, Ciencia e Innovación representa la capacidad de las civilizaciones para desarrollar conocimientos, descubrir soluciones, mejorar técnicas, inventar herramientas y transformar su entorno.
+
+El progreso tecnológico será uno de los principales motores de la evolución de la civilización.
+
+No funcionará como un árbol tecnológico tradicional donde el jugador acumula puntos y desbloquea tecnologías. El conocimiento surgirá de procesos históricos, necesidades sociales, experimentación, observación, intercambio cultural y desarrollo científico.
+
+El sistema combinará:
+
+- Evolución tecnológica orgánica.
+- Investigación dirigida.
+- Innovación espontánea.
+- Experimentación.
+- Descubrimientos accidentales.
+- Desarrollo científico.
+- Transmisión de conocimientos.
+- Intercambio tecnológico entre civilizaciones.
+- Personajes históricos e inventores.
+- Evolución autónoma de las diferentes disciplinas.
+
+El jugador podrá orientar el progreso, establecer prioridades y financiar determinadas investigaciones, pero no tendrá que controlar individualmente cada descubrimiento.
+
+**Principio fundamental:** la tecnología debe evolucionar como consecuencia de la historia de cada civilización. No será el calendario el que determine qué tecnologías aparecen, sino las condiciones que hacen posible su desarrollo.
+
+---
+
+## 2. Modelo general de progreso tecnológico
+
+Se utilizará un modelo híbrido.
+
+Las tecnologías y conocimientos estarán organizados en disciplinas, pero su desarrollo dependerá de condiciones históricas y materiales.
+
+El sistema tendrá dos grandes componentes:
+
+### 2.1. Evolución tecnológica autónoma
+
+Las disciplinas podrán progresar naturalmente según:
+
+- Conocimientos existentes.
+- Necesidades de la sociedad.
+- Actividades económicas.
+- Disponibilidad de recursos.
+- Especialistas.
+- Instituciones educativas.
+- Capacidad de experimentación.
+- Contacto con otras civilizaciones.
+- Condiciones geográficas.
+- Desarrollo económico.
+- Infraestructura.
+
+Por ejemplo, una sociedad agrícola que necesita aumentar su producción podrá desarrollar espontáneamente mejores herramientas, técnicas de cultivo y sistemas de irrigación.
+
+No será necesario que el jugador ordene individualmente cada innovación.
+
+### 2.2. Investigación dirigida
+
+El jugador podrá establecer prioridades.
+
+Por ejemplo:
+- Mejorar la metalurgia.
+- Desarrollar técnicas agrícolas.
+- Perfeccionar la navegación.
+- Mejorar los sistemas constructivos.
+- Investigar medicina.
+- Desarrollar conocimientos matemáticos.
+
+La civilización concentrará más recursos y esfuerzos en esas áreas.
+
+Esto permitirá acelerar determinados desarrollos sin detener completamente la evolución del resto de las disciplinas.
+
+---
+
+## 3. El conocimiento y sus diferentes niveles
+
+Es importante diferenciar entre conocer un principio, dominar una técnica y poder aplicarla a escala productiva.
+
+Por ejemplo, una sociedad puede conocer el hierro, pero todavía no tener capacidad para producirlo eficientemente.
+
+Cada conocimiento podrá atravesar diferentes estados:
+
+1. Desconocido.
+2. Conocido parcialmente.
+3. Comprendido.
+4. Experimentado.
+5. Desarrollado técnicamente.
+6. Aplicable.
+7. Dominado.
+8. Perfeccionado.
+
+Estos estados no serán necesariamente iguales para todas las tecnologías.
+
+Algunos conocimientos podrán utilizarse de manera práctica mucho antes de comprender científicamente sus fundamentos.
+
+Por ejemplo, una civilización puede construir mecanismos hidráulicos funcionales sin disponer de una teoría científica formal de la mecánica.
+
+El dominio de una tecnología también podrá variar entre regiones y productores.
+
+---
+
+## 4. Disciplinas tecnológicas y científicas
+
+El conocimiento estará organizado en grandes disciplinas.
+
+| Disciplina | Ejemplos de desarrollo |
+|---|---|
+| Agricultura | Cultivos, rotación, irrigación, fertilización y herramientas agrícolas. |
+| Ganadería | Domesticación, reproducción, selección y manejo animal. |
+| Metalurgia | Cobre, bronce, hierro, acero y técnicas de fundición. |
+| Construcción | Materiales, estructuras, técnicas constructivas y arquitectura. |
+| Ingeniería | Mecanismos, máquinas, hidráulica y sistemas mecánicos. |
+| Medicina | Anatomía, cirugía, higiene, tratamientos y medicamentos. |
+| Matemáticas | Aritmética, geometría, álgebra y cálculo. |
+| Astronomía | Calendarios, navegación, observación y modelos astronómicos. |
+| Física | Mecánica, óptica, electricidad y fenómenos naturales. |
+| Química | Materiales, combustión, pigmentos, procesos y sustancias. |
+| Transporte | Ruedas, caminos, embarcaciones y sistemas de transporte. |
+| Comunicación | Escritura, imprenta, instrumentos y transmisión de información. |
+| Tecnología militar | Armamento, fortificaciones, logística e ingeniería militar. |
+| Energía | Fuego, fuerza animal, energía hidráulica y eólica. |
+| Organización social | Administración, contabilidad, sistemas de medición y gestión. |
+
+Las disciplinas estarán interconectadas.
+
+Un avance en matemáticas podrá facilitar desarrollos astronómicos, constructivos y de ingeniería.
+
+Una mejora metalúrgica podrá transformar la agricultura, la construcción, el transporte y la producción de herramientas.
+
+No existirán compartimentos tecnológicos completamente independientes.
+
+---
+
+## 5. Origen de los descubrimientos
+
+El conocimiento podrá surgir de diferentes fuentes.
+
+### 5.1. Necesidades prácticas
+
+Las necesidades de la sociedad serán uno de los principales motores de innovación.
+
+Ejemplos:
+- Necesidad de producir más alimentos.
+- Escasez de determinados materiales.
+- Dificultades de transporte.
+- Necesidad de construir edificios más resistentes.
+- Problemas sanitarios.
+- Necesidad de conservar alimentos.
+- Crecimiento de las ciudades.
+
+### 5.2. Experimentación
+
+Los especialistas podrán realizar experimentos para mejorar técnicas existentes o desarrollar nuevas soluciones.
+
+La experimentación dependerá de:
+- Conocimientos previos.
+- Materiales.
+- Herramientas.
+- Tiempo.
+- Especialistas.
+- Infraestructura.
+- Recursos económicos.
+
+Los experimentos podrán producir resultados positivos, negativos o inesperados.
+
+### 5.3. Observación
+
+La observación de fenómenos naturales permitirá desarrollar conocimientos.
+
+Por ejemplo:
+- Observación de los ciclos agrícolas.
+- Comportamiento de los astros.
+- Propiedades de los materiales.
+- Fenómenos meteorológicos.
+- Enfermedades.
+- Comportamiento de animales.
+
+### 5.4. Descubrimientos accidentales
+
+Podrán producirse innovaciones inesperadas mediante:
+- Accidentes.
+- Pruebas y errores.
+- Combinación de técnicas.
+- Errores experimentales.
+- Descubrimientos fortuitos.
+
+Estos acontecimientos deberán tener una base razonable en las actividades y conocimientos existentes.
+
+No serán simples eventos aleatorios desconectados del mundo.
+
+### 5.5. Personajes históricos e innovadores
+
+El mundo podrá generar personajes importantes que introduzcan mejoras y descubrimientos.
+
+Podrán aparecer:
+- Inventores.
+- Artesanos innovadores.
+- Matemáticos.
+- Astrónomos.
+- Médicos.
+- Filósofos naturales.
+- Ingenieros.
+- Constructores.
+- Exploradores.
+- Científicos.
+
+Estos personajes podrán desarrollar conocimientos nuevos, perfeccionar tecnologías existentes o introducir técnicas provenientes de otras civilizaciones.
+
+Su aparición será parcialmente impredecible, pero dependerá de las condiciones sociales, educativas y materiales.
+
+---
+
+## 6. Personajes y especialistas
+
+Los individuos podrán tener conocimientos y habilidades específicas.
+
+Por ejemplo:
+- Un herrero podrá dominar técnicas metalúrgicas.
+- Un arquitecto podrá desarrollar nuevas soluciones constructivas.
+- Un agricultor podrá perfeccionar técnicas de cultivo.
+- Un médico podrá especializarse en determinados tratamientos.
+- Un matemático podrá desarrollar nuevos métodos de cálculo.
+
+Los especialistas podrán tener:
+
+- Profesión.
+- Conocimientos.
+- Habilidades.
+- Experiencia.
+- Nivel de especialización.
+- Capacidad de experimentación.
+- Reputación.
+- Relaciones con otros especialistas.
+
+El conocimiento podrá transmitirse mediante maestros, aprendices, familias, instituciones y comunidades profesionales.
+
+En poblaciones pequeñas, los especialistas podrán ser individuos identificables.
+
+En sociedades grandes, se representarán mediante grupos profesionales e instituciones.
+
+---
+
+## 7. Instituciones científicas y educativas
+
+Las estructuras de transmisión y desarrollo del conocimiento evolucionarán históricamente.
+
+Podrán existir:
+
+- Talleres artesanales.
+- Escuelas de oficios.
+- Centros religiosos.
+- Bibliotecas.
+- Escuelas.
+- Universidades.
+- Academias.
+- Sociedades científicas.
+- Instituciones de investigación.
+
+Estas instituciones podrán:
+
+- Enseñar conocimientos.
+- Formar especialistas.
+- Conservar documentos.
+- Realizar experimentos.
+- Financiar investigaciones.
+- Difundir descubrimientos.
+- Atraer personas capacitadas.
+
+Su aparición dependerá de las condiciones históricas y sociales.
+
+La educación y la alfabetización tendrán una relación directa con la capacidad de transmisión del conocimiento.
+
+---
+
+## 8. Transmisión y conservación del conocimiento
+
+El conocimiento podrá transmitirse mediante:
+
+- Familias.
+- Maestros y aprendices.
+- Artesanos.
+- Escuelas.
+- Religiones.
+- Bibliotecas.
+- Documentos.
+- Universidades.
+- Comercio.
+- Migraciones.
+- Conquistas.
+- Contacto entre civilizaciones.
+
+### Conservación
+
+El conocimiento adquirido por una civilización será persistente.
+
+No desaparecerá simplemente porque un especialista muera o una institución cierre.
+
+La pérdida de conocimientos será extremadamente excepcional y solamente podrá producirse ante circunstancias extraordinarias.
+
+Por ejemplo:
+- Destrucción prácticamente total de los registros disponibles.
+- Desaparición de una tradición técnica sin transmisión.
+- Colapso extraordinario de las estructuras que conservaban un conocimiento especializado.
+
+La regla general será que el conocimiento acumulado permanece.
+
+### Pérdida de capacidad práctica
+
+Debe distinguirse entre conservar un conocimiento y mantener la capacidad de aplicarlo.
+
+Una civilización podrá conocer una técnica, pero dejar de tener:
+- Especialistas.
+- Herramientas.
+- Materiales.
+- Instalaciones.
+- Capacidad económica.
+
+En ese caso, conservará el conocimiento, aunque no pueda utilizarlo eficientemente hasta recuperar las condiciones necesarias.
+
+---
+
+## 9. Intercambio tecnológico entre civilizaciones
+
+Los conocimientos podrán difundirse entre diferentes sociedades.
+
+Los principales mecanismos serán:
+
+- Comercio.
+- Diplomacia.
+- Migraciones.
+- Guerras.
+- Conquistas.
+- Espionaje.
+- Matrimonios.
+- Intercambio de especialistas.
+- Viajes y exploración.
+- Contacto cultural.
+
+Una civilización podrá adoptar tecnologías que otra desarrolló previamente.
+
+No necesitará reproducir todo el proceso de descubrimiento original.
+
+Sin embargo, para utilizar una tecnología deberá disponer de las condiciones necesarias para comprenderla, adaptarla y aplicarla.
+
+La adopción tecnológica podrá ser gradual.
+
+Una civilización podrá conocer una técnica extranjera y tardar años o generaciones en incorporarla plenamente.
+
+---
+
+## 10. Evolución de las disciplinas
+
+Cada disciplina tendrá una evolución progresiva.
+
+Por ejemplo, la metalurgia podrá atravesar diferentes desarrollos:
+
+1. Trabajo de metales nativos.
+2. Fundición de cobre.
+3. Desarrollo de aleaciones.
+4. Producción de bronce.
+5. Producción de hierro.
+6. Mejoras en hornos y procesos.
+7. Desarrollo de diferentes calidades de acero.
+8. Perfeccionamiento de herramientas y métodos metalúrgicos.
+
+Estos desarrollos no serán simples desbloqueos.
+
+Cada avance deberá reflejarse en:
+- Conocimientos.
+- Herramientas.
+- Instalaciones.
+- Especialistas.
+- Métodos de producción.
+- Calidad de los productos.
+- Capacidad productiva.
+
+Las diferentes civilizaciones podrán seguir caminos distintos y alcanzar determinados conocimientos en momentos diferentes.
+
+---
+
+## 11. Evolución tecnológica simultánea
+
+Este será uno de los componentes más importantes del sistema.
+
+Las diferentes disciplinas evolucionarán simultáneamente.
+
+El jugador podrá priorizar determinadas áreas, pero las demás continuarán desarrollándose cuando existan condiciones favorables.
+
+Por ejemplo, si el jugador prioriza la metalurgia:
+- Se asignarán más recursos a esa disciplina.
+- Podrán aparecer más especialistas.
+- Se desarrollarán nuevas instalaciones.
+- Se acelerarán determinadas investigaciones.
+
+Mientras tanto, la agricultura, la construcción, la medicina y otras disciplinas podrán seguir evolucionando mediante sus propios procesos.
+
+Esto permitirá una civilización tecnológicamente diversa y evitará que todo el progreso dependa de una lista de investigaciones seleccionadas por el jugador.
+
+### Diferentes velocidades de desarrollo
+
+Cada disciplina tendrá su propio ritmo.
+
+Podrá depender de:
+- Necesidades.
+- Recursos.
+- Especialistas.
+- Inversión.
+- Conocimientos existentes.
+- Contactos externos.
+- Instituciones.
+- Actividad económica.
+
+Una civilización podrá tener una metalurgia avanzada y conocimientos matemáticos relativamente limitados, o una astronomía destacada sin grandes desarrollos en ingeniería.
+
+---
+
+## 12. Control del jugador sobre la investigación
+
+El jugador no será responsable de seleccionar individualmente cada experimento.
+
+Su papel será establecer prioridades.
+
+Podrá:
+- Favorecer disciplinas.
+- Seleccionar tecnologías de interés.
+- Financiar investigaciones.
+- Construir instituciones.
+- Promover la educación.
+- Favorecer determinadas profesiones.
+- Facilitar el acceso a recursos.
+- Incentivar la experimentación.
+
+Los investigadores y especialistas tendrán autonomía para trabajar.
+
+La inversión y las prioridades aumentarán las posibilidades y la velocidad de determinados avances, pero no garantizarán resultados inmediatos.
+
+El jugador también podrá delegar completamente la evolución tecnológica.
+
+---
+
+## 13. Ciencia y tecnología: dos dimensiones diferentes
+
+El sistema distinguirá entre conocimiento científico y conocimiento práctico.
+
+Una sociedad podrá desarrollar soluciones técnicas sin comprender completamente sus fundamentos científicos.
+
+Ejemplos históricos:
+- Técnicas metalúrgicas anteriores a la química moderna.
+- Construcciones monumentales anteriores a la ingeniería estructural formalizada.
+- Máquinas mecánicas anteriores a una comprensión científica completa de sus principios.
+- Técnicas agrícolas desarrolladas mediante observación y experiencia.
+
+También podrá ocurrir lo contrario: una civilización puede desarrollar conocimientos teóricos que todavía no tiene capacidad material para aplicar.
+
+La ciencia podrá abrir oportunidades tecnológicas, pero no será siempre un requisito previo para la innovación práctica.
+
+---
+
+## 14. Educación y difusión científica
+
+El sistema educativo tendrá una influencia importante sobre el progreso.
+
+La evolución histórica podrá incluir:
+
+- Aprendizaje familiar.
+- Transmisión artesanal.
+- Escuelas religiosas.
+- Escuelas públicas.
+- Centros especializados.
+- Universidades.
+- Academias científicas.
+- Instituciones de investigación.
+
+El acceso a la educación influirá sobre:
+- Cantidad de especialistas.
+- Alfabetización.
+- Transmisión del conocimiento.
+- Capacidad de experimentación.
+- Desarrollo científico.
+- Innovación.
+
+Las sociedades con mayor capacidad educativa podrán desarrollar y difundir conocimientos con mayor facilidad.
+
+---
+
+## 15. Economía e innovación
+
+El desarrollo tecnológico requerirá condiciones materiales.
+
+Los principales factores serán:
+
+- Recursos económicos.
+- Materiales.
+- Herramientas.
+- Especialistas.
+- Tiempo.
+- Infraestructura.
+- Instituciones.
+- Conocimientos previos.
+
+La disponibilidad de recursos no garantizará automáticamente un descubrimiento.
+
+También será necesario contar con personas capacitadas, experiencia y condiciones apropiadas.
+
+### Viabilidad económica
+
+Una tecnología podrá ser conocida y técnicamente posible, pero no resultar rentable para una civilización.
+
+Por ejemplo, una sociedad podrá conocer determinado mecanismo hidráulico, pero no disponer de los recursos necesarios para construirlo a gran escala.
+
+La innovación deberá tener relación con la economía real de la civilización.
+
+---
+
+## 16. Tecnología y medioambiente
+
+Los avances tecnológicos podrán modificar el entorno.
+
+Sin embargo, sus consecuencias ambientales dependerán de la escala, el contexto y la forma de utilización.
+
+Algunos ejemplos:
+
+- Tala de bosques.
+- Minería.
+- Irrigación.
+- Transformación de tierras.
+- Contaminación.
+- Explotación de recursos.
+- Construcción de represas.
+- Uso de combustibles.
+
+También podrán existir efectos positivos:
+- Mejor aprovechamiento de recursos.
+- Técnicas agrícolas más eficientes.
+- Sistemas de riego mejorados.
+- Mejor gestión de residuos.
+- Conservación de determinados recursos.
+
+No se asumirá que todo avance tecnológico produce necesariamente un daño ambiental.
+
+El resultado dependerá de cómo se aplique.
+
+---
+
+## 17. Obsolescencia y convivencia tecnológica
+
+La aparición de una tecnología nueva no eliminará automáticamente las anteriores.
+
+Las tecnologías antiguas podrán continuar utilizándose si resultan convenientes.
+
+Por ejemplo:
+- Molinos hidráulicos y molinos eólicos.
+- Herramientas manuales y herramientas mecanizadas.
+- Diferentes sistemas de transporte.
+- Técnicas constructivas tradicionales y nuevas.
+
+Cada alternativa tendrá ventajas, limitaciones y costos.
+
+El jugador podrá decidir cuándo modernizar sus instalaciones.
+
+También podrán coexistir diferentes niveles tecnológicos dentro de una misma civilización, especialmente entre regiones urbanas y rurales.
+
+---
+
+## 18. Diversidad de caminos tecnológicos
+
+No todas las civilizaciones deberán desarrollar las mismas tecnologías en el mismo orden.
+
+El entorno y la historia influirán en sus prioridades y posibilidades.
+
+Por ejemplo:
+
+Una civilización sin acceso a ríos, lagos o mares difícilmente desarrollará una tradición naval importante.
+
+Una sociedad costera podrá desarrollar conocimientos marítimos avanzados.
+
+Una civilización con abundantes recursos minerales podrá especializarse en determinadas técnicas metalúrgicas.
+
+Una sociedad con grandes necesidades agrícolas podrá invertir fuertemente en irrigación y herramientas.
+
+Esto no significa que existan tecnologías arbitrariamente prohibidas para determinadas civilizaciones.
+
+Significa que las condiciones reales harán que algunos desarrollos sean mucho más probables que otros.
+
+---
+
+## 19. Estancamiento y desarrollo tecnológico
+
+Una civilización podrá experimentar períodos de estancamiento.
+
+Esto podrá suceder por:
+- Falta de recursos.
+- Escasa inversión.
+- Aislamiento.
+- Falta de especialistas.
+- Ausencia de instituciones.
+- Dificultades económicas.
+- Falta de necesidades o incentivos para innovar.
+
+Sin embargo, el sistema no permitirá una involución tecnológica normal.
+
+Una civilización podrá detener su progreso, pero conservará los conocimientos que ya adquirió.
+
+La pérdida de conocimientos será extraordinariamente excepcional, como se definió anteriormente.
+
+El estancamiento no impedirá que una sociedad vuelva a innovar cuando cambien sus condiciones.
+
+---
+
+## 20. Tecnología militar
+
+El desarrollo militar será parte del sistema tecnológico general.
+
+Incluirá:
+
+- Armamento.
+- Metalurgia militar.
+- Fortificaciones.
+- Ingeniería militar.
+- Transporte.
+- Logística.
+- Medicina militar.
+- Organización y equipamiento.
+
+Las tecnologías militares podrán beneficiarse de avances en otras disciplinas.
+
+Por ejemplo, una mejora metalúrgica podrá beneficiar tanto a herramientas agrícolas como a armamento.
+
+La guerra no será el eje central del juego, pero el desarrollo militar tendrá relevancia histórica, especialmente en etapas posteriores.
+
+---
+
+## 21. Evolución visual del progreso tecnológico
+
+El progreso tecnológico deberá ser visible en el mundo.
+
+No alcanzará con modificar estadísticas o desbloquear edificios.
+
+Los avances deberán transformar progresivamente:
+
+- Herramientas.
+- Maquinaria.
+- Equipamiento.
+- Técnicas constructivas.
+- Instalaciones productivas.
+- Sistemas agrícolas.
+- Transporte.
+- Infraestructura.
+- Iluminación.
+- Objetos cotidianos.
+- Instrumentos científicos.
+- Sistemas de comunicación.
+
+### Ejemplo: evolución de una herrería
+
+Una herrería inicial podrá utilizar herramientas sencillas y técnicas manuales.
+
+Con el desarrollo tecnológico podrá incorporar:
+- Hornos mejorados.
+- Nuevas herramientas.
+- Sistemas de ventilación.
+- Mecanismos hidráulicos.
+- Equipamiento especializado.
+- Nuevas técnicas metalúrgicas.
+
+Su capacidad productiva, apariencia, distribución interior y productos cambiarán.
+
+Esto se conectará directamente con el sistema de Producción y Trabajo y con el sistema de Construcción y Arquitectura.
+
+El jugador deberá poder reconocer visualmente el desarrollo tecnológico de su civilización.
+
+---
+
+## 22. Interfaz tecnológica
+
+La interfaz combinará un catálogo de conocimientos con información sobre especialistas, instituciones e investigaciones.
+
+El jugador podrá consultar:
+
+- Disciplinas existentes.
+- Nivel de desarrollo.
+- Conocimientos adquiridos.
+- Investigaciones en curso.
+- Especialistas disponibles.
+- Instituciones relacionadas.
+- Tecnologías prioritarias.
+- Oportunidades de innovación.
+- Tecnologías conocidas por otras civilizaciones.
+
+También podrá identificar qué condiciones faltan para desarrollar determinadas tecnologías.
+
+No será necesario gestionar individualmente cada proceso.
+
+---
+
+## 23. Complejidad configurable
+
+El sistema comenzará con un nivel de realismo alto, pero permitirá profundizar posteriormente.
+
+**Básico**
+- Disciplinas generales.
+- Avances tecnológicos automáticos.
+- Algunas prioridades seleccionables.
+- Descubrimientos simplificados.
+
+**Intermedio**
+- Especialistas.
+- Instituciones.
+- Investigaciones.
+- Intercambio tecnológico.
+- Diferentes niveles de dominio.
+- Innovación autónoma.
+
+**Avanzado**
+- Procesos de experimentación detallados.
+- Desarrollo científico profundo.
+- Transmisión de conocimientos.
+- Innovación especializada.
+- Descubrimientos accidentales.
+- Redes de especialistas e instituciones.
+
+La configuración podrá realizarse por sistema, sin alterar los principios fundamentales del progreso tecnológico.
+
+El estándar inicial será de realismo alto, con posibilidad de avanzar hacia una simulación más profunda.
+
+---
+
+## 24. Alcance histórico
+
+El juego comenzará en el Paleolítico y finalizará cuando comience la Revolución Industrial.
+
+El sistema deberá contemplar, de forma flexible:
+
+- Primeras herramientas.
+- Dominio del fuego.
+- Agricultura.
+- Domesticación.
+- Cerámica.
+- Metalurgia.
+- Escritura.
+- Matemáticas.
+- Ingeniería antigua.
+- Astronomía.
+- Medicina.
+- Grandes obras de construcción.
+- Mejoras medievales.
+- Navegación avanzada.
+- Imprenta.
+- Ciencia moderna temprana.
+- Ingeniería mecánica.
+- Desarrollos científicos de los siglos XVII y XVIII.
+
+La cronología será una referencia de plausibilidad, no una secuencia obligatoria.
+
+No todas las civilizaciones deberán alcanzar los mismos desarrollos ni hacerlo simultáneamente.
+
+La Revolución Industrial marcará el final del período jugable.
+
+---
+
+## 25. Integración con otros sistemas
+
+El sistema estará conectado con prácticamente todos los componentes del juego:
+
+| Sistema | Relación |
+|---|---|
+| Economía | Costos, recursos, productividad e inversión. |
+| Producción y Trabajo | Herramientas, recetas, procesos y eficiencia. |
+| Construcción | Materiales, técnicas y arquitectura. |
+| Población | Especialistas, educación y transmisión. |
+| Cultura | Innovación, conocimiento y tradiciones. |
+| Religión | Instituciones educativas y conservación del conocimiento. |
+| Política | Financiación, instituciones y prioridades. |
+| Medioambiente | Explotación y transformación del entorno. |
+| Transporte | Navegación, caminos y mecanismos. |
+| Militar | Armamento, fortificaciones y logística. |
+| Diplomacia | Difusión e intercambio tecnológico. |
+
+La tecnología deberá ser uno de los principales factores de transformación de la civilización.
+
+---
+
+## 26. MVP — Primera implementación
+
+La primera versión deberá incluir:
+
+- Disciplinas tecnológicas básicas.
+- Conocimientos iniciales.
+- Evolución autónoma de disciplinas.
+- Posibilidad de establecer prioridades.
+- Especialistas.
+- Transmisión básica de conocimientos.
+- Algunas tecnologías adquiribles mediante experimentación.
+- Mejoras productivas visibles.
+- Evolución de herramientas y equipamiento.
+- Interacción con producción, construcción y agricultura.
+
+Se utilizará una pequeña aldea como escenario de prueba.
+
+El objetivo será comprobar que la tecnología puede evolucionar de forma orgánica y producir mejoras visibles en la vida cotidiana.
+
+La arquitectura deberá permitir incorporar posteriormente todas las disciplinas y procesos históricos.
+
+---
+
+## 27. Decisiones confirmadas
+
+| Tema | Decisión |
+|---|---|
+| Modelo de progreso | Híbrido: orgánico y dirigido. |
+| Origen del conocimiento | Todas las fuentes propuestas. |
+| Descubrimientos | Experimentación, observación, necesidades y casualidades. |
+| Control del jugador | Establece prioridades y financia; los especialistas investigan. |
+| Disciplinas | Todas las propuestas. |
+| Transmisión | Familiar, artesanal, educativa, institucional e internacional. |
+| Pérdida de conocimientos | Extremadamente excepcional. |
+| Intercambio tecnológico | Sí, mediante todos los mecanismos relevantes. |
+| Evolución simultánea | Todas las disciplinas pueden avanzar en paralelo. |
+| Especialización | Sí, con personajes identificables y grupos profesionales. |
+| Innovadores históricos | Sí, podrán introducir avances y mejoras. |
+| Ciencia y tecnología | Diferenciadas, pero relacionadas. |
+| Educación | Fundamental para la transmisión y la innovación. |
+| Economía | Condiciona la capacidad de investigación e innovación. |
+| Medioambiente | Consecuencias contextuales, no automáticas. |
+| Obsolescencia | Las tecnologías antiguas pueden coexistir con las nuevas. |
+| Caminos tecnológicos | Diversos según las condiciones de cada civilización. |
+| Estancamiento | Posible. |
+| Involución | No, salvo pérdida extraordinaria de conocimientos. |
+| Tecnología militar | Incluida, con importancia creciente. |
+| Evolución visual | Fundamental. |
+| Interfaz | Catálogo de conocimientos e investigaciones. |
+| Realismo | Alto inicialmente, con posibilidad de profundizar. |
+| Período | Paleolítico hasta comienzos de la Revolución Industrial. |
+
+---
+
+## 28. Visión final
+
+La tecnología debe ser uno de los motores que hagan sentir que el jugador está viendo evolucionar una civilización real.
+
+No queremos que el jugador simplemente desbloquee una máquina de vapor.
+
+Queremos que observe cómo sus habitantes desarrollan conocimientos, experimentan, perfeccionan técnicas, construyen herramientas, forman especialistas y transforman sus métodos de producción.
+
+Una pequeña comunidad que utiliza herramientas primitivas podrá convertirse, después de miles de años, en una sociedad con conocimientos matemáticos, medicina desarrollada, arquitectura sofisticada, navegación avanzada y una gran diversidad de tecnologías.
+
+Los avances no aparecerán simplemente porque llegó una determinada fecha.
+
+Serán consecuencia de la historia que esa civilización construyó.
+
+**La tecnología no será un árbol que el jugador completa. Será el conocimiento acumulado de una civilización que aprende, experimenta e innova.**

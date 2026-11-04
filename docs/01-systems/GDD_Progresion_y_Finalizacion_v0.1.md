@@ -1,0 +1,243 @@
+> **Control documental:** 0.1 | Estado: diseño conceptual; las decisiones marcadas como confirmadas se preservan desde la fuente. **Alcance:** este GDD es fuente de detalle de su dominio; el GDD Maestro establece la visión común. Los conflictos intersistema se registran en AUDIT_REPORT.md y no se resuelven implícitamente.
+
+---
+
+# GDD — PROGRESIÓN DE LA PARTIDA, OBJETIVOS Y CONDICIONES DE FINALIZACIÓN
+
+**Versión:** 0.1  
+**Estado:** Definición conceptual consolidada
+
+## 1. Visión general
+
+Este sistema define cómo progresa una partida, qué objetivos puede perseguir el jugador y cómo se determina su finalización.
+
+El juego priorizará una experiencia sandbox, donde cada civilización pueda desarrollarse libremente durante siglos.
+
+No existirá una secuencia obligatoria de objetivos ni una única forma correcta de progresar.
+
+El jugador podrá desarrollar una civilización pacífica, comercial, cultural, tecnológica, religiosa, territorial o seguir cualquier combinación de caminos.
+
+Se ofrecerán objetivos opcionales, desafíos y escenarios especiales para quienes busquen experiencias más estructuradas.
+
+**Principio fundamental:**
+
+El progreso no estará determinado por conquistar más territorios o alcanzar determinadas tecnologías, sino por la historia que el jugador construya con su civilización.
+
+## 2. Progresión histórica
+
+La progresión será libre, con períodos históricos orientativos.
+
+- Los períodos servirán para contextualizar tecnologías, arquitectura, instituciones y formas de organización.
+- No habrá desbloqueos obligatorios por alcanzar una fecha.
+- Los avances dependerán de conocimientos, recursos, instituciones y condiciones reales.
+- Las civilizaciones podrán evolucionar a ritmos diferentes.
+- Los conocimientos antiguos podrán conservarse y seguir utilizándose.
+
+El juego tendrá como horizonte histórico el comienzo de la Revolución Industrial, sin desarrollar esa etapa como parte de la simulación.
+
+## 3. Objetivos de partida
+
+El sistema de objetivos será configurable.
+
+Se contemplarán tres modalidades:
+
+- Partida completamente libre, sin objetivos.
+- Objetivos opcionales sugeridos por el juego.
+- Objetivos definidos por el jugador.
+
+Los objetivos no deberán limitar las decisiones ni penalizar estilos de juego diferentes.
+
+### 3.1. Categorías de objetivos
+
+Se incluirán todas las áreas principales:
+
+- Desarrollo económico.
+- Crecimiento poblacional.
+- Expansión territorial.
+- Desarrollo tecnológico.
+- Construcción de grandes ciudades.
+- Influencia cultural.
+- Influencia religiosa.
+- Relaciones diplomáticas.
+- Exploración.
+- Bienestar de la población.
+- Prestigio histórico.
+
+Los objetivos podrán ser de corto, mediano y largo plazo.
+
+También podrán surgir oportunidades a partir de acontecimientos del mundo.
+
+## 4. Sistema de puntuación y prestigio
+
+Se utilizará un modelo combinado de indicadores independientes y puntuación general.
+
+Los indicadores podrán contemplar:
+
+- Economía.
+- Población.
+- Tecnología.
+- Cultura.
+- Religión.
+- Diplomacia.
+- Territorio.
+- Construcción.
+- Bienestar.
+- Influencia histórica.
+
+La puntuación general será opcional.
+
+Los indicadores servirán para comprender el desarrollo de una civilización, no para imponer una jerarquía universal de éxito.
+
+Una civilización pequeña, próspera y culturalmente influyente podrá considerarse exitosa sin necesidad de convertirse en un imperio.
+
+## 5. Objetivos personalizados
+
+El jugador podrá establecer sus propios objetivos.
+
+Podrá utilizar objetivos predefinidos o definir metas personales.
+
+Ejemplos:
+
+- Construir una gran ciudad.
+- Alcanzar determinada población.
+- Desarrollar una red comercial.
+- Investigar una tecnología.
+- Mantener una sociedad próspera.
+- Fundar asentamientos en nuevas regiones.
+- Alcanzar determinado nivel de influencia cultural.
+- Construir monumentos históricos.
+
+Los objetivos personalizados podrán funcionar como referencias personales o condiciones de desafío.
+
+## 6. Dificultad
+
+La dificultad será configurable mediante dos mecanismos:
+
+**Configuración inicial:** permite establecer las condiciones de partida.
+
+**Dificultad adaptativa:** permite modificar determinados desafíos según la evolución de la partida.
+
+La dificultad podrá afectar, entre otros aspectos, a:
+
+- Disponibilidad de recursos.
+- Condiciones iniciales.
+- Crecimiento demográfico.
+- Economía.
+- Eventos.
+- Comportamiento de otras civilizaciones.
+- Autonomía de los sistemas.
+- Exigencias logísticas.
+
+La adaptación deberá ser transparente y configurable. No deberá modificar arbitrariamente las reglas para impedir que el jugador tenga éxito.
+
+## 7. Desafíos y escenarios especiales
+
+Existirán escenarios diseñados para ofrecer experiencias particulares.
+
+Ejemplos:
+
+- Comenzar en una isla pequeña.
+- Desarrollar una civilización en un desierto.
+- Sobrevivir en una región montañosa.
+- Crear una potencia comercial.
+- Desarrollar una civilización marítima.
+- Reconstruir una sociedad después de una gran crisis.
+- Competir por recursos limitados.
+- Desarrollar una civilización aislada.
+- Establecer una sociedad con condiciones geográficas extremas.
+
+Los escenarios serán una modalidad secundaria y no reemplazarán las partidas libres.
+
+## 8. Duración y finalización
+
+La duración de una partida será flexible.
+
+Se contemplarán dos referencias:
+
+- Límite histórico opcional: comienzo de la Revolución Industrial.
+- Continuación libre: posibilidad de seguir jugando después de ese momento.
+
+El jugador podrá elegir si desea establecer un límite temporal o continuar indefinidamente dentro de las capacidades del juego.
+
+## 9. Qué sucede al finalizar el período histórico
+
+Al llegar al límite histórico, el jugador podrá elegir:
+
+**Finalizar la partida**
+
+Se generará un resumen histórico de la civilización.
+
+**Continuar en modo libre**
+
+La simulación podrá continuar sin desarrollar la Revolución Industrial como nueva etapa tecnológica.
+
+**Elegir en el momento**
+
+El jugador decidirá qué hacer cuando alcance el límite.
+
+## 10. Legado histórico
+
+El legado será importante, pero no obligatorio.
+
+El juego podrá evaluar y presentar la historia de la civilización considerando:
+
+- Construcciones y ciudades.
+- Desarrollo económico.
+- Bienestar de la población.
+- Conocimientos científicos y tecnológicos.
+- Cultura y tradiciones.
+- Religiones.
+- Relaciones diplomáticas.
+- Influencia territorial.
+- Personajes históricos.
+- Acontecimientos importantes.
+- Transformaciones del mundo.
+
+El objetivo será mostrar qué construyó la civilización y qué huella dejó, no simplemente asignarle una puntuación.
+
+## 11. Complejidad configurable
+
+El sistema permitirá configurar independientemente:
+
+- Objetivos.
+- Puntuaciones.
+- Prestigio.
+- Dificultad.
+- Adaptación de dificultad.
+- Escenarios especiales.
+- Límite histórico.
+- Continuación libre.
+- Evaluación del legado.
+
+El jugador podrá desactivar objetivos y puntuaciones para disfrutar de una experiencia sandbox sin condiciones externas.
+
+## 12. MVP — Primera versión jugable
+
+- Progresión tecnológica e histórica libre.
+- Configuración de duración.
+- Posibilidad de jugar sin objetivos.
+- Objetivos básicos opcionales.
+- Indicadores generales de desarrollo.
+- Configuración inicial de dificultad.
+- Resumen básico de la civilización.
+
+Los desafíos especiales, objetivos personalizados avanzados y evaluación histórica detallada podrán incorporarse posteriormente.
+
+## 13. Decisiones confirmadas
+
+| Área | Decisión |
+|---|---|
+| Progresión | Períodos orientativos y evolución libre |
+| Objetivos | Configurables |
+| Categorías | Todas las propuestas |
+| Puntuación | General e indicadores independientes |
+| Objetivos personalizados | Sí |
+| Dificultad | Inicial y adaptativa |
+| Escenarios especiales | Sí |
+| Finalización | Límite histórico opcional |
+| Continuación | Posible después del límite |
+| Decisión final | A elección del jugador |
+| Legado histórico | Importante, pero opcional |
+| Complejidad | Configurable, con sandbox auténtico |
+
+**Estado:** GDD conceptual v0.1 consolidado.
