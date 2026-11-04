@@ -27,6 +27,21 @@ Además: [IMPLEMENTATION_ALIGNMENT.md](IMPLEMENTATION_ALIGNMENT.md) (código vs 
 
 ---
 
+## Desarrollo multi-agente (organización de desarrollo — PROPUESTA 2026-11-04)
+
+Documentos de **gobernanza de desarrollo** (no de diseño de juego): cómo trabajan varios agentes en paralelo sin pisarse ni duplicar sistemas. **Estado: propuesta, pendiente de aprobación** (no se lanzan agentes ni se crean worktrees hasta aprobar). La autoridad de diseño sigue en los GDD.
+
+| Documento | Propósito |
+|---|---|
+| [AGENT_ORGANIZATION.md](AGENT_ORGANIZATION.md) | Los 9 workstreams: alcance, responsabilidades, exclusiones, dependencias, entregables, carpetas/archivos permitidos/restringidos, criterios de aceptación. |
+| [SYSTEM_CONTRACTS.md](SYSTEM_CONTRACTS.md) | Interfaces compartidas (tiempo, eventos, identidad, recursos, inventarios, edificios, población, terreno, colocación, acceso UI) con su API real y su dueño. |
+| [AGENT_OWNERSHIP_MAP.md](AGENT_OWNERSHIP_MAP.md) | Matriz archivo/carpeta → dueño único; protocolo de archivos compartidos y de binarios `.uasset`. |
+| [AGENT_TASK_BOARD.md](AGENT_TASK_BOARD.md) | Tablero de tareas por hito (M0–M4 + continuos): dependencias, prioridad, archivos, aceptación, estado, bloqueos. |
+| [GIT_WORKFLOW.md](GIT_WORKFLOW.md) | Ramas y worktrees por workstream (dos repos: docs + UE), binarios UE sin merge, tests y entrega. |
+| [INTEGRATION_STRATEGY.md](INTEGRATION_STRATEGY.md) | Proceso central de integración a cargo del Director Técnico. |
+
+---
+
 ## 0. Proyecto y gobernanza
 
 ### GDD Maestro

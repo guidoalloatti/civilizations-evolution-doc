@@ -41,6 +41,8 @@ Civilization Evolutions/            (raíz de trabajo = este repo; hay una copia
 │       SYSTEM_DEPENDENCY_MAP · CROSS_SYSTEM_VALIDATION_SCENARIOS · DEVELOPMENT_ROADMAP ·
 │       SYSTEM_IMPLEMENTATION_SPECIFICATIONS · HISTORICAL_EVOLUTION_FRAMEWORK ·
 │       IMPLEMENTATION_RISK_REGISTER   (análisis derivado de los GDD; DR-00..DR-12 confirmadas por delegación 2026-11-04)
+├── (Desarrollo multi-agente) AGENT_ORGANIZATION · AGENT_OWNERSHIP_MAP · SYSTEM_CONTRACTS ·
+│       AGENT_TASK_BOARD · GIT_WORKFLOW · INTEGRATION_STRATEGY   (organización de agentes en paralelo; PROPUESTA 2026-11-04)
 ├── AUDIT_REPORT.md                  ← contradicciones (C-01..C-08) y pendientes transversales
 ├── docs/
 │   ├── 00-project/GDD_MAESTRO.md    ← visión, pilares, mapa de autoridad, integraciones, vocabulario
@@ -89,6 +91,18 @@ Leé el **original** cuando la decisión sea importante; los resúmenes no reemp
 - **SimCore** (C++ puro, con tests): reloj con estaciones, recursos/inventarios, recetas y producción, asignación de trabajadores, logística simplificada, consumo/hambre/salud, construcción con costo, demolición, árbol tecnológico, evolución de edificios, comercio entre asentamientos, guardar/cargar.
 - **Capa UE** (`Source/CivilizationSimulator/`): GameMode, PlayerController (selección/órdenes/menú de construcción), CameraPawn (RTS), ViewManager (entorno + HUD), BuildingActor, Terrain procedural, SimSubsystem (puente a SimCore), **CivUnit** (settlers animados), **CivResourceNode** (recolección), **CivHUD**, **CivText** (i18n inglés por defecto + español). Materiales PBR en `/Game/PBR`, personaje en `/Game/Chars`. Lumen/SM6 activados.
 - Este código **se está extendiendo activamente** (sistema de recursos del mapa, caza, acarreo). Antes de tocar un archivo, leé su estado actual en disco.
+
+## Desarrollo multi-agente (PROPUESTA — pendiente de aprobación)
+
+Para escalar el desarrollo con varios agentes en paralelo **sin romper la consistencia arquitectónica**, hay una propuesta de organización (no se lanzan agentes ni se crean worktrees hasta que la apruebe el responsable):
+
+- **[AGENT_ORGANIZATION.md](AGENT_ORGANIZATION.md)** — 9 workstreams (Director Técnico, Core/Simulación, Mundo/Geografía, Construcción, Economía/Recursos/Producción, Población, UI/UX, Arte, QA/Integración): alcance, exclusiones, dependencias, entregables, archivos permitidos/restringidos y criterios de aceptación.
+- **[SYSTEM_CONTRACTS.md](SYSTEM_CONTRACTS.md)** — interfaces compartidas (tiempo, eventos, identidad, recursos, inventarios, edificios, población, terreno, colocación, acceso UI), con su API real hoy y su dueño.
+- **[AGENT_OWNERSHIP_MAP.md](AGENT_OWNERSHIP_MAP.md)** — archivo/carpeta → dueño único; protocolo de archivos compartidos y de `.uasset`.
+- **[AGENT_TASK_BOARD.md](AGENT_TASK_BOARD.md)** — tareas por hito (M0–M4 + continuos), con dependencias, prioridad, archivos, aceptación, estado y bloqueos.
+- **[GIT_WORKFLOW.md](GIT_WORKFLOW.md)** y **[INTEGRATION_STRATEGY.md](INTEGRATION_STRATEGY.md)** — ramas/worktrees por workstream (dos repos: docs + UE), binarios UE sin merge, e integración central por el Director Técnico.
+
+Regla base: **un dueño por dato y por archivo**; los demás **leen por contrato**. Antes de paralelizar hay que hacer **M0** (publicar contratos + partir `SimCore/Simulation.*`/`World.*` por dominio + commitear lo pendiente + configurar Git/LFS).
 
 ## Notas operativas
 
