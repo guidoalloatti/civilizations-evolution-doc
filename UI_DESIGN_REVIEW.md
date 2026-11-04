@@ -16,9 +16,11 @@ Overall: the implementation is a genuine, coherent system — **100% C++ UMG**, 
 
 ---
 
-## 1. [DECISION] Base palette — slate-blue (spec) vs warm-brown (implemented)
+## 1. [RESOLVED — DR-14] Base palette — slate-blue (spec) adopted
 
-This is the **biggest divergence**. The implemented identity is a deliberate **warm brown** (documented in their `UI_STYLE_GUIDE.md` as "cálida e histórica"). The pasted spec mandates a specific **cool slate-blue** palette. They disagree on nearly every background/border token (the golds and semantics are close).
+> **Decision (user, 2026-11-04 — DR-14):** adopt the **slate-blue palette** of the spec as the official identity, using the exact tokens below. Modern/premium/elegant, **not** medieval/fantasy; the warm historical character comes from illustrations, materials, maps and environment, not from a brown UI. The warm-brown tokens currently in `CivUIStyle.h` are to be replaced via the centralized style system. See [DESIGN_DECISION_REGISTER.md](DESIGN_DECISION_REGISTER.md) DR-14 and the task list in [UI_IMPLEMENTATION_TASKS.md](UI_IMPLEMENTATION_TASKS.md).
+
+This was the **biggest divergence**. The implemented identity is a deliberate **warm brown** (documented in their `UI_STYLE_GUIDE.md` as "cálida e histórica"). The pasted spec mandates a specific **cool slate-blue** palette. They disagree on nearly every background/border token (the golds and semantics are close).
 
 | Role | Spec (official) | Implemented now (`CivUIStyle.h`) | Match |
 |---|---|---|---|

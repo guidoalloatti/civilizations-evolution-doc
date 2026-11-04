@@ -100,12 +100,21 @@
 - **Status:** the user authorized (2026-11-04) **proposing** a draft of the missing part. Written in [DIPLOMACY_PROPOSAL_COMPLETED.md](DIPLOMACY_PROPOSAL_COMPLETED.md), **marked as proposed, to be validated** — it is NOT canonical nor was it incorporated into the original GDD (which is not edited). Derived from what the GDD itself already sets out (up to §18), AI (DC-11), and War (DC-10); each assumption is flagged.
 - **Pending:** your validation to promote it to confirmed and only then transfer it to the owner GDD. It does not block the prototype (Diplomacy is stage E5).
 
+### DR-14 — UI visual identity and implementation coordination `confirmed` ✓✓ (ratified by the user 2026-11-04)
+- **Topic:** the Global UI Visual Design spec vs the warm-brown palette already implemented (see [UI_DESIGN_REVIEW.md](UI_DESIGN_REVIEW.md) §1). **Affects:** Interface (UI/UX), Art, and the coordination between the docs repo and the active UI session.
+- **Proposal (adopted):**
+  1. **Official visual identity = the slate-blue palette** of the spec, with the **exact color tokens** from §2 of the spec (dark slate-blue backgrounds, gold as the primary accent, cool text greys). The feel is **modern, premium, elegant — not medieval/fantasy**. The warm historical character comes from **illustrations, materials, maps, documents and environmental elements**, not from tinting the whole UI brown. Exact drop-in tokens: [UI_DESIGN_REVIEW.md](UI_DESIGN_REVIEW.md) §1.
+  2. **Preserve the existing implementation** — do not rewrite the UI architecture: keep the C++ UMG architecture, the centralized style tokens (`CivUIStyle.h`), the current button implementation, the simulation/presentation separation and all existing functionality. The palette migration goes **through the centralized style system** wherever possible.
+  3. **Ownership/coordination:** the session implementing UI Stages 1–4 **owns** the Unreal UI files (`CivUIStyle.h`, `CivMainHUD.*`, `CivViewManager.cpp`, `Docs/UI_*`). They are **not edited from the documentation worktree** (one writer per file — `GIT_WORKFLOW.md`). No competing implementations.
+  4. **Verification gate:** the visual system is **not "complete"** until there are **actual Unreal screenshots** checked at **at least 1080p and 1440p** (acceptance #9/#10 of the spec).
+- **Consequence:** settles the palette divergence without discarding the implemented work; the concrete tasks for the owning session are in [UI_IMPLEMENTATION_TASKS.md](UI_IMPLEMENTATION_TASKS.md). Reversible like the other DR entries.
+
 ---
 
 ## Status index
 
 - **Confirmed by GDD:** DC-01…DC-15.
-- **Ratified by the user (2026-11-04):** DR-01, DR-02, DR-05, DR-06, DR-07 (the vision/irreversible ones that required explicit human confirmation).
+- **Ratified by the user (2026-11-04):** DR-01, DR-02, DR-05, DR-06, DR-07, DR-14 (the vision/irreversible ones that required explicit human confirmation).
 - **Confirmed by delegation (2026-11-04):** DR-00, DR-03, DR-04, DR-08, DR-09, DR-10, DR-11, DR-12 (in effect to move forward; reversible at your request).
 - **Proposal to validate:** DR-13 → draft in [DIPLOMACY_PROPOSAL_COMPLETED.md](DIPLOMACY_PROPOSAL_COMPLETED.md) (not canonical until your OK).
 
