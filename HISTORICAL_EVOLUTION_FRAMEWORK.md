@@ -1,6 +1,6 @@
 # HISTORICAL_EVOLUTION_FRAMEWORK — Civilization Evolutions
 
-> **Phase 2 — Conceptual framework for historical evolution.** How to represent historical evolution **without** a rigid technology tree or a mandatory chronology. Core idea: a **shared framework** of discoveries, conditions and events that **all systems react to**, instead of isolated effects within each system. Authority: [GDD_Tecnologia_Ciencia_e_Innovacion](docs/01-systems/GDD_Tecnologia_Ciencia_e_Innovacion_v0.1.md), [GDD_Eventos...](docs/01-systems/GDD_Eventos_y_Evolucion_Historica_v0.1.md), [GDD_Construccion...](docs/01-systems/GDD_Construccion_y_Arquitectura_v0.1.md). Decisions: DC-01, DC-09, DR-01, DR-11.
+> **Phase 2 — Conceptual framework for historical evolution.** How to represent historical evolution **without** a rigid technology tree or a mandatory chronology. Core idea: a **shared framework** of discoveries, conditions and events that **all systems react to**, instead of isolated effects within each system. Authority: [GDD_Technology_Science_and_Innovation](docs/01-systems/GDD_Technology_Science_and_Innovation_v0.1.md), [GDD_Events...](docs/01-systems/GDD_Events_and_Historical_Evolution_v0.1.md), [GDD_Construction...](docs/01-systems/GDD_Construction_and_Architecture_v0.1.md). Decisions: DC-01, DC-09, DR-01, DR-11.
 > Version 1.0 · Status: conceptual.
 
 ## 1. Principles

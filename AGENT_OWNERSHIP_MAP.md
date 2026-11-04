@@ -24,7 +24,7 @@
 | `DESIGN_DECISION_REGISTER.md`, `AUDIT_REPORT.md`, `IMPLEMENTATION_RISK_REGISTER.md` | **WS-TD** | all | Decisions/risks. A workstream that makes a decision **proposes** it; TD records it. |
 | `SHARED_DATA_MODEL.md`, `SYSTEM_DEPENDENCY_MAP.md`, `SYSTEM_ARCHITECTURE_MAP.md`, `DEVELOPMENT_ROADMAP.md`, `SYSTEM_IMPLEMENTATION_SPECIFICATIONS.md`, `CROSS_SYSTEM_VALIDATION_SCENARIOS.md`, `DESIGN_CONSISTENCY_AUDIT.md`, `HISTORICAL_EVOLUTION_FRAMEWORK.md` | **WS-TD** | all | Phase 2 blueprint (derived from the GDDs). |
 | `IMPLEMENTATION_ALIGNMENT.md` | **WS-TD** (with input from WS-QA) | all | Code↔design snapshot; update after each milestone. |
-| `docs/00-project/GDD_MAESTRO.md`, `docs/01-systems/*`, `docs/02-technical/*`, `docs/README.md` | 🔒 **GDD — design authority** | all | **Not edited** by a development decision; design changes are the owner's decision (DR-08). |
+| `docs/00-project/GDD_MASTER.md`, `docs/01-systems/*`, `docs/02-technical/*`, `docs/README.md` | 🔒 **GDD — design authority** | all | **Not edited** by a development decision; design changes are the owner's decision (DR-08). |
 | `BACKUP_PRE_AUDIT_2026-11-03/**` | 🔒 **Immutable** | — | Backup. Never edited. |
 
 ## B. UE repo — SimCore (`civilizations-evolution/SimCore/`)
@@ -93,7 +93,7 @@ Until M0 is integrated, **every** edit to `Simulation.cpp`/`World.cpp` goes thro
 | `ArtStaging/**` | **WS-ART** | Heavy raw files. **Outside git** (`.gitignore`). |
 | `Docs/ASSETS.md`, `Docs/UI_STYLE_GUIDE.md` | **WS-ART** / **WS-UI** | Asset pipeline / style guide. |
 | `Docs/BACKLOG.md` | 🤝 **WS-TD** (mirrored on the board) | Historical backlog of the UE repo; the official board is `AGENT_TASK_BOARD.md`. |
-| `Docs/00_TECHNICAL.md` (= PLAN_TECNICO) | 🔒 technical authority | Copy of the plan; do not edit without approval. |
+| `Docs/00_TECHNICAL.md` (= TECHNICAL_PLAN) | 🔒 technical authority | Copy of the plan; do not edit without approval. |
 
 ---
 

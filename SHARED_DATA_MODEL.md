@@ -1,6 +1,6 @@
 # SHARED_DATA_MODEL — Civilization Evolutions
 
-> **Phase 2 — Shared data model (conceptual).** Central simulation entities, their attributes, identity, relationships, who owns/manages them and who consumes them. **These are not final C++ structs**: it is a conceptual model to avoid duplication between systems. Authority: [GDD_Entidades_y_Relaciones](docs/01-systems/GDD_Entidades_y_Relaciones_v0.1.md) + [GDD_Recursos_y_Materiales](docs/01-systems/GDD_Recursos_y_Materiales_v0.1.md). Property: see DR-07 in [DESIGN_DECISION_REGISTER.md](DESIGN_DECISION_REGISTER.md).
+> **Phase 2 — Shared data model (conceptual).** Central simulation entities, their attributes, identity, relationships, who owns/manages them and who consumes them. **These are not final C++ structs**: it is a conceptual model to avoid duplication between systems. Authority: [GDD_Entities_and_Relationships](docs/01-systems/GDD_Entities_and_Relationships_v0.1.md) + [GDD_Resources_and_Materials](docs/01-systems/GDD_Resources_and_Materials_v0.1.md). Property: see DR-07 in [DESIGN_DECISION_REGISTER.md](DESIGN_DECISION_REGISTER.md).
 > Version 1.1 · Last updated 2026-11-04 · Status: conceptual.
 
 ## Model principles

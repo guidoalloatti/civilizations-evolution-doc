@@ -7,7 +7,7 @@
 
 A **real-time historical strategy and simulation** game: an initial community transforms, over centuries, into a civilization with its own settlements, economy, institutions, culture and history. It spans from the **Paleolithic to the beginning of the Industrial Revolution** (cutoff approx. 1750–1800, pending confirmation — see `AUDIT_REPORT.md` C-01). Real history is a **plausibility reference, not a mandatory script**: evolution is free and non-linear. The player is a **guiding entity** for the civilization (not a ruler), with broad influence but respecting the autonomy of the population and non-player civilizations. Engine: **Unreal Engine 5**, C++ as the primary language.
 
-Vision document: [docs/00-project/GDD_MAESTRO.md](docs/00-project/GDD_MAESTRO.md). Canonical documentation language: **English**.
+Vision document: [docs/00-project/GDD_MASTER.md](docs/00-project/GDD_MASTER.md). Canonical documentation language: **English**.
 
 ## Design principles (non-negotiable)
 
@@ -45,9 +45,9 @@ Civilization Evolutions/            (work root = this repo; there is a docs-only
 │       AGENT_TASK_BOARD · GIT_WORKFLOW · INTEGRATION_STRATEGY   (parallel agent organization; PROPOSAL 2026-11-04)
 ├── AUDIT_REPORT.md                  ← contradictions (C-01..C-08) and cross-cutting open items
 ├── docs/
-│   ├── 00-project/GDD_MAESTRO.md    ← vision, pillars, authority map, integrations, vocabulary
+│   ├── 00-project/GDD_MASTER.md    ← vision, pillars, authority map, integrations, vocabulary
 │   ├── 01-systems/                  ← 22 system GDDs (source of detail per domain)
-│   └── 02-technical/PLAN_TECNICO_v0.1.md  ← technical architecture (separate from design)
+│   └── 02-technical/TECHNICAL_PLAN_v0.1.md  ← technical architecture (separate from design)
 ├── BACKUP_PRE_AUDIT_2026-11-03/     ← full backup; DO NOT edit (kept in the original language)
 └── civilizations-evolution/         ← Unreal project + SimCore + condensed Docs/
     ├── SimCore/                     ← C++ simulation core (engine-agnostic, with tests)
@@ -59,7 +59,7 @@ Civilization Evolutions/            (work root = this repo; there is a docs-only
 
 1. Open **`DOCUMENTATION_INDEX.md`** to locate the domain's GDD.
 2. Read the corresponding **system GDD** (authority on detail).
-3. Check **`GDD_MAESTRO.md` §5 (authority) and §6 (integrations)** for cross-system dependencies.
+3. Check **`GDD_MASTER.md` §5 (authority) and §6 (integrations)** for cross-system dependencies.
 4. Use **`DOCUMENTATION_READING_GUIDE.md`** to know which GDDs to read together for a task.
 5. To see what is done, look at **`IMPLEMENTATION_ALIGNMENT.md`**.
 6. For open decisions/contradictions, **`AUDIT_REPORT.md`**.
@@ -68,13 +68,13 @@ Read the **original** when the decision matters; the summaries do not replace th
 
 ### Which GDDs to consult before touching each system (summary; detail in the reading guide)
 
-- **Production/economy:** `GDD_Produccion_y_Trabajo_v0.2` + `GDD_Economia_v0.2` + `GDD_Recursos_y_Materiales` + `GDD_Transporte_Comercio_y_Logistica` + `GDD_Poblacion_y_Sociedad`.
-- **Construction:** `GDD_Construccion_y_Arquitectura` + `GDD_Recursos_y_Materiales` + `GDD_Tecnologia_Ciencia_e_Innovacion` + `GDD_Poblacion_y_Sociedad`.
-- **World/terrain:** `GDD_Generacion_Procedural_del_Mundo` + `GDD_Geografia_Clima_y_Medioambiente` + `GDD_Exploracion_y_Expansion_Territorial`.
-- **Population/society:** `GDD_Poblacion_y_Sociedad` + `GDD_Entidades_y_Relaciones` + `GDD_Cultura...` + `GDD_Religion...`.
-- **Time:** `GDD_Tiempo_y_Simulacion` (clock common to all).
+- **Production/economy:** `GDD_Production_and_Labor_v0.2` + `GDD_Economy_v0.2` + `GDD_Resources_and_Materials` + `GDD_Transport_Trade_and_Logistics` + `GDD_Population_and_Society`.
+- **Construction:** `GDD_Construction_and_Architecture` + `GDD_Resources_and_Materials` + `GDD_Technology_Science_and_Innovation` + `GDD_Population_and_Society`.
+- **World/terrain:** `GDD_Procedural_World_Generation` + `GDD_Geography_Climate_and_Environment` + `GDD_Exploration_and_Territorial_Expansion`.
+- **Population/society:** `GDD_Population_and_Society` + `GDD_Entities_and_Relationships` + `GDD_Culture...` + `GDD_Religion...`.
+- **Time:** `GDD_Time_and_Simulation` (clock common to all).
 
-> Note: GDD file names are kept in their original Spanish to preserve the hundreds of internal links; their **content** is in English.
+> Note: both the GDD file names and their **content** are in English. The original Spanish snapshot is preserved untouched in `BACKUP_PRE_AUDIT_2026-11-03/`.
 
 ## Rules for future development
 

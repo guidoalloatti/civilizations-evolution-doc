@@ -97,7 +97,7 @@
 
 ### DR-13 — Complete the Diplomacy GDD `proposed` (draft to validate, 2026-11-04)
 - **Finding:** F-22. The source file is **truncated** (it cuts off at §18). **Affects:** Diplomacy, AI, War.
-- **Status:** the user authorized (2026-11-04) **proposing** a draft of the missing part. Written in [DIPLOMACIA_PROPUESTA_COMPLETADO.md](DIPLOMACIA_PROPUESTA_COMPLETADO.md), **marked as proposed, to be validated** — it is NOT canonical nor was it incorporated into the original GDD (which is not edited). Derived from what the GDD itself already sets out (up to §18), AI (DC-11), and War (DC-10); each assumption is flagged.
+- **Status:** the user authorized (2026-11-04) **proposing** a draft of the missing part. Written in [DIPLOMACY_PROPOSAL_COMPLETED.md](DIPLOMACY_PROPOSAL_COMPLETED.md), **marked as proposed, to be validated** — it is NOT canonical nor was it incorporated into the original GDD (which is not edited). Derived from what the GDD itself already sets out (up to §18), AI (DC-11), and War (DC-10); each assumption is flagged.
 - **Pending:** your validation to promote it to confirmed and only then transfer it to the owner GDD. It does not block the prototype (Diplomacy is stage E5).
 
 ---
@@ -107,6 +107,6 @@
 - **Confirmed by GDD:** DC-01…DC-15.
 - **Ratified by the user (2026-11-04):** DR-01, DR-02, DR-05, DR-06, DR-07 (the vision/irreversible ones that required explicit human confirmation).
 - **Confirmed by delegation (2026-11-04):** DR-00, DR-03, DR-04, DR-08, DR-09, DR-10, DR-11, DR-12 (in effect to move forward; reversible at your request).
-- **Proposal to validate:** DR-13 → draft in [DIPLOMACIA_PROPUESTA_COMPLETADO.md](DIPLOMACIA_PROPUESTA_COMPLETADO.md) (not canonical until your OK).
+- **Proposal to validate:** DR-13 → draft in [DIPLOMACY_PROPOSAL_COMPLETED.md](DIPLOMACY_PROPOSAL_COMPLETED.md) (not canonical until your OK).
 
 > The DR- entries with the greatest implementation impact: **DR-02** (relief by default), **DR-03** (seasons affect agriculture; advanced climate post-MVP), **DR-06** (prototype scale), **DR-07** (layered property), **DR-10** (individual↔aggregate LOD), **DR-12** (scope of the first playable).

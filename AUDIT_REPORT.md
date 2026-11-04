@@ -8,7 +8,7 @@
 
 - Inventoried **24 source documents**: 1 general GDD, 22 system GDDs, and 1 technical plan.
 - **23 design/technical documents** were relocated under `docs/`; the system GDDs kept their text and received a scope/authority header. The technical plan was relocated and kept without substantive changes.
-- The original general GDD was replaced, in its documentation location, by the [Master GDD](docs/00-project/GDD_MAESTRO.md), which concentrates vision, scope, framework decisions, authority boundaries, integrations, and vocabulary. System details are consulted in their source GDDs.
+- The original general GDD was replaced, in its documentation location, by the [Master GDD](docs/00-project/GDD_MASTER.md), which concentrates vision, scope, framework decisions, authority boundaries, integrations, and vocabulary. System details are consulted in their source GDDs.
 - No source document or single decision was removed: the backup keeps complete copies as they were before the change.
 - **No contradictions were resolved by editorial judgment.** They are recorded below with proposals, which are not approved decisions.
 - No source code, configuration files, or established technical architecture was modified.
@@ -19,30 +19,30 @@ The source paths were extensionless names in the root. The destination paths ind
 
 | # | Source document / topic | Version | Source status | Current location |
 |---:|---|---|---|---|
-| 1 | Technical / implementation plan | 0.1 | Initial implementation | [Technical plan](docs/02-technical/PLAN_TECNICO_v0.1.md) |
-| 2 | General GDD / initial vision | 0.1 | Initial conceptual design | [Master GDD](docs/00-project/GDD_MAESTRO.md) |
-| 3 | Economy | 0.2 | Conceptual design | [Economy GDD](docs/01-systems/GDD_Economia_v0.2.md) |
-| 4 | Production and labor | 0.2 | Conceptual design | [Production and labor GDD](docs/01-systems/GDD_Produccion_y_Trabajo_v0.2.md) |
-| 5 | Construction and architecture | 0.1 | Conceptual design document | [Construction GDD](docs/01-systems/GDD_Construccion_y_Arquitectura_v0.1.md) |
-| 6 | Population and society | 0.1 | Conceptual design document | [Population GDD](docs/01-systems/GDD_Poblacion_y_Sociedad_v0.1.md) |
-| 7 | Politics and government | 0.1 | Not declared in a separate field | [Politics GDD](docs/01-systems/GDD_Politica_y_Gobierno_v0.1.md) |
-| 8 | Religion and spirituality | 0.1 | Not declared in a separate field | [Religion GDD](docs/01-systems/GDD_Religion_y_Espiritualidad_v0.1.md) |
-| 9 | Culture, identity, and traditions | 0.1 | Not declared in a separate field | [Culture GDD](docs/01-systems/GDD_Cultura_Identidad_y_Tradiciones_v0.1.md) |
-| 10 | Technology, science, and innovation | 0.1 | Not declared in a separate field | [Technology GDD](docs/01-systems/GDD_Tecnologia_Ciencia_e_Innovacion_v0.1.md) |
-| 11 | Transport, trade, and logistics | 0.1 | Conceptual design | [Logistics GDD](docs/01-systems/GDD_Transporte_Comercio_y_Logistica_v0.1.md) |
-| 12 | Diplomacy and international relations | 0.1 | Conceptual design | [Diplomacy GDD](docs/01-systems/GDD_Diplomacia_y_Relaciones_Internacionales_v0.1.md) |
-| 13 | Geography, climate, and environment | 0.1 | Conceptual design | [Geography GDD](docs/01-systems/GDD_Geografia_Clima_y_Medioambiente_v0.1.md) |
-| 14 | Procedural world generation | 0.1 | Consolidated conceptual definition | [Generation GDD](docs/01-systems/GDD_Generacion_Procedural_del_Mundo_v0.1.md) |
-| 15 | Exploration and territorial expansion | 0.1 | Consolidated conceptual definition | [Exploration GDD](docs/01-systems/GDD_Exploracion_y_Expansion_Territorial_v0.1.md) |
-| 16 | War and military systems | 0.1 | Consolidated conceptual definition | [War GDD](docs/01-systems/GDD_Guerra_y_Sistemas_Militares_v0.1.md) |
-| 17 | Events and historical evolution | 0.1 | Consolidated conceptual definition | [Events GDD](docs/01-systems/GDD_Eventos_y_Evolucion_Historica_v0.1.md) |
-| 18 | Territorial administration and regions | 0.1 | Simplified conceptual definition | [Administration GDD](docs/01-systems/GDD_Administracion_Territorial_y_Regiones_v0.1.md) |
-| 19 | UI/UX interface | 0.1 | Consolidated conceptual definition | [Interface GDD](docs/01-systems/GDD_Interfaz_UI_UX_v0.1.md) |
-| 20 | Progression and ending | 0.1 | Consolidated conceptual definition | [Progression GDD](docs/01-systems/GDD_Progresion_y_Finalizacion_v0.1.md) |
-| 21 | AI and civilization autonomy | 0.1 | Conceptual document | [AI GDD](docs/01-systems/GDD_IA_y_Autonomia_Civilizaciones_v0.1.md) |
-| 22 | Time and simulation | 0.1 | Conceptual design | [Time GDD](docs/01-systems/GDD_Tiempo_y_Simulacion_v0.1.md) |
-| 23 | Resources and materials | 0.1 | Conceptual design | [Resources GDD](docs/01-systems/GDD_Recursos_y_Materiales_v0.1.md) |
-| 24 | Entities and relationships | 0.1 | Conceptual design | [Entities GDD](docs/01-systems/GDD_Entidades_y_Relaciones_v0.1.md) |
+| 1 | Technical / implementation plan | 0.1 | Initial implementation | [Technical plan](docs/02-technical/TECHNICAL_PLAN_v0.1.md) |
+| 2 | General GDD / initial vision | 0.1 | Initial conceptual design | [Master GDD](docs/00-project/GDD_MASTER.md) |
+| 3 | Economy | 0.2 | Conceptual design | [Economy GDD](docs/01-systems/GDD_Economy_v0.2.md) |
+| 4 | Production and labor | 0.2 | Conceptual design | [Production and labor GDD](docs/01-systems/GDD_Production_and_Labor_v0.2.md) |
+| 5 | Construction and architecture | 0.1 | Conceptual design document | [Construction GDD](docs/01-systems/GDD_Construction_and_Architecture_v0.1.md) |
+| 6 | Population and society | 0.1 | Conceptual design document | [Population GDD](docs/01-systems/GDD_Population_and_Society_v0.1.md) |
+| 7 | Politics and government | 0.1 | Not declared in a separate field | [Politics GDD](docs/01-systems/GDD_Politics_and_Government_v0.1.md) |
+| 8 | Religion and spirituality | 0.1 | Not declared in a separate field | [Religion GDD](docs/01-systems/GDD_Religion_and_Spirituality_v0.1.md) |
+| 9 | Culture, identity, and traditions | 0.1 | Not declared in a separate field | [Culture GDD](docs/01-systems/GDD_Culture_Identity_and_Traditions_v0.1.md) |
+| 10 | Technology, science, and innovation | 0.1 | Not declared in a separate field | [Technology GDD](docs/01-systems/GDD_Technology_Science_and_Innovation_v0.1.md) |
+| 11 | Transport, trade, and logistics | 0.1 | Conceptual design | [Logistics GDD](docs/01-systems/GDD_Transport_Trade_and_Logistics_v0.1.md) |
+| 12 | Diplomacy and international relations | 0.1 | Conceptual design | [Diplomacy GDD](docs/01-systems/GDD_Diplomacy_and_International_Relations_v0.1.md) |
+| 13 | Geography, climate, and environment | 0.1 | Conceptual design | [Geography GDD](docs/01-systems/GDD_Geography_Climate_and_Environment_v0.1.md) |
+| 14 | Procedural world generation | 0.1 | Consolidated conceptual definition | [Generation GDD](docs/01-systems/GDD_Procedural_World_Generation_v0.1.md) |
+| 15 | Exploration and territorial expansion | 0.1 | Consolidated conceptual definition | [Exploration GDD](docs/01-systems/GDD_Exploration_and_Territorial_Expansion_v0.1.md) |
+| 16 | War and military systems | 0.1 | Consolidated conceptual definition | [War GDD](docs/01-systems/GDD_War_and_Military_Systems_v0.1.md) |
+| 17 | Events and historical evolution | 0.1 | Consolidated conceptual definition | [Events GDD](docs/01-systems/GDD_Events_and_Historical_Evolution_v0.1.md) |
+| 18 | Territorial administration and regions | 0.1 | Simplified conceptual definition | [Administration GDD](docs/01-systems/GDD_Territorial_Administration_and_Regions_v0.1.md) |
+| 19 | UI/UX interface | 0.1 | Consolidated conceptual definition | [Interface GDD](docs/01-systems/GDD_Interface_UI_UX_v0.1.md) |
+| 20 | Progression and ending | 0.1 | Consolidated conceptual definition | [Progression GDD](docs/01-systems/GDD_Progression_and_Ending_v0.1.md) |
+| 21 | AI and civilization autonomy | 0.1 | Conceptual document | [AI GDD](docs/01-systems/GDD_AI_and_Civilization_Autonomy_v0.1.md) |
+| 22 | Time and simulation | 0.1 | Conceptual design | [Time GDD](docs/01-systems/GDD_Time_and_Simulation_v0.1.md) |
+| 23 | Resources and materials | 0.1 | Conceptual design | [Resources GDD](docs/01-systems/GDD_Resources_and_Materials_v0.1.md) |
+| 24 | Entities and relationships | 0.1 | Conceptual design | [Entities GDD](docs/01-systems/GDD_Entities_and_Relationships_v0.1.md) |
 
 ## 3. Duplications and consolidation
 
@@ -93,7 +93,7 @@ In addition to C-01–C-08, the following remains to be defined or specified:
 - Which systems and at what depth make up the first cross-cutting prototype versus the MVPs described by each GDD.
 - Dates, owners, and references that support the "confirmed" status of the current tables.
 
-Each GDD's own lists are kept in its source document; the [Master GDD](docs/00-project/GDD_MAESTRO.md) gathers the cross-cutting topics.
+Each GDD's own lists are kept in its source document; the [Master GDD](docs/00-project/GDD_MASTER.md) gathers the cross-cutting topics.
 
 ## 6. Dependencies and integrations
 
@@ -118,10 +118,10 @@ Civilization Evolutions/
 └── docs/
     ├── README.md
     ├── 00-project/
-    │   └── GDD_MAESTRO.md
+    │   └── GDD_MASTER.md
     ├── 01-systems/                    # 22 specialized GDDs
     └── 02-technical/
-        └── PLAN_TECNICO_v0.1.md      # separate, text preserved
+        └── TECHNICAL_PLAN_v0.1.md      # separate, text preserved
 ```
 
 ## 8. Changes made

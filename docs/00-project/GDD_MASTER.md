@@ -5,7 +5,7 @@
 **Canonical language:** Spanish  
 **Reference period:** Paleolithic to the beginning of the Industrial Revolution (exact date pending; the documents use approximately 1800 AD)  
 **Initial platform:** PC (Windows), per the original GDD  
-**Proposed engine:** Unreal Engine 5; the detailed technical architecture is kept in the [Technical plan](../02-technical/PLAN_TECNICO_v0.1.md).
+**Proposed engine:** Unreal Engine 5; the detailed technical architecture is kept in the [Technical plan](../02-technical/TECHNICAL_PLAN_v0.1.md).
 
 > This document establishes the shared vision, scope, vocabulary and authority map. The linked system GDDs are the detail source for their domains. The "confirmed" labels reproduce decisions that the source documents already marked as such; the authorship/approval date is not recorded in the available material.
 
@@ -60,29 +60,29 @@ The complete table by system remains in each specialized GDD. If one confirmatio
 | Domain | Detail source |
 |---|---|
 | Vision, pillars, global scope and cross-cutting prototype | This GDD Maestro |
-| Economy, markets, consumption, economic property and taxes | [Economy](../01-systems/GDD_Economia_v0.2.md) |
-| Productive buildings, recipes, productivity, employment and quality | [Production and labor](../01-systems/GDD_Produccion_y_Trabajo_v0.2.md) |
-| Construction work, building materials, urban planning, architecture and heritage | [Construction and architecture](../01-systems/GDD_Construccion_y_Arquitectura_v0.1.md) |
-| Individuals, families, health, education and social structure | [Population and society](../01-systems/GDD_Poblacion_y_Sociedad_v0.1.md) |
-| Government, laws, institutions and internal politics | [Politics and government](../01-systems/GDD_Politica_y_Gobierno_v0.1.md) |
-| Religious beliefs, practices and institutions | [Religion and spirituality](../01-systems/GDD_Religion_y_Espiritualidad_v0.1.md) |
-| Identity, language, traditions and cultural diffusion | [Culture](../01-systems/GDD_Cultura_Identidad_y_Tradiciones_v0.1.md) |
-| Science, knowledge, innovation and technology | [Technology](../01-systems/GDD_Tecnologia_Ciencia_e_Innovacion_v0.1.md) |
-| Transport, trade, logistics networks and physical markets | [Transport, trade and logistics](../01-systems/GDD_Transporte_Comercio_y_Logistica_v0.1.md) |
-| International relations, treaties and diplomacy | [Diplomacy](../01-systems/GDD_Diplomacia_y_Relaciones_Internacionales_v0.1.md) |
-| Geography, climate, ecosystems and environmental processes | [Geography and environment](../01-systems/GDD_Geografia_Clima_y_Medioambiente_v0.1.md) |
-| Initial map generation and the world editor | [World generation](../01-systems/GDD_Generacion_Procedural_del_Mundo_v0.1.md) |
-| Exploration, cartography, colonization and expansion | [Exploration](../01-systems/GDD_Exploracion_y_Expansion_Territorial_v0.1.md) |
-| Armed forces, conflicts and war | [Military systems](../01-systems/GDD_Guerra_y_Sistemas_Militares_v0.1.md) |
-| Events, memory and chronology | [Events and history](../01-systems/GDD_Eventos_y_Evolucion_Historica_v0.1.md) |
-| Regions, administration and territorial autonomy | [Territorial administration](../01-systems/GDD_Administracion_Territorial_y_Regiones_v0.1.md) |
-| Controls, panels, visualization and accessibility | [UI/UX interface](../01-systems/GDD_Interfaz_UI_UX_v0.1.md) |
-| Objectives, difficulty and ending | [Progression](../01-systems/GDD_Progresion_y_Finalizacion_v0.1.md) |
-| Autonomous decisions of non-player civilizations | [AI and autonomy](../01-systems/GDD_IA_y_Autonomia_Civilizaciones_v0.1.md) |
-| Clock, calendar, scales and cycles | [Time and simulation](../01-systems/GDD_Tiempo_y_Simulacion_v0.1.md) |
-| Catalog, identity and accounting of materials | [Resources](../01-systems/GDD_Recursos_y_Materiales_v0.1.md) |
-| Identity, relationships and shared memory of world objects | [Entities and relationships](../01-systems/GDD_Entidades_y_Relaciones_v0.1.md) |
-| Existing technical architecture and sequence | [Technical plan v0.1](../02-technical/PLAN_TECNICO_v0.1.md), separate from game design |
+| Economy, markets, consumption, economic property and taxes | [Economy](../01-systems/GDD_Economy_v0.2.md) |
+| Productive buildings, recipes, productivity, employment and quality | [Production and labor](../01-systems/GDD_Production_and_Labor_v0.2.md) |
+| Construction work, building materials, urban planning, architecture and heritage | [Construction and architecture](../01-systems/GDD_Construction_and_Architecture_v0.1.md) |
+| Individuals, families, health, education and social structure | [Population and society](../01-systems/GDD_Population_and_Society_v0.1.md) |
+| Government, laws, institutions and internal politics | [Politics and government](../01-systems/GDD_Politics_and_Government_v0.1.md) |
+| Religious beliefs, practices and institutions | [Religion and spirituality](../01-systems/GDD_Religion_and_Spirituality_v0.1.md) |
+| Identity, language, traditions and cultural diffusion | [Culture](../01-systems/GDD_Culture_Identity_and_Traditions_v0.1.md) |
+| Science, knowledge, innovation and technology | [Technology](../01-systems/GDD_Technology_Science_and_Innovation_v0.1.md) |
+| Transport, trade, logistics networks and physical markets | [Transport, trade and logistics](../01-systems/GDD_Transport_Trade_and_Logistics_v0.1.md) |
+| International relations, treaties and diplomacy | [Diplomacy](../01-systems/GDD_Diplomacy_and_International_Relations_v0.1.md) |
+| Geography, climate, ecosystems and environmental processes | [Geography and environment](../01-systems/GDD_Geography_Climate_and_Environment_v0.1.md) |
+| Initial map generation and the world editor | [World generation](../01-systems/GDD_Procedural_World_Generation_v0.1.md) |
+| Exploration, cartography, colonization and expansion | [Exploration](../01-systems/GDD_Exploration_and_Territorial_Expansion_v0.1.md) |
+| Armed forces, conflicts and war | [Military systems](../01-systems/GDD_War_and_Military_Systems_v0.1.md) |
+| Events, memory and chronology | [Events and history](../01-systems/GDD_Events_and_Historical_Evolution_v0.1.md) |
+| Regions, administration and territorial autonomy | [Territorial administration](../01-systems/GDD_Territorial_Administration_and_Regions_v0.1.md) |
+| Controls, panels, visualization and accessibility | [UI/UX interface](../01-systems/GDD_Interface_UI_UX_v0.1.md) |
+| Objectives, difficulty and ending | [Progression](../01-systems/GDD_Progression_and_Ending_v0.1.md) |
+| Autonomous decisions of non-player civilizations | [AI and autonomy](../01-systems/GDD_AI_and_Civilization_Autonomy_v0.1.md) |
+| Clock, calendar, scales and cycles | [Time and simulation](../01-systems/GDD_Time_and_Simulation_v0.1.md) |
+| Catalog, identity and accounting of materials | [Resources](../01-systems/GDD_Resources_and_Materials_v0.1.md) |
+| Identity, relationships and shared memory of world objects | [Entities and relationships](../01-systems/GDD_Entities_and_Relationships_v0.1.md) |
+| Existing technical architecture and sequence | [Technical plan v0.1](../02-technical/TECHNICAL_PLAN_v0.1.md), separate from game design |
 
 **Editing rule:** this Maestro summarizes the framework decisions and defers to the owning system. The complete details and tables live in the domain GDD. The other systems describe their input/output contracts, but do not redefine concepts whose authority belongs to another GDD. No proposal becomes a confirmed decision merely by appearing in this summary.
 

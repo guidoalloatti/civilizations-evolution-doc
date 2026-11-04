@@ -1,6 +1,6 @@
 # DIPLOMACY — Completion proposal (DRAFT TO VALIDATE)
 
-> ⚠️ **NOT CANONICAL.** This document is a **proposed draft** to cover the **truncated** part of `GDD_Diplomacia_y_Relaciones_Internacionales_v0.1` (it cuts off halfway through §18). It responds to **DR-13 / F-22** and was authorized by the user on **2026-11-04** only as a *proposal to validate*.
+> ⚠️ **NOT CANONICAL.** This document is a **proposed draft** to cover the **truncated** part of `GDD_Diplomacy_and_International_Relations_v0.1` (it cuts off halfway through §18). It responds to **DR-13 / F-22** and was authorized by the user on **2026-11-04** only as a *proposal to validate*.
 > - The original GDD was **not** edited (the originals are not touched).
 > - It is **not** confirmed content: nothing here is canonical until your explicit validation.
 > - It is **derived** from what the GDD itself already sets out (up to §18), from AI (DC-11), and War (DC-10). Each point that is **not** backed by the source is marked 🟡 **assumption**.

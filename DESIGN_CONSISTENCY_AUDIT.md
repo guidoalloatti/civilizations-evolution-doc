@@ -56,8 +56,8 @@
 
 | ID | Class | Finding |
 |---|---|---|
-| F-22 | **CX/MD** | **`GDD_Diplomacia...` TRUNCATED** in the source: it cuts off halfway through §18 ("Leader personality"); no MVP or decision table. It must be completed or the source recovered. |
-| F-23 | **PI** | `GDD_Recursos_y_Materiales`, `GDD_Tiempo_y_Simulacion`, `GDD_IA...`, and `GDD_Entidades...` do **not** carry a formal "Confirmed decisions" table (they use body/principles/criteria). Risk: confusing "asserted in the body" with "formally confirmed". |
+| F-22 | **CX/MD** | **`GDD_Diplomacy...` TRUNCATED** in the source: it cuts off halfway through §18 ("Leader personality"); no MVP or decision table. It must be completed or the source recovered. |
+| F-23 | **PI** | `GDD_Resources_and_Materials`, `GDD_Time_and_Simulation`, `GDD_AI...`, and `GDD_Entities...` do **not** carry a formal "Confirmed decisions" table (they use body/principles/criteria). Risk: confusing "asserted in the body" with "formally confirmed". |
 | F-24 | **PI** | `00_TECHNICAL.md` (UE project) is **identical** to the technical plan; `02/03/04` are condensations of GDDs. Risk of future divergence between copy and original. |
 
 ## E. Architectural risks (summary; detail in IMPLEMENTATION_RISK_REGISTER.md)
@@ -114,7 +114,7 @@
 | F-27 | AR | **High** | No | RISK-05 |
 | F-28 | AR | Medium | No | RISK-04 |
 
-**Human confirmation status (updated 2026-11-04):** F-01, F-02, F-05, F-07/F-17, and F-15 were **ratified by the user** (see DR-01/02/05/07/06). F-22 (truncated Diplomacy) has a **proposed draft to validate** ([DIPLOMACIA_PROPUESTA_COMPLETADO.md](DIPLOMACIA_PROPUESTA_COMPLETADO.md)); it is still not canonical. The rest are covered by the delegation (reversible) or are documentary/architectural rules.
+**Human confirmation status (updated 2026-11-04):** F-01, F-02, F-05, F-07/F-17, and F-15 were **ratified by the user** (see DR-01/02/05/07/06). F-22 (truncated Diplomacy) has a **proposed draft to validate** ([DIPLOMACY_PROPOSAL_COMPLETED.md](DIPLOMACY_PROPOSAL_COMPLETED.md)); it is still not canonical. The rest are covered by the delegation (reversible) or are documentary/architectural rules.
 
 ---
 

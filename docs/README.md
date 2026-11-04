@@ -1,6 +1,6 @@
 # Documentation — Civilization Evolutions
 
-The central design reference is the [GDD Maestro](00-project/GDD_MAESTRO.md). The specialized GDDs are the detail authority for each domain; the technical architecture is kept separate.
+The central design reference is the [GDD Maestro](00-project/GDD_MASTER.md). The specialized GDDs are the detail authority for each domain; the technical architecture is kept separate.
 
 ## Structure
 
@@ -14,28 +14,28 @@ The central design reference is the [GDD Maestro](00-project/GDD_MAESTRO.md). Th
 
 | Domain | Document |
 |---|---|
-| Economy | [GDD_Economia_v0.2](01-systems/GDD_Economia_v0.2.md) |
-| Production and labor | [GDD_Produccion_y_Trabajo_v0.2](01-systems/GDD_Produccion_y_Trabajo_v0.2.md) |
-| Construction and architecture | [GDD_Construccion_y_Arquitectura_v0.1](01-systems/GDD_Construccion_y_Arquitectura_v0.1.md) |
-| Population and society | [GDD_Poblacion_y_Sociedad_v0.1](01-systems/GDD_Poblacion_y_Sociedad_v0.1.md) |
-| Politics and government | [GDD_Politica_y_Gobierno_v0.1](01-systems/GDD_Politica_y_Gobierno_v0.1.md) |
-| Religion and spirituality | [GDD_Religion_y_Espiritualidad_v0.1](01-systems/GDD_Religion_y_Espiritualidad_v0.1.md) |
-| Culture and identity | [GDD_Cultura_Identidad_y_Tradiciones_v0.1](01-systems/GDD_Cultura_Identidad_y_Tradiciones_v0.1.md) |
-| Technology, science and innovation | [GDD_Tecnologia_Ciencia_e_Innovacion_v0.1](01-systems/GDD_Tecnologia_Ciencia_e_Innovacion_v0.1.md) |
-| Transport, trade and logistics | [GDD_Transporte_Comercio_y_Logistica_v0.1](01-systems/GDD_Transporte_Comercio_y_Logistica_v0.1.md) |
-| Diplomacy | [GDD_Diplomacia_y_Relaciones_Internacionales_v0.1](01-systems/GDD_Diplomacia_y_Relaciones_Internacionales_v0.1.md) |
-| Geography and environment | [GDD_Geografia_Clima_y_Medioambiente_v0.1](01-systems/GDD_Geografia_Clima_y_Medioambiente_v0.1.md) |
-| Procedural world generation | [GDD_Generacion_Procedural_del_Mundo_v0.1](01-systems/GDD_Generacion_Procedural_del_Mundo_v0.1.md) |
-| Exploration and expansion | [GDD_Exploracion_y_Expansion_Territorial_v0.1](01-systems/GDD_Exploracion_y_Expansion_Territorial_v0.1.md) |
-| War and military systems | [GDD_Guerra_y_Sistemas_Militares_v0.1](01-systems/GDD_Guerra_y_Sistemas_Militares_v0.1.md) |
-| Events and history | [GDD_Eventos_y_Evolucion_Historica_v0.1](01-systems/GDD_Eventos_y_Evolucion_Historica_v0.1.md) |
-| Territorial administration | [GDD_Administracion_Territorial_y_Regiones_v0.1](01-systems/GDD_Administracion_Territorial_y_Regiones_v0.1.md) |
-| UI/UX interface | [GDD_Interfaz_UI_UX_v0.1](01-systems/GDD_Interfaz_UI_UX_v0.1.md) |
-| Progression and ending | [GDD_Progresion_y_Finalizacion_v0.1](01-systems/GDD_Progresion_y_Finalizacion_v0.1.md) |
-| AI and civilization autonomy | [GDD_IA_y_Autonomia_Civilizaciones_v0.1](01-systems/GDD_IA_y_Autonomia_Civilizaciones_v0.1.md) |
-| Time and simulation | [GDD_Tiempo_y_Simulacion_v0.1](01-systems/GDD_Tiempo_y_Simulacion_v0.1.md) |
-| Resources and materials | [GDD_Recursos_y_Materiales_v0.1](01-systems/GDD_Recursos_y_Materiales_v0.1.md) |
-| Entities and relationships | [GDD_Entidades_y_Relaciones_v0.1](01-systems/GDD_Entidades_y_Relaciones_v0.1.md) |
+| Economy | [GDD_Economy_v0.2](01-systems/GDD_Economy_v0.2.md) |
+| Production and labor | [GDD_Production_and_Labor_v0.2](01-systems/GDD_Production_and_Labor_v0.2.md) |
+| Construction and architecture | [GDD_Construction_and_Architecture_v0.1](01-systems/GDD_Construction_and_Architecture_v0.1.md) |
+| Population and society | [GDD_Population_and_Society_v0.1](01-systems/GDD_Population_and_Society_v0.1.md) |
+| Politics and government | [GDD_Politics_and_Government_v0.1](01-systems/GDD_Politics_and_Government_v0.1.md) |
+| Religion and spirituality | [GDD_Religion_and_Spirituality_v0.1](01-systems/GDD_Religion_and_Spirituality_v0.1.md) |
+| Culture and identity | [GDD_Culture_Identity_and_Traditions_v0.1](01-systems/GDD_Culture_Identity_and_Traditions_v0.1.md) |
+| Technology, science and innovation | [GDD_Technology_Science_and_Innovation_v0.1](01-systems/GDD_Technology_Science_and_Innovation_v0.1.md) |
+| Transport, trade and logistics | [GDD_Transport_Trade_and_Logistics_v0.1](01-systems/GDD_Transport_Trade_and_Logistics_v0.1.md) |
+| Diplomacy | [GDD_Diplomacy_and_International_Relations_v0.1](01-systems/GDD_Diplomacy_and_International_Relations_v0.1.md) |
+| Geography and environment | [GDD_Geography_Climate_and_Environment_v0.1](01-systems/GDD_Geography_Climate_and_Environment_v0.1.md) |
+| Procedural world generation | [GDD_Procedural_World_Generation_v0.1](01-systems/GDD_Procedural_World_Generation_v0.1.md) |
+| Exploration and expansion | [GDD_Exploration_and_Territorial_Expansion_v0.1](01-systems/GDD_Exploration_and_Territorial_Expansion_v0.1.md) |
+| War and military systems | [GDD_War_and_Military_Systems_v0.1](01-systems/GDD_War_and_Military_Systems_v0.1.md) |
+| Events and history | [GDD_Events_and_Historical_Evolution_v0.1](01-systems/GDD_Events_and_Historical_Evolution_v0.1.md) |
+| Territorial administration | [GDD_Territorial_Administration_and_Regions_v0.1](01-systems/GDD_Territorial_Administration_and_Regions_v0.1.md) |
+| UI/UX interface | [GDD_Interface_UI_UX_v0.1](01-systems/GDD_Interface_UI_UX_v0.1.md) |
+| Progression and ending | [GDD_Progression_and_Ending_v0.1](01-systems/GDD_Progression_and_Ending_v0.1.md) |
+| AI and civilization autonomy | [GDD_AI_and_Civilization_Autonomy_v0.1](01-systems/GDD_AI_and_Civilization_Autonomy_v0.1.md) |
+| Time and simulation | [GDD_Time_and_Simulation_v0.1](01-systems/GDD_Time_and_Simulation_v0.1.md) |
+| Resources and materials | [GDD_Resources_and_Materials_v0.1](01-systems/GDD_Resources_and_Materials_v0.1.md) |
+| Entities and relationships | [GDD_Entities_and_Relationships_v0.1](01-systems/GDD_Entities_and_Relationships_v0.1.md) |
 
 ## Change rule
 

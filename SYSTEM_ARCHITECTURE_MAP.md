@@ -1,6 +1,6 @@
 # SYSTEM_ARCHITECTURE_MAP — Civilization Evolutions
 
-> **Conceptual** map of the game architecture: systems, responsibilities, relationships, shared entities and main flows. It is not a final technical specification. Source of contracts: [GDD_MAESTRO §5–6](docs/00-project/GDD_MAESTRO.md); detail per domain in the system GDDs (see [DOCUMENTATION_INDEX.md](DOCUMENTATION_INDEX.md)).
+> **Conceptual** map of the game architecture: systems, responsibilities, relationships, shared entities and main flows. It is not a final technical specification. Source of contracts: [GDD_MASTER §5–6](docs/00-project/GDD_MASTER.md); detail per domain in the system GDDs (see [DOCUMENTATION_INDEX.md](DOCUMENTATION_INDEX.md)).
 
 ## Guiding principle
 
