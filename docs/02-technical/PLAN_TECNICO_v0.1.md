@@ -1,4 +1,4 @@
-> **Control documental:** versión 0.1 | Estado original: Initial implementation. Se reubicó sin alterar el contenido. Documento técnico separado de la autoridad de diseño de juego; cualquier cambio arquitectónico requiere autorización. Ver GDD Maestro y AUDIT_REPORT.md.
+> **Document control:** version 0.1 | Original status: Initial implementation. Relocated without altering the content. Technical document separate from game design authority; any architectural change requires authorization. See the GDD Maestro and AUDIT_REPORT.md.
 
 ---
 

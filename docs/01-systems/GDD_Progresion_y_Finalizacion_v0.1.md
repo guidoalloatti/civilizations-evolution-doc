@@ -1,243 +1,243 @@
-> **Control documental:** 0.1 | Estado: diseño conceptual; las decisiones marcadas como confirmadas se preservan desde la fuente. **Alcance:** este GDD es fuente de detalle de su dominio; el GDD Maestro establece la visión común. Los conflictos intersistema se registran en AUDIT_REPORT.md y no se resuelven implícitamente.
+> **Document control:** 0.1 | Status: conceptual design; decisions marked as confirmed are preserved from the source. **Scope:** this GDD is the detail source for its domain; the Master GDD establishes the common vision. Cross-system conflicts are recorded in AUDIT_REPORT.md and are not resolved implicitly.
 
 ---
 
-# GDD — PROGRESIÓN DE LA PARTIDA, OBJETIVOS Y CONDICIONES DE FINALIZACIÓN
+# GDD — GAME PROGRESSION, OBJECTIVES AND ENDING CONDITIONS
 
-**Versión:** 0.1  
-**Estado:** Definición conceptual consolidada
+**Version:** 0.1  
+**Status:** Consolidated conceptual definition
 
-## 1. Visión general
+## 1. Overview
 
-Este sistema define cómo progresa una partida, qué objetivos puede perseguir el jugador y cómo se determina su finalización.
+This system defines how a playthrough progresses, what objectives the player can pursue and how its ending is determined.
 
-El juego priorizará una experiencia sandbox, donde cada civilización pueda desarrollarse libremente durante siglos.
+The game will prioritize a sandbox experience, where each civilization can develop freely over centuries.
 
-No existirá una secuencia obligatoria de objetivos ni una única forma correcta de progresar.
+There will be no mandatory sequence of objectives nor a single correct way to progress.
 
-El jugador podrá desarrollar una civilización pacífica, comercial, cultural, tecnológica, religiosa, territorial o seguir cualquier combinación de caminos.
+The player will be able to develop a peaceful, commercial, cultural, technological, religious or territorial civilization, or follow any combination of paths.
 
-Se ofrecerán objetivos opcionales, desafíos y escenarios especiales para quienes busquen experiencias más estructuradas.
+Optional objectives, challenges and special scenarios will be offered for those who seek more structured experiences.
 
-**Principio fundamental:**
+**Fundamental principle:**
 
-El progreso no estará determinado por conquistar más territorios o alcanzar determinadas tecnologías, sino por la historia que el jugador construya con su civilización.
+Progress will not be determined by conquering more territories or reaching certain technologies, but by the story the player builds with their civilization.
 
-## 2. Progresión histórica
+## 2. Historical progression
 
-La progresión será libre, con períodos históricos orientativos.
+Progression will be free, with indicative historical periods.
 
-- Los períodos servirán para contextualizar tecnologías, arquitectura, instituciones y formas de organización.
-- No habrá desbloqueos obligatorios por alcanzar una fecha.
-- Los avances dependerán de conocimientos, recursos, instituciones y condiciones reales.
-- Las civilizaciones podrán evolucionar a ritmos diferentes.
-- Los conocimientos antiguos podrán conservarse y seguir utilizándose.
+- Periods will serve to contextualize technologies, architecture, institutions and forms of organization.
+- There will be no mandatory unlocks for reaching a date.
+- Advances will depend on knowledge, resources, institutions and real conditions.
+- Civilizations will be able to evolve at different paces.
+- Ancient knowledge may be preserved and continue to be used.
 
-El juego tendrá como horizonte histórico el comienzo de la Revolución Industrial, sin desarrollar esa etapa como parte de la simulación.
+The game will have the beginning of the Industrial Revolution as its historical horizon, without developing that stage as part of the simulation.
 
-## 3. Objetivos de partida
+## 3. Game objectives
 
-El sistema de objetivos será configurable.
+The objectives system will be configurable.
 
-Se contemplarán tres modalidades:
+Three modes will be considered:
 
-- Partida completamente libre, sin objetivos.
-- Objetivos opcionales sugeridos por el juego.
-- Objetivos definidos por el jugador.
+- Completely free playthrough, with no objectives.
+- Optional objectives suggested by the game.
+- Objectives defined by the player.
 
-Los objetivos no deberán limitar las decisiones ni penalizar estilos de juego diferentes.
+Objectives must not limit decisions or penalize different play styles.
 
-### 3.1. Categorías de objetivos
+### 3.1. Objective categories
 
-Se incluirán todas las áreas principales:
+All the main areas will be included:
 
-- Desarrollo económico.
-- Crecimiento poblacional.
-- Expansión territorial.
-- Desarrollo tecnológico.
-- Construcción de grandes ciudades.
-- Influencia cultural.
-- Influencia religiosa.
-- Relaciones diplomáticas.
-- Exploración.
-- Bienestar de la población.
-- Prestigio histórico.
+- Economic development.
+- Population growth.
+- Territorial expansion.
+- Technological development.
+- Construction of great cities.
+- Cultural influence.
+- Religious influence.
+- Diplomatic relations.
+- Exploration.
+- Welfare of the population.
+- Historical prestige.
 
-Los objetivos podrán ser de corto, mediano y largo plazo.
+Objectives may be short-, medium- and long-term.
 
-También podrán surgir oportunidades a partir de acontecimientos del mundo.
+Opportunities may also arise from world events.
 
-## 4. Sistema de puntuación y prestigio
+## 4. Scoring and prestige system
 
-Se utilizará un modelo combinado de indicadores independientes y puntuación general.
+A combined model of independent indicators and a general score will be used.
 
-Los indicadores podrán contemplar:
+The indicators may cover:
 
-- Economía.
-- Población.
-- Tecnología.
-- Cultura.
-- Religión.
-- Diplomacia.
-- Territorio.
-- Construcción.
-- Bienestar.
-- Influencia histórica.
+- Economy.
+- Population.
+- Technology.
+- Culture.
+- Religion.
+- Diplomacy.
+- Territory.
+- Construction.
+- Welfare.
+- Historical influence.
 
-La puntuación general será opcional.
+The general score will be optional.
 
-Los indicadores servirán para comprender el desarrollo de una civilización, no para imponer una jerarquía universal de éxito.
+The indicators will serve to understand the development of a civilization, not to impose a universal hierarchy of success.
 
-Una civilización pequeña, próspera y culturalmente influyente podrá considerarse exitosa sin necesidad de convertirse en un imperio.
+A small, prosperous and culturally influential civilization may be considered successful without needing to become an empire.
 
-## 5. Objetivos personalizados
+## 5. Custom objectives
 
-El jugador podrá establecer sus propios objetivos.
+The player will be able to set their own objectives.
 
-Podrá utilizar objetivos predefinidos o definir metas personales.
+They will be able to use predefined objectives or define personal goals.
 
-Ejemplos:
+Examples:
 
-- Construir una gran ciudad.
-- Alcanzar determinada población.
-- Desarrollar una red comercial.
-- Investigar una tecnología.
-- Mantener una sociedad próspera.
-- Fundar asentamientos en nuevas regiones.
-- Alcanzar determinado nivel de influencia cultural.
-- Construir monumentos históricos.
+- Build a great city.
+- Reach a certain population.
+- Develop a trade network.
+- Research a technology.
+- Maintain a prosperous society.
+- Found settlements in new regions.
+- Reach a certain level of cultural influence.
+- Build historical monuments.
 
-Los objetivos personalizados podrán funcionar como referencias personales o condiciones de desafío.
+Custom objectives may function as personal references or challenge conditions.
 
-## 6. Dificultad
+## 6. Difficulty
 
-La dificultad será configurable mediante dos mecanismos:
+Difficulty will be configurable through two mechanisms:
 
-**Configuración inicial:** permite establecer las condiciones de partida.
+**Initial configuration:** allows the starting conditions to be set.
 
-**Dificultad adaptativa:** permite modificar determinados desafíos según la evolución de la partida.
+**Adaptive difficulty:** allows certain challenges to be modified according to the evolution of the playthrough.
 
-La dificultad podrá afectar, entre otros aspectos, a:
+Difficulty may affect, among other aspects:
 
-- Disponibilidad de recursos.
-- Condiciones iniciales.
-- Crecimiento demográfico.
-- Economía.
-- Eventos.
-- Comportamiento de otras civilizaciones.
-- Autonomía de los sistemas.
-- Exigencias logísticas.
+- Resource availability.
+- Initial conditions.
+- Demographic growth.
+- Economy.
+- Events.
+- Behavior of other civilizations.
+- Autonomy of systems.
+- Logistical demands.
 
-La adaptación deberá ser transparente y configurable. No deberá modificar arbitrariamente las reglas para impedir que el jugador tenga éxito.
+The adaptation must be transparent and configurable. It must not arbitrarily modify the rules to prevent the player from succeeding.
 
-## 7. Desafíos y escenarios especiales
+## 7. Challenges and special scenarios
 
-Existirán escenarios diseñados para ofrecer experiencias particulares.
+There will be scenarios designed to offer particular experiences.
 
-Ejemplos:
+Examples:
 
-- Comenzar en una isla pequeña.
-- Desarrollar una civilización en un desierto.
-- Sobrevivir en una región montañosa.
-- Crear una potencia comercial.
-- Desarrollar una civilización marítima.
-- Reconstruir una sociedad después de una gran crisis.
-- Competir por recursos limitados.
-- Desarrollar una civilización aislada.
-- Establecer una sociedad con condiciones geográficas extremas.
+- Start on a small island.
+- Develop a civilization in a desert.
+- Survive in a mountainous region.
+- Create a trading power.
+- Develop a maritime civilization.
+- Rebuild a society after a major crisis.
+- Compete for limited resources.
+- Develop an isolated civilization.
+- Establish a society under extreme geographic conditions.
 
-Los escenarios serán una modalidad secundaria y no reemplazarán las partidas libres.
+Scenarios will be a secondary mode and will not replace free playthroughs.
 
-## 8. Duración y finalización
+## 8. Duration and ending
 
-La duración de una partida será flexible.
+The duration of a playthrough will be flexible.
 
-Se contemplarán dos referencias:
+Two references will be considered:
 
-- Límite histórico opcional: comienzo de la Revolución Industrial.
-- Continuación libre: posibilidad de seguir jugando después de ese momento.
+- Optional historical limit: the beginning of the Industrial Revolution.
+- Free continuation: the possibility of continuing to play after that point.
 
-El jugador podrá elegir si desea establecer un límite temporal o continuar indefinidamente dentro de las capacidades del juego.
+The player will be able to choose whether to set a time limit or continue indefinitely within the game's capabilities.
 
-## 9. Qué sucede al finalizar el período histórico
+## 9. What happens when the historical period ends
 
-Al llegar al límite histórico, el jugador podrá elegir:
+Upon reaching the historical limit, the player will be able to choose:
 
-**Finalizar la partida**
+**End the playthrough**
 
-Se generará un resumen histórico de la civilización.
+A historical summary of the civilization will be generated.
 
-**Continuar en modo libre**
+**Continue in free mode**
 
-La simulación podrá continuar sin desarrollar la Revolución Industrial como nueva etapa tecnológica.
+The simulation may continue without developing the Industrial Revolution as a new technological stage.
 
-**Elegir en el momento**
+**Choose at the time**
 
-El jugador decidirá qué hacer cuando alcance el límite.
+The player will decide what to do when they reach the limit.
 
-## 10. Legado histórico
+## 10. Historical legacy
 
-El legado será importante, pero no obligatorio.
+Legacy will be important, but not mandatory.
 
-El juego podrá evaluar y presentar la historia de la civilización considerando:
+The game may evaluate and present the history of the civilization taking into account:
 
-- Construcciones y ciudades.
-- Desarrollo económico.
-- Bienestar de la población.
-- Conocimientos científicos y tecnológicos.
-- Cultura y tradiciones.
-- Religiones.
-- Relaciones diplomáticas.
-- Influencia territorial.
-- Personajes históricos.
-- Acontecimientos importantes.
-- Transformaciones del mundo.
+- Constructions and cities.
+- Economic development.
+- Welfare of the population.
+- Scientific and technological knowledge.
+- Culture and traditions.
+- Religions.
+- Diplomatic relations.
+- Territorial influence.
+- Historical characters.
+- Important events.
+- Transformations of the world.
 
-El objetivo será mostrar qué construyó la civilización y qué huella dejó, no simplemente asignarle una puntuación.
+The goal will be to show what the civilization built and what mark it left, not simply to assign it a score.
 
-## 11. Complejidad configurable
+## 11. Configurable complexity
 
-El sistema permitirá configurar independientemente:
+The system will allow the following to be configured independently:
 
-- Objetivos.
-- Puntuaciones.
-- Prestigio.
-- Dificultad.
-- Adaptación de dificultad.
-- Escenarios especiales.
-- Límite histórico.
-- Continuación libre.
-- Evaluación del legado.
+- Objectives.
+- Scores.
+- Prestige.
+- Difficulty.
+- Difficulty adaptation.
+- Special scenarios.
+- Historical limit.
+- Free continuation.
+- Legacy evaluation.
 
-El jugador podrá desactivar objetivos y puntuaciones para disfrutar de una experiencia sandbox sin condiciones externas.
+The player will be able to disable objectives and scores to enjoy a sandbox experience without external conditions.
 
-## 12. MVP — Primera versión jugable
+## 12. MVP — First playable version
 
-- Progresión tecnológica e histórica libre.
-- Configuración de duración.
-- Posibilidad de jugar sin objetivos.
-- Objetivos básicos opcionales.
-- Indicadores generales de desarrollo.
-- Configuración inicial de dificultad.
-- Resumen básico de la civilización.
+- Free technological and historical progression.
+- Duration configuration.
+- The possibility of playing without objectives.
+- Basic optional objectives.
+- General development indicators.
+- Initial difficulty configuration.
+- Basic civilization summary.
 
-Los desafíos especiales, objetivos personalizados avanzados y evaluación histórica detallada podrán incorporarse posteriormente.
+Special challenges, advanced custom objectives and detailed historical evaluation may be incorporated later.
 
-## 13. Decisiones confirmadas
+## 13. Confirmed decisions
 
-| Área | Decisión |
+| Area | Decision |
 |---|---|
-| Progresión | Períodos orientativos y evolución libre |
-| Objetivos | Configurables |
-| Categorías | Todas las propuestas |
-| Puntuación | General e indicadores independientes |
-| Objetivos personalizados | Sí |
-| Dificultad | Inicial y adaptativa |
-| Escenarios especiales | Sí |
-| Finalización | Límite histórico opcional |
-| Continuación | Posible después del límite |
-| Decisión final | A elección del jugador |
-| Legado histórico | Importante, pero opcional |
-| Complejidad | Configurable, con sandbox auténtico |
+| Progression | Indicative periods and free evolution |
+| Objectives | Configurable |
+| Categories | All those proposed |
+| Scoring | General score and independent indicators |
+| Custom objectives | Yes |
+| Difficulty | Initial and adaptive |
+| Special scenarios | Yes |
+| Ending | Optional historical limit |
+| Continuation | Possible after the limit |
+| Final decision | Player's choice |
+| Historical legacy | Important, but optional |
+| Complexity | Configurable, with authentic sandbox |
 
-**Estado:** GDD conceptual v0.1 consolidado.
+**Status:** Conceptual GDD v0.1 consolidated.

@@ -1,310 +1,310 @@
-> **Control documental:** 0.1 | Estado: diseño conceptual; las decisiones marcadas como confirmadas se preservan desde la fuente. **Alcance:** este GDD es fuente de detalle de su dominio; el GDD Maestro establece la visión común. Los conflictos intersistema se registran en AUDIT_REPORT.md y no se resuelven implícitamente.
+> **Document control:** 0.1 | Status: conceptual design; decisions marked as confirmed are preserved from the source. **Scope:** this GDD is the detail source for its domain; the Master GDD establishes the common vision. Cross-system conflicts are recorded in AUDIT_REPORT.md and are not resolved implicitly.
 
 ---
 
-# GDD — Inteligencia Artificial y Autonomía de Civilizaciones
-**Versión:** 0.1  
-**Estado:** Documento conceptual
+# GDD — Artificial Intelligence and Civilization Autonomy
+**Version:** 0.1  
+**Status:** Conceptual document
 
-## 1. Visión general
+## 1. Overview
 
-Las civilizaciones del mundo deberán funcionar como sociedades autónomas, con objetivos, intereses, personalidades, instituciones, líderes e historias propias.
+The civilizations of the world must function as autonomous societies, with their own objectives, interests, personalities, institutions, leaders and histories.
 
-No serán simples competidores controlados por una IA que busca ganar una partida. Serán sociedades que intentan prosperar según sus condiciones geográficas, económicas, culturales, tecnológicas, políticas y sociales.
+They will not be mere competitors controlled by an AI that seeks to win a game. They will be societies that try to prosper according to their geographic, economic, cultural, technological, political and social conditions.
 
-Cada civilización podrá desarrollar una trayectoria histórica diferente. Algunas se convertirán en potencias comerciales, otras en centros culturales o religiosos, otras expandirán sus territorios y algunas permanecerán pequeñas y relativamente aisladas.
+Each civilization will be able to develop a different historical trajectory. Some will become trading powers, others cultural or religious centers, others will expand their territories and some will remain small and relatively isolated.
 
-El objetivo es construir un mundo que continúe evolucionando incluso cuando el jugador no interviene.
+The goal is to build a world that keeps evolving even when the player does not intervene.
 
-## 2. Autonomía de las civilizaciones
+## 2. Autonomy of civilizations
 
-La autonomía será configurable globalmente y por civilización.
+Autonomy will be configurable globally and per civilization.
 
-Las civilizaciones podrán gestionar autónomamente:
+Civilizations will be able to manage autonomously:
 
-- Construcción y desarrollo de ciudades.
-- Producción, economía y comercio.
-- Asignación de trabajadores y recursos.
-- Investigación científica y desarrollo tecnológico.
-- Exploración y descubrimiento.
-- Expansión territorial y colonización.
-- Desarrollo cultural y religioso.
-- Organización política y cambios institucionales.
-- Diplomacia, tratados y alianzas.
-- Fuerzas militares, defensa y conflictos.
-- Migraciones y relaciones con otras poblaciones.
-- Administración regional y territorial.
+- Construction and development of cities.
+- Production, economy and trade.
+- Assignment of workers and resources.
+- Scientific research and technological development.
+- Exploration and discovery.
+- Territorial expansion and colonization.
+- Cultural and religious development.
+- Political organization and institutional changes.
+- Diplomacy, treaties and alliances.
+- Military forces, defense and conflicts.
+- Migrations and relations with other populations.
+- Regional and territorial administration.
 
-El jugador no tendrá que intervenir para que estas actividades ocurran.
+The player will not have to intervene for these activities to occur.
 
-## 3. Personalidad, objetivos e intereses
+## 3. Personality, objectives and interests
 
-Cada civilización tendrá una identidad estratégica propia, construida mediante una combinación de:
+Each civilization will have its own strategic identity, built from a combination of:
 
-- Personalidad colectiva.
-- Objetivos a corto y largo plazo.
-- Necesidades económicas y territoriales.
-- Condiciones geográficas.
-- Recursos disponibles.
-- Cultura y religión.
-- Instituciones políticas.
-- Relaciones internacionales.
-- Experiencias históricas.
+- Collective personality.
+- Short- and long-term objectives.
+- Economic and territorial needs.
+- Geographic conditions.
+- Available resources.
+- Culture and religion.
+- Political institutions.
+- International relations.
+- Historical experiences.
 
-Podrán existir tendencias comerciales, diplomáticas, expansionistas, militares, religiosas, científicas, culturales, aislacionistas y otras.
+Commercial, diplomatic, expansionist, military, religious, scientific, cultural, isolationist and other tendencies may exist.
 
-Estas tendencias no serán categorías rígidas. Una civilización podrá cambiar de orientación a medida que evoluciona.
+These tendencies will not be rigid categories. A civilization may change orientation as it evolves.
 
-Por ejemplo, una sociedad inicialmente aislacionista podría abrirse al comercio después de desarrollar infraestructura marítima, o una potencia comercial podría adoptar una política expansionista ante una escasez de recursos.
+For example, an initially isolationist society might open up to trade after developing maritime infrastructure, or a trading power might adopt an expansionist policy in the face of a resource shortage.
 
-## 4. Toma de decisiones
+## 4. Decision-making
 
-La IA combinará personalidades y objetivos propios con una evaluación de las condiciones reales.
+The AI will combine its own personalities and objectives with an evaluation of real conditions.
 
-Las decisiones deberán considerar:
-- Recursos y capacidades disponibles.
-- Necesidades de la población.
-- Situación económica.
-- Tecnología e infraestructura.
-- Geografía y accesibilidad.
-- Amenazas y oportunidades.
-- Relaciones diplomáticas.
-- Intereses de grupos sociales y políticos.
-- Personalidad del líder.
-- Experiencias y memoria histórica.
+Decisions must take into account:
+- Available resources and capabilities.
+- The needs of the population.
+- Economic situation.
+- Technology and infrastructure.
+- Geography and accessibility.
+- Threats and opportunities.
+- Diplomatic relations.
+- Interests of social and political groups.
+- The leader's personality.
+- Experiences and historical memory.
 
-La IA no deberá tomar decisiones arbitrarias ni actuar como si conociera el futuro.
+The AI must not make arbitrary decisions or act as if it knew the future.
 
-Tampoco deberá disponer de información que su civilización no haya descubierto o recibido legítimamente.
+Nor must it have access to information that its civilization has not discovered or legitimately received.
 
-## 5. Líderes y personajes
+## 5. Leaders and characters
 
-Las civilizaciones tendrán líderes identificables con personalidades, atributos, intereses, relaciones y trayectorias propias.
+Civilizations will have identifiable leaders with their own personalities, attributes, interests, relationships and trajectories.
 
-Los líderes podrán influir significativamente en:
-- Diplomacia y relaciones internacionales.
-- Prioridades económicas.
-- Expansión territorial.
-- Política militar.
-- Reformas institucionales.
-- Religión y cultura.
-- Decisiones extraordinarias.
+Leaders may significantly influence:
+- Diplomacy and international relations.
+- Economic priorities.
+- Territorial expansion.
+- Military policy.
+- Institutional reforms.
+- Religion and culture.
+- Extraordinary decisions.
 
-Sus características podrán favorecer o dificultar determinadas decisiones.
+Their characteristics may favor or hinder certain decisions.
 
-Los líderes cambiarán a través de sucesiones, elecciones, golpes de Estado, revoluciones u otros mecanismos históricos, según la forma de gobierno.
+Leaders will change through successions, elections, coups d'état, revolutions or other historical mechanisms, depending on the form of government.
 
-La personalidad del líder tendrá influencia importante, pero no podrá anular completamente las necesidades, capacidades e intereses estructurales de la sociedad.
+The leader's personality will have significant influence, but it will not be able to completely override the structural needs, capabilities and interests of society.
 
-Los personajes destacados podrán dejar legados que afecten a la identidad y trayectoria de su civilización.
+Prominent characters may leave legacies that affect the identity and trajectory of their civilization.
 
-## 6. Competencia y cooperación
+## 6. Competition and cooperation
 
-Las civilizaciones interactuarán en múltiples dimensiones:
+Civilizations will interact across multiple dimensions:
 
-- Economía y comercio.
-- Tecnología y conocimiento.
-- Cultura e influencia.
-- Religión.
-- Diplomacia.
-- Territorio y recursos.
-- Prestigio internacional.
-- Poder militar.
+- Economy and trade.
+- Technology and knowledge.
+- Culture and influence.
+- Religion.
+- Diplomacy.
+- Territory and resources.
+- International prestige.
+- Military power.
 
-La cooperación tendrá un papel central.
+Cooperation will play a central role.
 
-Se contemplarán:
-- Acuerdos comerciales.
-- Intercambio de conocimientos.
-- Alianzas y pactos de no agresión.
-- Cooperación científica y cultural.
-- Tratados de defensa.
-- Uniones políticas y dinásticas.
-- Confederaciones y organizaciones supranacionales.
-- Acuerdos de infraestructura y explotación de recursos.
+The following will be considered:
+- Trade agreements.
+- Exchange of knowledge.
+- Alliances and non-aggression pacts.
+- Scientific and cultural cooperation.
+- Defense treaties.
+- Political and dynastic unions.
+- Confederations and supranational organizations.
+- Infrastructure and resource-exploitation agreements.
 
-La competencia no implicará necesariamente hostilidad. Dos civilizaciones podrán mantener relaciones mutuamente beneficiosas durante siglos.
+Competition will not necessarily imply hostility. Two civilizations may maintain mutually beneficial relations for centuries.
 
-La diplomacia deberá favorecer soluciones pacíficas cuando sean razonables. La guerra será una posibilidad contextual, no el comportamiento predeterminado de las civilizaciones.
+Diplomacy must favor peaceful solutions when they are reasonable. War will be a contextual possibility, not the default behavior of civilizations.
 
-## 7. Evolución histórica diferenciada
+## 7. Differentiated historical evolution
 
-Las civilizaciones podrán seguir trayectorias completamente diferentes.
+Civilizations will be able to follow completely different trajectories.
 
-No existirá una obligación de alcanzar los mismos niveles de desarrollo ni de reproducir una secuencia histórica universal.
+There will be no obligation to reach the same levels of development or to reproduce a universal historical sequence.
 
-Algunos ejemplos:
-- Una civilización marítima con una extensa red comercial.
-- Una sociedad agrícola organizada alrededor de grandes centros religiosos.
-- Una confederación de comunidades relativamente pequeñas.
-- Un imperio territorial con administración centralizada.
-- Una potencia artesanal y cultural.
-- Una sociedad aislada con desarrollo tecnológico más lento.
-- Una civilización que se especialice en navegación, metalurgia o arquitectura.
+Some examples:
+- A maritime civilization with an extensive trade network.
+- An agricultural society organized around large religious centers.
+- A confederation of relatively small communities.
+- A territorial empire with centralized administration.
+- A craft and cultural power.
+- An isolated society with slower technological development.
+- A civilization that specializes in navigation, metallurgy or architecture.
 
-Las posibilidades dependerán de las condiciones reales del mundo y de las decisiones acumuladas.
+The possibilities will depend on the real conditions of the world and on the accumulated decisions.
 
-## 8. Simulación según distancia e importancia
+## 8. Simulation according to distance and importance
 
-La profundidad de simulación será configurable.
+The depth of simulation will be configurable.
 
-Se contemplarán distintos niveles:
-- **Simulación detallada:** para civilizaciones cercanas, conectadas o relevantes para el jugador.
-- **Simulación intermedia:** para civilizaciones con relaciones indirectas o importancia regional.
-- **Simulación simplificada:** para sociedades lejanas con poca interacción.
+Different levels will be considered:
+- **Detailed simulation:** for civilizations that are nearby, connected or relevant to the player.
+- **Intermediate simulation:** for civilizations with indirect relations or regional importance.
+- **Simplified simulation:** for distant societies with little interaction.
 
-La reducción de detalle no deberá producir resultados incoherentes. Las civilizaciones lejanas continuarán teniendo evolución económica, demográfica, tecnológica, política e histórica, aunque ciertos procesos se calculen de forma agregada.
+The reduction in detail must not produce incoherent results. Distant civilizations will continue to have economic, demographic, technological, political and historical evolution, even though certain processes are computed in an aggregate way.
 
-La simulación podrá aumentar su nivel de detalle cuando una civilización entre en contacto con el jugador o adquiera relevancia.
+The simulation may increase its level of detail when a civilization comes into contact with the player or gains relevance.
 
-## 9. Nacimiento, transformación y desaparición
+## 9. Birth, transformation and disappearance
 
-El mundo podrá generar nuevas civilizaciones a lo largo de la partida.
+The world may generate new civilizations throughout the game.
 
-Su origen podrá incluir:
-- Pueblos y comunidades que se organizan.
-- Confederaciones de asentamientos.
-- Separaciones de civilizaciones existentes.
-- Movimientos migratorios.
-- Independencias.
-- Fragmentación de grandes estados.
-- Transformaciones políticas y culturales.
+Their origin may include:
+- Peoples and communities that organize themselves.
+- Confederations of settlements.
+- Separations from existing civilizations.
+- Migratory movements.
+- Independence movements.
+- Fragmentation of large states.
+- Political and cultural transformations.
 
-Las civilizaciones también podrán debilitarse, fragmentarse, ser absorbidas o desaparecer.
+Civilizations may also weaken, fragment, be absorbed or disappear.
 
-La desaparición deberá ser posible, pero no excesivamente frecuente. Se evitará que el mundo se vuelva inestable por una sucesión constante de colapsos.
+Disappearance must be possible, but not excessively frequent. The world will be prevented from becoming unstable through a constant succession of collapses.
 
-Las comunidades y culturas podrán sobrevivir a la desaparición de sus estructuras políticas, conservando tradiciones, conocimientos e identidades.
+Communities and cultures may survive the disappearance of their political structures, preserving traditions, knowledge and identities.
 
-## 10. Influencia del jugador
+## 10. Player influence
 
-El jugador podrá influir sobre otras civilizaciones mediante múltiples mecanismos:
+The player will be able to influence other civilizations through multiple mechanisms:
 
-- Diplomacia y tratados.
-- Comercio e inversiones.
-- Intercambio tecnológico.
-- Influencia cultural.
-- Influencia religiosa.
-- Alianzas y cooperación.
-- Apoyo a facciones o movimientos.
-- Presión económica y política.
-- Espionaje y contraespionaje.
-- Intervención militar y territorial.
+- Diplomacy and treaties.
+- Trade and investment.
+- Technological exchange.
+- Cultural influence.
+- Religious influence.
+- Alliances and cooperation.
+- Support for factions or movements.
+- Economic and political pressure.
+- Espionage and counterespionage.
+- Military and territorial intervention.
 
-La influencia podrá ser directa o indirecta.
+Influence may be direct or indirect.
 
-Las demás civilizaciones conservarán su autonomía y podrán aceptar, rechazar o reinterpretar las iniciativas del jugador según sus propios intereses.
+The other civilizations will retain their autonomy and may accept, reject or reinterpret the player's initiatives according to their own interests.
 
-## 11. Dificultad de la IA
+## 11. AI difficulty
 
-La dificultad combinará calidad de decisiones y posibles ventajas artificiales.
+Difficulty will combine decision quality and possible artificial advantages.
 
-Se podrán configurar:
-- Capacidad de planificación.
-- Calidad de evaluación de oportunidades.
-- Gestión económica.
-- Desarrollo tecnológico.
-- Diplomacia.
-- Expansión y administración territorial.
-- Comportamiento militar.
-- Nivel de bonificaciones económicas o productivas.
+The following may be configured:
+- Planning capacity.
+- Quality of opportunity evaluation.
+- Economic management.
+- Technological development.
+- Diplomacy.
+- Territorial expansion and administration.
+- Military behavior.
+- Level of economic or production bonuses.
 
-Las ventajas artificiales serán opcionales y configurables.
+Artificial advantages will be optional and configurable.
 
-La dificultad no deberá convertir a la IA en una entidad omnisciente ni permitirle ignorar las reglas del mundo.
+Difficulty must not turn the AI into an omniscient entity or allow it to ignore the rules of the world.
 
-## 12. Integración con otros sistemas
+## 12. Integration with other systems
 
-La IA no será un sistema aislado. Deberá utilizar los mismos sistemas y reglas que el jugador.
+The AI will not be an isolated system. It must use the same systems and rules as the player.
 
-Integraciones principales:
+Main integrations:
 
-- **Economía y producción:** las civilizaciones producen, consumen, almacenan y comercian utilizando las mismas reglas.
-- **Población y sociedad:** sus habitantes tienen necesidades, grupos sociales, clases, movilidad y conflictos.
-- **Construcción:** sus ciudades evolucionan con las mismas reglas arquitectónicas y materiales.
-- **Tecnología:** investigan, descubren y adoptan conocimientos mediante el sistema tecnológico común.
-- **Cultura y religión:** desarrollan identidades propias y pueden influir sobre otras sociedades.
-- **Diplomacia:** mantienen relaciones, tratados, memoria histórica y objetivos internacionales.
-- **Exploración:** descubren territorios, recursos y otras civilizaciones.
-- **Administración territorial:** gestionan ciudades y regiones.
-- **Guerra:** organizan fuerzas y conflictos utilizando la logística y las reglas militares generales.
-- **Eventos históricos:** experimentan acontecimientos y generan sus propias historias.
+- **Economy and production:** civilizations produce, consume, store and trade using the same rules.
+- **Population and society:** their inhabitants have needs, social groups, classes, mobility and conflicts.
+- **Construction:** their cities evolve under the same architectural rules and materials.
+- **Technology:** they research, discover and adopt knowledge through the common technology system.
+- **Culture and religion:** they develop their own identities and may influence other societies.
+- **Diplomacy:** they maintain relations, treaties, historical memory and international objectives.
+- **Exploration:** they discover territories, resources and other civilizations.
+- **Territorial administration:** they manage cities and regions.
+- **War:** they organize forces and conflicts using the general military logistics and rules.
+- **Historical events:** they experience events and generate their own histories.
 
-Los acontecimientos importantes deberán generar consecuencias coordinadas en todos los sistemas relevantes.
+Important events must generate coordinated consequences across all relevant systems.
 
-## 13. Memoria y conocimiento
+## 13. Memory and knowledge
 
-Cada civilización tendrá una memoria histórica que influirá en sus decisiones.
+Each civilization will have a historical memory that influences its decisions.
 
-Podrá recordar:
-- Guerras y conflictos.
-- Tratados incumplidos.
-- Alianzas duraderas.
-- Intercambios comerciales.
-- Migraciones y desplazamientos.
-- Ayudas recibidas.
-- Traiciones y rivalidades.
-- Contactos culturales y religiosos.
-- Conflictos territoriales.
+It may remember:
+- Wars and conflicts.
+- Broken treaties.
+- Lasting alliances.
+- Trade exchanges.
+- Migrations and displacements.
+- Aid received.
+- Betrayals and rivalries.
+- Cultural and religious contacts.
+- Territorial conflicts.
 
-La memoria perderá influencia gradualmente, aunque algunos acontecimientos podrán dejar huellas duraderas.
+Memory will gradually lose influence, although some events may leave lasting marks.
 
-La IA distinguirá entre información conocida, rumores, relatos y territorios todavía desconocidos.
+The AI will distinguish between known information, rumors, accounts and territories that are still unknown.
 
-## 14. Configuración y complejidad
+## 14. Configuration and complexity
 
-La autonomía y complejidad serán configurables de manera independiente.
+Autonomy and complexity will be configurable independently.
 
-El jugador podrá elegir:
-- Autonomía de cada civilización.
-- Profundidad de simulación de sociedades lejanas.
-- Nivel de inteligencia y dificultad.
-- Capacidad de expansión autónoma.
-- Frecuencia de aparición de nuevas civilizaciones.
-- Posibilidad de fragmentación y desaparición.
-- Nivel de interacción diplomática.
-- Intensidad de competencia y cooperación.
-- Nivel de intervención del jugador.
+The player will be able to choose:
+- Autonomy of each civilization.
+- Depth of simulation of distant societies.
+- Level of intelligence and difficulty.
+- Autonomous expansion capacity.
+- Frequency at which new civilizations appear.
+- Possibility of fragmentation and disappearance.
+- Level of diplomatic interaction.
+- Intensity of competition and cooperation.
+- Level of player intervention.
 
-Se podrán configurar módulos individualmente para permitir partidas más livianas o simulaciones históricas profundas.
+Modules may be configured individually to allow lighter playthroughs or deep historical simulations.
 
-## 15. Interfaz y presentación
+## 15. Interface and presentation
 
-La información sobre otras civilizaciones deberá estar disponible sin obligar al jugador a administrar cada una.
+Information about other civilizations must be available without forcing the player to administer each one.
 
-Se contemplarán:
-- Fichas de civilización.
-- Perfil de personalidad y objetivos conocidos.
-- Información sobre líderes.
-- Relaciones diplomáticas.
-- Indicadores económicos, demográficos y tecnológicos.
-- Mapa político y territorial.
-- Cronología histórica.
-- Noticias y acontecimientos.
-- Información sobre acuerdos y conflictos.
-- Indicadores de influencia y prestigio.
+The following will be considered:
+- Civilization profiles.
+- Personality profile and known objectives.
+- Information about leaders.
+- Diplomatic relations.
+- Economic, demographic and technological indicators.
+- Political and territorial map.
+- Historical timeline.
+- News and events.
+- Information about agreements and conflicts.
+- Influence and prestige indicators.
 
-La información mostrada dependerá del conocimiento que tenga el jugador. No se revelarán automáticamente todos los datos internos de otras sociedades.
+The information shown will depend on the knowledge the player has. The full internal data of other societies will not be revealed automatically.
 
 ## 16. MVP
 
-Primera implementación funcional:
+First functional implementation:
 
-- Dos o tres civilizaciones autónomas.
-- Identidad y objetivos básicos.
-- Personalidades diferenciadas.
-- Construcción y desarrollo económico simplificados.
-- Producción y consumo.
-- Investigación tecnológica básica.
-- Exploración y expansión territorial.
-- Relaciones diplomáticas.
-- Comercio y acuerdos básicos.
-- Líderes con atributos y personalidad.
-- Memoria de relaciones.
-- Simulación simplificada de civilizaciones lejanas.
+- Two or three autonomous civilizations.
+- Basic identity and objectives.
+- Differentiated personalities.
+- Simplified construction and economic development.
+- Production and consumption.
+- Basic technological research.
+- Exploration and territorial expansion.
+- Diplomatic relations.
+- Basic trade and agreements.
+- Leaders with attributes and personality.
+- Memory of relations.
+- Simplified simulation of distant civilizations.
 
-El objetivo inicial será comprobar que otras sociedades pueden desarrollarse de forma independiente y generar relaciones e historias interesantes sin intervención constante del jugador.
+The initial goal will be to verify that other societies can develop independently and generate interesting relations and histories without constant player intervention.
 
-## 17. Principio rector
+## 17. Guiding principle
 
-**El mundo no existe para oponerse al jugador ni para servirle. Las civilizaciones son sociedades con historia, intereses y destinos propios. El jugador es parte de ese mundo y puede influir profundamente en él, pero no es el único responsable de lo que sucede.**
+**The world does not exist to oppose the player nor to serve them. Civilizations are societies with their own history, interests and destinies. The player is part of that world and can influence it deeply, but is not the sole party responsible for what happens.**

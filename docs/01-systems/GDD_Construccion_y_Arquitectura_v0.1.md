@@ -1,1241 +1,1241 @@
-> **Control documental:** 0.1 — Documento de diseño conceptual | Estado: diseño conceptual; las decisiones marcadas como confirmadas se preservan desde la fuente. **Alcance:** este GDD es fuente de detalle de su dominio; el GDD Maestro establece la visión común. Los conflictos intersistema se registran en AUDIT_REPORT.md y no se resuelven implícitamente.
+> **Document control:** 0.1 — Conceptual design document | Status: conceptual design; the decisions marked as confirmed are preserved from the source. **Scope:** this GDD is the detail source for its domain; the GDD Maestro establishes the shared vision. Cross-system conflicts are recorded in AUDIT_REPORT.md and are not resolved implicitly.
 
 ---
 
-# GDD — Sistema de Construcción y Arquitectura
-## Versión 0.1 — Documento de diseño conceptual
+# GDD — Construction and Architecture System
+## Version 0.1 — Conceptual design document
 
 ---
 
-# 1. Visión general
+# 1. Overview
 
-El Sistema de Construcción y Arquitectura define cómo el jugador construye, organiza, transforma y desarrolla físicamente sus asentamientos a lo largo de la historia.
+The Construction and Architecture System defines how the player physically builds, organizes, transforms and develops their settlements throughout history.
 
-Su objetivo no es simplemente permitir la colocación de edificios, sino representar visual y funcionalmente la evolución de una civilización durante miles de años.
+Its goal is not simply to allow building placement, but to represent, visually and functionally, the evolution of a civilization over thousands of years.
 
-La ciudad será el principal testimonio del progreso del jugador.
+The city will be the main testimony of the player's progress.
 
-Una aldea inicial puede convertirse en una gran ciudad siglos después. Sus edificios, calles, barrios, monumentos e infraestructuras reflejarán las distintas etapas de su historia.
+An initial village can become a great city centuries later. Its buildings, streets, districts, monuments and infrastructure will reflect the different stages of its history.
 
-El jugador deberá poder reconocer su propia obra incluso después de cientos o miles de años.
+The player should be able to recognize their own work even after hundreds or thousands of years.
 
-## 1.1. Principios fundamentales
+## 1.1. Fundamental principles
 
-1. **Libertad de construcción:** el jugador debe tener libertad para diseñar sus asentamientos.
-2. **Evolución histórica:** los edificios y las ciudades cambian con el desarrollo tecnológico, social y cultural.
-3. **Continuidad histórica:** las construcciones pueden conservar elementos de épocas anteriores.
-4. **Identidad arquitectónica:** la arquitectura refleja cultura, geografía, religión, riqueza y tecnología.
-5. **Belleza y urbanismo:** la estética de la ciudad tiene consecuencias sobre su funcionamiento.
-6. **Construcción funcional:** cada construcción requiere recursos, trabajadores, tiempo y mantenimiento.
-7. **Crecimiento orgánico:** la población puede desarrollar construcciones y barrios por iniciativa propia.
-8. **Libertad de conservación:** el jugador puede preservar edificios, barrios y estilos antiguos.
-9. **Complejidad configurable:** cada jugador decide cuánto quiere intervenir en el desarrollo urbano.
-10. **Evolución visible:** el paso del tiempo debe resultar evidente en el aspecto de las ciudades.
-
----
-
-# 2. Sistema de construcción y colocación
-
-## 2.1. Construcción libre
-
-El sistema utilizará un modelo de construcción libre con herramientas opcionales de alineación y cuadrícula.
-
-El jugador podrá:
-- Colocar edificios libremente.
-- Ajustar su orientación.
-- Utilizar herramientas de alineación.
-- Activar una cuadrícula opcional.
-- Ajustar construcciones a caminos y otras estructuras.
-- Copiar y pegar edificios.
-- Guardar y reutilizar diseños.
-
-La cuadrícula será una herramienta de asistencia, no una limitación obligatoria.
-
-## 2.2. Rotación
-
-Los edificios podrán rotarse según su naturaleza.
-
-Se contemplan:
-- Rotación en intervalos de 90 grados.
-- Rotación libre.
-- Orientaciones específicas para determinados edificios.
-
-El sistema deberá evitar que las restricciones de colocación limiten innecesariamente la creatividad.
-
-## 2.3. Dimensiones variables
-
-Algunos edificios tendrán dimensiones predeterminadas, mientras que otros permitirán configuraciones variables.
-
-Por ejemplo:
-- Viviendas pequeñas y grandes.
-- Granjas con diferentes extensiones.
-- Talleres con distintas superficies.
-- Mercados con diferentes dimensiones.
-- Complejos productivos ampliables.
-
-Las dimensiones influirán sobre capacidad, costos, trabajadores, consumo de materiales y eficiencia.
-
-## 2.4. Personalización estética
-
-La personalización será importante para la identidad visual de las ciudades.
-
-Se contemplan:
-- Jardines.
-- Cercos.
-- Patios.
-- Fuentes.
-- Mobiliario exterior.
-- Carteles.
-- Decoraciones.
-- Estatuas.
-- Elementos religiosos.
-- Plazas y espacios públicos.
-- Vegetación ornamental.
-- Iluminación.
-
-Estos elementos podrán contribuir a la belleza de un edificio o de su entorno.
+1. **Freedom of construction:** the player must have freedom to design their settlements.
+2. **Historical evolution:** buildings and cities change with technological, social and cultural development.
+3. **Historical continuity:** structures can preserve elements from earlier eras.
+4. **Architectural identity:** architecture reflects culture, geography, religion, wealth and technology.
+5. **Beauty and urban planning:** a city's aesthetics have consequences for its functioning.
+6. **Functional construction:** every structure requires resources, workers, time and maintenance.
+7. **Organic growth:** the population can develop structures and districts on its own initiative.
+8. **Freedom of preservation:** the player can preserve old buildings, districts and styles.
+9. **Configurable complexity:** each player decides how much they want to intervene in urban development.
+10. **Visible evolution:** the passage of time must be evident in the appearance of cities.
 
 ---
 
-# 3. Proceso de construcción
+# 2. Construction and placement system
 
-## 3.1. Construcción mediante obras
+## 2.1. Free construction
 
-Los edificios no aparecerán instantáneamente.
+The system will use a free-construction model with optional alignment and grid tools.
 
-El jugador ordenará una construcción y esta comenzará un proceso de obra que requerirá:
-- Materiales.
-- Trabajadores.
-- Tiempo.
-- Transporte.
-- Herramientas.
-- Conocimientos técnicos.
+The player will be able to:
+- Place buildings freely.
+- Adjust their orientation.
+- Use alignment tools.
+- Enable an optional grid.
+- Snap structures to roads and other structures.
+- Copy and paste buildings.
+- Save and reuse designs.
 
-La duración dependerá del tamaño, complejidad, materiales, tecnología disponible y mano de obra.
+The grid will be an assistance tool, not a mandatory limitation.
 
-## 3.2. Construcción por etapas
+## 2.2. Rotation
 
-Los edificios podrán construirse y ampliarse progresivamente.
+Buildings may be rotated according to their nature.
 
-Por ejemplo, una vivienda puede comenzar como una construcción pequeña y posteriormente incorporar:
-- Habitaciones.
-- Segundos pisos.
-- Patios.
-- Talleres.
-- Depósitos.
-- Mejoras estructurales.
+The following are contemplated:
+- Rotation in 90-degree increments.
+- Free rotation.
+- Specific orientations for certain buildings.
 
-La construcción por etapas será especialmente importante para representar la evolución histórica de los asentamientos.
+The system must prevent placement restrictions from unnecessarily limiting creativity.
 
-## 3.3. Mano de obra
+## 2.3. Variable dimensions
 
-El sistema evolucionará históricamente.
+Some buildings will have predetermined dimensions, while others will allow variable configurations.
 
-Se contemplan:
-- Trabajo comunitario.
-- Mano de obra familiar.
-- Constructores especializados.
-- Cuadrillas de trabajadores.
-- Oficios de construcción.
-- Empresas constructoras en períodos avanzados.
+For example:
+- Small and large dwellings.
+- Farms of different extents.
+- Workshops of different sizes.
+- Markets of different dimensions.
+- Expandable productive complexes.
 
-El modelo será mixto y permitirá que trabajadores de diferentes profesiones participen temporalmente en las obras cuando corresponda.
+Dimensions will influence capacity, costs, workers, material consumption and efficiency.
 
-La disponibilidad de trabajadores especializados dependerá del desarrollo económico y tecnológico.
+## 2.4. Aesthetic customization
 
-## 3.4. Falta de materiales
+Customization will be important for the visual identity of cities.
 
-Si una construcción no dispone de los materiales necesarios:
-1. La obra se detiene.
-2. El sistema intenta conseguir los materiales faltantes.
-3. Se pueden buscar materiales alternativos cuando sean técnicamente viables.
-4. El jugador recibe información sobre el problema.
+The following are contemplated:
+- Gardens.
+- Fences.
+- Courtyards.
+- Fountains.
+- Outdoor furniture.
+- Signs.
+- Decorations.
+- Statues.
+- Religious elements.
+- Plazas and public spaces.
+- Ornamental vegetation.
+- Lighting.
 
-La sustitución de materiales no será automática cuando afecte significativamente la calidad o la seguridad de la construcción.
-
-## 3.5. Calidad constructiva
-
-La calidad dependerá de:
-- Materiales.
-- Experiencia de los trabajadores.
-- Tecnología.
-- Herramientas.
-- Tiempo disponible.
-- Condiciones laborales.
-- Diseño arquitectónico.
-- Mantenimiento posterior.
-
-Una construcción de baja calidad podrá deteriorarse más rápidamente o presentar problemas estructurales.
+These elements may contribute to the beauty of a building or its surroundings.
 
 ---
 
-# 4. Evolución arquitectónica
+# 3. Construction process
 
-Este es uno de los sistemas centrales del proyecto.
+## 3.1. Construction through works
 
-Los edificios no serán elementos estáticos que simplemente se desbloquean y reemplazan.
+Buildings will not appear instantly.
 
-Serán construcciones que evolucionan junto con la civilización.
+The player will order a construction and it will begin a construction-work process that will require:
+- Materials.
+- Workers.
+- Time.
+- Transport.
+- Tools.
+- Technical knowledge.
 
-## 4.1. Desencadenantes de evolución
+The duration will depend on size, complexity, materials, available technology and labor.
 
-Una construcción podrá recibir opciones de mejora cuando se produzcan cambios en:
-- Tecnología.
-- Período histórico.
-- Cultura.
-- Religión.
-- Organización social.
-- Política.
-- Economía.
-- Disponibilidad de materiales.
-- Necesidades de la población.
-- Influencias de otras civilizaciones.
+## 3.2. Construction in stages
 
-## 4.2. Decisión del jugador
+Buildings may be built and expanded progressively.
 
-Cuando una mejora esté disponible, el jugador recibirá una notificación.
+For example, a dwelling can begin as a small structure and later incorporate:
+- Rooms.
+- Upper floors.
+- Courtyards.
+- Workshops.
+- Storerooms.
+- Structural improvements.
 
-Podrá consultar:
-- Nombre de la mejora.
-- Cambios arquitectónicos.
-- Nuevas funcionalidades.
-- Requisitos tecnológicos.
-- Materiales necesarios.
-- Costos.
-- Tiempo de obra.
-- Beneficios y desventajas.
+Staged construction will be especially important for representing the historical evolution of settlements.
 
-El jugador decidirá cuándo aplicar la transformación.
+## 3.3. Labor
 
-Las mejoras no serán obligatorias.
+The system will evolve historically.
 
-## 4.3. Profundidad de las transformaciones
+The following are contemplated:
+- Community labor.
+- Family labor.
+- Specialized builders.
+- Work crews.
+- Construction trades.
+- Construction companies in advanced periods.
 
-Las transformaciones podrán ser pequeñas, importantes o radicales.
+The model will be mixed and will allow workers from different professions to participate temporarily in construction works when appropriate.
 
-Ejemplos:
-- Una vivienda de madera incorpora nuevas habitaciones.
-- Una casa de barro se transforma en una construcción de ladrillo.
-- Una herrería artesanal incorpora maquinaria hidráulica.
-- Un templo pequeño se convierte en un complejo religioso.
-- Una antigua estructura defensiva se transforma en una fortificación moderna.
+The availability of specialized workers will depend on economic and technological development.
 
-La transformación dependerá del edificio, la época y las condiciones disponibles.
+## 3.4. Lack of materials
 
-## 4.4. Conservación de estructuras antiguas
+If a construction does not have the necessary materials:
+1. The work stops.
+2. The system tries to obtain the missing materials.
+3. Alternative materials may be sought when technically viable.
+4. The player is informed about the problem.
 
-Las mejoras podrán:
-- Mantener elementos originales.
-- Sustituir partes de la estructura.
-- Ampliar el edificio.
-- Incorporar nuevos materiales.
-- Cambiar completamente su apariencia.
+Material substitution will not be automatic when it significantly affects the quality or safety of the construction.
 
-No todos los edificios deberán conservar su arquitectura original.
+## 3.5. Construction quality
 
-Sin embargo, el sistema deberá permitir que determinadas construcciones mantengan elementos históricos durante siglos.
+Quality will depend on:
+- Materials.
+- Worker experience.
+- Technology.
+- Tools.
+- Available time.
+- Working conditions.
+- Architectural design.
+- Subsequent maintenance.
 
-## 4.5. Edificios históricos
-
-Algunos edificios podrán adquirir la categoría de **Históricos**.
-
-El jugador podrá conservarlos sin modificaciones, incluso cuando existan alternativas tecnológicamente superiores.
-
-Estos edificios podrán representar:
-- Construcciones fundacionales.
-- Monumentos.
-- Templos antiguos.
-- Palacios.
-- Edificios políticos.
-- Construcciones vinculadas a acontecimientos históricos.
-- Edificios de importancia cultural.
-
-Los edificios históricos podrán tener valor cultural, simbólico y turístico según el desarrollo de la civilización.
-
-## 4.6. Evolución no obligatoria
-
-Un edificio antiguo podrá continuar funcionando aunque existan versiones más modernas.
-
-Sus desventajas podrán incluir:
-- Menor eficiencia.
-- Mayor mantenimiento.
-- Menor capacidad.
-- Costos operativos superiores.
-- Limitaciones tecnológicas.
-
-El jugador podrá mantenerlo por razones económicas, culturales, históricas o estéticas.
+A low-quality construction may deteriorate more quickly or present structural problems.
 
 ---
 
-# 5. Ampliaciones y construcción modular
+# 4. Architectural evolution
 
-Los edificios podrán incorporar módulos o sectores adicionales.
+This is one of the project's central systems.
 
-Esto permitirá desarrollar construcciones sin necesidad de reemplazarlas completamente.
+Buildings will not be static elements that are simply unlocked and replaced.
 
-Ejemplos:
-- Una herrería incorpora un sector de fundición.
-- Una granja agrega establos y depósitos.
-- Un aserradero incorpora nuevos espacios de procesamiento.
-- Una vivienda incorpora habitaciones y pisos.
-- Un mercado agrega puestos y depósitos.
+They will be structures that evolve together with the civilization.
 
-## 5.1. Características de los módulos
+## 4.1. Evolution triggers
 
-Cada módulo podrá tener:
-- Requisitos tecnológicos.
-- Costos.
-- Materiales.
-- Espacio requerido.
-- Capacidad adicional.
-- Beneficios funcionales.
-- Impacto estético.
+A structure may receive upgrade options when changes occur in:
+- Technology.
+- Historical period.
+- Culture.
+- Religion.
+- Social organization.
+- Politics.
+- Economy.
+- Material availability.
+- Population needs.
+- Influences from other civilizations.
 
-## 5.2. Restricciones
+## 4.2. Player decision
 
-Las ampliaciones estarán limitadas por:
-- Espacio disponible.
-- Terreno.
-- Materiales.
-- Tecnología.
-- Mano de obra.
-- Capacidad estructural.
-- Recursos económicos.
+When an upgrade is available, the player will receive a notification.
 
-## 5.3. Evolución visual
+They will be able to review:
+- Name of the upgrade.
+- Architectural changes.
+- New functionalities.
+- Technological requirements.
+- Required materials.
+- Costs.
+- Construction-work time.
+- Benefits and drawbacks.
 
-Los módulos deberán integrarse visualmente con el edificio original.
+The player will decide when to apply the transformation.
 
-Dependiendo de la época, podrán presentar estilos y materiales diferentes.
+The upgrades will not be mandatory.
 
-Una construcción podrá mostrar claramente las distintas etapas en las que fue ampliada.
+## 4.3. Depth of transformations
+
+Transformations may be small, major or radical.
+
+Examples:
+- A wooden dwelling incorporates new rooms.
+- A mud house transforms into a brick structure.
+- An artisanal smithy incorporates hydraulic machinery.
+- A small temple becomes a religious complex.
+- An old defensive structure transforms into a modern fortification.
+
+The transformation will depend on the building, the era and the available conditions.
+
+## 4.4. Preservation of old structures
+
+Upgrades may:
+- Keep original elements.
+- Replace parts of the structure.
+- Expand the building.
+- Incorporate new materials.
+- Completely change its appearance.
+
+Not all buildings will need to preserve their original architecture.
+
+However, the system must allow certain structures to keep historical elements for centuries.
+
+## 4.5. Historical buildings
+
+Some buildings may acquire the **Historical** category.
+
+The player may preserve them without modifications, even when technologically superior alternatives exist.
+
+These buildings may represent:
+- Foundational structures.
+- Monuments.
+- Ancient temples.
+- Palaces.
+- Political buildings.
+- Structures linked to historical events.
+- Buildings of cultural importance.
+
+Historical buildings may have cultural, symbolic and tourist value depending on the civilization's development.
+
+## 4.6. Non-mandatory evolution
+
+An old building may continue to function even if more modern versions exist.
+
+Its drawbacks may include:
+- Lower efficiency.
+- Higher maintenance.
+- Lower capacity.
+- Higher operating costs.
+- Technological limitations.
+
+The player may keep it for economic, cultural, historical or aesthetic reasons.
 
 ---
 
-# 6. Materiales de construcción
+# 5. Expansions and modular construction
 
-Los materiales tendrán consecuencias funcionales y estéticas.
+Buildings may incorporate additional modules or sectors.
 
-## 6.1. Propiedades
+This will allow structures to develop without needing to be completely replaced.
 
-Cada material podrá tener características relacionadas con:
-- Resistencia.
-- Durabilidad.
-- Aislamiento.
-- Peso.
-- Costo.
-- Disponibilidad.
-- Facilidad de transporte.
-- Mantenimiento.
-- Resistencia al fuego.
-- Resistencia a condiciones ambientales.
+Examples:
+- A smithy incorporates a foundry sector.
+- A farm adds stables and storerooms.
+- A sawmill incorporates new processing spaces.
+- A dwelling incorporates rooms and floors.
+- A market adds stalls and storerooms.
 
-## 6.2. Materiales históricos
+## 5.1. Module characteristics
 
-La disponibilidad y utilización de materiales evolucionará históricamente.
+Each module may have:
+- Technological requirements.
+- Costs.
+- Materials.
+- Required space.
+- Additional capacity.
+- Functional benefits.
+- Aesthetic impact.
 
-Entre otros:
-- Madera.
-- Barro.
+## 5.2. Restrictions
+
+Expansions will be limited by:
+- Available space.
+- Terrain.
+- Materials.
+- Technology.
+- Labor.
+- Structural capacity.
+- Economic resources.
+
+## 5.3. Visual evolution
+
+Modules must integrate visually with the original building.
+
+Depending on the era, they may present different styles and materials.
+
+A structure may clearly show the different stages in which it was expanded.
+
+---
+
+# 6. Construction materials
+
+Materials will have functional and aesthetic consequences.
+
+## 6.1. Properties
+
+Each material may have characteristics related to:
+- Strength.
+- Durability.
+- Insulation.
+- Weight.
+- Cost.
+- Availability.
+- Ease of transport.
+- Maintenance.
+- Fire resistance.
+- Resistance to environmental conditions.
+
+## 6.2. Historical materials
+
+The availability and use of materials will evolve historically.
+
+Among others:
+- Wood.
+- Mud.
 - Adobe.
-- Piedra.
-- Paja.
-- Ladrillo.
-- Tejas.
-- Cal.
-- Vidrio.
-- Metales.
-- Hormigón.
-- Acero.
+- Stone.
+- Straw.
+- Brick.
+- Tiles.
+- Lime.
+- Glass.
+- Metals.
+- Concrete.
+- Steel.
 
-La lista se ampliará según el desarrollo histórico del juego.
+The list will expand according to the historical development of the game.
 
-## 6.3. Disponibilidad regional
+## 6.3. Regional availability
 
-La geografía influirá sobre los materiales disponibles.
+Geography will influence the available materials.
 
-Una región con abundante madera podrá desarrollar una arquitectura diferente de otra con grandes reservas de piedra.
+A region with abundant wood may develop a different architecture from one with large stone reserves.
 
-El comercio permitirá conseguir materiales que no estén disponibles localmente.
+Trade will make it possible to obtain materials that are not available locally.
 
-## 6.4. Materiales alternativos
+## 6.4. Alternative materials
 
-Determinados edificios podrán construirse con diferentes materiales.
+Certain buildings may be built with different materials.
 
-Las alternativas tendrán consecuencias sobre:
-- Costos.
-- Durabilidad.
-- Calidad.
-- Apariencia.
-- Eficiencia.
-- Mantenimiento.
+The alternatives will have consequences for:
+- Costs.
+- Durability.
+- Quality.
+- Appearance.
+- Efficiency.
+- Maintenance.
 
-## 6.5. Conservación de técnicas antiguas
+## 6.5. Preservation of old techniques
 
-El desarrollo tecnológico no eliminará necesariamente los materiales y técnicas anteriores.
+Technological development will not necessarily eliminate earlier materials and techniques.
 
-El jugador podrá seguir construyendo con técnicas tradicionales cuando tenga sentido económico, cultural o estético.
-
----
-
-# 7. Arquitectura vertical
-
-La arquitectura evolucionará en altura y complejidad.
-
-## 7.1. Construcciones de varios pisos
-
-La posibilidad de construir varios pisos dependerá de:
-- Tecnología.
-- Materiales.
-- Técnicas constructivas.
-- Capacidad estructural.
-- Cultura.
-- Época histórica.
-
-La arquitectura vertical tendrá una evolución histórica progresiva.
-
-## 7.2. Altura configurable
-
-Algunos edificios permitirán que el jugador tenga influencia sobre su altura.
-
-La libertad estará condicionada por los conocimientos técnicos, los materiales y la estructura.
-
-## 7.3. Sótanos y subsuelos
-
-Determinados edificios podrán incorporar:
-- Bodegas.
-- Depósitos subterráneos.
-- Sótanos.
-- Espacios de almacenamiento.
-- Instalaciones productivas.
-- Refugios.
-
-Su disponibilidad dependerá del tipo de edificio, terreno y tecnología.
-
-## 7.4. Evolución histórica
-
-La arquitectura vertical deberá reflejar los avances de cada período.
-
-No se trata solamente de desbloquear edificios más altos, sino de representar los cambios en las técnicas, materiales y necesidades urbanas.
+The player may continue building with traditional techniques when it makes economic, cultural or aesthetic sense.
 
 ---
 
-# 8. Urbanismo y crecimiento de las ciudades
+# 7. Vertical architecture
 
-El desarrollo urbano combinará planificación del jugador y crecimiento orgánico.
+Architecture will evolve in height and complexity.
 
-## 8.1. Crecimiento mixto
+## 7.1. Multi-story structures
 
-El jugador podrá construir y organizar los asentamientos.
+The possibility of building multiple floors will depend on:
+- Technology.
+- Materials.
+- Construction techniques.
+- Structural capacity.
+- Culture.
+- Historical era.
 
-Sin embargo, la población también podrá desarrollar construcciones de manera espontánea.
+Vertical architecture will have a progressive historical evolution.
 
-Esto permitirá representar:
-- Crecimiento de viviendas.
-- Aparición de comercios.
-- Formación de barrios.
-- Expansión de zonas productivas.
-- Nuevas actividades económicas.
+## 7.2. Configurable height
 
-El crecimiento orgánico estará influenciado por las políticas, regulaciones, disponibilidad de terrenos y condiciones económicas.
+Some buildings will let the player have influence over their height.
 
-El jugador tendrá herramientas para orientar este desarrollo.
+The freedom will be conditioned by technical knowledge, materials and structure.
 
-## 8.2. Barrios
+## 7.3. Cellars and basements
 
-Las ciudades podrán desarrollar barrios con identidades propias.
+Certain buildings may incorporate:
+- Cellars.
+- Underground storerooms.
+- Basements.
+- Storage spaces.
+- Productive facilities.
+- Shelters.
 
-Ejemplos:
-- Residenciales.
-- Comerciales.
-- Artesanales.
-- Industriales.
-- Religiosos.
-- Administrativos.
-- Portuarios.
-- Militares.
-- Culturales.
+Their availability will depend on the building type, terrain and technology.
 
-Los barrios podrán surgir espontáneamente o desarrollarse mediante intervención del jugador.
+## 7.4. Historical evolution
 
-## 8.3. Densidad urbana
+Vertical architecture must reflect the advances of each period.
 
-La densidad será una mecánica importante.
-
-El crecimiento poblacional podrá producir:
-- Mayor concentración de viviendas.
-- Construcciones más altas.
-- Calles más estrechas.
-- Mayor actividad comercial.
-- Nuevos espacios públicos.
-- Problemas de congestión.
-- Necesidad de infraestructura.
-
-El desarrollo urbano deberá reflejar las transformaciones sociales y económicas.
-
-## 8.4. Influencia de edificios sobre el entorno
-
-Los edificios podrán modificar el atractivo y desarrollo de sus alrededores.
-
-Ejemplos:
-- Los mercados atraen comercios.
-- Los templos generan actividad religiosa.
-- Los edificios administrativos atraen población y servicios.
-- Los monumentos aumentan el atractivo de una zona.
-- Las industrias pueden generar contaminación y molestias.
-- Los parques mejoran la calidad del entorno.
-
-## 8.5. Centros urbanos históricos
-
-Las ciudades podrán desarrollar centros históricos que mantengan su importancia durante siglos.
-
-El jugador tendrá libertad para modificarlos, conservarlos o transformarlos.
-
-La existencia de un centro histórico no impondrá restricciones automáticas, salvo que el jugador decida protegerlo.
+It is not merely about unlocking taller buildings, but about representing changes in techniques, materials and urban needs.
 
 ---
 
-# 9. Belleza y atractivo urbano
+# 8. Urban planning and city growth
 
-La belleza será una mecánica propia del juego y tendrá consecuencias reales.
+Urban development will combine player planning and organic growth.
 
-No será solamente una valoración estética.
+## 8.1. Mixed growth
 
-## 9.1. Dos niveles de belleza
+The player will be able to build and organize settlements.
 
-El sistema tendrá dos indicadores principales:
+However, the population will also be able to develop structures spontaneously.
 
-**Belleza global de la ciudad**
+This will allow representing:
+- Housing growth.
+- The appearance of businesses.
+- The formation of districts.
+- The expansion of productive zones.
+- New economic activities.
 
-Representa la calidad estética general del asentamiento.
+Organic growth will be influenced by policies, regulations, land availability and economic conditions.
 
-**Belleza local o zonal**
+The player will have tools to guide this development.
 
-Representa la calidad estética de un área determinada de la ciudad.
+## 8.2. Districts
 
-Una ciudad podrá tener una belleza global elevada, pero contener barrios desagradables o poco atractivos.
+Cities may develop districts with their own identities.
 
-También podrá tener barrios muy bellos dentro de una ciudad visualmente desorganizada.
+Examples:
+- Residential.
+- Commercial.
+- Artisanal.
+- Industrial.
+- Religious.
+- Administrative.
+- Port.
+- Military.
+- Cultural.
 
-## 9.2. Factores que influyen en la belleza
+Districts may arise spontaneously or develop through player intervention.
 
-Entre otros:
-- Arquitectura de los edificios.
-- Armonía entre construcciones.
-- Decoración.
-- Jardines.
+## 8.3. Urban density
+
+Density will be an important mechanic.
+
+Population growth may produce:
+- Greater concentration of housing.
+- Taller structures.
+- Narrower streets.
+- Greater commercial activity.
+- New public spaces.
+- Congestion problems.
+- A need for infrastructure.
+
+Urban development must reflect social and economic transformations.
+
+## 8.4. Influence of buildings on their surroundings
+
+Buildings may modify the appeal and development of their surroundings.
+
+Examples:
+- Markets attract businesses.
+- Temples generate religious activity.
+- Administrative buildings attract population and services.
+- Monuments increase the appeal of an area.
+- Industries can generate pollution and nuisances.
+- Parks improve the quality of the surroundings.
+
+## 8.5. Historical urban centers
+
+Cities may develop historical centers that retain their importance for centuries.
+
+The player will have the freedom to modify, preserve or transform them.
+
+The existence of a historical center will not impose automatic restrictions, unless the player decides to protect it.
+
+---
+
+# 9. Beauty and urban appeal
+
+Beauty will be a mechanic in its own right and will have real consequences.
+
+It will not be merely an aesthetic assessment.
+
+## 9.1. Two levels of beauty
+
+The system will have two main indicators:
+
+**Global city beauty**
+
+Represents the overall aesthetic quality of the settlement.
+
+**Local or zonal beauty**
+
+Represents the aesthetic quality of a specific area of the city.
+
+A city may have high global beauty but contain unpleasant or unappealing districts.
+
+It may also have very beautiful districts within a visually disorganized city.
+
+## 9.2. Factors that influence beauty
+
+Among others:
+- Building architecture.
+- Harmony between structures.
+- Decoration.
+- Gardens.
 - Plazas.
-- Monumentos.
-- Fuentes.
-- Espacios públicos.
-- Paisajismo.
-- Orden urbanístico.
-- Materiales.
-- Limpieza.
-- Conservación de edificios.
-- Relación entre construcciones y entorno natural.
+- Monuments.
+- Fountains.
+- Public spaces.
+- Landscaping.
+- Urban order.
+- Materials.
+- Cleanliness.
+- Building preservation.
+- The relationship between structures and the natural surroundings.
 
-## 9.3. Factores negativos
+## 9.3. Negative factors
 
-Podrán reducir la belleza:
-- Edificios deteriorados.
-- Construcciones abandonadas.
-- Acumulación de residuos.
-- Industrias contaminantes.
-- Desorden urbano.
-- Construcciones incompatibles con el entorno.
-- Infraestructura descuidada.
-- Espacios públicos degradados.
+The following may reduce beauty:
+- Deteriorated buildings.
+- Abandoned structures.
+- Accumulation of waste.
+- Polluting industries.
+- Urban disorder.
+- Structures incompatible with their surroundings.
+- Neglected infrastructure.
+- Degraded public spaces.
 
-## 9.4. Consecuencias
+## 9.4. Consequences
 
-La belleza podrá proporcionar bonificaciones y penalizaciones.
+Beauty may provide bonuses and penalties.
 
-Posibles efectos:
-- Satisfacción de la población.
-- Prestigio de la ciudad.
-- Atracción de inmigrantes.
-- Atractivo comercial.
-- Turismo en períodos históricos avanzados.
-- Valor de determinadas propiedades.
-- Influencia cultural.
+Possible effects:
+- Population satisfaction.
+- City prestige.
+- Attraction of immigrants.
+- Commercial appeal.
+- Tourism in advanced historical periods.
+- The value of certain properties.
+- Cultural influence.
 
-La intensidad de estos efectos deberá depender del nivel de complejidad seleccionado.
-
----
-
-# 10. Infraestructura
-
-La infraestructura será parte integral de la construcción y el desarrollo urbano.
-
-No será simplemente decoración.
-
-## 10.1. Tipos de infraestructura
-
-El sistema contemplará, entre otros:
-
-**Transporte**
-- Senderos.
-- Caminos.
-- Calles.
-- Avenidas.
-- Puentes.
-- Puertos.
-- Muelles.
-- Canales.
-- Ferrocarriles.
-
-**Defensa**
-- Murallas.
-- Torres.
-- Fortificaciones.
-- Puertas.
-- Puentes defensivos.
-
-**Agua**
-- Pozos.
-- Canales.
-- Acueductos.
-- Redes de distribución.
-- Sistemas de drenaje.
-- Alcantarillado.
-
-**Servicios**
-- Mercados.
-- Espacios públicos.
-- Redes eléctricas.
-- Infraestructura de comunicaciones en épocas avanzadas.
-
-La lista podrá ampliarse a medida que se desarrollen los sistemas históricos.
-
-## 10.2. Construcción de caminos
-
-Los caminos tendrán trazado libre con herramientas automáticas de conexión.
-
-El jugador podrá:
-- Dibujar caminos.
-- Conectar edificios.
-- Crear intersecciones.
-- Construir plazas.
-- Definir recorridos.
-- Modificar trazados.
-
-## 10.3. Evolución histórica
-
-Los caminos evolucionarán según la tecnología y el período histórico.
-
-Por ejemplo:
-- Senderos naturales.
-- Caminos de tierra.
-- Caminos mejorados.
-- Calzadas de piedra.
-- Calles pavimentadas.
-- Avenidas modernas.
-
-La evolución será principalmente automática, según las condiciones y el desarrollo de la ciudad.
-
-## 10.4. Capacidad y funcionamiento
-
-La infraestructura tendrá límites físicos simplificados.
-
-Ejemplos:
-- Congestión en caminos.
-- Capacidad de puentes.
-- Capacidad de canales.
-- Capacidad de transporte.
-- Deterioro de caminos.
-- Necesidades de mantenimiento.
-
-La simulación será configurable para evitar micromanagement innecesario.
+The intensity of these effects must depend on the selected complexity level.
 
 ---
 
-# 11. Arquitectura regional y cultural
+# 10. Infrastructure
 
-La arquitectura será resultado de la interacción entre múltiples factores.
+Infrastructure will be an integral part of construction and urban development.
 
-## 11.1. Factores determinantes
+It will not be mere decoration.
 
-Los estilos arquitectónicos estarán influenciados por:
-- Época histórica.
-- Geografía.
-- Clima.
-- Cultura.
-- Civilización.
-- Religión.
-- Materiales disponibles.
-- Tecnología.
-- Riqueza.
-- Clase social.
-- Influencias externas.
+## 10.1. Types of infrastructure
 
-## 11.2. Identidad arquitectónica
+The system will contemplate, among others:
 
-Cada civilización podrá desarrollar una identidad arquitectónica propia.
+**Transport**
+- Trails.
+- Roads.
+- Streets.
+- Avenues.
+- Bridges.
+- Ports.
+- Docks.
+- Canals.
+- Railways.
 
-Sin embargo, las culturas no estarán completamente aisladas.
+**Defense**
+- Walls.
+- Towers.
+- Fortifications.
+- Gates.
+- Defensive bridges.
 
-El comercio, las migraciones, las conquistas y los intercambios culturales podrán producir influencias arquitectónicas.
+**Water**
+- Wells.
+- Canals.
+- Aqueducts.
+- Distribution networks.
+- Drainage systems.
+- Sewerage.
 
-## 11.3. Intercambio de estilos
+**Services**
+- Markets.
+- Public spaces.
+- Electrical networks.
+- Communications infrastructure in advanced eras.
 
-Las civilizaciones podrán adoptar:
-- Técnicas constructivas.
-- Materiales.
-- Diseños.
-- Decoraciones.
-- Estilos religiosos.
-- Elementos arquitectónicos.
+The list may expand as the historical systems are developed.
 
-La adopción dependerá de las condiciones culturales, políticas, tecnológicas y económicas.
+## 10.2. Road construction
 
-## 11.4. Diferencias sociales
+Roads will have free routing with automatic connection tools.
 
-La riqueza y la posición social se reflejarán en la arquitectura.
+The player will be able to:
+- Draw roads.
+- Connect buildings.
+- Create intersections.
+- Build plazas.
+- Define routes.
+- Modify layouts.
 
-Podrán existir diferencias entre:
-- Viviendas humildes.
-- Viviendas familiares.
-- Casas de artesanos.
-- Residencias de comerciantes.
-- Viviendas de clases acomodadas.
-- Palacios.
-- Edificios públicos.
-- Monumentos religiosos.
+## 10.3. Historical evolution
 
-Estas diferencias evolucionarán históricamente.
+Roads will evolve according to technology and the historical period.
 
----
+For example:
+- Natural trails.
+- Dirt roads.
+- Improved roads.
+- Stone roadways.
+- Paved streets.
+- Modern avenues.
 
-# 12. Terreno y adaptación ambiental
+The evolution will be mainly automatic, according to the conditions and development of the city.
 
-## 12.1. Adaptación al terreno
+## 10.4. Capacity and operation
 
-Los edificios podrán adaptarse parcialmente a terrenos irregulares.
+Infrastructure will have simplified physical limits.
 
-Se contemplan:
-- Construcciones sobre pendientes.
-- Plataformas.
-- Terrazas.
-- Escalones.
-- Fundaciones adaptadas.
-- Estructuras elevadas.
+Examples:
+- Road congestion.
+- Bridge capacity.
+- Canal capacity.
+- Transport capacity.
+- Road deterioration.
+- Maintenance needs.
 
-Las posibilidades dependerán de la tecnología y las características de cada construcción.
-
-## 12.2. Modificación del terreno
-
-El jugador podrá modificar el terreno mediante obras.
-
-Por ejemplo:
-- Nivelación.
-- Excavación.
-- Relleno.
-- Terrazas.
-- Plataformas.
-- Modificación de pendientes.
-- Recuperación de terrenos inundables.
-- Ganancia de terreno sobre el agua.
-
-Estas acciones tendrán costos y limitaciones.
-
-## 12.3. Adaptación climática
-
-La arquitectura podrá reflejar las condiciones ambientales.
-
-Ejemplos:
-- Techos inclinados en regiones lluviosas.
-- Construcciones adaptadas al calor.
-- Protección contra vientos.
-- Aislamiento en regiones frías.
-- Elevación de viviendas en zonas inundables.
-
-En la primera etapa, la adaptación tendrá principalmente consecuencias visuales, con posibilidad de incorporar efectos funcionales más profundos.
-
-## 12.4. Desastres naturales
-
-Los edificios podrán verse afectados por:
-- Incendios.
-- Terremotos.
-- Inundaciones.
-- Tormentas.
-- Otros fenómenos naturales.
-
-Los desastres podrán causar daños, destrucción y deterioro.
-
-El jugador podrá deshabilitar los desastres naturales desde la configuración de la partida.
+The simulation will be configurable to avoid unnecessary micromanagement.
 
 ---
 
-# 13. Deterioro, abandono y ruinas
+# 11. Regional and cultural architecture
 
-Las construcciones necesitarán mantenimiento.
+Architecture will be the result of the interaction between multiple factors.
 
-Cuando un edificio no pueda sostenerse económicamente, podrá deteriorarse progresivamente.
+## 11.1. Determining factors
 
-## 13.1. Causas del deterioro
+Architectural styles will be influenced by:
+- Historical era.
+- Geography.
+- Climate.
+- Culture.
+- Civilization.
+- Religion.
+- Available materials.
+- Technology.
+- Wealth.
+- Social class.
+- External influences.
 
-- Falta de mantenimiento.
-- Falta de recursos.
-- Abandono.
-- Daños estructurales.
-- Desastres naturales.
-- Envejecimiento de materiales.
-- Obsolescencia funcional.
+## 11.2. Architectural identity
 
-## 13.2. Estados de conservación
+Each civilization may develop its own architectural identity.
 
-Un edificio podrá atravesar distintos estados:
+However, cultures will not be completely isolated.
 
-1. Excelente.
-2. Bueno.
-3. Deteriorado.
-4. Muy deteriorado.
-5. Abandonado.
-6. Ruina.
+Trade, migrations, conquests and cultural exchanges may produce architectural influences.
 
-## 13.3. Edificios abandonados
+## 11.3. Exchange of styles
 
-Las construcciones que no tengan utilidad o no puedan sostener sus costos podrán quedar abandonadas.
+Civilizations may adopt:
+- Construction techniques.
+- Materials.
+- Designs.
+- Decorations.
+- Religious styles.
+- Architectural elements.
 
-El sistema deberá contemplar situaciones donde el jugador decida no mantener un edificio costoso que ya no cumple una función importante.
+Adoption will depend on cultural, political, technological and economic conditions.
 
-## 13.4. Ruinas
+## 11.4. Social differences
 
-Las ruinas serán elementos persistentes del paisaje.
+Wealth and social position will be reflected in architecture.
 
-Podrán:
-- Permanecer durante siglos.
-- Convertirse en parte del patrimonio histórico.
-- Ser recuperadas.
-- Ser reconstruidas.
-- Ser demolidas.
-- Ser reutilizadas como materiales.
+There may be differences between:
+- Humble dwellings.
+- Family dwellings.
+- Artisans' houses.
+- Merchants' residences.
+- Dwellings of the well-off classes.
+- Palaces.
+- Public buildings.
+- Religious monuments.
 
-Su presencia también podrá influir sobre la belleza y la identidad de determinadas zonas.
-
----
-
-# 14. Demolición, traslado y conservación
-
-## 14.1. Demolición
-
-El jugador podrá demoler construcciones, pero hacerlo tendrá costos y consecuencias.
-
-Posibles consecuencias:
-- Costos de demolición.
-- Recuperación parcial de materiales.
-- Pérdida de patrimonio.
-- Modificación de la belleza.
-- Impacto cultural.
-- Descontento de determinados grupos.
-
-## 14.2. Traslado
-
-Algunos edificios podrán trasladarse.
-
-El sistema contemplará:
-- Edificios pequeños.
-- Construcciones desmontables.
-- Estructuras transportables.
-- Edificios que puedan trasladarse mediante técnicas especializadas.
-
-El traslado tendrá costos y limitaciones.
-
-## 14.3. Patrimonio histórico
-
-Los edificios podrán adquirir valor patrimonial.
-
-Su importancia dependerá de:
-- Antigüedad.
-- Acontecimientos históricos.
-- Relevancia religiosa.
-- Importancia cultural.
-- Valor arquitectónico.
-- Significado para la población.
-
-## 14.4. Áreas históricas protegidas
-
-El jugador podrá definir áreas históricas.
-
-Dentro de estas áreas podrá establecer reglas de conservación:
-- Prohibir demoliciones.
-- Impedir modificaciones arquitectónicas.
-- Restringir ampliaciones.
-- Conservar materiales y estilos.
-- Limitar nuevas construcciones.
-- Permitir restauraciones controladas.
-
-El objetivo es que el jugador pueda preservar sectores completos de la ciudad.
-
-La protección histórica será una decisión del jugador, no una imposición general del sistema.
+These differences will evolve historically.
 
 ---
 
-# 15. Herramientas de construcción
+# 12. Terrain and environmental adaptation
 
-La interfaz inicial tendrá una complejidad intermedia.
+## 12.1. Terrain adaptation
 
-Se priorizará la facilidad de uso sin renunciar a herramientas útiles.
+Buildings may partially adapt to irregular terrain.
 
-## 15.1. Herramientas iniciales
+The following are contemplated:
+- Structures on slopes.
+- Platforms.
+- Terraces.
+- Steps.
+- Adapted foundations.
+- Elevated structures.
 
-- Colocación de edificios.
-- Rotación.
-- Alineación.
-- Cuadrícula opcional.
-- Selección múltiple.
-- Copiar y pegar.
-- Demolición.
-- Construcción de caminos.
-- Herramientas de conexión.
-- Guardado de planos.
-- Reutilización de diseños.
+The possibilities will depend on technology and the characteristics of each structure.
 
-## 15.2. Planos y diseños
+## 12.2. Terrain modification
 
-El jugador podrá guardar configuraciones de edificios y estructuras.
+The player may modify the terrain through works.
 
-Ejemplos:
-- Granjas.
-- Barrios.
-- Mercados.
-- Complejos productivos.
-- Fortificaciones.
-- Conjuntos residenciales.
+For example:
+- Leveling.
+- Excavation.
+- Filling.
+- Terraces.
+- Platforms.
+- Slope modification.
+- Reclamation of flood-prone land.
+- Land reclamation over water.
 
-Estos diseños podrán reutilizarse y adaptarse.
+These actions will have costs and limitations.
 
-## 15.3. Evolución de las herramientas
+## 12.3. Climate adaptation
 
-Las herramientas podrán ampliarse con el tiempo, incorporando funcionalidades urbanísticas más avanzadas.
+Architecture may reflect environmental conditions.
+
+Examples:
+- Sloped roofs in rainy regions.
+- Structures adapted to heat.
+- Protection against winds.
+- Insulation in cold regions.
+- Elevation of dwellings in flood-prone zones.
+
+In the first stage, adaptation will mainly have visual consequences, with the possibility of incorporating deeper functional effects.
+
+## 12.4. Natural disasters
+
+Buildings may be affected by:
+- Fires.
+- Earthquakes.
+- Floods.
+- Storms.
+- Other natural phenomena.
+
+Disasters may cause damage, destruction and deterioration.
+
+The player may disable natural disasters from the game configuration.
 
 ---
 
-# 16. Cámara y visualización
+# 13. Deterioration, abandonment and ruins
 
-La cámara deberá permitir observar la ciudad desde diferentes perspectivas.
+Structures will require maintenance.
 
-## 16.1. Modos de cámara
+When a building cannot be sustained economically, it may deteriorate progressively.
 
-- Vista general.
-- Vista isométrica.
-- Cámara libre.
-- Rotación.
+## 13.1. Causes of deterioration
+
+- Lack of maintenance.
+- Lack of resources.
+- Abandonment.
+- Structural damage.
+- Natural disasters.
+- Aging of materials.
+- Functional obsolescence.
+
+## 13.2. Conservation states
+
+A building may go through different states:
+
+1. Excellent.
+2. Good.
+3. Deteriorated.
+4. Heavily deteriorated.
+5. Abandoned.
+6. Ruin.
+
+## 13.3. Abandoned buildings
+
+Structures that have no utility or cannot sustain their costs may become abandoned.
+
+The system must contemplate situations where the player decides not to maintain a costly building that no longer serves an important function.
+
+## 13.4. Ruins
+
+Ruins will be persistent elements of the landscape.
+
+They may:
+- Remain for centuries.
+- Become part of the historical heritage.
+- Be recovered.
+- Be rebuilt.
+- Be demolished.
+- Be reused as materials.
+
+Their presence may also influence the beauty and identity of certain areas.
+
+---
+
+# 14. Demolition, relocation and preservation
+
+## 14.1. Demolition
+
+The player may demolish structures, but doing so will have costs and consequences.
+
+Possible consequences:
+- Demolition costs.
+- Partial recovery of materials.
+- Loss of heritage.
+- Modification of beauty.
+- Cultural impact.
+- Discontent among certain groups.
+
+## 14.2. Relocation
+
+Some buildings may be relocated.
+
+The system will contemplate:
+- Small buildings.
+- Demountable structures.
+- Transportable structures.
+- Buildings that can be relocated through specialized techniques.
+
+Relocation will have costs and limitations.
+
+## 14.3. Historical heritage
+
+Buildings may acquire heritage value.
+
+Their importance will depend on:
+- Age.
+- Historical events.
+- Religious relevance.
+- Cultural importance.
+- Architectural value.
+- Significance to the population.
+
+## 14.4. Protected historical areas
+
+The player may define historical areas.
+
+Within these areas they may establish preservation rules:
+- Prohibit demolitions.
+- Prevent architectural modifications.
+- Restrict expansions.
+- Preserve materials and styles.
+- Limit new construction.
+- Allow controlled restorations.
+
+The goal is for the player to be able to preserve entire sectors of the city.
+
+Historical protection will be a player decision, not a general imposition by the system.
+
+---
+
+# 15. Construction tools
+
+The initial interface will have intermediate complexity.
+
+Ease of use will be prioritized without giving up useful tools.
+
+## 15.1. Initial tools
+
+- Building placement.
+- Rotation.
+- Alignment.
+- Optional grid.
+- Multiple selection.
+- Copy and paste.
+- Demolition.
+- Road construction.
+- Connection tools.
+- Saving of blueprints.
+- Reuse of designs.
+
+## 15.2. Blueprints and designs
+
+The player may save configurations of buildings and structures.
+
+Examples:
+- Farms.
+- Districts.
+- Markets.
+- Productive complexes.
+- Fortifications.
+- Residential developments.
+
+These designs may be reused and adapted.
+
+## 15.3. Evolution of the tools
+
+The tools may expand over time, incorporating more advanced urban-planning functionalities.
+
+---
+
+# 16. Camera and visualization
+
+The camera must allow observing the city from different perspectives.
+
+## 16.1. Camera modes
+
+- Overview.
+- Isometric view.
+- Free camera.
+- Rotation.
 - Zoom.
-- Vista cercana.
-- Vista a nivel de calle.
+- Close-up view.
+- Street-level view.
 
-## 16.2. Nivel de detalle
+## 16.2. Level of detail
 
-El nivel de detalle cambiará según la distancia de observación.
+The level of detail will change according to the viewing distance.
 
-A corta distancia:
-- Detalles arquitectónicos.
-- Ciudadanos.
-- Mobiliario.
-- Animaciones.
-- Actividades cotidianas.
+At close range:
+- Architectural details.
+- Citizens.
+- Furniture.
+- Animations.
+- Everyday activities.
 
-A media distancia:
-- Edificios.
-- Barrios.
-- Calles.
-- Infraestructura.
+At medium distance:
+- Buildings.
+- Districts.
+- Streets.
+- Infrastructure.
 
-A gran distancia:
-- Silueta urbana.
-- Densidad.
-- Distribución de barrios.
-- Evolución general de la ciudad.
+At great distance:
+- Urban silhouette.
+- Density.
+- District distribution.
+- Overall evolution of the city.
 
-La transición deberá ser fluida y mantener la identidad visual del asentamiento.
-
----
-
-# 17. Escala y rendimiento
-
-El sistema deberá soportar asentamientos de diferentes dimensiones.
-
-Desde pequeñas aldeas hasta grandes ciudades.
-
-## 17.1. Escalabilidad
-
-Se contemplan:
-- Aldeas de decenas de habitantes.
-- Pueblos de cientos.
-- Ciudades de miles.
-- Grandes centros urbanos de decenas o cientos de miles.
-
-## 17.2. Simulación agregada
-
-Para evitar problemas de rendimiento, se combinarán diferentes niveles de simulación.
-
-Los edificios cercanos y relevantes podrán tener mayor detalle.
-
-Los sectores alejados podrán utilizar representaciones simplificadas.
-
-La misma filosofía se aplicará a los ciudadanos y a los procesos urbanos.
-
-## 17.3. Escalabilidad visual
-
-El nivel de detalle deberá adaptarse a la cámara y a la importancia de los elementos.
-
-La ciudad deberá seguir siendo visualmente atractiva tanto cuando se observa una vivienda como cuando se contempla una metrópolis completa.
+The transition must be fluid and maintain the visual identity of the settlement.
 
 ---
 
-# 18. Configuración de complejidad
+# 17. Scale and performance
 
-El sistema permitirá configurar el nivel de intervención del jugador.
+The system must support settlements of different dimensions.
 
-## 18.1. Nivel básico
+From small villages to large cities.
 
-- Crecimiento urbano principalmente automático.
-- Influencia simplificada de los edificios.
-- Infraestructura con pocos parámetros.
-- Construcción sencilla.
-- Gestión reducida de mantenimiento.
-- Belleza calculada automáticamente.
+## 17.1. Scalability
 
-## 18.2. Nivel intermedio
+The following are contemplated:
+- Villages of dozens of inhabitants.
+- Towns of hundreds.
+- Cities of thousands.
+- Large urban centers of tens or hundreds of thousands.
 
-- Mayor control de barrios.
-- Gestión de mantenimiento.
-- Mejoras de infraestructura.
-- Control de áreas históricas.
-- Indicadores de belleza local y global.
-- Mayor influencia sobre el crecimiento urbano.
+## 17.2. Aggregate simulation
 
-## 18.3. Nivel avanzado
+To avoid performance problems, different levels of simulation will be combined.
 
-- Planificación urbana detallada.
-- Control avanzado de infraestructura.
-- Gestión de densidad.
-- Regulaciones de construcción.
-- Influencia detallada de edificios.
-- Gestión patrimonial.
-- Análisis de congestión y capacidad.
-- Control de expansión urbana.
+Nearby and relevant buildings may have greater detail.
 
-Los diferentes niveles deberán mantener las mismas reglas fundamentales. La diferencia estará en el grado de control y detalle que se presenta al jugador.
+Distant sectors may use simplified representations.
+
+The same philosophy will apply to citizens and urban processes.
+
+## 17.3. Visual scalability
+
+The level of detail must adapt to the camera and the importance of the elements.
+
+The city must remain visually appealing both when observing a single dwelling and when contemplating an entire metropolis.
 
 ---
 
-# 19. Integración con otros sistemas
+# 18. Complexity configuration
 
-El Sistema de Construcción y Arquitectura estará conectado con:
+The system will allow configuring the player's level of intervention.
 
-**Economía**
-- Costos.
-- Materiales.
-- Mantenimiento.
-- Propiedad.
-- Inversión.
-- Patrimonio.
+## 18.1. Basic level
 
-**Producción y trabajo**
-- Mano de obra.
-- Profesiones.
-- Materiales.
-- Herramientas.
-- Construcción de instalaciones productivas.
+- Mainly automatic urban growth.
+- Simplified building influence.
+- Infrastructure with few parameters.
+- Simple construction.
+- Reduced maintenance management.
+- Automatically calculated beauty.
 
-**Población**
-- Viviendas.
-- Densidad.
-- Barrios.
-- Necesidades.
-- Crecimiento orgánico.
+## 18.2. Intermediate level
 
-**Tecnología**
-- Nuevos materiales.
-- Nuevas técnicas.
-- Arquitectura vertical.
-- Infraestructura avanzada.
+- Greater control of districts.
+- Maintenance management.
+- Infrastructure improvements.
+- Control of historical areas.
+- Local and global beauty indicators.
+- Greater influence over urban growth.
 
-**Cultura y religión**
-- Estilos arquitectónicos.
-- Monumentos.
-- Templos.
-- Patrimonio.
-- Identidad urbana.
+## 18.3. Advanced level
 
-**Política**
-- Regulaciones.
-- Protección histórica.
-- Planificación urbana.
-- Inversión pública.
+- Detailed urban planning.
+- Advanced infrastructure control.
+- Density management.
+- Construction regulations.
+- Detailed building influence.
+- Heritage management.
+- Congestion and capacity analysis.
+- Control of urban expansion.
 
-**Medioambiente**
-- Terreno.
-- Clima.
-- Recursos.
-- Desastres.
-- Contaminación.
+The different levels must keep the same fundamental rules. The difference will be in the degree of control and detail presented to the player.
 
 ---
 
-# 20. MVP — Primera versión jugable
+# 19. Integration with other systems
 
-El objetivo del MVP no será implementar toda la complejidad del sistema, sino construir una base técnica que permita evolucionar hacia ella.
+The Construction and Architecture System will be connected with:
 
-## 20.1. Funcionalidades iniciales
+**Economy**
+- Costs.
+- Materials.
+- Maintenance.
+- Property.
+- Investment.
+- Heritage.
 
-- Construcción libre.
-- Cuadrícula opcional.
-- Rotación.
-- Construcción mediante trabajadores y materiales.
-- Caminos básicos.
-- Viviendas.
-- Edificios productivos.
-- Almacenes.
-- Materiales de construcción.
-- Demolición.
-- Mantenimiento básico.
-- Mejoras de edificios.
-- Ampliaciones modulares sencillas.
-- Belleza local y global simplificada.
-- Cámara con zoom y rotación.
+**Production and labor**
+- Labor.
+- Professions.
+- Materials.
+- Tools.
+- Construction of productive facilities.
 
-## 20.2. Edificios iniciales
+**Population**
+- Dwellings.
+- Density.
+- Districts.
+- Needs.
+- Organic growth.
 
-- Vivienda.
-- Recolector.
-- Leñador.
-- Cantera.
-- Granja.
-- Molino.
-- Panadería.
-- Almacén.
+**Technology**
+- New materials.
+- New techniques.
+- Vertical architecture.
+- Advanced infrastructure.
 
-## 20.3. Materiales iniciales
+**Culture and religion**
+- Architectural styles.
+- Monuments.
+- Temples.
+- Heritage.
+- Urban identity.
 
-- Madera.
-- Piedra.
-- Barro.
-- Paja.
+**Politics**
+- Regulations.
+- Historical protection.
+- Urban planning.
+- Public investment.
 
-## 20.4. Escenario de prueba
-
-Una aldea inicial de aproximadamente 30 habitantes.
-
-El jugador deberá poder:
-1. Seleccionar un terreno.
-2. Construir viviendas.
-3. Construir instalaciones productivas.
-4. Crear caminos.
-5. Asignar trabajadores.
-6. Obtener materiales.
-7. Ampliar construcciones.
-8. Mejorar edificios.
-9. Observar cómo evoluciona visualmente el asentamiento.
-
-La arquitectura técnica deberá contemplar desde el comienzo la evolución histórica de los edificios, aunque el MVP implemente pocas variantes.
+**Environment**
+- Terrain.
+- Climate.
+- Resources.
+- Disasters.
+- Pollution.
 
 ---
 
-# 21. Principios técnicos y de diseño
+# 20. MVP — First playable version
 
-1. Los edificios deberán estar preparados para múltiples variantes visuales y funcionales.
-2. Las mejoras deberán ser configurables y no depender de reemplazar necesariamente el edificio original.
-3. Las construcciones históricas deberán poder conservarse.
-4. Las ampliaciones deberán integrarse con la estructura existente.
-5. Los materiales y estilos deberán poder combinarse según reglas históricas y culturales.
-6. La simulación deberá soportar diferentes escalas de ciudades.
-7. La belleza deberá poder calcularse tanto localmente como globalmente.
-8. Las herramientas de construcción deberán ser independientes de la complejidad de simulación.
-9. El sistema deberá permitir incorporar nuevas épocas sin rediseñar su arquitectura central.
-10. La evolución visual deberá ser una prioridad desde las primeras etapas de desarrollo.
+The goal of the MVP will not be to implement all the system's complexity, but to build a technical foundation that allows evolving toward it.
+
+## 20.1. Initial functionalities
+
+- Free construction.
+- Optional grid.
+- Rotation.
+- Construction through workers and materials.
+- Basic roads.
+- Dwellings.
+- Productive buildings.
+- Storehouses.
+- Construction materials.
+- Demolition.
+- Basic maintenance.
+- Building upgrades.
+- Simple modular expansions.
+- Simplified local and global beauty.
+- Camera with zoom and rotation.
+
+## 20.2. Initial buildings
+
+- Dwelling.
+- Gatherer.
+- Woodcutter.
+- Quarry.
+- Farm.
+- Mill.
+- Bakery.
+- Storehouse.
+
+## 20.3. Initial materials
+
+- Wood.
+- Stone.
+- Mud.
+- Straw.
+
+## 20.4. Test scenario
+
+An initial village of approximately 30 inhabitants.
+
+The player must be able to:
+1. Select a plot of land.
+2. Build dwellings.
+3. Build productive facilities.
+4. Create roads.
+5. Assign workers.
+6. Obtain materials.
+7. Expand structures.
+8. Upgrade buildings.
+9. Observe how the settlement evolves visually.
+
+The technical architecture must contemplate the historical evolution of buildings from the start, even though the MVP implements few variants.
 
 ---
 
-# 22. Decisiones confirmadas
+# 21. Technical and design principles
 
-| Tema | Decisión |
+1. Buildings must be prepared for multiple visual and functional variants.
+2. Upgrades must be configurable and not necessarily depend on replacing the original building.
+3. Historical structures must be able to be preserved.
+4. Expansions must integrate with the existing structure.
+5. Materials and styles must be combinable according to historical and cultural rules.
+6. The simulation must support different city scales.
+7. Beauty must be calculable both locally and globally.
+8. Construction tools must be independent of simulation complexity.
+9. The system must allow incorporating new eras without redesigning its core architecture.
+10. Visual evolution must be a priority from the earliest stages of development.
+
+---
+
+# 22. Confirmed decisions
+
+| Topic | Decision |
 |---|---|
-| Construcción | Libre con cuadrícula opcional |
-| Rotación | Libre y por intervalos |
-| Dimensiones | Variables en determinados edificios |
-| Decoración | Personalización profunda |
-| Proceso de obra | Construcción mediante trabajadores y materiales |
-| Construcción por etapas | Sí, con evolución progresiva |
-| Mano de obra | Modelo mixto y evolutivo |
-| Falta de materiales | La obra se detiene y busca alternativas |
-| Evolución arquitectónica | Decisión del jugador |
-| Transformaciones | Desde pequeñas hasta radicales |
-| Conservación histórica | Edificios históricos protegibles |
-| Edificios obsoletos | Pueden seguir funcionando |
-| Abandono | Deterioro y posibilidad de ruinas |
-| Materiales | Funcionales y estéticos |
-| Disponibilidad regional | Comercio permite compensar limitaciones |
-| Materiales alternativos | Sí, en determinados edificios |
-| Técnicas antiguas | Pueden conservarse |
-| Arquitectura vertical | Evolución histórica |
-| Alturas | Influencia del jugador |
-| Crecimiento urbano | Mixto, orientado por el jugador |
-| Barrios | Desarrollo orgánico |
-| Densidad | Mecánica importante |
-| Influencia urbana | Configurable |
-| Centros históricos | Libres para modificar |
-| Infraestructura | Amplia y evolutiva |
-| Caminos | Trazado libre con conexiones automáticas |
-| Evolución de caminos | Principalmente automática |
-| Capacidad de infraestructura | Simulación simplificada |
-| Estilos arquitectónicos | Cultura, geografía, época y otros factores |
-| Intercambio cultural | Sí, condicionado |
-| Diferencias sociales | Reflejadas en la arquitectura |
-| Terreno | Adaptación parcial |
-| Modificación del terreno | Con costos y límites |
-| Clima | Principalmente visual inicialmente |
-| Desastres | Configurables y deshabilitables |
-| Demolición | Libre con costos y consecuencias |
-| Traslado | Permitido con limitaciones |
-| Patrimonio | Sistema de protección histórica |
-| Herramientas | Complejidad intermedia inicialmente |
-| Planos | Sí |
-| Copiar y pegar | Sí |
-| Cámara | Múltiples perspectivas |
-| Escala | Desde aldeas hasta grandes ciudades |
-| Rendimiento | Simulación agregada |
-| Complejidad | Configurable |
-| Experiencia principal | Civilización integrada |
+| Construction | Free, with an optional grid |
+| Rotation | Free and in increments |
+| Dimensions | Variable in certain buildings |
+| Decoration | Deep customization |
+| Construction-work process | Construction through workers and materials |
+| Staged construction | Yes, with progressive evolution |
+| Labor | Mixed and evolving model |
+| Lack of materials | The work stops and seeks alternatives |
+| Architectural evolution | Player decision |
+| Transformations | From small to radical |
+| Historical preservation | Protectable historical buildings |
+| Obsolete buildings | Can continue to function |
+| Abandonment | Deterioration and the possibility of ruins |
+| Materials | Functional and aesthetic |
+| Regional availability | Trade allows compensating for limitations |
+| Alternative materials | Yes, in certain buildings |
+| Old techniques | Can be preserved |
+| Vertical architecture | Historical evolution |
+| Heights | Player influence |
+| Urban growth | Mixed, guided by the player |
+| Districts | Organic development |
+| Density | An important mechanic |
+| Urban influence | Configurable |
+| Historical centers | Free to modify |
+| Infrastructure | Broad and evolving |
+| Roads | Free routing with automatic connections |
+| Road evolution | Mainly automatic |
+| Infrastructure capacity | Simplified simulation |
+| Architectural styles | Culture, geography, era and other factors |
+| Cultural exchange | Yes, conditioned |
+| Social differences | Reflected in architecture |
+| Terrain | Partial adaptation |
+| Terrain modification | With costs and limits |
+| Climate | Mainly visual initially |
+| Disasters | Configurable and able to be disabled |
+| Demolition | Free, with costs and consequences |
+| Relocation | Allowed with limitations |
+| Heritage | Historical protection system |
+| Tools | Intermediate complexity initially |
+| Blueprints | Yes |
+| Copy and paste | Yes |
+| Camera | Multiple perspectives |
+| Scale | From villages to large cities |
+| Performance | Aggregate simulation |
+| Complexity | Configurable |
+| Main experience | Integrated civilization |
 
 ---
 
-# 23. Temas para profundizar durante el desarrollo
+# 23. Topics to explore further during development
 
-Los siguientes aspectos quedan abiertos a una especificación posterior:
+The following aspects remain open to later specification:
 
-- Cálculo matemático de belleza.
-- Sistema de valoración patrimonial.
-- Reglas de protección de áreas históricas.
-- Algoritmos de crecimiento orgánico.
-- Generación automática de barrios.
-- Reglas de evolución arquitectónica por civilización.
-- Sistema de adaptación de edificios al terreno.
-- Capacidad y congestión de infraestructura.
-- Gestión de materiales alternativos.
-- Modelado de transformaciones visuales.
-- Rendimiento de grandes ciudades.
-- Generación de ruinas y restauraciones.
+- Mathematical calculation of beauty.
+- Heritage-valuation system.
+- Rules for protecting historical areas.
+- Organic-growth algorithms.
+- Automatic generation of districts.
+- Architectural-evolution rules per civilization.
+- System for adapting buildings to the terrain.
+- Infrastructure capacity and congestion.
+- Management of alternative materials.
+- Modeling of visual transformations.
+- Performance of large cities.
+- Generation of ruins and restorations.
 
 ---
 
-# 24. Visión final
+# 24. Final vision
 
-La construcción y la arquitectura deben convertirse en uno de los elementos más memorables de la experiencia.
+Construction and architecture must become one of the most memorable elements of the experience.
 
-El jugador no debería sentir que está colocando edificios de diferentes épocas.
+The player should not feel that they are placing buildings from different eras.
 
-Debería sentir que está construyendo una civilización.
+They should feel that they are building a civilization.
 
-Una ciudad que comenzó con unas pocas viviendas puede convertirse en una metrópolis con barrios históricos, grandes avenidas, templos, monumentos, edificios modernos y construcciones que sobrevivieron a siglos de transformaciones.
+A city that began with a few dwellings can become a metropolis with historical districts, great avenues, temples, monuments, modern buildings and structures that survived centuries of transformations.
 
-El jugador debe poder decidir si quiere modernizar su ciudad, conservar su arquitectura tradicional o combinar ambas cosas.
+The player must be able to decide whether they want to modernize their city, preserve its traditional architecture or combine both.
 
-Una antigua vivienda puede convertirse en un edificio moderno, pero también puede permanecer intacta durante mil años porque el jugador decidió preservarla.
+An old dwelling can become a modern building, but it can also remain intact for a thousand years because the player decided to preserve it.
 
-Las ruinas, los barrios antiguos y las construcciones históricas no serán elementos decorativos sin significado: serán parte de la identidad de la civilización.
+Ruins, old districts and historical structures will not be meaningless decorative elements: they will be part of the civilization's identity.
 
-**La ciudad debe contar su propia historia. Y esa historia debe ser la historia del jugador.**
+**The city must tell its own story. And that story must be the player's story.**

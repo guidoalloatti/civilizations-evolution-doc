@@ -1,446 +1,446 @@
-> **Control documental:** 0.1 | Estado: diseño conceptual; las decisiones marcadas como confirmadas se preservan desde la fuente. **Alcance:** este GDD es fuente de detalle de su dominio; el GDD Maestro establece la visión común. Los conflictos intersistema se registran en AUDIT_REPORT.md y no se resuelven implícitamente.
+> **Document control:** 0.1 | Status: conceptual design; decisions marked as confirmed are preserved from the source. **Scope:** this GDD is the detail source for its domain; the Master GDD establishes the common vision. Cross-system conflicts are recorded in AUDIT_REPORT.md and are not resolved implicitly.
 
 ---
 
-# GDD — Sistema de Cultura, Identidad y Tradiciones v0.1
+# GDD — Culture, Identity and Traditions System v0.1
 
-## 1. Visión general
+## 1. Overview
 
-El sistema de Cultura, Identidad y Tradiciones representa el conjunto de características que definen la personalidad de una civilización y sus habitantes.
+The Culture, Identity and Traditions system represents the set of characteristics that define the personality of a civilization and its inhabitants.
 
-Incluye sus idiomas, gastronomía, vestimenta, música, arte, arquitectura, costumbres, valores, festividades, formas de entretenimiento y tradiciones.
+It includes its languages, cuisine, clothing, music, art, architecture, customs, values, festivities, forms of entertainment and traditions.
 
-La cultura evolucionará junto con la civilización. No será un elemento estático ni una característica elegida únicamente al comienzo de la partida.
+Culture will evolve alongside the civilization. It will not be a static element nor a characteristic chosen only at the start of the game.
 
-Cada sociedad desarrollará una identidad propia a partir de:
-- Su historia.
-- Su geografía.
-- Su clima.
-- Sus recursos.
-- Su organización social.
-- Sus creencias religiosas.
-- Su desarrollo tecnológico.
-- Sus relaciones con otras civilizaciones.
-- Las decisiones del jugador.
+Each society will develop its own identity based on:
+- Its history.
+- Its geography.
+- Its climate.
+- Its resources.
+- Its social organization.
+- Its religious beliefs.
+- Its technological development.
+- Its relations with other civilizations.
+- The player's decisions.
 
-El jugador podrá influir profundamente en la evolución cultural, aunque la sociedad conservará cierta autonomía.
+The player will be able to influence cultural evolution deeply, although society will retain a degree of autonomy.
 
-**Principio fundamental:** el jugador debe poder observar cómo su civilización desarrolla una identidad propia, reconocible y diferente de cualquier otra.
+**Fundamental principle:** the player should be able to observe how their civilization develops its own identity, recognizable and different from any other.
 
-## 2. Componentes culturales
+## 2. Cultural components
 
-El sistema contemplará múltiples dimensiones culturales.
+The system will consider multiple cultural dimensions.
 
-| Componente | Características |
+| Component | Characteristics |
 |---|---|
-| Idioma | Lenguas, dialectos, escritura y evolución lingüística. |
-| Gastronomía | Ingredientes, recetas, técnicas y costumbres alimentarias. |
-| Vestimenta | Prendas, materiales, estilos y modas. |
-| Música | Instrumentos, géneros, tradiciones y danzas. |
-| Arte | Pintura, escultura, artesanía y expresiones visuales. |
-| Arquitectura | Estilos, materiales, decoración y tradiciones constructivas. |
-| Literatura | Narraciones, poesía, textos y transmisión cultural. |
-| Tradiciones | Costumbres familiares y comunitarias. |
-| Festividades | Celebraciones religiosas, estacionales, históricas y populares. |
-| Valores | Normas sociales, ideales y principios colectivos. |
-| Familia | Costumbres familiares y estructuras culturales. |
-| Entretenimiento | Juegos, deportes, espectáculos y actividades recreativas. |
+| Language | Languages, dialects, writing and linguistic evolution. |
+| Cuisine | Ingredients, recipes, techniques and food customs. |
+| Clothing | Garments, materials, styles and fashions. |
+| Music | Instruments, genres, traditions and dances. |
+| Art | Painting, sculpture, crafts and visual expressions. |
+| Architecture | Styles, materials, decoration and building traditions. |
+| Literature | Narratives, poetry, texts and cultural transmission. |
+| Traditions | Family and community customs. |
+| Festivities | Religious, seasonal, historical and popular celebrations. |
+| Values | Social norms, ideals and collective principles. |
+| Family | Family customs and cultural structures. |
+| Entertainment | Games, sports, performances and recreational activities. |
 
-Estos componentes evolucionarán de manera independiente, pero estarán relacionados entre sí.
+These components will evolve independently, but they will be related to one another.
 
-Por ejemplo, una transformación religiosa podrá modificar las festividades, la música, la arquitectura y determinadas costumbres.
+For example, a religious transformation may modify festivities, music, architecture and certain customs.
 
-## 3. Identidad cultural
+## 3. Cultural identity
 
-Cada civilización desarrollará una identidad cultural general.
+Each civilization will develop a general cultural identity.
 
-Sin embargo, no será completamente homogénea.
+However, it will not be completely homogeneous.
 
-Dentro de una misma civilización podrán existir:
-- Culturas regionales.
-- Tradiciones locales.
-- Identidades urbanas.
-- Identidades rurales.
-- Costumbres de diferentes grupos sociales.
-- Tradiciones de comunidades minoritarias.
+Within a single civilization there may be:
+- Regional cultures.
+- Local traditions.
+- Urban identities.
+- Rural identities.
+- Customs of different social groups.
+- Traditions of minority communities.
 
-Esto permitirá que dos ciudades de una misma civilización tengan diferencias culturales importantes.
+This will allow two cities of the same civilization to have significant cultural differences.
 
-Por ejemplo, una región costera podrá desarrollar una identidad marítima, mientras que una región montañosa tendrá tradiciones, gastronomía y costumbres diferentes.
+For example, a coastal region may develop a maritime identity, while a mountainous region will have different traditions, cuisine and customs.
 
-La identidad general de la civilización surgirá de la interacción entre estas diferentes expresiones culturales.
+The civilization's general identity will emerge from the interaction between these different cultural expressions.
 
-## 4. Geografía y entorno
+## 4. Geography and environment
 
-El entorno tendrá influencia sobre el desarrollo cultural.
+The environment will influence cultural development.
 
-Los principales factores serán:
+The main factors will be:
 
-- Clima.
-- Geografía.
-- Disponibilidad de recursos.
-- Vegetación.
+- Climate.
+- Geography.
+- Resource availability.
+- Vegetation.
 - Fauna.
-- Proximidad al mar.
-- Ríos y lagos.
-- Montañas.
-- Desiertos.
-- Bosques.
-- Estaciones del año.
+- Proximity to the sea.
+- Rivers and lakes.
+- Mountains.
+- Deserts.
+- Forests.
+- Seasons of the year.
 
-Estos factores podrán influir en:
+These factors may influence:
 
-**Gastronomía:** ingredientes disponibles, técnicas de conservación y preparación.
+**Cuisine:** available ingredients, preservation and preparation techniques.
 
-**Vestimenta:** materiales, diseños y adaptación climática.
+**Clothing:** materials, designs and adaptation to climate.
 
-**Arquitectura:** materiales, formas constructivas y soluciones ambientales.
+**Architecture:** materials, building forms and environmental solutions.
 
-**Costumbres:** actividades cotidianas, celebraciones y organización comunitaria.
+**Customs:** everyday activities, celebrations and community organization.
 
-**Economía:** actividades tradicionales y formas de subsistencia.
+**Economy:** traditional activities and forms of subsistence.
 
-La geografía no determinará completamente una cultura, pero contribuirá a darle características propias.
+Geography will not completely determine a culture, but it will contribute to giving it its own characteristics.
 
-## 5. Intercambio y difusión cultural
+## 5. Cultural exchange and diffusion
 
-Las culturas podrán influenciarse mutuamente.
+Cultures will be able to influence one another.
 
-Los mecanismos principales serán:
+The main mechanisms will be:
 
-- Comercio.
-- Migraciones.
-- Diplomacia.
-- Guerras.
-- Conquistas.
-- Colonización.
-- Matrimonios entre comunidades.
-- Contacto religioso.
-- Intercambio intelectual.
-- Exploración.
+- Trade.
+- Migrations.
+- Diplomacy.
+- Wars.
+- Conquests.
+- Colonization.
+- Marriages between communities.
+- Religious contact.
+- Intellectual exchange.
+- Exploration.
 
-Las influencias podrán producir:
+These influences may produce:
 
-- Adopción de costumbres.
-- Incorporación de nuevas recetas.
-- Nuevos estilos arquitectónicos.
-- Incorporación de instrumentos musicales.
-- Cambios en la vestimenta.
-- Préstamos lingüísticos.
-- Nuevas técnicas artísticas.
-- Incorporación de festividades.
+- Adoption of customs.
+- Incorporation of new recipes.
+- New architectural styles.
+- Incorporation of musical instruments.
+- Changes in clothing.
+- Linguistic borrowings.
+- New artistic techniques.
+- Incorporation of festivities.
 
-La difusión no será necesariamente inmediata.
+Diffusion will not necessarily be immediate.
 
-Una influencia cultural podrá comenzar en una región, expandirse lentamente y eventualmente convertirse en parte de la identidad general.
+A cultural influence may begin in one region, spread slowly and eventually become part of the general identity.
 
-## 6. Transformación y fusión cultural
+## 6. Cultural transformation and fusion
 
-Cuando dos culturas entren en contacto, podrán producirse diferentes resultados:
+When two cultures come into contact, different outcomes may occur:
 
-- Una cultura adopta elementos de otra.
-- Ambas mantienen sus identidades originales.
-- Aparecen tradiciones híbridas.
-- Se desarrolla una nueva identidad regional.
-- Determinadas costumbres desaparecen.
-- Algunas tradiciones sobreviven durante siglos.
+- One culture adopts elements of another.
+- Both keep their original identities.
+- Hybrid traditions appear.
+- A new regional identity develops.
+- Certain customs disappear.
+- Some traditions survive for centuries.
 
-La integración cultural será gradual y dependerá de factores como:
+Cultural integration will be gradual and will depend on factors such as:
 
-- Intensidad del contacto.
-- Migraciones.
-- Relaciones comerciales.
-- Diferencias culturales.
-- Políticas del jugador.
-- Religión.
-- Educación.
-- Distribución de la población.
+- Intensity of contact.
+- Migrations.
+- Trade relations.
+- Cultural differences.
+- Player policies.
+- Religion.
+- Education.
+- Distribution of the population.
 
-Una civilización conquistadora no necesariamente impondrá su cultura por completo.
+A conquering civilization will not necessarily impose its culture entirely.
 
-También podrá adoptar elementos de las sociedades conquistadas.
+It may also adopt elements of the conquered societies.
 
-## 7. Idioma y evolución lingüística
+## 7. Language and linguistic evolution
 
-El idioma será una dimensión cultural importante.
+Language will be an important cultural dimension.
 
-Las civilizaciones podrán desarrollar lenguas propias, dialectos y variantes regionales.
+Civilizations will be able to develop their own languages, dialects and regional variants.
 
-Los idiomas podrán:
-- Evolucionar.
-- Dividirse.
-- Mezclarse.
-- Incorporar vocabulario extranjero.
-- Desarrollar sistemas de escritura.
-- Desaparecer.
-- Ser reemplazados por otras lenguas.
+Languages may:
+- Evolve.
+- Split.
+- Blend.
+- Incorporate foreign vocabulary.
+- Develop writing systems.
+- Disappear.
+- Be replaced by other languages.
 
-La expansión de una lengua podrá depender de:
-- Migraciones.
-- Comercio.
-- Educación.
-- Administración estatal.
-- Religión.
-- Conquistas.
-- Prestigio cultural.
+The spread of a language may depend on:
+- Migrations.
+- Trade.
+- Education.
+- State administration.
+- Religion.
+- Conquests.
+- Cultural prestige.
 
-Una civilización podrá tener un idioma predominante y conservar múltiples lenguas regionales o minoritarias.
+A civilization may have a predominant language and preserve multiple regional or minority languages.
 
-La lengua también podrá influir en la cohesión social, la administración y las relaciones entre pueblos.
+Language may also influence social cohesion, administration and relations between peoples.
 
-## 8. Modas y tendencias culturales
+## 8. Cultural fashions and trends
 
-Las sociedades desarrollarán tendencias culturales.
+Societies will develop cultural trends.
 
-Estas podrán surgir espontáneamente o ser favorecidas por el jugador.
+These may arise spontaneously or be favored by the player.
 
-Ejemplos:
+Examples:
 
-- Una nueva moda arquitectónica.
-- Un estilo de vestimenta popular.
-- Una corriente artística.
-- Nuevos géneros musicales.
-- Tendencias gastronómicas.
-- Movimientos intelectuales.
-- Nuevas formas de entretenimiento.
+- A new architectural fashion.
+- A popular clothing style.
+- An artistic movement.
+- New musical genres.
+- Culinary trends.
+- Intellectual movements.
+- New forms of entertainment.
 
-Las tendencias podrán tener diferentes niveles de difusión:
+Trends may have different levels of diffusion:
 
 1. Local.
 2. Regional.
-3. Nacional o civilizacional.
-4. Internacional.
+3. National or civilizational.
+4. International.
 
-Algunas serán pasajeras, mientras que otras podrán convertirse en tradiciones duraderas.
+Some will be transient, while others may become lasting traditions.
 
-El jugador podrá favorecer su difusión mediante políticas, instituciones, financiación y construcción de espacios culturales.
+The player will be able to favor their diffusion through policies, institutions, funding and the construction of cultural spaces.
 
-## 9. Intervención del jugador
+## 9. Player intervention
 
-El jugador podrá influir profundamente en la cultura sin controlar necesariamente cada detalle.
+The player will be able to influence culture deeply without necessarily controlling every detail.
 
-Entre sus herramientas estarán:
+Their tools will include:
 
-- Promover determinadas tradiciones.
-- Financiar expresiones artísticas.
-- Favorecer la educación.
-- Establecer políticas lingüísticas.
-- Promover festividades.
-- Construir espacios culturales.
-- Favorecer intercambios culturales.
-- Preservar tradiciones históricas.
-- Incentivar determinadas corrientes artísticas.
-- Promover la integración cultural.
+- Promoting certain traditions.
+- Funding artistic expressions.
+- Favoring education.
+- Establishing language policies.
+- Promoting festivities.
+- Building cultural spaces.
+- Favoring cultural exchanges.
+- Preserving historical traditions.
+- Encouraging certain artistic movements.
+- Promoting cultural integration.
 
-Las sociedades conservarán autonomía.
+Societies will retain autonomy.
 
-Por ejemplo, el jugador podrá promover un estilo arquitectónico, pero su aceptación dependerá de las condiciones sociales, económicas y culturales.
+For example, the player may promote an architectural style, but its acceptance will depend on social, economic and cultural conditions.
 
-## 10. Cultura y evolución visual
+## 10. Culture and visual evolution
 
-La evolución cultural deberá ser visible en el mundo.
+Cultural evolution must be visible in the world.
 
-No alcanzará con mostrar estadísticas o indicadores en una interfaz.
+It will not be enough to show statistics or indicators in an interface.
 
-Los cambios culturales deberán reflejarse directamente en los elementos visuales del juego.
+Cultural changes must be reflected directly in the game's visual elements.
 
-### Vestimenta
-Los habitantes modificarán progresivamente su indumentaria según:
-- Época.
-- Cultura.
-- Región.
-- Clase social.
-- Profesión.
-- Religión.
-- Riqueza.
-- Clima.
+### Clothing
+Inhabitants will progressively modify their attire according to:
+- Era.
+- Culture.
+- Region.
+- Social class.
+- Profession.
+- Religion.
+- Wealth.
+- Climate.
 
-### Arquitectura
-Los edificios incorporarán:
-- Estilos regionales.
-- Decoraciones culturales.
-- Elementos religiosos.
-- Materiales característicos.
-- Técnicas constructivas.
-- Motivos artísticos.
+### Architecture
+Buildings will incorporate:
+- Regional styles.
+- Cultural decorations.
+- Religious elements.
+- Characteristic materials.
+- Building techniques.
+- Artistic motifs.
 
-### Gastronomía
-La evolución gastronómica podrá reflejarse en:
-- Mercados.
-- Puestos de comida.
-- Restaurantes y tabernas.
-- Ingredientes.
-- Utensilios.
-- Técnicas de preparación.
-- Costumbres alimentarias.
+### Cuisine
+Culinary evolution may be reflected in:
+- Markets.
+- Food stalls.
+- Restaurants and taverns.
+- Ingredients.
+- Utensils.
+- Preparation techniques.
+- Food customs.
 
-### Música y festividades
-Los habitantes podrán participar en:
-- Celebraciones.
-- Bailes.
-- Procesiones.
-- Espectáculos.
-- Eventos musicales.
-- Competencias.
-- Fiestas populares.
+### Music and festivities
+Inhabitants will be able to take part in:
+- Celebrations.
+- Dances.
+- Processions.
+- Performances.
+- Musical events.
+- Competitions.
+- Popular festivals.
 
-### Arte y espacios públicos
-La cultura podrá manifestarse en:
-- Monumentos.
-- Esculturas.
-- Pinturas.
-- Murales.
-- Decoraciones.
-- Plazas.
-- Edificios públicos.
-- Espacios ceremoniales.
+### Art and public spaces
+Culture may manifest itself in:
+- Monuments.
+- Sculptures.
+- Paintings.
+- Murals.
+- Decorations.
+- Squares.
+- Public buildings.
+- Ceremonial spaces.
 
-El jugador deberá poder reconocer visualmente las transformaciones culturales de su civilización.
+The player must be able to visually recognize the cultural transformations of their civilization.
 
-## 11. Tradiciones y patrimonio cultural
+## 11. Traditions and cultural heritage
 
-Las tradiciones podrán transmitirse entre generaciones.
+Traditions may be passed down between generations.
 
-Algunas podrán desaparecer, mientras que otras sobrevivirán durante siglos.
+Some may disappear, while others will survive for centuries.
 
-El sistema permitirá que existan tradiciones:
-- Familiares.
-- Religiosas.
-- Regionales.
-- Nacionales.
-- Militares.
-- Gastronómicas.
-- Artísticas.
-- Estacionales.
-- Históricas.
+The system will allow for traditions that are:
+- Familial.
+- Religious.
+- Regional.
+- National.
+- Military.
+- Culinary.
+- Artistic.
+- Seasonal.
+- Historical.
 
-El jugador podrá favorecer su preservación.
+The player will be able to favor their preservation.
 
-También podrá catalogar elementos culturales importantes como patrimonio histórico.
+The player will also be able to catalog important cultural elements as historical heritage.
 
-Esto se conectará con el sistema de construcción y conservación de edificios históricos.
+This will connect with the system for construction and preservation of historical buildings.
 
-Una tradición podrá perder popularidad, pero mantenerse en determinadas regiones o grupos sociales.
+A tradition may lose popularity but survive in certain regions or social groups.
 
-## 12. Cultura y clases sociales
+## 12. Culture and social classes
 
-Las diferentes clases y grupos sociales podrán desarrollar expresiones culturales propias.
+Different classes and social groups will be able to develop their own cultural expressions.
 
-Por ejemplo:
-- La aristocracia puede desarrollar modas y estilos particulares.
-- Los comerciantes pueden incorporar costumbres extranjeras.
-- Los trabajadores pueden desarrollar tradiciones comunitarias.
-- Las instituciones religiosas pueden preservar determinadas expresiones artísticas.
-- Las comunidades rurales pueden conservar tradiciones antiguas.
+For example:
+- The aristocracy may develop particular fashions and styles.
+- Traders may incorporate foreign customs.
+- Workers may develop community traditions.
+- Religious institutions may preserve certain artistic expressions.
+- Rural communities may conserve ancient traditions.
 
-La cultura no será exclusivamente una característica nacional.
+Culture will not be exclusively a national characteristic.
 
-También tendrá dimensiones sociales y regionales.
+It will also have social and regional dimensions.
 
-## 13. Cultura y religión
+## 13. Culture and religion
 
-Los sistemas cultural y religioso estarán estrechamente relacionados, pero no serán equivalentes.
+The cultural and religious systems will be closely related, but they will not be equivalent.
 
-La religión podrá influir en:
-- Festividades.
-- Arte.
-- Música.
-- Arquitectura.
-- Valores.
-- Costumbres.
-- Literatura.
-- Vestimenta.
+Religion may influence:
+- Festivities.
+- Art.
+- Music.
+- Architecture.
+- Values.
+- Customs.
+- Literature.
+- Clothing.
 
-Sin embargo, la cultura también tendrá dimensiones independientes de la religión.
+However, culture will also have dimensions independent of religion.
 
-Una sociedad podrá mantener una identidad cultural fuerte aunque cambien sus creencias religiosas.
+A society may maintain a strong cultural identity even if its religious beliefs change.
 
-## 14. Configuración y complejidad
+## 14. Configuration and complexity
 
-El sistema tendrá tres niveles:
+The system will have three levels:
 
-**Básico**
-- Identidad cultural general.
-- Algunas características regionales.
-- Influencias externas.
-- Evolución cultural simplificada.
+**Basic**
+- General cultural identity.
+- Some regional characteristics.
+- External influences.
+- Simplified cultural evolution.
 
-**Intermedio**
-- Idiomas.
-- Tradiciones.
-- Modas.
-- Expresiones artísticas.
-- Gastronomía.
-- Identidades regionales.
-- Difusión cultural.
+**Intermediate**
+- Languages.
+- Traditions.
+- Fashions.
+- Artistic expressions.
+- Cuisine.
+- Regional identities.
+- Cultural diffusion.
 
-**Avanzado**
-- Evolución lingüística detallada.
-- Diversidad cultural interna.
-- Tradiciones específicas.
-- Movimientos culturales.
-- Fusiones e influencias complejas.
-- Evolución detallada de las expresiones artísticas.
+**Advanced**
+- Detailed linguistic evolution.
+- Internal cultural diversity.
+- Specific traditions.
+- Cultural movements.
+- Complex fusions and influences.
+- Detailed evolution of artistic expressions.
 
-El jugador podrá configurar individualmente la profundidad de cada componente.
+The player will be able to configure the depth of each component individually.
 
-## 15. Integración con otros sistemas
+## 15. Integration with other systems
 
-El sistema estará conectado con:
+The system will be connected with:
 
-- **Población y sociedad:** identidad, grupos sociales, costumbres y cohesión.
-- **Religión:** creencias, rituales, valores y festividades.
-- **Política:** políticas culturales, idioma oficial y preservación del patrimonio.
-- **Construcción:** arquitectura, decoración, monumentos y espacios públicos.
-- **Economía:** gastronomía, artesanías, entretenimiento y actividades culturales.
-- **Educación:** transmisión de conocimientos, literatura e idiomas.
-- **Tecnología:** nuevas técnicas artísticas y medios de comunicación.
-- **Diplomacia:** intercambio e influencia cultural entre civilizaciones.
-- **Migración:** integración de comunidades y difusión de tradiciones.
+- **Population and society:** identity, social groups, customs and cohesion.
+- **Religion:** beliefs, rituals, values and festivities.
+- **Politics:** cultural policies, official language and heritage preservation.
+- **Construction:** architecture, decoration, monuments and public spaces.
+- **Economy:** cuisine, crafts, entertainment and cultural activities.
+- **Education:** transmission of knowledge, literature and languages.
+- **Technology:** new artistic techniques and means of communication.
+- **Diplomacy:** cultural exchange and influence between civilizations.
+- **Migration:** integration of communities and diffusion of traditions.
 
-## 16. MVP — Primera implementación
+## 16. MVP — First implementation
 
-La primera versión podrá incluir:
+The first version may include:
 
-- Identidad cultural básica.
-- Una cultura inicial.
-- Diferencias regionales sencillas.
-- Influencia del clima y los recursos.
-- Vestimenta diferenciada.
-- Algunos estilos arquitectónicos.
-- Tradiciones y festividades básicas.
-- Influencia cultural sobre la felicidad y cohesión social.
-- Intercambio cultural simplificado.
+- Basic cultural identity.
+- An initial culture.
+- Simple regional differences.
+- Influence of climate and resources.
+- Differentiated clothing.
+- Some architectural styles.
+- Basic traditions and festivities.
+- Cultural influence on happiness and social cohesion.
+- Simplified cultural exchange.
 
-La arquitectura técnica deberá permitir incorporar progresivamente todos los componentes culturales.
+The technical architecture must allow all cultural components to be incorporated progressively.
 
-## 17. Decisiones confirmadas
+## 17. Confirmed decisions
 
-| Tema | Decisión |
+| Topic | Decision |
 |---|---|
-| Evolución cultural | Orgánica e influenciable por el jugador. |
-| Componentes culturales | Todos los propuestos. |
-| Identidad | General, regional y local. |
-| Geografía | Influencia moderada y coherente. |
-| Intercambio cultural | Comercio, migraciones, guerras, diplomacia y otros contactos. |
-| Fusión cultural | Sí, progresiva y no necesariamente destructiva. |
-| Idiomas | Evolucionan, se dividen, mezclan y desaparecen. |
-| Modas | Sí, espontáneas y promovibles por el jugador. |
-| Intervención | Profunda, conservando autonomía social. |
-| Evolución visual | Fundamental y visible en el mundo. |
+| Cultural evolution | Organic and influenceable by the player. |
+| Cultural components | All those proposed. |
+| Identity | General, regional and local. |
+| Geography | Moderate and coherent influence. |
+| Cultural exchange | Trade, migrations, wars, diplomacy and other contacts. |
+| Cultural fusion | Yes, progressive and not necessarily destructive. |
+| Languages | Evolve, split, blend and disappear. |
+| Fashions | Yes, spontaneous and promotable by the player. |
+| Intervention | Deep, while preserving social autonomy. |
+| Visual evolution | Fundamental and visible in the world. |
 
-## 18. Visión final
+## 18. Final vision
 
-La cultura será uno de los principales elementos que diferenciarán a las civilizaciones.
+Culture will be one of the main elements that distinguish civilizations.
 
-Dos sociedades podrán comenzar en entornos similares y terminar desarrollando identidades completamente distintas.
+Two societies may begin in similar environments and end up developing completely different identities.
 
-Una podrá convertirse en una civilización marítima con grandes tradiciones comerciales, gastronomía basada en productos del mar y arquitectura costera.
+One may become a maritime civilization with great trading traditions, cuisine based on seafood and coastal architecture.
 
-Otra podrá desarrollar una identidad montañosa, con construcciones de piedra, tradiciones agrícolas particulares y expresiones artísticas propias.
+Another may develop a mountainous identity, with stone buildings, particular agricultural traditions and its own artistic expressions.
 
-Ambas podrán influenciarse, intercambiar costumbres y transformarse a lo largo de los siglos.
+Both may influence each other, exchange customs and transform over the centuries.
 
-El jugador deberá poder recorrer sus ciudades y reconocer su historia en la ropa de sus habitantes, sus edificios, sus mercados, sus celebraciones y sus espacios públicos.
+The player must be able to walk through their cities and recognize their history in the clothing of their inhabitants, their buildings, their markets, their celebrations and their public spaces.
 
-**La cultura no será una característica de la civilización: será su personalidad.**
+**Culture will not be a characteristic of the civilization: it will be its personality.**

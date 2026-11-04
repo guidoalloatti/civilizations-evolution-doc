@@ -1,130 +1,130 @@
 # DESIGN_CONSISTENCY_AUDIT — Civilization Evolutions
 
-> **Phase 2 — Auditoría de consistencia de diseño.** Revisión conjunta de los 22 GDD de sistema + Maestro + plan técnico. Análisis, no implementación. **No se resuelven conflictos de diseño por cuenta propia**: se clasifican y, donde corresponde, se remite a una resolución en [DESIGN_DECISION_REGISTER.md](DESIGN_DECISION_REGISTER.md). Desde el 2026-11-04, DR-00…DR-12 están **confirmadas por delegación** del diseñador (reversibles y auditables); DR-13 sigue **sin resolver** (fuente truncada). La columna **Severidad** y **¿Confirmación del usuario?** (§ Severidad abajo) indica cuáles requieren todavía una decisión humana explícita antes de implementar.
-> Versión: 1.1 · Última actualización: 2026-11-04 · Estado: análisis · Fuentes: ver [DOCUMENTATION_INDEX.md](DOCUMENTATION_INDEX.md). Extiende (no reemplaza) [AUDIT_REPORT.md](AUDIT_REPORT.md).
+> **Phase 2 — Design consistency audit.** Joint review of the 22 system GDDs + Master + technical plan. Analysis, not implementation. **Design conflicts are not resolved unilaterally**: they are classified and, where appropriate, referred to a resolution in [DESIGN_DECISION_REGISTER.md](DESIGN_DECISION_REGISTER.md). As of 2026-11-04, DR-00…DR-12 are **confirmed by delegation** from the designer (reversible and auditable); DR-13 remains **unresolved** (truncated source). The **Severity** column and **User confirmation?** (§ Severity below) indicate which still require an explicit human decision before implementing.
+> Version: 1.1 · Last updated: 2026-11-04 · Status: analysis · Sources: see [DOCUMENTATION_INDEX.md](DOCUMENTATION_INDEX.md). Extends (does not replace) [AUDIT_REPORT.md](AUDIT_REPORT.md).
 
-## Clasificación usada
+## Classification used
 
-| Clase | Significado |
+| Class | Meaning |
 |---|---|
-| **CC** Confirmado y consistente | Decisión marcada confirmada, coherente entre documentos. |
-| **PI** Inconsistencia potencial | Tensión redaccional o de alcance; puede no ser real. |
-| **CX** Contradicción confirmada | Dos fuentes afirman cosas incompatibles. |
-| **MD** Decisión de diseño faltante | Hace falta una definición que hoy no existe. |
-| **AR** Riesgo arquitectónico | Puede causar refactors caros o acoplamiento. |
-| **FC** Consideración futura | Válido, pero fuera del alcance inicial. |
+| **CC** Confirmed and consistent | Decision marked as confirmed, coherent across documents. |
+| **PI** Potential inconsistency | Wording or scope tension; may not be real. |
+| **CX** Confirmed contradiction | Two sources assert incompatible things. |
+| **MD** Missing design decision | A definition is needed that does not exist today. |
+| **AR** Architectural risk | May cause expensive refactors or coupling. |
+| **FC** Future consideration | Valid, but out of the initial scope. |
 
 ---
 
-## A. Contradicciones y tensiones entre documentos
+## A. Contradictions and tensions between documents
 
-| ID | Clase | Hallazgo | Fuentes | Remisión |
+| ID | Class | Finding | Sources | Referral |
 |---|---|---|---|---|
-| F-01 | **CX** | Fecha de corte histórico: "≈1800 d.C." vs "comienzo de la Revolución Industrial" vs "late 18th century". | GDD general §1/§3; Economía; Progresión §8–9; Plan técnico §1 | DR-01 |
-| F-02 | **CX** | Perfil del mundo inicial: "mapas planos con bordes naturales" (Generación, decisión confirmada) vs "topografía realista y continua" (Geografía, decisión confirmada). | Generación §21; Geografía §3/§23 | DR-02 |
-| F-03 | **PI** | Clima "principalmente visual al inicio" (Construcción) vs variables climáticas con consecuencias y dependencia estacional de agricultura/producción. | Construcción §12; Geografía §7–8; Economía §7; Producción | DR-03 |
-| F-04 | **PI** | Nombre del producto: "Historical Civilization Simulator" (plan técnico, GDD general) vs "Civilization Evolutions" (carpeta/proyecto UE). | Plan técnico; 01_GDD_GENERAL; `.uproject` | DR-04 |
-| F-05 | **CX** | Rol del jugador: "entidad externa que NO es gobernante" (Política) vs capacidad de dictar leyes, política exterior y decisiones directas (Política, Economía, Diplomacia). | Política §2/§14; Economía; Diplomacia §1 | DR-05 |
-| F-06 | **PI** | Estado "pendiente" de Diplomacia/Militar en el GDD general vs GDD especializados ya con decisiones confirmadas. | 01_GDD_GENERAL §20; Guerra §20; Diplomacia | DR-08 (resuelto como "el especializado es la revisión vigente") |
-| F-07 | **MD** | Propiedad/titularidad: Recursos y Entidades fijan "titularidad del Estado/civilización + privados operan"; Economía la marca pendiente en detalle (precios, fiscalidad, herencia). | Recursos §11/§13; Entidades §13; Economía §12/§20 | DR-07 |
+| F-01 | **CX** | Historical cutoff date: "≈1800 AD" vs "beginning of the Industrial Revolution" vs "late 18th century". | General GDD §1/§3; Economy; Progression §8–9; Technical plan §1 | DR-01 |
+| F-02 | **CX** | Initial world profile: "flat maps with natural borders" (Generation, confirmed decision) vs "realistic, continuous topography" (Geography, confirmed decision). | Generation §21; Geography §3/§23 | DR-02 |
+| F-03 | **PI** | Climate "mainly visual at the start" (Construction) vs climate variables with consequences and seasonal dependence of agriculture/production. | Construction §12; Geography §7–8; Economy §7; Production | DR-03 |
+| F-04 | **PI** | Product name: "Historical Civilization Simulator" (technical plan, general GDD) vs "Civilization Evolutions" (folder/UE project). | Technical plan; 01_GDD_GENERAL; `.uproject` | DR-04 |
+| F-05 | **CX** | Player role: "external entity that is NOT a ruler" (Politics) vs the ability to dictate laws, foreign policy, and direct decisions (Politics, Economy, Diplomacy). | Politics §2/§14; Economy; Diplomacy §1 | DR-05 |
+| F-06 | **PI** | "Pending" status of Diplomacy/Military in the general GDD vs specialized GDDs already with confirmed decisions. | 01_GDD_GENERAL §20; War §20; Diplomacy | DR-08 (resolved as "the specialized one is the current revision") |
+| F-07 | **MD** | Property/ownership: Resources and Entities set "State/civilization ownership + private parties operate"; Economy marks it as pending in detail (prices, taxation, inheritance). | Resources §11/§13; Entities §13; Economy §12/§20 | DR-07 |
 
-## B. Mecánicas duplicadas / responsabilidades solapadas
+## B. Duplicated mechanics / overlapping responsibilities
 
-| ID | Clase | Hallazgo | Tratamiento documental vigente |
+| ID | Class | Finding | Current documentary treatment |
 |---|---|---|---|
-| F-08 | **PI** | Geografía y Generación del Mundo describen ambos terreno, clima, biomas, recursos. | Maestro §5: Geografía = estado/procesos naturales; Generación = estado inicial/editor. Mantener ese límite. |
-| F-09 | **AR** | "Recursos" aparece en Economía, Producción, Logística, Construcción, Tecnología. | Dueño único = Recursos y Materiales (catálogo/inventario). Los demás referencian, no copian. |
-| F-10 | **PI** | Población y Entidades repiten individuo/familia/relaciones. | Población = modelo social/demográfico; Entidades = identidad/relaciones compartidas. |
-| F-11 | **PI** | Exploración, Administración y Diplomacia repiten control territorial/autonomía. | Exploración = conocimiento/ocupación; Administración = gestión interna; Diplomacia = relación entre civilizaciones. |
-| F-12 | **PI** | Tecnología, Progresión y Eventos repiten "evolución histórica". | Tecnología = habilitaciones/conocimiento; Progresión = objetivos/fin; Eventos = causalidad/memoria. |
-| F-13 | **AR** | Logística: Guerra, Exploración y Comercio podrían crear transporte propio. | Guerra/Exploración **reutilizan** el sistema de Transporte/Logística (así lo declaran). No duplicar. |
+| F-08 | **PI** | Geography and World Generation both describe terrain, climate, biomes, resources. | Master §5: Geography = natural state/processes; Generation = initial state/editor. Keep that boundary. |
+| F-09 | **AR** | "Resources" appears in Economy, Production, Logistics, Construction, Technology. | Single owner = Resources and Materials (catalog/inventory). The others reference, they do not copy. |
+| F-10 | **PI** | Population and Entities repeat individual/family/relationships. | Population = social/demographic model; Entities = shared identity/relationships. |
+| F-11 | **PI** | Exploration, Administration, and Diplomacy repeat territorial control/autonomy. | Exploration = knowledge/occupation; Administration = internal management; Diplomacy = relationship between civilizations. |
+| F-12 | **PI** | Technology, Progression, and Events repeat "historical evolution". | Technology = enablements/knowledge; Progression = objectives/ending; Events = causality/memory. |
+| F-13 | **AR** | Logistics: War, Exploration, and Trade could create their own transport. | War/Exploration **reuse** the Transport/Logistics system (as they declare). Do not duplicate. |
 
-## C. Definiciones faltantes / decisiones de diseño pendientes (MD)
+## C. Missing definitions / pending design decisions (MD)
 
-| ID | Clase | Falta definir | Sistemas afectados | Remisión |
+| ID | Class | To be defined | Affected systems | Referral |
 |---|---|---|---|---|
-| F-14 | **MD** | Escala temporal exacta (seg reales ↔ día/mes/año) y equivalencia con envejecimiento/estaciones. | Tiempo, Población, Economía, Producción, Eventos | DR-09 |
-| F-15 | **MD** | Límites de escala: tamaño de mapa, población máx, nº de civilizaciones, presupuestos de actualización. | Todos (rendimiento) | DR-06 |
-| F-16 | **MD** | Umbrales de transición simulación individual ↔ agregada (LOD) y conservación de identidad. | Población, Entidades, IA, Tiempo | DR-10 |
-| F-17 | **MD** | Modelo común de propiedad (tierras, edificios, inventarios, organizaciones), herencia y unidad monetaria operativa. | Economía, Entidades, Recursos, Población, Política | DR-07 |
-| F-18 | **MD** | Reglas de disponibilidad/adopción/difusión tecnológica y condiciones de transformación de edificios. | Tecnología, Producción, Construcción | DR-11 |
-| F-19 | **MD** | Modelos matemáticos: productividad, salarios, precios, necesidades, felicidad, salud, demografía, belleza. | Economía, Producción, Población, Construcción | (pendiente de etapa) |
-| F-20 | **MD** | Alcance del prototipo transversal vs los MVP por sistema (qué sistemas y a qué profundidad entran al primer playable). | Todos | DR-12 |
-| F-21 | **MD** | Trazabilidad de aprobación (responsable/fecha/versión) de las decisiones "confirmadas". | Gobernanza documental | DR-00 |
+| F-14 | **MD** | Exact time scale (real seconds ↔ day/month/year) and equivalence with aging/seasons. | Time, Population, Economy, Production, Events | DR-09 |
+| F-15 | **MD** | Scale limits: map size, max population, number of civilizations, update budgets. | All (performance) | DR-06 |
+| F-16 | **MD** | Thresholds for transition between individual ↔ aggregate simulation (LOD) and identity preservation. | Population, Entities, AI, Time | DR-10 |
+| F-17 | **MD** | Common property model (lands, buildings, inventories, organizations), inheritance, and operational monetary unit. | Economy, Entities, Resources, Population, Politics | DR-07 |
+| F-18 | **MD** | Rules for technological availability/adoption/diffusion and conditions for transforming buildings. | Technology, Production, Construction | DR-11 |
+| F-19 | **MD** | Mathematical models: productivity, wages, prices, needs, happiness, health, demographics, beauty. | Economy, Production, Population, Construction | (pending a stage) |
+| F-20 | **MD** | Scope of the cross-cutting prototype vs the per-system MVPs (which systems and at what depth enter the first playable). | All | DR-12 |
+| F-21 | **MD** | Approval traceability (owner/date/version) of the "confirmed" decisions. | Documentary governance | DR-00 |
 
-## D. Documentos incompletos / de fuente
+## D. Incomplete / source documents
 
-| ID | Clase | Hallazgo |
+| ID | Class | Finding |
 |---|---|---|
-| F-22 | **CX/MD** | **`GDD_Diplomacia...` TRUNCADO** en la fuente: corta a mitad de §18 ("Personalidad de los líderes"); sin MVP ni tabla de decisiones. Hay que completarlo o recuperar la fuente. |
-| F-23 | **PI** | `GDD_Recursos_y_Materiales`, `GDD_Tiempo_y_Simulacion`, `GDD_IA...` y `GDD_Entidades...` **no** traen tabla formal "Decisiones confirmadas" (usan cuerpo/principios/criterios). Riesgo: confundir "afirmado en el cuerpo" con "confirmado formal". |
-| F-24 | **PI** | `00_TECHNICAL.md` (proyecto UE) es **idéntico** al plan técnico; `02/03/04` son condensados de GDDs. Riesgo de divergencia futura entre copia y original. |
+| F-22 | **CX/MD** | **`GDD_Diplomacia...` TRUNCATED** in the source: it cuts off halfway through §18 ("Leader personality"); no MVP or decision table. It must be completed or the source recovered. |
+| F-23 | **PI** | `GDD_Recursos_y_Materiales`, `GDD_Tiempo_y_Simulacion`, `GDD_IA...`, and `GDD_Entidades...` do **not** carry a formal "Confirmed decisions" table (they use body/principles/criteria). Risk: confusing "asserted in the body" with "formally confirmed". |
+| F-24 | **PI** | `00_TECHNICAL.md` (UE project) is **identical** to the technical plan; `02/03/04` are condensations of GDDs. Risk of future divergence between copy and original. |
 
-## E. Riesgos arquitectónicos (resumen; detalle en IMPLEMENTATION_RISK_REGISTER.md)
+## E. Architectural risks (summary; detail in IMPLEMENTATION_RISK_REGISTER.md)
 
-| ID | Clase | Hallazgo |
+| ID | Class | Finding |
 |---|---|---|
-| F-25 | **AR** | **Doble modelo de población/economía** en el código: agregado en SimCore ↔ individual/colonia en la capa UE. Riesgo de duplicación y de lógica de simulación fuera de SimCore. → RISK-01/02. |
-| F-26 | **AR** | **Un Actor por habitante** (`CivUnit`) contradice "no crear un Actor por ciudadano" y la meta de escala. → RISK-03. |
-| F-27 | **AR** | Evolución histórica implementada como efectos aislados por sistema en vez de reaccionar a descubrimientos/condiciones comunes. → RISK-05, ver [HISTORICAL_EVOLUTION_FRAMEWORK.md](HISTORICAL_EVOLUTION_FRAMEWORK.md). |
-| F-28 | **AR** | Contenido (recursos/edificios/recetas/tecnologías) hardcodeado en C++ (`DefaultContent`) en vez de datos (Data Tables/Assets). → RISK-04. |
+| F-25 | **AR** | **Dual population/economy model** in the code: aggregate in SimCore ↔ individual/colony in the UE layer. Risk of duplication and of simulation logic outside SimCore. → RISK-01/02. |
+| F-26 | **AR** | **One Actor per inhabitant** (`CivUnit`) contradicts "do not create an Actor per citizen" and the scale goal. → RISK-03. |
+| F-27 | **AR** | Historical evolution implemented as isolated per-system effects instead of reacting to common discoveries/conditions. → RISK-05, see [HISTORICAL_EVOLUTION_FRAMEWORK.md](HISTORICAL_EVOLUTION_FRAMEWORK.md). |
+| F-28 | **AR** | Content (resources/buildings/recipes/technologies) hardcoded in C++ (`DefaultContent`) instead of data (Data Tables/Assets). → RISK-04. |
 
-## F. Consideraciones futuras (FC)
+## F. Future considerations (FC)
 
-- Mundos esféricos (Generación): evaluable a futuro, no MVP.
-- Clima avanzado, hidrología, ecosistemas, desastres (Geografía): post-MVP.
-- Multijugador: fuera del alcance inicial.
-- Organizaciones internacionales, estados dependientes, espionaje avanzado (Diplomacia): niveles avanzados.
+- Spherical worlds (Generation): assessable in the future, not MVP.
+- Advanced climate, hydrology, ecosystems, disasters (Geography): post-MVP.
+- Multiplayer: out of the initial scope.
+- International organizations, dependent states, advanced espionage (Diplomacy): advanced levels.
 
 ---
 
-## G. Severidad y confirmación requerida (por hallazgo)
+## G. Severity and required confirmation (per finding)
 
-> **Severidad:** *Critical* = bloquea arquitectura/MVP o fuerza refactor caro si se ignora; *High* = afecta varios sistemas, decidir antes de E1–E2; *Medium* = acotable, decidir antes del sistema afectado; *Low* = cosmético/futuro.
-> **¿Confirmación del usuario?** *Sí* = decisión humana irreversible o de visión que **no** debo tomar solo (aunque haya DR propuesto); *Delegada* = ya cubierta por la delegación 2026-11-04 (reversible); *No* = regla documental/arquitectónica sin decisión de visión pendiente.
+> **Severity:** *Critical* = blocks architecture/MVP or forces an expensive refactor if ignored; *High* = affects several systems, decide before E1–E2; *Medium* = containable, decide before the affected system; *Low* = cosmetic/future.
+> **User confirmation?** *Yes* = irreversible or vision-level human decision that I should **not** make alone (even if a DR is proposed); *Delegated* = already covered by the 2026-11-04 delegation (reversible); *No* = documentary/architectural rule with no pending vision decision.
 
-| ID | Clase | Severidad | ¿Confirmación del usuario? | Estado |
+| ID | Class | Severity | User confirmation? | Status |
 |---|---|---|---|---|
-| F-01 | CX | **Critical** | **Sí** (corte histórico = alcance del juego) | DR-01 delegada, marcar como visión a ratificar |
-| F-02 | CX | **High** | **Sí** (perfil del mundo afecta generación y geografía) | DR-02 delegada |
-| F-03 | PI | Medium | Delegada | DR-03 |
-| F-04 | PI | Low | Delegada (nombre de producto) | DR-04 |
-| F-05 | CX | **Critical** | **Sí** (define el rol del jugador = pilar de diseño) | DR-05 delegada, ratificar |
-| F-06 | PI | Medium | No | DR-08 resuelto (el especializado es vigente) |
-| F-07 | MD | **High** | **Sí** (modelo de propiedad/herencia/fiscalidad) | DR-07 delegada |
-| F-08 | PI | Medium | No | regla de dominio (Maestro §5) |
-| F-09 | AR | **High** | No | dueño único = Recursos |
-| F-10 | PI | Medium | No | regla de dominio |
-| F-11 | PI | Medium | No | regla de dominio |
-| F-12 | PI | Medium | No | regla de dominio |
-| F-13 | AR | Medium | No | reutilizar Logística |
-| F-14 | MD | **High** | Delegada | DR-09 (escala temporal) |
-| F-15 | MD | **Critical** | **Sí** (límites de escala = presupuesto de rendimiento) | DR-06 delegada, ratificar |
-| F-16 | MD | **High** | Delegada | DR-10 (LOD individual↔agregado) |
-| F-17 | MD | **High** | **Sí** (propiedad/moneda operativa) | DR-07 delegada |
-| F-18 | MD | Medium | Delegada | DR-11 (adopción tecnológica) |
-| F-19 | MD | Medium | No (modelos matemáticos, por etapa) | pendiente de etapa |
-| F-20 | MD | **High** | Delegada | DR-12 (alcance del prototipo) |
-| F-21 | MD | Medium | No | DR-00 (gobernanza) |
-| F-22 | CX/MD | **Critical** | **Sí** (fuente truncada; no inventar diplomacia) | DR-13 **sin resolver** |
-| F-23 | PI | Low | No | nota documental |
-| F-24 | PI | Low | No | nota documental |
-| F-25 | AR | **Critical** | No (regla arquitectónica) | RISK-01/02 |
+| F-01 | CX | **Critical** | **Yes** (historical cutoff = game scope) | DR-01 delegated, mark as vision to ratify |
+| F-02 | CX | **High** | **Yes** (world profile affects generation and geography) | DR-02 delegated |
+| F-03 | PI | Medium | Delegated | DR-03 |
+| F-04 | PI | Low | Delegated (product name) | DR-04 |
+| F-05 | CX | **Critical** | **Yes** (defines the player role = design pillar) | DR-05 delegated, ratify |
+| F-06 | PI | Medium | No | DR-08 resolved (the specialized one is current) |
+| F-07 | MD | **High** | **Yes** (property/inheritance/taxation model) | DR-07 delegated |
+| F-08 | PI | Medium | No | domain rule (Master §5) |
+| F-09 | AR | **High** | No | single owner = Resources |
+| F-10 | PI | Medium | No | domain rule |
+| F-11 | PI | Medium | No | domain rule |
+| F-12 | PI | Medium | No | domain rule |
+| F-13 | AR | Medium | No | reuse Logistics |
+| F-14 | MD | **High** | Delegated | DR-09 (time scale) |
+| F-15 | MD | **Critical** | **Yes** (scale limits = performance budget) | DR-06 delegated, ratify |
+| F-16 | MD | **High** | Delegated | DR-10 (individual↔aggregate LOD) |
+| F-17 | MD | **High** | **Yes** (operational property/currency) | DR-07 delegated |
+| F-18 | MD | Medium | Delegated | DR-11 (technological adoption) |
+| F-19 | MD | Medium | No (mathematical models, per stage) | pending a stage |
+| F-20 | MD | **High** | Delegated | DR-12 (prototype scope) |
+| F-21 | MD | Medium | No | DR-00 (governance) |
+| F-22 | CX/MD | **Critical** | **Yes** (truncated source; do not invent diplomacy) | DR-13 **unresolved** |
+| F-23 | PI | Low | No | documentary note |
+| F-24 | PI | Low | No | documentary note |
+| F-25 | AR | **Critical** | No (architectural rule) | RISK-01/02 |
 | F-26 | AR | **High** | No | RISK-03 |
 | F-27 | AR | **High** | No | RISK-05 |
 | F-28 | AR | Medium | No | RISK-04 |
 
-**Estado de la confirmación humana (actualizado 2026-11-04):** F-01, F-02, F-05, F-07/F-17 y F-15 fueron **ratificados por el usuario** (ver DR-01/02/05/07/06). F-22 (Diplomacia truncada) tiene un **borrador propuesto a validar** ([DIPLOMACIA_PROPUESTA_COMPLETADO.md](DIPLOMACIA_PROPUESTA_COMPLETADO.md)); sigue sin ser canónico. Las demás quedan cubiertas por la delegación (reversibles) o son reglas documentales/arquitectónicas.
+**Human confirmation status (updated 2026-11-04):** F-01, F-02, F-05, F-07/F-17, and F-15 were **ratified by the user** (see DR-01/02/05/07/06). F-22 (truncated Diplomacy) has a **proposed draft to validate** ([DIPLOMACIA_PROPUESTA_COMPLETADO.md](DIPLOMACIA_PROPUESTA_COMPLETADO.md)); it is still not canonical. The rest are covered by the delegation (reversible) or are documentary/architectural rules.
 
 ---
 
-## Resumen por clase
+## Summary by class
 
-- **CC** (confirmado y consistente): la mayoría de los pilares (ver DECISION_REGISTER estado `confirmed`).
-- **CX** (contradicciones): F-01, F-02, F-05, F-22. → requieren decisión del diseñador.
-- **PI** (potenciales): F-03, F-04, F-06, F-08, F-10, F-11, F-12, F-23, F-24.
-- **MD** (faltantes): F-07, F-14..F-21.
-- **AR** (riesgos): F-09, F-13, F-25..F-28.
-- **FC** (futuro): sección F.
+- **CC** (confirmed and consistent): most of the pillars (see DECISION_REGISTER, `confirmed` status).
+- **CX** (contradictions): F-01, F-02, F-05, F-22. → require the designer's decision.
+- **PI** (potential): F-03, F-04, F-06, F-08, F-10, F-11, F-12, F-23, F-24.
+- **MD** (missing): F-07, F-14..F-21.
+- **AR** (risks): F-09, F-13, F-25..F-28.
+- **FC** (future): section F.
 
-**Regla aplicada:** ninguna de estas se resolvió por criterio propio. Las que admiten propuesta técnica tienen una resolución **propuesta** (no confirmada) en el registro de decisiones.
+**Rule applied:** none of these were resolved by unilateral judgment. Those that admit a technical proposal have a **proposed** (not confirmed) resolution in the decision register.

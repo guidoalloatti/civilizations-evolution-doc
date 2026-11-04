@@ -1,111 +1,113 @@
 # CLAUDE.md — Civilization Evolutions
 
-> Instrucciones de proyecto para Claude Code. **Leé este archivo al iniciar cada sesión.**
-> Es conciso a propósito: la autoridad de detalle vive en los GDD originales. No copies GDDs acá; referencialos.
+> Project instructions for Claude Code. **Read this file at the start of every session.**
+> It is deliberately concise: the authority on detail lives in the original GDDs. Don't copy GDDs here; reference them.
 
-## Qué es Civilization Evolutions
+## What Civilization Evolutions is
 
-Juego de **estrategia y simulación histórica en tiempo real**: una comunidad inicial se transforma, a lo largo de siglos, en una civilización con asentamientos, economía, instituciones, cultura e historia propias. Abarca del **Paleolítico al comienzo de la Revolución Industrial** (corte aprox. 1750–1800, pendiente de confirmación — ver `AUDIT_REPORT.md` C-01). La historia real es **referencia de plausibilidad, no guion obligatorio**: la evolución es libre y no lineal. El jugador es una **entidad que guía** la civilización (no un gobernante), con amplia influencia pero respetando la autonomía de población y civilizaciones no jugadoras. Motor: **Unreal Engine 5**, C++ como lenguaje principal.
+A **real-time historical strategy and simulation** game: an initial community transforms, over centuries, into a civilization with its own settlements, economy, institutions, culture and history. It spans from the **Paleolithic to the beginning of the Industrial Revolution** (cutoff approx. 1750–1800, pending confirmation — see `AUDIT_REPORT.md` C-01). Real history is a **plausibility reference, not a mandatory script**: evolution is free and non-linear. The player is a **guiding entity** for the civilization (not a ruler), with broad influence but respecting the autonomy of the population and non-player civilizations. Engine: **Unreal Engine 5**, C++ as the primary language.
 
-Documento de visión: [docs/00-project/GDD_MAESTRO.md](docs/00-project/GDD_MAESTRO.md). Idioma canónico de la documentación: **español**.
+Vision document: [docs/00-project/GDD_MAESTRO.md](docs/00-project/GDD_MAESTRO.md). Canonical documentation language: **English**.
 
-## Principios de diseño (no negociables)
+## Design principles (non-negotiable)
 
-1. **Simulación integrada, no features sueltas.** Los sistemas comparten datos y responden a eventos comunes. Una tecnología cambia producción, construcción, transporte, cultura, etc.
-2. **Evolución histórica libre.** Períodos = referencias, no desbloqueos obligatorios. Dirigida por condiciones/conocimiento/recursos, **no por el año**.
-3. **Evolución visible del mundo.** Edificios, ciudades, paisaje y cultura preservan la huella de la historia.
-4. **Geografía con consecuencias.** Condiciona recursos, asentamientos, transporte y desarrollo.
-5. **Complejidad configurable** (básico / intermedio / avanzado) y **automatización con intervención** del jugador.
-6. **Escala híbrida:** individuos en asentamientos chicos → grupos agregados en civilizaciones grandes, conservando coherencia.
-7. **Libertad estratégica:** sin una única ruta óptima. La guerra es relevante pero **secundaria** frente a lo civil/social.
+1. **Integrated simulation, not loose features.** Systems share data and respond to common events. A technology changes production, construction, transport, culture, etc.
+2. **Free historical evolution.** Periods = references, not mandatory unlocks. Driven by conditions/knowledge/resources, **not by the year**.
+3. **Visible world evolution.** Buildings, cities, landscape and culture preserve the imprint of history.
+4. **Geography with consequences.** It conditions resources, settlements, transport and development.
+5. **Configurable complexity** (basic / intermediate / advanced) and **automation with player intervention**.
+6. **Hybrid scale:** individuals in small settlements → aggregated groups in large civilizations, keeping coherence.
+7. **Strategic freedom:** no single optimal path. War matters but is **secondary** to the civil/social dimension.
 
-## Restricciones de arquitectura (del plan técnico)
+## Architecture constraints (from the technical plan)
 
-- **Separar simulación de presentación.** La lógica NO depende de meshes/actores renderizados ni del `Tick()` de render. Hoy esto se materializa en **`civilizations-evolution/SimCore/`** (núcleo C++17 motor-agnóstico, con tests) envuelto por la capa UE.
-- **Data-driven:** recursos, edificios, recetas, profesiones, tecnologías, materiales y períodos definidos por datos (Data Assets / Data Tables / structs), no hardcodeados.
-- **Modular:** dominios independientes que se comunican por interfaces/eventos. Evitar clases monolíticas y abstracciones vacías prematuras.
-- **Reloj de simulación** independiente del FPS, con pausa/velocidades y progresión día/mes/año/estación.
-- **Escalabilidad y rendimiento** como prioridad desde el diseño; no simplificar la arquitectura para que "entre" el prototipo.
-- **Identidad compartida:** un recurso/entidad tiene **un** identificador e inventario común; nunca duplicar recursos/relaciones por sistema.
+- **Separate simulation from presentation.** Logic does NOT depend on rendered meshes/actors or on the render `Tick()`. Today this is realized in **`civilizations-evolution/SimCore/`** (an engine-agnostic C++17 core, with tests) wrapped by the UE layer.
+- **Data-driven:** resources, buildings, recipes, professions, technologies, materials and periods defined by data (Data Assets / Data Tables / structs), not hardcoded.
+- **Modular:** independent domains that communicate through interfaces/events. Avoid monolithic classes and premature empty abstractions.
+- **Simulation clock** independent of FPS, with pause/speeds and day/month/year/season progression.
+- **Scalability and performance** as a priority from the design; don't simplify the architecture just to "fit" the prototype.
+- **Shared identity:** a resource/entity has **one** identifier and a common inventory; never duplicate resources/relationships per system.
 
-## Dónde está la documentación
+## Where the documentation lives
 
 ```
-Civilization Evolutions/            (raíz de trabajo = este repo; hay una copia solo-docs en el Desktop)
-├── CLAUDE.md                        ← este archivo
-├── DOCUMENTATION_INDEX.md           ← índice navegable de todos los GDD (punto de entrada)
-├── SYSTEM_ARCHITECTURE_MAP.md       ← mapa conceptual de sistemas y relaciones
-├── IMPLEMENTATION_ALIGNMENT.md      ← qué dice el diseño vs qué hay implementado
-├── DOCUMENTATION_READING_GUIDE.md   ← qué leer antes de cada tipo de tarea
+Civilization Evolutions/            (work root = this repo; there is a docs-only copy on the Desktop)
+├── CLAUDE.md                        ← this file
+├── DOCUMENTATION_INDEX.md           ← navigable index of all GDDs (entry point)
+├── SYSTEM_ARCHITECTURE_MAP.md       ← conceptual map of systems and relationships
+├── IMPLEMENTATION_ALIGNMENT.md      ← what the design says vs what is implemented
+├── DOCUMENTATION_READING_GUIDE.md   ← what to read before each type of task
 ├── (Blueprint Phase 2) DESIGN_CONSISTENCY_AUDIT · DESIGN_DECISION_REGISTER · SHARED_DATA_MODEL ·
 │       SYSTEM_DEPENDENCY_MAP · CROSS_SYSTEM_VALIDATION_SCENARIOS · DEVELOPMENT_ROADMAP ·
 │       SYSTEM_IMPLEMENTATION_SPECIFICATIONS · HISTORICAL_EVOLUTION_FRAMEWORK ·
-│       IMPLEMENTATION_RISK_REGISTER   (análisis derivado de los GDD; DR-00..DR-12 confirmadas por delegación 2026-11-04)
-├── (Desarrollo multi-agente) AGENT_ORGANIZATION · AGENT_OWNERSHIP_MAP · SYSTEM_CONTRACTS ·
-│       AGENT_TASK_BOARD · GIT_WORKFLOW · INTEGRATION_STRATEGY   (organización de agentes en paralelo; PROPUESTA 2026-11-04)
-├── AUDIT_REPORT.md                  ← contradicciones (C-01..C-08) y pendientes transversales
+│       IMPLEMENTATION_RISK_REGISTER   (analysis derived from the GDDs; DR-00..DR-12 confirmed by delegation 2026-11-04)
+├── (Multi-agent development) AGENT_ORGANIZATION · AGENT_OWNERSHIP_MAP · SYSTEM_CONTRACTS ·
+│       AGENT_TASK_BOARD · GIT_WORKFLOW · INTEGRATION_STRATEGY   (parallel agent organization; PROPOSAL 2026-11-04)
+├── AUDIT_REPORT.md                  ← contradictions (C-01..C-08) and cross-cutting open items
 ├── docs/
-│   ├── 00-project/GDD_MAESTRO.md    ← visión, pilares, mapa de autoridad, integraciones, vocabulario
-│   ├── 01-systems/                  ← 22 GDD de sistema (fuente de detalle por dominio)
-│   └── 02-technical/PLAN_TECNICO_v0.1.md  ← arquitectura técnica (separada del diseño)
-├── BACKUP_PRE_AUDIT_2026-11-03/     ← respaldo íntegro; NO editar
-└── civilizations-evolution/         ← proyecto Unreal + SimCore + Docs/ condensados
-    ├── SimCore/                     ← núcleo de simulación C++ (motor-agnóstico, con tests)
-    ├── Source/CivilizationSimulator/← capa UE (presentación/juego)
-    └── Docs/                        ← GDD condensados que guiaron el primer código
+│   ├── 00-project/GDD_MAESTRO.md    ← vision, pillars, authority map, integrations, vocabulary
+│   ├── 01-systems/                  ← 22 system GDDs (source of detail per domain)
+│   └── 02-technical/PLAN_TECNICO_v0.1.md  ← technical architecture (separate from design)
+├── BACKUP_PRE_AUDIT_2026-11-03/     ← full backup; DO NOT edit (kept in the original language)
+└── civilizations-evolution/         ← Unreal project + SimCore + condensed Docs/
+    ├── SimCore/                     ← C++ simulation core (engine-agnostic, with tests)
+    ├── Source/CivilizationSimulator/← UE layer (presentation/game)
+    └── Docs/                        ← condensed GDDs that guided the first code
 ```
 
-## Cómo navegar la documentación (flujo)
+## How to navigate the documentation (flow)
 
-1. Abrí **`DOCUMENTATION_INDEX.md`** para ubicar el GDD del dominio.
-2. Leé el **GDD de sistema** correspondiente (autoridad de detalle).
-3. Consultá **`GDD_MAESTRO.md` §5 (autoridad) y §6 (integraciones)** para las dependencias entre sistemas.
-4. Usá **`DOCUMENTATION_READING_GUIDE.md`** para saber qué GDD leer juntos según la tarea.
-5. Para saber qué hay hecho, mirá **`IMPLEMENTATION_ALIGNMENT.md`**.
-6. Para decisiones abiertas/contradicciones, **`AUDIT_REPORT.md`**.
+1. Open **`DOCUMENTATION_INDEX.md`** to locate the domain's GDD.
+2. Read the corresponding **system GDD** (authority on detail).
+3. Check **`GDD_MAESTRO.md` §5 (authority) and §6 (integrations)** for cross-system dependencies.
+4. Use **`DOCUMENTATION_READING_GUIDE.md`** to know which GDDs to read together for a task.
+5. To see what is done, look at **`IMPLEMENTATION_ALIGNMENT.md`**.
+6. For open decisions/contradictions, **`AUDIT_REPORT.md`**.
 
-Leé el **original** cuando la decisión sea importante; los resúmenes no reemplazan al GDD fuente.
+Read the **original** when the decision matters; the summaries do not replace the source GDD.
 
-### Qué GDD consultar antes de tocar cada sistema (resumen; detalle en el reading guide)
+### Which GDDs to consult before touching each system (summary; detail in the reading guide)
 
-- **Producción/economía:** `GDD_Produccion_y_Trabajo_v0.2` + `GDD_Economia_v0.2` + `GDD_Recursos_y_Materiales` + `GDD_Transporte_Comercio_y_Logistica` + `GDD_Poblacion_y_Sociedad`.
-- **Construcción:** `GDD_Construccion_y_Arquitectura` + `GDD_Recursos_y_Materiales` + `GDD_Tecnologia_Ciencia_e_Innovacion` + `GDD_Poblacion_y_Sociedad`.
-- **Mundo/terreno:** `GDD_Generacion_Procedural_del_Mundo` + `GDD_Geografia_Clima_y_Medioambiente` + `GDD_Exploracion_y_Expansion_Territorial`.
-- **Población/sociedad:** `GDD_Poblacion_y_Sociedad` + `GDD_Entidades_y_Relaciones` + `GDD_Cultura...` + `GDD_Religion...`.
-- **Tiempo:** `GDD_Tiempo_y_Simulacion` (reloj común a todos).
+- **Production/economy:** `GDD_Produccion_y_Trabajo_v0.2` + `GDD_Economia_v0.2` + `GDD_Recursos_y_Materiales` + `GDD_Transporte_Comercio_y_Logistica` + `GDD_Poblacion_y_Sociedad`.
+- **Construction:** `GDD_Construccion_y_Arquitectura` + `GDD_Recursos_y_Materiales` + `GDD_Tecnologia_Ciencia_e_Innovacion` + `GDD_Poblacion_y_Sociedad`.
+- **World/terrain:** `GDD_Generacion_Procedural_del_Mundo` + `GDD_Geografia_Clima_y_Medioambiente` + `GDD_Exploracion_y_Expansion_Territorial`.
+- **Population/society:** `GDD_Poblacion_y_Sociedad` + `GDD_Entidades_y_Relaciones` + `GDD_Cultura...` + `GDD_Religion...`.
+- **Time:** `GDD_Tiempo_y_Simulacion` (clock common to all).
 
-## Reglas para el desarrollo futuro
+> Note: GDD file names are kept in their original Spanish to preserve the hundreds of internal links; their **content** is in English.
 
-1. **No contradecir decisiones confirmadas** de los GDD. Si algo es ambiguo o choca, **documentalo como no resuelto y preguntá**; no inventes la respuesta ni la cambies en silencio (actualizá `AUDIT_REPORT.md` y el Maestro cuando se decida).
-2. **No dupliques** entidades, recursos, relaciones ni lógica compartida entre sistemas.
-3. **Mantené separada la simulación de la presentación** y preferí definiciones data-driven.
-4. **Arquitectura modular y extensible**; nada de monolitos.
-5. **Desarrollo por etapas**, no todo el juego de una. Respetá los MVP por sistema y el prototipo transversal.
-6. **Preservá la flexibilidad histórica y el comportamiento emergente**; no cablees cronologías obligatorias.
-7. **No sacrifiques la profundidad de simulación** solo para simplificar el prototipo.
-8. **Compilá y probá** tras cada cambio significativo; mantené el proyecto buildeable. Agregá tests (SimCore ya trae una suite).
-9. Cuando cambie la documentación, **actualizá el índice y el reading guide**.
+## Rules for future development
 
-## Estado de implementación (resumen; detalle en IMPLEMENTATION_ALIGNMENT.md)
+1. **Do not contradict confirmed decisions** of the GDDs. If something is ambiguous or clashes, **document it as unresolved and ask**; don't invent the answer or change it silently (update `AUDIT_REPORT.md` and the Master when it is decided).
+2. **Do not duplicate** entities, resources, relationships or logic shared across systems.
+3. **Keep simulation separate from presentation** and prefer data-driven definitions.
+4. **Modular, extensible architecture**; no monoliths.
+5. **Staged development**, not the whole game at once. Respect the per-system MVPs and the cross-cutting prototype.
+6. **Preserve historical flexibility and emergent behavior**; don't hardwire mandatory chronologies.
+7. **Do not sacrifice simulation depth** just to simplify the prototype.
+8. **Build and test** after each significant change; keep the project buildable. Add tests (SimCore already ships a suite).
+9. When the documentation changes, **update the index and the reading guide**.
 
-- **SimCore** (C++ puro, con tests): reloj con estaciones, recursos/inventarios, recetas y producción, asignación de trabajadores, logística simplificada, consumo/hambre/salud, construcción con costo, demolición, árbol tecnológico, evolución de edificios, comercio entre asentamientos, guardar/cargar.
-- **Capa UE** (`Source/CivilizationSimulator/`): GameMode, PlayerController (selección/órdenes/menú de construcción), CameraPawn (RTS), ViewManager (entorno + HUD), BuildingActor, Terrain procedural, SimSubsystem (puente a SimCore), **CivUnit** (settlers animados), **CivResourceNode** (recolección), **CivHUD**, **CivText** (i18n inglés por defecto + español). Materiales PBR en `/Game/PBR`, personaje en `/Game/Chars`. Lumen/SM6 activados.
-- Este código **se está extendiendo activamente** (sistema de recursos del mapa, caza, acarreo). Antes de tocar un archivo, leé su estado actual en disco.
+## Implementation status (summary; detail in IMPLEMENTATION_ALIGNMENT.md)
 
-## Desarrollo multi-agente (PROPUESTA — pendiente de aprobación)
+- **SimCore** (pure C++, with tests): clock with seasons, resources/inventories, recipes and production, worker assignment, simplified logistics, consumption/hunger/health, construction with cost, demolition, technology tree, building evolution, trade between settlements, save/load.
+- **UE layer** (`Source/CivilizationSimulator/`): GameMode, PlayerController (selection/orders/build menu), CameraPawn (RTS), ViewManager (environment + HUD), BuildingActor, procedural Terrain, SimSubsystem (bridge to SimCore), **CivUnit** (animated settlers), **CivResourceNode** (gathering), **CivHUD**, **CivText** (i18n English by default + Spanish). PBR materials in `/Game/PBR`, character in `/Game/Chars`. Lumen/SM6 enabled.
+- This code **is being actively extended** (map resource system, hunting, hauling). Before touching a file, read its current state on disk.
 
-Para escalar el desarrollo con varios agentes en paralelo **sin romper la consistencia arquitectónica**, hay una propuesta de organización (no se lanzan agentes ni se crean worktrees hasta que la apruebe el responsable):
+## Multi-agent development (PROPOSAL — pending approval)
 
-- **[AGENT_ORGANIZATION.md](AGENT_ORGANIZATION.md)** — 9 workstreams (Director Técnico, Core/Simulación, Mundo/Geografía, Construcción, Economía/Recursos/Producción, Población, UI/UX, Arte, QA/Integración): alcance, exclusiones, dependencias, entregables, archivos permitidos/restringidos y criterios de aceptación.
-- **[SYSTEM_CONTRACTS.md](SYSTEM_CONTRACTS.md)** — interfaces compartidas (tiempo, eventos, identidad, recursos, inventarios, edificios, población, terreno, colocación, acceso UI), con su API real hoy y su dueño.
-- **[AGENT_OWNERSHIP_MAP.md](AGENT_OWNERSHIP_MAP.md)** — archivo/carpeta → dueño único; protocolo de archivos compartidos y de `.uasset`.
-- **[AGENT_TASK_BOARD.md](AGENT_TASK_BOARD.md)** — tareas por hito (M0–M4 + continuos), con dependencias, prioridad, archivos, aceptación, estado y bloqueos.
-- **[GIT_WORKFLOW.md](GIT_WORKFLOW.md)** y **[INTEGRATION_STRATEGY.md](INTEGRATION_STRATEGY.md)** — ramas/worktrees por workstream (dos repos: docs + UE), binarios UE sin merge, e integración central por el Director Técnico.
+To scale development with several agents in parallel **without breaking architectural consistency**, there is an organization proposal (no agents are launched and no worktrees are created until the project owner approves):
 
-Regla base: **un dueño por dato y por archivo**; los demás **leen por contrato**. Antes de paralelizar hay que hacer **M0** (publicar contratos + partir `SimCore/Simulation.*`/`World.*` por dominio + commitear lo pendiente + configurar Git/LFS).
+- **[AGENT_ORGANIZATION.md](AGENT_ORGANIZATION.md)** — 9 workstreams (Technical Director, Core/Simulation, World/Geography, Construction, Economy/Resources/Production, Population, UI/UX, Art, QA/Integration): scope, exclusions, dependencies, deliverables, allowed/restricted files and acceptance criteria.
+- **[SYSTEM_CONTRACTS.md](SYSTEM_CONTRACTS.md)** — shared interfaces (time, events, identity, resources, inventories, buildings, population, terrain, placement, UI access), with their real API today and their owner.
+- **[AGENT_OWNERSHIP_MAP.md](AGENT_OWNERSHIP_MAP.md)** — file/folder → single owner; shared-file and `.uasset` protocols.
+- **[AGENT_TASK_BOARD.md](AGENT_TASK_BOARD.md)** — tasks by milestone (M0–M4 + continuous), with dependencies, priority, files, acceptance, status and blockers.
+- **[GIT_WORKFLOW.md](GIT_WORKFLOW.md)** and **[INTEGRATION_STRATEGY.md](INTEGRATION_STRATEGY.md)** — branches/worktrees per workstream (two repos: docs + UE), unmergeable UE binaries, and central integration by the Technical Director.
 
-## Notas operativas
+Base rule: **one owner per datum and per file**; everyone else **reads by contract**. Before parallelizing, do **M0** (publish contracts + split `SimCore/Simulation.*`/`World.*` by domain + commit the pending work + configure Git/LFS).
 
-- **Build:** `SimCore` con CMake; el proyecto UE con `Build.bat CivilizationSimulatorEditor Win64 Development` (editor cerrado).
-- **Git:** el proyecto UE (`civilizations-evolution/`) tiene su **propio** repositorio git (historia hasta el commit `HANDOFF`); la documentación/diseño se versiona en un repo **aparte** en la raíz. El trabajo **posterior al HANDOFF** (arreglos de esta sesión + gameplay nuevo) está **sin commitear**: commiteá en cada checkpoint verde. Con dos sesiones sobre el mismo árbol, cuidado con sobrescrituras; leé antes de editar.
-- La carpeta `BACKUP_PRE_AUDIT_2026-11-03/` y los GDD originales **no se editan**.
+## Operational notes
+
+- **Build:** `SimCore` with CMake; the UE project with `Build.bat CivilizationSimulatorEditor Win64 Development` (editor closed).
+- **Git:** the UE project (`civilizations-evolution/`) has its **own** git repository (history up to the `HANDOFF` commit); the documentation/design is versioned in a **separate** repo at the root. The work **after HANDOFF** (this session's fixes + new gameplay) is **uncommitted**: commit at each green checkpoint. With two sessions on the same tree, beware of overwrites; read before editing.
+- The `BACKUP_PRE_AUDIT_2026-11-03/` folder and the original GDDs **are not edited**.

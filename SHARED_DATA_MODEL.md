@@ -1,252 +1,252 @@
 # SHARED_DATA_MODEL — Civilization Evolutions
 
-> **Phase 2 — Modelo de datos compartido (conceptual).** Entidades centrales de la simulación, sus atributos, identidad, relaciones, quién las posee/gestiona y quién las consume. **No son structs C++ finales**: es un modelo conceptual para evitar duplicación entre sistemas. Autoridad: [GDD_Entidades_y_Relaciones](docs/01-systems/GDD_Entidades_y_Relaciones_v0.1.md) + [GDD_Recursos_y_Materiales](docs/01-systems/GDD_Recursos_y_Materiales_v0.1.md). Propiedad: ver DR-07 en [DESIGN_DECISION_REGISTER.md](DESIGN_DECISION_REGISTER.md).
-> Versión 1.1 · Última actualización 2026-11-04 · Estado: conceptual.
+> **Phase 2 — Shared data model (conceptual).** Central simulation entities, their attributes, identity, relationships, who owns/manages them and who consumes them. **These are not final C++ structs**: it is a conceptual model to avoid duplication between systems. Authority: [GDD_Entidades_y_Relaciones](docs/01-systems/GDD_Entidades_y_Relaciones_v0.1.md) + [GDD_Recursos_y_Materiales](docs/01-systems/GDD_Recursos_y_Materiales_v0.1.md). Property: see DR-07 in [DESIGN_DECISION_REGISTER.md](DESIGN_DECISION_REGISTER.md).
+> Version 1.1 · Last updated 2026-11-04 · Status: conceptual.
 
-## Principios del modelo
+## Model principles
 
-1. **Identidad única y persistente:** cada entidad tiene un identificador estable; no se referencia por nombre visible. (Entidades §2/§10; Recursos §17.)
-2. **Sin duplicación:** una entidad/recurso vive en un solo lugar; los sistemas la **referencian**, no la copian. (Maestro §6.)
-3. **Relaciones como datos de primera clase:** múltiples, simultáneas, con memoria histórica; cambian/desaparecen/reaparecen. (Entidades §9.)
-4. **Dueño vs consumidores:** cada entidad tiene un sistema **dueño** de su comportamiento; otros **leen**.
-5. **Individual ↔ agregado:** una entidad puede simularse en detalle o agregada sin perder identidad conceptual (LOD, DR-10).
-6. **Propiedad en capas:** titularidad ≠ derechos de explotación ≠ propiedad del edificio ≠ control operativo ≠ ubicación del inventario ≠ **autoridad administrativa** ≠ **soberanía política** ≠ **influencia territorial** (DR-07; ver § Modelo de propiedad).
-7. **Familia ≠ Hogar:** la **familia/linaje** es parentesco y herencia (puede abarcar varios hogares y asentamientos); el **hogar** es la unidad de residencia/economía doméstica que ocupa **una** vivienda. Un individuo pertenece a una familia aunque viva en otro hogar.
-8. **Persistencia en la agregación:** al pasar de individual a agregado (DR-10) se conserva lo identitario/histórico; se promedia/resume lo dinámico. Ver § Persistencia de la agregación.
+1. **Single, persistent identity:** each entity has a stable identifier; it is not referenced by its visible name. (Entities §2/§10; Resources §17.)
+2. **No duplication:** an entity/resource lives in a single place; systems **reference** it, they do not copy it. (Maestro §6.)
+3. **Relationships as first-class data:** multiple, simultaneous, with historical memory; they change/disappear/reappear. (Entities §9.)
+4. **Owner vs consumers:** each entity has an **owner** system for its behavior; others **read**.
+5. **Individual ↔ aggregate:** an entity can be simulated in detail or aggregated without losing conceptual identity (LOD, DR-10).
+6. **Layered property:** title ≠ exploitation rights ≠ building property ≠ operational control ≠ inventory location ≠ **administrative authority** ≠ **political sovereignty** ≠ **territorial influence** (DR-07; see § Property model).
+7. **Family ≠ Household:** the **family/lineage** is kinship and inheritance (it can span several households and settlements); the **household** is the unit of residence/domestic economy that occupies **one** dwelling. An individual belongs to a family even if they live in another household.
+8. **Persistence under aggregation:** when moving from individual to aggregate (DR-10), the identity/history is preserved; the dynamic is averaged/summarized. See § Persistence of aggregation.
 
-## Entidades centrales
+## Central entities
 
-Formato por entidad: **Propósito · Atributos · Identidad · Relaciones · Dueño / Consumidores · Individual o agregada · Evolución**.
+Format per entity: **Purpose · Attributes · Identity · Relationships · Owner / Consumers · Individual or aggregate · Evolution**.
 
-### Mundo (World)
-- **Propósito:** contenedor raíz del estado del mundo y sus parámetros de generación.
-- **Atributos:** semilla, dimensiones, preset de mapa, parámetros de clima/geología, fecha actual.
-- **Identidad:** única por partida. **Relaciones:** contiene Terreno, Regiones, Civilizaciones, Registro histórico.
-- **Dueño:** Generación del Mundo (estado inicial) + Geografía (procesos). **Consumidores:** todos.
-- **Escala:** agregada (singleton). **Evolución:** cambios ambientales/impacto humano a lo largo del tiempo.
+### World
+- **Purpose:** root container of the world state and its generation parameters.
+- **Attributes:** seed, dimensions, map preset, climate/geology parameters, current date.
+- **Identity:** unique per game. **Relationships:** contains Terrain, Regions, Civilizations, Historical record.
+- **Owner:** World Generation (initial state) + Geography (processes). **Consumers:** all.
+- **Scale:** aggregate (singleton). **Evolution:** environmental changes/human impact over time.
 
-### Terreno / Región geográfica
-- **Propósito:** relieve, hidrología, biomas, suelo, recursos naturales de una zona.
-- **Atributos:** altura, bioma, fertilidad, clima local/estacional, cuerpos de agua, yacimientos.
-- **Identidad:** por celda/parcela/región geográfica. **Relaciones:** contiene recursos naturales; condiciona asentamientos y rutas.
-- **Dueño:** Geografía/Medioambiente. **Consumidores:** Construcción, Economía, Producción, Logística, Exploración, Militar.
-- **Escala:** agregada por región; detalle local donde haya actividad. **Evolución:** regeneración/agotamiento, erosión, deforestación (post-MVP).
+### Terrain / Geographic region
+- **Purpose:** relief, hydrology, biomes, soil, natural resources of a zone.
+- **Attributes:** height, biome, fertility, local/seasonal climate, water bodies, deposits.
+- **Identity:** per cell/plot/geographic region. **Relationships:** contains natural resources; conditions settlements and routes.
+- **Owner:** Geography/Environment. **Consumers:** Construction, Economy, Production, Logistics, Exploration, Military.
+- **Scale:** aggregate per region; local detail where there is activity. **Evolution:** regeneration/depletion, erosion, deforestation (post-MVP).
 
-### Región administrativa / Territorio
-- **Propósito:** agrupación político-administrativa de asentamientos.
-- **Atributos:** nombre, límites, identidad regional, nivel de autonomía, políticas/impuestos locales, especialización.
-- **Identidad:** persistente. **Relaciones:** agrupa Asentamientos; pertenece a una Civilización; relaciones con otras regiones.
-- **Dueño:** Administración Territorial (ligada a Política). **Consumidores:** Economía, Población, Exploración.
-- **Escala:** agregada. **Evolución:** se crean/fusionan/independizan con la historia.
+### Administrative region / Territory
+- **Purpose:** political-administrative grouping of settlements.
+- **Attributes:** name, boundaries, regional identity, level of autonomy, local policies/taxes, specialization.
+- **Identity:** persistent. **Relationships:** groups Settlements; belongs to a Civilization; relationships with other regions.
+- **Owner:** Territorial Administration (tied to Politics). **Consumers:** Economy, Population, Exploration.
+- **Scale:** aggregate. **Evolution:** they are created/merged/made independent with history.
 
-### Civilización
-- **Propósito:** sociedad política e histórica de mayor alcance (jugador o IA).
-- **Atributos:** identidad cultural/religiosa, tecnología conocida, gobierno, tesorería, relaciones diplomáticas, memoria histórica, personalidad (IA).
-- **Identidad:** persistente. **Relaciones:** posee Territorios/Asentamientos; mantiene relaciones diplomáticas; afiliación cultural/religiosa.
-- **Dueño:** IA y Autonomía (las no jugadoras) / el jugador (la propia). **Consumidores:** Diplomacia, Economía, Guerra, Eventos.
-- **Escala:** agregada, con detalle creciente por cercanía/relevancia (IA §8). **Evolución:** nace/transforma/desaparece.
+### Civilization
+- **Purpose:** the political and historical society of the widest reach (player or AI).
+- **Attributes:** cultural/religious identity, known technology, government, treasury, diplomatic relations, historical memory, personality (AI).
+- **Identity:** persistent. **Relationships:** owns Territories/Settlements; maintains diplomatic relations; cultural/religious affiliation.
+- **Owner:** AI and Autonomy (the non-player ones) / the player (their own). **Consumers:** Diplomacy, Economy, War, Events.
+- **Scale:** aggregate, with increasing detail by proximity/relevance (AI §8). **Evolution:** born/transformed/disappeared.
 
-### Asentamiento (Settlement)
-- **Propósito:** núcleo habitado local (aldea→ciudad).
-- **Atributos:** ubicación, población, inventarios/almacenes, edificios, especialización, infraestructura, identidad.
-- **Identidad:** persistente. **Relaciones:** contiene Edificios, Habitantes, Inventarios; pertenece a Región/Civilización; conectado por rutas.
-- **Dueño:** compartido (Población + Economía + Construcción) bajo Entidades. **Consumidores:** casi todos.
-- **Escala:** individual (chico) → agregado (grande). **Evolución:** crecimiento urbano, especialización, decadencia.
+### Settlement
+- **Purpose:** a local inhabited nucleus (village→city).
+- **Attributes:** location, population, inventories/storehouses, buildings, specialization, infrastructure, identity.
+- **Identity:** persistent. **Relationships:** contains Buildings, Inhabitants, Inventories; belongs to a Region/Civilization; connected by routes.
+- **Owner:** shared (Population + Economy + Construction) under Entities. **Consumers:** almost all.
+- **Scale:** individual (small) → aggregate (large). **Evolution:** urban growth, specialization, decline.
 
-### Individuo (Habitante)
-- **Propósito:** persona de la sociedad.
-- **Atributos:** id, edad, sexo, familia, profesión, lugar de trabajo, necesidades, salud, habilidades, afiliación cultural/religiosa, felicidad.
-- **Identidad:** persistente en escala individual; se **agrega** en grupos sobre un umbral (DR-10). **Relaciones:** miembro de Familia/Hogar; empleado en Edificio; habita Vivienda; pertenece a clase social.
-- **Dueño:** Población y Sociedad. **Consumidores:** Producción (trabajo), Economía (consumo), Eventos, Cultura/Religión.
-- **Escala:** individual o agregado. **Evolución:** nace, envejece, cambia de profesión/clase, migra, muere.
+### Individual (Inhabitant)
+- **Purpose:** a person of the society.
+- **Attributes:** id, age, sex, family, profession, workplace, needs, health, skills, cultural/religious affiliation, happiness.
+- **Identity:** persistent at the individual scale; it is **aggregated** into groups above a threshold (DR-10). **Relationships:** member of a Family/Household; employed in a Building; inhabits a Dwelling; belongs to a social class.
+- **Owner:** Population and Society. **Consumers:** Production (labor), Economy (consumption), Events, Culture/Religion.
+- **Scale:** individual or aggregate. **Evolution:** born, ages, changes profession/class, migrates, dies.
 
-### Familia / Linaje (kinship)
-- **Propósito:** red de parentesco y vehículo de **herencia** e identidad a través de generaciones. **No** es una unidad de residencia.
-- **Atributos:** id de linaje, miembros (vivos y difuntos), relaciones de parentesco, apellido/casa (si la cultura lo usa), bienes heredables, prestigio/estatus.
-- **Identidad:** persistente a través de generaciones (sobrevive a la muerte de miembros). **Relaciones:** agrupa Individuos (pueden vivir en hogares distintos); herencia de propiedad entre miembros (DR-07); puede abarcar varios Asentamientos.
-- **Dueño:** Población (con Entidades para la identidad/relaciones). **Consumidores:** Economía (herencia), Cultura, Política (dinastías).
-- **Escala:** individual (chico) / agregada (linajes irrelevantes se resumen). **Evolución:** nace, se ramifica, se extingue; el linaje perdura aunque cambien los hogares.
+### Family / Lineage (kinship)
+- **Purpose:** kinship network and vehicle of **inheritance** and identity across generations. It is **not** a residence unit.
+- **Attributes:** lineage id, members (living and deceased), kinship relations, surname/house (if the culture uses it), inheritable assets, prestige/status.
+- **Identity:** persistent across generations (survives the death of members). **Relationships:** groups Individuals (who may live in different households); inheritance of property between members (DR-07); can span several Settlements.
+- **Owner:** Population (with Entities for identity/relationships). **Consumers:** Economy (inheritance), Culture, Politics (dynasties).
+- **Scale:** individual (small) / aggregate (irrelevant lineages are summarized). **Evolution:** born, branches out, becomes extinct; the lineage endures even as households change.
 
-### Hogar (household)
-- **Propósito:** unidad **de residencia y economía doméstica**: quiénes viven y consumen juntos en una vivienda.
-- **Atributos:** miembros actuales (de una o varias familias), vivienda ocupada, economía doméstica (ingresos/consumo), estructura (según cultura/época).
-- **Identidad:** persistente mientras exista; menos duradera que el linaje. **Relaciones:** ocupa **una** Vivienda; agrupa Individuos (que además pertenecen a su(s) Familia(s)); unidad base de consumo/vivienda.
-- **Dueño:** Población. **Consumidores:** Economía (consumo/vivienda), Construcción (demanda de vivienda), Logística (entrega de bienes).
-- **Escala:** individual (chico) / agregada. **Evolución:** se forma (matrimonio/migración), crece, se divide, se disuelve.
+### Household
+- **Purpose:** the unit of **residence and domestic economy**: who lives and consumes together in a dwelling.
+- **Attributes:** current members (from one or several families), occupied dwelling, domestic economy (income/consumption), structure (according to culture/era).
+- **Identity:** persistent while it exists; less durable than the lineage. **Relationships:** occupies **one** Dwelling; groups Individuals (who additionally belong to their Family/Families); the base unit of consumption/housing.
+- **Owner:** Population. **Consumers:** Economy (consumption/housing), Construction (housing demand), Logistics (delivery of goods).
+- **Scale:** individual (small) / aggregate. **Evolution:** forms (marriage/migration), grows, splits, dissolves.
 
-> **Por qué separarlos:** permite migración y servicio doméstico (un individuo de la familia A vive en el hogar B), herencia entre hogares, y que la demografía (linaje) y la demanda de vivienda (hogar) escalen con reglas distintas sin duplicar al Individuo.
+> **Why separate them:** it allows migration and domestic service (an individual of family A lives in household B), inheritance across households, and lets demographics (lineage) and housing demand (household) scale with different rules without duplicating the Individual.
 
-### Organización / Institución
-- **Propósito:** gremios, instituciones religiosas, políticas, comerciales, educativas, militares.
-- **Atributos:** tipo, miembros/representantes, propiedades, influencia, recursos.
-- **Identidad:** persistente. **Relaciones:** agrupa Individuos; posee Edificios/Inventarios; influye en Política/Economía/Cultura.
-- **Dueño:** el sistema de dominio (Religión/Política/Cultura/Economía) sobre el modelo de Entidades. **Consumidores:** varios.
-- **Escala:** agregada. **Evolución:** surge, crece, se reforma, desaparece.
+### Organization / Institution
+- **Purpose:** guilds, religious, political, commercial, educational, military institutions.
+- **Attributes:** type, members/representatives, properties, influence, resources.
+- **Identity:** persistent. **Relationships:** groups Individuals; owns Buildings/Inventories; influences Politics/Economy/Culture.
+- **Owner:** the domain system (Religion/Politics/Culture/Economy) over the Entities model. **Consumers:** several.
+- **Scale:** aggregate. **Evolution:** emerges, grows, reforms, disappears.
 
-### Edificio / Construcción
-- **Propósito:** estructura física con función (vivienda, producción, almacén, religioso, etc.).
-- **Atributos:** id, tipo/defId, posición/orientación, estado de obra, materiales, trabajadores, almacenamiento, configuración productiva, condición/mantenimiento, propiedad, versión histórica.
-- **Identidad:** persistente (conserva su historia al evolucionar). **Relaciones:** ubicado en Asentamiento/Terreno; emplea Individuos; contiene Inventario; propiedad de Civilización/Organización/Familia (DR-07).
-- **Dueño:** Construcción (estructura) + Producción (función). **Consumidores:** Economía, Población, Logística, Cultura (patrimonio).
-- **Escala:** individual (actor lógico, no necesariamente render). **Evolución:** obra→operativo→mejora/evolución→obsolescencia→abandono→ruina.
+### Building / Construction
+- **Purpose:** a physical structure with a function (dwelling, production, storehouse, religious, etc.).
+- **Attributes:** id, type/defId, position/orientation, construction state, materials, workers, storage, production configuration, condition/maintenance, property, historical version.
+- **Identity:** persistent (it preserves its history as it evolves). **Relationships:** located in a Settlement/Terrain; employs Individuals; contains an Inventory; property of a Civilization/Organization/Family (DR-07).
+- **Owner:** Construction (structure) + Production (function). **Consumers:** Economy, Population, Logistics, Culture (heritage).
+- **Scale:** individual (logical actor, not necessarily render). **Evolution:** construction work→operational→upgrade/evolution→obsolescence→abandonment→ruin.
 
-### Recurso natural (en el mundo)
-- **Propósito:** materia prima en el terreno (bosque, roca, agua, fauna, yacimiento).
-- **Atributos:** tipo (id de Recurso), cantidad, renovable/no renovable, tasa de regeneración, ubicación.
-- **Identidad:** por nodo/yacimiento. **Relaciones:** pertenece a Terreno; titularidad del Estado/civilización (DR-07); explotado por Edificios/Individuos.
-- **Dueño:** Geografía (existencia) + Recursos (identidad/unidad). **Consumidores:** Producción, Economía, Logística.
-- **Escala:** por nodo/agregado regional. **Evolución:** se agota/regenera.
+### Natural resource (in the world)
+- **Purpose:** raw material in the terrain (forest, rock, water, fauna, deposit).
+- **Attributes:** type (Resource id), quantity, renewable/non-renewable, regeneration rate, location.
+- **Identity:** per node/deposit. **Relationships:** belongs to Terrain; title of the State/civilization (DR-07); exploited by Buildings/Individuals.
+- **Owner:** Geography (existence) + Resources (identity/unit). **Consumers:** Production, Economy, Logistics.
+- **Scale:** per node/regional aggregate. **Evolution:** depletes/regenerates.
 
-### Recurso / Material (catálogo)
-- **Propósito:** definición única de un bien (identidad económica + material).
-- **Atributos:** id estable, nombre visible (localizado), categoría (naturaleza) + función económica (materia prima/intermedio/final), calidad, reglas de almacenamiento/deterioro, unidad, propiedades.
-- **Identidad:** id global único. **Relaciones:** usado por Recetas, Inventarios, Comercio, Construcción.
-- **Dueño:** **Recursos y Materiales** (catálogo único). **Consumidores:** TODOS los económicos.
-- **Escala:** definición (data-driven). **Evolución:** disponibilidad por período/tecnología.
+### Resource / Material (catalog)
+- **Purpose:** the single definition of a good (economic identity + material).
+- **Attributes:** stable id, visible name (localized), category (nature) + economic function (raw material/intermediate/final), quality, storage/decay rules, unit, properties.
+- **Identity:** globally unique id. **Relationships:** used by Recipes, Inventories, Trade, Construction.
+- **Owner:** **Resources and Materials** (single catalog). **Consumers:** ALL the economic ones.
+- **Scale:** definition (data-driven). **Evolution:** availability by period/technology.
 
-### Inventario
-- **Propósito:** contenedor de cantidades de recursos en una ubicación.
-- **Atributos:** dueño (edificio/asentamiento/organización/familia), capacidad, contenidos {recurso→cantidad}, ubicación física.
-- **Identidad:** por contenedor. **Relaciones:** pertenece a una entidad; la **ubicación física** importa (no se consume sin entrega — DC-06).
-- **Dueño:** Recursos/Logística. **Consumidores:** Producción, Economía, Comercio.
-- **Escala:** individual. **Evolución:** flujos de entrada/salida.
+### Inventory
+- **Purpose:** a container of resource quantities at a location.
+- **Attributes:** owner (building/settlement/organization/family), capacity, contents {resource→quantity}, physical location.
+- **Identity:** per container. **Relationships:** belongs to an entity; the **physical location** matters (nothing is consumed without delivery — DC-06).
+- **Owner:** Resources/Logistics. **Consumers:** Production, Economy, Trade.
+- **Scale:** individual. **Evolution:** inflow/outflow.
 
-### Receta de producción
-- **Propósito:** transformación entradas→salidas.
-- **Atributos:** id, insumos, productos, duración, tipo de edificio requerido, requisitos de mano de obra, recetas alternativas, requisito tecnológico.
-- **Identidad:** definición (data-driven). **Relaciones:** usada por Edificios; referencia Recursos; habilitada por Tecnología.
-- **Dueño:** Producción y Trabajo. **Consumidores:** Economía, Logística.
-- **Escala:** definición. **Evolución:** nuevas recetas/mejoras por tecnología.
+### Production recipe
+- **Purpose:** inputs→outputs transformation.
+- **Attributes:** id, inputs, products, duration, required building type, labor requirements, alternative recipes, technology requirement.
+- **Identity:** definition (data-driven). **Relationships:** used by Buildings; references Resources; enabled by Technology.
+- **Owner:** Production and Labor. **Consumers:** Economy, Logistics.
+- **Scale:** definition. **Evolution:** new recipes/improvements by technology.
 
-### Profesión / Trabajo
-- **Propósito:** ocupación de un individuo y sus habilidades.
-- **Atributos:** tipo, habilidad principal + secundarias, nivel/experiencia, lugar de trabajo.
-- **Dueño:** Producción (empleo) + Población (habilidades). **Consumidores:** Economía (salarios).
-- **Escala:** individual/agregada. **Evolución:** aprendizaje, cambio de profesión, especialización.
+### Profession / Labor
+- **Purpose:** an individual's occupation and their skills.
+- **Attributes:** type, primary + secondary skill, level/experience, workplace.
+- **Owner:** Production (employment) + Population (skills). **Consumers:** Economy (wages).
+- **Scale:** individual/aggregate. **Evolution:** learning, change of profession, specialization.
 
-### Tecnología / Conocimiento
-- **Propósito:** capacidad/conocimiento que habilita métodos y transformaciones.
-- **Atributos:** id, disciplina, prerrequisitos (condiciones, no año), efectos habilitados, estado (descubierta/en progreso).
-- **Identidad:** definición + estado por civilización. **Relaciones:** habilita Recetas/Edificios/Infraestructura/Unidades; se difunde entre Civilizaciones.
-- **Dueño:** Tecnología. **Consumidores:** Producción, Construcción, Logística, Militar. (Marco común: HISTORICAL_EVOLUTION_FRAMEWORK.)
-- **Escala:** por civilización. **Evolución:** se descubre; rara vez se pierde; coexiste con lo obsoleto.
+### Technology / Knowledge
+- **Purpose:** a capability/knowledge that enables methods and transformations.
+- **Attributes:** id, discipline, prerequisites (conditions, not year), enabled effects, state (discovered/in progress).
+- **Identity:** definition + state per civilization. **Relationships:** enables Recipes/Buildings/Infrastructure/Units; diffuses between Civilizations.
+- **Owner:** Technology. **Consumers:** Production, Construction, Logistics, Military. (Shared framework: HISTORICAL_EVOLUTION_FRAMEWORK.)
+- **Scale:** per civilization. **Evolution:** it is discovered; rarely lost; coexists with the obsolete.
 
-### Cultura / Religión
-- **Propósito:** identidad y creencias de una sociedad.
-- **Atributos:** componentes (idioma, arte, tradiciones, festividades / creencias, instituciones, figuras), difusión, variantes regionales.
-- **Identidad:** persistente por civilización/región. **Relaciones:** afiliación de Individuos; expresión en Edificios; influye Política.
-- **Dueño:** Cultura / Religión. **Consumidores:** Población, Construcción, Diplomacia, Política.
-- **Escala:** agregada. **Evolución:** orgánica; fusión, división, secularización.
+### Culture / Religion
+- **Purpose:** the identity and beliefs of a society.
+- **Attributes:** components (language, art, traditions, festivities / beliefs, institutions, figures), diffusion, regional variants.
+- **Identity:** persistent per civilization/region. **Relationships:** affiliation of Individuals; expression in Buildings; influences Politics.
+- **Owner:** Culture / Religion. **Consumers:** Population, Construction, Diplomacy, Politics.
+- **Scale:** aggregate. **Evolution:** organic; fusion, division, secularization.
 
-### Institución política / Gobierno
-- **Propósito:** estructura de poder, leyes y políticas.
-- **Atributos:** forma de gobierno, leyes/políticas activas, instituciones, líderes, estabilidad.
-- **Dueño:** Política y Gobierno (aplicada por Administración). **Consumidores:** Economía (impuestos), Población, Militar.
-- **Escala:** agregada por civilización/región. **Evolución:** reformas, cambios de régimen con consecuencias.
+### Political institution / Government
+- **Purpose:** the structure of power, laws and policies.
+- **Attributes:** form of government, active laws/policies, institutions, leaders, stability.
+- **Owner:** Politics and Government (applied by Administration). **Consumers:** Economy (taxes), Population, Military.
+- **Scale:** aggregate per civilization/region. **Evolution:** reforms, regime changes with consequences.
 
-### Ruta comercial / de transporte
-- **Propósito:** conexión física para mover recursos/personas.
-- **Atributos:** origen/destino, modo (terrestre/fluvial/marítimo), capacidad, costo/tiempo, estado, mantenimiento.
-- **Dueño:** Transporte/Comercio/Logística. **Consumidores:** Economía, Militar (abastecimiento), Exploración.
-- **Escala:** individual/agregada. **Evolución:** se crean/optimizan/abandonan.
+### Trade / transport route
+- **Purpose:** a physical connection to move resources/people.
+- **Attributes:** origin/destination, mode (land/river/sea), capacity, cost/time, state, maintenance.
+- **Owner:** Transport/Trade/Logistics. **Consumers:** Economy, Military (supply), Exploration.
+- **Scale:** individual/aggregate. **Evolution:** created/optimized/abandoned.
 
-### Evento / Acontecimiento
-- **Propósito:** hecho con causas y consecuencias, base de la historia emergente.
-- **Atributos:** tipo, fecha, escala, entidades involucradas, causas, consecuencias (inmediatas/largo plazo).
-- **Dueño:** generado por el sistema de dominio; **registrado** por Eventos. **Consumidores:** Progresión (legado), UI (notificaciones/crónica).
-- **Escala:** individual. **Evolución:** encadena consecuencias.
+### Event / Occurrence
+- **Purpose:** a fact with causes and consequences, the basis of emergent history.
+- **Attributes:** type, date, scale, entities involved, causes, consequences (immediate/long-term).
+- **Owner:** generated by the domain system; **recorded** by Events. **Consumers:** Progression (legacy), UI (notifications/chronicle).
+- **Scale:** individual. **Evolution:** chains consequences.
 
-### Registro histórico / Memoria
-- **Propósito:** cronología y biografías verificables.
-- **Atributos:** entradas con fecha/entidades/consecuencias; biografías de figuras importantes; huellas en el mundo.
-- **Dueño:** Eventos. **Consumidores:** Progresión, Interfaz, Diplomacia (memoria de relaciones).
-- **Escala:** agregada. **Evolución:** crece durante la partida.
+### Historical record / Memory
+- **Purpose:** verifiable chronology and biographies.
+- **Attributes:** entries with date/entities/consequences; biographies of important figures; imprints on the world.
+- **Owner:** Events. **Consumers:** Progression, Interface, Diplomacy (relationship memory).
+- **Scale:** aggregate. **Evolution:** grows during the game.
 
-## Modelo de propiedad y autoridad (DR-07, en capas)
+## Property and authority model (DR-07, layered)
 
-Ocho capas distintas, que **no** deben colapsarse en un único campo "dueño":
+Eight distinct layers, which must **not** be collapsed into a single "owner" field:
 
-| Capa | Qué expresa | Ejemplo | Sistema dueño |
+| Layer | What it expresses | Example | Owner system |
 |---|---|---|---|
-| **Titularidad** | quién es dueño legal del recurso/tierra | el Estado posee el bosque | Economía/Política |
-| **Derechos de explotación** | quién puede extraer/usar | una familia tala con licencia | Economía |
-| **Propiedad del edificio** | quién es dueño de la estructura | gremio dueño del taller | Construcción/Economía |
-| **Control operativo** | quién lo opera día a día | capataz/trabajadores | Producción |
-| **Ubicación del inventario** | dónde están físicamente los bienes | almacén del taller | Recursos/Logística |
-| **Autoridad administrativa** | quién gestiona/recauda localmente | gobernador de la región | Administración Territorial |
-| **Soberanía política** | bajo qué poder soberano cae | Estado al que pertenece la región | Política y Gobierno |
-| **Influencia territorial** | alcance de hecho (cultural/económico/militar), no jurídico | zona de influencia disputada | Exploración/Diplomacia |
+| **Title** | who is the legal owner of the resource/land | the State owns the forest | Economy/Politics |
+| **Exploitation rights** | who may extract/use | a family logs under license | Economy |
+| **Building property** | who owns the structure | guild owns the workshop | Construction/Economy |
+| **Operational control** | who operates it day to day | foreman/workers | Production |
+| **Inventory location** | where the goods physically are | the workshop's storehouse | Resources/Logistics |
+| **Administrative authority** | who manages/collects locally | the region's governor | Territorial Administration |
+| **Political sovereignty** | under which sovereign power it falls | the State the region belongs to | Politics and Government |
+| **Territorial influence** | de facto reach (cultural/economic/military), not legal | disputed zone of influence | Exploration/Diplomacy |
 
 ```mermaid
 flowchart LR
-    NAT["Recurso natural"] -->|titularidad| CIV["Estado / Civilización"]
-    NAT -->|derechos de explotación| OP["Operador (familia/organización/privado)"]
-    BLD["Edificio"] -->|propiedad| OWN["Dueño (civ/organización/familia)"]
-    BLD -->|control operativo| OP
-    INV["Inventario"] -->|ubicación física| BLD
-    INV -->|pertenece a| OWN
-    REG["Región"] -->|autoridad administrativa| ADMIN["Gobierno regional"]
-    REG -->|soberanía política| CIV
-    REG -->|influencia territorial de hecho| INF["Civilizaciones vecinas (puede diferir de la soberanía)"]
+    NAT["Natural resource"] -->|title| CIV["State / Civilization"]
+    NAT -->|exploitation rights| OP["Operator (family/organization/private)"]
+    BLD["Building"] -->|property| OWN["Owner (civ/organization/family)"]
+    BLD -->|operational control| OP
+    INV["Inventory"] -->|physical location| BLD
+    INV -->|belongs to| OWN
+    REG["Region"] -->|administrative authority| ADMIN["Regional government"]
+    REG -->|political sovereignty| CIV
+    REG -->|de facto territorial influence| INF["Neighboring civilizations (may differ from sovereignty)"]
 ```
-Distinguir estas capas evita duplicar "propiedad" en cada sistema y habilita fiscalidad, herencia, comercio, autonomía regional y zonas de influencia disputadas de forma coherente. **Soberanía ≠ influencia:** una región puede ser soberana de una civilización y estar bajo influencia económica/cultural de otra (base para vasallaje, zonas grises y conflicto). DR-07 **confirmada por delegación** (reversible).
+Distinguishing these layers avoids duplicating "property" in each system and enables taxation, inheritance, trade, regional autonomy and disputed zones of influence coherently. **Sovereignty ≠ influence:** a region may be sovereign to one civilization and under the economic/cultural influence of another (the basis for vassalage, gray zones and conflict). DR-07 **confirmed by delegation** (reversible).
 
-## Persistencia de la agregación (individual ↔ agregado, DR-10)
+## Persistence of aggregation (individual ↔ aggregate, DR-10)
 
-Al cruzar el umbral de agregación (DR-10/DR-06), una entidad deja de simularse en detalle pero **no pierde identidad**. Qué se conserva y qué se resume:
+When crossing the aggregation threshold (DR-10/DR-06), an entity stops being simulated in detail but does **not** lose identity. What is preserved and what is summarized:
 
-| Se **conserva** (identitario/histórico) | Se **resume/promedia** (dinámico) | Se puede **reconstruir** al desagregar |
+| **Preserved** (identity/history) | **Summarized/averaged** (dynamic) | Can be **reconstructed** when disaggregating |
 |---|---|---|
-| id estable de la entidad y de sus relaciones clave | necesidades/salud/felicidad individuales → promedios y distribución | individuos representativos a partir de la distribución |
-| linaje y figuras históricas relevantes | posiciones exactas → densidad por zona | hogares a partir de tamaño medio y vivienda disponible |
-| afiliación cultural/religiosa y clase (proporciones) | inventarios individuales → stock agregado del asentamiento | profesiones a partir de la mezcla ocupacional |
-| hechos/eventos ya registrados | tareas/trayectos en curso → tasas de producción | — |
+| stable id of the entity and of its key relationships | individual needs/health/happiness → averages and distribution | representative individuals from the distribution |
+| lineage and relevant historical figures | exact positions → density by zone | households from average size and available housing |
+| cultural/religious affiliation and class (proportions) | individual inventories → the settlement's aggregate stock | professions from the occupational mix |
+| already-recorded facts/events | ongoing tasks/journeys → production rates | — |
 
-**Reglas:** (1) la agregación es **reversible** sin inventar historia (lo resumido se regenera de forma plausible, no idéntica); (2) nunca se duplica el estado: una entidad está en modo individual **o** agregado, no ambos; (3) los eventos ya registrados permanecen aunque sus protagonistas se agreguen (sostiene el Escenario G de [CROSS_SYSTEM_VALIDATION_SCENARIOS.md](CROSS_SYSTEM_VALIDATION_SCENARIOS.md)). Umbrales y presupuestos concretos: pendientes de etapa (DR-06).
+**Rules:** (1) aggregation is **reversible** without inventing history (what was summarized regenerates plausibly, not identically); (2) the state is never duplicated: an entity is in individual **or** aggregate mode, not both; (3) already-recorded events remain even if their protagonists are aggregated (it supports Scenario G of [CROSS_SYSTEM_VALIDATION_SCENARIOS.md](CROSS_SYSTEM_VALIDATION_SCENARIOS.md)). Concrete thresholds and budgets: pending per stage (DR-06).
 
-## Alcance por entidad (MVP vs futuro)
+## Scope per entity (MVP vs future)
 
-| Entidad | ¿En el MVP/primer playable? | Nota |
+| Entity | In the MVP/first playable? | Note |
 |---|---|---|
-| Mundo, Terreno/Región geográfica | **MVP** | base de todo |
-| Asentamiento | **MVP** | uno al inicio |
-| Individuo | **MVP** | ~20–30 individuales |
-| Hogar | **MVP (básico)** | vivienda/consumo |
-| Familia/Linaje | **MVP mínimo** | herencia completa → futuro |
-| Edificio, Inventario, Recurso natural, Recurso/Material, Receta, Profesión | **MVP** | corazón de la economía (Escenarios A–B) |
-| Tecnología/Conocimiento | **MVP (árbol inicial)** | difusión entre civilizaciones → futuro |
-| Región administrativa | Futuro | aparece con varias ciudades (Escenario E) |
-| Civilización (IA) | Futuro | la propia, mínima en MVP; otras IA → futuro |
-| Organización/Institución | Futuro | gremios/religión posteriores |
-| Cultura/Religión | Futuro | Escenario F |
-| Institución política/Gobierno | Futuro | tras administración regional |
-| Ruta comercial | **MVP (intra-asentamiento)** / Futuro (inter) | logística simple ya existe en SimCore |
-| Evento/Registro histórico | **MVP (básico)** | crónica mínima; biografías → futuro |
+| World, Terrain/Geographic region | **MVP** | base of everything |
+| Settlement | **MVP** | one at the start |
+| Individual | **MVP** | ~20–30 individual |
+| Household | **MVP (basic)** | housing/consumption |
+| Family/Lineage | **Minimal MVP** | full inheritance → future |
+| Building, Inventory, Natural resource, Resource/Material, Recipe, Profession | **MVP** | the heart of the economy (Scenarios A–B) |
+| Technology/Knowledge | **MVP (initial tree)** | diffusion between civilizations → future |
+| Administrative region | Future | appears with several cities (Scenario E) |
+| Civilization (AI) | Future | the player's own, minimal in MVP; other AIs → future |
+| Organization/Institution | Future | guilds/religion later |
+| Culture/Religion | Future | Scenario F |
+| Political institution/Government | Future | after regional administration |
+| Trade route | **MVP (intra-settlement)** / Future (inter) | simple logistics already exists in SimCore |
+| Event/Historical record | **MVP (basic)** | minimal chronicle; biographies → future |
 
-## Diagrama de relaciones (alto nivel)
+## Relationship diagram (high level)
 
 ```mermaid
 erDiagram
-    WORLD ||--o{ REGION : contiene
-    REGION ||--o{ SETTLEMENT : agrupa
-    CIVILIZATION ||--o{ REGION : administra
-    SETTLEMENT ||--o{ BUILDING : contiene
-    SETTLEMENT ||--o{ INDIVIDUAL : habita
-    FAMILY ||--o{ INDIVIDUAL : parentesco
-    HOUSEHOLD ||--o{ INDIVIDUAL : reside
-    HOUSEHOLD }o--|| BUILDING : ocupa_vivienda
-    BUILDING ||--o{ INVENTORY : tiene
-    BUILDING }o--|| RECIPE : produce
-    RECIPE }o--o{ RESOURCE : usa
-    INDIVIDUAL }o--|| PROFESSION : ejerce
-    CIVILIZATION ||--o{ TECHNOLOGY : conoce
-    CIVILIZATION ||--o{ ORGANIZATION : alberga
-    EVENT }o--o{ HISTORICAL_RECORD : registrado_en
+    WORLD ||--o{ REGION : contains
+    REGION ||--o{ SETTLEMENT : groups
+    CIVILIZATION ||--o{ REGION : administers
+    SETTLEMENT ||--o{ BUILDING : contains
+    SETTLEMENT ||--o{ INDIVIDUAL : inhabits
+    FAMILY ||--o{ INDIVIDUAL : kinship
+    HOUSEHOLD ||--o{ INDIVIDUAL : resides
+    HOUSEHOLD }o--|| BUILDING : occupies_dwelling
+    BUILDING ||--o{ INVENTORY : has
+    BUILDING }o--|| RECIPE : produces
+    RECIPE }o--o{ RESOURCE : uses
+    INDIVIDUAL }o--|| PROFESSION : practices
+    CIVILIZATION ||--o{ TECHNOLOGY : knows
+    CIVILIZATION ||--o{ ORGANIZATION : hosts
+    EVENT }o--o{ HISTORICAL_RECORD : recorded_in
 ```
 
-## Notas de duplicación a evitar
+## Duplication notes to avoid
 
-- **Recurso/material:** solo en el catálogo de Recursos; el resto referencia por id. (F-09)
-- **Identidad/relaciones:** solo en Entidades; Población añade dinámica social, no otra identidad. (F-10)
-- **Control territorial:** Exploración (conocimiento/ocupación) ≠ Administración (gestión) ≠ Diplomacia (relación externa). (F-11)
-- **Inventario:** una ubicación física por contenedor; no replicar stock entre sistemas. (DC-07/DC-06)
+- **Resource/material:** only in the Resources catalog; the rest reference it by id. (F-09)
+- **Identity/relationships:** only in Entities; Population adds social dynamics, not another identity. (F-10)
+- **Territorial control:** Exploration (knowledge/occupation) ≠ Administration (management) ≠ Diplomacy (external relationship). (F-11)
+- **Inventory:** one physical location per container; do not replicate stock between systems. (DC-07/DC-06)

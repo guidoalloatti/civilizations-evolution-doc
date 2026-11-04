@@ -1,753 +1,753 @@
-> **Control documental:** 0.1 | Estado: diseño conceptual; las decisiones marcadas como confirmadas se preservan desde la fuente. **Alcance:** este GDD es fuente de detalle de su dominio; el GDD Maestro establece la visión común. Los conflictos intersistema se registran en AUDIT_REPORT.md y no se resuelven implícitamente.
+> **Document control:** 0.1 | Status: conceptual design; decisions marked as confirmed are preserved from the source. **Scope:** this GDD is the detail source for its domain; the Master GDD establishes the shared vision. Cross-system conflicts are recorded in AUDIT_REPORT.md and are not resolved implicitly.
 
 ---
 
-# GDD — GUERRA Y SISTEMAS MILITARES
+# GDD — WAR AND MILITARY SYSTEMS
 
-**Versión:** 0.1  
-**Estado:** Definición conceptual consolidada  
-**Proyecto:** Simulador histórico de civilizaciones
+**Version:** 0.1  
+**Status:** Consolidated conceptual definition  
+**Project:** Historical civilization simulator
 
 ---
 
-## 1. Visión general
+## 1. Overview
 
-El sistema militar permitirá que las civilizaciones desarrollen capacidades defensivas y ofensivas, organicen fuerzas armadas, participen en conflictos y evolucionen sus estrategias militares a lo largo de los siglos.
+The military system will allow civilizations to develop defensive and offensive capabilities, organize armed forces, take part in conflicts, and evolve their military strategies over the centuries.
 
-La guerra será un componente importante del juego, pero no su eje principal.
+War will be an important component of the game, but not its main focus.
 
-El objetivo es representar la evolución histórica de la organización militar, las tecnologías bélicas, las tácticas, las fortificaciones y las relaciones entre sociedades.
+The goal is to represent the historical evolution of military organization, war technologies, tactics, fortifications, and the relationships between societies.
 
-Las guerras deberán tener consecuencias económicas, demográficas, políticas, culturales y territoriales.
+Wars must have economic, demographic, political, cultural, and territorial consequences.
 
-El sistema permitirá desde enfrentamientos relativamente simples hasta conflictos complejos con ejércitos, flotas, comandantes, logística y estrategias.
+The system will support anything from relatively simple clashes to complex conflicts involving armies, fleets, commanders, logistics, and strategies.
 
-**Principio fundamental:**
+**Fundamental principle:**
 
-La guerra será una de las fuerzas capaces de transformar la historia de una civilización, pero nunca será la única forma de progresar, competir o alcanzar el éxito.
+War will be one of the forces capable of transforming the history of a civilization, but it will never be the only way to progress, compete, or achieve success.
 
-## 2. Organización militar
+## 2. Military organization
 
-### 2.1. Modelo de organización
+### 2.1. Organization model
 
-El sistema tendrá una organización militar configurable.
+The system will have a configurable military organization.
 
-Se contemplarán diferentes escalas:
+Different scales are considered:
 
-- Soldados individuales.
-- Escuadrones.
-- Unidades militares.
-- Regimientos y formaciones.
-- Ejércitos.
-- Flotas.
-- Guarniciones.
-- Fuerzas regionales.
+- Individual soldiers.
+- Squads.
+- Military units.
+- Regiments and formations.
+- Armies.
+- Fleets.
+- Garrisons.
+- Regional forces.
 
-El nivel de detalle podrá variar según el tamaño de la civilización y las preferencias del jugador.
+The level of detail may vary depending on the size of the civilization and the player's preferences.
 
-En comunidades pequeñas podrá existir una representación más individualizada de los combatientes. En grandes civilizaciones, las fuerzas podrán agruparse para reducir la complejidad de simulación.
+In small communities there may be a more individualized representation of combatants. In large civilizations, forces may be grouped to reduce simulation complexity.
 
-### 2.2. Tipos de fuerzas militares
+### 2.2. Types of military forces
 
-Se incluirán todas las categorías históricas relevantes:
+All relevant historical categories will be included:
 
-**Infantería**
-- Guerreros con armas primitivas.
-- Infantería ligera.
-- Infantería pesada.
-- Lanceros.
-- Espadachines.
-- Piqueros.
-- Tropas especializadas.
+**Infantry**
+- Warriors with primitive weapons.
+- Light infantry.
+- Heavy infantry.
+- Spearmen.
+- Swordsmen.
+- Pikemen.
+- Specialized troops.
 
-**Unidades a distancia**
-- Hondas.
-- Arqueros.
-- Ballesteros.
-- Tropas con armas arrojadizas.
-- Artillería de diferentes épocas.
+**Ranged units**
+- Slings.
+- Archers.
+- Crossbowmen.
+- Troops with throwing weapons.
+- Artillery of different eras.
 
-**Caballería**
-- Caballería ligera.
-- Caballería pesada.
-- Arqueros a caballo.
-- Unidades especializadas.
-- Formaciones montadas.
+**Cavalry**
+- Light cavalry.
+- Heavy cavalry.
+- Horse archers.
+- Specialized units.
+- Mounted formations.
 
-**Fuerzas navales**
-- Embarcaciones de guerra.
-- Galeras.
-- Barcos de transporte militar.
-- Flotas especializadas.
-- Unidades navales de distintas épocas.
+**Naval forces**
+- Warships.
+- Galleys.
+- Military transport ships.
+- Specialized fleets.
+- Naval units of different eras.
 
-**Ingeniería militar**
-- Ingenieros.
-- Constructores de fortificaciones.
-- Unidades de asedio.
-- Operadores de máquinas de guerra.
-- Personal especializado en infraestructura militar.
+**Military engineering**
+- Engineers.
+- Fortification builders.
+- Siege units.
+- War machine operators.
+- Personnel specialized in military infrastructure.
 
-**Fuerzas de seguridad**
-- Guarniciones.
-- Guardias.
-- Milicias.
-- Fuerzas de protección urbana.
-- Unidades de vigilancia territorial.
+**Security forces**
+- Garrisons.
+- Guards.
+- Militias.
+- Urban protection forces.
+- Territorial surveillance units.
 
-Todas las categorías evolucionarán según los conocimientos, recursos y condiciones históricas de cada civilización.
+All categories will evolve according to the knowledge, resources, and historical conditions of each civilization.
 
-## 3. Reclutamiento y organización de las fuerzas armadas
+## 3. Recruitment and organization of the armed forces
 
-### 3.1. Origen de los soldados
+### 3.1. Origin of soldiers
 
-Los ejércitos podrán estar formados por diferentes modelos de reclutamiento:
+Armies may be formed from different recruitment models:
 
-- Guerreros comunitarios.
-- Milicias.
-- Reclutamiento obligatorio.
-- Soldados voluntarios.
-- Tropas profesionales.
-- Mercenarios.
-- Fuerzas de élite.
-- Ejércitos privados o de señores locales, cuando corresponda históricamente.
+- Community warriors.
+- Militias.
+- Mandatory conscription.
+- Volunteer soldiers.
+- Professional troops.
+- Mercenaries.
+- Elite forces.
+- Private armies or those of local lords, where historically appropriate.
 
-La importancia de cada modelo dependerá de la época, las instituciones, la economía y el sistema político.
+The importance of each model will depend on the era, institutions, economy, and political system.
 
-El jugador podrá configurar las modalidades de reclutamiento.
+The player will be able to configure the recruitment methods.
 
-### 3.2. Relación con la población
+### 3.2. Relationship with the population
 
-El sistema militar estará conectado directamente con el sistema demográfico.
+The military system will be directly connected to the demographic system.
 
-El reclutamiento podrá afectar:
+Recruitment may affect:
 
-- Disponibilidad de trabajadores.
-- Producción económica.
-- Estructura familiar.
-- Natalidad y mortalidad.
-- Distribución por edades.
-- Bienestar.
-- Opinión pública.
-- Estabilidad política.
+- Availability of workers.
+- Economic production.
+- Family structure.
+- Birth rate and mortality.
+- Age distribution.
+- Well-being.
+- Public opinion.
+- Political stability.
 
-Las guerras prolongadas podrán generar escasez de mano de obra y cambios en la estructura social.
+Prolonged wars may generate labor shortages and changes in the social structure.
 
-El impacto dependerá de la cantidad de soldados movilizados, la duración del conflicto y las características de la sociedad.
+The impact will depend on the number of soldiers mobilized, the duration of the conflict, and the characteristics of the society.
 
-### 3.3. Profesiones militares
+### 3.3. Military professions
 
-La actividad militar podrá convertirse en una profesión estable.
+Military activity may become a stable profession.
 
-Los soldados desarrollarán experiencia y habilidades.
+Soldiers will develop experience and skills.
 
-Se contemplarán:
+The following are considered:
 
-- Reclutas.
-- Soldados experimentados.
-- Veteranos.
-- Especialistas.
-- Oficiales.
-- Comandantes.
+- Recruits.
+- Experienced soldiers.
+- Veterans.
+- Specialists.
+- Officers.
+- Commanders.
 
-La experiencia podrá mejorar el desempeño, la disciplina y la capacidad de adaptación.
+Experience may improve performance, discipline, and adaptability.
 
-## 4. Evolución histórica militar
+## 4. Historical military evolution
 
-### 4.1. Progresión tecnológica
+### 4.1. Technological progression
 
-El sistema militar evolucionará desde las primeras formas de combate organizado hasta las tecnologías preindustriales.
+The military system will evolve from the first forms of organized combat to pre-industrial technologies.
 
-Se contemplarán:
+The following are considered:
 
-- Armas de piedra, madera y hueso.
-- Metalurgia y armas de bronce.
-- Armas de hierro y acero.
-- Escudos y armaduras.
-- Arcos y ballestas.
-- Caballería especializada.
-- Máquinas de asedio.
-- Fortificaciones.
-- Construcción naval militar.
-- Artillería.
-- Armas de pólvora.
-- Organización militar profesional.
-- Sistemas logísticos avanzados.
+- Stone, wood, and bone weapons.
+- Metallurgy and bronze weapons.
+- Iron and steel weapons.
+- Shields and armor.
+- Bows and crossbows.
+- Specialized cavalry.
+- Siege machines.
+- Fortifications.
+- Military shipbuilding.
+- Artillery.
+- Gunpowder weapons.
+- Professional military organization.
+- Advanced logistical systems.
 
-No existirá una secuencia tecnológica obligatoria.
+There will be no mandatory technological sequence.
 
-Cada civilización podrá desarrollar capacidades diferentes según sus recursos, conocimientos, instituciones y circunstancias.
+Each civilization may develop different capabilities according to its resources, knowledge, institutions, and circumstances.
 
-### 4.2. Períodos históricos
+### 4.2. Historical periods
 
-Los períodos históricos servirán como referencias para determinar qué tecnologías, equipamientos y organizaciones son plausibles.
+Historical periods will serve as references for determining which technologies, equipment, and organizations are plausible.
 
-No serán límites rígidos.
+They will not be rigid limits.
 
-Una civilización podrá conservar tecnologías antiguas mientras otras desarrollan capacidades más avanzadas.
+A civilization may retain old technologies while others develop more advanced capabilities.
 
-### 4.3. Doctrinas militares
+### 4.3. Military doctrines
 
-Cada civilización podrá desarrollar doctrinas militares propias.
+Each civilization may develop its own military doctrines.
 
-Algunos ejemplos:
+Some examples:
 
-- Especialización en infantería.
-- Superioridad de caballería.
-- Guerra naval.
-- Guerra defensiva.
-- Fortificaciones.
-- Movilidad y velocidad.
-- Guerra de desgaste.
-- Asedios.
-- Organización profesional.
-- Guerra basada en tropas especializadas.
+- Infantry specialization.
+- Cavalry superiority.
+- Naval warfare.
+- Defensive warfare.
+- Fortifications.
+- Mobility and speed.
+- Attrition warfare.
+- Sieges.
+- Professional organization.
+- Warfare based on specialized troops.
 
-Las doctrinas surgirán de la experiencia, las instituciones, la geografía, las tecnologías y las decisiones políticas.
+Doctrines will arise from experience, institutions, geography, technologies, and political decisions.
 
-El jugador podrá favorecer determinadas especializaciones.
+The player will be able to favor certain specializations.
 
-Las doctrinas no serán simples bonificaciones arbitrarias: deberán reflejar organización, entrenamiento y experiencia acumulada.
+Doctrines will not be simple arbitrary bonuses: they must reflect organization, training, and accumulated experience.
 
-## 5. Comandantes y liderazgo militar
+## 5. Commanders and military leadership
 
-Los comandantes serán personajes identificables.
+Commanders will be identifiable characters.
 
-Tendrán atributos y características que influirán en su desempeño.
+They will have attributes and characteristics that influence their performance.
 
-Se contemplarán:
+The following are considered:
 
-- Experiencia.
-- Capacidad estratégica.
-- Capacidad táctica.
-- Liderazgo.
-- Disciplina.
-- Personalidad.
-- Reputación.
-- Lealtad.
-- Especialización.
+- Experience.
+- Strategic ability.
+- Tactical ability.
+- Leadership.
+- Discipline.
+- Personality.
+- Reputation.
+- Loyalty.
+- Specialization.
 
-Los comandantes podrán adquirir experiencia mediante campañas y conflictos.
+Commanders may gain experience through campaigns and conflicts.
 
-También podrán cometer errores, desarrollar rivalidades, ganar prestigio, perder influencia o desaparecer.
+They may also make mistakes, develop rivalries, gain prestige, lose influence, or disappear.
 
-Su importancia será moderada: podrán influir considerablemente en una campaña, pero no deberán determinar por sí solos el resultado de todas las guerras.
+Their importance will be moderate: they may considerably influence a campaign, but they must not single-handedly determine the outcome of every war.
 
-La sucesión de comandantes y el desarrollo de tradiciones militares formarán parte de la evolución histórica.
+The succession of commanders and the development of military traditions will be part of the historical evolution.
 
-## 6. Sistema de combate
+## 6. Combat system
 
-### 6.1. Modalidades
+### 6.1. Modes
 
-El combate será configurable.
+Combat will be configurable.
 
-Se contemplarán tres modalidades principales:
+Three main modes are considered:
 
-**Automática**
-- El sistema calcula los enfrentamientos.
-- El jugador recibe resultados y consecuencias.
-- No requiere intervención táctica.
+**Automatic**
+- The system calculates the clashes.
+- The player receives results and consequences.
+- No tactical intervention required.
 
-**Táctica**
-- El jugador puede influir en formaciones, posiciones y maniobras.
-- Se consideran terreno, moral, comandantes y condiciones del enfrentamiento.
+**Tactical**
+- The player can influence formations, positions, and maneuvers.
+- Terrain, morale, commanders, and the conditions of the clash are taken into account.
 
-**Detallada**
-- Mayor representación de unidades y comportamiento individual.
-- Mayor control sobre equipamiento, movimientos y decisiones tácticas.
+**Detailed**
+- Greater representation of units and individual behavior.
+- Greater control over equipment, movements, and tactical decisions.
 
-El jugador podrá elegir el nivel de intervención y modificarlo según sus preferencias.
+The player will be able to choose the level of intervention and change it according to their preferences.
 
-### 6.2. Factores que determinan el resultado
+### 6.2. Factors that determine the outcome
 
-Las batallas tendrán en cuenta:
+Battles will take into account:
 
-- Cantidad de tropas.
-- Calidad y experiencia.
-- Armamento y equipamiento.
-- Moral y disciplina.
-- Comandantes.
-- Terreno.
-- Clima.
-- Suministros.
-- Formación y organización.
-- Tecnología.
-- Inteligencia sobre el enemigo.
+- Number of troops.
+- Quality and experience.
+- Armament and equipment.
+- Morale and discipline.
+- Commanders.
+- Terrain.
+- Climate.
+- Supplies.
+- Formation and organization.
+- Technology.
+- Intelligence about the enemy.
 
-Ningún factor aislado deberá determinar automáticamente el resultado.
+No single factor should automatically determine the outcome.
 
-La superioridad numérica será importante, pero no garantizará la victoria.
+Numerical superiority will be important, but it will not guarantee victory.
 
-### 6.3. Moral
+### 6.3. Morale
 
-La moral tendrá una importancia significativa.
+Morale will be significantly important.
 
-Podrá verse afectada por:
+It may be affected by:
 
-- Bajas.
-- Derrotas anteriores.
-- Victoria o derrota de unidades cercanas.
-- Liderazgo.
-- Disciplina.
-- Abastecimiento.
-- Duración del enfrentamiento.
-- Condiciones climáticas.
-- Situación política.
-- Motivaciones de los combatientes.
+- Casualties.
+- Previous defeats.
+- Victory or defeat of nearby units.
+- Leadership.
+- Discipline.
+- Supply.
+- Duration of the clash.
+- Weather conditions.
+- Political situation.
+- Combatants' motivations.
 
-Una fuerza podrá retirarse incluso cuando todavía tenga capacidad material para combatir.
+A force may withdraw even when it still has the material capacity to fight.
 
-La moral será importante, pero no completamente determinante.
+Morale will be important, but not entirely decisive.
 
-### 6.4. Terreno y condiciones ambientales
+### 6.4. Terrain and environmental conditions
 
-El terreno tendrá consecuencias militares reales.
+Terrain will have real military consequences.
 
-Se contemplarán ventajas y desventajas de:
+The advantages and disadvantages of the following are considered:
 
-- Llanuras.
-- Colinas.
-- Montañas.
-- Bosques.
-- Ríos.
-- Pantanos.
-- Desiertos.
-- Costas.
-- Ciudades.
-- Pasos montañosos.
-- Regiones nevadas.
+- Plains.
+- Hills.
+- Mountains.
+- Forests.
+- Rivers.
+- Marshes.
+- Deserts.
+- Coasts.
+- Cities.
+- Mountain passes.
+- Snowy regions.
 
-La geografía influirá en movilidad, visibilidad, formación, abastecimiento y defensa.
+Geography will influence mobility, visibility, formation, supply, and defense.
 
-El clima también podrá modificar el rendimiento de las fuerzas militares.
+Climate may also modify the performance of military forces.
 
-## 7. Logística militar
+## 7. Military logistics
 
-### 7.1. Abastecimiento
+### 7.1. Supply
 
-Los ejércitos necesitarán suministros, con una gestión simplificada.
+Armies will need supplies, with simplified management.
 
-Se contemplarán:
+The following are considered:
 
-- Alimentos.
-- Agua.
-- Equipamiento.
-- Armamento.
-- Municiones.
-- Materiales de construcción militar.
-- Reemplazos.
-- Transporte.
+- Food.
+- Water.
+- Equipment.
+- Armament.
+- Ammunition.
+- Military construction materials.
+- Replacements.
+- Transport.
 
-La disponibilidad de suministros influirá en la capacidad de mantener campañas prolongadas.
+The availability of supplies will influence the ability to sustain prolonged campaigns.
 
-### 7.2. Integración con la logística general
+### 7.2. Integration with general logistics
 
-La logística militar utilizará el sistema general de transporte y comercio.
+Military logistics will use the general transport and trade system.
 
-No se crearán sistemas paralelos innecesarios.
+Unnecessary parallel systems will not be created.
 
-Los ejércitos podrán utilizar:
+Armies will be able to use:
 
-- Transporte animal.
-- Carretas.
-- Barcos.
-- Caminos.
-- Ríos navegables.
-- Puertos.
-- Depósitos.
-- Infraestructura especializada.
+- Animal transport.
+- Carts.
+- Ships.
+- Roads.
+- Navigable rivers.
+- Ports.
+- Depots.
+- Specialized infrastructure.
 
-La distancia, el terreno y la accesibilidad influirán en los costos y tiempos de abastecimiento.
+Distance, terrain, and accessibility will influence the costs and times of supply.
 
-### 7.3. Costos militares
+### 7.3. Military costs
 
-Las fuerzas armadas tendrán costos económicos:
+The armed forces will have economic costs:
 
-- Reclutamiento.
-- Salarios.
-- Equipamiento.
-- Mantenimiento.
-- Alimentación.
-- Transporte.
-- Entrenamiento.
-- Construcción de infraestructura militar.
+- Recruitment.
+- Wages.
+- Equipment.
+- Maintenance.
+- Food.
+- Transport.
+- Training.
+- Construction of military infrastructure.
 
-El nivel de detalle será configurable.
+The level of detail will be configurable.
 
-La economía militar deberá integrarse con el presupuesto general y competir por recursos con las demás necesidades de la civilización.
+The military economy must integrate with the general budget and compete for resources with the civilization's other needs.
 
-## 8. Tipos de conflictos
+## 8. Types of conflict
 
-El sistema contemplará diferentes modalidades de conflicto.
+The system will account for different modes of conflict.
 
-### 8.1. Guerras internacionales
+### 8.1. International wars
 
-- Guerras territoriales.
-- Guerras de expansión.
-- Guerras defensivas.
-- Guerras por recursos.
-- Guerras comerciales.
-- Guerras religiosas.
-- Guerras entre alianzas.
-- Guerras por independencia.
-- Conflictos de influencia.
+- Territorial wars.
+- Wars of expansion.
+- Defensive wars.
+- Wars over resources.
+- Trade wars.
+- Religious wars.
+- Wars between alliances.
+- Wars of independence.
+- Conflicts of influence.
 
-### 8.2. Conflictos internos
+### 8.2. Internal conflicts
 
-- Guerras civiles.
-- Rebeliones.
-- Insurrecciones.
-- Levantamientos populares.
-- Conflictos entre facciones.
-- Guerras de sucesión.
-- Separatismos.
-- Rebeliones regionales.
+- Civil wars.
+- Rebellions.
+- Insurrections.
+- Popular uprisings.
+- Conflicts between factions.
+- Wars of succession.
+- Separatisms.
+- Regional rebellions.
 
-### 8.3. Conflictos fronterizos
+### 8.3. Border conflicts
 
-Podrán existir enfrentamientos limitados sin que necesariamente se conviertan en guerras generales.
+Limited clashes may exist without necessarily turning into general wars.
 
-Por ejemplo:
+For example:
 
-- Incursiones.
-- Disputas fronterizas.
-- Enfrentamientos entre guarniciones.
-- Conflictos por recursos.
-- Ocupaciones temporales.
+- Raids.
+- Border disputes.
+- Clashes between garrisons.
+- Conflicts over resources.
+- Temporary occupations.
 
-La escalada dependerá de las decisiones políticas y diplomáticas.
+Escalation will depend on political and diplomatic decisions.
 
-## 9. Causas y comienzo de las guerras
+## 9. Causes and outbreak of wars
 
-Las guerras podrán surgir por diferentes motivos:
+Wars may arise for different reasons:
 
-- Disputas territoriales.
-- Recursos.
-- Religión.
-- Diferencias políticas.
-- Independencia.
-- Rivalidades históricas.
-- Defensa propia.
-- Alianzas.
-- Expansión territorial.
-- Disputas comerciales.
+- Territorial disputes.
+- Resources.
+- Religion.
+- Political differences.
+- Independence.
+- Historical rivalries.
+- Self-defense.
+- Alliances.
+- Territorial expansion.
+- Trade disputes.
 
-El jugador podrá configurar qué causas tienen mayor relevancia o incluso desactivar determinadas categorías de conflicto.
+The player will be able to configure which causes carry greater relevance or even disable certain categories of conflict.
 
-### 9.1. Inicio de los conflictos
+### 9.1. Onset of conflicts
 
-Los conflictos podrán comenzar mediante:
+Conflicts may begin through:
 
-- Declaraciones formales.
-- Ultimátums.
-- Incursiones.
-- Escaladas diplomáticas.
-- Rebeliones.
-- Ataques espontáneos.
-- Intervenciones militares.
-- Rupturas de tratados.
+- Formal declarations.
+- Ultimatums.
+- Raids.
+- Diplomatic escalations.
+- Rebellions.
+- Spontaneous attacks.
+- Military interventions.
+- Breaches of treaties.
 
-No todas las guerras deberán tener una declaración formal.
+Not all wars must have a formal declaration.
 
-El sistema deberá representar tanto los conflictos organizados como los enfrentamientos que escalan gradualmente.
+The system must represent both organized conflicts and clashes that escalate gradually.
 
-## 10. Diplomacia y prevención de conflictos
+## 10. Diplomacy and conflict prevention
 
-La diplomacia tendrá un papel muy importante en el sistema militar.
+Diplomacy will play a very important role in the military system.
 
-Su objetivo será favorecer soluciones pacíficas cuando sean razonables.
+Its objective will be to favor peaceful solutions when they are reasonable.
 
-Se contemplarán:
+The following are considered:
 
-- Negociaciones preventivas.
-- Mediación.
-- Alianzas.
-- Tratados de no agresión.
-- Acuerdos territoriales.
-- Arbitraje.
-- Compensaciones económicas.
-- Garantías de seguridad.
-- Retirada de tropas.
-- Resolución de disputas.
-- Tratados de paz.
+- Preventive negotiations.
+- Mediation.
+- Alliances.
+- Non-aggression treaties.
+- Territorial agreements.
+- Arbitration.
+- Economic compensation.
+- Security guarantees.
+- Troop withdrawal.
+- Dispute resolution.
+- Peace treaties.
 
-Las civilizaciones podrán buscar soluciones diplomáticas incluso cuando tengan capacidad militar para imponerse.
+Civilizations may seek diplomatic solutions even when they have the military capacity to prevail.
 
-La personalidad de los líderes influirá en las decisiones, pero los intereses estructurales de las sociedades tendrán mayor peso.
+The personality of leaders will influence decisions, but the structural interests of societies will carry greater weight.
 
-Este sistema se integrará con el GDD de Diplomacia y Relaciones Internacionales.
+This system will integrate with the Diplomacy and International Relations GDD.
 
-## 11. Finalización de los conflictos
+## 11. Ending of conflicts
 
-Las guerras podrán terminar de diferentes maneras:
+Wars may end in different ways:
 
-- Conquista y anexión.
-- Tratados de paz.
-- Reparaciones económicas.
-- Cesión territorial.
-- Vasallaje.
-- Dependencia política.
-- Independencia.
-- Retirada.
-- Statu quo.
-- Acuerdos de desmilitarización.
-- Reorganización territorial.
+- Conquest and annexation.
+- Peace treaties.
+- Economic reparations.
+- Territorial cession.
+- Vassalage.
+- Political dependence.
+- Independence.
+- Withdrawal.
+- Status quo.
+- Demilitarization agreements.
+- Territorial reorganization.
 
-No todas las guerras deberán terminar con una conquista.
+Not all wars must end in conquest.
 
-El resultado dependerá de la situación militar, económica, política y diplomática.
+The outcome will depend on the military, economic, political, and diplomatic situation.
 
-Los acuerdos de paz podrán incluir múltiples condiciones y consecuencias a largo plazo.
+Peace agreements may include multiple conditions and long-term consequences.
 
-## 12. Fortificaciones y defensa
+## 12. Fortifications and defense
 
-### 12.1. Infraestructura defensiva
+### 12.1. Defensive infrastructure
 
-Se contemplarán:
+The following are considered:
 
-- Empalizadas.
-- Murallas.
-- Torres.
-- Fortalezas.
-- Castillos.
-- Fortificaciones costeras.
-- Fuertes fronterizos.
-- Puestos defensivos.
-- Fosos.
-- Puertas fortificadas.
-- Sistemas de defensa urbana.
+- Palisades.
+- Walls.
+- Towers.
+- Fortresses.
+- Castles.
+- Coastal fortifications.
+- Border forts.
+- Defensive outposts.
+- Moats.
+- Fortified gates.
+- Urban defense systems.
 
-La importancia de las fortificaciones dependerá de la época, la geografía y las amenazas existentes.
+The importance of fortifications will depend on the era, geography, and existing threats.
 
-### 12.2. Evolución histórica
+### 12.2. Historical evolution
 
-Las ciudades podrán evolucionar sus defensas históricamente.
+Cities may evolve their defenses historically.
 
-Las estructuras defensivas podrán ampliarse, modernizarse o quedar obsoletas.
+Defensive structures may be expanded, modernized, or become obsolete.
 
-Por ejemplo:
+For example:
 
-- Empalizadas y defensas primitivas.
-- Murallas de piedra.
-- Fortificaciones medievales.
-- Castillos y sistemas defensivos especializados.
-- Fortificaciones adaptadas a la artillería.
+- Palisades and primitive defenses.
+- Stone walls.
+- Medieval fortifications.
+- Castles and specialized defensive systems.
+- Fortifications adapted to artillery.
 
-Las modificaciones serán opcionales y estarán vinculadas con tecnologías, recursos y necesidades defensivas.
+The modifications will be optional and linked to technologies, resources, and defensive needs.
 
-### 12.3. Integración arquitectónica
+### 12.3. Architectural integration
 
-Las fortificaciones serán edificios con evolución visual y funcional.
+Fortifications will be buildings with visual and functional evolution.
 
-Se aplicarán los principios establecidos en el sistema de Construcción y Arquitectura:
+The principles established in the Construction and Architecture system will apply:
 
-- Evolución modular.
-- Materiales históricos.
-- Ampliaciones.
-- Conservación.
-- Modernización.
-- Ruinas y vestigios.
+- Modular evolution.
+- Historical materials.
+- Expansions.
+- Preservation.
+- Modernization.
+- Ruins and vestiges.
 
-## 13. Guerra naval
+## 13. Naval warfare
 
-El sistema incluirá conflictos marítimos.
+The system will include maritime conflicts.
 
-Se contemplarán:
+The following are considered:
 
-- Barcos de guerra.
-- Flotas.
-- Transporte militar.
-- Protección de rutas comerciales.
-- Bloqueos navales.
-- Combates marítimos.
-- Control de puertos.
-- Ataques costeros.
-- Protección de expediciones.
-- Guerra naval estratégica.
+- Warships.
+- Fleets.
+- Military transport.
+- Protection of trade routes.
+- Naval blockades.
+- Maritime combat.
+- Control of ports.
+- Coastal attacks.
+- Protection of expeditions.
+- Strategic naval warfare.
 
-La evolución naval dependerá de la construcción naval, los materiales, la navegación y las tecnologías disponibles.
+Naval evolution will depend on shipbuilding, materials, navigation, and the available technologies.
 
-Los vientos, las corrientes y las condiciones climáticas influirán en la navegación según la época y la tecnología.
+Winds, currents, and weather conditions will influence navigation depending on the era and the technology.
 
-La guerra naval se integrará con los sistemas de Transporte, Comercio y Logística.
+Naval warfare will integrate with the Transport, Trade, and Logistics systems.
 
-## 14. Consecuencias de las guerras
+## 14. Consequences of wars
 
-Las guerras tendrán consecuencias que se extenderán más allá del campo de batalla.
+Wars will have consequences that extend beyond the battlefield.
 
-### 14.1. Consecuencias demográficas
+### 14.1. Demographic consequences
 
-- Muertes.
-- Heridos.
-- Disminución de población.
-- Cambios en la estructura demográfica.
-- Desplazamientos.
-- Migraciones.
-- Separación de familias.
+- Deaths.
+- Wounded.
+- Population decline.
+- Changes in the demographic structure.
+- Displacements.
+- Migrations.
+- Separation of families.
 
-### 14.2. Consecuencias económicas
+### 14.2. Economic consequences
 
-- Destrucción de infraestructura.
-- Pérdida de producción.
-- Escasez.
-- Endeudamiento.
-- Aumento de impuestos.
-- Cambios comerciales.
-- Costos de reconstrucción.
-- Transferencia de recursos.
+- Destruction of infrastructure.
+- Loss of production.
+- Scarcity.
+- Indebtedness.
+- Increased taxes.
+- Commercial changes.
+- Reconstruction costs.
+- Transfer of resources.
 
-### 14.3. Consecuencias políticas
+### 14.3. Political consequences
 
-- Cambios de gobierno.
-- Pérdida de legitimidad.
-- Revoluciones.
-- Independencias.
-- Cambios territoriales.
-- Nuevas alianzas.
-- Conflictos internos.
+- Changes of government.
+- Loss of legitimacy.
+- Revolutions.
+- Independences.
+- Territorial changes.
+- New alliances.
+- Internal conflicts.
 
-### 14.4. Consecuencias culturales y sociales
+### 14.4. Cultural and social consequences
 
-- Transformaciones culturales.
-- Integración de poblaciones.
-- Cambios lingüísticos.
-- Tradiciones militares.
-- Memoria histórica.
-- Rivalidades duraderas.
-- Cambios religiosos.
-- Nuevas identidades regionales.
+- Cultural transformations.
+- Integration of populations.
+- Linguistic changes.
+- Military traditions.
+- Historical memory.
+- Lasting rivalries.
+- Religious changes.
+- New regional identities.
 
-La magnitud de las consecuencias dependerá de la duración, intensidad y naturaleza del conflicto.
+The magnitude of the consequences will depend on the duration, intensity, and nature of the conflict.
 
-Las pérdidas y destrucciones deberán ser proporcionales al contexto histórico, sin generar efectos artificialmente exagerados.
+Losses and destruction must be proportional to the historical context, without generating artificially exaggerated effects.
 
-## 15. Autonomía militar
+## 15. Military autonomy
 
-Las civilizaciones podrán desarrollar sus propias políticas y decisiones militares.
+Civilizations will be able to develop their own military policies and decisions.
 
-La autonomía será configurable.
+Autonomy will be configurable.
 
-Se contemplarán diferentes modalidades:
+Different modes are considered:
 
-- Control directo del jugador.
-- Decisiones militares automáticas bajo autorización.
-- Autonomía limitada.
-- Autonomía estratégica amplia.
+- Direct player control.
+- Automatic military decisions under authorization.
+- Limited autonomy.
+- Broad strategic autonomy.
 
-Las civilizaciones no controladas por el jugador actuarán según sus intereses, capacidades y circunstancias.
+Civilizations not controlled by the player will act according to their interests, capabilities, and circumstances.
 
-El jugador podrá influir sobre ellas mediante diplomacia, alianzas, comercio y otros mecanismos.
+The player will be able to influence them through diplomacy, alliances, trade, and other mechanisms.
 
-La autonomía no deberá eliminar la capacidad de dirección del jugador sobre su propia civilización.
+Autonomy must not eliminate the player's ability to direct their own civilization.
 
-## 16. Inteligencia militar e información
+## 16. Military intelligence and information
 
-El sistema podrá incorporar información sobre:
+The system may incorporate information about:
 
-- Tamaño de ejércitos.
-- Ubicación de fuerzas.
-- Fortificaciones.
-- Capacidad militar.
-- Movimientos de tropas.
-- Preparación de campañas.
-- Intenciones de otras civilizaciones.
+- Army size.
+- Location of forces.
+- Fortifications.
+- Military capacity.
+- Troop movements.
+- Campaign preparations.
+- Intentions of other civilizations.
 
-La precisión de la información dependerá de exploración, contactos, diplomacia y capacidades de inteligencia.
+The accuracy of the information will depend on exploration, contacts, diplomacy, and intelligence capabilities.
 
-El espionaje y contraespionaje se integrarán con el sistema diplomático.
+Espionage and counterespionage will integrate with the diplomatic system.
 
-No todas las civilizaciones tendrán conocimiento perfecto sobre sus adversarios.
+Not all civilizations will have perfect knowledge of their adversaries.
 
-## 17. Configuración y complejidad
+## 17. Configuration and complexity
 
-Cada módulo podrá configurarse independientemente.
+Each module may be configured independently.
 
-| Módulo | Configuración prevista |
+| Module | Planned configuration |
 |---|---|
-| Organización militar | Individual, agrupada o mixta |
-| Tipos de unidades | Según disponibilidad histórica |
-| Reclutamiento | Voluntario, obligatorio o mixto |
-| Comandantes | Importancia configurable |
-| Evolución tecnológica | Histórica y flexible |
-| Doctrinas | Habilitadas o deshabilitadas |
-| Combate | Automático, táctico o detallado |
-| Moral | Simplificada o desarrollada |
-| Logística | Simplificada o avanzada |
-| Economía militar | Simplificada o detallada |
-| Causas de guerra | Configurables |
-| Tipos de conflicto | Configurables |
-| Fortificaciones | Configurables |
-| Diplomacia preventiva | Configurable |
-| Autonomía militar | Configurable |
-| Consecuencias | Configurables |
+| Military organization | Individual, grouped, or mixed |
+| Unit types | According to historical availability |
+| Recruitment | Voluntary, mandatory, or mixed |
+| Commanders | Configurable importance |
+| Technological evolution | Historical and flexible |
+| Doctrines | Enabled or disabled |
+| Combat | Automatic, tactical, or detailed |
+| Morale | Simplified or developed |
+| Logistics | Simplified or advanced |
+| Military economy | Simplified or detailed |
+| Causes of war | Configurable |
+| Types of conflict | Configurable |
+| Fortifications | Configurable |
+| Preventive diplomacy | Configurable |
+| Military autonomy | Configurable |
+| Consequences | Configurable |
 
-La configuración general ofrecerá niveles sencillos, intermedios y avanzados, pero no obligará a aplicar un único nivel a todo el sistema.
+The general configuration will offer simple, intermediate, and advanced levels, but it will not require applying a single level to the entire system.
 
-## 18. MVP — Primera versión jugable
+## 18. MVP — First playable version
 
-El MVP deberá contemplar:
+The MVP must account for:
 
-- Unidades militares básicas.
-- Reclutamiento inicial.
-- Organización en grupos.
-- Comandantes simplificados.
-- Equipamiento y costos básicos.
-- Combate automático.
-- Moral básica.
-- Consecuencias demográficas y económicas.
-- Conflictos entre civilizaciones.
-- Conquista territorial.
-- Tratados de paz.
-- Integración con diplomacia y logística.
+- Basic military units.
+- Initial recruitment.
+- Organization into groups.
+- Simplified commanders.
+- Basic equipment and costs.
+- Automatic combat.
+- Basic morale.
+- Demographic and economic consequences.
+- Conflicts between civilizations.
+- Territorial conquest.
+- Peace treaties.
+- Integration with diplomacy and logistics.
 
-No será necesario implementar inicialmente todas las tecnologías, doctrinas y unidades históricas.
+It will not be necessary to implement all the historical technologies, doctrines, and units initially.
 
-La arquitectura deberá permitir incorporar gradualmente las diferentes épocas y modalidades de combate.
+The architecture must allow the gradual incorporation of the different eras and combat modes.
 
-## 19. Visión final
+## 19. Final vision
 
-El sistema militar deberá permitir representar la evolución de la guerra a lo largo de miles de años.
+The military system must make it possible to represent the evolution of war over thousands of years.
 
-Una pequeña comunidad podrá defenderse mediante guerreros locales, mientras que una civilización avanzada podrá organizar ejércitos profesionales, construir fortalezas y desarrollar flotas.
+A small community may defend itself with local warriors, while an advanced civilization may organize professional armies, build fortresses, and develop fleets.
 
-Las diferencias entre civilizaciones surgirán de sus recursos, conocimientos, geografía, instituciones y experiencias históricas.
+The differences between civilizations will arise from their resources, knowledge, geography, institutions, and historical experiences.
 
-La guerra podrá transformar profundamente una sociedad, pero también podrá evitarse mediante diplomacia, comercio y acuerdos.
+War may deeply transform a society, but it may also be avoided through diplomacy, trade, and agreements.
 
-**Principio de diseño:**
+**Design principle:**
 
-*La guerra no será el objetivo de la civilización. Será una de las consecuencias posibles de sus ambiciones, conflictos, necesidades y decisiones.*
+*War will not be the goal of the civilization. It will be one of the possible consequences of its ambitions, conflicts, needs, and decisions.*
 
 ---
 
-## 20. Decisiones confirmadas
+## 20. Confirmed decisions
 
-| Área | Decisión |
+| Area | Decision |
 |---|---|
-| Organización militar | Configurable: individual, agrupada o mixta |
-| Tipos de fuerzas | Todas las categorías históricas |
-| Reclutamiento | Civil y profesional, según época |
-| Comandantes | Importantes, con complejidad moderada |
-| Evolución militar | Modelo histórico y tecnológico mixto |
-| Tecnologías | Toda la evolución preindustrial |
-| Doctrinas militares | Sí |
-| Combate | Configurable |
-| Detalle de batalla | Configurable |
-| Factores de combate | Todos los propuestos |
-| Moral | Importante, pero no determinante |
-| Logística | Simplificada |
-| Reclutamiento | Configurable |
-| Economía militar | Simplificada |
-| Causas de guerra | Todas, configurables |
-| Inicio de conflictos | Formal y espontáneo |
-| Tipos de conflicto | Todos |
-| Finalización de guerras | Todas las modalidades propuestas |
-| Fortificaciones | Importantes, con complejidad moderada |
-| Evolución defensiva | Sí, visual y funcional |
-| Diplomacia | Muy importante para prevenir conflictos |
-| Autonomía militar | Configurable |
-| Consecuencias | Demográficas, económicas, políticas y culturales |
-| Complejidad | Configurable por módulos |
-| Importancia de la guerra | Importante, pero secundaria |
+| Military organization | Configurable: individual, grouped, or mixed |
+| Types of forces | All historical categories |
+| Recruitment | Civil and professional, depending on the era |
+| Commanders | Important, with moderate complexity |
+| Military evolution | Mixed historical and technological model |
+| Technologies | The entire pre-industrial evolution |
+| Military doctrines | Yes |
+| Combat | Configurable |
+| Battle detail | Configurable |
+| Combat factors | All those proposed |
+| Morale | Important, but not decisive |
+| Logistics | Simplified |
+| Recruitment | Configurable |
+| Military economy | Simplified |
+| Causes of war | All, configurable |
+| Onset of conflicts | Formal and spontaneous |
+| Types of conflict | All |
+| Ending of wars | All the proposed modes |
+| Fortifications | Important, with moderate complexity |
+| Defensive evolution | Yes, visual and functional |
+| Diplomacy | Very important for preventing conflicts |
+| Military autonomy | Configurable |
+| Consequences | Demographic, economic, political, and cultural |
+| Complexity | Configurable by module |
+| Importance of war | Important, but secondary |
 
-**Estado:** GDD conceptual v0.1 consolidado.
+**Status:** Conceptual GDD v0.1 consolidated.

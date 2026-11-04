@@ -1,144 +1,144 @@
 # AUDIT_REPORT — Civilization Evolutions
 
-**Fecha de auditoría:** 3 de noviembre de 2026  
-**Alcance:** 24 documentos de texto encontrados en la raíz antes de los cambios; revisión recursiva de la carpeta y subcarpetas. No había subcarpetas preexistentes, archivos de código/configuración ni repositorio Git visible.  
-**Resultado:** documentación inventariada y reubicada; se creó un GDD Maestro central y se preservaron todos los originales en `BACKUP_PRE_AUDIT_2026-11-03/`.
+**Audit date:** November 3, 2026  
+**Scope:** 24 text documents found in the root before the changes; recursive review of the folder and subfolders. There were no pre-existing subfolders, code/configuration files, or visible Git repository.  
+**Result:** documentation inventoried and relocated; a central Master GDD was created and all originals were preserved in `BACKUP_PRE_AUDIT_2026-11-03/`.
 
-## 1. Resumen ejecutivo
+## 1. Executive summary
 
-- Inventariados **24 documentos fuente**: 1 GDD general, 22 GDD de sistema y 1 plan técnico.
-- **23 documentos** de diseño/técnica se reubicaron bajo `docs/`; los GDD de sistema conservaron su texto y recibieron una cabecera de alcance/autoridad. El plan técnico se reubicó y se conservó sin cambios sustantivos.
-- El GDD general original fue sustituido en su ubicación documental por el [GDD Maestro](docs/00-project/GDD_MAESTRO.md), que concentra visión, alcance, decisiones marco, límites de autoridad, integraciones y vocabulario. Los detalles de sistema se consultan en sus GDD fuente.
-- No se eliminó ningún documento fuente ni decisión única: el respaldo conserva copias íntegras previas al cambio.
-- **No se resolvieron contradicciones por criterio editorial.** Se registran abajo con propuestas, que no son decisiones aprobadas.
-- No se modificó código fuente, archivos de configuración ni la arquitectura técnica establecida.
+- Inventoried **24 source documents**: 1 general GDD, 22 system GDDs, and 1 technical plan.
+- **23 design/technical documents** were relocated under `docs/`; the system GDDs kept their text and received a scope/authority header. The technical plan was relocated and kept without substantive changes.
+- The original general GDD was replaced, in its documentation location, by the [Master GDD](docs/00-project/GDD_MAESTRO.md), which concentrates vision, scope, framework decisions, authority boundaries, integrations, and vocabulary. System details are consulted in their source GDDs.
+- No source document or single decision was removed: the backup keeps complete copies as they were before the change.
+- **No contradictions were resolved by editorial judgment.** They are recorded below with proposals, which are not approved decisions.
+- No source code, configuration files, or established technical architecture was modified.
 
-## 2. Inventario de documentos y versiones
+## 2. Inventory of documents and versions
 
-Las rutas de origen eran nombres sin extensión en la raíz. Las rutas destino indican la ubicación vigente. El respaldo conserva el nombre y bytes originales. Los estados se transcriben del encabezado fuente; donde el documento no tenía campo de estado, se indica «no declarado».
+The source paths were extensionless names in the root. The destination paths indicate the current location. The backup keeps the original name and bytes. The statuses are transcribed from the source header; where the document had no status field, it is marked "not declared".
 
-| # | Documento fuente / tema | Versión | Estado fuente | Ubicación vigente |
+| # | Source document / topic | Version | Source status | Current location |
 |---:|---|---|---|---|
-| 1 | Plan técnico / implementación | 0.1 | Initial implementation | [Plan técnico](docs/02-technical/PLAN_TECNICO_v0.1.md) |
-| 2 | GDD general / visión inicial | 0.1 | Diseño conceptual inicial | [GDD Maestro](docs/00-project/GDD_MAESTRO.md) |
-| 3 | Economía | 0.2 | Diseño conceptual | [GDD Economía](docs/01-systems/GDD_Economia_v0.2.md) |
-| 4 | Producción y trabajo | 0.2 | Diseño conceptual | [GDD Producción y trabajo](docs/01-systems/GDD_Produccion_y_Trabajo_v0.2.md) |
-| 5 | Construcción y arquitectura | 0.1 | Documento de diseño conceptual | [GDD Construcción](docs/01-systems/GDD_Construccion_y_Arquitectura_v0.1.md) |
-| 6 | Población y sociedad | 0.1 | Documento de diseño conceptual | [GDD Población](docs/01-systems/GDD_Poblacion_y_Sociedad_v0.1.md) |
-| 7 | Política y gobierno | 0.1 | No declarado en campo separado | [GDD Política](docs/01-systems/GDD_Politica_y_Gobierno_v0.1.md) |
-| 8 | Religión y espiritualidad | 0.1 | No declarado en campo separado | [GDD Religión](docs/01-systems/GDD_Religion_y_Espiritualidad_v0.1.md) |
-| 9 | Cultura, identidad y tradiciones | 0.1 | No declarado en campo separado | [GDD Cultura](docs/01-systems/GDD_Cultura_Identidad_y_Tradiciones_v0.1.md) |
-| 10 | Tecnología, ciencia e innovación | 0.1 | No declarado en campo separado | [GDD Tecnología](docs/01-systems/GDD_Tecnologia_Ciencia_e_Innovacion_v0.1.md) |
-| 11 | Transporte, comercio y logística | 0.1 | Diseño conceptual | [GDD Logística](docs/01-systems/GDD_Transporte_Comercio_y_Logistica_v0.1.md) |
-| 12 | Diplomacia y relaciones internacionales | 0.1 | Diseño conceptual | [GDD Diplomacia](docs/01-systems/GDD_Diplomacia_y_Relaciones_Internacionales_v0.1.md) |
-| 13 | Geografía, clima y medioambiente | 0.1 | Diseño conceptual | [GDD Geografía](docs/01-systems/GDD_Geografia_Clima_y_Medioambiente_v0.1.md) |
-| 14 | Generación procedural del mundo | 0.1 | Definición conceptual consolidada | [GDD Generación](docs/01-systems/GDD_Generacion_Procedural_del_Mundo_v0.1.md) |
-| 15 | Exploración y expansión territorial | 0.1 | Definición conceptual consolidada | [GDD Exploración](docs/01-systems/GDD_Exploracion_y_Expansion_Territorial_v0.1.md) |
-| 16 | Guerra y sistemas militares | 0.1 | Definición conceptual consolidada | [GDD Guerra](docs/01-systems/GDD_Guerra_y_Sistemas_Militares_v0.1.md) |
-| 17 | Eventos y evolución histórica | 0.1 | Definición conceptual consolidada | [GDD Eventos](docs/01-systems/GDD_Eventos_y_Evolucion_Historica_v0.1.md) |
-| 18 | Administración territorial y regiones | 0.1 | Definición conceptual simplificada | [GDD Administración](docs/01-systems/GDD_Administracion_Territorial_y_Regiones_v0.1.md) |
-| 19 | Interfaz UI/UX | 0.1 | Definición conceptual consolidada | [GDD Interfaz](docs/01-systems/GDD_Interfaz_UI_UX_v0.1.md) |
-| 20 | Progresión y finalización | 0.1 | Definición conceptual consolidada | [GDD Progresión](docs/01-systems/GDD_Progresion_y_Finalizacion_v0.1.md) |
-| 21 | IA y autonomía de civilizaciones | 0.1 | Documento conceptual | [GDD IA](docs/01-systems/GDD_IA_y_Autonomia_Civilizaciones_v0.1.md) |
-| 22 | Tiempo y simulación | 0.1 | Diseño conceptual | [GDD Tiempo](docs/01-systems/GDD_Tiempo_y_Simulacion_v0.1.md) |
-| 23 | Recursos y materiales | 0.1 | Diseño conceptual | [GDD Recursos](docs/01-systems/GDD_Recursos_y_Materiales_v0.1.md) |
-| 24 | Entidades y relaciones | 0.1 | Diseño conceptual | [GDD Entidades](docs/01-systems/GDD_Entidades_y_Relaciones_v0.1.md) |
+| 1 | Technical / implementation plan | 0.1 | Initial implementation | [Technical plan](docs/02-technical/PLAN_TECNICO_v0.1.md) |
+| 2 | General GDD / initial vision | 0.1 | Initial conceptual design | [Master GDD](docs/00-project/GDD_MAESTRO.md) |
+| 3 | Economy | 0.2 | Conceptual design | [Economy GDD](docs/01-systems/GDD_Economia_v0.2.md) |
+| 4 | Production and labor | 0.2 | Conceptual design | [Production and labor GDD](docs/01-systems/GDD_Produccion_y_Trabajo_v0.2.md) |
+| 5 | Construction and architecture | 0.1 | Conceptual design document | [Construction GDD](docs/01-systems/GDD_Construccion_y_Arquitectura_v0.1.md) |
+| 6 | Population and society | 0.1 | Conceptual design document | [Population GDD](docs/01-systems/GDD_Poblacion_y_Sociedad_v0.1.md) |
+| 7 | Politics and government | 0.1 | Not declared in a separate field | [Politics GDD](docs/01-systems/GDD_Politica_y_Gobierno_v0.1.md) |
+| 8 | Religion and spirituality | 0.1 | Not declared in a separate field | [Religion GDD](docs/01-systems/GDD_Religion_y_Espiritualidad_v0.1.md) |
+| 9 | Culture, identity, and traditions | 0.1 | Not declared in a separate field | [Culture GDD](docs/01-systems/GDD_Cultura_Identidad_y_Tradiciones_v0.1.md) |
+| 10 | Technology, science, and innovation | 0.1 | Not declared in a separate field | [Technology GDD](docs/01-systems/GDD_Tecnologia_Ciencia_e_Innovacion_v0.1.md) |
+| 11 | Transport, trade, and logistics | 0.1 | Conceptual design | [Logistics GDD](docs/01-systems/GDD_Transporte_Comercio_y_Logistica_v0.1.md) |
+| 12 | Diplomacy and international relations | 0.1 | Conceptual design | [Diplomacy GDD](docs/01-systems/GDD_Diplomacia_y_Relaciones_Internacionales_v0.1.md) |
+| 13 | Geography, climate, and environment | 0.1 | Conceptual design | [Geography GDD](docs/01-systems/GDD_Geografia_Clima_y_Medioambiente_v0.1.md) |
+| 14 | Procedural world generation | 0.1 | Consolidated conceptual definition | [Generation GDD](docs/01-systems/GDD_Generacion_Procedural_del_Mundo_v0.1.md) |
+| 15 | Exploration and territorial expansion | 0.1 | Consolidated conceptual definition | [Exploration GDD](docs/01-systems/GDD_Exploracion_y_Expansion_Territorial_v0.1.md) |
+| 16 | War and military systems | 0.1 | Consolidated conceptual definition | [War GDD](docs/01-systems/GDD_Guerra_y_Sistemas_Militares_v0.1.md) |
+| 17 | Events and historical evolution | 0.1 | Consolidated conceptual definition | [Events GDD](docs/01-systems/GDD_Eventos_y_Evolucion_Historica_v0.1.md) |
+| 18 | Territorial administration and regions | 0.1 | Simplified conceptual definition | [Administration GDD](docs/01-systems/GDD_Administracion_Territorial_y_Regiones_v0.1.md) |
+| 19 | UI/UX interface | 0.1 | Consolidated conceptual definition | [Interface GDD](docs/01-systems/GDD_Interfaz_UI_UX_v0.1.md) |
+| 20 | Progression and ending | 0.1 | Consolidated conceptual definition | [Progression GDD](docs/01-systems/GDD_Progresion_y_Finalizacion_v0.1.md) |
+| 21 | AI and civilization autonomy | 0.1 | Conceptual document | [AI GDD](docs/01-systems/GDD_IA_y_Autonomia_Civilizaciones_v0.1.md) |
+| 22 | Time and simulation | 0.1 | Conceptual design | [Time GDD](docs/01-systems/GDD_Tiempo_y_Simulacion_v0.1.md) |
+| 23 | Resources and materials | 0.1 | Conceptual design | [Resources GDD](docs/01-systems/GDD_Recursos_y_Materiales_v0.1.md) |
+| 24 | Entities and relationships | 0.1 | Conceptual design | [Entities GDD](docs/01-systems/GDD_Entidades_y_Relaciones_v0.1.md) |
 
-## 3. Duplicaciones y consolidación
+## 3. Duplications and consolidation
 
-Los solapamientos encontrados eran principalmente cobertura repetida de diseño, no documentos con versiones históricas paralelas:
+The overlaps found were mainly repeated design coverage, not documents with parallel historical versions:
 
-| Solapamiento | Tratamiento |
+| Overlap | Treatment |
 |---|---|
-| GDD general repetía geografía, generación, economía, población, construcción, tecnología, política, religión, tiempo, eventos y guerra | La referencia central resume el propósito y dirige al dueño del dominio. El GDD Maestro reemplaza la repetición extensa como punto de entrada; el texto previo permanece íntegro en el respaldo y los detalles fuente siguen en los GDD especializados. |
-| GDD de Geografía y GDD de Generación del Mundo describían ambos terreno, clima, biomas, recursos y configuración | Se delimitó autoridad: Geografía gobierna estado/procesos naturales; Generación crea el estado inicial/editor. No se eliminaron detalles compartidos que también puedan tener función de diseño. |
-| Recursos aparece en Economía, Producción, Logística, Construcción y Tecnología | El Maestro establece Recursos como dueño de identidad/materiales; Economía de propiedad/mercado/consumo; Producción de transformaciones; Logística de movimiento físico. |
-| Población y Entidades repetían individuo, familia, grupos, relaciones e identidad | El Maestro distingue el modelo social/demográfico de Población del modelo compartido de identidad/relaciones en Entidades. |
-| Exploración, Administración y Diplomacia repetían control territorial, autonomía y dependencias | Se separó conocimiento/ocupación (Exploración), administración interna (Administración) y relación entre civilizaciones (Diplomacia). |
-| Tecnología, Progresión y Eventos repetían evolución histórica y hitos | Se asignaron habilitaciones/conocimiento a Tecnología; objetivos/finalización a Progresión; causalidad/memoria a Eventos. |
+| The general GDD repeated geography, generation, economy, population, construction, technology, politics, religion, time, events, and war | The central reference summarizes the purpose and directs to the domain owner. The Master GDD replaces the extensive repetition as the entry point; the previous text remains intact in the backup and the source details stay in the specialized GDDs. |
+| The Geography GDD and the World Generation GDD both described terrain, climate, biomes, resources, and configuration | Authority was delimited: Geography governs natural state/processes; Generation creates the initial state/editor. Shared details that may also serve a design function were not removed. |
+| Resources appears in Economy, Production, Logistics, Construction, and Technology | The Master establishes Resources as owner of identity/materials; Economy of ownership/market/consumption; Production of transformations; Logistics of physical movement. |
+| Population and Entities repeated individual, family, groups, relationships, and identity | The Master distinguishes Population's social/demographic model from the shared identity/relationship model in Entities. |
+| Exploration, Administration, and Diplomacy repeated territorial control, autonomy, and dependencies | Knowledge/occupation (Exploration), internal administration (Administration), and the relationship between civilizations (Diplomacy) were separated. |
+| Technology, Progression, and Events repeated historical evolution and milestones | Enablements/knowledge were assigned to Technology; objectives/ending to Progression; causality/memory to Events. |
 
-La duplicación eliminada es la **repetición de autoridad y contenido marco en el GDD general**. Se mantienen explicaciones contextuales necesarias dentro de los GDD de sistema para preservar decisiones y contexto. Las tablas de «Decisiones confirmadas» siguen junto a sus fuentes para trazabilidad; el Maestro contiene solo un resumen.
+The duplication removed is the **repetition of authority and framework content in the general GDD**. Necessary contextual explanations are kept within the system GDDs to preserve decisions and context. The "Confirmed decisions" tables stay alongside their sources for traceability; the Master contains only a summary.
 
-## 4. Contradicciones, tensiones y propuesta de resolución
+## 4. Contradictions, tensions, and resolution proposals
 
-**Estado de todas las propuestas:** pendientes de aprobación. No se aplicaron como decisiones.
+**Status of all proposals:** pending approval. They were not applied as decisions.
 
-| ID | Diferencia detectada (fuentes) | Impacto | Propuesta para decisión del diseñador |
+| ID | Detected difference (sources) | Impact | Proposal for the designer's decision |
 |---|---|---|---|
-| C-01 | El GDD inicial/económico usa «hasta aproximadamente 1800 d. C.»; Progresión usa «comienzo de la Revolución Industrial» y dice que la etapa no se desarrolla; el plan técnico usa «beginning … approximately late 18th century». | El corte histórico afecta cronología, contenidos y finalización. | Confirmar una única formulación: inicio convencional de la Revolución Industrial, aproximado a 1750–1800 según el marco que se elija; confirmar si seguir después es sandbox sin nuevas etapas industriales. No fijar año hasta aprobación. |
-| C-02 | Geografía especifica topografía realista y continua; Generación marca como decisión «inicialmente mapas planos con bordes naturales», además de geología y relieve coherentes. | «Plano» puede referirse a la proyección del mapa o a relieve físico; cambia generación y lectura de alcance. | Aclarar si «plano» es superficie 2D/proyección o mundo sin relieve. Si significa topografía, seleccionar explícitamente un preset de mapa plano y preservar relieve en otros presets. |
-| C-03 | Construcción indica que el clima será principalmente visual al inicio; Geografía define variables climáticas y consecuencias; Agricultura/Economía/Producción dependen de estaciones y condiciones ambientales. | Alcance de MVP y dependencias de simulación climática no son consistentes. | Separar fase: efectos climáticos mínimos requeridos para ciclos estacionales/agricultura y efectos avanzados opcionales, indicando qué significa «principalmente visual» en construcción. |
-| C-04 | El título del proyecto aparece como «Historical Civilization Simulator» en fuentes y «Civilization Evolutions» en la carpeta/contexto del proyecto; el original marcaba nombre definitivo pendiente. | Nombres de producto y de proyecto pueden divergir en documentación/UI. | Confirmar si Civilization Evolutions es nombre de trabajo o nombre definitivo; actualizar portada y título tras aprobación. |
-| C-05 | Política describe al jugador como entidad externa que no es un gobernante; otros textos permiten establecer leyes, elegir política exterior e influir directamente en decisiones. | Falta una definición compartida de la representación diegética y límites de intervención. | Definir el rol del jugador como abstracción de dirección y precisar cuándo las órdenes son directas, políticas o consultivas, sin reducir su agencia amplia ya registrada. |
-| C-06 | La visión busca simulación escalable durante milenios con individuos y civilizaciones autónomas; los límites de población/mapa/civilizaciones y cadencias permanecen pendientes. | Riesgo de objetivos de escala no verificables; afecta dependencias técnicas sin implicar cambio de arquitectura actual. | Convertir límites máximos y niveles de simulación en decisiones de producto/prototipo; documentar métricas sin modificar la arquitectura existente en esta auditoría. |
-| C-07 | Economía marca como pendiente el sistema de propiedad, precios, distribución y fiscalidad en detalle; Recursos y Entidades ya describen titularidad, dinero, unidad y contabilidad en términos conceptuales. | «Conceptualizado» puede confundirse con «regla cerrada». | Mantener como confirmada solo la dirección de diseño registrada; especificar un modelo común antes de implementación y preservar la propiedad mixta como decisión económica confirmada. |
-| C-08 | El GDD general mantenía Diplomacia y Sistema Militar como pendientes, pero GDDs especializados posteriores ya tienen secciones de decisiones confirmadas. | El estado del listado general quedó obsoleto al crecer el corpus. | Tratar el inventario de decisiones especializado como la revisión más reciente del diseño; confirmar procedencia/aprobación y sustituir el listado pendiente global. No se reclasificó como decisión nueva. |
+| C-01 | The initial/economic GDD uses "up to approximately 1800 AD"; Progression uses "beginning of the Industrial Revolution" and says the stage is not developed; the technical plan uses "beginning … approximately late 18th century". | The historical cutoff affects chronology, content, and ending. | Confirm a single formulation: conventional start of the Industrial Revolution, approximately 1750–1800 depending on the chosen framework; confirm whether continuing afterward is sandbox with no new industrial stages. Do not fix a year until approval. |
+| C-02 | Geography specifies realistic, continuous topography; Generation marks as a decision "initially flat maps with natural borders", plus coherent geology and relief. | "Flat" may refer to the map projection or to physical relief; it changes generation and the reading of scope. | Clarify whether "flat" is a 2D/projection surface or a world without relief. If it means topography, explicitly select a flat-map preset and preserve relief in other presets. |
+| C-03 | Construction indicates that climate will be mainly visual at the start; Geography defines climate variables and consequences; Agriculture/Economy/Production depend on seasons and environmental conditions. | The MVP scope and climate-simulation dependencies are not consistent. | Separate phases: minimum climate effects required for seasonal cycles/agriculture, and optional advanced effects, indicating what "mainly visual" means in construction. |
+| C-04 | The project title appears as "Historical Civilization Simulator" in some sources and "Civilization Evolutions" in the folder/project context; the original marked the definitive name as pending. | Product and project names may diverge across documentation/UI. | Confirm whether Civilization Evolutions is a working name or the definitive name; update the cover and title after approval. |
+| C-05 | Politics describes the player as an external entity that is not a ruler; other texts allow setting laws, choosing foreign policy, and influencing decisions directly. | A shared definition of the diegetic representation and intervention limits is missing. | Define the player's role as a directional abstraction and specify when orders are direct, policy-level, or advisory, without reducing the broad agency already recorded. |
+| C-06 | The vision seeks a scalable simulation over millennia with autonomous individuals and civilizations; the population/map/civilization limits and cadences remain pending. | Risk of non-verifiable scale goals; it affects technical dependencies without implying a change to the current architecture. | Turn maximum limits and simulation levels into product/prototype decisions; document metrics without modifying the existing architecture in this audit. |
+| C-07 | Economy marks the property, pricing, distribution, and taxation system in detail as pending; Resources and Entities already describe ownership, money, unit, and accounting in conceptual terms. | "Conceptualized" may be confused with "closed rule". | Keep as confirmed only the recorded design direction; specify a common model before implementation and preserve mixed ownership as a confirmed economic decision. |
+| C-08 | The general GDD kept Diplomacy and the Military System as pending, but later specialized GDDs already have confirmed-decision sections. | The general list's status became outdated as the corpus grew. | Treat the specialized decision inventory as the most recent design revision; confirm provenance/approval and replace the global pending list. It was not reclassified as a new decision. |
 
-### Duplicados de decisión vs. conflicto
+### Decision duplicates vs. conflict
 
-No se consideraron contradicciones: tiempo continuo con ciclos internos de diferente frecuencia; población individual y agregada; automatización con intervención del jugador; transporte físico simplificado; evolución histórica libre con períodos de referencia; finalización opcional con continuación sandbox. Son formulaciones compatibles en las fuentes consultadas.
+The following were not considered contradictions: continuous time with internal cycles of different frequency; individual and aggregate population; automation with player intervention; simplified physical transport; free historical evolution with reference periods; optional ending with sandbox continuation. They are compatible formulations in the sources consulted.
 
-## 5. Ambigüedades, conceptos sin definir y decisiones incompletas
+## 5. Ambiguities, undefined concepts, and incomplete decisions
 
-Además de C-01–C-08, queda por definir o precisar:
+In addition to C-01–C-08, the following remains to be defined or specified:
 
-- Escala temporal exacta, velocidades, equivalencia entre tiempo real y tiempo histórico y efectos de pausa/aceleración.
-- Umbrales, criterios de importancia y conservación de identidad al agregar/desagregar población.
-- Tamaño máximo y dimensionalidad del mundo; cantidad de asentamientos y civilizaciones y presupuestos de actualización.
-- Fórmulas de productividad, salarios, precios, necesidades, felicidad, salud, crecimiento demográfico y calidad de producto.
-- Modelo de propiedad común para tierras, edificios, inventarios, organizaciones y hogares; herencia y unidad monetaria.
-- Reglas de disponibilidad, adopción y difusión tecnológica y condiciones de transformación de edificios/métodos.
-- Límites de autonomía de líderes, administradores, propietarios privados, regiones y civilizaciones no jugadoras frente a órdenes del jugador.
-- Correspondencia entre acciones/eventos registrados y hechos efectivamente producidos por los sistemas dueños.
-- Qué sistemas y qué profundidad integran el primer prototipo transversal frente a los MVP descritos por cada GDD.
-- Fechas, responsables y referencias que sustenten el estado «confirmado» de las tablas actuales.
+- Exact time scale, speeds, equivalence between real time and historical time, and the effects of pause/acceleration.
+- Thresholds, importance criteria, and identity preservation when aggregating/disaggregating population.
+- Maximum size and dimensionality of the world; number of settlements and civilizations and update budgets.
+- Formulas for productivity, wages, prices, needs, happiness, health, demographic growth, and product quality.
+- A common ownership model for lands, buildings, inventories, organizations, and households; inheritance and monetary unit.
+- Rules for technological availability, adoption, and diffusion, and conditions for transforming buildings/methods.
+- Autonomy limits of leaders, administrators, private owners, regions, and non-player civilizations with respect to player orders.
+- Correspondence between recorded actions/events and facts actually produced by the owner systems.
+- Which systems and at what depth make up the first cross-cutting prototype versus the MVPs described by each GDD.
+- Dates, owners, and references that support the "confirmed" status of the current tables.
 
-Las listas propias de cada GDD se mantienen en su documento fuente; el [GDD Maestro](docs/00-project/GDD_MAESTRO.md) reúne los temas transversales.
+Each GDD's own lists are kept in its source document; the [Master GDD](docs/00-project/GDD_MAESTRO.md) gathers the cross-cutting topics.
 
-## 6. Dependencias e integraciones
+## 6. Dependencies and integrations
 
-Se registró un mapa de contratos en la sección 6 del Maestro. Los principales caminos críticos son:
+A contract map was recorded in section 6 of the Master. The main critical paths are:
 
-1. Tiempo como reloj común para ciclos de población, producción, agricultura, clima, eventos y envejecimiento.
-2. Geografía → recursos disponibles → producción → inventarios → logística → consumo/mercados.
-3. Entidades/relaciones como base de identidad para población, propiedad, instituciones, líderes, edificios y territorios.
-4. Conocimiento/tecnología → capacidades de producción, construcción, transporte, navegación y guerra.
-5. Política y administración → impuestos/leyes/servicios; población aporta intereses y respuesta; economía registra efectos.
-6. Diplomacia/IA → acuerdos, intercambio, expansión y conflicto; guerra debe reutilizar logística/recursos y producir hechos que registra Eventos.
-7. Cultura/religión → identidad, prácticas e instituciones; población aporta afiliación; construcción y UI representan su expresión observable.
+1. Time as the common clock for population, production, agriculture, climate, events, and aging cycles.
+2. Geography → available resources → production → inventories → logistics → consumption/markets.
+3. Entities/relationships as the identity foundation for population, property, institutions, leaders, buildings, and territories.
+4. Knowledge/technology → capabilities for production, construction, transport, navigation, and war.
+5. Politics and administration → taxes/laws/services; population contributes interests and response; economy records effects.
+6. Diplomacy/AI → agreements, exchange, expansion, and conflict; war must reuse logistics/resources and produce facts recorded by Events.
+7. Culture/religion → identity, practices, and institutions; population contributes affiliation; construction and UI represent their observable expression.
 
-Quedan incompletos los contratos de datos, reglas de propiedad compartida, cadencias de actualización, precedencia ante eventos simultáneos y dependencias mínimas del prototipo. El mapa establece responsabilidades documentales, no una arquitectura técnica nueva.
+The data contracts, shared-ownership rules, update cadences, precedence for simultaneous events, and minimum prototype dependencies remain incomplete. The map establishes documentary responsibilities, not a new technical architecture.
 
-## 7. Estructura definitiva
+## 7. Final structure
 
 ```text
 Civilization Evolutions/
 ├── AUDIT_REPORT.md
-├── BACKUP_PRE_AUDIT_2026-11-03/       # 24 originales íntegros
+├── BACKUP_PRE_AUDIT_2026-11-03/       # 24 complete originals
 └── docs/
     ├── README.md
     ├── 00-project/
     │   └── GDD_MAESTRO.md
-    ├── 01-systems/                    # 22 GDDs especializados
+    ├── 01-systems/                    # 22 specialized GDDs
     └── 02-technical/
-        └── PLAN_TECNICO_v0.1.md      # separado, texto preservado
+        └── PLAN_TECNICO_v0.1.md      # separate, text preserved
 ```
 
-## 8. Cambios realizados
+## 8. Changes made
 
-- Creada copia previa completa de los 24 documentos antes de modificar/reubicar contenido. Los originales conservan nombres de origen dentro de la carpeta de respaldo.
-- Reubicados los documentos en la estructura por autoridad y normalizados nombres/errores tipográficos de archivo (Comercio, Militar, Administración); añadido `.md` a los documentos de texto.
-- Elaborado el GDD Maestro y un índice de navegación.
-- Añadida a cada GDD de sistema una cabecera de control que aclara autoridad, estado y tratamiento de conflictos. No se reescribió el cuerpo de los 22 GDD de sistema.
-- Reubicado el plan técnico con cabecera de procedencia; el cuerpo se conserva.
-- Consolidada terminología y mapa de integraciones en el Maestro.
-- Registradas discrepancias con propuestas de decisión explícitamente no aprobadas.
-- No se alteraron código, configuración ni arquitectura técnica.
+- Created a complete prior copy of the 24 documents before modifying/relocating content. The originals keep their source names inside the backup folder.
+- Relocated the documents into the structure by authority and normalized file names/typos (Comercio, Militar, Administración); added `.md` to the text documents.
+- Produced the Master GDD and a navigation index.
+- Added to each system GDD a control header clarifying authority, status, and conflict treatment. The body of the 22 system GDDs was not rewritten.
+- Relocated the technical plan with a provenance header; the body is preserved.
+- Consolidated terminology and the integration map in the Master.
+- Recorded discrepancies with decision proposals explicitly not approved.
+- Did not alter code, configuration, or technical architecture.
 
-## 9. Estado de verificación
+## 9. Verification status
 
-Se completó el inventario contra los archivos respaldados y se revisaron encabezados, versiones, secciones de decisiones confirmadas/pendientes, límites de MVP e integraciones. La copia previa se creó antes de las modificaciones. La auditoría es documental; no se realizaron pruebas de código porque no se modificó código.
+The inventory was completed against the backed-up files, and headers, versions, confirmed/pending decision sections, MVP limits, and integrations were reviewed. The prior copy was created before the modifications. The audit is documentary; no code tests were run because no code was modified.
 
-### Recomendación de mantenimiento
+### Maintenance recommendation
 
-Al aprobar una propuesta, registrar responsable, fecha, versión y justificación; actualizar primero el GDD dueño y luego el resumen del Maestro. Mantener los originales de auditoría de forma inmutable y crear respaldos nuevos antes de futuras consolidaciones.
+When approving a proposal, record the owner, date, version, and justification; update the owner GDD first and then the Master's summary. Keep the audit originals immutable and create new backups before future consolidations.

@@ -1,81 +1,81 @@
 # INTEGRATION_STRATEGY — Civilization Evolutions
 
-> **Proceso central de integración.** Cómo el **Director Técnico (WS-TD)** reúne el trabajo de los workstreams manteniendo contratos, dependencias y build verde. Complementa [GIT_WORKFLOW.md](GIT_WORKFLOW.md) (mecánica git) y [SYSTEM_CONTRACTS.md](SYSTEM_CONTRACTS.md) (qué se valida).
+> **Central integration process.** How the **Technical Director (WS-TD)** gathers the workstreams' work while keeping contracts, dependencies and the build green. Complements [GIT_WORKFLOW.md](GIT_WORKFLOW.md) (git mechanics) and [SYSTEM_CONTRACTS.md](SYSTEM_CONTRACTS.md) (what is validated).
 >
-> Versión 1.0 · 2026-11-04 · Estado: PROPUESTA.
+> Version 1.0 · 2026-11-04 · Status: PROPOSAL.
 
-## Principio
+## Principle
 
-**Un solo integrador: WS-TD.** Nadie promueve a `main` por su cuenta. La integración es el punto donde se protege la coherencia arquitectónica (separación sim/presentación, no duplicación, contratos estables) que el paralelismo pone en riesgo.
+**A single integrator: WS-TD.** No one promotes to `main` on their own. Integration is the point where architectural coherence (sim/presentation separation, no duplication, stable contracts) that parallelism puts at risk is protected.
 
-## Responsabilidades del Director Técnico
+## Technical Director responsibilities
 
-1. **Revisar interfaces.** Que el cambio respete los contratos de [SYSTEM_CONTRACTS.md](SYSTEM_CONTRACTS.md) y, si los cambia, que sea deliberado, versionado y avisado a los consumidores.
-2. **Revisar la implementación.** Que viva en el archivo/dominio correcto ([AGENT_OWNERSHIP_MAP.md](AGENT_OWNERSHIP_MAP.md)); que no meta lógica de simulación en la presentación (RISK-01); que no duplique conceptos (RISK-02); que no agregue abstracciones vacías (RISK-11).
-3. **Validar dependencias.** Que las dependencias de la tarea estén `done` y que no rompa a consumidores río abajo.
-4. **Integrar ramas** completas en `integration/<repo>` (UE y/o docs).
-5. **Compilar y testear** tras cada integración (SimCore + build UE + tests).
-6. **Actualizar estado** del tablero ([AGENT_TASK_BOARD.md](AGENT_TASK_BOARD.md)) y la foto `IMPLEMENTATION_ALIGNMENT.md`.
-7. **Registrar decisiones** de arquitectura en `DESIGN_DECISION_REGISTER.md` y contradicciones en `AUDIT_REPORT.md` (DR-08: la autoridad de diseño es de los GDD; TD no reescribe diseño confirmado, lo documenta y escala).
+1. **Review interfaces.** That the change respects the [SYSTEM_CONTRACTS.md](SYSTEM_CONTRACTS.md) contracts and, if it changes them, that it is deliberate, versioned and announced to the consumers.
+2. **Review the implementation.** That it lives in the correct file/domain ([AGENT_OWNERSHIP_MAP.md](AGENT_OWNERSHIP_MAP.md)); that it does not put simulation logic in presentation (RISK-01); that it does not duplicate concepts (RISK-02); that it does not add empty abstractions (RISK-11).
+3. **Validate dependencies.** That the task's dependencies are `done` and that it does not break downstream consumers.
+4. **Integrate** complete branches into `integration/<repo>` (UE and/or docs).
+5. **Build and test** after each integration (SimCore + UE build + tests).
+6. **Update status** on the board ([AGENT_TASK_BOARD.md](AGENT_TASK_BOARD.md)) and the `IMPLEMENTATION_ALIGNMENT.md` snapshot.
+7. **Record decisions** of architecture in `DESIGN_DECISION_REGISTER.md` and contradictions in `AUDIT_REPORT.md` (DR-08: design authority belongs to the GDDs; TD does not rewrite confirmed design, it documents and escalates).
 
-## Flujo de integración (por solicitud)
+## Integration flow (per request)
 
 ```mermaid
 flowchart TB
-    A["Agente: rama lista (build+tests verdes, al día con integration/)"] --> B{"WS-TD: revisión"}
-    B -->|contrato roto / fuera de dominio / duplica| R["Devolver con notas"] --> A
-    B -->|ok| C["Merge a integration/<repo>"]
+    A["Agent: branch ready (build+tests green, up to date with integration/)"] --> B{"WS-TD: review"}
+    B -->|contract broken / out of domain / duplicates| R["Return with notes"] --> A
+    B -->|ok| C["Merge to integration/<repo>"]
     C --> D["Build SimCore + UE"]
-    D -->|falla| R
-    D -->|verde| E["Tests (simcore_tests + automation)"]
-    E -->|falla| R
-    E -->|verde| F["Promover a main + tablero 'done' + alignment"]
+    D -->|fails| R
+    D -->|green| E["Tests (simcore_tests + automation)"]
+    E -->|fails| R
+    E -->|green| F["Promote to main + board 'done' + alignment"]
 ```
 
-**Orden por dependencias (bottom-up del grafo, [SYSTEM_DEPENDENCY_MAP.md](SYSTEM_DEPENDENCY_MAP.md)):** primero fundaciones (CORE: tiempo/eventos/identidad/save-load), luego ECON (recursos/inventario) y WORLD, luego BUILD/POP, y UI/ART por encima. No integrar un consumidor antes que el contrato del que depende.
+**Order by dependencies (bottom-up of the graph, [SYSTEM_DEPENDENCY_MAP.md](SYSTEM_DEPENDENCY_MAP.md)):** first foundations (CORE: time/events/identity/save-load), then ECON (resources/inventory) and WORLD, then BUILD/POP, and UI/ART on top. Do not integrate a consumer before the contract it depends on.
 
-## Cadencia
+## Cadence
 
-- **Integración continua por tarea:** cada tarea verde se integra apenas pasa revisión; no se acumulan ramas largas (reduce conflictos, RISK-12).
-- **Checkpoint por hito:** al cerrar M0/M1/M2/M3/M4, WS-TD corre una validación completa (build + toda la suite + un escenario de [CROSS_SYSTEM_VALIDATION_SCENARIOS.md](CROSS_SYSTEM_VALIDATION_SCENARIOS.md)) y actualiza el roadmap/alignment.
-- **M0 es el gran desbloqueo:** hasta que la refactorización M0 (partir `Simulation`/`World`) y los contratos estén integrados, el paralelismo real es limitado; WS-TD prioriza M0.
+- **Continuous integration per task:** each green task is integrated as soon as it passes review; long branches are not accumulated (reduces conflicts, RISK-12).
+- **Checkpoint per milestone:** on closing M0/M1/M2/M3/M4, WS-TD runs a full validation (build + the whole suite + a scenario from [CROSS_SYSTEM_VALIDATION_SCENARIOS.md](CROSS_SYSTEM_VALIDATION_SCENARIOS.md)) and updates the roadmap/alignment.
+- **M0 is the big unblocker:** until the M0 refactor (splitting `Simulation`/`World`) and the contracts are integrated, real parallelism is limited; WS-TD prioritizes M0.
 
-## Gates de aceptación de una integración
+## Acceptance gates for an integration
 
-Una rama se promueve solo si **todo** se cumple:
+A branch is promoted only if **all** is met:
 
-- [ ] Build de SimCore verde; `simcore_tests` verde (87+ checks).
-- [ ] Build del editor UE verde (editor cerrado).
-- [ ] Respeta los archivos permitidos de la tarea; no tocó restringidos.
-- [ ] No rompe contratos; si los cambia, están versionados y avisados.
-- [ ] Sin duplicación de conceptos compartidos (recurso/entidad/inventario/reloj).
-- [ ] Sin lógica de simulación nueva en la capa de presentación (salvo lo ya acordado por Modelo A, en vías de inversión por Task F).
-- [ ] Determinismo intacto si tocó reloj/serialización (`save_load_roundtrip`).
-- [ ] Tarea con tests nuevos cuando agrega reglas (coordinado con WS-QA).
-- [ ] Decisiones/riesgos registrados si corresponde.
+- [ ] SimCore build green; `simcore_tests` green (87+ checks).
+- [ ] UE editor build green (editor closed).
+- [ ] Respects the task's allowed files; did not touch restricted ones.
+- [ ] Does not break contracts; if it changes them, they are versioned and announced.
+- [ ] No duplication of shared concepts (resource/entity/inventory/clock).
+- [ ] No new simulation logic in the presentation layer (except what was already agreed under Model A, in the process of being inverted by Task F).
+- [ ] Determinism intact if it touched clock/serialization (`save_load_roundtrip`).
+- [ ] Task with new tests when it adds rules (coordinated with WS-QA).
+- [ ] Decisions/risks recorded if applicable.
 
-## Manejo de cambios de contrato
+## Handling contract changes
 
-1. El workstream que necesita cambiar un contrato **lo propone a WS-TD** (no lo cambia en el archivo del dueño por su cuenta).
-2. WS-TD evalúa impacto en consumidores (tabla dueño→consumidores de [SYSTEM_CONTRACTS.md](SYSTEM_CONTRACTS.md)).
-3. Se versiona el contrato y se **avisa a todos los consumidores** antes de integrar.
-4. Los consumidores adaptan sus mocks/implementaciones; recién entonces se integra el cambio.
-5. Caso vivo: **M2-POP-01** (invertir autoridad Modelo A: que SimCore conduzca hambre/salud) toca los contratos §5 y §7 → está `blocked` hasta que WS-TD valide y avise a ECON/UI.
+1. The workstream that needs to change a contract **proposes it to WS-TD** (it does not change it in the owner's file on its own).
+2. WS-TD assesses the impact on consumers (owner→consumers table in [SYSTEM_CONTRACTS.md](SYSTEM_CONTRACTS.md)).
+3. The contract is versioned and **all consumers are notified** before integrating.
+4. Consumers adapt their mocks/implementations; only then is the change integrated.
+5. Live case: **M2-POP-01** (invert Model A authority: have SimCore drive hunger/health) touches contracts §5 and §7 → it is `blocked` until WS-TD validates and notifies ECON/UI.
 
-## Resolución de conflictos entre workstreams
+## Conflict resolution between workstreams
 
-- **De archivo (texto):** el agente los resuelve en su rama tras traer `integration/`; si es un 🤝 compartido, con el dueño.
-- **De contrato:** WS-TD decide; prevalece el diseño de los GDD y las decisiones confirmadas.
-- **De diseño (ambigüedad/choque de GDD):** no se inventa respuesta; WS-TD lo documenta como no resuelto en `AUDIT_REPORT.md` y **pregunta al responsable del proyecto** (regla 1 de `CLAUDE.md`).
-- **Binario:** el dueño del asset regenera; WS-TD elige (ver [GIT_WORKFLOW.md](GIT_WORKFLOW.md) §5).
+- **File (text):** the agent resolves them on their branch after pulling `integration/`; if it is a 🤝 shared one, with the owner.
+- **Contract:** WS-TD decides; the design of the GDDs and the confirmed decisions prevail.
+- **Design (ambiguity/GDD clash):** no answer is invented; WS-TD documents it as unresolved in `AUDIT_REPORT.md` and **asks the project owner** (`CLAUDE.md` rule 1).
+- **Binary:** the asset owner regenerates; WS-TD picks (see [GIT_WORKFLOW.md](GIT_WORKFLOW.md) §5).
 
-## Registro de decisiones de arquitectura
+## Architecture decision register
 
-Cada decisión que tome WS-TD durante la integración (p. ej. "la caza alimenta recursos vía ECON, por eso `CivAnimal` es de ECON") se anota con: fecha, contexto, decisión, alternativas, reversibilidad, y el DR/RISK/C relacionado. Destino: `DESIGN_DECISION_REGISTER.md` (decisiones) / `AUDIT_REPORT.md` (contradicciones abiertas) / `IMPLEMENTATION_RISK_REGISTER.md` (riesgos que cambian de estado).
+Every decision WS-TD makes during integration (e.g. "hunting feeds resources via ECON, so `CivAnimal` belongs to ECON") is noted with: date, context, decision, alternatives, reversibility, and the related DR/RISK/C. Destination: `DESIGN_DECISION_REGISTER.md` (decisions) / `AUDIT_REPORT.md` (open contradictions) / `IMPLEMENTATION_RISK_REGISTER.md` (risks that change status).
 
-## Qué protege esta estrategia (resumen)
+## What this strategy protects (summary)
 
-- **Coherencia > velocidad puntual:** una rama verde que rompe un contrato **no** entra.
-- **Fuente única de verdad** por dato (no duplicar).
-- **Separación sim/presentación** como criterio de merge, no como buena intención.
-- **Trazabilidad:** todo lo integrado tiene task-id, pruebas y, si aplica, decisión registrada.
+- **Coherence > one-off speed:** a green branch that breaks a contract does **not** get in.
+- **Single source of truth** per datum (no duplication).
+- **Sim/presentation separation** as a merge criterion, not as good intentions.
+- **Traceability:** everything integrated has a task-id, tests and, where applicable, a recorded decision.

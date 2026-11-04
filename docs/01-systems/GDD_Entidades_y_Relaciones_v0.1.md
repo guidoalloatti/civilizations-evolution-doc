@@ -1,397 +1,397 @@
-> **Control documental:** 0.1 | Estado: diseño conceptual; las decisiones marcadas como confirmadas se preservan desde la fuente. **Alcance:** este GDD es fuente de detalle de su dominio; el GDD Maestro establece la visión común. Los conflictos intersistema se registran en AUDIT_REPORT.md y no se resuelven implícitamente.
+> **Document control:** 0.1 | Status: conceptual design; the decisions marked as confirmed are preserved from the source. **Scope:** this GDD is the detail source for its domain; the GDD Maestro establishes the shared vision. Cross-system conflicts are recorded in AUDIT_REPORT.md and are not resolved implicitly.
 
 ---
 
-# GDD — Modelo de Entidades y Relaciones del Mundo
-**Versión:** 0.1  
-**Estado:** Diseño conceptual
+# GDD — World Entity and Relationship Model
+**Version:** 0.1  
+**Status:** Conceptual design
 
-## 1. Objetivo
+## 1. Objective
 
-Definir las entidades fundamentales que componen el mundo del juego, sus atributos, identidades, relaciones y evolución histórica.
+Define the fundamental entities that make up the game world, their attributes, identities, relationships and historical evolution.
 
-Este sistema constituye una base compartida para todos los demás sistemas: población, economía, producción, construcción, tecnología, cultura, religión, política, diplomacia, exploración y guerra.
+This system constitutes a shared foundation for all other systems: population, economy, production, construction, technology, culture, religion, politics, diplomacy, exploration and war.
 
-El objetivo es que el mundo no sea una colección de estadísticas aisladas, sino una estructura coherente de entidades que interactúan y evolucionan a lo largo del tiempo.
+The goal is for the world not to be a collection of isolated statistics, but a coherent structure of entities that interact and evolve over time.
 
-## 2. Principios fundamentales
+## 2. Fundamental principles
 
-- Todas las entidades relevantes poseen identidad propia.
-- Las entidades pueden relacionarse con múltiples entidades simultáneamente.
-- Las relaciones pueden cambiar, desaparecer y volver a establecerse.
-- Las relaciones importantes conservan memoria histórica.
-- Las entidades pueden evolucionar, transformarse, dividirse, fusionarse o desaparecer.
-- Los sistemas comparten las mismas entidades y datos; no crean representaciones independientes de un mismo elemento.
-- La simulación puede simplificarse según escala, importancia y rendimiento, sin eliminar necesariamente la identidad conceptual.
-- La complejidad será configurable.
+- All relevant entities have their own identity.
+- Entities can relate to multiple entities simultaneously.
+- Relationships can change, disappear and be re-established.
+- Important relationships retain historical memory.
+- Entities can evolve, transform, split, merge or disappear.
+- Systems share the same entities and data; they do not create independent representations of the same element.
+- The simulation can be simplified according to scale, importance and performance, without necessarily eliminating the conceptual identity.
+- Complexity will be configurable.
 
-## 3. Habitantes e individuos
+## 3. Inhabitants and individuals
 
-### 3.1 Modelo de población
+### 3.1 Population model
 
-Se utilizará un modelo híbrido:
+A hybrid model will be used:
 
-- Individuos identificables.
-- Familias y hogares.
-- Grupos demográficos y sociales.
-- Profesiones y sectores laborales.
-- Clases sociales y comunidades.
+- Identifiable individuals.
+- Families and households.
+- Demographic and social groups.
+- Professions and labor sectors.
+- Social classes and communities.
 
-Los individuos podrán agruparse para realizar simulaciones agregadas, especialmente en poblaciones grandes.
+Individuals may be grouped to carry out aggregate simulations, especially in large populations.
 
-La agregación no implica que los habitantes pierdan necesariamente su identidad. El nivel de detalle simulado dependerá de la importancia, escala y configuración del juego.
+Aggregation does not imply that inhabitants necessarily lose their identity. The level of detail simulated will depend on the importance, scale and configuration of the game.
 
-### 3.2 Identidad individual
+### 3.2 Individual identity
 
-Cada individuo tendrá un conjunto amplio de atributos:
+Each individual will have a broad set of attributes:
 
-- Identidad y nombre.
-- Edad y sexo.
-- Familia y parentescos.
-- Relaciones personales.
-- Lugar de nacimiento y residencia.
-- Ocupación y empleadores.
-- Profesiones y habilidades.
-- Salud y condiciones físicas.
-- Educación y conocimientos.
-- Cultura e idioma.
-- Religión y creencias.
-- Condición económica y patrimonio.
-- Clase social.
-- Opiniones e intereses.
-- Participación en organizaciones.
-- Historia personal y acontecimientos relevantes.
+- Identity and name.
+- Age and sex.
+- Family and kinship.
+- Personal relationships.
+- Place of birth and residence.
+- Occupation and employers.
+- Professions and skills.
+- Health and physical condition.
+- Education and knowledge.
+- Culture and language.
+- Religion and beliefs.
+- Economic condition and property.
+- Social class.
+- Opinions and interests.
+- Participation in organizations.
+- Personal history and relevant events.
 
-Los atributos y su importancia podrán variar según época y contexto histórico.
+The attributes and their importance may vary according to era and historical context.
 
-### 3.3 Personajes destacados
+### 3.3 Prominent characters
 
-Cualquier individuo podrá adquirir relevancia orgánicamente.
+Any individual may acquire relevance organically.
 
-Ejemplos:
+Examples:
 
-- Líderes políticos.
-- Comerciantes.
-- Inventores.
-- Científicos.
-- Artistas.
-- Religiosos.
-- Militares.
-- Exploradores.
-- Pensadores.
+- Political leaders.
+- Merchants.
+- Inventors.
+- Scientists.
+- Artists.
+- Religious figures.
+- Military figures.
+- Explorers.
+- Thinkers.
 
-El jugador podrá identificar, seguir y consultar personajes concretos, incluso cuando no sean figuras importantes para toda la civilización.
+The player may identify, follow and consult specific characters, even when they are not important figures for the entire civilization.
 
-Los personajes destacados podrán disponer de biografías y relaciones más detalladas.
+Prominent characters may have more detailed biographies and relationships.
 
-## 4. Familias y hogares
+## 4. Families and households
 
-Se distinguirán dos conceptos relacionados:
+Two related concepts will be distinguished:
 
-**Familia:** unidad de parentesco y relaciones sociales. Incluye vínculos biológicos, matrimoniales, adoptivos y otros reconocidos culturalmente.
+**Family:** a unit of kinship and social relationships. It includes biological, marital, adoptive and other culturally recognized bonds.
 
-**Hogar:** unidad de convivencia y organización económica. Agrupa a quienes comparten vivienda, recursos o actividades domésticas.
+**Household:** a unit of cohabitation and economic organization. It groups those who share a dwelling, resources or domestic activities.
 
-Ambas estructuras podrán cambiar con el tiempo.
+Both structures may change over time.
 
-Un hogar puede incluir varias familias, una familia puede dividirse entre varios hogares y las estructuras familiares pueden variar según época y cultura.
+A household can include several families, a family can be split across several households, and family structures can vary according to era and culture.
 
-Las familias y hogares podrán tener:
+Families and households may have:
 
-- Integrantes.
-- Relaciones internas.
-- Vivienda.
-- Recursos y patrimonio.
-- Actividades económicas.
-- Tradiciones.
-- Historia y acontecimientos relevantes.
+- Members.
+- Internal relationships.
+- A dwelling.
+- Resources and property.
+- Economic activities.
+- Traditions.
+- History and relevant events.
 
-## 5. Edificios y construcciones
+## 5. Buildings and structures
 
-Cada edificio será una entidad individual con identidad propia.
+Each building will be an individual entity with its own identity.
 
-Los edificios tendrán:
+Buildings will have:
 
-- Identificador e identidad.
-- Ubicación y características geográficas.
-- Tipo y función.
-- Propietario y responsables.
-- Trabajadores y ocupantes.
-- Capacidad y estado.
-- Materiales y técnicas constructivas.
-- Tecnología aplicada.
-- Ampliaciones y componentes.
-- Actividad económica o social.
-- Mantenimiento y deterioro.
-- Evolución arquitectónica.
-- Historia y acontecimientos relevantes.
+- Identifier and identity.
+- Location and geographic characteristics.
+- Type and function.
+- Owner and those responsible.
+- Workers and occupants.
+- Capacity and condition.
+- Materials and construction techniques.
+- Applied technology.
+- Expansions and components.
+- Economic or social activity.
+- Maintenance and deterioration.
+- Architectural evolution.
+- History and relevant events.
 
-Los edificios se organizarán también en categorías y sistemas compartidos para facilitar su gestión.
+Buildings will also be organized into shared categories and systems to facilitate their management.
 
-Un edificio podrá transformarse, ampliarse, cambiar de función, quedar abandonado, convertirse en ruina o ser reemplazado, conservando cuando corresponda su identidad histórica.
+A building may transform, expand, change function, become abandoned, turn into a ruin or be replaced, keeping its historical identity where appropriate.
 
-La estructura de datos deberá permitir representar edificios con componentes internos independientes, aunque el nivel de detalle de esos componentes se implementará progresivamente.
+The data structure must allow representing buildings with independent internal components, although the level of detail of those components will be implemented progressively.
 
-## 6. Asentamientos
+## 6. Settlements
 
-Aldeas, pueblos y ciudades serán entidades con identidad propia.
+Villages, towns and cities will be entities with their own identity.
 
-Su identidad surgirá de la interacción entre habitantes, edificios, economía, cultura, geografía e historia.
+Their identity will arise from the interaction between inhabitants, buildings, economy, culture, geography and history.
 
-Cada asentamiento podrá tener:
+Each settlement may have:
 
-- Población y composición demográfica.
-- Familias y comunidades.
-- Edificios e infraestructura.
-- Economía y especialización.
-- Instituciones.
-- Cultura e identidad local.
-- Religión y tradiciones.
-- Organización administrativa.
-- Relaciones con otros asentamientos.
-- Territorio e influencia.
-- Acontecimientos y memoria histórica.
+- Population and demographic composition.
+- Families and communities.
+- Buildings and infrastructure.
+- Economy and specialization.
+- Institutions.
+- Culture and local identity.
+- Religion and traditions.
+- Administrative organization.
+- Relationships with other settlements.
+- Territory and influence.
+- Events and historical memory.
 
-Los asentamientos podrán crecer, cambiar de categoría, dividirse, fusionarse, ser abandonados o desaparecer.
+Settlements may grow, change category, split, merge, be abandoned or disappear.
 
-Su identidad no dependerá exclusivamente de su población actual: podrá conservar tradiciones, edificios, nombres y legados de habitantes anteriores.
+Their identity will not depend exclusively on their current population: they may retain traditions, buildings, names and legacies of former inhabitants.
 
-## 7. Regiones y territorios
+## 7. Regions and territories
 
-Las regiones se representarán como entidades geográficas, económicas, culturales y administrativas.
+Regions will be represented as geographic, economic, cultural and administrative entities.
 
-Estas dimensiones no necesariamente coincidirán.
+These dimensions will not necessarily coincide.
 
-Por ejemplo:
-- Una región cultural puede abarcar varias regiones políticas.
-- Una provincia puede contener diferentes identidades culturales.
-- Una región económica puede conectar asentamientos de distintos territorios.
-- Una frontera administrativa puede cambiar sin alterar inmediatamente la identidad regional.
+For example:
+- A cultural region may span several political regions.
+- A province may contain different cultural identities.
+- An economic region may connect settlements from different territories.
+- An administrative border may change without immediately altering the regional identity.
 
-Las regiones tendrán características, recursos, población, asentamientos, instituciones, relaciones y evolución histórica propias.
+Regions will have their own characteristics, resources, population, settlements, institutions, relationships and historical evolution.
 
-Se integrarán con el sistema de Administración Territorial y Gestión de Regiones.
+They will integrate with the Territorial Administration and Region Management system.
 
-## 8. Organizaciones e instituciones
+## 8. Organizations and institutions
 
-Las organizaciones aparecerán gradualmente cuando existan las condiciones históricas y sociales necesarias.
+Organizations will appear gradually when the necessary historical and social conditions exist.
 
-No estarán limitadas a una lista rígida de estructuras predeterminadas.
+They will not be limited to a rigid list of predetermined structures.
 
-Podrán existir:
+The following may exist:
 
-- Familias extensas y clanes.
-- Gremios y asociaciones de artesanos.
-- Empresas y organizaciones comerciales.
-- Instituciones religiosas.
-- Gobiernos y organismos administrativos.
-- Ejércitos y organizaciones militares.
-- Escuelas, universidades y academias.
-- Movimientos políticos.
-- Organizaciones culturales.
-- Asociaciones comunitarias.
-- Organizaciones diplomáticas y supranacionales.
+- Extended families and clans.
+- Guilds and artisan associations.
+- Enterprises and trading organizations.
+- Religious institutions.
+- Governments and administrative bodies.
+- Armies and military organizations.
+- Schools, universities and academies.
+- Political movements.
+- Cultural organizations.
+- Community associations.
+- Diplomatic and supranational organizations.
 
-Cada organización podrá tener:
+Each organization may have:
 
-- Identidad y propósito.
-- Integrantes.
-- Estructura interna.
-- Liderazgo.
-- Propiedades y recursos.
-- Actividades.
-- Influencia.
-- Relaciones externas.
-- Normas y organización.
-- Historia y acontecimientos.
+- Identity and purpose.
+- Members.
+- Internal structure.
+- Leadership.
+- Properties and resources.
+- Activities.
+- Influence.
+- External relationships.
+- Rules and organization.
+- History and events.
 
-Las organizaciones podrán surgir, crecer, transformarse, dividirse, fusionarse o desaparecer.
+Organizations may arise, grow, transform, split, merge or disappear.
 
-## 9. Relaciones entre entidades
+## 9. Relationships between entities
 
-El mundo utilizará un sistema de relaciones múltiples y dinámicas.
+The world will use a system of multiple and dynamic relationships.
 
-Una misma entidad podrá mantener numerosas relaciones simultáneas con otras.
+A single entity may maintain numerous simultaneous relationships with others.
 
-Ejemplos:
+Examples:
 
-- Un individuo pertenece a una familia.
-- Vive en un hogar.
-- Trabaja en un edificio.
-- Es miembro de un gremio.
-- Practica una religión.
-- Tiene relaciones personales con otros habitantes.
-- Posee bienes.
-- Participa en una organización política.
+- An individual belongs to a family.
+- Lives in a household.
+- Works in a building.
+- Is a member of a guild.
+- Practices a religion.
+- Has personal relationships with other inhabitants.
+- Owns goods.
+- Participates in a political organization.
 
-Las relaciones tendrán, cuando corresponda:
+Relationships will have, where appropriate:
 
-- Tipo.
-- Entidades involucradas.
-- Fecha de inicio.
-- Estado actual.
-- Intensidad o importancia.
-- Condiciones.
-- Origen.
-- Acontecimientos asociados.
-- Fecha de finalización.
+- Type.
+- Entities involved.
+- Start date.
+- Current status.
+- Intensity or importance.
+- Conditions.
+- Origin.
+- Associated events.
+- End date.
 
-Las relaciones podrán evolucionar y conservar memoria histórica.
+Relationships may evolve and retain historical memory.
 
-Por ejemplo, una familia puede perder su propiedad, una empresa puede cambiar de dueño, un individuo puede abandonar una organización o una ciudad puede dejar de pertenecer a un determinado territorio.
+For example, a family may lose its property, a company may change owners, an individual may leave an organization or a city may cease to belong to a particular territory.
 
-El sistema deberá permitir consultar tanto las relaciones actuales como las relaciones históricas relevantes.
+The system must allow consulting both current relationships and relevant historical relationships.
 
-## 10. Identidad e historia persistente
+## 10. Identity and persistent history
 
-Las entidades importantes conservarán su identidad a través del tiempo.
+Important entities will retain their identity over time.
 
-Se priorizará el historial de:
+Priority will be given to the history of:
 
-- Personajes relevantes.
-- Edificios históricos.
-- Asentamientos y ciudades.
-- Organizaciones.
-- Instituciones.
-- Regiones.
-- Civilizaciones.
+- Relevant characters.
+- Historical buildings.
+- Settlements and cities.
+- Organizations.
+- Institutions.
+- Regions.
+- Civilizations.
 
-El historial podrá registrar:
+The history may record:
 
-- Fundación y origen.
-- Transformaciones.
-- Propietarios y responsables.
-- Cambios de función.
-- Relaciones relevantes.
-- Acontecimientos.
-- Destrucciones y reconstrucciones.
-- Evolución cultural y arquitectónica.
-- Legados.
+- Foundation and origin.
+- Transformations.
+- Owners and those responsible.
+- Changes of function.
+- Relevant relationships.
+- Events.
+- Destructions and reconstructions.
+- Cultural and architectural evolution.
+- Legacies.
 
-No se exige almacenar permanentemente cada acción cotidiana de cada entidad. La persistencia histórica deberá ser selectiva y configurable, evitando un crecimiento innecesario de datos.
+It is not required to permanently store every everyday action of every entity. Historical persistence must be selective and configurable, avoiding unnecessary data growth.
 
-El objetivo es poder reconstruir la historia de los elementos importantes del mundo.
+The goal is to be able to reconstruct the history of the important elements of the world.
 
-## 11. Escalabilidad y simulación adaptativa
+## 11. Scalability and adaptive simulation
 
-La simulación será adaptativa según:
+The simulation will be adaptive according to:
 
-- Importancia de la entidad.
-- Cantidad de habitantes.
-- Actividad económica.
-- Complejidad de las relaciones.
-- Acontecimientos recientes.
-- Relevancia para el jugador.
-- Configuración de simulación.
+- The importance of the entity.
+- The number of inhabitants.
+- Economic activity.
+- The complexity of relationships.
+- Recent events.
+- Relevance to the player.
+- Simulation configuration.
 
-No se utilizará únicamente la distancia al jugador como criterio.
+Distance to the player will not be used as the sole criterion.
 
-Una ciudad lejana que atraviesa una guerra importante puede necesitar más detalle que una región cercana sin acontecimientos relevantes.
+A distant city undergoing a major war may need more detail than a nearby region with no relevant events.
 
-Las entidades podrán pasar entre distintos niveles de simulación, conservando los datos necesarios para mantener continuidad y coherencia.
+Entities may move between different levels of simulation, retaining the data necessary to maintain continuity and coherence.
 
-La transición entre simulación detallada y agregada no deberá producir saltos demográficos, económicos o históricos artificiales.
+The transition between detailed and aggregate simulation must not produce artificial demographic, economic or historical jumps.
 
-## 12. Integración con otros sistemas
+## 12. Integration with other systems
 
-El modelo será compartido por todos los sistemas.
+The model will be shared by all systems.
 
-Ejemplos:
+Examples:
 
-- **Población:** individuos, familias, hogares, grupos y clases sociales.
-- **Economía:** propietarios, productores, trabajadores, empresas y bienes.
-- **Producción:** edificios, trabajadores, recetas y organizaciones productivas.
-- **Construcción:** edificios, materiales, propietarios, arquitectos y obras.
-- **Tecnología:** especialistas, instituciones, conocimientos y descubrimientos.
-- **Religión:** individuos, comunidades, instituciones y organizaciones religiosas.
-- **Cultura:** individuos, grupos, asentamientos y tradiciones.
-- **Política:** gobiernos, líderes, instituciones y facciones.
-- **Diplomacia:** civilizaciones, líderes, diplomáticos y tratados.
-- **Guerra:** ejércitos, comandantes, asentamientos y territorios.
-- **Exploración:** expediciones, individuos, organizaciones y regiones.
+- **Population:** individuals, families, households, groups and social classes.
+- **Economy:** owners, producers, workers, enterprises and goods.
+- **Production:** buildings, workers, recipes and productive organizations.
+- **Construction:** buildings, materials, owners, architects and construction works.
+- **Technology:** specialists, institutions, knowledge and discoveries.
+- **Religion:** individuals, communities, institutions and religious organizations.
+- **Culture:** individuals, groups, settlements and traditions.
+- **Politics:** governments, leaders, institutions and factions.
+- **Diplomacy:** civilizations, leaders, diplomats and treaties.
+- **War:** armies, commanders, settlements and territories.
+- **Exploration:** expeditions, individuals, organizations and regions.
 
-Los sistemas deberán consultar y modificar las mismas entidades, respetando las reglas de cada dominio.
+The systems must consult and modify the same entities, respecting the rules of each domain.
 
-## 13. Propiedad y titularidad
+## 13. Property and ownership
 
-Se distinguirán conceptos que no deben confundirse:
+Concepts that must not be confused will be distinguished:
 
-- Titularidad de recursos naturales.
-- Derechos de explotación.
-- Propiedad de edificios e instalaciones.
-- Propiedad de bienes y mercancías.
-- Control operativo de actividades.
-- Administración y regulación estatal.
+- Ownership of natural resources.
+- Exploitation rights.
+- Ownership of buildings and facilities.
+- Ownership of goods and merchandise.
+- Operational control of activities.
+- State administration and regulation.
 
-Esto permite mantener la decisión de que los recursos naturales pertenecen al Estado o civilización, mientras productores privados, familias y organizaciones pueden administrar actividades, operar instalaciones y gestionar bienes conforme a los derechos establecidos.
+This makes it possible to maintain the decision that natural resources belong to the State or civilization, while private producers, families and organizations can administer activities, operate facilities and manage goods in accordance with the established rights.
 
-La titularidad y el control podrán evolucionar históricamente.
+Ownership and control may evolve historically.
 
-## 14. Interfaz y consulta
+## 14. Interface and consultation
 
-El jugador podrá consultar entidades y sus relaciones desde el mundo 3D y desde herramientas específicas.
+The player will be able to consult entities and their relationships from the 3D world and from specific tools.
 
-Se contemplan:
+The following are contemplated:
 
-- Fichas individuales.
-- Árboles familiares.
-- Organigramas.
-- Relaciones entre organizaciones.
-- Historiales de edificios y ciudades.
-- Cronologías.
-- Mapas territoriales.
-- Redes económicas y sociales.
-- Biografías de personajes.
+- Individual profiles.
+- Family trees.
+- Organizational charts.
+- Relationships between organizations.
+- Histories of buildings and cities.
+- Chronologies.
+- Territorial maps.
+- Economic and social networks.
+- Character biographies.
 
-La profundidad de información dependerá de la complejidad elegida.
+The depth of information will depend on the chosen complexity.
 
-## 15. Complejidad configurable
+## 15. Configurable complexity
 
-El sistema deberá permitir ajustar:
+The system must allow adjusting:
 
-- Nivel de detalle individual.
-- Agregación demográfica.
-- Profundidad de relaciones.
-- Persistencia histórica.
-- Simulación de organizaciones.
-- Seguimiento de personajes.
-- Frecuencia de actualización.
-- Detalle de entidades lejanas.
+- The level of individual detail.
+- Demographic aggregation.
+- The depth of relationships.
+- Historical persistence.
+- Organization simulation.
+- Character tracking.
+- Update frequency.
+- The detail of distant entities.
 
-La configuración de detalle no deberá modificar arbitrariamente las reglas fundamentales del mundo.
+The detail configuration must not arbitrarily change the fundamental rules of the world.
 
 ## 16. MVP
 
-El primer prototipo deberá contemplar:
+The first prototype must contemplate:
 
-- Individuos identificables.
-- Familias y hogares básicos.
-- Edificios individuales.
-- Asentamientos.
-- Relaciones entre habitantes, hogares y edificios.
-- Organizaciones simples.
-- Propiedad básica.
-- Historial elemental de entidades.
-- Capacidad de agrupar población.
-- Identificadores persistentes.
+- Identifiable individuals.
+- Basic families and households.
+- Individual buildings.
+- Settlements.
+- Relationships between inhabitants, households and buildings.
+- Simple organizations.
+- Basic property.
+- An elementary history of entities.
+- The ability to group population.
+- Persistent identifiers.
 
-El MVP no necesita implementar todas las relaciones sociales, organizaciones históricas ni biografías completas. Debe establecer una estructura extensible que permita incorporarlas sin reconstruir el modelo central.
+The MVP does not need to implement all social relationships, historical organizations or complete biographies. It must establish an extensible structure that allows incorporating them without rebuilding the core model.
 
-## 17. Criterios de aceptación
+## 17. Acceptance criteria
 
-El sistema será conceptualmente satisfactorio cuando:
+The system will be conceptually satisfactory when:
 
-1. Un habitante pueda tener identidad, familia, trabajo, vivienda y relaciones propias.
-2. Las familias y hogares puedan cambiar con el tiempo.
-3. Los edificios mantengan identidad e historial.
-4. Las ciudades desarrollen identidad propia.
-5. Las regiones puedan tener dimensiones culturales, económicas, geográficas y políticas diferentes.
-6. Las organizaciones puedan surgir y evolucionar orgánicamente.
-7. Las relaciones puedan cambiar sin perder su historia relevante.
-8. Las entidades importantes puedan consultarse y seguirse.
-9. La simulación pueda escalar sin romper la continuidad del mundo.
-10. Todos los sistemas compartan entidades y datos coherentes.
+1. An inhabitant can have their own identity, family, work, dwelling and relationships.
+2. Families and households can change over time.
+3. Buildings retain identity and history.
+4. Cities develop their own identity.
+5. Regions can have different cultural, economic, geographic and political dimensions.
+6. Organizations can arise and evolve organically.
+7. Relationships can change without losing their relevant history.
+8. Important entities can be consulted and followed.
+9. The simulation can scale without breaking the continuity of the world.
+10. All systems share coherent entities and data.
 
-## 18. Principio rector
+## 18. Guiding principle
 
-**El mundo no estará formado por objetos aislados, sino por entidades con identidad, relaciones y memoria. Cada habitante, edificio, ciudad y organización será parte de una historia común que evoluciona a lo largo de los siglos.**
+**The world will not be made up of isolated objects, but of entities with identity, relationships and memory. Each inhabitant, building, city and organization will be part of a shared history that evolves over the centuries.**

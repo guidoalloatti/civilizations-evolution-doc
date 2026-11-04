@@ -1,512 +1,512 @@
-> **Control documental:** 0.1 | Estado: diseño conceptual; las decisiones marcadas como confirmadas se preservan desde la fuente. **Alcance:** este GDD es fuente de detalle de su dominio; el GDD Maestro establece la visión común. Los conflictos intersistema se registran en AUDIT_REPORT.md y no se resuelven implícitamente.
+> **Document control:** 0.1 | Status: conceptual design; decisions marked as confirmed are preserved from the source. **Scope:** this GDD is the detail source for its domain; the Master GDD establishes the common vision. Cross-system conflicts are recorded in AUDIT_REPORT.md and are not resolved implicitly.
 
 ---
 
-# GDD — EXPLORACIÓN, DESCUBRIMIENTO Y EXPANSIÓN TERRITORIAL
+# GDD — EXPLORATION, DISCOVERY AND TERRITORIAL EXPANSION
 
-**Versión:** 0.1  
-**Estado:** Definición conceptual consolidada  
-**Proyecto:** Simulador histórico de civilizaciones
+**Version:** 0.1  
+**Status:** Consolidated conceptual definition  
+**Project:** Historical civilization simulator
 
 ---
 
-## 1. Visión general
+## 1. Overview
 
-Este sistema define cómo las civilizaciones conocen, exploran, ocupan, desarrollan y controlan el mundo.
+This system defines how civilizations learn about, explore, occupy, develop and control the world.
 
-La exploración y la expansión territorial serán procesos históricos dinámicos. Las civilizaciones podrán descubrir nuevas regiones, establecer asentamientos, desarrollar rutas, migrar, comerciar, conquistar territorios y establecer diferentes formas de dependencia política.
+Exploration and territorial expansion will be dynamic historical processes. Civilizations will be able to discover new regions, establish settlements, develop routes, migrate, trade, conquer territories and establish different forms of political dependency.
 
-El sistema deberá permitir tanto la expansión dirigida por el jugador como el crecimiento autónomo de las sociedades.
+The system must allow both player-directed expansion and the autonomous growth of societies.
 
-No se busca que el jugador tenga que controlar cada expedición, cada migración o cada asentamiento. La población y las instituciones podrán desarrollar iniciativas propias, mientras que el jugador conserva herramientas para orientar y modificar esos procesos.
+The intent is not for the player to have to control every expedition, every migration or every settlement. The population and institutions will be able to develop their own initiatives, while the player retains tools to guide and modify those processes.
 
-**Principio fundamental:**
+**Fundamental principle:**
 
-La expansión de una civilización no será solamente una conquista territorial. Será un proceso de exploración, migración, asentamiento, integración y transformación histórica.
+The expansion of a civilization will not be merely a territorial conquest. It will be a process of exploration, migration, settlement, integration and historical transformation.
 
-## 2. Exploración del mundo
+## 2. World exploration
 
-### 2.1. Modalidad de exploración
+### 2.1. Exploration mode
 
-El sistema permitirá configurar cómo explora cada civilización.
+The system will allow configuring how each civilization explores.
 
-Se contemplarán tres modalidades:
+Three modes will be considered:
 
-- Exploración autónoma.
-- Exploración dirigida por el jugador.
-- Modelo mixto.
+- Autonomous exploration.
+- Player-directed exploration.
+- Mixed model.
 
-La autonomía podrá configurarse individualmente.
+Autonomy will be configurable individually.
 
-Las civilizaciones podrán explorar regiones por motivos económicos, demográficos, estratégicos, científicos, religiosos o políticos.
+Civilizations will be able to explore regions for economic, demographic, strategic, scientific, religious or political reasons.
 
-El jugador podrá establecer prioridades y objetivos generales sin necesidad de controlar cada movimiento.
+The player will be able to set priorities and general objectives without needing to control every movement.
 
-### 2.2. Unidades exploradoras
+### 2.2. Exploration units
 
-La exploración podrá realizarse mediante diferentes grupos y unidades según la época:
+Exploration will be possible through different groups and units depending on the era:
 
-- Exploradores especializados.
-- Grupos de población.
-- Comerciantes.
-- Caravanas.
-- Ejércitos.
-- Navegantes.
-- Expediciones marítimas.
-- Viajeros y diplomáticos.
-- Grupos migratorios.
+- Specialized explorers.
+- Population groups.
+- Traders.
+- Caravans.
+- Armies.
+- Seafarers.
+- Maritime expeditions.
+- Travelers and diplomats.
+- Migratory groups.
 
-No todas las unidades tendrán las mismas capacidades.
+Not all units will have the same capabilities.
 
-Por ejemplo, una caravana comercial podrá descubrir rutas terrestres, mientras que una expedición marítima podrá explorar costas, islas y regiones lejanas.
+For example, a trade caravan will be able to discover land routes, while a maritime expedition will be able to explore coasts, islands and distant regions.
 
-### 2.3. Expediciones y logística
+### 2.3. Expeditions and logistics
 
-La logística de exploración será simplificada.
+Exploration logistics will be simplified.
 
-Las expediciones cercanas no requerirán una gestión detallada de suministros.
+Nearby expeditions will not require detailed supply management.
 
-Las expediciones lejanas podrán considerar:
+Distant expeditions may take into account:
 
-- Duración estimada.
-- Alimentos.
-- Agua.
-- Equipamiento.
-- Medios de transporte.
-- Condiciones climáticas.
-- Distancia.
-- Riesgos geográficos.
-- Tecnología disponible.
+- Estimated duration.
+- Food.
+- Water.
+- Equipment.
+- Means of transport.
+- Climatic conditions.
+- Distance.
+- Geographic risks.
+- Available technology.
 
-Estos factores tendrán consecuencias simplificadas, evitando convertir la exploración en micromanagement.
+These factors will have simplified consequences, avoiding turning exploration into micromanagement.
 
-El sistema reutilizará la infraestructura de transporte y logística ya definida.
+The system will reuse the transport and logistics infrastructure already defined.
 
-## 3. Descubrimiento de regiones
+## 3. Region discovery
 
-### 3.1. Información descubierta
+### 3.1. Discovered information
 
-La exploración podrá revelar:
+Exploration may reveal:
 
-- Geografía y topografía.
-- Ríos, lagos y costas.
-- Clima y biomas.
-- Suelos y fertilidad.
-- Recursos naturales.
-- Flora y fauna.
-- Especies domesticables.
-- Otras civilizaciones.
-- Asentamientos.
-- Rutas comerciales.
-- Ruinas y vestigios.
-- Lugares de interés histórico, cultural o religioso.
+- Geography and topography.
+- Rivers, lakes and coasts.
+- Climate and biomes.
+- Soils and fertility.
+- Natural resources.
+- Flora and fauna.
+- Domesticable species.
+- Other civilizations.
+- Settlements.
+- Trade routes.
+- Ruins and remains.
+- Places of historical, cultural or religious interest.
 
-La información disponible dependerá del tipo de exploración y de la tecnología de la civilización.
+The information available will depend on the type of exploration and on the civilization's technology.
 
-### 3.2. Descubrimientos relevantes
+### 3.2. Significant discoveries
 
-El sistema generará acontecimientos especiales cuando se produzcan descubrimientos importantes.
+The system will generate special events when important discoveries occur.
 
-Ejemplos:
+Examples:
 
-- Descubrimiento de una nueva ruta comercial.
-- Identificación de un paso montañoso.
-- Descubrimiento de una región rica en minerales.
-- Localización de nuevas tierras fértiles.
-- Descubrimiento de especies domesticables.
-- Contacto con una civilización desconocida.
-- Descubrimiento de ruinas o antiguos asentamientos.
-- Identificación de rutas marítimas alternativas.
+- Discovery of a new trade route.
+- Identification of a mountain pass.
+- Discovery of a region rich in minerals.
+- Location of new fertile lands.
+- Discovery of domesticable species.
+- Contact with an unknown civilization.
+- Discovery of ruins or ancient settlements.
+- Identification of alternative maritime routes.
 
-Los descubrimientos podrán generar notificaciones y oportunidades para la civilización.
+Discoveries may generate notifications and opportunities for the civilization.
 
-No todos los descubrimientos serán necesariamente acontecimientos extraordinarios: muchos formarán parte del proceso cotidiano de exploración.
+Not all discoveries will necessarily be extraordinary events: many will be part of the everyday process of exploration.
 
-## 4. Conocimiento geográfico y cartografía
+## 4. Geographic knowledge and cartography
 
-### 4.1. Niveles de conocimiento
+### 4.1. Levels of knowledge
 
-El conocimiento del mundo tendrá distintos niveles de precisión.
+Knowledge of the world will have different levels of precision.
 
-Se contemplarán tres estados:
+Three states will be considered:
 
-1. **Desconocido:** no existe información relevante sobre la región.
-2. **Conocido:** existen relatos, referencias o información general.
-3. **Cartografiado:** existe información geográfica más precisa.
+1. **Unknown:** no relevant information exists about the region.
+2. **Known:** accounts, references or general information exist.
+3. **Mapped:** more precise geographic information exists.
 
-Una región puede ser conocida por comerciantes o viajeros sin haber sido explorada directamente por la civilización.
+A region may be known by traders or travelers without having been directly explored by the civilization.
 
-### 4.2. Mapas y transmisión de información
+### 4.2. Maps and information transmission
 
-Cada civilización desarrollará su propio conocimiento geográfico.
+Each civilization will develop its own geographic knowledge.
 
-La información podrá transmitirse mediante:
+Information may be transmitted through:
 
-- Exploradores.
-- Comerciantes.
-- Migraciones.
-- Diplomáticos.
-- Viajeros.
-- Conquistas.
-- Relaciones culturales.
-- Intercambios de mapas.
-- Relatos y tradiciones.
+- Explorers.
+- Traders.
+- Migrations.
+- Diplomats.
+- Travelers.
+- Conquests.
+- Cultural relations.
+- Map exchanges.
+- Accounts and traditions.
 
-La información compartida no tendrá necesariamente la misma precisión que la obtenida mediante exploración directa.
+Shared information will not necessarily have the same precision as that obtained through direct exploration.
 
-La cartografía evolucionará junto con las capacidades tecnológicas y científicas.
+Cartography will evolve alongside technological and scientific capabilities.
 
-### 4.3. Integración tecnológica
+### 4.3. Technological integration
 
-La exploración se relacionará con los avances en:
+Exploration will be related to advances in:
 
-- Navegación.
-- Cartografía.
-- Astronomía.
-- Construcción naval.
-- Instrumentos de orientación.
-- Transporte.
-- Ingeniería.
+- Navigation.
+- Cartography.
+- Astronomy.
+- Shipbuilding.
+- Orientation instruments.
+- Transport.
+- Engineering.
 
-Una civilización podrá explorar regiones que antes resultaban inaccesibles gracias a nuevos conocimientos y tecnologías.
+A civilization will be able to explore regions that were previously inaccessible thanks to new knowledge and technologies.
 
-## 5. Expansión territorial
+## 5. Territorial expansion
 
-### 5.1. Formas de expansión
+### 5.1. Forms of expansion
 
-Las civilizaciones podrán expandirse mediante diferentes mecanismos:
+Civilizations will be able to expand through different mechanisms:
 
-- Fundación de asentamientos.
-- Expansión gradual desde territorios existentes.
-- Migración.
-- Colonización.
-- Conquista.
-- Tratados.
-- Incorporación voluntaria.
-- Uniones políticas.
-- Dependencias territoriales.
-- Establecimiento de puestos comerciales.
+- Founding settlements.
+- Gradual expansion from existing territories.
+- Migration.
+- Colonization.
+- Conquest.
+- Treaties.
+- Voluntary incorporation.
+- Political unions.
+- Territorial dependencies.
+- Establishment of trading posts.
 
-Todas estas modalidades estarán integradas con los sistemas económico, político y diplomático.
+All these modes will be integrated with the economic, political and diplomatic systems.
 
-### 5.2. Control territorial
+### 5.2. Territorial control
 
-El control territorial utilizará un modelo mixto.
+Territorial control will use a mixed model.
 
-Existirán fronteras reconocidas y territorios delimitados, pero también zonas donde el control será gradual o variable.
+There will be recognized borders and delimited territories, but also zones where control will be gradual or variable.
 
-El sistema podrá representar:
+The system will be able to represent:
 
-- Territorio central.
-- Región administrada.
-- Territorio fronterizo.
-- Zona de influencia.
-- Territorio disputado.
-- Territorio ocupado.
-- Territorio dependiente.
+- Core territory.
+- Administered region.
+- Border territory.
+- Zone of influence.
+- Disputed territory.
+- Occupied territory.
+- Dependent territory.
 
-Estos niveles serán configurables y no requerirán una simulación administrativa extremadamente compleja.
+These levels will be configurable and will not require an extremely complex administrative simulation.
 
-La influencia y el control podrán cambiar según población, presencia institucional, infraestructura, relaciones políticas y capacidad de administración.
+Influence and control may change according to population, institutional presence, infrastructure, political relations and administrative capacity.
 
-### 5.3. Fronteras
+### 5.3. Borders
 
-Las fronteras podrán surgir y modificarse mediante:
+Borders may emerge and change through:
 
-- Expansión de asentamientos.
-- Acuerdos diplomáticos.
-- Conquistas.
-- Migraciones.
-- Conflictos.
-- Tratados.
-- Cambios de dependencia política.
-- Abandono de regiones.
+- Expansion of settlements.
+- Diplomatic agreements.
+- Conquests.
+- Migrations.
+- Conflicts.
+- Treaties.
+- Changes of political dependency.
+- Abandonment of regions.
 
-Las fronteras naturales, como montañas, ríos y mares, podrán influir en su formación.
+Natural borders, such as mountains, rivers and seas, may influence their formation.
 
-La geografía tendrá un papel importante, pero no determinará automáticamente los límites políticos.
+Geography will play an important role, but it will not automatically determine political boundaries.
 
-## 6. Fundación de nuevos asentamientos
+## 6. Founding new settlements
 
-### 6.1. Fundación dirigida y autónoma
+### 6.1. Directed and autonomous founding
 
-El jugador podrá elegir libremente dónde fundar nuevos asentamientos.
+The player will be able to freely choose where to found new settlements.
 
-El sistema también podrá recomendar ubicaciones según:
+The system will also be able to recommend locations according to:
 
-- Disponibilidad de agua.
-- Fertilidad.
-- Recursos naturales.
-- Clima.
-- Accesibilidad.
-- Seguridad.
-- Proximidad a rutas comerciales.
-- Distancia respecto de otros asentamientos.
-- Posibilidades de expansión.
+- Water availability.
+- Fertility.
+- Natural resources.
+- Climate.
+- Accessibility.
+- Security.
+- Proximity to trade routes.
+- Distance from other settlements.
+- Possibilities for expansion.
 
-La población también podrá fundar asentamientos autónomamente.
+The population will also be able to found settlements autonomously.
 
-Estos procesos dependerán de las condiciones demográficas, económicas, sociales y políticas.
+These processes will depend on demographic, economic, social and political conditions.
 
-### 6.2. Desarrollo de asentamientos
+### 6.2. Settlement development
 
-Los asentamientos podrán evolucionar gradualmente.
+Settlements will be able to evolve gradually.
 
-Una pequeña comunidad podrá convertirse en aldea, luego en pueblo y eventualmente en ciudad.
+A small community may become a village, then a town and eventually a city.
 
-Su desarrollo dependerá de:
+Their development will depend on:
 
-- Crecimiento poblacional.
-- Actividad económica.
-- Recursos disponibles.
-- Infraestructura.
-- Conectividad.
-- Instituciones.
-- Tecnología.
-- Decisiones políticas.
-- Características geográficas.
+- Population growth.
+- Economic activity.
+- Available resources.
+- Infrastructure.
+- Connectivity.
+- Institutions.
+- Technology.
+- Political decisions.
+- Geographic features.
 
-La evolución estará integrada con los sistemas de población, construcción, economía y producción.
+This evolution will be integrated with the population, construction, economy and production systems.
 
-### 6.3. Autonomía e independencia
+### 6.3. Autonomy and independence
 
-Los asentamientos podrán tener diferentes niveles de autonomía.
+Settlements may have different levels of autonomy.
 
-Dependiendo de su evolución, podrán:
+Depending on their evolution, they may:
 
-- Permanecer bajo control directo.
-- Obtener autonomía administrativa.
-- Desarrollar instituciones propias.
-- Convertirse en centros regionales.
-- Integrarse a otras entidades políticas.
-- Independizarse.
+- Remain under direct control.
+- Gain administrative autonomy.
+- Develop their own institutions.
+- Become regional centers.
+- Integrate into other political entities.
+- Become independent.
 
-La independencia podrá producirse mediante procesos políticos, económicos, culturales o conflictos.
+Independence may occur through political, economic or cultural processes, or through conflicts.
 
-No será un resultado obligatorio de la distancia o del crecimiento.
+It will not be a mandatory outcome of distance or growth.
 
-## 7. Migración y colonización
+## 7. Migration and colonization
 
-### 7.1. Migraciones
+### 7.1. Migrations
 
-La migración podrá ser dirigida por el jugador o surgir autónomamente.
+Migration may be player-directed or arise autonomously.
 
-Los grupos de población podrán desplazarse buscando mejores oportunidades.
+Population groups will be able to move in search of better opportunities.
 
-Las migraciones podrán ser:
+Migrations may be:
 
-- Internas.
-- Entre asentamientos.
-- Hacia nuevas regiones.
-- Hacia colonias.
-- Entre civilizaciones.
-- Forzadas por conflictos o crisis.
+- Internal.
+- Between settlements.
+- Toward new regions.
+- Toward colonies.
+- Between civilizations.
+- Forced by conflicts or crises.
 
-Se integrarán con el sistema demográfico y social.
+They will be integrated with the demographic and social system.
 
-### 7.2. Factores de colonización
+### 7.2. Colonization factors
 
-La fundación y el crecimiento de asentamientos dependerán de:
+The founding and growth of settlements will depend on:
 
-- Recursos disponibles.
-- Distancia y accesibilidad.
-- Clima y fertilidad.
-- Seguridad.
-- Presencia de otras civilizaciones.
-- Costos logísticos.
-- Tecnología disponible.
-- Intereses económicos y políticos.
+- Available resources.
+- Distance and accessibility.
+- Climate and fertility.
+- Security.
+- Presence of other civilizations.
+- Logistical costs.
+- Available technology.
+- Economic and political interests.
 
-Estos factores no funcionarán como requisitos rígidos. Serán variables que influirán en las decisiones de población e instituciones.
+These factors will not function as rigid requirements. They will be variables that influence the decisions of the population and institutions.
 
-### 7.3. Relaciones con poblaciones existentes
+### 7.3. Relations with existing populations
 
-Cuando una civilización se expanda hacia regiones habitadas, podrán producirse diferentes resultados:
+When a civilization expands into inhabited regions, different outcomes may occur:
 
-- Integración cultural y social.
-- Comercio y convivencia.
-- Cooperación.
-- Competencia económica.
-- Conflictos.
-- Desplazamientos.
-- Conquista.
-- Sometimiento.
-- Acuerdos políticos.
-- Integración gradual.
+- Cultural and social integration.
+- Trade and coexistence.
+- Cooperation.
+- Economic competition.
+- Conflicts.
+- Displacements.
+- Conquest.
+- Subjugation.
+- Political agreements.
+- Gradual integration.
 
-El resultado dependerá de las características de las sociedades involucradas, sus intereses, su capacidad militar, sus relaciones y sus condiciones históricas.
+The outcome will depend on the characteristics of the societies involved, their interests, their military capacity, their relations and their historical conditions.
 
-Se evitará que la colonización tenga siempre un resultado predeterminado.
+Colonization will be prevented from always having a predetermined outcome.
 
-## 8. Administración territorial y autonomía
+## 8. Territorial administration and autonomy
 
-### 8.1. Control y autonomía
+### 8.1. Control and autonomy
 
-La autonomía territorial será configurable.
+Territorial autonomy will be configurable.
 
-El jugador podrá elegir entre:
+The player will be able to choose between:
 
-- Control directo.
-- Autonomía limitada.
-- Autonomía progresiva.
-- Administración regional con capacidad de decisión propia.
+- Direct control.
+- Limited autonomy.
+- Progressive autonomy.
+- Regional administration with its own decision-making capacity.
 
-El nivel de autonomía dependerá de las preferencias del jugador y podrá evolucionar con el tiempo.
+The level of autonomy will depend on the player's preferences and may evolve over time.
 
-### 8.2. Distancia respecto del centro de poder
+### 8.2. Distance from the center of power
 
-La distancia tendrá consecuencias, pero su impacto será moderado y configurable.
+Distance will have consequences, but its impact will be moderate and configurable.
 
-Podrá influir en:
+It may influence:
 
-- Tiempo de comunicación.
-- Capacidad administrativa.
-- Costos de transporte.
-- Abastecimiento.
-- Coordinación política.
-- Seguridad.
-- Respuesta ante conflictos.
+- Communication time.
+- Administrative capacity.
+- Transport costs.
+- Supply.
+- Political coordination.
+- Security.
+- Response to conflicts.
 
-No se busca que administrar territorios lejanos se convierta en una tarea excesivamente difícil.
+The intent is not for administering distant territories to become an excessively difficult task.
 
-### 8.3. Asentamientos espontáneos
+### 8.3. Spontaneous settlements
 
-Los asentamientos podrán surgir espontáneamente.
+Settlements may arise spontaneously.
 
-Por ejemplo, familias, comerciantes o trabajadores podrán instalarse cerca de una mina, un río, una ruta comercial o una región agrícola.
+For example, families, traders or workers may settle near a mine, a river, a trade route or an agricultural region.
 
-El jugador podrá intervenir, apoyar, regular o desalentar estos procesos.
+The player will be able to intervene in, support, regulate or discourage these processes.
 
-La expansión autónoma será una parte importante de la evolución histórica de las civilizaciones.
+Autonomous expansion will be an important part of the historical evolution of civilizations.
 
-## 9. Autonomía de otras civilizaciones
+## 9. Autonomy of other civilizations
 
-Las civilizaciones no controladas por el jugador explorarán y expandirán sus territorios según sus propios intereses.
+Civilizations not controlled by the player will explore and expand their territories according to their own interests.
 
-Su comportamiento podrá considerar:
+Their behavior may take into account:
 
-- Necesidades demográficas.
-- Recursos.
-- Oportunidades económicas.
-- Presiones territoriales.
-- Seguridad.
-- Tecnología.
-- Relaciones diplomáticas.
-- Conflictos.
-- Condiciones geográficas.
+- Demographic needs.
+- Resources.
+- Economic opportunities.
+- Territorial pressures.
+- Security.
+- Technology.
+- Diplomatic relations.
+- Conflicts.
+- Geographic conditions.
 
-El jugador podrá influir en sus decisiones mediante diplomacia, comercio, acuerdos y otras herramientas.
+The player will be able to influence their decisions through diplomacy, trade, agreements and other tools.
 
-La autonomía será configurable.
+Autonomy will be configurable.
 
-Las civilizaciones no deben limitarse a reaccionar ante el jugador: deberán desarrollar historias propias.
+Civilizations must not be limited to reacting to the player: they must develop their own histories.
 
-## 10. Integración con otros sistemas
+## 10. Integration with other systems
 
-| Sistema | Integración |
+| System | Integration |
 |---|---|
-| Geografía | Regiones, relieve, recursos y accesibilidad |
-| Población | Migraciones, crecimiento y asentamientos |
-| Economía | Nuevos recursos, mercados y territorios |
-| Transporte | Expediciones, rutas y conexiones |
-| Tecnología | Navegación, cartografía y exploración |
-| Diplomacia | Contactos, tratados y territorios |
-| Política | Administración, autonomía e independencia |
-| Cultura | Intercambio, integración y transformación |
-| Religión | Expansión religiosa y lugares de importancia espiritual |
-| Militar | Conquista, ocupación y defensa territorial |
-| Construcción | Fundación y desarrollo de asentamientos |
+| Geography | Regions, relief, resources and accessibility |
+| Population | Migrations, growth and settlements |
+| Economy | New resources, markets and territories |
+| Transport | Expeditions, routes and connections |
+| Technology | Navigation, cartography and exploration |
+| Diplomacy | Contacts, treaties and territories |
+| Politics | Administration, autonomy and independence |
+| Culture | Exchange, integration and transformation |
+| Religion | Religious expansion and places of spiritual importance |
+| Military | Conquest, occupation and territorial defense |
+| Construction | Founding and development of settlements |
 
-## 11. Complejidad configurable
+## 11. Configurable complexity
 
-El sistema tendrá tres niveles generales:
+The system will have three general levels:
 
-**Sencillo**
-- Exploración simplificada.
-- Expansión territorial automática.
-- Fundación de asentamientos mediante órdenes simples.
-- Control territorial básico.
+**Simple**
+- Simplified exploration.
+- Automatic territorial expansion.
+- Founding of settlements through simple orders.
+- Basic territorial control.
 
-**Intermedio**
-- Exploración con objetivos.
-- Distintos niveles de conocimiento.
-- Colonización y migraciones autónomas.
-- Control territorial diferenciado.
-- Autonomía regional.
+**Intermediate**
+- Exploration with objectives.
+- Different levels of knowledge.
+- Autonomous colonization and migrations.
+- Differentiated territorial control.
+- Regional autonomy.
 
-**Avanzado**
-- Expediciones con logística.
-- Cartografía más detallada.
-- Administración territorial más profunda.
-- Mayor autonomía de asentamientos.
-- Procesos de expansión y colonización más complejos.
+**Advanced**
+- Expeditions with logistics.
+- More detailed cartography.
+- Deeper territorial administration.
+- Greater settlement autonomy.
+- More complex expansion and colonization processes.
 
-La configuración podrá realizarse por módulo, evitando que la complejidad de un área obligue a utilizarla en todas las demás.
+Configuration will be possible per module, avoiding a situation where the complexity of one area forces it to be used in all the others.
 
-## 12. MVP — Primera versión jugable
+## 12. MVP — First playable version
 
-El MVP deberá incluir:
+The MVP must include:
 
-- Exploración básica del mapa.
-- Estados de territorio desconocido, conocido y explorado.
-- Unidades exploradoras sencillas.
-- Descubrimiento de recursos y otras civilizaciones.
-- Contacto entre civilizaciones.
-- Fundación de nuevos asentamientos.
-- Expansión territorial básica.
-- Migración simplificada.
-- Ubicación autónoma de asentamientos.
-- Control territorial inicial.
-- Integración con geografía, población y economía.
+- Basic map exploration.
+- Unknown, known and explored territory states.
+- Simple exploration units.
+- Discovery of resources and other civilizations.
+- Contact between civilizations.
+- Founding of new settlements.
+- Basic territorial expansion.
+- Simplified migration.
+- Autonomous placement of settlements.
+- Initial territorial control.
+- Integration with geography, population and economy.
 
-Quedarán para versiones posteriores:
+Deferred to later versions:
 
-- Expediciones avanzadas.
-- Cartografía detallada.
-- Exploración marítima compleja.
-- Colonización avanzada.
-- Independencia y autonomía territorial profunda.
-- Administración regional detallada.
-- Sistemas avanzados de influencia territorial.
+- Advanced expeditions.
+- Detailed cartography.
+- Complex maritime exploration.
+- Advanced colonization.
+- Deep territorial independence and autonomy.
+- Detailed regional administration.
+- Advanced territorial influence systems.
 
-## 13. Visión final
+## 13. Final vision
 
-La exploración y la expansión deberán generar historias diferentes en cada partida.
+Exploration and expansion must generate different stories in each playthrough.
 
-Una civilización podrá permanecer durante siglos en su región original, desarrollar una red de asentamientos interiores, expandirse mediante el comercio, colonizar islas o construir un extenso territorio continental.
+A civilization may remain in its original region for centuries, develop a network of inland settlements, expand through trade, colonize islands or build an extensive continental territory.
 
-Otras civilizaciones podrán seguir caminos completamente diferentes.
+Other civilizations may follow completely different paths.
 
-El jugador podrá intervenir directamente o permitir que su civilización evolucione de manera más autónoma.
+The player will be able to intervene directly or allow their civilization to evolve more autonomously.
 
-**Principio de diseño:**
+**Design principle:**
 
-*Una civilización no crece solamente cuando conquista territorios. Crece cuando descubre nuevas oportunidades, se desplaza, establece comunidades y transforma regiones en parte de su historia.*
+*A civilization does not grow only when it conquers territories. It grows when it discovers new opportunities, moves, establishes communities and transforms regions into part of its history.*
 
 ---
 
-## 14. Decisiones confirmadas
+## 14. Confirmed decisions
 
-| Área | Decisión |
+| Area | Decision |
 |---|---|
-| Exploración | Configurable |
-| Unidades exploradoras | Todos los tipos relevantes según época |
-| Logística | Simplificada, especialmente para expediciones lejanas |
-| Descubrimientos | Todos los tipos de información |
-| Acontecimientos especiales | Sí |
-| Cartografía | Distintos niveles de precisión |
-| Expansión | Todos los mecanismos históricos relevantes |
-| Control territorial | Modelo mixto |
-| Niveles de control | Sí, simplificados y configurables |
-| Colonias | Autonomía e independencia posibles |
-| Fundación de asentamientos | Manual, recomendada y autónoma |
-| Migraciones | Dirigidas y autónomas |
-| Colonización | Condicionada por factores geográficos, económicos y políticos |
-| Relaciones con poblaciones existentes | Todas las posibilidades según contexto |
-| Autonomía regional | Configurable |
-| Asentamientos espontáneos | Sí, con intervención del jugador |
-| Distancia administrativa | Consecuencias moderadas |
-| Otras civilizaciones | Autonomía configurable |
-| Complejidad | Configurable |
+| Exploration | Configurable |
+| Exploration units | All relevant types according to era |
+| Logistics | Simplified, especially for distant expeditions |
+| Discoveries | All types of information |
+| Special events | Yes |
+| Cartography | Different levels of precision |
+| Expansion | All relevant historical mechanisms |
+| Territorial control | Mixed model |
+| Control levels | Yes, simplified and configurable |
+| Colonies | Autonomy and independence possible |
+| Founding of settlements | Manual, recommended and autonomous |
+| Migrations | Directed and autonomous |
+| Colonization | Conditioned by geographic, economic and political factors |
+| Relations with existing populations | All possibilities according to context |
+| Regional autonomy | Configurable |
+| Spontaneous settlements | Yes, with player intervention |
+| Administrative distance | Moderate consequences |
+| Other civilizations | Configurable autonomy |
+| Complexity | Configurable |
 
-**Estado:** GDD conceptual v0.1 consolidado.
+**Status:** Conceptual GDD v0.1 consolidated.

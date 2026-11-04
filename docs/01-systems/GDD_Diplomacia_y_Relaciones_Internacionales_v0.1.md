@@ -1,631 +1,631 @@
-> **Control documental:** 0.1 | Estado: diseño conceptual; las decisiones marcadas como confirmadas se preservan desde la fuente. **Alcance:** este GDD es fuente de detalle de su dominio; el GDD Maestro establece la visión común. Los conflictos intersistema se registran en AUDIT_REPORT.md y no se resuelven implícitamente.
+> **Document control:** 0.1 | Status: conceptual design; decisions marked as confirmed are preserved from the source. **Scope:** this GDD is the detail source for its domain; the Master GDD establishes the common vision. Cross-system conflicts are recorded in AUDIT_REPORT.md and are not resolved implicitly.
 
 ---
 
-# GDD — Sistema de Diplomacia y Relaciones Internacionales
+# GDD — Diplomacy and International Relations System
 
-**Versión:** 0.1  
-**Estado:** Diseño conceptual  
-**Período histórico:** Paleolítico – comienzos de la Revolución Industrial
-
----
-
-# 1. Visión general
-
-El sistema de Diplomacia y Relaciones Internacionales permitirá que las distintas civilizaciones del mundo interactúen, cooperen, compitan, negocien y eventualmente entren en conflicto.
-
-Las relaciones internacionales evolucionarán históricamente, desde los primeros contactos entre pequeñas comunidades hasta complejas redes diplomáticas, tratados internacionales y organizaciones supranacionales.
-
-El sistema deberá funcionar de manera autónoma: las civilizaciones podrán desarrollar relaciones entre ellas incluso cuando el jugador no participe directamente.
-
-El jugador tendrá una capacidad importante para dirigir la política exterior de su civilización, pero deberá convivir con gobernantes, diplomáticos, instituciones y organizaciones que tendrán intereses y características propias.
-
-### Principios fundamentales
-
-1. Relaciones multidimensionales y dinámicas.
-2. Memoria histórica de las relaciones.
-3. Evolución diplomática histórica.
-4. Autonomía de las civilizaciones.
-5. Intervención amplia del jugador.
-6. Influencia limitada de personalidades individuales.
-7. Cooperación y resolución pacífica de conflictos.
-8. Integración con economía, política, cultura, religión y tecnología.
-9. Complejidad configurable.
-10. Evolución no lineal.
+**Version:** 0.1  
+**Status:** Conceptual design  
+**Historical period:** Paleolithic – beginning of the Industrial Revolution
 
 ---
 
-# 2. Modelo de relaciones internacionales
+# 1. Overview
 
-Las relaciones entre civilizaciones no estarán representadas mediante una única puntuación de amistad.
+The Diplomacy and International Relations system will allow the different civilizations of the world to interact, cooperate, compete, negotiate and eventually enter into conflict.
 
-Cada civilización evaluará a las demás mediante múltiples dimensiones.
+International relations will evolve historically, from the first contacts between small communities to complex diplomatic networks, international treaties and supranational organizations.
 
-### 2.1. Dimensiones de las relaciones
+The system must work autonomously: civilizations will be able to develop relations between themselves even when the player does not participate directly.
 
-- Confianza.
-- Respeto.
-- Temor.
-- Rivalidad.
-- Hostilidad.
-- Afinidad cultural.
-- Afinidad religiosa.
-- Intereses económicos.
-- Intereses territoriales.
-- Cooperación histórica.
-- Reputación.
-- Prestigio internacional.
+The player will have a significant capacity to direct the foreign policy of their civilization, but will have to coexist with rulers, diplomats, institutions and organizations that have their own interests and characteristics.
 
-Estas dimensiones podrán evolucionar independientemente.
+### Fundamental principles
 
-Dos civilizaciones pueden tener una relación comercial excelente y, al mismo tiempo, competir territorialmente.
-
-### 2.2. Relaciones dinámicas
-
-Las relaciones cambiarán según:
-
-- Decisiones políticas.
-- Tratados.
-- Guerras.
-- Comercio.
-- Conflictos territoriales.
-- Relaciones culturales.
-- Diferencias religiosas.
-- Acciones diplomáticas.
-- Comportamiento de los líderes.
-- Acontecimientos históricos.
-
-Las relaciones no serán estáticas ni estarán determinadas exclusivamente por una puntuación.
+1. Multidimensional and dynamic relations.
+2. Historical memory of relations.
+3. Historical diplomatic evolution.
+4. Autonomy of civilizations.
+5. Broad player intervention.
+6. Limited influence of individual personalities.
+7. Cooperation and peaceful conflict resolution.
+8. Integration with economy, politics, culture, religion and technology.
+9. Configurable complexity.
+10. Non-linear evolution.
 
 ---
 
-# 3. Memoria histórica
+# 2. International relations model
 
-Las civilizaciones recordarán sus relaciones pasadas.
+Relations between civilizations will not be represented by a single friendship score.
 
-Ejemplos:
+Each civilization will evaluate the others through multiple dimensions.
 
-- Una guerra puede generar resentimiento durante generaciones.
-- Una alianza prolongada puede construir confianza.
-- Una traición puede deteriorar relaciones durante décadas.
-- Una cooperación económica exitosa puede fortalecer vínculos.
-- Una invasión territorial puede generar reclamaciones históricas.
-- Un tratado respetado puede aumentar la reputación internacional.
+### 2.1. Dimensions of relations
 
-### 3.1. Evolución de los recuerdos
+- Trust.
+- Respect.
+- Fear.
+- Rivalry.
+- Hostility.
+- Cultural affinity.
+- Religious affinity.
+- Economic interests.
+- Territorial interests.
+- Historical cooperation.
+- Reputation.
+- International prestige.
 
-Los acontecimientos históricos no tendrán necesariamente una influencia permanente.
+These dimensions may evolve independently.
 
-Su importancia podrá disminuir gradualmente según:
+Two civilizations may have an excellent trade relationship and, at the same time, compete territorially.
 
-- Tiempo transcurrido.
-- Cambios generacionales.
-- Cambios políticos.
-- Transformaciones culturales.
-- Nuevos acuerdos.
-- Acontecimientos posteriores.
+### 2.2. Dynamic relations
 
-Algunos acontecimientos extraordinarios podrán conservar influencia durante siglos.
+Relations will change according to:
 
-La memoria histórica deberá ser relevante, pero no impedir que las relaciones puedan transformarse.
+- Political decisions.
+- Treaties.
+- Wars.
+- Trade.
+- Territorial conflicts.
+- Cultural relations.
+- Religious differences.
+- Diplomatic actions.
+- Behavior of leaders.
+- Historical events.
 
----
-
-# 4. Evolución histórica de la diplomacia
-
-Las prácticas diplomáticas evolucionarán según el desarrollo social, político y tecnológico.
-
-### 4.1. Primeras comunidades
-
-- Contactos entre tribus.
-- Reuniones entre líderes.
-- Intercambio de regalos.
-- Acuerdos de cooperación.
-- Pactos de no agresión.
-- Resolución de disputas.
-
-### 4.2. Primeras civilizaciones
-
-- Mensajeros.
-- Representantes políticos.
-- Tratados escritos.
-- Acuerdos comerciales.
-- Matrimonios entre familias gobernantes.
-- Alianzas militares.
-
-### 4.3. Sociedades organizadas
-
-- Embajadores.
-- Misiones diplomáticas.
-- Cortes diplomáticas.
-- Tratados internacionales.
-- Acuerdos de vasallaje.
-- Cooperación institucional.
-
-### 4.4. Sociedades avanzadas
-
-- Diplomacia permanente.
-- Congresos internacionales.
-- Redes de embajadas.
-- Organizaciones supranacionales.
-- Tratados multilaterales.
-- Sistemas diplomáticos complejos.
-
-La evolución no será obligatoriamente lineal. Cada civilización desarrollará sus propias instituciones y prácticas.
+Relations will not be static nor determined exclusively by a score.
 
 ---
 
-# 5. Embajadores y diplomáticos
+# 3. Historical memory
 
-Los diplomáticos serán personajes identificables.
+Civilizations will remember their past relations.
 
-Podrán tener:
+Examples:
 
-- Habilidad diplomática.
-- Inteligencia.
-- Carisma.
-- Lealtad.
-- Experiencia.
-- Conocimiento cultural.
-- Idiomas.
-- Reputación.
-- Relaciones personales.
+- A war may generate resentment for generations.
+- A prolonged alliance may build trust.
+- A betrayal may damage relations for decades.
+- Successful economic cooperation may strengthen bonds.
+- A territorial invasion may generate historical claims.
+- A respected treaty may increase international reputation.
 
-### 5.1. Funciones
+### 3.1. Evolution of memories
 
-- Negociar tratados.
-- Transmitir propuestas.
-- Resolver disputas.
-- Representar a su civilización.
-- Mejorar relaciones.
-- Obtener información.
-- Participar en congresos.
-- Mediar en conflictos.
+Historical events will not necessarily have a permanent influence.
 
-### 5.2. Resultados diplomáticos
+Their importance may gradually diminish according to:
 
-Las capacidades individuales podrán influir en el resultado de las negociaciones.
+- Time elapsed.
+- Generational changes.
+- Political changes.
+- Cultural transformations.
+- New agreements.
+- Subsequent events.
 
-Sin embargo, la diplomacia no dependerá exclusivamente de los atributos del personaje.
+Some extraordinary events may retain influence for centuries.
 
-Los intereses, el poder relativo, las circunstancias y las condiciones del acuerdo tendrán mayor importancia.
+Historical memory must be relevant, but it must not prevent relations from being able to transform.
 
 ---
 
-# 6. Tratados y acuerdos internacionales
+# 4. Historical evolution of diplomacy
 
-El sistema permitirá diferentes modalidades de acuerdos.
+Diplomatic practices will evolve according to social, political and technological development.
 
-### 6.1. Acuerdos políticos
+### 4.1. Early communities
 
-- Pactos de no agresión.
-- Alianzas políticas.
-- Acuerdos de cooperación.
-- Reconocimiento diplomático.
-- Uniones políticas.
-- Confederaciones.
+- Contacts between tribes.
+- Meetings between leaders.
+- Exchange of gifts.
+- Cooperation agreements.
+- Non-aggression pacts.
+- Dispute resolution.
 
-### 6.2. Acuerdos económicos
+### 4.2. Early civilizations
 
-- Tratados comerciales.
-- Acuerdos de tránsito.
-- Acceso a mercados.
-- Acuerdos de intercambio.
-- Reducción de aranceles.
-- Cooperación económica.
+- Messengers.
+- Political representatives.
+- Written treaties.
+- Trade agreements.
+- Marriages between ruling families.
+- Military alliances.
 
-### 6.3. Acuerdos militares
+### 4.3. Organized societies
 
-- Alianzas militares.
-- Pactos defensivos.
-- Asistencia militar.
-- Acceso a territorios.
-- Cooperación estratégica.
+- Ambassadors.
+- Diplomatic missions.
+- Diplomatic courts.
+- International treaties.
+- Vassalage agreements.
+- Institutional cooperation.
 
-### 6.4. Acuerdos territoriales
+### 4.4. Advanced societies
 
-- Reconocimiento de fronteras.
-- Transferencias territoriales.
-- Derechos de tránsito.
-- Administración compartida.
-- Acuerdos sobre regiones disputadas.
+- Permanent diplomacy.
+- International congresses.
+- Networks of embassies.
+- Supranational organizations.
+- Multilateral treaties.
+- Complex diplomatic systems.
 
-### 6.5. Acuerdos religiosos y culturales
-
-- Protección de minorías.
-- Cooperación religiosa.
-- Intercambio cultural.
-- Protección de peregrinos.
-- Reconocimiento de instituciones.
-
-### 6.6. Relaciones de dependencia
-
-- Vasallaje.
-- Tributación.
-- Protectorados.
-- Estados clientes.
-- Colonias y territorios dependientes.
-- Uniones dinásticas.
-
-Estas relaciones podrán evolucionar, modificarse o desaparecer.
+This evolution will not necessarily be linear. Each civilization will develop its own institutions and practices.
 
 ---
 
-# 7. Duración y cumplimiento de tratados
+# 5. Ambassadors and diplomats
 
-Los tratados podrán tener diferentes modalidades.
+Diplomats will be identifiable characters.
 
-- Duración determinada.
-- Duración indefinida.
-- Renovación automática.
-- Renovación mediante negociación.
-- Condiciones específicas de finalización.
+They may have:
 
-Los acuerdos podrán incumplirse, pero hacerlo tendrá consecuencias.
+- Diplomatic skill.
+- Intelligence.
+- Charisma.
+- Loyalty.
+- Experience.
+- Cultural knowledge.
+- Languages.
+- Reputation.
+- Personal relationships.
 
-### 7.1. Consecuencias del incumplimiento
+### 5.1. Functions
 
-- Pérdida de confianza.
-- Deterioro de reputación.
-- Sanciones.
-- Ruptura de relaciones.
-- Suspensión de acuerdos.
-- Reacciones de otras civilizaciones.
+- Negotiate treaties.
+- Convey proposals.
+- Resolve disputes.
+- Represent their civilization.
+- Improve relations.
+- Obtain information.
+- Participate in congresses.
+- Mediate in conflicts.
 
-La importancia de estas consecuencias dependerá del tipo de tratado y de las circunstancias.
+### 5.2. Diplomatic outcomes
 
----
+Individual capabilities may influence the outcome of negotiations.
 
-# 8. Sistema de negociaciones
+However, diplomacy will not depend exclusively on the character's attributes.
 
-Las negociaciones podrán funcionar con diferentes niveles de intervención.
-
-### Básico
-
-- Propuestas automáticas.
-- Aceptación o rechazo.
-- Opciones simplificadas.
-
-### Intermedio
-
-- Selección de acuerdos.
-- Condiciones generales.
-- Concesiones.
-- Intercambio de recursos.
-
-### Avanzado
-
-- Negociaciones detalladas.
-- Cantidades y recursos.
-- Territorios.
-- Duración.
-- Compromisos.
-- Condiciones especiales.
-- Garantías.
-- Compensaciones.
-- Cláusulas de incumplimiento.
-
-El jugador podrá elegir cuánto desea intervenir.
-
-Las otras civilizaciones negociarán considerando sus intereses y circunstancias reales.
+Interests, relative power, circumstances and the terms of the agreement will carry greater weight.
 
 ---
 
-# 9. Objetivos e intereses de las civilizaciones
+# 6. International treaties and agreements
 
-Cada civilización tendrá objetivos diplomáticos propios.
+The system will allow different types of agreements.
 
-Ejemplos:
+### 6.1. Political agreements
 
-- Expandir su territorio.
-- Conseguir recursos.
-- Obtener aliados.
-- Mantener la paz.
-- Expandir su religión.
-- Aumentar su influencia.
-- Conseguir acceso al mar.
-- Controlar rutas comerciales.
-- Proteger sus fronteras.
-- Debilitar rivales.
-- Obtener conocimientos tecnológicos.
-- Garantizar su seguridad.
+- Non-aggression pacts.
+- Political alliances.
+- Cooperation agreements.
+- Diplomatic recognition.
+- Political unions.
+- Confederations.
 
-### 9.1. Determinantes de los objetivos
+### 6.2. Economic agreements
 
-Los intereses dependerán de:
+- Trade treaties.
+- Transit agreements.
+- Market access.
+- Exchange agreements.
+- Tariff reductions.
+- Economic cooperation.
 
-- Gobierno.
-- Cultura.
-- Religión.
-- Economía.
-- Geografía.
-- Historia.
-- Tecnología.
-- Recursos.
-- Población.
-- Líderes.
-- Situación internacional.
+### 6.3. Military agreements
 
-Los objetivos podrán cambiar a medida que evolucionen las circunstancias.
+- Military alliances.
+- Defensive pacts.
+- Military assistance.
+- Access to territories.
+- Strategic cooperation.
 
----
+### 6.4. Territorial agreements
 
-# 10. Fronteras y disputas territoriales
+- Recognition of borders.
+- Territorial transfers.
+- Transit rights.
+- Shared administration.
+- Agreements on disputed regions.
 
-Las relaciones internacionales incluirán conflictos y negociaciones territoriales.
+### 6.5. Religious and cultural agreements
 
-### 10.1. Situaciones territoriales
+- Protection of minorities.
+- Religious cooperation.
+- Cultural exchange.
+- Protection of pilgrims.
+- Recognition of institutions.
 
-- Reclamaciones.
-- Disputas fronterizas.
-- Territorios compartidos.
-- Regiones disputadas.
-- Derechos históricos.
-- Conflictos por recursos.
-- Fronteras no reconocidas.
-- Zonas de influencia.
+### 6.6. Dependency relations
 
-### 10.2. Resolución de disputas
+- Vassalage.
+- Tribute.
+- Protectorates.
+- Client states.
+- Colonies and dependent territories.
+- Dynastic unions.
 
-Podrán resolverse mediante:
-
-- Negociaciones.
-- Tratados.
-- Intercambios.
-- Compensaciones.
-- Mediación.
-- Arbitraje.
-- Conflictos militares.
-
-Las fronteras evolucionarán según el desarrollo territorial, los acuerdos y los acontecimientos históricos.
+These relations may evolve, be modified or disappear.
 
 ---
 
-# 11. Influencia y prestigio internacional
+# 7. Treaty duration and compliance
 
-Las civilizaciones podrán competir por influencia sin necesidad de recurrir a la guerra.
+Treaties may take different forms.
 
-### 11.1. Fuentes de influencia
+- Fixed duration.
+- Indefinite duration.
+- Automatic renewal.
+- Renewal through negotiation.
+- Specific termination conditions.
 
-- Poder económico.
-- Influencia cultural.
-- Influencia religiosa.
-- Prestigio político.
-- Poder militar.
-- Desarrollo tecnológico.
-- Capacidad diplomática.
-- Alcance comercial.
-- Estabilidad institucional.
+Agreements may be breached, but doing so will have consequences.
 
-### 11.2. Consecuencias
+### 7.1. Consequences of a breach
 
-Una civilización influyente podrá:
+- Loss of trust.
+- Deterioration of reputation.
+- Sanctions.
+- Breakdown of relations.
+- Suspension of agreements.
+- Reactions from other civilizations.
 
-- Conseguir mejores acuerdos.
-- Atraer aliados.
-- Influir sobre otras sociedades.
-- Liderar organizaciones.
-- Mediar en conflictos.
-- Establecer estándares culturales o comerciales.
-
-El prestigio internacional será dinámico y dependerá de múltiples factores.
+The significance of these consequences will depend on the type of treaty and the circumstances.
 
 ---
 
-# 12. Espionaje e inteligencia
+# 8. Negotiation system
 
-El espionaje estará incluido como un sistema configurable.
+Negotiations may operate with different levels of intervention.
 
-Podrá utilizarse para obtener información, influir en otras civilizaciones y proteger los intereses propios.
+### Basic
 
-### 12.1. Operaciones de inteligencia
+- Automatic proposals.
+- Acceptance or rejection.
+- Simplified options.
 
-- Espionaje económico.
-- Espionaje militar.
-- Robo de conocimientos.
-- Infiltración.
-- Sabotaje.
-- Desestabilización política.
-- Apoyo clandestino a facciones.
-- Contraespionaje.
+### Intermediate
 
-### 12.2. Riesgos
+- Selection of agreements.
+- General conditions.
+- Concessions.
+- Exchange of resources.
 
-Las operaciones podrán fracasar y ser descubiertas.
+### Advanced
 
-Esto podrá generar:
+- Detailed negotiations.
+- Quantities and resources.
+- Territories.
+- Duration.
+- Commitments.
+- Special conditions.
+- Guarantees.
+- Compensations.
+- Breach clauses.
 
-- Crisis diplomáticas.
-- Pérdida de confianza.
-- Sanciones.
-- Represalias.
-- Deterioro de relaciones.
+The player will be able to choose how much they wish to intervene.
 
-La profundidad del sistema podrá habilitarse o deshabilitarse.
-
----
-
-# 13. Religión y diplomacia
-
-Las relaciones religiosas podrán influir en las relaciones internacionales.
-
-Se contemplarán:
-
-- Afinidad religiosa.
-- Diferencias doctrinales.
-- Conflictos religiosos.
-- Protección de minorías.
-- Peregrinaciones internacionales.
-- Influencia de autoridades religiosas.
-- Expansión de religiones.
-- Cooperación entre instituciones religiosas.
-
-La religión podrá facilitar alianzas, pero también generar tensiones.
-
-La influencia religiosa dependerá de la época, la cultura, el gobierno y las circunstancias.
-
-Este sistema estará integrado con el GDD de Religión y Espiritualidad.
+The other civilizations will negotiate taking into account their real interests and circumstances.
 
 ---
 
-# 14. Cultura y diplomacia
+# 9. Objectives and interests of civilizations
 
-La afinidad cultural podrá facilitar las relaciones internacionales.
+Each civilization will have its own diplomatic objectives.
 
-Factores relevantes:
+Examples:
 
-- Idiomas compartidos.
-- Tradiciones similares.
-- Orígenes culturales.
-- Costumbres.
-- Educación.
-- Intercambio artístico.
-- Matrimonios dinásticos.
-- Experiencias históricas compartidas.
+- Expand its territory.
+- Obtain resources.
+- Gain allies.
+- Maintain peace.
+- Expand its religion.
+- Increase its influence.
+- Gain access to the sea.
+- Control trade routes.
+- Protect its borders.
+- Weaken rivals.
+- Obtain technological knowledge.
+- Ensure its security.
 
-Las diferencias culturales podrán generar incomprensión o desconfianza, pero no serán necesariamente negativas.
+### 9.1. Determinants of objectives
 
-La afinidad cultural tendrá una influencia moderada y contextual.
+Interests will depend on:
 
-Una cultura diferente no implicará automáticamente hostilidad.
+- Government.
+- Culture.
+- Religion.
+- Economy.
+- Geography.
+- History.
+- Technology.
+- Resources.
+- Population.
+- Leaders.
+- International situation.
 
----
-
-# 15. Organizaciones internacionales
-
-Podrán surgir organizaciones que agrupen varias civilizaciones.
-
-Su existencia dependerá del desarrollo histórico, político y económico.
-
-### 15.1. Tipos de organizaciones
-
-- Ligas comerciales.
-- Confederaciones.
-- Alianzas militares.
-- Ligas religiosas.
-- Uniones políticas.
-- Organizaciones diplomáticas.
-- Sistemas de cooperación.
-
-### 15.2. Características
-
-Cada organización podrá tener:
-
-- Miembros.
-- Objetivos.
-- Reglas.
-- Instituciones.
-- Autoridades.
-- Recursos.
-- Mecanismos de decisión.
-- Condiciones de ingreso.
-- Condiciones de salida.
-
-### 15.3. Configuración
-
-El sistema será configurable.
-
-Los jugadores podrán habilitar o deshabilitar determinados tipos de organizaciones y su nivel de complejidad.
-
-No todas las partidas deberán desarrollar necesariamente organizaciones internacionales.
+Objectives may change as circumstances evolve.
 
 ---
 
-# 16. Estados dependientes y relaciones de subordinación
+# 10. Borders and territorial disputes
 
-Las relaciones entre civilizaciones podrán incluir diferentes niveles de dependencia.
+International relations will include territorial conflicts and negotiations.
 
-### 16.1. Modalidades
+### 10.1. Territorial situations
 
-- Vasallaje.
-- Tributación.
-- Protectorados.
-- Estados clientes.
-- Confederaciones.
-- Uniones dinásticas.
-- Colonias.
-- Territorios dependientes.
+- Claims.
+- Border disputes.
+- Shared territories.
+- Disputed regions.
+- Historical rights.
+- Conflicts over resources.
+- Unrecognized borders.
+- Zones of influence.
 
-### 16.2. Evolución
+### 10.2. Dispute resolution
 
-Estas relaciones podrán transformarse.
+They may be resolved through:
 
-Un territorio dependiente podrá:
+- Negotiations.
+- Treaties.
+- Exchanges.
+- Compensations.
+- Mediation.
+- Arbitration.
+- Military conflicts.
 
-- Obtener autonomía.
-- Integrarse completamente.
-- Convertirse en un estado independiente.
-- Cambiar de protector.
-- Rebelarse.
-- Participar en una unión política.
-
-Las relaciones de dependencia deberán reflejar las estructuras políticas y sociales de cada período histórico.
-
----
-
-# 17. Diplomacia, guerra y paz
-
-La diplomacia tendrá un papel importante en la prevención y resolución de conflictos.
-
-Las guerras no deberán ser el resultado inevitable de cualquier deterioro diplomático.
-
-### 17.1. Causas de conflicto
-
-- Disputas territoriales.
-- Competencia por recursos.
-- Rivalidades históricas.
-- Conflictos religiosos.
-- Incumplimientos de tratados.
-- Amenazas percibidas.
-- Intereses políticos.
-- Conflictos comerciales.
-- Cuestiones de seguridad.
-
-### 17.2. Escalada diplomática
-
-Los conflictos podrán evolucionar progresivamente:
-
-1. Deterioro de relaciones.
-2. Protestas y reclamos.
-3. Exigencias diplomáticas.
-4. Ultimátums.
-5. Mediación.
-6. Sanciones.
-7. Ruptura de relaciones.
-8. Conflicto militar, si las circunstancias lo determinan.
-
-No todos los conflictos recorrerán todas estas etapas.
-
-### 17.3. Resolución pacífica
-
-Se podrán utilizar:
-
-- Negociaciones.
-- Mediación.
-- Arbitraje.
-- Compensaciones.
-- Concesiones.
-- Tratados de paz.
-- Acuerdos territoriales.
-- Reparaciones.
-
-El sistema deberá favorecer la existencia de soluciones diplomáticas cuando sean razonables.
-
-### 17.4. Filosofía de diseño
-
-La diplomacia debe ser una herramienta real para gestionar intereses, prevenir conflictos y construir relaciones duraderas.
-
-La guerra será una posibilidad, no el objetivo principal de las relaciones internacionales.
+Borders will evolve according to territorial development, agreements and historical events.
 
 ---
 
-# 18. Personalidad de los líderes
+# 11. International influence and prestige
 
-Los gobernantes y líderes tendrán características individuales que influirán en las relaciones diplomáticas.
+Civilizations will be able to compete for influence without needing to resort to war.
 
-Ejemplos:
+### 11.1. Sources of influence
 
-- Ambición.
-- Pragmatismo.
-- Desconfianza.
-- Carisma
+- Economic power.
+- Cultural influence.
+- Religious influence.
+- Political prestige.
+- Military power.
+- Technological development.
+- Diplomatic capacity.
+- Commercial reach.
+- Institutional stability.
+
+### 11.2. Consequences
+
+An influential civilization will be able to:
+
+- Secure better agreements.
+- Attract allies.
+- Influence other societies.
+- Lead organizations.
+- Mediate in conflicts.
+- Set cultural or commercial standards.
+
+International prestige will be dynamic and will depend on multiple factors.
+
+---
+
+# 12. Espionage and intelligence
+
+Espionage will be included as a configurable system.
+
+It may be used to obtain information, influence other civilizations and protect one's own interests.
+
+### 12.1. Intelligence operations
+
+- Economic espionage.
+- Military espionage.
+- Theft of knowledge.
+- Infiltration.
+- Sabotage.
+- Political destabilization.
+- Clandestine support for factions.
+- Counterespionage.
+
+### 12.2. Risks
+
+Operations may fail and be discovered.
+
+This may generate:
+
+- Diplomatic crises.
+- Loss of trust.
+- Sanctions.
+- Reprisals.
+- Deterioration of relations.
+
+The depth of the system may be enabled or disabled.
+
+---
+
+# 13. Religion and diplomacy
+
+Religious relations may influence international relations.
+
+The following will be considered:
+
+- Religious affinity.
+- Doctrinal differences.
+- Religious conflicts.
+- Protection of minorities.
+- International pilgrimages.
+- Influence of religious authorities.
+- Expansion of religions.
+- Cooperation between religious institutions.
+
+Religion may facilitate alliances, but it may also generate tensions.
+
+Religious influence will depend on the era, the culture, the government and the circumstances.
+
+This system will be integrated with the Religion and Spirituality GDD.
+
+---
+
+# 14. Culture and diplomacy
+
+Cultural affinity may facilitate international relations.
+
+Relevant factors:
+
+- Shared languages.
+- Similar traditions.
+- Cultural origins.
+- Customs.
+- Education.
+- Artistic exchange.
+- Dynastic marriages.
+- Shared historical experiences.
+
+Cultural differences may generate misunderstanding or mistrust, but they will not necessarily be negative.
+
+Cultural affinity will have a moderate and contextual influence.
+
+A different culture will not automatically imply hostility.
+
+---
+
+# 15. International organizations
+
+Organizations that bring together several civilizations may emerge.
+
+Their existence will depend on historical, political and economic development.
+
+### 15.1. Types of organizations
+
+- Trade leagues.
+- Confederations.
+- Military alliances.
+- Religious leagues.
+- Political unions.
+- Diplomatic organizations.
+- Cooperation systems.
+
+### 15.2. Characteristics
+
+Each organization may have:
+
+- Members.
+- Objectives.
+- Rules.
+- Institutions.
+- Authorities.
+- Resources.
+- Decision-making mechanisms.
+- Conditions for entry.
+- Conditions for exit.
+
+### 15.3. Configuration
+
+The system will be configurable.
+
+Players will be able to enable or disable certain types of organizations and their level of complexity.
+
+Not all playthroughs will necessarily have to develop international organizations.
+
+---
+
+# 16. Dependent states and subordination relations
+
+Relations between civilizations may include different levels of dependency.
+
+### 16.1. Forms
+
+- Vassalage.
+- Tribute.
+- Protectorates.
+- Client states.
+- Confederations.
+- Dynastic unions.
+- Colonies.
+- Dependent territories.
+
+### 16.2. Evolution
+
+These relations may transform.
+
+A dependent territory may:
+
+- Gain autonomy.
+- Integrate completely.
+- Become an independent state.
+- Change protector.
+- Rebel.
+- Participate in a political union.
+
+Dependency relations must reflect the political and social structures of each historical period.
+
+---
+
+# 17. Diplomacy, war and peace
+
+Diplomacy will play an important role in the prevention and resolution of conflicts.
+
+Wars must not be the inevitable result of any diplomatic deterioration.
+
+### 17.1. Causes of conflict
+
+- Territorial disputes.
+- Competition for resources.
+- Historical rivalries.
+- Religious conflicts.
+- Treaty breaches.
+- Perceived threats.
+- Political interests.
+- Trade conflicts.
+- Security matters.
+
+### 17.2. Diplomatic escalation
+
+Conflicts may evolve progressively:
+
+1. Deterioration of relations.
+2. Protests and complaints.
+3. Diplomatic demands.
+4. Ultimatums.
+5. Mediation.
+6. Sanctions.
+7. Breakdown of relations.
+8. Military conflict, if the circumstances determine it.
+
+Not all conflicts will go through all these stages.
+
+### 17.3. Peaceful resolution
+
+The following may be used:
+
+- Negotiations.
+- Mediation.
+- Arbitration.
+- Compensations.
+- Concessions.
+- Peace treaties.
+- Territorial agreements.
+- Reparations.
+
+The system must favor the existence of diplomatic solutions when they are reasonable.
+
+### 17.4. Design philosophy
+
+Diplomacy must be a real tool for managing interests, preventing conflicts and building lasting relations.
+
+War will be a possibility, not the main objective of international relations.
+
+---
+
+# 18. Personality of leaders
+
+Rulers and leaders will have individual characteristics that influence diplomatic relations.
+
+Examples:
+
+- Ambition.
+- Pragmatism.
+- Distrust.
+- Charisma

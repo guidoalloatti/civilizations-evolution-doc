@@ -1,312 +1,312 @@
-> **Control documental:** 0.1 | Estado: diseño conceptual; las decisiones marcadas como confirmadas se preservan desde la fuente. **Alcance:** este GDD es fuente de detalle de su dominio; el GDD Maestro establece la visión común. Los conflictos intersistema se registran en AUDIT_REPORT.md y no se resuelven implícitamente.
+> **Document control:** 0.1 | Status: conceptual design; decisions marked as confirmed are preserved from the source. **Scope:** this GDD is the detail source for its domain; the Master GDD establishes the common vision. Cross-system conflicts are recorded in AUDIT_REPORT.md and are not resolved implicitly.
 
 ---
 
-# GDD — Sistema Político y de Gobierno v0.1
+# GDD — Political and Government System v0.1
 
-## 1. Visión general
+## 1. Overview
 
-El sistema político representa cómo las sociedades organizan el poder, toman decisiones colectivas, establecen normas y administran sus territorios a lo largo de la historia.
+The political system represents how societies organize power, make collective decisions, establish rules and administer their territories throughout history.
 
-El jugador no representa a un rey, presidente, emperador, jefe tribal ni líder religioso. Es una entidad externa que guía y moldea el desarrollo de la civilización.
+The player does not represent a king, president, emperor, tribal chief or religious leader. They are an external entity that guides and shapes the development of the civilization.
 
-Su capacidad de intervención debe ser siempre considerable. Aunque las sociedades desarrollen instituciones, líderes y estructuras políticas complejas, el jugador nunca debe sentir que perdió las herramientas necesarias para dirigir su civilización.
+Their capacity to intervene must always be considerable. Even when societies develop complex institutions, leaders and political structures, the player must never feel that they have lost the tools needed to direct their civilization.
 
-**Principio fundamental:** el mundo político debe tener autonomía y consecuencias propias, pero nunca debe quitarle al jugador su capacidad de orientar el destino de su civilización.
+**Fundamental principle:** the political world must have its own autonomy and consequences, but it must never take away from the player the ability to steer the destiny of their civilization.
 
-## 2. El papel del jugador
+## 2. The player's role
 
-El jugador puede:
+The player can:
 
-- Establecer o modificar sistemas de gobierno.
-- Crear, modificar o eliminar leyes.
-- Definir políticas públicas.
-- Influir sobre las instituciones.
-- Establecer impuestos y regulaciones.
-- Determinar derechos y libertades.
-- Intervenir en conflictos políticos.
-- Favorecer determinados grupos sociales.
-- Promover reformas y transformaciones institucionales.
-- Orientar la evolución política de la civilización.
+- Establish or modify systems of government.
+- Create, modify or abolish laws.
+- Define public policies.
+- Influence institutions.
+- Set taxes and regulations.
+- Determine rights and freedoms.
+- Intervene in political conflicts.
+- Favor certain social groups.
+- Promote institutional reforms and transformations.
+- Guide the political evolution of the civilization.
 
-El jugador no necesita ocupar formalmente ningún cargo para realizar estas acciones.
+The player does not need to formally hold any office to carry out these actions.
 
-Su intervención puede ser directa o indirecta, según el sistema y la época.
+Their intervention can be direct or indirect, depending on the system and the era.
 
-## 3. Formas de gobierno
+## 3. Forms of government
 
-El juego contemplará todas las formas de organización política históricamente relevantes.
+The game will consider all historically relevant forms of political organization.
 
-Entre ellas:
+Among them:
 
-- Jefaturas tribales.
-- Consejos comunitarios.
-- Monarquías.
-- Monarquías absolutas y constitucionales.
-- Imperios.
-- Aristocracias.
-- Oligarquías.
-- Repúblicas.
-- Democracias.
-- Teocracias.
-- Dictaduras.
-- Estados socialistas.
-- Federaciones y confederaciones.
-- Sistemas políticos híbridos.
+- Tribal chiefdoms.
+- Community councils.
+- Monarchies.
+- Absolute and constitutional monarchies.
+- Empires.
+- Aristocracies.
+- Oligarchies.
+- Republics.
+- Democracies.
+- Theocracies.
+- Dictatorships.
+- Socialist states.
+- Federations and confederations.
+- Hybrid political systems.
 
-Estas formas no serán necesariamente excluyentes. Una civilización podrá desarrollar estructuras políticas particulares que combinen elementos de diferentes modelos.
+These forms will not necessarily be mutually exclusive. A civilization may develop particular political structures that combine elements of different models.
 
-Su aparición y evolución dependerán de la época, cultura, tecnología, economía, religión, organización social y decisiones del jugador.
+Their emergence and evolution will depend on the era, culture, technology, economy, religion, social organization and the player's decisions.
 
-## 4. Evolución política
+## 4. Political evolution
 
-La civilización podrá transformar profundamente su organización política.
+The civilization will be able to transform its political organization profoundly.
 
-Por ejemplo:
+For example:
 
-- Una comunidad tribal puede desarrollar una jefatura.
-- Una jefatura puede convertirse en una monarquía.
-- Una monarquía puede evolucionar hacia una monarquía constitucional.
-- Una sociedad puede establecer una república.
-- Una república puede desarrollar instituciones democráticas.
-- Un imperio puede fragmentarse en diferentes estados.
+- A tribal community can develop a chiefdom.
+- A chiefdom can become a monarchy.
+- A monarchy can evolve into a constitutional monarchy.
+- A society can establish a republic.
+- A republic can develop democratic institutions.
+- An empire can fragment into different states.
 
-El jugador podrá promover estos cambios.
+The player will be able to promote these changes.
 
-Sin embargo, las transformaciones importantes tendrán consecuencias lógicas. Podrán producir resistencia, crisis institucionales, conflictos sociales, rebeliones o guerras civiles.
+However, major transformations will have logical consequences. They may produce resistance, institutional crises, social conflicts, rebellions or civil wars.
 
-Los cambios políticos no serán simples botones de actualización: representarán transformaciones reales de la sociedad.
+Political changes will not be simple upgrade buttons: they will represent real transformations of society.
 
-## 5. Instituciones políticas
+## 5. Political institutions
 
-Las civilizaciones podrán desarrollar instituciones según su organización política y su evolución histórica.
+Civilizations will be able to develop institutions according to their political organization and their historical evolution.
 
-Ejemplos:
+Examples:
 
-- Consejos tribales.
-- Asambleas.
-- Parlamentos.
-- Senados.
-- Consejos de nobles.
-- Tribunales.
-- Administración pública.
-- Instituciones religiosas.
-- Gobiernos regionales.
-- Organismos administrativos.
+- Tribal councils.
+- Assemblies.
+- Parliaments.
+- Senates.
+- Councils of nobles.
+- Courts.
+- Public administration.
+- Religious institutions.
+- Regional governments.
+- Administrative bodies.
 
-El jugador conservará un control amplio sobre estas instituciones.
+The player will retain broad control over these institutions.
 
-No se busca crear un sistema donde el jugador deba negociar constantemente para poder actuar. Las instituciones pueden tener funciones, características e intereses propios, pero no deben convertirse en una barrera permanente para la intervención del jugador.
+The intent is not to create a system where the player must constantly negotiate in order to act. Institutions may have their own functions, characteristics and interests, but they must not become a permanent barrier to the player's intervention.
 
-## 6. Leyes y políticas públicas
+## 6. Laws and public policies
 
-El jugador podrá establecer, modificar y eliminar leyes individualmente.
+The player will be able to establish, modify and abolish laws individually.
 
-Las leyes abarcarán diferentes dimensiones de la sociedad:
+Laws will cover different dimensions of society:
 
-| Categoría | Ejemplos |
+| Category | Examples |
 |---|---|
-| Económica | Impuestos, propiedad privada, comercio, aranceles. |
-| Social | Derechos laborales, movilidad social, ciudadanía. |
-| Religiosa | Libertad religiosa, religión oficial, tolerancia. |
-| Educativa | Educación pública, alfabetización, obligatoriedad. |
-| Militar | Servicio militar, reclutamiento, organización del ejército. |
-| Civil | Matrimonio, herencia, derechos individuales. |
-| Territorial | Administración regional, autonomía local. |
-| Penal | Delitos, castigos, justicia. |
-| Política | Derechos políticos, representación, participación. |
+| Economic | Taxes, private property, trade, tariffs. |
+| Social | Labor rights, social mobility, citizenship. |
+| Religious | Religious freedom, official religion, tolerance. |
+| Educational | Public education, literacy, compulsory schooling. |
+| Military | Military service, conscription, army organization. |
+| Civil | Marriage, inheritance, individual rights. |
+| Territorial | Regional administration, local autonomy. |
+| Criminal | Crimes, punishments, justice. |
+| Political | Political rights, representation, participation. |
 
-Las leyes tendrán consecuencias sobre la población, economía, cultura, religión, estabilidad y desarrollo de la civilización.
+Laws will have consequences on the population, economy, culture, religion, stability and development of the civilization.
 
-El sistema deberá contemplar tanto efectos positivos como negativos y posibles consecuencias inesperadas.
+The system must account for both positive and negative effects as well as possible unexpected consequences.
 
-Por ejemplo:
-- Aumentar impuestos puede generar mayores ingresos, pero reducir la satisfacción de ciertos grupos.
-- Establecer educación obligatoria puede mejorar la alfabetización, pero requerir inversiones importantes.
-- Restringir una religión puede fortalecer otra institución, pero generar tensiones sociales.
-- Ampliar derechos laborales puede mejorar el bienestar, pero incrementar determinados costos productivos.
+For example:
+- Raising taxes may generate greater revenue, but reduce the satisfaction of certain groups.
+- Establishing compulsory education may improve literacy, but require significant investment.
+- Restricting one religion may strengthen another institution, but generate social tensions.
+- Expanding labor rights may improve welfare, but increase certain production costs.
 
-## 7. Consejeros y grupos de poder
+## 7. Advisors and power groups
 
-Los grupos sociales y económicos podrán influir en el desarrollo político.
+Social and economic groups will be able to influence political development.
 
-Sin embargo, su influencia será principalmente consultiva.
+However, their influence will be mainly advisory.
 
-El jugador podrá recibir recomendaciones de:
-- Consejeros económicos.
-- Autoridades religiosas.
-- Funcionarios.
-- Comerciantes.
-- Militares.
-- Representantes de trabajadores.
+The player may receive recommendations from:
+- Economic advisors.
+- Religious authorities.
+- Officials.
+- Traders.
+- Military figures.
+- Workers' representatives.
 - Nobles.
-- Intelectuales.
-- Otros grupos relevantes según la época.
+- Intellectuals.
+- Other relevant groups depending on the era.
 
-Estos personajes y grupos podrán expresar intereses, advertencias y propuestas.
+These characters and groups may express interests, warnings and proposals.
 
-El jugador podrá escucharlos o ignorarlos.
+The player may heed them or ignore them.
 
-No tendrán capacidad para bloquear permanentemente sus decisiones.
+They will not have the capacity to permanently block the player's decisions.
 
-## 8. Oposición y movimientos políticos
+## 8. Opposition and political movements
 
-Las sociedades podrán desarrollar:
-- Facciones políticas.
-- Movimientos ideológicos.
-- Partidos políticos.
-- Grupos opositores.
-- Movimientos reformistas.
-- Movimientos separatistas.
-- Organizaciones revolucionarias.
+Societies may develop:
+- Political factions.
+- Ideological movements.
+- Political parties.
+- Opposition groups.
+- Reformist movements.
+- Separatist movements.
+- Revolutionary organizations.
 
-Su aparición dependerá del desarrollo histórico y político.
+Their emergence will depend on historical and political development.
 
-Su importancia será variable según la forma de gobierno.
+Their importance will vary according to the form of government.
 
-Por ejemplo, los partidos políticos tendrán relevancia en determinadas sociedades modernas, mientras que en otras épocas existirán facciones cortesanas, movimientos religiosos o disputas entre grupos aristocráticos.
+For example, political parties will be relevant in certain modern societies, while in other eras there will be court factions, religious movements or disputes between aristocratic groups.
 
-El jugador podrá influir sobre su desarrollo y sobre las condiciones que favorecen su aparición.
+The player will be able to influence their development and the conditions that favor their emergence.
 
-## 9. Líderes y gobernantes
+## 9. Leaders and rulers
 
-Las civilizaciones tendrán personajes políticos identificables.
+Civilizations will have identifiable political characters.
 
-Dependiendo de la época podrán ser:
-- Jefes tribales.
-- Reyes.
-- Emperadores.
-- Presidentes.
-- Primeros ministros.
-- Líderes religiosos.
-- Gobernadores.
-- Funcionarios importantes.
+Depending on the era they may be:
+- Tribal chiefs.
+- Kings.
+- Emperors.
+- Presidents.
+- Prime ministers.
+- Religious leaders.
+- Governors.
+- Important officials.
 
-Cada personaje podrá tener atributos propios:
+Each character may have their own attributes:
 
-- Personalidad.
-- Habilidades administrativas.
-- Ambiciones.
-- Ideología.
-- Popularidad.
-- Legitimidad.
-- Relaciones personales.
-- Influencia política.
-- Lealtades.
-- Herederos, cuando corresponda.
+- Personality.
+- Administrative skills.
+- Ambitions.
+- Ideology.
+- Popularity.
+- Legitimacy.
+- Personal relationships.
+- Political influence.
+- Loyalties.
+- Heirs, where applicable.
 
-Estos personajes podrán cambiar con el tiempo y afectar el desarrollo de la civilización.
+These characters may change over time and affect the development of the civilization.
 
-Su existencia permitirá que la historia política tenga protagonistas reconocibles, sin convertir al jugador en uno de ellos.
+Their existence will allow political history to have recognizable protagonists, without turning the player into one of them.
 
-## 10. Conflictos políticos
+## 10. Political conflicts
 
-El sistema podrá representar diferentes niveles de inestabilidad:
+The system will be able to represent different levels of instability:
 
-- Crisis gubernamentales.
-- Conflictos institucionales.
-- Rebeliones.
-- Golpes de Estado.
-- Revoluciones.
-- Guerras civiles.
-- Separatismo.
-- Disputas sucesorias.
-- Crisis constitucionales.
+- Government crises.
+- Institutional conflicts.
+- Rebellions.
+- Coups d'état.
+- Revolutions.
+- Civil wars.
+- Separatism.
+- Succession disputes.
+- Constitutional crises.
 
-Estos acontecimientos tendrán causas relacionadas con las condiciones sociales, económicas, culturales y políticas.
+These events will have causes related to social, economic, cultural and political conditions.
 
-Su profundidad será configurable.
+Their depth will be configurable.
 
-Para las primeras etapas del juego, el sistema comenzará con una simulación sencilla de estabilidad e inestabilidad.
+For the early stages of the game, the system will begin with a simple simulation of stability and instability.
 
-Los conflictos más complejos se incorporarán progresivamente.
+More complex conflicts will be incorporated progressively.
 
-## 11. Configuración y complejidad
+## 11. Configuration and complexity
 
-El sistema tendrá distintos niveles de simulación:
+The system will have different levels of simulation:
 
-**Básico**
-- Gobierno y estabilidad general.
-- Algunas políticas fundamentales.
-- Intervención directa del jugador.
-- Consecuencias simplificadas.
+**Basic**
+- General government and stability.
+- Some fundamental policies.
+- Direct player intervention.
+- Simplified consequences.
 
-**Intermedio**
-- Instituciones.
-- Líderes.
-- Grupos de interés.
-- Leyes individuales.
-- Conflictos políticos.
+**Intermediate**
+- Institutions.
+- Leaders.
+- Interest groups.
+- Individual laws.
+- Political conflicts.
 
-**Avanzado**
-- Instituciones complejas.
-- Facciones y partidos.
-- Procesos legislativos.
-- Relaciones de poder.
-- Crisis políticas detalladas.
-- Conflictos institucionales y constitucionales.
+**Advanced**
+- Complex institutions.
+- Factions and parties.
+- Legislative processes.
+- Power relations.
+- Detailed political crises.
+- Institutional and constitutional conflicts.
 
-El jugador podrá configurar la complejidad y activar o desactivar determinadas mecánicas.
+The player will be able to configure the complexity and enable or disable certain mechanics.
 
-## 12. Integración con otros sistemas
+## 12. Integration with other systems
 
-El sistema político estará conectado con:
+The political system will be connected with:
 
-- **Población y sociedad:** clases sociales, necesidades, libertades, movimientos y estabilidad.
-- **Economía:** impuestos, propiedad, comercio, regulaciones y gasto público.
-- **Religión:** relación entre poder político e instituciones religiosas.
-- **Cultura:** ideologías, tradiciones, valores y legitimidad.
-- **Producción:** regulaciones laborales, propiedad y organización productiva.
-- **Construcción:** planificación territorial, infraestructura y edificios públicos.
-- **Tecnología:** nuevas formas de administración y organización estatal.
-- **Militar:** organización, reclutamiento y conflictos internos.
+- **Population and society:** social classes, needs, freedoms, movements and stability.
+- **Economy:** taxes, property, trade, regulations and public spending.
+- **Religion:** relationship between political power and religious institutions.
+- **Culture:** ideologies, traditions, values and legitimacy.
+- **Production:** labor regulations, property and production organization.
+- **Construction:** territorial planning, infrastructure and public buildings.
+- **Technology:** new forms of state administration and organization.
+- **Military:** organization, recruitment and internal conflicts.
 
-La política será un sistema transversal que conectará prácticamente todos los aspectos de la civilización.
+Politics will be a cross-cutting system that connects practically every aspect of the civilization.
 
-## 13. MVP — Primera implementación
+## 13. MVP — First implementation
 
-La primera versión no necesita implementar todas las mecánicas.
+The first version does not need to implement all the mechanics.
 
-Se propone comenzar con:
+It is proposed to begin with:
 
-- Una estructura política inicial sencilla.
-- Un indicador de estabilidad.
-- Un conjunto reducido de políticas.
-- Sistema básico de impuestos.
-- Algunos tipos de gobierno.
-- Personajes políticos identificables.
-- Consejeros con recomendaciones.
-- Consecuencias sociales y económicas de las decisiones.
-- Posibilidad de cambiar el sistema político.
+- A simple initial political structure.
+- A stability indicator.
+- A reduced set of policies.
+- A basic tax system.
+- Some types of government.
+- Identifiable political characters.
+- Advisors with recommendations.
+- Social and economic consequences of decisions.
+- The possibility of changing the political system.
 
-La arquitectura deberá permitir incorporar posteriormente instituciones, partidos, revoluciones, conflictos y otras mecánicas sin reconstruir el sistema desde cero.
+The architecture must allow institutions, parties, revolutions, conflicts and other mechanics to be incorporated later without rebuilding the system from scratch.
 
-## 14. Decisiones confirmadas
+## 14. Confirmed decisions
 
-| Tema | Decisión |
+| Topic | Decision |
 |---|---|
-| Rol del jugador | Entidad superior que guía la civilización. |
-| Poder del jugador | Siempre amplio y significativo. |
-| Formas de gobierno | Todas las históricamente relevantes. |
-| Cambios políticos | Permitidos, con consecuencias posibles. |
-| Instituciones | Existen, pero el jugador conserva el control. |
-| Leyes | Modificables individualmente. |
-| Consecuencias | Deben ser lógicas y afectar otros sistemas. |
-| Grupos de poder | Influencia limitada; pueden aconsejar. |
-| Oposición | Sí, adaptada a cada época. |
-| Líderes | Personajes identificables con atributos propios. |
-| Conflictos | Todos los niveles, configurables. |
-| Complejidad inicial | Estabilidad e inestabilidad básicas. |
-| Evolución histórica | Progresiva, flexible y no lineal. |
+| Player's role | Higher entity that guides the civilization. |
+| Player's power | Always broad and significant. |
+| Forms of government | All those historically relevant. |
+| Political changes | Allowed, with possible consequences. |
+| Institutions | They exist, but the player retains control. |
+| Laws | Individually modifiable. |
+| Consequences | Must be logical and affect other systems. |
+| Power groups | Limited influence; may advise. |
+| Opposition | Yes, adapted to each era. |
+| Leaders | Identifiable characters with their own attributes. |
+| Conflicts | All levels, configurable. |
+| Initial complexity | Basic stability and instability. |
+| Historical evolution | Progressive, flexible and non-linear. |
 
-## 15. Visión final
+## 15. Final vision
 
-El sistema político debe permitir que el jugador observe cómo su pequeña comunidad se transforma, a lo largo de siglos, en una civilización con instituciones, leyes, líderes, ideologías y estructuras de poder complejas.
+The political system must allow the player to observe how their small community transforms, over centuries, into a civilization with complex institutions, laws, leaders, ideologies and power structures.
 
-El jugador no gobierna personalmente esa civilización: la guía.
+The player does not personally govern that civilization: they guide it.
 
-Los gobernantes nacen, ascienden, toman decisiones, cometen errores y desaparecen. Las instituciones cambian, las leyes evolucionan y las sociedades transforman sus formas de organización.
+Rulers are born, rise, make decisions, make mistakes and disappear. Institutions change, laws evolve and societies transform their forms of organization.
 
-Pero el jugador conserva siempre la capacidad de influir sobre ese proceso.
+But the player always retains the ability to influence that process.
 
-**La política debe darle profundidad y autonomía a la civilización, no quitarle protagonismo al jugador.**
+**Politics must give depth and autonomy to the civilization, not take the spotlight away from the player.**

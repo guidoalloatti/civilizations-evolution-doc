@@ -1,434 +1,434 @@
-> **Control documental:** 0.1 | Estado: diseño conceptual; las decisiones marcadas como confirmadas se preservan desde la fuente. **Alcance:** este GDD es fuente de detalle de su dominio; el GDD Maestro establece la visión común. Los conflictos intersistema se registran en AUDIT_REPORT.md y no se resuelven implícitamente.
+> **Document control:** 0.1 | Status: conceptual design; decisions marked as confirmed are preserved from the source. **Scope:** this GDD is the detail source for its domain; the Master GDD establishes the shared vision. Cross-system conflicts are recorded in AUDIT_REPORT.md and are not resolved implicitly.
 
 ---
 
-# GDD — Sistema de Religión y Espiritualidad v0.1
+# GDD — Religion and Spirituality System v0.1
 
-## 1. Visión general
+## 1. Overview
 
-El sistema de Religión y Espiritualidad representa las creencias, prácticas, instituciones, tradiciones y sistemas de pensamiento que las sociedades desarrollan para interpretar el mundo, explicar su existencia y organizar su vida espiritual y cultural.
+The Religion and Spirituality system represents the beliefs, practices, institutions, traditions, and systems of thought that societies develop to interpret the world, explain their existence, and organize their spiritual and cultural life.
 
-La religión será uno de los pilares fundamentales de la evolución de las civilizaciones.
+Religion will be one of the fundamental pillars of the evolution of civilizations.
 
-Su influencia cambiará según la época, cultura, tecnología, acontecimientos históricos y decisiones del jugador.
+Its influence will change according to the era, culture, technology, historical events, and the player's decisions.
 
-El sistema deberá permitir que las creencias aparezcan espontáneamente, evolucionen, se expandan, se transformen, se dividan y desaparezcan.
+The system must allow beliefs to appear spontaneously, evolve, expand, transform, divide, and disappear.
 
-El jugador podrá intervenir en estos procesos, crear nuevas religiones, favorecer determinadas creencias o modificar su influencia.
+The player will be able to intervene in these processes, create new religions, favor certain beliefs, or modify their influence.
 
-**Principio fundamental:** las religiones no serán simples indicadores de felicidad o edificios para construir. Serán sistemas vivos que evolucionan junto con las sociedades y dejan una huella profunda en su historia, cultura y arquitectura.
+**Fundamental principle:** religions will not be simple happiness indicators or buildings to construct. They will be living systems that evolve alongside societies and leave a deep mark on their history, culture, and architecture.
 
-## 2. Origen y aparición de las religiones
+## 2. Origin and emergence of religions
 
-Las religiones podrán surgir de dos maneras:
+Religions may arise in two ways:
 
-**A. Aparición orgánica**
+**A. Organic emergence**
 
-Las creencias podrán desarrollarse naturalmente a partir de:
-- Fenómenos naturales.
-- Interpretaciones del mundo.
-- Tradiciones familiares y comunitarias.
-- Cultos a los antepasados.
-- Figuras espirituales importantes.
-- Experiencias colectivas.
-- Acontecimientos extraordinarios.
-- Transformaciones culturales.
+Beliefs may develop naturally from:
+- Natural phenomena.
+- Interpretations of the world.
+- Family and community traditions.
+- Ancestor cults.
+- Important spiritual figures.
+- Collective experiences.
+- Extraordinary events.
+- Cultural transformations.
 
-**B. Intervención del jugador**
+**B. Player intervention**
 
-El jugador podrá:
-- Crear una nueva religión.
-- Introducir nuevas creencias.
-- Favorecer la expansión de una religión.
-- Promover reformas.
-- Modificar determinadas características religiosas.
-- Favorecer la desaparición o transformación de una religión.
+The player will be able to:
+- Create a new religion.
+- Introduce new beliefs.
+- Favor the expansion of a religion.
+- Promote reforms.
+- Modify certain religious characteristics.
+- Favor the disappearance or transformation of a religion.
 
-La creación de una religión no necesariamente implicará que la población la adopte inmediatamente. Su aceptación dependerá de factores culturales, sociales, históricos y de las condiciones de la civilización.
+The creation of a religion will not necessarily mean that the population adopts it immediately. Its acceptance will depend on cultural, social, and historical factors, and on the conditions of the civilization.
 
-## 3. Tipos de creencias
+## 3. Types of beliefs
 
-El sistema deberá contemplar una gran variedad de expresiones religiosas y espirituales.
+The system must account for a wide variety of religious and spiritual expressions.
 
-| Categoría | Descripción |
+| Category | Description |
 |---|---|
-| Animismo | Atribución de espíritu o esencia a elementos naturales. |
-| Chamanismo | Prácticas espirituales vinculadas con intermediarios y rituales. |
-| Politeísmo | Adoración de múltiples divinidades. |
-| Monoteísmo | Creencia en una única divinidad. |
-| Cultos ancestrales | Veneración de antepasados y linajes. |
-| Cultos naturales | Creencias vinculadas al sol, la luna, animales, montañas y otros elementos. |
-| Religiones organizadas | Sistemas estructurados de creencias, instituciones y jerarquías. |
-| Filosofías espirituales | Sistemas de pensamiento sobre la existencia, la moral y el universo. |
-| Sistemas no teístas | Tradiciones espirituales y filosóficas sin necesidad de una divinidad creadora. |
+| Animism | Attribution of spirit or essence to natural elements. |
+| Shamanism | Spiritual practices linked to intermediaries and rituals. |
+| Polytheism | Worship of multiple deities. |
+| Monotheism | Belief in a single deity. |
+| Ancestral cults | Veneration of ancestors and lineages. |
+| Nature cults | Beliefs linked to the sun, the moon, animals, mountains, and other elements. |
+| Organized religions | Structured systems of beliefs, institutions, and hierarchies. |
+| Spiritual philosophies | Systems of thought about existence, morality, and the universe. |
+| Non-theistic systems | Spiritual and philosophical traditions without the need for a creator deity. |
 
-Las categorías no serán necesariamente excluyentes.
+The categories will not necessarily be mutually exclusive.
 
-Una religión podrá combinar elementos de diferentes tradiciones y transformarse con el paso del tiempo.
+A religion may combine elements from different traditions and transform over time.
 
-## 4. Evolución religiosa
+## 4. Religious evolution
 
-La evolución será orgánica, pero también podrá acelerarse mediante acontecimientos importantes.
+The evolution will be organic, but it may also accelerate through important events.
 
-Algunos posibles desencadenantes:
+Some possible triggers:
 
-- Aparición de nuevos conocimientos.
-- Grandes catástrofes.
-- Epidemias.
-- Guerras.
-- Migraciones.
-- Cambios culturales.
-- Nuevos líderes espirituales.
-- Descubrimientos geográficos.
-- Transformaciones políticas.
-- Contacto con otras civilizaciones.
+- Emergence of new knowledge.
+- Great catastrophes.
+- Epidemics.
+- Wars.
+- Migrations.
+- Cultural changes.
+- New spiritual leaders.
+- Geographic discoveries.
+- Political transformations.
+- Contact with other civilizations.
 
-Las religiones podrán:
-- Incorporar nuevas creencias.
-- Abandonar antiguas tradiciones.
-- Modificar sus rituales.
-- Cambiar sus estructuras institucionales.
-- Expandirse geográficamente.
-- Perder seguidores.
-- Dividirse en nuevas ramas.
-- Fusionarse con otras tradiciones.
-- Desaparecer.
+Religions may:
+- Incorporate new beliefs.
+- Abandon old traditions.
+- Modify their rituals.
+- Change their institutional structures.
+- Expand geographically.
+- Lose followers.
+- Divide into new branches.
+- Merge with other traditions.
+- Disappear.
 
-La evolución no será completamente aleatoria: deberá mantener coherencia con la historia y la cultura de cada sociedad.
+The evolution will not be completely random: it must maintain coherence with the history and culture of each society.
 
-## 5. Influencia sobre la sociedad
+## 5. Influence on society
 
-La religión tendrá una influencia importante en la vida de los habitantes.
+Religion will have an important influence on the lives of inhabitants.
 
-Su peso dependerá de la época, la cultura y el tipo de sociedad.
+Its weight will depend on the era, the culture, and the type of society.
 
-### Influencia cultural
-- Valores y costumbres.
-- Tradiciones familiares.
-- Vestimenta.
-- Gastronomía.
-- Música y arte.
-- Arquitectura.
-- Festividades.
-- Rituales comunitarios.
+### Cultural influence
+- Values and customs.
+- Family traditions.
+- Clothing.
+- Gastronomy.
+- Music and art.
+- Architecture.
+- Festivities.
+- Community rituals.
 
-### Influencia social
-- Identidad colectiva.
-- Cohesión social.
-- Organización comunitaria.
-- Relaciones familiares.
-- Normas morales.
-- Tradiciones funerarias.
+### Social influence
+- Collective identity.
+- Social cohesion.
+- Community organization.
+- Family relationships.
+- Moral norms.
+- Funerary traditions.
 
-### Influencia política
-- Legitimidad de los gobernantes.
-- Relación entre religión y Estado.
-- Instituciones religiosas.
-- Autoridad espiritual.
-- Conflictos entre poderes religiosos y políticos.
+### Political influence
+- Legitimacy of rulers.
+- Relationship between religion and the State.
+- Religious institutions.
+- Spiritual authority.
+- Conflicts between religious and political powers.
 
-### Influencia educativa
-- Transmisión del conocimiento.
-- Centros educativos religiosos.
-- Conservación de textos.
-- Formación de sacerdotes y especialistas.
-- Relación entre religión y ciencia.
+### Educational influence
+- Transmission of knowledge.
+- Religious educational centers.
+- Preservation of texts.
+- Training of priests and specialists.
+- Relationship between religion and science.
 
-La religión no tendrá necesariamente una influencia positiva o negativa. Sus efectos dependerán del contexto histórico y de las decisiones del jugador.
+Religion will not necessarily have a positive or negative influence. Its effects will depend on the historical context and on the player's decisions.
 
-## 6. Religiones y convivencia
+## 6. Religions and coexistence
 
-Dentro de una misma civilización podrán coexistir múltiples religiones y sistemas de creencias.
+Within a single civilization, multiple religions and belief systems may coexist.
 
-Las relaciones entre ellas podrán ser:
+The relationships between them may be:
 
-- Pacíficas.
-- De cooperación.
-- De competencia por seguidores.
-- De influencia cultural mutua.
-- De intolerancia.
-- De persecución.
-- De conflicto político.
-- De enfrentamiento armado.
+- Peaceful.
+- Cooperative.
+- Competitive for followers.
+- Of mutual cultural influence.
+- Intolerant.
+- Of persecution.
+- Of political conflict.
+- Of armed confrontation.
 
-La convivencia dependerá de factores como:
-- Tolerancia religiosa.
-- Leyes y políticas públicas.
-- Diferencias culturales.
-- Influencia de los líderes.
-- Relaciones históricas.
-- Distribución territorial.
-- Intereses políticos.
+Coexistence will depend on factors such as:
+- Religious tolerance.
+- Laws and public policies.
+- Cultural differences.
+- Influence of leaders.
+- Historical relationships.
+- Territorial distribution.
+- Political interests.
 
-El jugador podrá intervenir mediante políticas de tolerancia, restricciones, privilegios, libertad religiosa y otras medidas.
+The player will be able to intervene through policies of tolerance, restrictions, privileges, religious freedom, and other measures.
 
-## 7. Instituciones religiosas
+## 7. Religious institutions
 
-Las religiones podrán desarrollar organizaciones e instituciones propias.
+Religions may develop their own organizations and institutions.
 
-Ejemplos:
+Examples:
 
-- Sacerdotes.
-- Chamanes.
-- Consejos religiosos.
-- Templos.
-- Iglesias.
-- Monasterios.
-- Órdenes religiosas.
-- Jerarquías eclesiásticas.
-- Centros de peregrinación.
-- Escuelas religiosas.
+- Priests.
+- Shamans.
+- Religious councils.
+- Temples.
+- Churches.
+- Monasteries.
+- Religious orders.
+- Ecclesiastical hierarchies.
+- Pilgrimage centers.
+- Religious schools.
 
-Estas instituciones podrán tener:
-- Jerarquías.
-- Personal.
-- Propiedades.
-- Recursos.
-- Edificios.
-- Tradiciones.
-- Influencia social.
-- Relaciones con el gobierno.
+These institutions may have:
+- Hierarchies.
+- Personnel.
+- Properties.
+- Resources.
+- Buildings.
+- Traditions.
+- Social influence.
+- Relationships with the government.
 
-Su complejidad dependerá de la época y del desarrollo de la religión.
+Their complexity will depend on the era and the development of the religion.
 
-Las instituciones religiosas podrán evolucionar, adquirir importancia o perderla.
+Religious institutions may evolve, gain importance, or lose it.
 
-## 8. Arquitectura religiosa
+## 8. Religious architecture
 
-La arquitectura religiosa tendrá una evolución histórica propia.
+Religious architecture will have a historical evolution of its own.
 
-Los edificios religiosos no serán simples variantes decorativas de otros edificios.
+Religious buildings will not be simple decorative variants of other buildings.
 
-Podrán convertirse en algunas de las construcciones más importantes y visualmente impresionantes de la civilización.
+They may become some of the most important and visually impressive constructions of the civilization.
 
-Ejemplos de evolución:
-- Altares naturales.
-- Santuarios primitivos.
-- Círculos ceremoniales.
-- Templos antiguos.
-- Grandes complejos religiosos.
-- Iglesias y catedrales.
-- Mezquitas.
-- Monasterios.
-- Grandes centros de peregrinación.
+Examples of evolution:
+- Natural altars.
+- Primitive sanctuaries.
+- Ceremonial circles.
+- Ancient temples.
+- Great religious complexes.
+- Churches and cathedrals.
+- Mosques.
+- Monasteries.
+- Great pilgrimage centers.
 
-Su arquitectura dependerá de:
-- Religión.
-- Cultura.
-- Época.
-- Materiales disponibles.
-- Tecnología.
-- Riqueza.
-- Tradiciones arquitectónicas.
-- Preferencias del jugador.
+Their architecture will depend on:
+- Religion.
+- Culture.
+- Era.
+- Available materials.
+- Technology.
+- Wealth.
+- Architectural traditions.
+- The player's preferences.
 
-Los edificios podrán ampliarse, evolucionar y transformarse siguiendo las reglas generales del sistema de construcción.
+Buildings may be expanded, evolved, and transformed following the general rules of the construction system.
 
-También podrán convertirse en monumentos históricos y conservarse durante siglos.
+They may also become historical monuments and be preserved for centuries.
 
-## 9. Figuras religiosas importantes
+## 9. Important religious figures
 
-El mundo podrá generar personajes religiosos identificables.
+The world may generate identifiable religious characters.
 
-Por ejemplo:
-- Profetas.
-- Fundadores de religiones.
-- Sacerdotes.
-- Chamanes.
-- Santos.
-- Reformadores.
-- Líderes espirituales.
-- Filósofos religiosos.
+For example:
+- Prophets.
+- Founders of religions.
+- Priests.
+- Shamans.
+- Saints.
+- Reformers.
+- Spiritual leaders.
+- Religious philosophers.
 
-Estos personajes podrán tener:
-- Nombre.
-- Origen.
-- Personalidad.
-- Habilidades.
-- Creencias.
-- Influencia.
-- Seguidores.
-- Relaciones con otros personajes.
-- Legado histórico.
+These characters may have:
+- Name.
+- Origin.
+- Personality.
+- Skills.
+- Beliefs.
+- Influence.
+- Followers.
+- Relationships with other characters.
+- Historical legacy.
 
-Podrán provocar acontecimientos importantes:
+They may bring about important events:
 
-- Fundación de una religión.
-- Reformas religiosas.
-- Aparición de nuevas doctrinas.
-- Movimientos espirituales.
-- Divisiones religiosas.
-- Expansión de creencias.
+- Founding of a religion.
+- Religious reforms.
+- Emergence of new doctrines.
+- Spiritual movements.
+- Religious divisions.
+- Expansion of beliefs.
 
-Su legado podrá sobrevivir a su muerte durante siglos.
+Their legacy may survive their death for centuries.
 
-## 10. Prácticas y vida cotidiana
+## 10. Practices and daily life
 
-Las creencias religiosas podrán afectar determinados aspectos de la vida diaria.
+Religious beliefs may affect certain aspects of daily life.
 
-El sistema priorizará los elementos con mayor impacto histórico y social:
+The system will prioritize the elements with the greatest historical and social impact:
 
-| Aspecto | Posible influencia |
+| Aspect | Possible influence |
 |---|---|
-| Calendario | Festividades, días sagrados y períodos ceremoniales. |
-| Alimentación | Restricciones y tradiciones gastronómicas. |
-| Familia | Matrimonio, parentesco y ritos familiares. |
-| Vestimenta | Indumentaria ceremonial y cotidiana. |
-| Educación | Enseñanza religiosa y transmisión de conocimientos. |
-| Arquitectura | Estilos y construcciones religiosas. |
-| Enterramientos | Rituales funerarios y lugares de descanso. |
-| Costumbres | Normas sociales y comportamientos cotidianos. |
+| Calendar | Festivities, sacred days, and ceremonial periods. |
+| Food | Dietary restrictions and culinary traditions. |
+| Family | Marriage, kinship, and family rites. |
+| Clothing | Ceremonial and everyday attire. |
+| Education | Religious teaching and transmission of knowledge. |
+| Architecture | Religious styles and constructions. |
+| Burials | Funerary rituals and resting places. |
+| Customs | Social norms and everyday behaviors. |
 
-No todas las religiones tendrán todos estos efectos.
+Not all religions will have all of these effects.
 
-La influencia dependerá de sus creencias y de la sociedad en la que existan.
+The influence will depend on their beliefs and on the society in which they exist.
 
-## 11. Reformas y divisiones religiosas
+## 11. Religious reforms and divisions
 
-Las religiones podrán experimentar transformaciones internas.
+Religions may undergo internal transformations.
 
-Una religión podrá:
-- Desarrollar nuevas interpretaciones.
-- Incorporar tradiciones externas.
-- Modificar sus doctrinas.
-- Crear nuevas ramas.
-- Separarse en diferentes movimientos.
-- Unificarse con otras tradiciones.
-- Sufrir reformas importantes.
+A religion may:
+- Develop new interpretations.
+- Incorporate external traditions.
+- Modify its doctrines.
+- Create new branches.
+- Split into different movements.
+- Unify with other traditions.
+- Undergo major reforms.
 
-Estas transformaciones podrán surgir de:
-- Diferencias doctrinales.
-- Conflictos de liderazgo.
-- Cambios culturales.
-- Acontecimientos históricos.
-- Nuevos conocimientos.
-- Intervención del jugador.
+These transformations may arise from:
+- Doctrinal differences.
+- Leadership conflicts.
+- Cultural changes.
+- Historical events.
+- New knowledge.
+- Player intervention.
 
-Las divisiones podrán generar nuevas identidades culturales, tensiones sociales o incluso conflictos políticos.
+Divisions may generate new cultural identities, social tensions, or even political conflicts.
 
-## 12. Evolución histórica y secularización
+## 12. Historical evolution and secularization
 
-La religión evolucionará junto con la civilización.
+Religion will evolve alongside the civilization.
 
-En las primeras etapas tendrá una influencia especialmente importante, ya que podrá explicar fenómenos naturales, organizar la vida comunitaria y establecer normas sociales.
+In the early stages it will have an especially important influence, as it will be able to explain natural phenomena, organize community life, and establish social norms.
 
-Con el desarrollo de la ciencia, la educación, las instituciones y nuevas formas de pensamiento, su influencia podrá transformarse.
+With the development of science, education, institutions, and new forms of thought, its influence may transform.
 
-Podrán aparecer procesos de:
-- Secularización.
-- Separación entre religión y Estado.
-- Pluralismo religioso.
-- Reformas espirituales.
-- Nuevas filosofías.
-- Resurgimientos religiosos.
+Processes may appear such as:
+- Secularization.
+- Separation between religion and the State.
+- Religious pluralism.
+- Spiritual reforms.
+- New philosophies.
+- Religious resurgences.
 
-Sin embargo, el desarrollo tecnológico no provocará automáticamente la desaparición de la religión.
+However, technological development will not automatically cause the disappearance of religion.
 
-Una sociedad avanzada podrá seguir siendo profundamente religiosa, mientras que otra podrá desarrollar una cultura más secular.
+An advanced society may remain deeply religious, while another may develop a more secular culture.
 
-## 13. Intervención del jugador
+## 13. Player intervention
 
-El jugador tendrá herramientas para influir directamente en el desarrollo religioso.
+The player will have tools to directly influence religious development.
 
-Podrá:
-- Crear religiones.
-- Favorecer determinadas creencias.
-- Promover instituciones religiosas.
-- Financiar templos y construcciones.
-- Establecer políticas de tolerancia o restricciones.
-- Favorecer reformas.
-- Influir en la expansión religiosa.
-- Modificar determinadas prácticas.
-- Promover la convivencia entre religiones.
+They will be able to:
+- Create religions.
+- Favor certain beliefs.
+- Promote religious institutions.
+- Finance temples and constructions.
+- Establish policies of tolerance or restrictions.
+- Favor reforms.
+- Influence religious expansion.
+- Modify certain practices.
+- Promote coexistence between religions.
 
-El jugador no será necesariamente considerado una divinidad por los habitantes.
+The player will not necessarily be regarded as a deity by the inhabitants.
 
-Las sociedades podrán desarrollar interpretaciones propias sobre su existencia, pero esto no será una condición obligatoria del sistema.
+Societies may develop their own interpretations of their existence, but this will not be a mandatory condition of the system.
 
-## 14. Configuración y complejidad
+## 14. Configuration and complexity
 
-El sistema tendrá tres niveles principales:
+The system will have three main levels:
 
-**Básico**
-- Religiones existentes.
-- Cantidad de seguidores.
-- Influencia general.
-- Edificios religiosos.
-- Festividades principales.
+**Basic**
+- Existing religions.
+- Number of followers.
+- General influence.
+- Religious buildings.
+- Main festivities.
 
-**Intermedio**
-- Instituciones religiosas.
-- Líderes.
-- Relaciones entre religiones.
-- Reformas.
-- Prácticas culturales.
-- Influencia social y política.
+**Intermediate**
+- Religious institutions.
+- Leaders.
+- Relationships between religions.
+- Reforms.
+- Cultural practices.
+- Social and political influence.
 
-**Avanzado**
-- Doctrinas.
-- Jerarquías.
-- Divisiones religiosas.
-- Movimientos espirituales.
-- Conflictos detallados.
-- Evolución doctrinal.
-- Relaciones complejas entre instituciones.
+**Advanced**
+- Doctrines.
+- Hierarchies.
+- Religious divisions.
+- Spiritual movements.
+- Detailed conflicts.
+- Doctrinal evolution.
+- Complex relationships between institutions.
 
-El jugador podrá configurar individualmente la profundidad de las diferentes mecánicas.
+The player will be able to individually configure the depth of the different mechanics.
 
-## 15. Integración con otros sistemas
+## 15. Integration with other systems
 
-El sistema estará conectado con:
+The system will be connected with:
 
-- **Población y sociedad:** necesidades espirituales, identidad, felicidad, costumbres y grupos sociales.
-- **Política y gobierno:** legitimidad, instituciones, leyes y relaciones entre Estado y religión.
-- **Cultura:** tradiciones, arte, música, arquitectura y festividades.
-- **Construcción:** templos, monumentos, complejos religiosos y patrimonio histórico.
-- **Economía:** propiedades, donaciones, mantenimiento y recursos institucionales.
-- **Educación:** transmisión de conocimientos y centros de enseñanza.
-- **Tecnología:** conocimientos, descubrimientos y cambios en la interpretación del mundo.
-- **Diplomacia:** relaciones religiosas entre civilizaciones.
+- **Population and society:** spiritual needs, identity, happiness, customs, and social groups.
+- **Politics and government:** legitimacy, institutions, laws, and relationships between State and religion.
+- **Culture:** traditions, art, music, architecture, and festivities.
+- **Construction:** temples, monuments, religious complexes, and historical heritage.
+- **Economy:** properties, donations, maintenance, and institutional resources.
+- **Education:** transmission of knowledge and teaching centers.
+- **Technology:** knowledge, discoveries, and changes in the interpretation of the world.
+- **Diplomacy:** religious relationships between civilizations.
 
-## 16. MVP — Primera implementación
+## 16. MVP — First implementation
 
-La primera versión podrá incluir:
+The first version may include:
 
-- Una o varias religiones básicas.
-- Seguidores y distribución religiosa.
-- Necesidades espirituales sencillas.
-- Un edificio religioso inicial.
-- Un personaje religioso identificable.
-- Influencia religiosa sobre la felicidad y cohesión social.
-- Festividades básicas.
-- Políticas de tolerancia religiosa.
-- Posibilidad de aparición y expansión de creencias.
+- One or several basic religions.
+- Followers and religious distribution.
+- Simple spiritual needs.
+- An initial religious building.
+- An identifiable religious character.
+- Religious influence on happiness and social cohesion.
+- Basic festivities.
+- Religious tolerance policies.
+- The possibility of emergence and expansion of beliefs.
 
-La arquitectura deberá permitir incorporar posteriormente instituciones complejas, doctrinas, reformas, divisiones y conflictos.
+The architecture must allow the later incorporation of complex institutions, doctrines, reforms, divisions, and conflicts.
 
-## 17. Decisiones confirmadas
+## 17. Confirmed decisions
 
-| Tema | Decisión |
+| Topic | Decision |
 |---|---|
-| Origen de religiones | Aparición orgánica y creación por el jugador. |
-| Tipos de creencias | Todas las históricamente relevantes. |
-| Evolución | Orgánica, con acontecimientos transformadores. |
-| Poder del jugador | Puede intervenir y modificar el desarrollo religioso. |
-| Influencia social | Muy importante, especialmente en las primeras épocas. |
-| Convivencia religiosa | Pacífica o conflictiva, según el contexto. |
-| Instituciones | Sí, con estructuras y propiedades propias. |
-| Arquitectura | Evolución histórica y monumental. |
-| Personajes religiosos | Identificables y con influencia histórica. |
-| Vida cotidiana | Influencia en aspectos relevantes y coherentes. |
-| Reformas | Sí, incluyendo divisiones y nuevas ramas. |
-| Complejidad | Configurable. |
+| Origin of religions | Organic emergence and creation by the player. |
+| Types of beliefs | All the historically relevant ones. |
+| Evolution | Organic, with transformative events. |
+| Player power | Can intervene in and modify religious development. |
+| Social influence | Very important, especially in the early eras. |
+| Religious coexistence | Peaceful or conflictive, depending on the context. |
+| Institutions | Yes, with their own structures and properties. |
+| Architecture | Historical and monumental evolution. |
+| Religious characters | Identifiable and with historical influence. |
+| Daily life | Influence on relevant and coherent aspects. |
+| Reforms | Yes, including divisions and new branches. |
+| Complexity | Configurable. |
 
-## 18. Visión final
+## 18. Final vision
 
-La religión debe ser uno de los elementos que permitan reconocer la identidad de una civilización.
+Religion must be one of the elements that make it possible to recognize the identity of a civilization.
 
-El jugador podrá observar cómo pequeñas prácticas espirituales de una comunidad primitiva evolucionan hacia grandes tradiciones religiosas, instituciones, monumentos y movimientos culturales.
+The player will be able to observe how the small spiritual practices of a primitive community evolve into great religious traditions, institutions, monuments, and cultural movements.
 
-Un templo construido hace cientos de años podrá seguir siendo un lugar de culto, convertirse en un monumento histórico o quedar abandonado como testimonio de una religión desaparecida.
+A temple built hundreds of years ago may remain a place of worship, become a historical monument, or be left abandoned as a testament to a vanished religion.
 
-Las creencias podrán sobrevivir a imperios, transformarse con las generaciones y dejar huellas visibles en la arquitectura, el arte y las costumbres.
+Beliefs may outlast empires, transform across generations, and leave visible marks on architecture, art, and customs.
 
-**La religión no será simplemente algo que los habitantes creen. Será parte de lo que son y de la historia que construyen.**
+**Religion will not simply be something the inhabitants believe. It will be part of what they are and of the history they build.**

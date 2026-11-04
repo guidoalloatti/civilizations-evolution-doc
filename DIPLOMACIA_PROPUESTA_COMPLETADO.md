@@ -1,69 +1,69 @@
-# DIPLOMACIA — Propuesta de completado (BORRADOR A VALIDAR)
+# DIPLOMACY — Completion proposal (DRAFT TO VALIDATE)
 
-> ⚠️ **NO CANÓNICO.** Este documento es un **borrador propuesto** para cubrir la parte **truncada** del `GDD_Diplomacia_y_Relaciones_Internacionales_v0.1` (corta a mitad de §18). Responde a **DR-13 / F-22** y fue autorizado por el usuario el **2026-11-04** solo como *propuesta a validar*.
-> - **No** se editó el GDD original (los originales no se tocan).
-> - **No** es contenido confirmado: nada de acá es canónico hasta tu validación explícita.
-> - Está **derivado** de lo que el propio GDD ya fija (hasta §18), de IA (DC-11) y Guerra (DC-10). Cada punto que **no** está respaldado por la fuente va marcado como 🟡 **supuesto**.
-> Al validarse, se promueve a `confirmed` en [DESIGN_DECISION_REGISTER.md](DESIGN_DECISION_REGISTER.md) y recién entonces se vuelca al GDD dueño.
+> ⚠️ **NOT CANONICAL.** This document is a **proposed draft** to cover the **truncated** part of `GDD_Diplomacia_y_Relaciones_Internacionales_v0.1` (it cuts off halfway through §18). It responds to **DR-13 / F-22** and was authorized by the user on **2026-11-04** only as a *proposal to validate*.
+> - The original GDD was **not** edited (the originals are not touched).
+> - It is **not** confirmed content: nothing here is canonical until your explicit validation.
+> - It is **derived** from what the GDD itself already sets out (up to §18), from AI (DC-11), and War (DC-10). Each point that is **not** backed by the source is marked 🟡 **assumption**.
+> On validation, it is promoted to `confirmed` in [DESIGN_DECISION_REGISTER.md](DESIGN_DECISION_REGISTER.md) and only then transferred to the owner GDD.
 
-## Qué falta en la fuente
-El archivo corta en **§18 "Personalidad de los líderes"** tras listar rasgos (Ambición, Pragmatismo, Desconfianza, Carisma) y **no** incluye: el resto de §18, una sección de **MVP**, los **niveles de complejidad** (que otros GDD sí traen) ni una tabla de **decisiones confirmadas**. Esta propuesta cubre esos cuatro huecos.
-
----
-
-## 1. Completar §18 — Personalidad de los líderes (propuesto)
-
-**Anclado en:** §18 ya enumera rasgos; §1 (principios) y §17.4 (filosofía: la diplomacia es herramienta real, la guerra es posibilidad no objetivo); IA §4/§11 (DC-11: civilizaciones con las **mismas reglas** que el jugador, **sin omnisciencia**).
-
-- **Rasgos como parámetros, no como guion.** Cada líder tiene valores en un conjunto de rasgos (los ya listados + 🟡 posibles: lealtad, belicosidad, apertura cultural/religiosa, tolerancia al riesgo). Modulan **cómo** una civilización persigue sus objetivos (§9), no **qué** puede hacer: no otorgan información ni acciones que el jugador no tendría (coherente con DC-11).
-- **Influencia concreta** (🟡 propuesto, a calibrar): sesgan la disposición a negociar vs escalar (§17.2), el peso de la memoria histórica (§3) en decisiones, la probabilidad de romper tratados (§7.1), la agresividad territorial (§10) y el tono de la comunicación.
-- **Asignación:** al surgir un líder, rasgos derivados de 🟡 cultura/religión de la civilización (§13/§14), su historia reciente (§3) y variación individual. Reproducible por semilla (ver RISK-13 en el registro de riesgos).
-- **Evolución:** los rasgos son **estables pero no fijos**; eventos fuertes (traición, guerra prolongada, prosperidad) pueden desplazarlos lentamente. El cambio de líder puede reorientar la política exterior sin borrar la **memoria histórica** de la civilización (§3), que persiste por encima del individuo.
-- **Transparencia al jugador:** la personalidad se **infiere** por el comportamiento observado y la inteligencia (§12), no se lee como dato omnisciente (coherente con DC-11 y §12).
+## What is missing in the source
+The file cuts off at **§18 "Leader personality"** after listing traits (Ambition, Pragmatism, Distrust, Charisma) and does **not** include: the rest of §18, an **MVP** section, the **complexity levels** (which other GDDs do carry), or a **confirmed decisions** table. This proposal covers those four gaps.
 
 ---
 
-## 2. MVP de Diplomacia (propuesto)
+## 1. Complete §18 — Leader personality (proposed)
 
-**Anclado en:** el patrón "MVP por sistema" del resto de GDD y la ubicación de Diplomacia en **etapa E5** del [DEVELOPMENT_ROADMAP.md](DEVELOPMENT_ROADMAP.md) (no bloquea el primer playable).
+**Anchored in:** §18 already enumerates traits; §1 (principles) and §17.4 (philosophy: diplomacy is a real tool, war is a possibility, not an objective); AI §4/§11 (DC-11: civilizations with the **same rules** as the player, **without omniscience**).
 
-Incluye (mínimo viable):
-- Relaciones bilaterales con un **estado de relación** (§2.1) que sube/baja por acciones y por **memoria histórica** básica (§3).
-- Un puñado de **tratados** esenciales: paz/no agresión, comercio, alianza simple (§6.1/§6.2/§6.3), con **duración y ruptura** (§7) y consecuencias básicas.
-- **Negociación nivel "Básico"** (§8): oferta/contraoferta simple, sin mecánicas avanzadas.
-- Integración con **IA** (una contraparte autónoma con objetivos, §9) y con **Guerra** solo en el límite (casus belli → conflicto, DC-10).
-- Personalidad de líderes en forma **mínima**: 2–3 rasgos que sesgan la IA.
-
-Queda **fuera del MVP** (niveles avanzados, ya insinuados en el GDD): espionaje (§12), organizaciones internacionales (§15), estados dependientes/vasallaje (§16), diplomacia religiosa/cultural fina (§13/§14), mediación/arbitraje multiparte (§17.3).
+- **Traits as parameters, not as a script.** Each leader has values across a set of traits (the ones already listed + 🟡 possible ones: loyalty, bellicosity, cultural/religious openness, risk tolerance). They modulate **how** a civilization pursues its objectives (§9), not **what** it can do: they grant no information or actions that the player would not have (consistent with DC-11).
+- **Concrete influence** (🟡 proposed, to be calibrated): they bias the willingness to negotiate vs escalate (§17.2), the weight of historical memory (§3) in decisions, the probability of breaking treaties (§7.1), territorial aggressiveness (§10), and the tone of communication.
+- **Assignment:** when a leader emerges, traits are derived from the 🟡 culture/religion of the civilization (§13/§14), its recent history (§3), and individual variation. Reproducible by seed (see RISK-13 in the risk register).
+- **Evolution:** the traits are **stable but not fixed**; strong events (betrayal, prolonged war, prosperity) can shift them slowly. A change of leader can reorient foreign policy without erasing the civilization's **historical memory** (§3), which persists above the individual.
+- **Transparency to the player:** personality is **inferred** from observed behavior and intelligence (§12), it is not read as an omniscient datum (consistent with DC-11 and §12).
 
 ---
 
-## 3. Niveles de complejidad (propuesto, estilo del resto de GDD)
+## 2. Diplomacy MVP (proposed)
 
-| Nivel | Alcance |
+**Anchored in:** the "per-system MVP" pattern of the rest of the GDDs and Diplomacy's placement in **stage E5** of the [DEVELOPMENT_ROADMAP.md](DEVELOPMENT_ROADMAP.md) (it does not block the first playable).
+
+Includes (minimum viable):
+- Bilateral relationships with a **relationship state** (§2.1) that rises/falls through actions and through basic **historical memory** (§3).
+- A handful of essential **treaties**: peace/non-aggression, trade, simple alliance (§6.1/§6.2/§6.3), with **duration and breakage** (§7) and basic consequences.
+- **"Basic"-level negotiation** (§8): simple offer/counteroffer, no advanced mechanics.
+- Integration with **AI** (an autonomous counterpart with objectives, §9) and with **War** only at the boundary (casus belli → conflict, DC-10).
+- Leader personality in a **minimal** form: 2–3 traits that bias the AI.
+
+Left **out of the MVP** (advanced levels, already hinted at in the GDD): espionage (§12), international organizations (§15), dependent states/vassalage (§16), fine religious/cultural diplomacy (§13/§14), multiparty mediation/arbitration (§17.3).
+
+---
+
+## 3. Complexity levels (proposed, in the style of the rest of the GDDs)
+
+| Level | Scope |
 |---|---|
-| **Básico** | Relaciones bilaterales, tratados esenciales, negociación simple, 2–3 rasgos de líder. |
-| **Intermedio** | Más tipos de tratado (territoriales §6.4, religiosos/culturales §6.5), influencia/prestigio (§11), disputas fronterizas (§10), personalidad completa. |
-| **Avanzado** | Espionaje (§12), organizaciones internacionales (§15), estados dependientes (§16), diplomacia multiparte, memoria histórica profunda. |
+| **Basic** | Bilateral relationships, essential treaties, simple negotiation, 2–3 leader traits. |
+| **Intermediate** | More treaty types (territorial §6.4, religious/cultural §6.5), influence/prestige (§11), border disputes (§10), full personality. |
+| **Advanced** | Espionage (§12), international organizations (§15), dependent states (§16), multiparty diplomacy, deep historical memory. |
 
 ---
 
-## 4. Decisiones confirmadas — PROPUESTAS (a validar)
+## 4. Confirmed decisions — PROPOSALS (to validate)
 
-> Marcadas `proposed`: ninguna es canónica hasta tu OK. Las que solo transcriben algo ya escrito en el GDD llevan 📄 (riesgo bajo); las 🟡 son propuestas nuevas (requieren más criterio).
+> Marked `proposed`: none is canonical until your OK. Those that only transcribe something already written in the GDD carry 📄 (low risk); the 🟡 ones are new proposals (they require more judgment).
 
-| ID | Decisión propuesta | Base |
+| ID | Proposed decision | Basis |
 |---|---|---|
-| DP-01 📄 | La diplomacia es una herramienta real de gestión de intereses; la guerra es **posibilidad, no objetivo**. | §17.4 + DC-10 |
-| DP-02 📄 | Las relaciones tienen **memoria histórica** que evoluciona y condiciona decisiones futuras. | §3 |
-| DP-03 📄 | Las civilizaciones actúan por **objetivos e intereses** propios (§9), con las mismas reglas que el jugador y sin omnisciencia. | §9 + DC-11 |
-| DP-04 🟡 | La **personalidad del líder** es un conjunto de parámetros que **modula** la conducta, nunca otorga información/acciones extra. | §18 (parcial) + DC-11 |
-| DP-05 🟡 | La personalidad es **estable pero evolutiva**; la memoria de la civilización **persiste** por encima del líder. | 🟡 propuesto |
-| DP-06 🟡 | El MVP de Diplomacia es **bilateral + tratados esenciales + negociación básica**, en etapa **E5**; lo avanzado (espionaje, organizaciones, vasallaje) queda post-MVP. | roadmap E5 + patrón MVP |
+| DP-01 📄 | Diplomacy is a real tool for managing interests; war is a **possibility, not an objective**. | §17.4 + DC-10 |
+| DP-02 📄 | Relationships have a **historical memory** that evolves and conditions future decisions. | §3 |
+| DP-03 📄 | Civilizations act on their own **objectives and interests** (§9), with the same rules as the player and without omniscience. | §9 + DC-11 |
+| DP-04 🟡 | The **leader's personality** is a set of parameters that **modulates** behavior, never grants extra information/actions. | §18 (partial) + DC-11 |
+| DP-05 🟡 | Personality is **stable but evolving**; the civilization's memory **persists** above the leader. | 🟡 proposed |
+| DP-06 🟡 | The Diplomacy MVP is **bilateral + essential treaties + basic negotiation**, in stage **E5**; the advanced items (espionage, organizations, vassalage) stay post-MVP. | roadmap E5 + MVP pattern |
 
 ---
 
-## Cómo proceder
-1. Revisá §1–§4 de esta propuesta.
-2. Decime qué aceptás / cambiás / rechazás (o si tenés el texto original para reemplazarla).
-3. Lo aceptado se marca `confirmed` en el registro y se vuelca al GDD dueño con fecha/versión; lo demás queda como propuesta o se descarta.
+## How to proceed
+1. Review §1–§4 of this proposal.
+2. Tell me what you accept / change / reject (or whether you have the original text to replace it).
+3. What is accepted is marked `confirmed` in the register and transferred to the owner GDD with date/version; the rest stays as a proposal or is discarded.

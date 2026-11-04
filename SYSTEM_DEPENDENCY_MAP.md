@@ -1,47 +1,47 @@
 # SYSTEM_DEPENDENCY_MAP — Civilization Evolutions
 
-> **Phase 2 — Mapa de dependencias e interacción entre sistemas.** Qué sistemas deben existir antes que otros, cómo fluye la información, cómo se propagan los eventos y qué cadencia de actualización necesita cada uno. Fuentes: Maestro §6, fichas de los GDD (ver [DOCUMENTATION_INDEX.md](DOCUMENTATION_INDEX.md)). Complementa [SYSTEM_ARCHITECTURE_MAP.md](SYSTEM_ARCHITECTURE_MAP.md).
-> Versión 1.1 · Última actualización 2026-11-04 · Estado: conceptual.
+> **Phase 2 — Map of dependencies and interaction between systems.** Which systems must exist before others, how information flows, how events propagate and what update cadence each one needs. Sources: Maestro §6, the GDD data sheets (see [DOCUMENTATION_INDEX.md](DOCUMENTATION_INDEX.md)). Complements [SYSTEM_ARCHITECTURE_MAP.md](SYSTEM_ARCHITECTURE_MAP.md).
+> Version 1.1 · Last updated 2026-11-04 · Status: conceptual.
 
-## A. Grafo de dependencias (orden de implementación fiable)
+## A. Dependency graph (reliable implementation order)
 
-Un sistema **debe** existir antes que otro si el segundo no puede funcionar sin él.
+A system **must** exist before another if the second cannot work without it.
 
 ```mermaid
 flowchart TB
-    subgraph L0["Nivel 0 — Fundaciones"]
-        TIME["Tiempo y Simulación"]
-        ENT["Entidades y Relaciones"]
-        RES["Recursos y Materiales"]
+    subgraph L0["Level 0 — Foundations"]
+        TIME["Time and Simulation"]
+        ENT["Entities and Relationships"]
+        RES["Resources and Materials"]
     end
-    subgraph L1["Nivel 1 — Mundo"]
-        GEO["Geografía/Clima/Medioambiente"]
-        GEN["Generación del Mundo"]
+    subgraph L1["Level 1 — World"]
+        GEO["Geography/Climate/Environment"]
+        GEN["World Generation"]
     end
-    subgraph L2["Nivel 2 — Núcleo civil"]
-        BLD["Construcción"]
-        POP["Población"]
-        PROD["Producción y Trabajo"]
-        LOG["Transporte y Logística"]
-        ECO["Economía"]
+    subgraph L2["Level 2 — Civil core"]
+        BLD["Construction"]
+        POP["Population"]
+        PROD["Production and Labor"]
+        LOG["Transport and Logistics"]
+        ECO["Economy"]
     end
-    subgraph L3["Nivel 3 — Conocimiento e historia"]
-        TEC["Tecnología"]
-        EVT["Eventos e Historia"]
-        EXP["Exploración"]
+    subgraph L3["Level 3 — Knowledge and history"]
+        TEC["Technology"]
+        EVT["Events and History"]
+        EXP["Exploration"]
     end
-    subgraph L4["Nivel 4 — Sociedad e instituciones"]
-        CUL["Cultura"]
-        REL["Religión"]
-        POL["Política"]
-        ADM["Administración Territorial"]
+    subgraph L4["Level 4 — Society and institutions"]
+        CUL["Culture"]
+        REL["Religion"]
+        POL["Politics"]
+        ADM["Territorial Administration"]
     end
-    subgraph L5["Nivel 5 — Mundo vivo y meta"]
-        DIP["Diplomacia"]
-        AI["IA de Civilizaciones"]
-        MIL["Guerra"]
-        PRG["Progresión"]
-        UI["Interfaz"]
+    subgraph L5["Level 5 — Living world and meta"]
+        DIP["Diplomacy"]
+        AI["Civilization AI"]
+        MIL["War"]
+        PRG["Progression"]
+        UI["Interface"]
     end
 
     TIME --> GEO & POP & PROD & ECO & TEC
@@ -64,115 +64,115 @@ flowchart TB
     L4 --> UI
 ```
 
-**Lectura:** implementar de abajo hacia arriba. **Nivel 0** (Tiempo, Entidades, Recursos) es prerequisito de casi todo. El prototipo jugable vive en Niveles 0–3 (ver [DEVELOPMENT_ROADMAP.md](DEVELOPMENT_ROADMAP.md)).
+**How to read it:** implement from the bottom up. **Level 0** (Time, Entities, Resources) is a prerequisite of almost everything. The playable prototype lives in Levels 0–3 (see [DEVELOPMENT_ROADMAP.md](DEVELOPMENT_ROADMAP.md)).
 
-## A.2 Clasificación de sistemas y dueño autoritativo del dato
+## A.2 System classification and authoritative data owner
 
-> **Clase:** *Fundacional* = base de la que casi todo depende; *Núcleo (core)* = corazón de la simulación civil y del primer playable; *De apoyo (supporting)* = enriquece el núcleo, no imprescindible para el MVP; *Avanzado* = mundo vivo/meta, etapas tardías; *Transversal* = cruza a todos (no encaja en un nivel).
-> **¿Opera independiente en desarrollo temprano?** = si puede desarrollarse y probarse en aislamiento (con stubs mínimos) antes de integrar el resto. Útil para paralelizar.
-> **Dueño autoritativo del dato** = única fuente de verdad; los demás **leen** (no copian). Alinea con [SHARED_DATA_MODEL.md](SHARED_DATA_MODEL.md).
+> **Class:** *Foundational* = base that almost everything depends on; *Core* = heart of the civil simulation and of the first playable; *Supporting* = enriches the core, not essential for the MVP; *Advanced* = living world/meta, late stages; *Cross-cutting* = touches everyone (does not fit in a level).
+> **Does it operate independently in early development?** = whether it can be developed and tested in isolation (with minimal stubs) before integrating the rest. Useful for parallelizing.
+> **Authoritative data owner** = single source of truth; the others **read** (do not copy). Aligns with [SHARED_DATA_MODEL.md](SHARED_DATA_MODEL.md).
 
-| Sistema | Clase | ¿Opera independiente temprano? | Dato del que es **dueño autoritativo** |
+| System | Class | Operates independently early? | Data it is the **authoritative owner** of |
 |---|---|---|---|
-| Tiempo | **Fundacional** | **Sí** (reloj puro, ya en SimCore) | fecha/estación/velocidad, cadencias |
-| Entidades y Relaciones | **Fundacional** | **Sí** (identidad/relaciones puras) | id estable y relaciones de toda entidad |
-| Recursos y Materiales | **Fundacional** | **Sí** (catálogo + inventarios) | catálogo de recursos/materiales e inventarios |
-| Geografía/Clima | Fundacional (mundo) | Parcial (necesita Tiempo) | terreno, biomas, clima, existencia de recursos naturales |
-| Generación del Mundo | De apoyo | **Sí** (genera a archivo/estado) | estado inicial del mundo (semilla, layout) |
-| Construcción | **Núcleo** | Parcial (necesita Recursos/Entidades) | estructuras físicas y su estado de obra/evolución |
-| Población | **Núcleo** | Parcial (necesita Entidades/Tiempo) | individuos, hogares, linajes, demografía |
-| Producción y Trabajo | **Núcleo** | Parcial (necesita Recursos/Población) | recetas, asignación de trabajo, transformación |
-| Transporte y Logística | **Núcleo** | Parcial (necesita Recursos/Geografía) | rutas, movimiento físico de bienes |
-| Economía | **Núcleo** | No (integra varios) | precios, mercados, moneda, fiscalidad |
-| Tecnología | **Núcleo** (habilitador) | **Sí** (árbol/condiciones puras) | estado de conocimiento por civilización |
-| Eventos e Historia | Transversal | **Sí** (bus + registro) | crónica/registro histórico (no origina efectos) |
-| Exploración/Expansión | De apoyo | Parcial | conocimiento territorial y ocupación |
-| Cultura | De apoyo | Parcial (necesita Población) | identidad cultural, prácticas, difusión |
-| Religión | De apoyo | Parcial (necesita Población) | creencias, instituciones religiosas |
-| Política y Gobierno | De apoyo | No | forma de gobierno, leyes/políticas, soberanía |
-| Administración Territorial | De apoyo | No | regiones administrativas, autoridad local/impuestos |
-| Diplomacia | Avanzado | No | relaciones/tratados entre civilizaciones |
-| IA de Civilizaciones | Avanzado | No (consume a casi todos) | decisiones y personalidad de las no jugadoras |
-| Guerra | Avanzado | No | fuerzas militares, fortificaciones, conflicto |
-| Progresión | Avanzado (meta) | **Sí** (lee indicadores) | objetivos, legado, condiciones de fin |
-| Interfaz | Transversal | **Sí** (lee todo, no escribe sim) | nada de simulación (solo presentación) |
+| Time | **Foundational** | **Yes** (pure clock, already in SimCore) | date/season/speed, cadences |
+| Entities and Relationships | **Foundational** | **Yes** (pure identity/relationships) | stable id and relationships of every entity |
+| Resources and Materials | **Foundational** | **Yes** (catalog + inventories) | catalog of resources/materials and inventories |
+| Geography/Climate | Foundational (world) | Partial (needs Time) | terrain, biomes, climate, existence of natural resources |
+| World Generation | Supporting | **Yes** (generates to file/state) | initial state of the world (seed, layout) |
+| Construction | **Core** | Partial (needs Resources/Entities) | physical structures and their construction/evolution state |
+| Population | **Core** | Partial (needs Entities/Time) | individuals, households, lineages, demographics |
+| Production and Labor | **Core** | Partial (needs Resources/Population) | recipes, work assignment, transformation |
+| Transport and Logistics | **Core** | Partial (needs Resources/Geography) | routes, physical movement of goods |
+| Economy | **Core** | No (integrates several) | prices, markets, currency, taxation |
+| Technology | **Core** (enabler) | **Yes** (pure tree/conditions) | state of knowledge per civilization |
+| Events and History | Cross-cutting | **Yes** (bus + record) | chronicle/historical record (does not originate effects) |
+| Exploration/Expansion | Supporting | Partial | territorial knowledge and occupation |
+| Culture | Supporting | Partial (needs Population) | cultural identity, practices, diffusion |
+| Religion | Supporting | Partial (needs Population) | beliefs, religious institutions |
+| Politics and Government | Supporting | No | form of government, laws/policies, sovereignty |
+| Territorial Administration | Supporting | No | administrative regions, local authority/taxes |
+| Diplomacy | Advanced | No | relationships/treaties between civilizations |
+| Civilization AI | Advanced | No (consumes almost everyone) | decisions and personality of the non-player ones |
+| War | Advanced | No | military forces, fortifications, conflict |
+| Progression | Advanced (meta) | **Yes** (reads indicators) | objectives, legacy, ending conditions |
+| Interface | Cross-cutting | **Yes** (reads everything, writes no sim) | nothing of the simulation (presentation only) |
 
-**Candidatos a paralelizar desde ya** (operan independientes): Tiempo, Entidades, Recursos, Tecnología, Eventos, Progresión, Interfaz. Son los que un fork puede avanzar con stubs sin bloquear el núcleo.
+**Candidates to parallelize right away** (they operate independently): Time, Entities, Resources, Technology, Events, Progression, Interface. These are the ones a fork can advance with stubs without blocking the core.
 
-## B. Dependencias por sistema
+## B. Dependencies per system
 
-| Sistema | Fundacionales requeridos | Directas | Influye a | Consume info de |
+| System | Required foundationals | Direct | Influences | Consumes info from |
 |---|---|---|---|---|
-| Tiempo | — | — | todos | Geografía (estaciones por región) |
-| Entidades | — | — | todos | — |
-| Recursos | — | — | económicos | Geografía (dónde hay recursos) |
-| Geografía | Tiempo | Recursos | Generación, Construcción, Producción, Exploración | Tiempo |
-| Generación | Geografía, Recursos | — | Construcción, Exploración | Geografía, Recursos |
-| Construcción | Entidades, Recursos, Geografía | Producción, Tecnología | Población, Economía, Cultura | Materiales, mano de obra, tecnología |
-| Población | Tiempo, Entidades, Construcción | Economía | Producción, Cultura, Religión, Política | vivienda, necesidades, salud |
-| Producción | Recursos, Población, Construcción, Tecnología | Logística | Economía | insumos, trabajadores, recetas |
-| Logística | Recursos, Geografía | Producción, Economía | Comercio, Militar, Exploración | inventarios, rutas, distancia |
-| Economía | Recursos, Población, Producción, Logística | — | Política, Progresión | stocks, trabajo, precios |
-| Tecnología | Tiempo, Economía (financia) | — | Producción, Construcción, Logística, Militar | condiciones/conocimiento |
-| Eventos | Tiempo | todos (recibe) | Progresión, UI | hechos de cada sistema dueño |
-| Exploración | Geografía, Logística | Administración | Diplomacia, Militar | conocimiento territorial |
-| Cultura/Religión | Población | Construcción, Política | Diplomacia, Población | afiliación, prácticas |
-| Política | Población, Economía | Administración, Militar | Economía, Población | intereses, estabilidad |
-| Administración | Política, Entidades | Economía | Población | territorios, impuestos |
-| Diplomacia | Entidades, Exploración | IA, Guerra, Comercio | Eventos | relaciones, tratados |
-| IA civilizaciones | todos los del jugador | Diplomacia | Mundo vivo | estado propio (sin omnisciencia) |
-| Guerra | Logística, Población, Construcción, Diplomacia | — | Economía, Política, Eventos | fuerzas, fortificaciones |
-| Progresión | Tiempo, Eventos | — | — | indicadores de todos |
-| Interfaz | — (lee todos) | — | — | estado de simulación |
+| Time | — | — | all | Geography (seasons per region) |
+| Entities | — | — | all | — |
+| Resources | — | — | economic ones | Geography (where resources are) |
+| Geography | Time | Resources | Generation, Construction, Production, Exploration | Time |
+| Generation | Geography, Resources | — | Construction, Exploration | Geography, Resources |
+| Construction | Entities, Resources, Geography | Production, Technology | Population, Economy, Culture | Materials, labor, technology |
+| Population | Time, Entities, Construction | Economy | Production, Culture, Religion, Politics | housing, needs, health |
+| Production | Resources, Population, Construction, Technology | Logistics | Economy | inputs, workers, recipes |
+| Logistics | Resources, Geography | Production, Economy | Trade, Military, Exploration | inventories, routes, distance |
+| Economy | Resources, Population, Production, Logistics | — | Politics, Progression | stocks, labor, prices |
+| Technology | Time, Economy (funds) | — | Production, Construction, Logistics, Military | conditions/knowledge |
+| Events | Time | all (receives) | Progression, UI | facts from each owner system |
+| Exploration | Geography, Logistics | Administration | Diplomacy, Military | territorial knowledge |
+| Culture/Religion | Population | Construction, Politics | Diplomacy, Population | affiliation, practices |
+| Politics | Population, Economy | Administration, Military | Economy, Population | interests, stability |
+| Administration | Politics, Entities | Economy | Population | territories, taxes |
+| Diplomacy | Entities, Exploration | AI, War, Trade | Events | relationships, treaties |
+| Civilization AI | all of the player's | Diplomacy | Living world | own state (no omniscience) |
+| War | Logistics, Population, Construction, Diplomacy | — | Economy, Politics, Events | forces, fortifications |
+| Progression | Time, Events | — | — | indicators of all |
+| Interface | — (reads all) | — | — | simulation state |
 
-## C. Flujo de información (ejemplo: cadena alimentaria)
+## C. Information flow (example: food chain)
 
 ```mermaid
 flowchart LR
-    GEO["Geografía: trigo/suelo"] --> PROD1["Granja (Producción)"]
-    POP["Población: trabajadores"] --> PROD1
-    PROD1 -->|wheat| INV1["Inventario granja"]
-    INV1 --> LOG["Logística: traslado al molino"]
-    LOG --> PROD2["Molino -> flour"]
-    PROD2 --> LOG2["Logística"]
-    LOG2 --> PROD3["Panadería -> bread"]
-    PROD3 --> STORE["Almacén"]
-    STORE --> MKT["Mercado (Economía)"]
+    GEO["Geography: wheat/soil"] --> PROD1["Farm (Production)"]
+    POP["Population: workers"] --> PROD1
+    PROD1 -->|wheat| INV1["Farm inventory"]
+    INV1 --> LOG["Logistics: move to the mill"]
+    LOG --> PROD2["Mill -> flour"]
+    PROD2 --> LOG2["Logistics"]
+    LOG2 --> PROD3["Bakery -> bread"]
+    PROD3 --> STORE["Storehouse"]
+    STORE --> MKT["Market (Economy)"]
     MKT --> POP
-    POP -. necesidades/felicidad .-> ECO["Economía: demanda/precio"]
-    ECO -. prioridades .-> PROD1
-    TIME["Tiempo/estaciones"] -. modula .-> PROD1
+    POP -. needs/happiness .-> ECO["Economy: demand/price"]
+    ECO -. priorities .-> PROD1
+    TIME["Time/seasons"] -. modulates .-> PROD1
 ```
 
-## D. Propagación de eventos (consecuencias transversales)
+## D. Event propagation (cross-cutting consequences)
 
-| Evento | Cadena de consecuencias (sistemas) |
+| Event | Chain of consequences (systems) |
 |---|---|
-| **Descubrimiento de metalurgia** | Tecnología habilita → Producción (nuevas recetas/herramientas) → Construcción (nuevos materiales) → Militar (armas) → Economía (nuevos bienes) → Cultura (evolución visual) → Eventos (registro). |
-| **Nuevo asentamiento** | Exploración/Expansión funda → Entidades crea identidad → Población asigna habitantes → Construcción habilita obra → Economía/Logística conecta → Administración lo agrupa en región → Eventos registra. |
-| **Crecimiento de población** | Población sube → Construcción (demanda de vivienda) → Economía (más consumo/trabajo) → Producción (más mano de obra) → Política (presión social) → posible transición individual→agregado (LOD). |
-| **Escasez de alimentos** | Producción/Geografía (mala cosecha/estación) → Economía (precios suben) → Población (hambre/salud/migración) → Política (inestabilidad) → Eventos (crisis) → posible conflicto. |
-| **Construcción de un camino** | Construcción/Logística crea ruta → Transporte (menor costo/tiempo) → Economía (integración de mercados) → Exploración/Expansión (acceso) → Construcción (crecimiento urbano a lo largo del camino). |
-| **Nueva religión** | Religión surge → Población (afiliación, felicidad) → Cultura (festividades, arte) → Construcción (templos) → Política (legitimidad) → Diplomacia (relaciones religiosas) → Eventos. |
-| **Acuerdo comercial** | Diplomacia firma → Economía/Logística (flujo de bienes, precios) → Producción (insumos nuevos) → Cultura (intercambio) → Eventos (memoria histórica). |
+| **Discovery of metallurgy** | Technology enables → Production (new recipes/tools) → Construction (new materials) → Military (weapons) → Economy (new goods) → Culture (visual evolution) → Events (record). |
+| **New settlement** | Exploration/Expansion founds → Entities creates identity → Population assigns inhabitants → Construction enables construction work → Economy/Logistics connects → Administration groups it into a region → Events records. |
+| **Population growth** | Population rises → Construction (housing demand) → Economy (more consumption/labor) → Production (more labor) → Politics (social pressure) → possible individual→aggregate transition (LOD). |
+| **Food shortage** | Production/Geography (bad harvest/season) → Economy (prices rise) → Population (hunger/health/migration) → Politics (instability) → Events (crisis) → possible conflict. |
+| **Building a road** | Construction/Logistics creates a route → Transport (lower cost/time) → Economy (market integration) → Exploration/Expansion (access) → Construction (urban growth along the road). |
+| **New religion** | Religion emerges → Population (affiliation, happiness) → Culture (festivities, art) → Construction (temples) → Politics (legitimacy) → Diplomacy (religious relations) → Events. |
+| **Trade agreement** | Diplomacy signs → Economy/Logistics (flow of goods, prices) → Production (new inputs) → Culture (exchange) → Events (historical memory). |
 
-Regla (DC-14): el **evento** lo origina el sistema dueño del hecho; Eventos **registra** y notifica; ningún efecto de juego nace del sistema de Eventos.
+Rule (DC-14): the **event** is originated by the system that owns the fact; Events **records** and notifies; no game effect originates from the Events system.
 
-## E. Cadencia de actualización
+## E. Update cadence
 
-| Cadencia | Sistemas | Criterio |
+| Cadence | Systems | Criterion |
 |---|---|---|
-| **Frecuente** (tick de simulación) | Movimiento/acción de unidades activas, animación, UI de depuración | Solo lo visible/activo; **no** todo por `Tick()`. |
-| **Periódica** (día/semana) | Producción, consumo, necesidades, logística, salud | Ciclos internos del reloj; conservan estado entre actualizaciones. |
-| **Estacional** | Agricultura, clima, algunos precios | Ligado a estaciones del reloj. |
-| **Anual / por hito** | Investigación, demografía agregada, evolución histórica, evaluación de eventos, IA estratégica | Baja frecuencia; apta para agregación. |
-| **Por evento** (event-driven) | Reacciones a Descubrimiento/Construcción/Escasez/etc. | Delegados/eventos tipados, sin polling ni acoplamiento. |
+| **Frequent** (simulation tick) | Movement/action of active units, animation, debug UI | Only the visible/active; **not** everything per `Tick()`. |
+| **Periodic** (day/week) | Production, consumption, needs, logistics, health | Internal clock cycles; they preserve state between updates. |
+| **Seasonal** | Agriculture, climate, some prices | Tied to the clock's seasons. |
+| **Annual / per milestone** | Research, aggregate demographics, historical evolution, event evaluation, strategic AI | Low frequency; suitable for aggregation. |
+| **Per event** (event-driven) | Reactions to Discovery/Construction/Shortage/etc. | Delegates/typed events, no polling or coupling. |
 
-**Principios (plan técnico §6):** el reloj es independiente del FPS; los sistemas no dependen de `Tick()` para cada operación; se usan intervalos controlados + eventos. A mayor escala, mayor agregación y menor frecuencia (DR-10).
+**Principles (technical plan §6):** the clock is independent of the FPS; systems do not depend on `Tick()` for every operation; controlled intervals + events are used. The larger the scale, the greater the aggregation and the lower the frequency (DR-10).
 
-## F. Caminos críticos (riesgo de bloqueo)
+## F. Critical paths (risk of blocking)
 
-1. **Tiempo** mal definido bloquea todo (cadencias, envejecimiento, estaciones). → definir DR-09.
-2. **Recursos/Entidades** son base de datos compartida: definir su identidad antes que economía/población evita duplicación (F-09/F-10, RISK-02).
-3. **Geografía→Recursos→Producción→Logística→Consumo** es la espina dorsal del prototipo.
-4. **Tecnología** debe integrarse como marco **compartido** (no efectos aislados) para no reescribir sistemas después (RISK-05, HISTORICAL_EVOLUTION_FRAMEWORK).
+1. A poorly defined **Time** blocks everything (cadences, aging, seasons). → define DR-09.
+2. **Resources/Entities** are the shared database: defining their identity before economy/population avoids duplication (F-09/F-10, RISK-02).
+3. **Geography→Resources→Production→Logistics→Consumption** is the backbone of the prototype.
+4. **Technology** must be integrated as a **shared** framework (not isolated effects) so as not to rewrite systems later (RISK-05, HISTORICAL_EVOLUTION_FRAMEWORK).

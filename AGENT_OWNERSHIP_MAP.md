@@ -1,130 +1,130 @@
 # AGENT_OWNERSHIP_MAP — Civilization Evolutions
 
-> **Mapa de propiedad de archivos y carpetas.** Cada ruta tiene **un** workstream dueño (quien edita). Los demás **leen**. Evita escrituras simultáneas y conflictos. Complementa [AGENT_ORGANIZATION.md](AGENT_ORGANIZATION.md) (quién es cada workstream) y [SYSTEM_CONTRACTS.md](SYSTEM_CONTRACTS.md) (qué expone cada dueño).
+> **File and folder ownership map.** Each path has **one** owning workstream (the one that edits it). The rest **read**. Avoids simultaneous writes and conflicts. Complements [AGENT_ORGANIZATION.md](AGENT_ORGANIZATION.md) (who each workstream is) and [SYSTEM_CONTRACTS.md](SYSTEM_CONTRACTS.md) (what each owner exposes).
 >
-> Versión 1.0 · 2026-11-04 · Estado: PROPUESTA.
-> Rutas `civilizations-evolution/...` → **repo UE**. Rutas de raíz → **repo de docs**. (El repo UE está en el `.gitignore` del repo de docs.)
+> Version 1.0 · 2026-11-04 · Status: PROPOSAL.
+> `civilizations-evolution/...` paths → **UE repo**. Root paths → **docs repo**. (The UE repo is in the docs repo's `.gitignore`.)
 
-## Leyenda
+## Legend
 
-- **Dueño:** único workstream que **edita** el archivo.
-- **Lectores:** quienes dependen de él (vía contrato); no lo editan.
-- 🔒 **Restringido global:** nadie lo edita sin aprobación del Director Técnico.
-- 🤝 **Compartido (protocolo):** varios podrían necesitar tocarlo → se aplica el **protocolo de archivo compartido** (abajo). Marcado aquí como 🤝.
-- 🎨 **Binario `.uasset`:** no fusionable textualmente → **protocolo binario** (abajo).
+- **Owner:** the only workstream that **edits** the file.
+- **Readers:** those that depend on it (via contract); they do not edit it.
+- 🔒 **Globally restricted:** no one edits it without Technical Director approval.
+- 🤝 **Shared (protocol):** several might need to touch it → the **shared-file protocol** (below) applies. Marked here as 🤝.
+- 🎨 **`.uasset` binary:** not textually mergeable → **binary protocol** (below).
 
 ---
 
-## A. Repo de documentación (raíz)
+## A. Documentation repo (root)
 
-| Ruta | Dueño | Lectores | Nota |
+| Path | Owner | Readers | Note |
 |---|---|---|---|
-| `AGENT_ORGANIZATION.md`, `AGENT_OWNERSHIP_MAP.md`, `SYSTEM_CONTRACTS.md`, `AGENT_TASK_BOARD.md`, `GIT_WORKFLOW.md`, `INTEGRATION_STRATEGY.md` | **WS-TD** | todos | Gobernanza. Solo TD edita; otros proponen por PR/mensaje. |
-| `CLAUDE.md`, `DOCUMENTATION_INDEX.md`, `DOCUMENTATION_READING_GUIDE.md` | **WS-TD** | todos | Índice y entrada. |
-| `DESIGN_DECISION_REGISTER.md`, `AUDIT_REPORT.md`, `IMPLEMENTATION_RISK_REGISTER.md` | **WS-TD** | todos | Decisiones/riesgos. Un workstream que toma una decisión la **propone**; TD la registra. |
-| `SHARED_DATA_MODEL.md`, `SYSTEM_DEPENDENCY_MAP.md`, `SYSTEM_ARCHITECTURE_MAP.md`, `DEVELOPMENT_ROADMAP.md`, `SYSTEM_IMPLEMENTATION_SPECIFICATIONS.md`, `CROSS_SYSTEM_VALIDATION_SCENARIOS.md`, `DESIGN_CONSISTENCY_AUDIT.md`, `HISTORICAL_EVOLUTION_FRAMEWORK.md` | **WS-TD** | todos | Blueprint Phase 2 (derivado de GDD). |
-| `IMPLEMENTATION_ALIGNMENT.md` | **WS-TD** (con insumo de WS-QA) | todos | Foto código↔diseño; actualizar tras cada hito. |
-| `docs/00-project/GDD_MAESTRO.md`, `docs/01-systems/*`, `docs/02-technical/*`, `docs/README.md` | 🔒 **GDD — autoridad de diseño** | todos | **No se editan** por decisión de desarrollo; cambios de diseño son decisión del responsable (DR-08). |
-| `BACKUP_PRE_AUDIT_2026-11-03/**` | 🔒 **Inmutable** | — | Respaldo. Nunca se edita. |
+| `AGENT_ORGANIZATION.md`, `AGENT_OWNERSHIP_MAP.md`, `SYSTEM_CONTRACTS.md`, `AGENT_TASK_BOARD.md`, `GIT_WORKFLOW.md`, `INTEGRATION_STRATEGY.md` | **WS-TD** | all | Governance. Only TD edits; others propose via PR/message. |
+| `CLAUDE.md`, `DOCUMENTATION_INDEX.md`, `DOCUMENTATION_READING_GUIDE.md` | **WS-TD** | all | Index and entry point. |
+| `DESIGN_DECISION_REGISTER.md`, `AUDIT_REPORT.md`, `IMPLEMENTATION_RISK_REGISTER.md` | **WS-TD** | all | Decisions/risks. A workstream that makes a decision **proposes** it; TD records it. |
+| `SHARED_DATA_MODEL.md`, `SYSTEM_DEPENDENCY_MAP.md`, `SYSTEM_ARCHITECTURE_MAP.md`, `DEVELOPMENT_ROADMAP.md`, `SYSTEM_IMPLEMENTATION_SPECIFICATIONS.md`, `CROSS_SYSTEM_VALIDATION_SCENARIOS.md`, `DESIGN_CONSISTENCY_AUDIT.md`, `HISTORICAL_EVOLUTION_FRAMEWORK.md` | **WS-TD** | all | Phase 2 blueprint (derived from the GDDs). |
+| `IMPLEMENTATION_ALIGNMENT.md` | **WS-TD** (with input from WS-QA) | all | Code↔design snapshot; update after each milestone. |
+| `docs/00-project/GDD_MAESTRO.md`, `docs/01-systems/*`, `docs/02-technical/*`, `docs/README.md` | 🔒 **GDD — design authority** | all | **Not edited** by a development decision; design changes are the owner's decision (DR-08). |
+| `BACKUP_PRE_AUDIT_2026-11-03/**` | 🔒 **Immutable** | — | Backup. Never edited. |
 
-## B. Repo UE — SimCore (`civilizations-evolution/SimCore/`)
+## B. UE repo — SimCore (`civilizations-evolution/SimCore/`)
 
-> SimCore es chico y acoplado. Hasta la refactorización **M0** (partir `Simulation`/`World` en módulos de dominio), varios archivos son **compartidos** y se editan con protocolo. Post-M0, la columna "Dueño (post-M0)" aplica.
+> SimCore is small and coupled. Until the **M0** refactor (splitting `Simulation`/`World` into domain modules), several files are **shared** and edited under protocol. Post-M0, the "Owner (post-M0)" column applies.
 
-| Ruta | Dueño (hoy) | Dueño (post-M0) | Lectores | Nota |
+| Path | Owner (today) | Owner (post-M0) | Readers | Note |
 |---|---|---|---|---|
-| `include/simcore/Types.h`, `src/Types.cpp` | **WS-CORE** | WS-CORE | todos | IDs, enums, nombres. 🤝 añadir un enum nuevo avisa a TD. |
-| `include/simcore/SimulationClock.h`, `src/SimulationClock.cpp` | **WS-CORE** | WS-CORE | todos | Reloj. |
-| `include/simcore/EventBus.h` | **WS-CORE** | WS-CORE | todos | Bus + `EventType`. Añadir evento = cambio de contrato. |
-| `include/simcore/World.h`, `src/World.cpp` | 🤝 **WS-CORE** (coordina) | WS-CORE (contenedor) | ECON/BUILD/POP | Contenedor raíz + `colony()` + alta/lookup de instancias + estado de tech. **Hotspot**: lo tocan varios dominios → protocolo compartido. |
-| `include/simcore/Simulation.h`, `src/Simulation.cpp` | 🤝 **WS-CORE** (coordina) | **partir** en pasos de dominio | ECON/BUILD/POP | Orquesta producción/logística/población/research/trade + save/load. **Hotspot #1**. M0 lo divide (ver abajo). |
-| `include/simcore/Inventory.h`, `src/Inventory.cpp` | **WS-ECON** | WS-ECON | BUILD/POP/UI | Inventario. |
-| `include/simcore/GameDatabase.h`, `src/GameDatabase.cpp` | **WS-ECON** | WS-ECON (+BUILD para `BuildingDef`) | todos | Catálogo. `BuildingDef` lo consume BUILD; ECON dueño del contenedor. 🤝 |
-| `include/simcore/DefaultContent.h`, `src/DefaultContent.cpp` | **WS-ECON** | WS-ECON/BUILD | CORE (escenarios) | Catálogo + escenarios (`makeColonyStart`, `makeDefaultScenario`). 🤝 BUILD añade defs de edificio aquí → coordina con ECON. |
-| `data/resources.json`, `data/recipes.json` | **WS-ECON** | todos | — | Datos. |
-| `data/buildings.json` | **WS-BUILD** | ECON | — | Datos de edificios. |
-| `app/main.cpp` | **WS-QA** (con CORE) | — | Runner de consola / escenarios de prueba. |
-| `tests/**` (`test_main.cpp`, `simple_test.h`) | **WS-QA** | todos | Suite. QA agrega tests por sistema. |
-| `CMakeLists.txt` | 🔒 **WS-TD** | — | Build de SimCore. |
+| `include/simcore/Types.h`, `src/Types.cpp` | **WS-CORE** | WS-CORE | all | IDs, enums, names. 🤝 adding a new enum notifies TD. |
+| `include/simcore/SimulationClock.h`, `src/SimulationClock.cpp` | **WS-CORE** | WS-CORE | all | Clock. |
+| `include/simcore/EventBus.h` | **WS-CORE** | WS-CORE | all | Bus + `EventType`. Adding an event = contract change. |
+| `include/simcore/World.h`, `src/World.cpp` | 🤝 **WS-CORE** (coordinates) | WS-CORE (container) | ECON/BUILD/POP | Root container + `colony()` + instance registration/lookup + tech state. **Hotspot**: touched by several domains → shared protocol. |
+| `include/simcore/Simulation.h`, `src/Simulation.cpp` | 🤝 **WS-CORE** (coordinates) | **split** into domain steps | ECON/BUILD/POP | Orchestrates production/logistics/population/research/trade + save/load. **Hotspot #1**. M0 splits it (see below). |
+| `include/simcore/Inventory.h`, `src/Inventory.cpp` | **WS-ECON** | WS-ECON | BUILD/POP/UI | Inventory. |
+| `include/simcore/GameDatabase.h`, `src/GameDatabase.cpp` | **WS-ECON** | WS-ECON (+BUILD for `BuildingDef`) | all | Catalog. `BuildingDef` is consumed by BUILD; ECON owns the container. 🤝 |
+| `include/simcore/DefaultContent.h`, `src/DefaultContent.cpp` | **WS-ECON** | WS-ECON/BUILD | CORE (scenarios) | Catalog + scenarios (`makeColonyStart`, `makeDefaultScenario`). 🤝 BUILD adds building defs here → coordinates with ECON. |
+| `data/resources.json`, `data/recipes.json` | **WS-ECON** | all | — | Data. |
+| `data/buildings.json` | **WS-BUILD** | ECON | — | Building data. |
+| `app/main.cpp` | **WS-QA** (with CORE) | — | Console runner / test scenarios. |
+| `tests/**` (`test_main.cpp`, `simple_test.h`) | **WS-QA** | all | Suite. QA adds tests per system. |
+| `CMakeLists.txt` | 🔒 **WS-TD** | — | SimCore build. |
 
-### Refactor M0 (habilita el paralelismo) — propuesto, lo lidera WS-TD
+### M0 refactor (enables parallelism) — proposed, led by WS-TD
 
-Partir `Simulation.cpp`/`World.cpp` (hoy *hotspots* compartidos) en pasos de dominio con límites claros, para que cada workstream tenga **su** archivo:
+Split `Simulation.cpp`/`World.cpp` (today shared *hotspots*) into domain steps with clear boundaries, so each workstream has **its own** file:
 - `ProductionStep`/`LogisticsStep`/`TradeStep` → **WS-ECON**
 - `PopulationStep` → **WS-POP**
-- `ConstructionStep`/evolución → **WS-BUILD**
-- Orquestador + reloj + eventos + save/load + registro de pasos → **WS-CORE**
+- `ConstructionStep`/evolution → **WS-BUILD**
+- Orchestrator + clock + events + save/load + step registration → **WS-CORE**
 
-Hasta que M0 esté integrado, **toda** edición de `Simulation.cpp`/`World.cpp` va por el protocolo de archivo compartido (serializada, un workstream a la vez, coordinada por TD). Esto respeta "no crear abstracciones vacías prematuras": M0 **no** agrega capas nuevas, solo separa responsabilidades ya existentes.
+Until M0 is integrated, **every** edit to `Simulation.cpp`/`World.cpp` goes through the shared-file protocol (serialized, one workstream at a time, coordinated by TD). This respects "do not create premature empty abstractions": M0 does **not** add new layers, it only separates existing responsibilities.
 
-## C. Repo UE — Capa Unreal (`civilizations-evolution/Source/CivilizationSimulator/`)
+## C. UE repo — Unreal layer (`civilizations-evolution/Source/CivilizationSimulator/`)
 
-| Ruta | Dueño | Lectores | Nota |
+| Path | Owner | Readers | Note |
 |---|---|---|---|
-| `Simulation/CivSimSubsystem.{h,cpp}` | 🤝 **WS-CORE** | **todos** (UE) | **Único puente SimCore↔UE.** Es el contrato de acceso UI. Un consumidor que necesita un getter nuevo lo **pide a CORE**. |
-| `SimCoreUnity.cpp` | 🤝 **WS-CORE** (con dueños SimCore) | — | Compila SimCore dentro del módulo. Se edita al agregar/quitar un `.cpp` de SimCore. |
-| `Core/CivGameModeBase.{h,cpp}` | **WS-UI** (bootstrap de presentación) | — | Spawnea ViewManager + crea el HUD UMG. |
-| `Core/CivPlayerController.{h,cpp}` | 🤝 **WS-UI** (dueño) con interés de BUILD | — | Input/selección/órdenes/menú de construcción/time controls. **Hotspot**: cruza input→presentación→sim. BUILD coordina cambios de colocación aquí. |
-| `Core/CivHUD.{h,cpp}` | **WS-UI** | — | Canvas: caja de selección, menú, panel info, tooltip, debug F1. |
-| `Core/CivText.{h,cpp}` (`CivLoc`) | 🤝 **WS-UI** (dueño) | todos (añaden labels) | **i18n — hotspot de merge.** Todo string de UI/edificio/recurso/tech vive aquí. Protocolo compartido: añadir una clave es un cambio chico y aislado; agrupar por commits pequeños. |
-| `UI/CivMainHUD.{h,cpp}`, `UI/CivUIStyle.h` | **WS-UI** | — | HUD UMG principal + tokens de estilo. Sustituir mock data (Stage 4). |
-| `Camera/CivCameraPawn.{h,cpp}` | **WS-UI** | — | Cámara RTS. **Boundary más limpio**: sin SimCore. |
-| `View/CivViewManager.{h,cpp}` | 🤝 **WS-WORLD** (entorno) con BUILD (`SyncBuildings`) | — | Orquesta entorno 3D + spawns + re-tinte estacional. `SyncBuildings` (dormido) lo reactiva BUILD. Coordinar WORLD↔BUILD. |
-| `View/CivTerrain.{h,cpp}` | **WS-WORLD** | — | Terreno procedural + queries + estaciones. |
-| `View/CivBuildingActor.{h,cpp}` | 🤝 **WS-BUILD** (lógica/estado) con ART (mesh) | — | Actor de edificio. BUILD dueño del comportamiento; ART solo cambia mesh/material vía propiedades expuestas. |
-| `Units/CivUnit.{h,cpp}` | 🤝 **WS-POP** (estado/sim) con ART (mesh/anim) | — | Settler. POP dueño del estado/máquina; ART solo visual. **Hoy escribe al stock único** (hambre/acarreo) — Modelo A. |
-| `Units/CivAnimal.{h,cpp}` | 🤝 **WS-WORLD**/**WS-ECON** (fauna/caza) con ART | — | Animal salvaje. Decidir dueño en el tablero según la tarea de caza (propuesto: WS-ECON porque alimenta recursos). |
-| `Units/CivResourceNode.{h,cpp}` | **WS-WORLD** (con ECON para el id de recurso) | — | Nodo recolectable. Núcleo del "sistema de recursos del mapa". |
-| `CivilizationSimulator.{cpp,h}` | 🔒 **WS-TD** | — | Módulo primario. Trivial. |
-| `CivilizationSimulator.Build.cs`, `*.Target.cs` | 🔒 **WS-TD** | — | **Config de build.** Añadir dependencia de módulo pasa por TD. |
+| `Simulation/CivSimSubsystem.{h,cpp}` | 🤝 **WS-CORE** | **all** (UE) | **Sole SimCore↔UE bridge.** It is the UI access contract. A consumer needing a new getter **asks CORE** for it. |
+| `SimCoreUnity.cpp` | 🤝 **WS-CORE** (with SimCore owners) | — | Compiles SimCore within the module. Edited when a SimCore `.cpp` is added/removed. |
+| `Core/CivGameModeBase.{h,cpp}` | **WS-UI** (presentation bootstrap) | — | Spawns ViewManager + creates the UMG HUD. |
+| `Core/CivPlayerController.{h,cpp}` | 🤝 **WS-UI** (owner) with BUILD interest | — | Input/selection/orders/construction menu/time controls. **Hotspot**: spans input→presentation→sim. BUILD coordinates placement changes here. |
+| `Core/CivHUD.{h,cpp}` | **WS-UI** | — | Canvas: selection box, menu, info panel, tooltip, F1 debug. |
+| `Core/CivText.{h,cpp}` (`CivLoc`) | 🤝 **WS-UI** (owner) | all (add labels) | **i18n — merge hotspot.** Every UI/building/resource/tech string lives here. Shared protocol: adding a key is a small, isolated change; group into small commits. |
+| `UI/CivMainHUD.{h,cpp}`, `UI/CivUIStyle.h` | **WS-UI** | — | Main UMG HUD + style tokens. Replace mock data (Stage 4). |
+| `Camera/CivCameraPawn.{h,cpp}` | **WS-UI** | — | RTS camera. **Cleanest boundary**: no SimCore. |
+| `View/CivViewManager.{h,cpp}` | 🤝 **WS-WORLD** (environment) with BUILD (`SyncBuildings`) | — | Orchestrates the 3D environment + spawns + seasonal re-tint. `SyncBuildings` (dormant) is reactivated by BUILD. Coordinate WORLD↔BUILD. |
+| `View/CivTerrain.{h,cpp}` | **WS-WORLD** | — | Procedural terrain + queries + seasons. |
+| `View/CivBuildingActor.{h,cpp}` | 🤝 **WS-BUILD** (logic/state) with ART (mesh) | — | Building actor. BUILD owns behavior; ART only changes mesh/material via exposed properties. |
+| `Units/CivUnit.{h,cpp}` | 🤝 **WS-POP** (state/sim) with ART (mesh/anim) | — | Settler. POP owns state/machine; ART only visuals. **Today it writes to the single stock** (hunger/hauling) — Model A. |
+| `Units/CivAnimal.{h,cpp}` | 🤝 **WS-WORLD**/**WS-ECON** (fauna/hunting) with ART | — | Wild animal. Decide the owner on the board based on the hunting task (proposed: WS-ECON because it feeds resources). |
+| `Units/CivResourceNode.{h,cpp}` | **WS-WORLD** (with ECON for the resource id) | — | Gatherable node. Core of the "map resource system". |
+| `CivilizationSimulator.{cpp,h}` | 🔒 **WS-TD** | — | Primary module. Trivial. |
+| `CivilizationSimulator.Build.cs`, `*.Target.cs` | 🔒 **WS-TD** | — | **Build config.** Adding a module dependency goes through TD. |
 
-## D. Repo UE — Config, Content, Docs
+## D. UE repo — Config, Content, Docs
 
-| Ruta | Dueño | Nota |
+| Path | Owner | Note |
 |---|---|---|
-| `Config/DefaultInput.ini` | 🤝 **WS-UI** (dueño) | **Hotspot de merge.** Todo bind de input nuevo lo edita UI; otros workstreams piden el bind. |
-| `Config/DefaultEngine.ini`, `Config/DefaultGame.ini` | 🔒 **WS-TD** | Config de proyecto/motor. |
-| `CivilizationSimulator.uproject` | 🔒 **WS-TD** | Plugins/módulos. |
-| `Content/Chars/**` 🎨 | **WS-ART** | Personaje KayKit + anims. Binario. |
-| `Content/PBR/**` 🎨 | **WS-ART** | Materiales/texturas. Binario. |
-| `Content/Maps/**` 🎨 (nuevo) | **WS-WORLD** (si se crea un `.umap`) | Hoy **no hay `.umap`** (entorno procedural). Si se introduce, dueño único. |
-| `Content/UI/**` 🎨 (nuevo) | **WS-UI** | Hoy el HUD es 100% código; si se agregan `.uasset` de UI, dueño único. |
-| `Content/Developers/**` | por-usuario | Carpeta de desarrollo personal; fuera de integración. |
-| `ArtStaging/**` | **WS-ART** | Crudos pesados. **Fuera de git** (`.gitignore`). |
-| `Docs/ASSETS.md`, `Docs/UI_STYLE_GUIDE.md` | **WS-ART** / **WS-UI** | Pipeline de assets / guía de estilo. |
-| `Docs/BACKLOG.md` | 🤝 **WS-TD** (espejado en el tablero) | Backlog histórico del repo UE; el tablero oficial es `AGENT_TASK_BOARD.md`. |
-| `Docs/00_TECHNICAL.md` (= PLAN_TECNICO) | 🔒 autoridad técnica | Copia del plan; no editar sin aprobación. |
+| `Config/DefaultInput.ini` | 🤝 **WS-UI** (owner) | **Merge hotspot.** UI edits every new input bind; other workstreams request the bind. |
+| `Config/DefaultEngine.ini`, `Config/DefaultGame.ini` | 🔒 **WS-TD** | Project/engine config. |
+| `CivilizationSimulator.uproject` | 🔒 **WS-TD** | Plugins/modules. |
+| `Content/Chars/**` 🎨 | **WS-ART** | KayKit character + anims. Binary. |
+| `Content/PBR/**` 🎨 | **WS-ART** | Materials/textures. Binary. |
+| `Content/Maps/**` 🎨 (new) | **WS-WORLD** (if a `.umap` is created) | Today there is **no `.umap`** (procedural environment). If one is introduced, single owner. |
+| `Content/UI/**` 🎨 (new) | **WS-UI** | Today the HUD is 100% code; if UI `.uasset` files are added, single owner. |
+| `Content/Developers/**` | per-user | Personal development folder; outside integration. |
+| `ArtStaging/**` | **WS-ART** | Heavy raw files. **Outside git** (`.gitignore`). |
+| `Docs/ASSETS.md`, `Docs/UI_STYLE_GUIDE.md` | **WS-ART** / **WS-UI** | Asset pipeline / style guide. |
+| `Docs/BACKLOG.md` | 🤝 **WS-TD** (mirrored on the board) | Historical backlog of the UE repo; the official board is `AGENT_TASK_BOARD.md`. |
+| `Docs/00_TECHNICAL.md` (= PLAN_TECNICO) | 🔒 technical authority | Copy of the plan; do not edit without approval. |
 
 ---
 
-## Protocolo de archivo compartido (🤝)
+## Shared-file protocol (🤝)
 
-Para los *hotspots* que varios workstreams podrían necesitar (`Simulation.cpp`, `World.cpp` pre-M0, `CivText.cpp`, `DefaultInput.ini`, `CivSimSubsystem.*`, `GameDatabase.cpp`, `CivPlayerController.cpp`):
+For the *hotspots* that several workstreams might need (`Simulation.cpp`, `World.cpp` pre-M0, `CivText.cpp`, `DefaultInput.ini`, `CivSimSubsystem.*`, `GameDatabase.cpp`, `CivPlayerController.cpp`):
 
-1. **Un escritor a la vez.** El tablero ([AGENT_TASK_BOARD.md](AGENT_TASK_BOARD.md)) marca quién tiene "tomado" el archivo para la tarea activa.
-2. **Cambios chicos y atómicos**, commiteados rápido en verde, para minimizar la ventana de conflicto.
-3. **Pedir, no invadir:** si necesitás algo en un archivo de otro (un getter en el subsystem, una clave en `CivText`, un bind en `DefaultInput`), lo pedís al dueño o abrís un cambio mínimo coordinado con él; no reescribís su archivo.
-4. **Preferir extensión aditiva:** agregar un caso a un `switch`/diccionario (nueva clave de `CivLoc`, nuevo `case` de categoría) rara vez choca; **reordenar/renombrar** sí → avisar.
-5. **M0 primero** donde aplique: una vez partidos `Simulation`/`World`, la mayoría de estos dejan de ser compartidos.
+1. **One writer at a time.** The board ([AGENT_TASK_BOARD.md](AGENT_TASK_BOARD.md)) marks who has "taken" the file for the active task.
+2. **Small, atomic changes**, committed quickly on green, to minimize the conflict window.
+3. **Ask, don't invade:** if you need something in another's file (a getter in the subsystem, a key in `CivText`, a bind in `DefaultInput`), you request it from the owner or open a minimal change coordinated with them; you do not rewrite their file.
+4. **Prefer additive extension:** adding a case to a `switch`/dictionary (a new `CivLoc` key, a new category `case`) rarely clashes; **reordering/renaming** does → give notice.
+5. **M0 first** where applicable: once `Simulation`/`World` are split, most of these stop being shared.
 
-## Protocolo de binarios `.uasset` (🎨)
+## `.uasset` binary protocol (🎨)
 
-Los `.uasset` **no se fusionan** textualmente (RISK-12). Hay ~49 hoy, todo en `Content/Chars` y `Content/PBR`; **no hay `.umap` ni `.uasset` de UI** (el nivel y el HUD son procedurales/código) → hoy **no hay un asset compartido grande sobre el que chocar**. Reglas:
+`.uasset` files are **not** merged textually (RISK-12). There are ~49 today, all in `Content/Chars` and `Content/PBR`; **there is no `.umap` nor UI `.uasset`** (the level and the HUD are procedural/code) → today **there is no large shared asset to clash over**. Rules:
 
-1. **Partición por subcarpeta:** `Chars/` y `PBR/` son de **WS-ART**; futuros `Maps/` de WORLD, `UI/` de UI. Un `.uasset` = un dueño por tarea.
-2. **Nunca dos agentes editan el mismo `.uasset` a la vez.** El tablero asigna el asset a una sola tarea.
-3. **Configurar Git LFS antes de sumar binarios pesados.** Hoy LFS está **instalado pero no configurado** (no hay `.gitattributes`). WS-TD debe crear `.gitattributes` con `*.uasset`/`*.umap` en LFS **con aprobación** (es cambio de configuración) y migrar los existentes. Hasta entonces, mantener los binarios chicos y con dueño único.
-4. **Bloqueo recomendado:** si se adopta LFS, usar *file locking* de LFS para `.uasset`/`.umap` (`git lfs lock`) en los assets compartidos.
-5. **Commits de arte separados** de los de código, para revertir sin tocar lógica.
+1. **Partition by subfolder:** `Chars/` and `PBR/` belong to **WS-ART**; future `Maps/` to WORLD, `UI/` to UI. One `.uasset` = one owner per task.
+2. **Never two agents editing the same `.uasset` at once.** The board assigns the asset to a single task.
+3. **Configure Git LFS before adding heavy binaries.** LFS is currently **installed but not configured** (there is no `.gitattributes`). WS-TD must create `.gitattributes` with `*.uasset`/`*.umap` in LFS **with approval** (it is a configuration change) and migrate the existing ones.
+4. **Locking recommended:** if LFS is adopted, use LFS *file locking* for `.uasset`/`.umap` (`git lfs lock`) on shared assets.
+5. **Art commits separate** from code commits, so you can revert without touching logic.
 
-## Quién puede tocar qué (resumen de una línea)
+## Who can touch what (one-line summary)
 
-- **WS-TD:** docs de gobernanza + build/config (🔒). No gameplay.
-- **WS-CORE:** reloj/eventos/tipos/World(contenedor)/orquestador/save-load + `CivSimSubsystem` + `SimCoreUnity`.
-- **WS-ECON:** `Inventory`/`GameDatabase`/`DefaultContent`/`data/resources|recipes.json` + pasos de economía/producción/logística post-M0.
-- **WS-BUILD:** `data/buildings.json` + paso de construcción post-M0 + `CivBuildingActor` (lógica) + `SyncBuildings`.
-- **WS-WORLD:** `CivTerrain` + `CivResourceNode` + geo/mundo en SimCore + `CivViewManager` (entorno).
-- **WS-POP:** paso de población post-M0 + `CivUnit` (estado).
+- **WS-TD:** governance docs + build/config (🔒). No gameplay.
+- **WS-CORE:** clock/events/types/World(container)/orchestrator/save-load + `CivSimSubsystem` + `SimCoreUnity`.
+- **WS-ECON:** `Inventory`/`GameDatabase`/`DefaultContent`/`data/resources|recipes.json` + economy/production/logistics steps post-M0.
+- **WS-BUILD:** `data/buildings.json` + construction step post-M0 + `CivBuildingActor` (logic) + `SyncBuildings`.
+- **WS-WORLD:** `CivTerrain` + `CivResourceNode` + geo/world in SimCore + `CivViewManager` (environment).
+- **WS-POP:** population step post-M0 + `CivUnit` (state).
 - **WS-UI:** `CivHUD`/`CivMainHUD`/`CivUIStyle`/`CivText`/`CivPlayerController`/`CivCameraPawn`/`CivGameModeBase` + `DefaultInput.ini`.
-- **WS-ART:** `Content/Chars`+`Content/PBR`+`ArtStaging` + mesh/material de actores vía propiedades.
-- **WS-QA:** `SimCore/tests` + `app/main.cpp` + tests de automation UE + CI.
+- **WS-ART:** `Content/Chars`+`Content/PBR`+`ArtStaging` + actor mesh/material via properties.
+- **WS-QA:** `SimCore/tests` + `app/main.cpp` + UE automation tests + CI.

@@ -1,629 +1,629 @@
-> **Control documental:** 0.1 | Estado: diseño conceptual; las decisiones marcadas como confirmadas se preservan desde la fuente. **Alcance:** este GDD es fuente de detalle de su dominio; el GDD Maestro establece la visión común. Los conflictos intersistema se registran en AUDIT_REPORT.md y no se resuelven implícitamente.
+> **Document control:** 0.1 | Status: conceptual design; decisions marked as confirmed are preserved from the source. **Scope:** this GDD is the detail source for its domain; the Master GDD establishes the shared vision. Cross-system conflicts are recorded in AUDIT_REPORT.md and are not resolved implicitly.
 
 ---
 
-# GDD — GENERACIÓN PROCEDURAL DEL MUNDO
-**Versión:** 0.1  
-**Estado:** Definición conceptual consolidada  
-**Proyecto:** Simulador histórico de civilizaciones  
-**Período jugable:** Desde el Paleolítico hasta el comienzo de la Revolución Industrial.
+# GDD — PROCEDURAL WORLD GENERATION
+**Version:** 0.1  
+**Status:** Consolidated conceptual definition  
+**Project:** Historical civilization simulator  
+**Playable period:** From the Paleolithic to the beginning of the Industrial Revolution.
 
 ---
 
-## 1. Visión general
+## 1. Overview
 
-El sistema de Generación Procedural del Mundo será responsable de crear los escenarios geográficos donde se desarrollarán las civilizaciones.
+The Procedural World Generation system will be responsible for creating the geographic settings where civilizations develop.
 
-El objetivo es generar mundos visualmente atractivos, geográficamente coherentes y suficientemente diversos para que cada partida tenga una identidad propia.
+The goal is to generate worlds that are visually appealing, geographically coherent, and diverse enough that each playthrough has its own identity.
 
-La generación debe respetar principios geológicos, climáticos, hidrológicos y ecológicos. Sin embargo, el realismo no debe limitar la libertad del jugador: los parámetros de generación serán ampliamente configurables.
+Generation must respect geological, climatic, hydrological, and ecological principles. However, realism must not limit the player's freedom: the generation parameters will be widely configurable.
 
-El sistema debe permitir crear desde mapas relativamente pequeños con varios continentes hasta enormes mundos con archipiélagos, supercontinentes, grandes océanos y regiones extremas.
+The system must make it possible to create anything from relatively small maps with several continents to enormous worlds with archipelagos, supercontinents, vast oceans, and extreme regions.
 
-También deberá permitir utilizar geografías históricas reales y modificar el mundo antes o durante una partida.
+It must also allow the use of real historical geographies and the modification of the world before or during a playthrough.
 
-**Principio fundamental:**
+**Fundamental principle:**
 
-El mundo no será un escenario decorativo. Será un sistema dinámico que condicionará la historia, la economía, la cultura, la tecnología y las posibilidades de desarrollo de cada civilización.
+The world will not be a decorative backdrop. It will be a dynamic system that conditions the history, economy, culture, technology, and development possibilities of each civilization.
 
-## 2. Filosofía de generación
+## 2. Generation philosophy
 
-El sistema tendrá cuatro principios:
+The system will have four principles:
 
-1. **Coherencia natural:** la geografía debe responder a relaciones lógicas entre relieve, agua, clima, suelos, biomas y recursos.
-2. **Configurabilidad:** prácticamente todos los parámetros relevantes podrán modificarse.
-3. **Diversidad:** no todos los mundos deben ser equilibrados ni ofrecer las mismas oportunidades.
-4. **Reproducibilidad:** una misma configuración y semilla deben permitir generar el mismo mundo.
+1. **Natural coherence:** geography must respond to logical relationships among topography, water, climate, soils, biomes, and resources.
+2. **Configurability:** virtually all relevant parameters will be modifiable.
+3. **Diversity:** not all worlds need to be balanced or offer the same opportunities.
+4. **Reproducibility:** the same configuration and seed must make it possible to generate the same world.
 
-La generación no debe seguir un procedimiento puramente aleatorio. Cada etapa utilizará información de las anteriores para producir resultados coherentes.
+Generation must not follow a purely random procedure. Each stage will use information from the previous ones to produce coherent results.
 
-## 3. Tipos de mundo y distribución geográfica
+## 3. World types and geographic distribution
 
-### 3.1. Formato del mundo
+### 3.1. World format
 
-Se utilizará un sistema configurable que inicialmente priorizará mapas planos con bordes naturales.
+A configurable system will be used that initially prioritizes flat maps with natural borders.
 
-Se contemplan diferentes posibilidades:
+Different possibilities are considered:
 
-- Mapas con límites naturales y geografía irregular.
-- Mapas con continentes y océanos.
-- Mapas de islas y archipiélagos.
-- Mapas fragmentados.
-- Mapas con grandes masas continentales.
-- Mapas con una proporción elevada de océanos.
-- Otros formatos que puedan incorporarse posteriormente.
+- Maps with natural boundaries and irregular geography.
+- Maps with continents and oceans.
+- Island and archipelago maps.
+- Fragmented maps.
+- Maps with large continental landmasses.
+- Maps with a high proportion of oceans.
+- Other formats that may be incorporated later.
 
-La arquitectura deberá permitir evaluar futuras alternativas, incluida la representación de mundos esféricos, sin que esto sea un requisito del MVP.
+The architecture must allow the evaluation of future alternatives, including the representation of spherical worlds, without this being a requirement of the MVP.
 
-### 3.2. Distribución de masas terrestres
+### 3.2. Landmass distribution
 
-Todos los parámetros serán configurables:
+All parameters will be configurable:
 
-- Cantidad de continentes.
-- Tamaño y forma de cada continente.
-- Cantidad de islas.
-- Tamaño de los archipiélagos.
-- Distribución de las masas terrestres.
-- Distancia entre continentes.
-- Proporción de tierra y agua.
-- Existencia de supercontinentes.
-- Fragmentación geográfica.
-- Distribución de grandes océanos y mares interiores.
+- Number of continents.
+- Size and shape of each continent.
+- Number of islands.
+- Size of archipelagos.
+- Distribution of landmasses.
+- Distance between continents.
+- Land-to-water ratio.
+- Existence of supercontinents.
+- Geographic fragmentation.
+- Distribution of large oceans and inland seas.
 
-La generación debe producir configuraciones naturales y variadas, evitando patrones artificiales demasiado evidentes.
+Generation must produce natural, varied configurations, avoiding artificial patterns that are too obvious.
 
-## 4. Geología y formación del relieve
+## 4. Geology and relief formation
 
-### 4.1. Principios geológicos
+### 4.1. Geological principles
 
-El relieve se generará mediante procesos geológicos simulados de manera simplificada, pero coherente.
+The relief will be generated through geological processes simulated in a simplified but coherent manner.
 
-Se contemplarán:
+The following are considered:
 
-- Formación de cordilleras.
-- Elevaciones y depresiones.
-- Cuencas.
-- Mesetas.
-- Valles.
-- Llanuras.
-- Colinas.
-- Volcanes.
-- Fallas y zonas geológicas.
-- Regiones montañosas costeras.
+- Formation of mountain ranges.
+- Elevations and depressions.
+- Basins.
+- Plateaus.
+- Valleys.
+- Plains.
+- Hills.
+- Volcanoes.
+- Faults and geological zones.
+- Coastal mountainous regions.
 
-No se requiere simular la tectónica de placas en tiempo real. El objetivo es reproducir resultados geográficos plausibles.
+Simulating plate tectonics in real time is not required. The goal is to reproduce plausible geographic results.
 
-La intensidad y variedad de estos elementos podrán configurarse.
+The intensity and variety of these elements will be configurable.
 
-### 4.2. Relieve y topografía
+### 4.2. Relief and topography
 
-El mundo tendrá una topografía continua, no una colección de zonas aisladas.
+The world will have a continuous topography, not a collection of isolated zones.
 
-Cada región podrá presentar diferentes elevaciones y pendientes.
+Each region may present different elevations and slopes.
 
-La generación deberá considerar:
+Generation must consider:
 
-- Altitud.
-- Pendiente.
-- Orientación del terreno.
-- Valles y pasos naturales.
-- Barreras montañosas.
-- Cuencas hidrográficas.
-- Llanuras y mesetas.
-- Transiciones entre diferentes tipos de relieve.
+- Altitude.
+- Slope.
+- Terrain orientation.
+- Valleys and natural passes.
+- Mountain barriers.
+- Drainage basins.
+- Plains and plateaus.
+- Transitions between different types of relief.
 
-El relieve tendrá consecuencias directas en construcción, agricultura, transporte, asentamientos, defensa y expansión territorial.
+The relief will have direct consequences for construction, agriculture, transport, settlements, defense, and territorial expansion.
 
-## 5. Hidrología: ríos, lagos y océanos
+## 5. Hydrology: rivers, lakes, and oceans
 
-### 5.1. Ríos
+### 5.1. Rivers
 
-Los ríos se generarán a partir de la topografía y las condiciones climáticas.
+Rivers will be generated from the topography and climatic conditions.
 
-El sistema contemplará:
+The system will consider:
 
-- Nacimientos en montañas, manantiales y zonas húmedas.
-- Afluentes.
-- Cuencas hidrográficas.
-- Cursos principales y secundarios.
-- Desembocaduras.
+- Headwaters in mountains, springs, and wetlands.
+- Tributaries.
+- Drainage basins.
+- Main and secondary courses.
+- River mouths.
 - Deltas.
-- Estuarios.
-- Variaciones estacionales del caudal.
-- Inundaciones.
-- Navegabilidad según profundidad, caudal y características del curso.
+- Estuaries.
+- Seasonal variations in flow.
+- Floods.
+- Navigability depending on depth, flow, and course characteristics.
 
-Los ríos deberán seguir trayectorias geográficamente coherentes, evitando cursos que ignoren elevaciones y pendientes.
+Rivers must follow geographically coherent paths, avoiding courses that ignore elevations and slopes.
 
-### 5.2. Lagos y humedales
+### 5.2. Lakes and wetlands
 
-Se generarán lagos de distintos tamaños y características:
+Lakes of different sizes and characteristics will be generated:
 
-- Lagos de montaña.
-- Lagos glaciares representados como accidentes geográficos.
-- Lagos de cuenca.
-- Lagos volcánicos.
-- Lagos conectados a ríos.
-- Lagos sin salida al mar.
-- Pantanos y humedales.
+- Mountain lakes.
+- Glacial lakes represented as landforms.
+- Basin lakes.
+- Volcanic lakes.
+- Lakes connected to rivers.
+- Lakes with no outlet to the sea.
+- Marshes and wetlands.
 
-Los lagos podrán conectarse con sistemas fluviales y tener consecuencias sobre asentamientos, pesca, agricultura y transporte.
+Lakes may connect with river systems and have consequences for settlements, fishing, agriculture, and transport.
 
-### 5.3. Mares y costas
+### 5.3. Seas and coasts
 
-Se contemplarán:
+The following are considered:
 
-- Océanos.
-- Mares interiores.
-- Golfos.
-- Bahías.
-- Penínsulas.
-- Estuarios.
-- Fiordos.
+- Oceans.
+- Inland seas.
+- Gulfs.
+- Bays.
+- Peninsulas.
+- Estuaries.
+- Fjords.
 - Deltas.
-- Arrecifes.
-- Costas rocosas.
-- Playas.
-- Islas costeras.
+- Reefs.
+- Rocky coasts.
+- Beaches.
+- Coastal islands.
 
-El relieve submarino también tendrá representación, incluyendo profundidades variables y plataformas continentales.
+The underwater relief will also be represented, including variable depths and continental shelves.
 
-Esto permitirá que las costas tengan características diferentes y afecten la navegación, la pesca, los puertos y el comercio marítimo.
+This will allow coasts to have different characteristics and affect navigation, fishing, ports, and maritime trade.
 
-## 6. Clima y biomas
+## 6. Climate and biomes
 
-### 6.1. Generación climática
+### 6.1. Climate generation
 
-El clima estará determinado principalmente por:
+Climate will be determined primarily by:
 
-- Latitud.
-- Altitud.
-- Temperatura.
-- Precipitaciones.
-- Humedad.
-- Cercanía al mar.
-- Relieve.
-- Vientos y condiciones regionales.
+- Latitude.
+- Altitude.
+- Temperature.
+- Precipitation.
+- Humidity.
+- Proximity to the sea.
+- Relief.
+- Winds and regional conditions.
 
-Se contemplarán variaciones estacionales y regionales.
+Seasonal and regional variations are considered.
 
-No todas las regiones tendrán cuatro estaciones. Por ejemplo, las regiones tropicales podrán presentar estaciones húmedas y secas, mientras que las regiones polares tendrán dinámicas propias.
+Not all regions will have four seasons. For example, tropical regions may present wet and dry seasons, while polar regions will have their own dynamics.
 
-El sistema aprovechará el modelo climático ya definido en el GDD de Geografía, Clima y Medioambiente.
+The system will leverage the climate model already defined in the Geography, Climate, and Environment GDD.
 
-### 6.2. Biomas
+### 6.2. Biomes
 
-Los biomas se distribuirán considerando las condiciones climáticas y geográficas.
+Biomes will be distributed taking climatic and geographic conditions into account.
 
-Se incluirán:
+They will include:
 
-- Bosques templados.
-- Bosques boreales y taigas.
-- Selvas tropicales.
-- Sabanas.
-- Praderas.
-- Estepas.
-- Desiertos cálidos.
-- Desiertos fríos.
+- Temperate forests.
+- Boreal forests and taigas.
+- Tropical rainforests.
+- Savannas.
+- Grasslands.
+- Steppes.
+- Hot deserts.
+- Cold deserts.
 - Tundras.
-- Humedales.
-- Regiones mediterráneas.
-- Regiones alpinas.
+- Wetlands.
+- Mediterranean regions.
+- Alpine regions.
 
-Los biomas tendrán transiciones naturales. No deben aparecer como bloques geométricos perfectamente delimitados.
+Biomes will have natural transitions. They must not appear as perfectly delimited geometric blocks.
 
-La relación entre clima y biomas será realista hasta cierto punto, permitiendo configuraciones especiales y excepciones controladas.
+The relationship between climate and biomes will be realistic up to a point, allowing special configurations and controlled exceptions.
 
-### 6.3. Flora y fauna
+### 6.3. Flora and fauna
 
-Cada bioma podrá incluir especies y recursos naturales característicos:
+Each biome may include characteristic species and natural resources:
 
-- Árboles y vegetación.
-- Plantas alimenticias.
-- Plantas medicinales.
-- Animales herbívoros.
-- Depredadores.
-- Fauna migratoria.
-- Especies domesticables.
-- Recursos naturales particulares.
+- Trees and vegetation.
+- Food plants.
+- Medicinal plants.
+- Herbivorous animals.
+- Predators.
+- Migratory fauna.
+- Domesticable species.
+- Particular natural resources.
 
-La fauna y la flora deberán integrarse con el sistema de medioambiente, economía y domesticación.
+Fauna and flora must integrate with the environment, economy, and domestication systems.
 
-## 7. Suelos y fertilidad
+## 7. Soils and fertility
 
-Los suelos tendrán características propias que influirán en las posibilidades productivas.
+Soils will have their own characteristics that influence productive possibilities.
 
-Se contemplarán:
+The following are considered:
 
-- Suelos aluviales.
-- Suelos volcánicos.
-- Suelos fértiles.
-- Suelos pobres.
-- Suelos arenosos.
-- Suelos arcillosos.
-- Suelos montañosos.
-- Suelos húmedos.
-- Suelos áridos.
+- Alluvial soils.
+- Volcanic soils.
+- Fertile soils.
+- Poor soils.
+- Sandy soils.
+- Clay soils.
+- Mountain soils.
+- Wet soils.
+- Arid soils.
 
-Cada región podrá tener distintos niveles de fertilidad, capacidad de retención de agua y aptitud para determinados cultivos.
+Each region may have different levels of fertility, water retention capacity, and suitability for certain crops.
 
-La fertilidad influirá directamente en:
+Fertility will directly influence:
 
-- Rendimiento agrícola.
-- Ganadería.
-- Selección de cultivos.
-- Necesidad de irrigación.
-- Técnicas de explotación.
-- Valor económico de los territorios.
+- Agricultural yield.
+- Livestock farming.
+- Crop selection.
+- Need for irrigation.
+- Exploitation techniques.
+- Economic value of territories.
 
-La degradación y recuperación de los suelos estarán vinculadas al sistema medioambiental.
+Soil degradation and recovery will be linked to the environmental system.
 
-## 8. Recursos naturales
+## 8. Natural resources
 
-### 8.1. Distribución geológica y ambiental
+### 8.1. Geological and environmental distribution
 
-Los recursos se distribuirán según condiciones geológicas, climáticas y ecológicas.
+Resources will be distributed according to geological, climatic, and ecological conditions.
 
-Se contemplarán:
+The following are considered:
 
-- Minerales metálicos.
-- Piedra y materiales de construcción.
-- Carbón y otros recursos energéticos preindustriales.
-- Madera.
-- Recursos forestales.
-- Agua.
-- Recursos pesqueros.
+- Metallic minerals.
+- Stone and building materials.
+- Coal and other pre-industrial energy resources.
+- Wood.
+- Forest resources.
+- Water.
+- Fishing resources.
 - Fauna.
-- Plantas y productos silvestres.
-- Recursos agrícolas potenciales.
-- Otros recursos naturales que puedan incorporarse.
+- Wild plants and products.
+- Potential agricultural resources.
+- Other natural resources that may be incorporated.
 
-La distribución no será uniforme ni completamente aleatoria.
+The distribution will be neither uniform nor completely random.
 
-### 8.2. Abundancia y escasez
+### 8.2. Abundance and scarcity
 
-El jugador podrá configurar:
+The player will be able to configure:
 
-- Abundancia general.
-- Abundancia mineral.
-- Recursos forestales.
-- Fertilidad de los suelos.
-- Recursos pesqueros.
-- Disponibilidad de agua.
-- Recursos raros.
+- General abundance.
+- Mineral abundance.
+- Forest resources.
+- Soil fertility.
+- Fishing resources.
+- Water availability.
+- Rare resources.
 
-Los recursos podrán estar concentrados en determinadas regiones, generando oportunidades económicas y diferencias entre civilizaciones.
+Resources may be concentrated in certain regions, creating economic opportunities and differences between civilizations.
 
-Se respetará el modelo de recursos ya establecido: los minerales son limitados y los recursos renovables también pueden agotarse mediante sobreexplotación.
+The already established resource model will be respected: minerals are limited, and renewable resources can also be depleted through overexploitation.
 
-## 9. Ubicación inicial de civilizaciones
+## 9. Initial placement of civilizations
 
-### 9.1. Generación automática
+### 9.1. Automatic generation
 
-Las civilizaciones iniciales aparecerán automáticamente en ubicaciones geográficas apropiadas.
+Initial civilizations will appear automatically in appropriate geographic locations.
 
-El sistema evaluará:
+The system will evaluate:
 
-- Disponibilidad de agua.
-- Acceso a alimentos.
-- Fertilidad del suelo.
-- Clima.
-- Recursos naturales.
-- Protección geográfica.
-- Posibilidades de expansión.
-- Acceso a rutas terrestres y marítimas.
+- Water availability.
+- Access to food.
+- Soil fertility.
+- Climate.
+- Natural resources.
+- Geographic protection.
+- Expansion possibilities.
+- Access to land and sea routes.
 
-La ubicación inicial será una recomendación generada por el sistema, no una garantía de éxito.
+The initial location will be a recommendation generated by the system, not a guarantee of success.
 
-### 9.2. Configuración
+### 9.2. Configuration
 
-El jugador podrá elegir:
+The player will be able to choose:
 
-- Distribución aleatoria.
-- Distribución en regiones habitables.
-- Distribución apropiada con diversidad geográfica.
-- Ubicación manual.
-- Combinaciones de ubicación automática y manual.
+- Random distribution.
+- Distribution across habitable regions.
+- Appropriate distribution with geographic diversity.
+- Manual placement.
+- Combinations of automatic and manual placement.
 
-El sistema podrá recomendar ubicaciones iniciales y explicar sus ventajas y desventajas.
+The system will be able to recommend initial locations and explain their advantages and disadvantages.
 
-### 9.3. Equilibrio geográfico
+### 9.3. Geographic balance
 
-El equilibrio entre civilizaciones será opcional.
+Balance between civilizations will be optional.
 
-El jugador podrá crear mundos donde todas las civilizaciones tengan condiciones iniciales relativamente similares o mundos muy desiguales.
+The player will be able to create worlds where all civilizations have relatively similar initial conditions, or highly unequal worlds.
 
-No se deberá forzar una distribución equitativa de recursos, fertilidad, clima o accesibilidad.
+An equitable distribution of resources, fertility, climate, or accessibility must not be forced.
 
-Las desigualdades geográficas podrán generar historias diferentes y desafíos particulares.
+Geographic inequalities may generate different stories and particular challenges.
 
-## 10. Exploración y conocimiento del mundo
+## 10. Exploration and knowledge of the world
 
-El sistema tendrá tres estados diferenciados:
+The system will have three distinct states:
 
-1. **Desconocido:** la civilización no tiene información suficiente sobre la región.
-2. **Conocido:** existe información general sobre el territorio, obtenida por exploración, relatos, contactos o cartografía.
-3. **Explorado y cartografiado:** la región fue investigada y existe información geográfica más precisa.
+1. **Unknown:** the civilization does not have sufficient information about the region.
+2. **Known:** general information exists about the territory, obtained through exploration, accounts, contacts, or cartography.
+3. **Explored and mapped:** the region has been investigated and more precise geographic information exists.
 
-El nivel de conocimiento dependerá de las opciones de partida y de la tecnología disponible.
+The level of knowledge will depend on the game setup options and the available technology.
 
-El jugador podrá configurar:
+The player will be able to configure:
 
-- Mundo completamente visible.
-- Solo territorio inicial conocido.
-- Territorio inicial y regiones cercanas.
-- Exploración progresiva.
+- Fully visible world.
+- Only initial territory known.
+- Initial territory and nearby regions.
+- Progressive exploration.
 
-La exploración se integrará con los sistemas de población, tecnología, transporte y diplomacia.
+Exploration will integrate with the population, technology, transport, and diplomacy systems.
 
-## 11. Mapas históricos
+## 11. Historical maps
 
-El sistema permitirá utilizar geografías basadas en regiones reales.
+The system will allow the use of geographies based on real regions.
 
-Se contemplarán mapas de:
+Maps will be considered for:
 
-- Europa.
-- Mediterráneo.
-- Medio Oriente.
-- Norte de África.
+- Europe.
+- The Mediterranean.
+- The Middle East.
+- North Africa.
 - Asia.
-- África.
-- América.
-- Otras regiones históricas.
+- Africa.
+- The Americas.
+- Other historical regions.
 
-Estos mapas deberán representar geografías reconocibles y permitir diferentes configuraciones de civilizaciones iniciales.
+These maps must represent recognizable geographies and allow different configurations of initial civilizations.
 
-Los mapas históricos no obligarán a reproducir acontecimientos históricos. Serán escenarios geográficos para desarrollar historias alternativas.
+Historical maps will not require reproducing historical events. They will be geographic settings for developing alternative histories.
 
-La precisión geográfica y el nivel de detalle podrán variar según el escenario.
+Geographic accuracy and level of detail may vary by scenario.
 
-## 12. Escala y dimensiones del mundo
+## 12. World scale and dimensions
 
-El tamaño será configurable.
+The size will be configurable.
 
-Se contemplarán:
+The following are considered:
 
-- Superficie total.
-- Resolución geográfica.
-- Cantidad de continentes.
-- Cantidad de islas.
-- Distancia entre masas terrestres.
-- Proporción de tierra y océanos.
-- Cantidad de regiones.
-- Cantidad de civilizaciones.
-- Densidad de recursos.
-- Nivel de detalle.
+- Total surface area.
+- Geographic resolution.
+- Number of continents.
+- Number of islands.
+- Distance between landmasses.
+- Land-to-ocean ratio.
+- Number of regions.
+- Number of civilizations.
+- Resource density.
+- Level of detail.
 
-Se ofrecerán configuraciones preestablecidas y opciones avanzadas.
+Preset configurations and advanced options will be offered.
 
-La arquitectura deberá contemplar mapas de gran escala sin exigir que toda la geografía tenga el mismo nivel de detalle o simulación.
+The architecture must accommodate large-scale maps without requiring the entire geography to have the same level of detail or simulation.
 
-## 13. Semillas y reproducibilidad
+## 13. Seeds and reproducibility
 
-Cada generación podrá utilizar una semilla (*seed*).
+Each generation will be able to use a seed (*seed*).
 
-Esto permitirá:
+This will allow:
 
-- Reproducir exactamente un mundo.
-- Compartir mundos entre jugadores.
-- Comparar diferentes configuraciones.
-- Volver a generar escenarios.
-- Realizar pruebas de balance.
-- Facilitar pruebas técnicas.
+- Exactly reproducing a world.
+- Sharing worlds between players.
+- Comparing different configurations.
+- Regenerating scenarios.
+- Running balance tests.
+- Facilitating technical testing.
 
-La misma semilla y configuración deberán producir resultados reproducibles.
+The same seed and configuration must produce reproducible results.
 
-## 14. Calidad visual y rendimiento
+## 14. Visual quality and performance
 
-La calidad visual tendrá prioridad alta, sin perder de vista la posibilidad de generar mapas grandes.
+Visual quality will be a high priority, without losing sight of the possibility of generating large maps.
 
-Se buscará representar:
+The aim will be to represent:
 
-- Relieves naturales.
-- Montañas y valles reconocibles.
-- Costas variadas.
-- Ríos y lagos integrados en el terreno.
-- Transiciones entre biomas.
-- Vegetación característica.
-- Diferencias visuales entre regiones.
+- Natural relief.
+- Recognizable mountains and valleys.
+- Varied coasts.
+- Rivers and lakes integrated into the terrain.
+- Transitions between biomes.
+- Characteristic vegetation.
+- Visual differences between regions.
 
-La geografía deberá ser visualmente convincente desde diferentes alturas y escalas.
+The geography must be visually convincing from different heights and scales.
 
-El sistema utilizará niveles de detalle y estrategias de optimización para evitar que el tamaño del mundo comprometa el rendimiento.
+The system will use levels of detail and optimization strategies to prevent the size of the world from compromising performance.
 
-La representación visual y la simulación geográfica deberán estar desacopladas: una región podrá conservar una simulación simplificada cuando no se encuentre dentro del área visual del jugador.
+Visual representation and geographic simulation must be decoupled: a region may retain a simplified simulation when it is not within the player's visual area.
 
-## 15. Editor de mundos
+## 15. World editor
 
-El editor de mundos será un módulo independiente.
+The world editor will be an independent module.
 
-Permitirá modificar el mundo antes de iniciar una partida.
+It will allow modifying the world before starting a playthrough.
 
-Entre las herramientas previstas:
+Among the planned tools:
 
-- Crear o modificar montañas.
-- Elevar o reducir terrenos.
-- Modificar valles y mesetas.
-- Crear y eliminar lagos.
-- Modificar ríos.
-- Crear islas y archipiélagos.
-- Modificar costas.
-- Cambiar biomas.
-- Modificar recursos.
-- Cambiar la ubicación inicial de civilizaciones.
+- Create or modify mountains.
+- Raise or lower terrain.
+- Modify valleys and plateaus.
+- Create and remove lakes.
+- Modify rivers.
+- Create islands and archipelagos.
+- Modify coasts.
+- Change biomes.
+- Modify resources.
+- Change the initial placement of civilizations.
 
-El editor deberá permitir regenerar determinadas capas cuando sea posible, sin tener que reconstruir todo el mundo.
+The editor must allow regenerating certain layers when possible, without having to rebuild the entire world.
 
-Por ejemplo, modificar un río podría requerir actualizar la hidrología y ciertos elementos relacionados, pero no necesariamente regenerar la distribución de continentes.
+For example, modifying a river might require updating the hydrology and certain related elements, but not necessarily regenerating the distribution of continents.
 
-### 15.1. Modificación durante la partida
+### 15.1. Modification during the playthrough
 
-El jugador también tendrá algunas herramientas para modificar el terreno durante una partida.
+The player will also have some tools to modify the terrain during a playthrough.
 
-Estas opciones no reemplazarán al editor completo.
+These options will not replace the full editor.
 
-Deberán integrarse con los sistemas de construcción, economía y medioambiente, contemplando las consecuencias de cada intervención.
+They must integrate with the construction, economy, and environment systems, taking into account the consequences of each intervention.
 
-Algunos ejemplos:
+Some examples:
 
-- Modificar terrenos para construir.
-- Crear canales.
-- Drenar determinados humedales.
-- Modificar cursos de agua mediante obras.
-- Construir infraestructura hidráulica.
-- Realizar intervenciones de ingeniería sobre el relieve.
+- Modify terrain for construction.
+- Create canals.
+- Drain certain wetlands.
+- Modify watercourses through engineering works.
+- Build hydraulic infrastructure.
+- Carry out engineering interventions on the relief.
 
-Las modificaciones tendrán requisitos tecnológicos, materiales, costos y consecuencias ambientales cuando corresponda.
+The modifications will have technological requirements, materials, costs, and environmental consequences where applicable.
 
-La disponibilidad dependerá de la época y de los conocimientos de la civilización.
+Availability will depend on the era and the knowledge of the civilization.
 
-## 16. Configuración y complejidad
+## 16. Configuration and complexity
 
-Se ofrecerán tres niveles principales:
+Three main levels will be offered:
 
-**Sencillo**
-- Generación automática.
-- Configuraciones preestablecidas.
-- Parámetros básicos.
-- Exploración simplificada.
-- Pocas opciones de intervención.
+**Simple**
+- Automatic generation.
+- Preset configurations.
+- Basic parameters.
+- Simplified exploration.
+- Few intervention options.
 
-**Intermedio**
-- Configuración de continentes, recursos, biomas y civilizaciones.
-- Control de abundancia y fertilidad.
-- Configuración de exploración.
-- Opciones adicionales de generación.
+**Intermediate**
+- Configuration of continents, resources, biomes, and civilizations.
+- Control of abundance and fertility.
+- Exploration configuration.
+- Additional generation options.
 
-**Avanzado**
-- Control detallado de los parámetros geográficos.
-- Configuración de recursos y distribución.
-- Ubicación manual de civilizaciones.
-- Herramientas avanzadas de edición.
-- Mayor control sobre los procesos de generación.
+**Advanced**
+- Detailed control of geographic parameters.
+- Configuration of resources and distribution.
+- Manual placement of civilizations.
+- Advanced editing tools.
+- Greater control over the generation processes.
 
-Los módulos también podrán habilitarse o deshabilitarse individualmente cuando sea posible.
+The modules may also be enabled or disabled individually when possible.
 
-## 17. Integración con otros sistemas
+## 17. Integration with other systems
 
-La generación procedural no será un sistema aislado.
+Procedural generation will not be an isolated system.
 
-La información geográfica será utilizada por los demás sistemas del juego.
+The geographic information will be used by the other systems in the game.
 
-| Sistema | Información que recibe |
+| System | Information received |
 |---|---|
-| Construcción y arquitectura | Relieve, pendientes, suelos, agua y materiales |
-| Economía | Recursos, fertilidad, accesibilidad y distancias |
-| Producción y trabajo | Recursos disponibles y condiciones regionales |
-| Transporte y logística | Relieve, ríos, costas, caminos y obstáculos |
-| Población y sociedad | Clima, alimentos, agua y condiciones de habitabilidad |
-| Tecnología | Recursos, necesidades y oportunidades de desarrollo |
-| Cultura e identidad | Biomas, entorno, recursos y aislamiento geográfico |
-| Religión | Paisajes, lugares naturales y características regionales |
-| Política y gobierno | Territorios, fronteras naturales y recursos |
-| Diplomacia | Accesibilidad, proximidad y conexiones entre civilizaciones |
-| Medioambiente | Ecosistemas, especies, recursos y condiciones climáticas |
-| Guerra | Terreno, pasos, ríos, costas y posiciones estratégicas |
+| Construction and architecture | Relief, slopes, soils, water, and materials |
+| Economy | Resources, fertility, accessibility, and distances |
+| Production and labor | Available resources and regional conditions |
+| Transport and logistics | Relief, rivers, coasts, roads, and obstacles |
+| Population and society | Climate, food, water, and habitability conditions |
+| Technology | Resources, needs, and development opportunities |
+| Culture and identity | Biomes, environment, resources, and geographic isolation |
+| Religion | Landscapes, natural places, and regional characteristics |
+| Politics and government | Territories, natural borders, and resources |
+| Diplomacy | Accessibility, proximity, and connections between civilizations |
+| Environment | Ecosystems, species, resources, and climatic conditions |
+| War | Terrain, passes, rivers, coasts, and strategic positions |
 
-La geografía también condicionará el desarrollo histórico de cada civilización.
+Geography will also condition the historical development of each civilization.
 
-Por ejemplo, una civilización ubicada en una región montañosa tendrá oportunidades y limitaciones diferentes a otra asentada en una gran llanura fértil o en un archipiélago.
+For example, a civilization located in a mountainous region will have different opportunities and limitations than one settled on a large fertile plain or on an archipelago.
 
-## 18. Arquitectura conceptual de generación
+## 18. Conceptual generation architecture
 
-La generación estará organizada en capas dependientes.
+Generation will be organized into dependent layers.
 
-**Orden conceptual:**
+**Conceptual order:**
 
-1. Distribución de masas terrestres y océanos.
-2. Geología y relieve.
-3. Hidrología.
-4. Clima.
-5. Biomas.
-6. Suelos y fertilidad.
-7. Recursos naturales.
-8. Ubicaciones iniciales de civilizaciones.
-9. Exploración y conocimiento inicial.
+1. Distribution of landmasses and oceans.
+2. Geology and relief.
+3. Hydrology.
+4. Climate.
+5. Biomes.
+6. Soils and fertility.
+7. Natural resources.
+8. Initial placement of civilizations.
+9. Exploration and initial knowledge.
 
-Cada capa utilizará información de las anteriores.
+Each layer will use information from the previous ones.
 
-Esto permitirá mantener coherencia y facilitar la modificación parcial del mundo.
+This will make it possible to maintain coherence and facilitate partial modification of the world.
 
-Por ejemplo, cambiar la distribución de continentes requerirá regenerar buena parte de las capas posteriores, mientras que modificar la abundancia de minerales no debería obligar a reconstruir la topografía.
+For example, changing the distribution of continents will require regenerating much of the later layers, whereas modifying mineral abundance should not require rebuilding the topography.
 
-La implementación técnica concreta queda pendiente de las decisiones de arquitectura y rendimiento.
+The concrete technical implementation remains pending the architecture and performance decisions.
 
-## 19. MVP — Primera versión jugable
+## 19. MVP — First playable version
 
-El MVP no necesita implementar toda la complejidad geográfica.
+The MVP does not need to implement all of the geographic complexity.
 
-Debe permitir generar un mundo funcional sobre el que puedan desarrollarse los primeros sistemas de civilización.
+It must make it possible to generate a functional world on which the first civilization systems can develop.
 
-### Funcionalidades iniciales
+### Initial functionality
 
-- Generación procedural de mapas planos con bordes naturales.
-- Distribución de masas terrestres y océanos.
-- Elevación y relieve básico.
-- Llanuras, colinas y montañas.
-- Lagos y ríos básicos.
-- Biomas iniciales.
-- Temperatura y estaciones.
-- Distribución de recursos.
-- Fertilidad básica del terreno.
-- Ubicaciones iniciales de civilizaciones.
-- Configuración de semilla.
-- Parámetros básicos de tamaño y distribución.
+- Procedural generation of flat maps with natural borders.
+- Distribution of landmasses and oceans.
+- Elevation and basic relief.
+- Plains, hills, and mountains.
+- Basic lakes and rivers.
+- Initial biomes.
+- Temperature and seasons.
+- Resource distribution.
+- Basic terrain fertility.
+- Initial placement of civilizations.
+- Seed configuration.
+- Basic size and distribution parameters.
 
-### Fuera del MVP
+### Outside the MVP
 
-- Mapas históricos detallados.
-- Geología avanzada.
-- Relieve submarino complejo.
-- Simulación hidrológica avanzada.
-- Gran variedad de especies.
-- Editor completo de mundos.
-- Herramientas avanzadas de modificación durante la partida.
-- Configuración geográfica extremadamente detallada.
+- Detailed historical maps.
+- Advanced geology.
+- Complex underwater relief.
+- Advanced hydrological simulation.
+- A wide variety of species.
+- Full world editor.
+- Advanced tools for modification during the playthrough.
+- Extremely detailed geographic configuration.
 
-Estos elementos deberán contemplarse desde el diseño para evitar tener que reconstruir el sistema posteriormente.
+These elements must be taken into account from the design stage to avoid having to rebuild the system later.
 
-## 20. Visión final
+## 20. Final vision
 
-El objetivo final es que cada mundo tenga una geografía propia, con oportunidades, limitaciones y características que influyan de manera profunda en el desarrollo de las civilizaciones.
+The ultimate goal is for each world to have its own geography, with opportunities, limitations, and characteristics that deeply influence the development of civilizations.
 
-Un mundo con grandes ríos, tierras fértiles y mares interiores debería producir oportunidades diferentes a uno formado por montañas, desiertos y archipiélagos.
+A world with great rivers, fertile lands, and inland seas should produce different opportunities than one made up of mountains, deserts, and archipelagos.
 
-No se busca que el jugador reciba simplemente un mapa aleatorio. Se busca generar un entorno geográfico coherente, capaz de sostener miles de años de historia alternativa.
+The aim is not for the player to simply receive a random map. The aim is to generate a coherent geographic environment, capable of sustaining thousands of years of alternative history.
 
-**Principio de diseño:**
+**Design principle:**
 
-*La geografía no determinará inevitablemente el destino de una civilización, pero condicionará profundamente las oportunidades que tendrá para construirlo.*
+*Geography will not inevitably determine the fate of a civilization, but it will deeply condition the opportunities it has to build that fate.*
 
 ---
 
-## 21. Decisiones confirmadas
+## 21. Confirmed decisions
 
-| Área | Decisión |
+| Area | Decision |
 |---|---|
-| Tipo de mundo | Configurable; inicialmente mapas planos con bordes naturales |
-| Continentes e islas | Distribución completamente configurable |
-| Geología | Realista y configurable |
-| Relieve | Geográficamente coherente |
-| Ríos y lagos | Generación basada en topografía e hidrología |
-| Costas y océanos | Gran diversidad de formaciones |
-| Biomas | Determinados por condiciones geográficas, con cierta flexibilidad |
-| Recursos | Distribución realista |
-| Suelos | Diferenciados según origen y características |
-| Abundancia | Completamente configurable |
-| Civilizaciones | Ubicación automática con recomendaciones |
-| Distribución inicial | Configurable, incluida ubicación manual |
-| Equilibrio | Opcional |
-| Exploración | Configurable, con estados de conocimiento |
-| Mapas históricos | Sí |
-| Escala | Configurable mediante presets y opciones avanzadas |
-| Semillas | Sí |
-| Calidad visual | Prioridad alta con optimización |
-| Editor de mundos | Módulo independiente |
-| Modificación durante la partida | Herramientas limitadas integradas |
-| Complejidad | Sencilla, intermedia y avanzada |
+| World type | Configurable; initially flat maps with natural borders |
+| Continents and islands | Fully configurable distribution |
+| Geology | Realistic and configurable |
+| Relief | Geographically coherent |
+| Rivers and lakes | Generation based on topography and hydrology |
+| Coasts and oceans | Great diversity of formations |
+| Biomes | Determined by geographic conditions, with some flexibility |
+| Resources | Realistic distribution |
+| Soils | Differentiated by origin and characteristics |
+| Abundance | Fully configurable |
+| Civilizations | Automatic placement with recommendations |
+| Initial distribution | Configurable, including manual placement |
+| Balance | Optional |
+| Exploration | Configurable, with knowledge states |
+| Historical maps | Yes |
+| Scale | Configurable via presets and advanced options |
+| Seeds | Yes |
+| Visual quality | High priority with optimization |
+| World editor | Independent module |
+| Modification during the playthrough | Limited integrated tools |
+| Complexity | Simple, intermediate, and advanced |
 
-**Estado:** GDD conceptual v0.1 consolidado. Preparado para integrarse con el diseño general del juego y evolucionar hacia una especificación técnica cuando corresponda.
+**Status:** Conceptual GDD v0.1 consolidated. Ready to integrate with the overall game design and evolve into a technical specification when appropriate.

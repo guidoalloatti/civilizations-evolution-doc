@@ -1,161 +1,160 @@
 # Civilization Evolutions — GDD Maestro
 
-**Versión documental:** 1.0 (consolidación editorial)  
-**Estado:** Referencia central de diseño; decisiones de alcance y varias especificaciones siguen pendientes  
-**Idioma canónico:** Español  
-**Período de referencia:** Paleolítico hasta el comienzo de la Revolución Industrial (fecha exacta pendiente; los documentos usan aproximadamente 1800 d. C.)  
-**Plataforma inicial:** PC (Windows), según el GDD original  
-**Motor propuesto:** Unreal Engine 5; la arquitectura técnica detallada se conserva en [Plan técnico](../02-technical/PLAN_TECNICO_v0.1.md).
+**Document version:** 1.0 (editorial consolidation)  
+**Status:** Central design reference; scope decisions and several specifications remain pending  
+**Canonical language:** Spanish  
+**Reference period:** Paleolithic to the beginning of the Industrial Revolution (exact date pending; the documents use approximately 1800 AD)  
+**Initial platform:** PC (Windows), per the original GDD  
+**Proposed engine:** Unreal Engine 5; the detailed technical architecture is kept in the [Technical plan](../02-technical/PLAN_TECNICO_v0.1.md).
 
-> Este documento establece la visión común, alcance, vocabulario y mapa de autoridad. Los GDD de sistema enlazados son la fuente de detalle de sus dominios. Las etiquetas «confirmada» reproducen decisiones que los documentos fuente ya marcaban así; la autoría/fecha de aprobación no está registrada en el material disponible.
+> This document establishes the shared vision, scope, vocabulary and authority map. The linked system GDDs are the detail source for their domains. The "confirmed" labels reproduce decisions that the source documents already marked as such; the authorship/approval date is not recorded in the available material.
 
-## 1. Visión
+## 1. Vision
 
-Civilization Evolutions es un juego de estrategia y simulación histórica en tiempo real en el que una comunidad inicial se transforma durante siglos en una civilización con asentamientos, economía, instituciones, cultura e historia propias. La historia real sirve como referencia de plausibilidad, no como secuencia obligatoria. El jugador puede guiar una trayectoria alternativa mediante construcción libre y decisiones en varios sistemas.
+Civilization Evolutions is a real-time historical strategy and simulation game in which an initial community transforms over centuries into a civilization with its own settlements, economy, institutions, culture and history. Real history serves as a plausibility reference, not as a mandatory sequence. The player can guide an alternative trajectory through free construction and decisions across several systems.
 
-La experiencia prioriza la evolución visible del mundo y la interdependencia entre población, producción, recursos, geografía, conocimiento e instituciones. La guerra es relevante, pero secundaria frente a la simulación civil y social. La población y las civilizaciones no jugadoras conservan agencia propia, en equilibrio con una intervención amplia del jugador.
+The experience prioritizes the visible evolution of the world and the interdependence between population, production, resources, geography, knowledge and institutions. War is relevant, but secondary to the civil and social simulation. The population and the non-player civilizations retain their own agency, balanced against broad player intervention.
 
-Inspiraciones registradas en el GDD inicial: Anno 1800, Farthest Frontier, Age of Empires, Civilization II y Cities: Skylines. Son referencias por aspectos concretos; no establecen requisitos de copia.
+Inspirations recorded in the initial GDD: Anno 1800, Farthest Frontier, Age of Empires, Civilization II and Cities: Skylines. They are references for specific aspects; they do not establish copy requirements.
 
-## 2. Pilares de diseño
+## 2. Design pillars
 
-1. Evolución histórica de largo plazo con caminos no lineales.
-2. Construcción libre y ciudades que conservan huellas de su historia.
-3. Economía conectada: recursos, producción, consumo, trabajo y transporte.
-4. Sociedad dinámica: población, cultura, religión, política e instituciones.
-5. Libertad estratégica sin una única ruta óptima.
-6. Geografía con consecuencias para el desarrollo.
-7. Complejidad de gestión configurable.
-8. Simulación escalable entre detalle individual y agregado.
+1. Long-term historical evolution with non-linear paths.
+2. Free construction and cities that preserve traces of their history.
+3. A connected economy: resources, production, consumption, labor and transport.
+4. A dynamic society: population, culture, religion, politics and institutions.
+5. Strategic freedom with no single optimal route.
+6. Geography with consequences for development.
+7. Configurable management complexity.
+8. Simulation scalable between individual and aggregate detail.
 
-## 3. Alcance y experiencia
+## 3. Scope and experience
 
-El horizonte de diseño comienza en el Paleolítico y llega al inicio de la Revolución Industrial. Los textos fuente alternan «aproximadamente 1800 d. C.» y «comienzo de la Revolución Industrial»; su relación exacta queda pendiente (ver [auditoría](../../AUDIT_REPORT.md)). El documento de progresión contempla un límite histórico opcional y la posibilidad de continuar en modo libre. La continuidad posterior no implica que la Revolución Industrial esté diseñada como una etapa jugable.
+The design horizon begins in the Paleolithic and reaches the beginning of the Industrial Revolution. The source texts alternate between "approximately 1800 AD" and "beginning of the Industrial Revolution"; their exact relationship remains pending (see the [audit](../../AUDIT_REPORT.md)). The progression document contemplates an optional historical limit and the possibility of continuing in free mode. Continuity beyond that point does not imply that the Industrial Revolution is designed as a playable stage.
 
-El modo principal previsto es sandbox, con objetivos opcionales, escenarios y desafíos. La guerra no define por sí sola la victoria ni constituye el eje principal. El multijugador figura fuera del alcance inicial en el GDD original.
+The main intended mode is sandbox, with optional objectives, scenarios and challenges. War does not by itself define victory nor constitute the main axis. Multiplayer falls outside the initial scope in the original GDD.
 
-### Primer prototipo
+### First prototype
 
-El GDD inicial propone comprobar un ciclo pequeño: mundo procedural 3D con terreno, agua, bosques y recursos; construcción de viviendas, almacenes, campos y edificios productivos; población individual de 20–100 habitantes; trabajos, necesidades y movimiento básico; agricultura, recolección, almacenamiento, producción y consumo; primeros descubrimientos; ciclo día/noche, estaciones, pausa y aceleración. El criterio de éxito es que el jugador funde una aldea, asigne trabajos, produzca y distribuya alimentos, haga crecer la población, investigue y observe mejoras visibles. Cada sistema puede precisar su propio MVP; cualquier diferencia de secuencia o alcance debe registrarse como dependiente del prototipo, no como cambio de visión.
+The initial GDD proposes testing a small loop: a procedural 3D world with terrain, water, forests and resources; construction of dwellings, storehouses, fields and productive buildings; an individual population of 20–100 inhabitants; jobs, needs and basic movement; agriculture, gathering, storage, production and consumption; first discoveries; day/night cycle, seasons, pause and acceleration. The success criterion is that the player founds a village, assigns jobs, produces and distributes food, grows the population, researches and observes visible improvements. Each system may require its own MVP; any difference in sequence or scope must be recorded as prototype-dependent, not as a change of vision.
 
-## 4. Decisiones de diseño confirmadas en documentos fuente
+## 4. Design decisions confirmed in source documents
 
-Se conservan como confirmadas porque aparecen bajo secciones «Decisiones confirmadas» o equivalentes en los GDD de sistema. No se encontró registro de quién las aprobó ni cuándo; conviene añadir esa trazabilidad en futuras revisiones.
+They are kept as confirmed because they appear under "Confirmed decisions" sections or equivalents in the system GDDs. No record was found of who approved them or when; this traceability should be added in future revisions.
 
-- **Construcción:** colocación libre con cuadrícula opcional; obra con trabajadores y materiales; evolución arquitectónica elegida por el jugador y posibilidad de conservar edificios antiguos.
-- **Población:** modelo híbrido de individuos, familias y grupos; el nivel de detalle cambia con escala y configuración.
-- **Economía y producción:** cadenas interdependientes; asignación de trabajo automática con intervención; propiedad mixta y complejidad configurable.
-- **Transporte y comercio:** movimiento físico de recursos desde el inicio, con simulación simplificada; comercio con niveles de gestión básico, intermedio y avanzado.
-- **Historia y progreso:** evolución flexible y no lineal; períodos como referencias, no como desbloqueos obligatorios.
-- **Geografía:** mundo y complejidad configurables; geografía condiciona asentamientos y oportunidades.
-- **Otras civilizaciones:** autonomía configurable, con relaciones y trayectorias propias.
-- **Guerra:** consecuencias amplias; importancia significativa pero secundaria.
-- **Interfaz:** el mundo 3D es la interfaz principal, complementada por paneles y mapas; accesibilidad prioritaria.
-- **Final de partida:** límite histórico opcional, continuación posible y decisión final a elección del jugador.
+- **Construction:** free placement with an optional grid; construction work with workers and materials; architectural evolution chosen by the player and the possibility of preserving old buildings.
+- **Population:** a hybrid model of individuals, families and groups; the level of detail changes with scale and configuration.
+- **Economy and production:** interdependent chains; automatic labor assignment with intervention; mixed property and configurable complexity.
+- **Transport and trade:** physical movement of resources from the start, with simplified simulation; trade with basic, intermediate and advanced management levels.
+- **History and progress:** flexible, non-linear evolution; periods as references, not as mandatory unlocks.
+- **Geography:** configurable world and complexity; geography conditions settlements and opportunities.
+- **Other civilizations:** configurable autonomy, with their own relationships and trajectories.
+- **War:** broad consequences; significant but secondary importance.
+- **Interface:** the 3D world is the main interface, complemented by panels and maps; accessibility is a priority.
+- **End of game:** optional historical limit, possible continuation and a final decision left to the player.
 
-La tabla completa por sistema permanece en cada GDD especializado. Si una ficha de confirmación parece contradecir otra, el conflicto se registra en la auditoría hasta recibir una decisión del diseñador.
+The complete table by system remains in each specialized GDD. If one confirmation entry appears to contradict another, the conflict is recorded in the audit until a decision is received from the designer.
 
-## 5. Autoridad documental y límites de cada GDD
+## 5. Document authority and the limits of each GDD
 
-| Dominio | Fuente de detalle |
+| Domain | Detail source |
 |---|---|
-| Visión, pilares, alcance global y prototipo transversal | Este GDD Maestro |
-| Economía, mercados, consumo, propiedad económica e impuestos | [Economía](../01-systems/GDD_Economia_v0.2.md) |
-| Edificios productivos, recetas, productividad, empleo y calidad | [Producción y trabajo](../01-systems/GDD_Produccion_y_Trabajo_v0.2.md) |
-| Obras, materiales constructivos, urbanismo, arquitectura y patrimonio | [Construcción y arquitectura](../01-systems/GDD_Construccion_y_Arquitectura_v0.1.md) |
-| Individuos, familias, salud, educación y estructura social | [Población y sociedad](../01-systems/GDD_Poblacion_y_Sociedad_v0.1.md) |
-| Gobierno, leyes, instituciones y política interna | [Política y gobierno](../01-systems/GDD_Politica_y_Gobierno_v0.1.md) |
-| Creencias, prácticas e instituciones religiosas | [Religión y espiritualidad](../01-systems/GDD_Religion_y_Espiritualidad_v0.1.md) |
-| Identidad, idioma, tradiciones y difusión cultural | [Cultura](../01-systems/GDD_Cultura_Identidad_y_Tradiciones_v0.1.md) |
-| Ciencia, conocimiento, innovación y tecnología | [Tecnología](../01-systems/GDD_Tecnologia_Ciencia_e_Innovacion_v0.1.md) |
-| Transporte, comercio, redes logísticas y mercados físicos | [Transporte, comercio y logística](../01-systems/GDD_Transporte_Comercio_y_Logistica_v0.1.md) |
-| Relaciones internacionales, tratados y diplomacia | [Diplomacia](../01-systems/GDD_Diplomacia_y_Relaciones_Internacionales_v0.1.md) |
-| Geografía, clima, ecosistemas y procesos ambientales | [Geografía y medioambiente](../01-systems/GDD_Geografia_Clima_y_Medioambiente_v0.1.md) |
-| Generación inicial del mapa y editor de mundos | [Generación del mundo](../01-systems/GDD_Generacion_Procedural_del_Mundo_v0.1.md) |
-| Exploración, cartografía, colonización y expansión | [Exploración](../01-systems/GDD_Exploracion_y_Expansion_Territorial_v0.1.md) |
-| Fuerzas armadas, conflictos y guerra | [Sistemas militares](../01-systems/GDD_Guerra_y_Sistemas_Militares_v0.1.md) |
-| Acontecimientos, memoria y cronología | [Eventos e historia](../01-systems/GDD_Eventos_y_Evolucion_Historica_v0.1.md) |
-| Regiones, administración y autonomía territorial | [Administración territorial](../01-systems/GDD_Administracion_Territorial_y_Regiones_v0.1.md) |
-| Controles, paneles, visualización y accesibilidad | [Interfaz UI/UX](../01-systems/GDD_Interfaz_UI_UX_v0.1.md) |
-| Objetivos, dificultad y finalización | [Progresión](../01-systems/GDD_Progresion_y_Finalizacion_v0.1.md) |
-| Decisiones autónomas de civilizaciones no jugadoras | [IA y autonomía](../01-systems/GDD_IA_y_Autonomia_Civilizaciones_v0.1.md) |
-| Reloj, calendario, escalas y ciclos | [Tiempo y simulación](../01-systems/GDD_Tiempo_y_Simulacion_v0.1.md) |
-| Catálogo, identidad y contabilidad de materiales | [Recursos](../01-systems/GDD_Recursos_y_Materiales_v0.1.md) |
-| Identidad, relaciones y memoria compartida de objetos del mundo | [Entidades y relaciones](../01-systems/GDD_Entidades_y_Relaciones_v0.1.md) |
-| Arquitectura y secuencia técnica existente | [Plan técnico v0.1](../02-technical/PLAN_TECNICO_v0.1.md), separado del diseño de juego |
+| Vision, pillars, global scope and cross-cutting prototype | This GDD Maestro |
+| Economy, markets, consumption, economic property and taxes | [Economy](../01-systems/GDD_Economia_v0.2.md) |
+| Productive buildings, recipes, productivity, employment and quality | [Production and labor](../01-systems/GDD_Produccion_y_Trabajo_v0.2.md) |
+| Construction work, building materials, urban planning, architecture and heritage | [Construction and architecture](../01-systems/GDD_Construccion_y_Arquitectura_v0.1.md) |
+| Individuals, families, health, education and social structure | [Population and society](../01-systems/GDD_Poblacion_y_Sociedad_v0.1.md) |
+| Government, laws, institutions and internal politics | [Politics and government](../01-systems/GDD_Politica_y_Gobierno_v0.1.md) |
+| Religious beliefs, practices and institutions | [Religion and spirituality](../01-systems/GDD_Religion_y_Espiritualidad_v0.1.md) |
+| Identity, language, traditions and cultural diffusion | [Culture](../01-systems/GDD_Cultura_Identidad_y_Tradiciones_v0.1.md) |
+| Science, knowledge, innovation and technology | [Technology](../01-systems/GDD_Tecnologia_Ciencia_e_Innovacion_v0.1.md) |
+| Transport, trade, logistics networks and physical markets | [Transport, trade and logistics](../01-systems/GDD_Transporte_Comercio_y_Logistica_v0.1.md) |
+| International relations, treaties and diplomacy | [Diplomacy](../01-systems/GDD_Diplomacia_y_Relaciones_Internacionales_v0.1.md) |
+| Geography, climate, ecosystems and environmental processes | [Geography and environment](../01-systems/GDD_Geografia_Clima_y_Medioambiente_v0.1.md) |
+| Initial map generation and the world editor | [World generation](../01-systems/GDD_Generacion_Procedural_del_Mundo_v0.1.md) |
+| Exploration, cartography, colonization and expansion | [Exploration](../01-systems/GDD_Exploracion_y_Expansion_Territorial_v0.1.md) |
+| Armed forces, conflicts and war | [Military systems](../01-systems/GDD_Guerra_y_Sistemas_Militares_v0.1.md) |
+| Events, memory and chronology | [Events and history](../01-systems/GDD_Eventos_y_Evolucion_Historica_v0.1.md) |
+| Regions, administration and territorial autonomy | [Territorial administration](../01-systems/GDD_Administracion_Territorial_y_Regiones_v0.1.md) |
+| Controls, panels, visualization and accessibility | [UI/UX interface](../01-systems/GDD_Interfaz_UI_UX_v0.1.md) |
+| Objectives, difficulty and ending | [Progression](../01-systems/GDD_Progresion_y_Finalizacion_v0.1.md) |
+| Autonomous decisions of non-player civilizations | [AI and autonomy](../01-systems/GDD_IA_y_Autonomia_Civilizaciones_v0.1.md) |
+| Clock, calendar, scales and cycles | [Time and simulation](../01-systems/GDD_Tiempo_y_Simulacion_v0.1.md) |
+| Catalog, identity and accounting of materials | [Resources](../01-systems/GDD_Recursos_y_Materiales_v0.1.md) |
+| Identity, relationships and shared memory of world objects | [Entities and relationships](../01-systems/GDD_Entidades_y_Relaciones_v0.1.md) |
+| Existing technical architecture and sequence | [Technical plan v0.1](../02-technical/PLAN_TECNICO_v0.1.md), separate from game design |
 
-**Regla de edición:** este Maestro resume las decisiones marco y remite al sistema dueño. Los detalles y tablas completas viven en el GDD de dominio. Los otros sistemas describen sus contratos de entrada/salida, pero no redefinen conceptos cuya autoridad pertenece a otro GDD. Ninguna propuesta se convierte en decisión confirmada por aparecer en este resumen.
+**Editing rule:** this Maestro summarizes the framework decisions and defers to the owning system. The complete details and tables live in the domain GDD. The other systems describe their input/output contracts, but do not redefine concepts whose authority belongs to another GDD. No proposal becomes a confirmed decision merely by appearing in this summary.
 
-## 6. Integraciones entre sistemas
+## 6. Integrations between systems
 
-| Interacción | Contrato documental que debe mantenerse |
+| Interaction | Document contract that must be maintained |
 |---|---|
-| Geografía ↔ generación del mundo ↔ exploración | Geografía describe el mundo y sus procesos; generación instancia su estado inicial; exploración controla conocimiento y cartografía. Distinguir terreno real de información conocida por cada sociedad. |
-| Recursos ↔ economía ↔ producción ↔ logística | Recursos define identidades y unidades materiales; economía define propiedad, consumo y mercados; producción transforma entradas en salidas; logística mueve inventarios físicamente. Reutilizar un recurso común, sin copias por sistema. |
-| Población ↔ entidades ↔ trabajo ↔ economía | Entidades mantiene identidad y relaciones; población define dinámica social y demográfica; producción asigna personas a empleo; economía define compensación y consumo. El modelo agregado debe conservar coherencia con la población total. |
-| Tiempo ↔ todos los sistemas | El reloj común coordina ciclos con frecuencias distintas. El calendario y la escala temporal exacta aún no están cerrados. |
-| Tecnología ↔ producción, construcción, guerra, transporte y sociedad | Conocimiento/tecnología habilita métodos y cambia capacidades; la disponibilidad no debe confundirse con adopción automática. Las reglas de transición siguen perteneciendo a cada dominio. |
-| Política ↔ administración ↔ población ↔ economía | Gobierno define instituciones y políticas; administración las aplica en territorios; población aporta intereses y respuesta social; economía refleja impuestos y asignación. Delimitar quién establece cada política. |
-| Cultura ↔ religión ↔ población ↔ arquitectura | Sistemas relacionados, con conceptos propios: cultura cubre identidad y prácticas; religión, creencias e instituciones espirituales; población, afiliación y diversidad; construcción, manifestación física. |
-| Diplomacia ↔ IA ↔ guerra ↔ comercio ↔ exploración | Diplomacia es dueña de relaciones y tratados; IA selecciona acciones autónomas; guerra resuelve conflicto armado; economía/logística ejecuta intercambio; exploración registra ocupación y conocimiento territorial. |
-| Eventos ↔ todos los sistemas | Los acontecimientos registran cambios derivados de causas de dominio; el sistema de eventos no debe crear efectos de juego sin regla propietaria. Memoria y cronología consumen hechos verificables. |
-| Interfaz ↔ todos los sistemas | La interfaz presenta información/órdenes disponibles; no es autoridad de reglas. Notificaciones deben proceder de cambios simulados. |
-| Progresión ↔ tiempo ↔ todos los sistemas | Progresión ofrece objetivos/límite opcionales; tiempo lleva la fecha; ningún sistema debe imponer una cronología histórica obligatoria. |
+| Geography ↔ world generation ↔ exploration | Geography describes the world and its processes; generation instantiates its initial state; exploration controls knowledge and cartography. Distinguish the real terrain from the information known to each society. |
+| Resources ↔ economy ↔ production ↔ logistics | Resources defines material identities and units; economy defines property, consumption and markets; production transforms inputs into outputs; logistics physically moves inventories. Reuse a shared resource, with no copies per system. |
+| Population ↔ entities ↔ labor ↔ economy | Entities maintains identity and relationships; population defines social and demographic dynamics; production assigns people to employment; economy defines compensation and consumption. The aggregate model must stay coherent with the total population. |
+| Time ↔ all systems | The shared clock coordinates cycles with different frequencies. The exact calendar and time scale are not yet settled. |
+| Technology ↔ production, construction, war, transport and society | Knowledge/technology enables methods and changes capabilities; availability must not be confused with automatic adoption. The transition rules still belong to each domain. |
+| Politics ↔ administration ↔ population ↔ economy | Government defines institutions and policies; administration applies them in territories; population contributes interests and social response; economy reflects taxes and allocation. Delimit who sets each policy. |
+| Culture ↔ religion ↔ population ↔ architecture | Related systems, each with its own concepts: culture covers identity and practices; religion covers beliefs and spiritual institutions; population covers affiliation and diversity; construction covers physical manifestation. |
+| Diplomacy ↔ AI ↔ war ↔ trade ↔ exploration | Diplomacy owns relationships and treaties; AI selects autonomous actions; war resolves armed conflict; economy/logistics executes exchange; exploration records territorial occupation and knowledge. |
+| Events ↔ all systems | Occurrences record changes derived from domain causes; the event system must not create gameplay effects without an owning rule. Memory and chronology consume verifiable facts. |
+| Interface ↔ all systems | The interface presents available information/orders; it is not a rules authority. Notifications must stem from simulated changes. |
+| Progression ↔ time ↔ all systems | Progression offers optional objectives/limits; time keeps the date; no system should impose a mandatory historical chronology. |
 
-## 7. Vocabulario canónico
+## 7. Canonical vocabulary
 
-- **Asentamiento:** núcleo habitado local; usar para poblado/ciudad cuando no se requiera una escala urbana específica.
-- **Ciudad:** asentamiento urbano. **Región:** unidad territorial de administración o análisis que puede agrupar asentamientos.
-- **Civilización:** sociedad política e histórica de mayor alcance; no usar como sinónimo de ciudad o asentamiento.
-- **Recurso/material:** recurso es la categoría económica compartida; material se reserva para la materia física, especialmente en construcción. Un mismo bien conserva un identificador e inventario común.
-- **Producción:** transformación o extracción ejecutada por procesos/edificios. **Trabajo:** asignación, ocupación y habilidades de personas.
-- **Transporte:** movimiento físico. **Logística:** planificación, almacenamiento y suministro. **Comercio:** intercambio económico; no implica por sí mismo transporte instantáneo.
-- **Generación del mundo:** creación inicial procedural. **Geografía:** estado y procesos naturales del mundo. **Exploración:** adquisición y circulación del conocimiento espacial.
-- **Confirmada:** aparece marcada explícitamente como decisión confirmada en un documento fuente. **Propuesta:** resolución sugerida, sin aprobación. **Pendiente:** requiere decisión o especificación. **Fuera de alcance inicial:** excluido del alcance inicial, no necesariamente descartado.
-- **MVP/prototipo:** conjunto mínimo de prueba. **Visión final:** capacidad deseada a largo plazo; no implica inclusión en el MVP.
+- **Settlement:** a local inhabited nucleus; use it for a hamlet/town/city when a specific urban scale is not required.
+- **City:** an urban settlement. **Region:** a territorial unit for administration or analysis that may group settlements together.
+- **Civilization:** the broadest political and historical society; do not use as a synonym for city or settlement.
+- **Resource/material:** resource is the shared economic category; material is reserved for physical matter, especially in construction. A single good keeps one shared identifier and inventory.
+- **Production:** transformation or extraction carried out by processes/buildings. **Labor:** the assignment, occupation and skills of people.
+- **Transport:** physical movement. **Logistics:** planning, storage and supply. **Trade:** economic exchange; it does not by itself imply instantaneous transport.
+- **World generation:** the initial procedural creation. **Geography:** the world's natural state and processes. **Exploration:** the acquisition and circulation of spatial knowledge.
+- **Confirmed:** explicitly marked as a confirmed decision in a source document. **Proposed:** a suggested resolution, without approval. **Pending:** requires a decision or specification. **Outside the initial scope:** excluded from the initial scope, not necessarily discarded.
+- **MVP/prototype:** a minimal test set. **Final vision:** a long-term desired capability; it does not imply inclusion in the MVP.
 
-## 8. Decisiones transversales pendientes
+## 8. Pending cross-cutting decisions
 
-1. Confirmar fecha de corte y definir la relación entre «aprox. 1800» y «comienzo de la Revolución Industrial».
-2. Especificar el papel formal del jugador en el mundo (entidad externa, representación diegética, autoridad) y sus límites comunes entre política, diplomacia e interfaz.
-3. Definir escalas temporales jugables y la correspondencia entre tiempo de simulación, calendario, estaciones y envejecimiento.
-4. Determinar límites de escala, mapas, población, civilizaciones simultáneas y presupuestos de simulación.
-5. Precisar el alcance inicial de clima y medioambiente: efectos simulados frente a representación principalmente visual en construcción.
-6. Acordar el perfil predeterminado del mundo: topografía coherente frente a la mención de mapas iniciales planos en generación del mundo.
-7. Definir modelo común de propiedad/titularidad de entidades, tierras, edificios, inventarios y organizaciones.
-8. Precisar interoperabilidad de monedas, precios, mercados, impuestos y transferencias entre asentamientos.
-9. Definir umbrales y reglas de transición entre simulación individual y agregada.
-10. Resolver trazabilidad de aprobación: responsable, fecha, versión y justificación para cada decisión confirmada.
+1. Confirm the cutoff date and define the relationship between "approx. 1800" and "beginning of the Industrial Revolution".
+2. Specify the player's formal role in the world (external entity, diegetic representation, authority) and its shared limits across politics, diplomacy and interface.
+3. Define playable time scales and the correspondence between simulation time, calendar, seasons and aging.
+4. Determine limits of scale, maps, population, simultaneous civilizations and simulation budgets.
+5. Specify the initial scope of climate and environment: simulated effects versus primarily visual representation in construction.
+6. Agree on the default world profile: coherent topography versus the mention of flat initial maps in world generation.
+7. Define a shared model of property/legal ownership for entities, land, buildings, inventories and organizations.
+8. Specify the interoperability of currencies, prices, markets, taxes and transfers between settlements.
+9. Define thresholds and transition rules between individual and aggregate simulation.
+10. Resolve approval traceability: owner, date, version and rationale for each confirmed decision.
 
-Ver el registro completo de conflictos y propuestas en [AUDIT_REPORT.md](../../AUDIT_REPORT.md). No se resolvieron estos puntos durante esta consolidación.
+See the complete log of conflicts and proposals in [AUDIT_REPORT.md](../../AUDIT_REPORT.md). These points were not resolved during this consolidation.
 
-## 9. Dirección artística y secuencia conceptual
+## 9. Art direction and conceptual sequence
 
-### Dirección artística
+### Art direction
 
-El GDD general propone un estilo 3D realista e históricamente reconocible, con detalle alto, sin perseguir fotorrealismo extremo ni una estética caricaturesca. La cámara contempla perspectiva isométrica, rotación, zoom, vista panorámica y acercamiento a edificios, habitantes y unidades. El mundo deberá expresar visualmente el paso del tiempo mediante cambios en arquitectura, materiales, vestimenta, vehículos, infraestructura, vegetación cultivada y paisaje urbano. Los GDD de Construcción, Cultura e Interfaz detallan sus respectivas expresiones. Estas indicaciones son dirección de diseño heredada; las decisiones de producción visual siguen sujetas a iteración.
+The general GDD proposes a realistic, historically recognizable 3D style, with high detail, without pursuing extreme photorealism or a cartoonish aesthetic. The camera contemplates an isometric perspective, rotation, zoom, a panoramic view and close-ups of buildings, inhabitants and units. The world must visually express the passage of time through changes in architecture, materials, clothing, vehicles, infrastructure, cultivated vegetation and urban landscape. The Construction, Culture and Interface GDDs detail their respective expressions. These indications are inherited design direction; visual production decisions remain subject to iteration.
 
-### Roadmap conceptual heredado
+### Inherited conceptual roadmap
 
-La secuencia del GDD inicial se conserva como propuesta de orden, no como cronograma aprobado:
+The sequence from the initial GDD is kept as a proposed order, not an approved schedule:
 
-1. **Fundación técnica:** entorno UE, generación de mapas/terreno, recursos, cámara y construcción básica.
-2. **Primer asentamiento:** viviendas, ciudadanos, trabajos, necesidades, agricultura, recolección y almacenamiento.
-3. **Economía:** producción, consumo, cadenas, mercados, oferta/demanda y distribución.
-4. **Evolución histórica:** tecnologías, desbloqueos, edificios evolutivos, mejoras productivas y cambios arquitectónicos.
-5. **Expansión:** asentamientos, infraestructura, comercio y especialización regional.
-6. **Sociedad:** grupos, representantes, cultura, religión, instituciones y política.
-7. **Mundo vivo:** civilizaciones autónomas, economía independiente, diplomacia, comercio internacional y conflictos.
-8. **Preparación del producto:** balance, optimización, animación, sonido, interfaz, tutoriales, pruebas y contenido histórico.
+1. **Technical foundation:** UE environment, map/terrain generation, resources, camera and basic construction.
+2. **First settlement:** dwellings, citizens, jobs, needs, agriculture, gathering and storage.
+3. **Economy:** production, consumption, chains, markets, supply/demand and distribution.
+4. **Historical evolution:** technologies, unlocks, evolving buildings, productive improvements and architectural changes.
+5. **Expansion:** settlements, infrastructure, trade and regional specialization.
+6. **Society:** groups, representatives, culture, religion, institutions and politics.
+7. **Living world:** autonomous civilizations, independent economy, diplomacy, international trade and conflicts.
+8. **Product preparation:** balance, optimization, animation, sound, interface, tutorials, testing and historical content.
 
-La secuencia no sustituye los MVP por sistema ni el plan técnico. Cambios en prioridad o alcance deben registrarse como decisión de producto.
+The sequence does not replace the per-system MVPs or the technical plan. Changes in priority or scope must be recorded as a product decision.
 
-## 10. Estructura documental
+## 10. Document structure
 
-- `docs/00-project/`: visión central y gobernanza de documentación.
-- `docs/01-systems/`: GDDs especializados, una fuente de detalle por dominio.
-- `docs/02-technical/`: documentación técnica existente, separada del diseño.
-- Raíz: informe de auditoría y respaldo íntegro previo a la reorganización.
+- `docs/00-project/`: central vision and documentation governance.
+- `docs/01-systems/`: specialized GDDs, one detail source per domain.
+- `docs/02-technical/`: existing technical documentation, separate from design.
+- Root: audit report and complete backup prior to the reorganization.
 
-Para el inventario por archivo y la historia de esta consolidación, consultar [AUDIT_REPORT.md](../../AUDIT_REPORT.md).
-
+For the per-file inventory and the history of this consolidation, see [AUDIT_REPORT.md](../../AUDIT_REPORT.md).

@@ -1,69 +1,69 @@
 # IMPLEMENTATION_ALIGNMENT — Civilization Evolutions
 
-> Relación entre el **código existente** y los **GDD**. Análisis, **no** se modificó código. El código está en evolución activa (hay una sesión paralela implementando el sistema de recursos del mapa), así que esto es una **foto** del estado; antes de tocar un archivo, leé su estado actual en disco. Diseño: ver [DOCUMENTATION_INDEX.md](DOCUMENTATION_INDEX.md) y [SYSTEM_ARCHITECTURE_MAP.md](SYSTEM_ARCHITECTURE_MAP.md).
+> Relationship between the **existing code** and the **GDDs**. Analysis, **no** code was modified. The code is under active evolution (there is a parallel session implementing the map resource system), so this is a **snapshot** of the state; before touching a file, read its current state on disk. Design: see [DOCUMENTATION_INDEX.md](DOCUMENTATION_INDEX.md) and [SYSTEM_ARCHITECTURE_MAP.md](SYSTEM_ARCHITECTURE_MAP.md).
 
-## Dónde vive el código
+## Where the code lives
 
 ```
 civilizations-evolution/
-├── SimCore/                         Núcleo de simulación C++17 motor-agnóstico (compila y testea fuera de UE)
+├── SimCore/                         Engine-agnostic C++17 simulation core (compiles and tests outside UE)
 │   ├── include/simcore/ + src/      Types, SimulationClock, Inventory, GameDatabase, World, Simulation, DefaultContent, EventBus
-│   ├── app/main.cpp                 Runner de consola (corre la aldea por años)
-│   └── tests/                       Suite propia (~20 tests / 87 checks)
-└── Source/CivilizationSimulator/    Capa Unreal (presentación + juego)
-    ├── SimCoreUnity.cpp             Compila SimCore dentro del módulo UE
+│   ├── app/main.cpp                 Console runner (runs the village for years)
+│   └── tests/                       Own suite (~20 tests / 87 checks)
+└── Source/CivilizationSimulator/    Unreal layer (presentation + game)
+    ├── SimCoreUnity.cpp             Compiles SimCore inside the UE module
     ├── Core/                        CivGameModeBase, CivPlayerController, CivHUD, CivText
     ├── Camera/                      CivCameraPawn
     ├── View/                        CivViewManager, CivBuildingActor, CivTerrain
-    ├── Simulation/                  CivSimSubsystem (puente a SimCore + estado UE-side)
+    ├── Simulation/                  CivSimSubsystem (bridge to SimCore + UE-side state)
     └── Units/                       CivUnit, CivResourceNode
-Content/PBR (materiales), Content/Chars (personaje KayKit).
+Content/PBR (materials), Content/Chars (KayKit character).
 ```
 
-## Mapa GDD → implementación
+## GDD → implementation map
 
-| Sistema (GDD) | Estado | Dónde | Notas / divergencias |
+| System (GDD) | Status | Where | Notes / divergences |
 |---|---|---|---|
-| **Tiempo y Simulación** | Parcial | `SimCore/SimulationClock`, `CivSimSubsystem` (tick, pausa, velocidad, +mes) | Reloj con día/mes/año/estaciones, pausa/velocidades. Falta: estaciones por región, calendario configurable. Alineado con el principio de reloj independiente del FPS. |
-| **Recursos y Materiales** | Parcial | `SimCore` (Types/Inventory/GameDatabase) + `CivResourceNode` + stock UE en `CivSimSubsystem` | Catálogo con ids estables (wood/stone/berries/meat/wheat/flour/bread + water/fruit UE). **Divergencia:** hay **dos** contabilidades — el stock de SimCore y un `ColonyStock` UE-side. Riesgo de duplicación (el GDD exige inventario único). Sin calidad/deterioro/moneda. |
-| **Economía** | Mínimo | `SimCore/Simulation` (stocks, comercio entre asentamientos, consumo/salud) | Sin mercados, precios, oferta/demanda, moneda, impuestos ni propiedad. |
-| **Producción y Trabajo** | Parcial | `SimCore` (recetas, asignación automática de trabajadores) + `CivBuildingActor` (producción UE por intervalo) | Cadena trigo→molino→harina→panadería→pan en SimCore. **Divergencia:** la producción de los edificios colocados por el menú UE (recolector→bayas, cazador→carne) corre en `CivBuildingActor` (UE), no en SimCore. Sin habilidades/calidad/salarios. |
-| **Transporte y Logística** | Parcial | `SimCore` (logística simplificada) + acarreo UE de settlers al town hall | "Nada se consume sin ser entregado" se respeta conceptualmente. El acarreo de `CivUnit` es UE-side. Sin rutas/vehículos/infra. |
-| **Construcción y Arquitectura** | Parcial | `SimCore` (defs de edificio + evolución + costo + demolición) + `CivBuildingActor` + menú en `CivPlayerController`/`CivHUD` | Colocación con costo (madera/piedra), evolución por tecnología en SimCore. Meshes placeholder (cubo/cono/cilindro). Falta: construcción libre real, materiales por época, ruinas, patrimonio, cuadrícula opcional. |
-| **Población y Sociedad** | Parcial / **divergente** | `SimCore` (población **agregada**, trabajadores, consumo) + `CivUnit` (settlers **individuales** UE) | Coexisten dos modelos: el agregado de SimCore y los 20 actores `CivUnit`. El GDD pide modelo **híbrido unificado**; hoy están separados. Sin familias, clases, necesidades, salud individual, demografía. |
-| **Generación del Mundo** | Mínimo | `CivTerrain` (ruido determinista, centro plano + colinas, agua, árboles) | Sin semilla configurable expuesta, biomas, tipos de mapa ni editor. |
-| **Geografía/Clima/Medioambiente** | Mínimo | `CivTerrain` (tinte estacional), estaciones del reloj | Colinas + agua + tinte por estación. Sin clima simulado, recursos geológicos, flora/fauna, desastres. (El relieve con colinas se acerca a Geografía "realista", no a la decisión "mapas planos" de Generación — ver **C-02**.) |
-| **Tecnología** | Parcial | `SimCore` (árbol tecnológico + autoinvestigación + evolución de edificios) | Simple y lineal-ish, no el modelo orgánico por disciplinas/personajes del GDD. |
-| **Interfaz UI/UX** | Parcial (MVP) | `CivHUD` + HUD de `CivViewManager` (fecha/estación, settlers, recursos, barra superior, menú de construcción, tooltips, caja de selección) | Coincide con el "UI mínima de depuración" del plan técnico. Falta UI final, mapas temáticos, accesibilidad. |
-| **Entidades y Relaciones** | No (implícito) | ids sueltos en SimCore / UE | No hay modelo compartido de entidades/relaciones persistentes. |
-| **Eventos** | Mínimo | `SimCore/EventBus` (eventos internos) | Sin historia emergente, memoria ni cronología. |
-| **Cultura · Religión · Política · Administración · Exploración · Diplomacia · IA de civilizaciones · Guerra · Progresión** | No implementados | — | Fuera del prototipo actual. (Townhall con "refugio + flechas + enemigos" quedó propuesto, no implementado.) |
+| **Time and Simulation** | Partial | `SimCore/SimulationClock`, `CivSimSubsystem` (tick, pause, speed, +month) | Clock with day/month/year/seasons, pause/speeds. Missing: seasons per region, configurable calendar. Aligned with the principle of an FPS-independent clock. |
+| **Resources and Materials** | Partial | `SimCore` (Types/Inventory/GameDatabase) + `CivResourceNode` + UE stock in `CivSimSubsystem` | Catalog with stable ids (wood/stone/berries/meat/wheat/flour/bread + water/fruit UE). **Divergence:** there are **two** accountings — the SimCore stock and a UE-side `ColonyStock`. Risk of duplication (the GDD requires a single inventory). No quality/decay/currency. |
+| **Economy** | Minimal | `SimCore/Simulation` (stocks, trade between settlements, consumption/health) | No markets, prices, supply/demand, currency, taxes or property. |
+| **Production and Labor** | Partial | `SimCore` (recipes, automatic worker assignment) + `CivBuildingActor` (UE production per interval) | Chain wheat→mill→flour→bakery→bread in SimCore. **Divergence:** production of the buildings placed via the UE menu (gatherer→berries, hunter→meat) runs in `CivBuildingActor` (UE), not in SimCore. No skills/quality/wages. |
+| **Transport and Logistics** | Partial | `SimCore` (simplified logistics) + UE hauling of settlers to the town hall | "Nothing is consumed without being delivered" is respected conceptually. The hauling of `CivUnit` is UE-side. No routes/vehicles/infra. |
+| **Construction and Architecture** | Partial | `SimCore` (building defs + evolution + cost + demolition) + `CivBuildingActor` + menu in `CivPlayerController`/`CivHUD` | Placement with cost (wood/stone), evolution by technology in SimCore. Placeholder meshes (cube/cone/cylinder). Missing: real free construction, materials per era, ruins, heritage, optional grid. |
+| **Population and Society** | Partial / **divergent** | `SimCore` (**aggregate** population, workers, consumption) + `CivUnit` (**individual** UE settlers) | Two models coexist: the SimCore aggregate and the 20 `CivUnit` actors. The GDD calls for a **unified hybrid** model; today they are separate. No families, classes, needs, individual health, demographics. |
+| **World Generation** | Minimal | `CivTerrain` (deterministic noise, flat center + hills, water, trees) | No exposed configurable seed, biomes, map types or editor. |
+| **Geography/Climate/Environment** | Minimal | `CivTerrain` (seasonal tint), clock seasons | Hills + water + tint per season. No simulated climate, geological resources, flora/fauna, disasters. (The relief with hills is closer to "realistic" Geography, not to the "flat maps" decision of Generation — see **C-02**.) |
+| **Technology** | Partial | `SimCore` (technology tree + auto-research + building evolution) | Simple and lineal-ish, not the organic model by disciplines/characters of the GDD. |
+| **Interface UI/UX** | Partial (MVP) | `CivHUD` + `CivViewManager` HUD (date/season, settlers, resources, top bar, construction menu, tooltips, selection box) | Matches the "minimal debug UI" of the technical plan. Missing: final UI, thematic maps, accessibility. |
+| **Entities and Relationships** | No (implicit) | loose ids in SimCore / UE | There is no shared model of persistent entities/relationships. |
+| **Events** | Minimal | `SimCore/EventBus` (internal events) | No emergent history, memory or chronology. |
+| **Culture · Religion · Politics · Administration · Exploration · Diplomacy · Civilization AI · War · Progression** | Not implemented | — | Outside the current prototype. (Townhall with "shelter + arrows + enemies" was proposed, not implemented.) |
 
-## Qué funciona hoy (loop jugable)
+## What works today (playable loop)
 
-Arranque con **town hall** + **20 settlers animados (KayKit)**. El jugador **selecciona** (clic / caja), **mueve** (clic derecho), y ordena **recolectar** árboles/rocas/agua; el settler junta y (en progreso) **acarrea al town hall**. Con recursos, **construye** choza/cazador/recolector desde el menú; los edificios **producen** con el tiempo. HUD con fecha/estación, barra de recursos y población activa/máxima. Cámara RTS con tilt/rotación/paneo. Visual: césped/roca/corteza **PBR** + **Lumen/SM6**. i18n **inglés por defecto + español**.
+Start with a **town hall** + **20 animated settlers (KayKit)**. The player **selects** (click / box), **moves** (right-click), and orders **gathering** of trees/rocks/water; the settler collects and (in progress) **hauls to the town hall**. With resources, they **build** a hut/hunter/gatherer from the menu; the buildings **produce** over time. HUD with date/season, resource bar and active/maximum population. RTS camera with tilt/rotation/panning. Visual: grass/rock/bark **PBR** + **Lumen/SM6**. i18n **English by default + Spanish**.
 
-## Alineación con los principios de arquitectura (plan técnico §4)
+## Alignment with the architecture principles (technical plan §4)
 
-- ✅ **Separación simulación/presentación:** fuerte en el núcleo original — `SimCore` es C++ puro, testeado, motor-agnóstico; la capa UE lo envuelve.
-- ⚠️ **Erosión de esa separación (riesgo principal):** la funcionalidad nueva de colonia (settlers `CivUnit`, nodos `CivResourceNode`, `ColonyStock` en `CivSimSubsystem`, producción en `CivBuildingActor`) vive **en la capa UE**, no en SimCore. Esto mete **lógica de simulación en la presentación**, la deja **fuera de los tests** de SimCore y crea un **segundo modelo** de población/economía en paralelo al de SimCore.
-- ⚠️ **Escalabilidad:** `CivUnit` es un **Actor por habitante**. El plan pide explícitamente **no** crear un Actor por ciudadano y soportar agregación. A 20 va bien; no escala a la visión de grandes poblaciones.
-- ◑ **Data-driven:** el contenido (recursos/edificios/recetas/tecnologías) está en **C++** (`DefaultContent`), no en Data Tables/Assets de UE. Es "data-ish" pero no editable como datos desde el editor.
-- ✅ **Modularidad / reloj independiente del FPS / configuración:** respetados en SimCore.
+- ✅ **Simulation/presentation separation:** strong in the original core — `SimCore` is pure C++, tested, engine-agnostic; the UE layer wraps it.
+- ⚠️ **Erosion of that separation (main risk):** the new colony functionality (`CivUnit` settlers, `CivResourceNode` nodes, `ColonyStock` in `CivSimSubsystem`, production in `CivBuildingActor`) lives **in the UE layer**, not in SimCore. This puts **simulation logic into presentation**, leaves it **outside the SimCore tests** and creates a **second model** of population/economy in parallel to SimCore's.
+- ⚠️ **Scalability:** `CivUnit` is one **Actor per inhabitant**. The plan explicitly calls for **not** creating one Actor per citizen and for supporting aggregation. At 20 it works fine; it does not scale to the vision of large populations.
+- ◑ **Data-driven:** the content (resources/buildings/recipes/technologies) is in **C++** (`DefaultContent`), not in UE Data Tables/Assets. It is "data-ish" but not editable as data from the editor.
+- ✅ **Modularity / FPS-independent clock / configuration:** respected in SimCore.
 
-## Riesgos arquitectónicos (para decidir antes de seguir)
+## Architectural risks (to decide before continuing)
 
-1. **Doble modelo de población/economía** (SimCore agregado ↔ UE-side individual). Duplica entidades/recursos, contra el Maestro ("no copias por sistema"). Decidir: ¿la colonia/settlers bajan a SimCore (recomendado por testabilidad/escala) o SimCore pasa a ser legado?
-2. **Gameplay en la capa UE** reduce cobertura de tests y acopla simulación a actores renderizados.
-3. **Un Actor por settler** no escala; faltará un nivel agregado (LOD de simulación) como pide el GDD.
-4. **Trabajo sin commitear** (no es falta de Git). El proyecto UE **sí** tiene repo git propio (historia hasta `HANDOFF`) y la documentación ahora tiene repo aparte. El riesgo real: **todo lo posterior al HANDOFF** (los arreglos de build de esta sesión + el gameplay nuevo, ~27 cambios) está **sin commitear**, con dos sesiones editando el mismo árbol. Mitigación: commitear en cada checkpoint verde.
-5. **Sin modelo de Entidades/Relaciones** compartido: los ids ad-hoc dificultarán propiedad, historia y relaciones futuras.
-6. **Contenido hardcodeado** en C++: migrar a datos (Data Tables/Assets) facilitará el diseño data-driven que pide el plan.
+1. **Double population/economy model** (SimCore aggregate ↔ UE-side individual). It duplicates entities/resources, against the Maestro ("no copies per system"). To decide: does the colony/settlers move down to SimCore (recommended for testability/scale) or does SimCore become legacy?
+2. **Gameplay in the UE layer** reduces test coverage and couples simulation to rendered actors.
+3. **One Actor per settler** does not scale; an aggregate level (simulation LOD) as the GDD requires will be missing.
+4. **Uncommitted work** (not a lack of Git). The UE project **does** have its own git repo (history up to `HANDOFF`) and the documentation now has a separate repo. The real risk: **everything after the HANDOFF** (this session's build fixes + the new gameplay, ~27 changes) is **uncommitted**, with two sessions editing the same tree. Mitigation: commit at each green checkpoint.
+5. **No shared Entities/Relationships model:** the ad-hoc ids will make future property, history and relationships harder.
+6. **Hardcoded content** in C++: migrating to data (Data Tables/Assets) will facilitate the data-driven design the plan calls for.
 
-## Decisiones pendientes que condicionan la implementación
+## Pending decisions that condition the implementation
 
-Antes de profundizar conviene resolver (ver `AUDIT_REPORT.md`): **C-02** (terreno plano vs realista — el código ya usa colinas), **C-03** (alcance del clima/estaciones que afecta agricultura/producción), **C-05** (rol/poder del jugador para el futuro sistema político), **C-06** (límites de escala, que determinan si se mantienen actores por settler o se agrega), y el **modelo común de propiedad/entidades** (C-07 + GDD Entidades).
+Before going deeper it is worth resolving (see `AUDIT_REPORT.md`): **C-02** (flat vs realistic terrain — the code already uses hills), **C-03** (scope of climate/seasons affecting agriculture/production), **C-05** (player role/power for the future political system), **C-06** (scale limits, which determine whether actors per settler are kept or aggregated), and the **common property/entities model** (C-07 + GDD Entities).
 
-## Restricciones de este análisis
+## Constraints of this analysis
 
-No se modificó código fuente ni GDDs (es una tarea de comprensión). Las recomendaciones de refactor **no** se aplicaron; son insumos para una decisión de diseño/arquitectura del responsable del proyecto.
+No source code or GDDs were modified (this is an understanding task). The refactor recommendations were **not** applied; they are inputs for a design/architecture decision by the project owner.

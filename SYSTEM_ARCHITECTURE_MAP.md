@@ -1,46 +1,46 @@
 # SYSTEM_ARCHITECTURE_MAP — Civilization Evolutions
 
-> Mapa **conceptual** de la arquitectura de juego: sistemas, responsabilidades, relaciones, entidades compartidas y flujos principales. No es una especificación técnica final. Fuente de contratos: [GDD_MAESTRO §5–6](docs/00-project/GDD_MAESTRO.md); detalle por dominio en los GDD de sistema (ver [DOCUMENTATION_INDEX.md](DOCUMENTATION_INDEX.md)).
+> **Conceptual** map of the game architecture: systems, responsibilities, relationships, shared entities and main flows. It is not a final technical specification. Source of contracts: [GDD_MAESTRO §5–6](docs/00-project/GDD_MAESTRO.md); detail per domain in the system GDDs (see [DOCUMENTATION_INDEX.md](DOCUMENTATION_INDEX.md)).
 
-## Principio rector
+## Guiding principle
 
-El mundo se simula como **un sistema coherente**, no como features sueltas. Los sistemas comparten **entidades y recursos con identidad única**, se coordinan por un **reloj común** y se comunican por **eventos**, sin que cada sistema conozca la implementación interna de los demás. La **lógica de simulación** (reglas) se mantiene **separada de la presentación** (render/UI).
+The world is simulated as **one coherent system**, not as loose features. The systems share **entities and resources with a single identity**, coordinate through a **shared clock** and communicate through **events**, without each system knowing the internal implementation of the others. The **simulation logic** (rules) is kept **separate from presentation** (render/UI).
 
-## Capas conceptuales
+## Conceptual layers
 
 ```mermaid
 flowchart TB
-    subgraph FOUND["Fundaciones (datos y coordinación)"]
-        TIME["Tiempo y Simulación<br/>(reloj global único)"]
-        ENT["Entidades y Relaciones<br/>(identidad persistente)"]
-        RES["Recursos y Materiales<br/>(catálogo único)"]
-        GEO["Geografía / Clima / Medioambiente"]
-        GEN["Generación Procedural del Mundo"]
+    subgraph FOUND["Foundations (data and coordination)"]
+        TIME["Time and Simulation<br/>(single global clock)"]
+        ENT["Entities and Relationships<br/>(persistent identity)"]
+        RES["Resources and Materials<br/>(single catalog)"]
+        GEO["Geography / Climate / Environment"]
+        GEN["Procedural World Generation"]
     end
-    subgraph CORE["Simulación civil (núcleo del juego)"]
-        POP["Población y Sociedad"]
-        ECO["Economía"]
-        PROD["Producción y Trabajo"]
-        LOG["Transporte, Comercio y Logística"]
-        CON["Construcción y Arquitectura"]
+    subgraph CORE["Civil simulation (game core)"]
+        POP["Population and Society"]
+        ECO["Economy"]
+        PROD["Production and Labor"]
+        LOG["Transport, Trade and Logistics"]
+        CON["Construction and Architecture"]
     end
-    subgraph SOC["Sociedad e instituciones"]
-        CUL["Cultura e Identidad"]
-        REL["Religión"]
-        POL["Política y Gobierno"]
-        ADM["Administración Territorial"]
+    subgraph SOC["Society and institutions"]
+        CUL["Culture and Identity"]
+        REL["Religion"]
+        POL["Politics and Government"]
+        ADM["Territorial Administration"]
     end
-    subgraph WORLD["Mundo vivo"]
-        TEC["Tecnología, Ciencia e Innovación"]
-        EXP["Exploración y Expansión"]
-        DIP["Diplomacia"]
-        AI["IA y Autonomía de Civilizaciones"]
-        MIL["Guerra y Sistemas Militares"]
-        EVT["Eventos y Evolución Histórica"]
+    subgraph WORLD["Living world"]
+        TEC["Technology, Science and Innovation"]
+        EXP["Exploration and Expansion"]
+        DIP["Diplomacy"]
+        AI["AI and Civilization Autonomy"]
+        MIL["War and Military Systems"]
+        EVT["Events and Historical Evolution"]
     end
-    subgraph PRES["Presentación y meta"]
-        UI["Interfaz UI/UX"]
-        PRG["Progresión y Finalización"]
+    subgraph PRES["Presentation and meta"]
+        UI["Interface UI/UX"]
+        PRG["Progression and Ending"]
     end
 
     TIME --> CORE
@@ -89,87 +89,87 @@ flowchart TB
     EVT --> PRG
 ```
 
-(Las flechas indican "provee datos / habilita / condiciona"; las líneas `---` son relaciones bidireccionales fuertes.)
+(The arrows indicate "provides data / enables / conditions"; the `---` lines are strong bidirectional relationships.)
 
-## Responsabilidades (dueño de cada decisión)
+## Responsibilities (owner of each decision)
 
-| Sistema | Responsabilidad (de qué es autoridad) |
+| System | Responsibility (what it is the authority of) |
 |---|---|
-| **Tiempo y Simulación** | Reloj global único, calendario, velocidades, ciclos internos de distinta frecuencia. Coordina a todos. |
-| **Entidades y Relaciones** | Identidad persistente y relaciones de habitantes, familias, edificios, asentamientos, regiones y organizaciones. Base compartida. |
-| **Recursos y Materiales** | Catálogo e inventarios únicos, unidades, moneda, calidad/deterioro/almacenamiento. |
-| **Geografía/Clima/Medioambiente** | Estado y procesos naturales: relieve, hidrología, biomas, clima, recursos naturales, flora/fauna, desastres. |
-| **Generación del Mundo** | Estado inicial procedural del mapa + editor. Consume el modelo climático/recursos. |
-| **Población y Sociedad** | Dinámica demográfica y social: individuos, familias, clases, necesidades, salud, educación, migración. |
-| **Economía** | Propiedad, precios, mercados, consumo, moneda, tesorería, impuestos. |
-| **Producción y Trabajo** | Edificios productivos, recetas, productividad, empleo, calidad, evolución funcional/visual de edificios. |
-| **Transporte/Comercio/Logística** | Movimiento físico de recursos, rutas, infraestructura, mercados físicos, comercio. |
-| **Construcción y Arquitectura** | Obra, materiales constructivos, urbanismo, arquitectura, patrimonio, soporte físico. |
-| **Cultura / Religión / Política / Administración** | Identidad y prácticas / creencias e instituciones espirituales / poder, leyes, instituciones / organización territorial. |
-| **Tecnología** | Conocimiento e invenciones que habilitan métodos y cambian capacidades (sin adopción automática). |
-| **Exploración** | Adquisición y circulación del conocimiento espacial; ocupación/colonización. |
-| **Diplomacia / IA / Guerra** | Relaciones y tratados / decisiones autónomas de civilizaciones / conflicto armado. |
-| **Eventos** | Registra hechos producidos por los sistemas dueños; memoria y cronología. No crea efectos sin regla propietaria. |
-| **Interfaz / Progresión** | Presenta estado y órdenes (no es autoridad de reglas) / objetivos, puntuación y finalización opcionales. |
+| **Time and Simulation** | Single global clock, calendar, speeds, internal cycles of different frequency. Coordinates everyone. |
+| **Entities and Relationships** | Persistent identity and relationships of inhabitants, families, buildings, settlements, regions and organizations. Shared base. |
+| **Resources and Materials** | Single catalog and inventories, units, currency, quality/decay/storage. |
+| **Geography/Climate/Environment** | State and natural processes: relief, hydrology, biomes, climate, natural resources, flora/fauna, disasters. |
+| **World Generation** | Initial procedural state of the map + editor. Consumes the climate/resource model. |
+| **Population and Society** | Demographic and social dynamics: individuals, families, classes, needs, health, education, migration. |
+| **Economy** | Property, prices, markets, consumption, currency, treasury, taxes. |
+| **Production and Labor** | Productive buildings, recipes, productivity, employment, quality, functional/visual evolution of buildings. |
+| **Transport/Trade/Logistics** | Physical movement of resources, routes, infrastructure, physical markets, trade. |
+| **Construction and Architecture** | Construction work, building materials, urban planning, architecture, heritage, physical support. |
+| **Culture / Religion / Politics / Administration** | Identity and practices / beliefs and spiritual institutions / power, laws, institutions / territorial organization. |
+| **Technology** | Knowledge and inventions that enable methods and change capabilities (without automatic adoption). |
+| **Exploration** | Acquisition and circulation of spatial knowledge; occupation/colonization. |
+| **Diplomacy / AI / War** | Relationships and treaties / autonomous decisions of civilizations / armed conflict. |
+| **Events** | Records facts produced by the owner systems; memory and chronology. Does not create effects without an owning rule. |
+| **Interface / Progression** | Presents state and orders (not a rules authority) / objectives, scoring and optional endings. |
 
-## Entidades y datos compartidos (no duplicar)
+## Shared entities and data (do not duplicate)
 
-- **Recurso/material:** un identificador e inventario común, usado por Economía, Producción, Construcción, Logística, Comercio, Tecnología, Guerra. (Dueño: Recursos y Materiales.)
-- **Entidad del mundo** (habitante, familia, edificio, asentamiento, región, organización): identidad persistente e historial compartidos. (Dueño: Entidades y Relaciones.)
-- **Reloj/fecha:** única fuente temporal para todos los ciclos. (Dueño: Tiempo.)
-- **Conocimiento/tecnología:** habilita capacidades en varios dominios; disponibilidad ≠ adopción. (Dueño: Tecnología.)
-- **Registro histórico:** hechos verificables emitidos por los sistemas dueños. (Dueño: Eventos.)
+- **Resource/material:** a single identifier and shared inventory, used by Economy, Production, Construction, Logistics, Trade, Technology, War. (Owner: Resources and Materials.)
+- **World entity** (inhabitant, family, building, settlement, region, organization): shared persistent identity and history. (Owner: Entities and Relationships.)
+- **Clock/date:** a single temporal source for all cycles. (Owner: Time.)
+- **Knowledge/technology:** enables capabilities across several domains; availability ≠ adoption. (Owner: Technology.)
+- **Historical record:** verifiable facts emitted by the owner systems. (Owner: Events.)
 
-## Flujos principales
+## Main flows
 
-**1. Cadena productiva + logística + consumo**
+**1. Production chain + logistics + consumption**
 ```mermaid
 flowchart LR
-    GEO["Geografía: recursos en el mapa"] --> EXTR["Extracción (recolector, cantera, tala)"]
-    EXTR --> INV1["Inventario de edificio"]
-    INV1 --> TRANSP["Transporte físico (logística)"]
-    TRANSP --> PROD["Transformación (molino, panadería)"]
-    PROD --> STORE["Almacén / depósito"]
-    STORE --> MKT["Mercado / distribución"]
-    MKT --> POP["Consumo de la población"]
-    POP -. necesidades/felicidad .-> ECO["Economía (precios, demanda)"]
-    ECO -. prioridades .-> PROD
+    GEO["Geography: resources on the map"] --> EXTR["Extraction (gatherer, quarry, logging)"]
+    EXTR --> INV1["Building inventory"]
+    INV1 --> TRANSP["Physical transport (logistics)"]
+    TRANSP --> PROD["Transformation (mill, bakery)"]
+    PROD --> STORE["Storehouse / depot"]
+    STORE --> MKT["Market / distribution"]
+    MKT --> POP["Population consumption"]
+    POP -. needs/happiness .-> ECO["Economy (prices, demand)"]
+    ECO -. priorities .-> PROD
 ```
-Regla: **nada se consume en destino si no fue entregado físicamente** (logística real, simplificada).
+Rule: **nothing is consumed at the destination unless it was physically delivered** (real logistics, simplified).
 
-**2. Tecnología como disparador transversal**
+**2. Technology as a cross-cutting trigger**
 ```mermaid
 flowchart LR
-    TEC["Descubrimiento / tecnología"] --> PRODC["Métodos de producción"]
-    TEC --> CONC["Materiales y arquitectura"]
-    TEC --> LOGC["Vehículos / infraestructura"]
-    TEC --> MILC["Capacidad militar"]
-    TEC --> SOCC["Organización social"]
-    PRODC --> VIS["Evolución visible de edificios y mundo"]
+    TEC["Discovery / technology"] --> PRODC["Production methods"]
+    TEC --> CONC["Materials and architecture"]
+    TEC --> LOGC["Vehicles / infrastructure"]
+    TEC --> MILC["Military capability"]
+    TEC --> SOCC["Social organization"]
+    PRODC --> VIS["Visible evolution of buildings and world"]
     CONC --> VIS
 ```
-Regla: la tecnología **habilita**; la adopción y sus reglas pertenecen a cada dominio.
+Rule: technology **enables**; adoption and its rules belong to each domain.
 
-**3. El tiempo como eje de coordinación**
+**3. Time as the coordination axis**
 ```mermaid
 flowchart TB
-    CLK["Reloj global único"] --> D["ciclo diario"]
-    CLK --> S["estaciones"]
-    CLK --> Y["años"]
-    D --> POPt["Población / necesidades"]
-    S --> AGR["Agricultura / producción estacional"]
-    Y --> TECt["Investigación / evolución histórica"]
-    S --> ENVt["Clima / medioambiente"]
-    Y --> EVTt["Evaluación de acontecimientos"]
+    CLK["Single global clock"] --> D["daily cycle"]
+    CLK --> S["seasons"]
+    CLK --> Y["years"]
+    D --> POPt["Population / needs"]
+    S --> AGR["Agriculture / seasonal production"]
+    Y --> TECt["Research / historical evolution"]
+    S --> ENVt["Climate / environment"]
+    Y --> EVTt["Evaluation of occurrences"]
 ```
 
-## Reglas de integración (del Maestro §6)
+## Integration rules (from the Maestro §6)
 
-- La **interfaz** presenta, no decide; las notificaciones nacen de cambios simulados.
-- **Eventos** consume hechos reales; no inventa efectos.
-- **Recursos** no se copian por sistema; identidad única.
-- **Población** agregada debe mantener coherencia con la población total.
-- La **disponibilidad** tecnológica no implica adopción automática.
-- Ningún sistema impone una **cronología histórica obligatoria**.
+- The **interface** presents, it does not decide; notifications arise from simulated changes.
+- **Events** consumes real facts; it does not invent effects.
+- **Resources** are not copied per system; single identity.
+- Aggregate **Population** must stay coherent with the total population.
+- Technological **availability** does not imply automatic adoption.
+- No system imposes a **mandatory historical chronology**.
 
-> Para el estado de qué está implementado de este mapa, ver [IMPLEMENTATION_ALIGNMENT.md](IMPLEMENTATION_ALIGNMENT.md).
+> For the status of what has been implemented of this map, see [IMPLEMENTATION_ALIGNMENT.md](IMPLEMENTATION_ALIGNMENT.md).

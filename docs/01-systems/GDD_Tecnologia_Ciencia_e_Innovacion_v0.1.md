@@ -1,856 +1,856 @@
-> **Control documental:** 0.1 | Estado: diseño conceptual; las decisiones marcadas como confirmadas se preservan desde la fuente. **Alcance:** este GDD es fuente de detalle de su dominio; el GDD Maestro establece la visión común. Los conflictos intersistema se registran en AUDIT_REPORT.md y no se resuelven implícitamente.
+> **Document control:** 0.1 | Status: conceptual design; decisions marked as confirmed are preserved from the source. **Scope:** this GDD is the detail source for its domain; the Master GDD establishes the shared vision. Cross-system conflicts are recorded in AUDIT_REPORT.md and are not resolved implicitly.
 
 ---
 
-# GDD — Sistema de Tecnología, Ciencia e Innovación v0.1
+# GDD — Technology, Science and Innovation System v0.1
 
-## 1. Visión general
+## 1. General overview
 
-El sistema de Tecnología, Ciencia e Innovación representa la capacidad de las civilizaciones para desarrollar conocimientos, descubrir soluciones, mejorar técnicas, inventar herramientas y transformar su entorno.
+The Technology, Science and Innovation system represents the capacity of civilizations to develop knowledge, discover solutions, improve techniques, invent tools and transform their environment.
 
-El progreso tecnológico será uno de los principales motores de la evolución de la civilización.
+Technological progress will be one of the main drivers of a civilization's evolution.
 
-No funcionará como un árbol tecnológico tradicional donde el jugador acumula puntos y desbloquea tecnologías. El conocimiento surgirá de procesos históricos, necesidades sociales, experimentación, observación, intercambio cultural y desarrollo científico.
+It will not function as a traditional technology tree where the player accumulates points and unlocks technologies. Knowledge will emerge from historical processes, social needs, experimentation, observation, cultural exchange and scientific development.
 
-El sistema combinará:
+The system will combine:
 
-- Evolución tecnológica orgánica.
-- Investigación dirigida.
-- Innovación espontánea.
-- Experimentación.
-- Descubrimientos accidentales.
-- Desarrollo científico.
-- Transmisión de conocimientos.
-- Intercambio tecnológico entre civilizaciones.
-- Personajes históricos e inventores.
-- Evolución autónoma de las diferentes disciplinas.
+- Organic technological evolution.
+- Directed research.
+- Spontaneous innovation.
+- Experimentation.
+- Accidental discoveries.
+- Scientific development.
+- Transmission of knowledge.
+- Technological exchange between civilizations.
+- Historical figures and inventors.
+- Autonomous evolution of the different disciplines.
 
-El jugador podrá orientar el progreso, establecer prioridades y financiar determinadas investigaciones, pero no tendrá que controlar individualmente cada descubrimiento.
+The player will be able to steer progress, set priorities and fund certain research, but will not have to individually control each discovery.
 
-**Principio fundamental:** la tecnología debe evolucionar como consecuencia de la historia de cada civilización. No será el calendario el que determine qué tecnologías aparecen, sino las condiciones que hacen posible su desarrollo.
-
----
-
-## 2. Modelo general de progreso tecnológico
-
-Se utilizará un modelo híbrido.
-
-Las tecnologías y conocimientos estarán organizados en disciplinas, pero su desarrollo dependerá de condiciones históricas y materiales.
-
-El sistema tendrá dos grandes componentes:
-
-### 2.1. Evolución tecnológica autónoma
-
-Las disciplinas podrán progresar naturalmente según:
-
-- Conocimientos existentes.
-- Necesidades de la sociedad.
-- Actividades económicas.
-- Disponibilidad de recursos.
-- Especialistas.
-- Instituciones educativas.
-- Capacidad de experimentación.
-- Contacto con otras civilizaciones.
-- Condiciones geográficas.
-- Desarrollo económico.
-- Infraestructura.
-
-Por ejemplo, una sociedad agrícola que necesita aumentar su producción podrá desarrollar espontáneamente mejores herramientas, técnicas de cultivo y sistemas de irrigación.
-
-No será necesario que el jugador ordene individualmente cada innovación.
-
-### 2.2. Investigación dirigida
-
-El jugador podrá establecer prioridades.
-
-Por ejemplo:
-- Mejorar la metalurgia.
-- Desarrollar técnicas agrícolas.
-- Perfeccionar la navegación.
-- Mejorar los sistemas constructivos.
-- Investigar medicina.
-- Desarrollar conocimientos matemáticos.
-
-La civilización concentrará más recursos y esfuerzos en esas áreas.
-
-Esto permitirá acelerar determinados desarrollos sin detener completamente la evolución del resto de las disciplinas.
+**Fundamental principle:** technology must evolve as a consequence of each civilization's history. It will not be the calendar that determines which technologies appear, but the conditions that make their development possible.
 
 ---
 
-## 3. El conocimiento y sus diferentes niveles
+## 2. General model of technological progress
 
-Es importante diferenciar entre conocer un principio, dominar una técnica y poder aplicarla a escala productiva.
+A hybrid model will be used.
 
-Por ejemplo, una sociedad puede conocer el hierro, pero todavía no tener capacidad para producirlo eficientemente.
+Technologies and knowledge will be organized into disciplines, but their development will depend on historical and material conditions.
 
-Cada conocimiento podrá atravesar diferentes estados:
+The system will have two major components:
 
-1. Desconocido.
-2. Conocido parcialmente.
-3. Comprendido.
-4. Experimentado.
-5. Desarrollado técnicamente.
-6. Aplicable.
-7. Dominado.
-8. Perfeccionado.
+### 2.1. Autonomous technological evolution
 
-Estos estados no serán necesariamente iguales para todas las tecnologías.
+Disciplines may progress naturally according to:
 
-Algunos conocimientos podrán utilizarse de manera práctica mucho antes de comprender científicamente sus fundamentos.
+- Existing knowledge.
+- Society's needs.
+- Economic activities.
+- Resource availability.
+- Specialists.
+- Educational institutions.
+- Capacity for experimentation.
+- Contact with other civilizations.
+- Geographic conditions.
+- Economic development.
+- Infrastructure.
 
-Por ejemplo, una civilización puede construir mecanismos hidráulicos funcionales sin disponer de una teoría científica formal de la mecánica.
+For example, an agricultural society that needs to increase its output may spontaneously develop better tools, cultivation techniques and irrigation systems.
 
-El dominio de una tecnología también podrá variar entre regiones y productores.
+It will not be necessary for the player to individually order each innovation.
+
+### 2.2. Directed research
+
+The player will be able to set priorities.
+
+For example:
+- Improve metallurgy.
+- Develop agricultural techniques.
+- Perfect navigation.
+- Improve construction systems.
+- Research medicine.
+- Develop mathematical knowledge.
+
+The civilization will concentrate more resources and effort on those areas.
+
+This will allow certain developments to be accelerated without completely halting the evolution of the other disciplines.
 
 ---
 
-## 4. Disciplinas tecnológicas y científicas
+## 3. Knowledge and its different levels
 
-El conocimiento estará organizado en grandes disciplinas.
+It is important to distinguish between knowing a principle, mastering a technique and being able to apply it at a productive scale.
 
-| Disciplina | Ejemplos de desarrollo |
+For example, a society may be aware of iron but still lack the capacity to produce it efficiently.
+
+Each piece of knowledge may pass through different states:
+
+1. Unknown.
+2. Partially known.
+3. Understood.
+4. Experimented with.
+5. Technically developed.
+6. Applicable.
+7. Mastered.
+8. Perfected.
+
+These states will not necessarily be the same for all technologies.
+
+Some knowledge may be used in practice long before its fundamentals are scientifically understood.
+
+For example, a civilization may build functional hydraulic mechanisms without having a formal scientific theory of mechanics.
+
+Mastery of a technology may also vary between regions and producers.
+
+---
+
+## 4. Technological and scientific disciplines
+
+Knowledge will be organized into major disciplines.
+
+| Discipline | Examples of development |
 |---|---|
-| Agricultura | Cultivos, rotación, irrigación, fertilización y herramientas agrícolas. |
-| Ganadería | Domesticación, reproducción, selección y manejo animal. |
-| Metalurgia | Cobre, bronce, hierro, acero y técnicas de fundición. |
-| Construcción | Materiales, estructuras, técnicas constructivas y arquitectura. |
-| Ingeniería | Mecanismos, máquinas, hidráulica y sistemas mecánicos. |
-| Medicina | Anatomía, cirugía, higiene, tratamientos y medicamentos. |
-| Matemáticas | Aritmética, geometría, álgebra y cálculo. |
-| Astronomía | Calendarios, navegación, observación y modelos astronómicos. |
-| Física | Mecánica, óptica, electricidad y fenómenos naturales. |
-| Química | Materiales, combustión, pigmentos, procesos y sustancias. |
-| Transporte | Ruedas, caminos, embarcaciones y sistemas de transporte. |
-| Comunicación | Escritura, imprenta, instrumentos y transmisión de información. |
-| Tecnología militar | Armamento, fortificaciones, logística e ingeniería militar. |
-| Energía | Fuego, fuerza animal, energía hidráulica y eólica. |
-| Organización social | Administración, contabilidad, sistemas de medición y gestión. |
+| Agriculture | Crops, rotation, irrigation, fertilization and agricultural tools. |
+| Livestock farming | Domestication, breeding, selection and animal husbandry. |
+| Metallurgy | Copper, bronze, iron, steel and smelting techniques. |
+| Construction | Materials, structures, construction techniques and architecture. |
+| Engineering | Mechanisms, machines, hydraulics and mechanical systems. |
+| Medicine | Anatomy, surgery, hygiene, treatments and medicines. |
+| Mathematics | Arithmetic, geometry, algebra and calculus. |
+| Astronomy | Calendars, navigation, observation and astronomical models. |
+| Physics | Mechanics, optics, electricity and natural phenomena. |
+| Chemistry | Materials, combustion, pigments, processes and substances. |
+| Transport | Wheels, roads, vessels and transport systems. |
+| Communication | Writing, printing, instruments and information transmission. |
+| Military technology | Weaponry, fortifications, logistics and military engineering. |
+| Energy | Fire, animal power, hydraulic and wind energy. |
+| Social organization | Administration, accounting, measurement systems and management. |
 
-Las disciplinas estarán interconectadas.
+The disciplines will be interconnected.
 
-Un avance en matemáticas podrá facilitar desarrollos astronómicos, constructivos y de ingeniería.
+An advance in mathematics may facilitate astronomical, construction and engineering developments.
 
-Una mejora metalúrgica podrá transformar la agricultura, la construcción, el transporte y la producción de herramientas.
+A metallurgical improvement may transform agriculture, construction, transport and tool production.
 
-No existirán compartimentos tecnológicos completamente independientes.
-
----
-
-## 5. Origen de los descubrimientos
-
-El conocimiento podrá surgir de diferentes fuentes.
-
-### 5.1. Necesidades prácticas
-
-Las necesidades de la sociedad serán uno de los principales motores de innovación.
-
-Ejemplos:
-- Necesidad de producir más alimentos.
-- Escasez de determinados materiales.
-- Dificultades de transporte.
-- Necesidad de construir edificios más resistentes.
-- Problemas sanitarios.
-- Necesidad de conservar alimentos.
-- Crecimiento de las ciudades.
-
-### 5.2. Experimentación
-
-Los especialistas podrán realizar experimentos para mejorar técnicas existentes o desarrollar nuevas soluciones.
-
-La experimentación dependerá de:
-- Conocimientos previos.
-- Materiales.
-- Herramientas.
-- Tiempo.
-- Especialistas.
-- Infraestructura.
-- Recursos económicos.
-
-Los experimentos podrán producir resultados positivos, negativos o inesperados.
-
-### 5.3. Observación
-
-La observación de fenómenos naturales permitirá desarrollar conocimientos.
-
-Por ejemplo:
-- Observación de los ciclos agrícolas.
-- Comportamiento de los astros.
-- Propiedades de los materiales.
-- Fenómenos meteorológicos.
-- Enfermedades.
-- Comportamiento de animales.
-
-### 5.4. Descubrimientos accidentales
-
-Podrán producirse innovaciones inesperadas mediante:
-- Accidentes.
-- Pruebas y errores.
-- Combinación de técnicas.
-- Errores experimentales.
-- Descubrimientos fortuitos.
-
-Estos acontecimientos deberán tener una base razonable en las actividades y conocimientos existentes.
-
-No serán simples eventos aleatorios desconectados del mundo.
-
-### 5.5. Personajes históricos e innovadores
-
-El mundo podrá generar personajes importantes que introduzcan mejoras y descubrimientos.
-
-Podrán aparecer:
-- Inventores.
-- Artesanos innovadores.
-- Matemáticos.
-- Astrónomos.
-- Médicos.
-- Filósofos naturales.
-- Ingenieros.
-- Constructores.
-- Exploradores.
-- Científicos.
-
-Estos personajes podrán desarrollar conocimientos nuevos, perfeccionar tecnologías existentes o introducir técnicas provenientes de otras civilizaciones.
-
-Su aparición será parcialmente impredecible, pero dependerá de las condiciones sociales, educativas y materiales.
+There will be no completely independent technological compartments.
 
 ---
 
-## 6. Personajes y especialistas
+## 5. Origin of discoveries
 
-Los individuos podrán tener conocimientos y habilidades específicas.
+Knowledge may arise from different sources.
 
-Por ejemplo:
-- Un herrero podrá dominar técnicas metalúrgicas.
-- Un arquitecto podrá desarrollar nuevas soluciones constructivas.
-- Un agricultor podrá perfeccionar técnicas de cultivo.
-- Un médico podrá especializarse en determinados tratamientos.
-- Un matemático podrá desarrollar nuevos métodos de cálculo.
+### 5.1. Practical needs
 
-Los especialistas podrán tener:
+Society's needs will be one of the main drivers of innovation.
 
-- Profesión.
-- Conocimientos.
-- Habilidades.
-- Experiencia.
-- Nivel de especialización.
-- Capacidad de experimentación.
-- Reputación.
-- Relaciones con otros especialistas.
+Examples:
+- The need to produce more food.
+- Scarcity of certain materials.
+- Transport difficulties.
+- The need to build more resilient buildings.
+- Sanitation problems.
+- The need to preserve food.
+- The growth of cities.
 
-El conocimiento podrá transmitirse mediante maestros, aprendices, familias, instituciones y comunidades profesionales.
+### 5.2. Experimentation
 
-En poblaciones pequeñas, los especialistas podrán ser individuos identificables.
+Specialists may carry out experiments to improve existing techniques or develop new solutions.
 
-En sociedades grandes, se representarán mediante grupos profesionales e instituciones.
+Experimentation will depend on:
+- Prior knowledge.
+- Materials.
+- Tools.
+- Time.
+- Specialists.
+- Infrastructure.
+- Economic resources.
 
----
+Experiments may produce positive, negative or unexpected results.
 
-## 7. Instituciones científicas y educativas
+### 5.3. Observation
 
-Las estructuras de transmisión y desarrollo del conocimiento evolucionarán históricamente.
+The observation of natural phenomena will make it possible to develop knowledge.
 
-Podrán existir:
+For example:
+- Observation of agricultural cycles.
+- The behavior of celestial bodies.
+- The properties of materials.
+- Weather phenomena.
+- Diseases.
+- Animal behavior.
 
-- Talleres artesanales.
-- Escuelas de oficios.
-- Centros religiosos.
-- Bibliotecas.
-- Escuelas.
-- Universidades.
-- Academias.
-- Sociedades científicas.
-- Instituciones de investigación.
+### 5.4. Accidental discoveries
 
-Estas instituciones podrán:
+Unexpected innovations may occur through:
+- Accidents.
+- Trial and error.
+- Combination of techniques.
+- Experimental errors.
+- Fortuitous discoveries.
 
-- Enseñar conocimientos.
-- Formar especialistas.
-- Conservar documentos.
-- Realizar experimentos.
-- Financiar investigaciones.
-- Difundir descubrimientos.
-- Atraer personas capacitadas.
+These occurrences must have a reasonable basis in existing activities and knowledge.
 
-Su aparición dependerá de las condiciones históricas y sociales.
+They will not be mere random events disconnected from the world.
 
-La educación y la alfabetización tendrán una relación directa con la capacidad de transmisión del conocimiento.
+### 5.5. Historical figures and innovators
 
----
+The world may generate important figures who introduce improvements and discoveries.
 
-## 8. Transmisión y conservación del conocimiento
+The following may appear:
+- Inventors.
+- Innovative artisans.
+- Mathematicians.
+- Astronomers.
+- Physicians.
+- Natural philosophers.
+- Engineers.
+- Builders.
+- Explorers.
+- Scientists.
 
-El conocimiento podrá transmitirse mediante:
+These figures may develop new knowledge, perfect existing technologies or introduce techniques originating from other civilizations.
 
-- Familias.
-- Maestros y aprendices.
-- Artesanos.
-- Escuelas.
-- Religiones.
-- Bibliotecas.
-- Documentos.
-- Universidades.
-- Comercio.
-- Migraciones.
-- Conquistas.
-- Contacto entre civilizaciones.
-
-### Conservación
-
-El conocimiento adquirido por una civilización será persistente.
-
-No desaparecerá simplemente porque un especialista muera o una institución cierre.
-
-La pérdida de conocimientos será extremadamente excepcional y solamente podrá producirse ante circunstancias extraordinarias.
-
-Por ejemplo:
-- Destrucción prácticamente total de los registros disponibles.
-- Desaparición de una tradición técnica sin transmisión.
-- Colapso extraordinario de las estructuras que conservaban un conocimiento especializado.
-
-La regla general será que el conocimiento acumulado permanece.
-
-### Pérdida de capacidad práctica
-
-Debe distinguirse entre conservar un conocimiento y mantener la capacidad de aplicarlo.
-
-Una civilización podrá conocer una técnica, pero dejar de tener:
-- Especialistas.
-- Herramientas.
-- Materiales.
-- Instalaciones.
-- Capacidad económica.
-
-En ese caso, conservará el conocimiento, aunque no pueda utilizarlo eficientemente hasta recuperar las condiciones necesarias.
+Their appearance will be partially unpredictable, but it will depend on social, educational and material conditions.
 
 ---
 
-## 9. Intercambio tecnológico entre civilizaciones
+## 6. Figures and specialists
 
-Los conocimientos podrán difundirse entre diferentes sociedades.
+Individuals may have specific knowledge and skills.
 
-Los principales mecanismos serán:
+For example:
+- A blacksmith may master metallurgical techniques.
+- An architect may develop new construction solutions.
+- A farmer may perfect cultivation techniques.
+- A physician may specialize in certain treatments.
+- A mathematician may develop new calculation methods.
 
-- Comercio.
-- Diplomacia.
-- Migraciones.
-- Guerras.
-- Conquistas.
-- Espionaje.
-- Matrimonios.
-- Intercambio de especialistas.
-- Viajes y exploración.
-- Contacto cultural.
+Specialists may have:
 
-Una civilización podrá adoptar tecnologías que otra desarrolló previamente.
+- Profession.
+- Knowledge.
+- Skills.
+- Experience.
+- Level of specialization.
+- Capacity for experimentation.
+- Reputation.
+- Relationships with other specialists.
 
-No necesitará reproducir todo el proceso de descubrimiento original.
+Knowledge may be transmitted through masters, apprentices, families, institutions and professional communities.
 
-Sin embargo, para utilizar una tecnología deberá disponer de las condiciones necesarias para comprenderla, adaptarla y aplicarla.
+In small populations, specialists may be identifiable individuals.
 
-La adopción tecnológica podrá ser gradual.
-
-Una civilización podrá conocer una técnica extranjera y tardar años o generaciones en incorporarla plenamente.
-
----
-
-## 10. Evolución de las disciplinas
-
-Cada disciplina tendrá una evolución progresiva.
-
-Por ejemplo, la metalurgia podrá atravesar diferentes desarrollos:
-
-1. Trabajo de metales nativos.
-2. Fundición de cobre.
-3. Desarrollo de aleaciones.
-4. Producción de bronce.
-5. Producción de hierro.
-6. Mejoras en hornos y procesos.
-7. Desarrollo de diferentes calidades de acero.
-8. Perfeccionamiento de herramientas y métodos metalúrgicos.
-
-Estos desarrollos no serán simples desbloqueos.
-
-Cada avance deberá reflejarse en:
-- Conocimientos.
-- Herramientas.
-- Instalaciones.
-- Especialistas.
-- Métodos de producción.
-- Calidad de los productos.
-- Capacidad productiva.
-
-Las diferentes civilizaciones podrán seguir caminos distintos y alcanzar determinados conocimientos en momentos diferentes.
+In large societies, they will be represented through professional groups and institutions.
 
 ---
 
-## 11. Evolución tecnológica simultánea
+## 7. Scientific and educational institutions
 
-Este será uno de los componentes más importantes del sistema.
+The structures for transmitting and developing knowledge will evolve over history.
 
-Las diferentes disciplinas evolucionarán simultáneamente.
+The following may exist:
 
-El jugador podrá priorizar determinadas áreas, pero las demás continuarán desarrollándose cuando existan condiciones favorables.
+- Artisanal workshops.
+- Trade schools.
+- Religious centers.
+- Libraries.
+- Schools.
+- Universities.
+- Academies.
+- Scientific societies.
+- Research institutions.
 
-Por ejemplo, si el jugador prioriza la metalurgia:
-- Se asignarán más recursos a esa disciplina.
-- Podrán aparecer más especialistas.
-- Se desarrollarán nuevas instalaciones.
-- Se acelerarán determinadas investigaciones.
+These institutions may:
 
-Mientras tanto, la agricultura, la construcción, la medicina y otras disciplinas podrán seguir evolucionando mediante sus propios procesos.
+- Teach knowledge.
+- Train specialists.
+- Preserve documents.
+- Carry out experiments.
+- Fund research.
+- Disseminate discoveries.
+- Attract skilled people.
 
-Esto permitirá una civilización tecnológicamente diversa y evitará que todo el progreso dependa de una lista de investigaciones seleccionadas por el jugador.
+Their appearance will depend on historical and social conditions.
 
-### Diferentes velocidades de desarrollo
-
-Cada disciplina tendrá su propio ritmo.
-
-Podrá depender de:
-- Necesidades.
-- Recursos.
-- Especialistas.
-- Inversión.
-- Conocimientos existentes.
-- Contactos externos.
-- Instituciones.
-- Actividad económica.
-
-Una civilización podrá tener una metalurgia avanzada y conocimientos matemáticos relativamente limitados, o una astronomía destacada sin grandes desarrollos en ingeniería.
+Education and literacy will have a direct relationship with the capacity to transmit knowledge.
 
 ---
 
-## 12. Control del jugador sobre la investigación
+## 8. Transmission and preservation of knowledge
 
-El jugador no será responsable de seleccionar individualmente cada experimento.
+Knowledge may be transmitted through:
 
-Su papel será establecer prioridades.
+- Families.
+- Masters and apprentices.
+- Artisans.
+- Schools.
+- Religions.
+- Libraries.
+- Documents.
+- Universities.
+- Trade.
+- Migrations.
+- Conquests.
+- Contact between civilizations.
 
-Podrá:
-- Favorecer disciplinas.
-- Seleccionar tecnologías de interés.
-- Financiar investigaciones.
-- Construir instituciones.
-- Promover la educación.
-- Favorecer determinadas profesiones.
-- Facilitar el acceso a recursos.
-- Incentivar la experimentación.
+### Preservation
 
-Los investigadores y especialistas tendrán autonomía para trabajar.
+Knowledge acquired by a civilization will be persistent.
 
-La inversión y las prioridades aumentarán las posibilidades y la velocidad de determinados avances, pero no garantizarán resultados inmediatos.
+It will not disappear simply because a specialist dies or an institution closes.
 
-El jugador también podrá delegar completamente la evolución tecnológica.
+The loss of knowledge will be extremely exceptional and may occur only under extraordinary circumstances.
 
----
+For example:
+- Practically total destruction of the available records.
+- Disappearance of a technical tradition without transmission.
+- Extraordinary collapse of the structures that preserved specialized knowledge.
 
-## 13. Ciencia y tecnología: dos dimensiones diferentes
+The general rule will be that accumulated knowledge remains.
 
-El sistema distinguirá entre conocimiento científico y conocimiento práctico.
+### Loss of practical capacity
 
-Una sociedad podrá desarrollar soluciones técnicas sin comprender completamente sus fundamentos científicos.
+A distinction must be made between preserving knowledge and maintaining the capacity to apply it.
 
-Ejemplos históricos:
-- Técnicas metalúrgicas anteriores a la química moderna.
-- Construcciones monumentales anteriores a la ingeniería estructural formalizada.
-- Máquinas mecánicas anteriores a una comprensión científica completa de sus principios.
-- Técnicas agrícolas desarrolladas mediante observación y experiencia.
+A civilization may know a technique but cease to have:
+- Specialists.
+- Tools.
+- Materials.
+- Facilities.
+- Economic capacity.
 
-También podrá ocurrir lo contrario: una civilización puede desarrollar conocimientos teóricos que todavía no tiene capacidad material para aplicar.
-
-La ciencia podrá abrir oportunidades tecnológicas, pero no será siempre un requisito previo para la innovación práctica.
-
----
-
-## 14. Educación y difusión científica
-
-El sistema educativo tendrá una influencia importante sobre el progreso.
-
-La evolución histórica podrá incluir:
-
-- Aprendizaje familiar.
-- Transmisión artesanal.
-- Escuelas religiosas.
-- Escuelas públicas.
-- Centros especializados.
-- Universidades.
-- Academias científicas.
-- Instituciones de investigación.
-
-El acceso a la educación influirá sobre:
-- Cantidad de especialistas.
-- Alfabetización.
-- Transmisión del conocimiento.
-- Capacidad de experimentación.
-- Desarrollo científico.
-- Innovación.
-
-Las sociedades con mayor capacidad educativa podrán desarrollar y difundir conocimientos con mayor facilidad.
+In that case, it will retain the knowledge, although it will not be able to use it efficiently until the necessary conditions are recovered.
 
 ---
 
-## 15. Economía e innovación
+## 9. Technological exchange between civilizations
 
-El desarrollo tecnológico requerirá condiciones materiales.
+Knowledge may spread between different societies.
 
-Los principales factores serán:
+The main mechanisms will be:
 
-- Recursos económicos.
-- Materiales.
-- Herramientas.
-- Especialistas.
-- Tiempo.
-- Infraestructura.
-- Instituciones.
-- Conocimientos previos.
+- Trade.
+- Diplomacy.
+- Migrations.
+- Wars.
+- Conquests.
+- Espionage.
+- Marriages.
+- Exchange of specialists.
+- Travel and exploration.
+- Cultural contact.
 
-La disponibilidad de recursos no garantizará automáticamente un descubrimiento.
+A civilization may adopt technologies that another developed previously.
 
-También será necesario contar con personas capacitadas, experiencia y condiciones apropiadas.
+It will not need to reproduce the entire original discovery process.
 
-### Viabilidad económica
+However, to use a technology it must have the conditions necessary to understand, adapt and apply it.
 
-Una tecnología podrá ser conocida y técnicamente posible, pero no resultar rentable para una civilización.
+Technological adoption may be gradual.
 
-Por ejemplo, una sociedad podrá conocer determinado mecanismo hidráulico, pero no disponer de los recursos necesarios para construirlo a gran escala.
-
-La innovación deberá tener relación con la economía real de la civilización.
-
----
-
-## 16. Tecnología y medioambiente
-
-Los avances tecnológicos podrán modificar el entorno.
-
-Sin embargo, sus consecuencias ambientales dependerán de la escala, el contexto y la forma de utilización.
-
-Algunos ejemplos:
-
-- Tala de bosques.
-- Minería.
-- Irrigación.
-- Transformación de tierras.
-- Contaminación.
-- Explotación de recursos.
-- Construcción de represas.
-- Uso de combustibles.
-
-También podrán existir efectos positivos:
-- Mejor aprovechamiento de recursos.
-- Técnicas agrícolas más eficientes.
-- Sistemas de riego mejorados.
-- Mejor gestión de residuos.
-- Conservación de determinados recursos.
-
-No se asumirá que todo avance tecnológico produce necesariamente un daño ambiental.
-
-El resultado dependerá de cómo se aplique.
+A civilization may become aware of a foreign technique and take years or generations to fully incorporate it.
 
 ---
 
-## 17. Obsolescencia y convivencia tecnológica
+## 10. Evolution of the disciplines
 
-La aparición de una tecnología nueva no eliminará automáticamente las anteriores.
+Each discipline will have a progressive evolution.
 
-Las tecnologías antiguas podrán continuar utilizándose si resultan convenientes.
+For example, metallurgy may pass through different developments:
 
-Por ejemplo:
-- Molinos hidráulicos y molinos eólicos.
-- Herramientas manuales y herramientas mecanizadas.
-- Diferentes sistemas de transporte.
-- Técnicas constructivas tradicionales y nuevas.
+1. Working of native metals.
+2. Copper smelting.
+3. Development of alloys.
+4. Bronze production.
+5. Iron production.
+6. Improvements in furnaces and processes.
+7. Development of different grades of steel.
+8. Refinement of metallurgical tools and methods.
 
-Cada alternativa tendrá ventajas, limitaciones y costos.
+These developments will not be mere unlocks.
 
-El jugador podrá decidir cuándo modernizar sus instalaciones.
+Each advance must be reflected in:
+- Knowledge.
+- Tools.
+- Facilities.
+- Specialists.
+- Production methods.
+- Product quality.
+- Production capacity.
 
-También podrán coexistir diferentes niveles tecnológicos dentro de una misma civilización, especialmente entre regiones urbanas y rurales.
-
----
-
-## 18. Diversidad de caminos tecnológicos
-
-No todas las civilizaciones deberán desarrollar las mismas tecnologías en el mismo orden.
-
-El entorno y la historia influirán en sus prioridades y posibilidades.
-
-Por ejemplo:
-
-Una civilización sin acceso a ríos, lagos o mares difícilmente desarrollará una tradición naval importante.
-
-Una sociedad costera podrá desarrollar conocimientos marítimos avanzados.
-
-Una civilización con abundantes recursos minerales podrá especializarse en determinadas técnicas metalúrgicas.
-
-Una sociedad con grandes necesidades agrícolas podrá invertir fuertemente en irrigación y herramientas.
-
-Esto no significa que existan tecnologías arbitrariamente prohibidas para determinadas civilizaciones.
-
-Significa que las condiciones reales harán que algunos desarrollos sean mucho más probables que otros.
+Different civilizations may follow different paths and reach certain knowledge at different moments.
 
 ---
 
-## 19. Estancamiento y desarrollo tecnológico
+## 11. Simultaneous technological evolution
 
-Una civilización podrá experimentar períodos de estancamiento.
+This will be one of the most important components of the system.
 
-Esto podrá suceder por:
-- Falta de recursos.
-- Escasa inversión.
-- Aislamiento.
-- Falta de especialistas.
-- Ausencia de instituciones.
-- Dificultades económicas.
-- Falta de necesidades o incentivos para innovar.
+The different disciplines will evolve simultaneously.
 
-Sin embargo, el sistema no permitirá una involución tecnológica normal.
+The player may prioritize certain areas, but the rest will continue developing when favorable conditions exist.
 
-Una civilización podrá detener su progreso, pero conservará los conocimientos que ya adquirió.
+For example, if the player prioritizes metallurgy:
+- More resources will be assigned to that discipline.
+- More specialists may appear.
+- New facilities will be developed.
+- Certain research will be accelerated.
 
-La pérdida de conocimientos será extraordinariamente excepcional, como se definió anteriormente.
+Meanwhile, agriculture, construction, medicine and other disciplines may continue to evolve through their own processes.
 
-El estancamiento no impedirá que una sociedad vuelva a innovar cuando cambien sus condiciones.
+This will allow a technologically diverse civilization and will prevent all progress from depending on a list of research items selected by the player.
 
----
+### Different development speeds
 
-## 20. Tecnología militar
+Each discipline will have its own pace.
 
-El desarrollo militar será parte del sistema tecnológico general.
+It may depend on:
+- Needs.
+- Resources.
+- Specialists.
+- Investment.
+- Existing knowledge.
+- External contacts.
+- Institutions.
+- Economic activity.
 
-Incluirá:
-
-- Armamento.
-- Metalurgia militar.
-- Fortificaciones.
-- Ingeniería militar.
-- Transporte.
-- Logística.
-- Medicina militar.
-- Organización y equipamiento.
-
-Las tecnologías militares podrán beneficiarse de avances en otras disciplinas.
-
-Por ejemplo, una mejora metalúrgica podrá beneficiar tanto a herramientas agrícolas como a armamento.
-
-La guerra no será el eje central del juego, pero el desarrollo militar tendrá relevancia histórica, especialmente en etapas posteriores.
+A civilization may have advanced metallurgy and relatively limited mathematical knowledge, or outstanding astronomy without major developments in engineering.
 
 ---
 
-## 21. Evolución visual del progreso tecnológico
+## 12. Player control over research
 
-El progreso tecnológico deberá ser visible en el mundo.
+The player will not be responsible for individually selecting each experiment.
 
-No alcanzará con modificar estadísticas o desbloquear edificios.
+Their role will be to set priorities.
 
-Los avances deberán transformar progresivamente:
+They may:
+- Favor disciplines.
+- Select technologies of interest.
+- Fund research.
+- Build institutions.
+- Promote education.
+- Favor certain professions.
+- Facilitate access to resources.
+- Encourage experimentation.
 
-- Herramientas.
-- Maquinaria.
-- Equipamiento.
-- Técnicas constructivas.
-- Instalaciones productivas.
-- Sistemas agrícolas.
-- Transporte.
-- Infraestructura.
-- Iluminación.
-- Objetos cotidianos.
-- Instrumentos científicos.
-- Sistemas de comunicación.
+Researchers and specialists will have autonomy to work.
 
-### Ejemplo: evolución de una herrería
+Investment and priorities will increase the chances and speed of certain advances, but will not guarantee immediate results.
 
-Una herrería inicial podrá utilizar herramientas sencillas y técnicas manuales.
-
-Con el desarrollo tecnológico podrá incorporar:
-- Hornos mejorados.
-- Nuevas herramientas.
-- Sistemas de ventilación.
-- Mecanismos hidráulicos.
-- Equipamiento especializado.
-- Nuevas técnicas metalúrgicas.
-
-Su capacidad productiva, apariencia, distribución interior y productos cambiarán.
-
-Esto se conectará directamente con el sistema de Producción y Trabajo y con el sistema de Construcción y Arquitectura.
-
-El jugador deberá poder reconocer visualmente el desarrollo tecnológico de su civilización.
+The player may also delegate technological evolution entirely.
 
 ---
 
-## 22. Interfaz tecnológica
+## 13. Science and technology: two different dimensions
 
-La interfaz combinará un catálogo de conocimientos con información sobre especialistas, instituciones e investigaciones.
+The system will distinguish between scientific knowledge and practical knowledge.
 
-El jugador podrá consultar:
+A society may develop technical solutions without fully understanding their scientific foundations.
 
-- Disciplinas existentes.
-- Nivel de desarrollo.
-- Conocimientos adquiridos.
-- Investigaciones en curso.
-- Especialistas disponibles.
-- Instituciones relacionadas.
-- Tecnologías prioritarias.
-- Oportunidades de innovación.
-- Tecnologías conocidas por otras civilizaciones.
+Historical examples:
+- Metallurgical techniques predating modern chemistry.
+- Monumental constructions predating formalized structural engineering.
+- Mechanical machines predating a complete scientific understanding of their principles.
+- Agricultural techniques developed through observation and experience.
 
-También podrá identificar qué condiciones faltan para desarrollar determinadas tecnologías.
+The opposite may also occur: a civilization may develop theoretical knowledge that it does not yet have the material capacity to apply.
 
-No será necesario gestionar individualmente cada proceso.
+Science may open up technological opportunities, but it will not always be a prerequisite for practical innovation.
 
 ---
 
-## 23. Complejidad configurable
+## 14. Education and scientific dissemination
 
-El sistema comenzará con un nivel de realismo alto, pero permitirá profundizar posteriormente.
+The educational system will have an important influence on progress.
 
-**Básico**
-- Disciplinas generales.
-- Avances tecnológicos automáticos.
-- Algunas prioridades seleccionables.
-- Descubrimientos simplificados.
+Historical evolution may include:
 
-**Intermedio**
-- Especialistas.
-- Instituciones.
-- Investigaciones.
-- Intercambio tecnológico.
-- Diferentes niveles de dominio.
-- Innovación autónoma.
+- Family learning.
+- Artisanal transmission.
+- Religious schools.
+- Public schools.
+- Specialized centers.
+- Universities.
+- Scientific academies.
+- Research institutions.
 
-**Avanzado**
-- Procesos de experimentación detallados.
-- Desarrollo científico profundo.
-- Transmisión de conocimientos.
-- Innovación especializada.
-- Descubrimientos accidentales.
-- Redes de especialistas e instituciones.
+Access to education will influence:
+- The number of specialists.
+- Literacy.
+- Transmission of knowledge.
+- Capacity for experimentation.
+- Scientific development.
+- Innovation.
 
-La configuración podrá realizarse por sistema, sin alterar los principios fundamentales del progreso tecnológico.
-
-El estándar inicial será de realismo alto, con posibilidad de avanzar hacia una simulación más profunda.
+Societies with greater educational capacity will be able to develop and disseminate knowledge more easily.
 
 ---
 
-## 24. Alcance histórico
+## 15. Economy and innovation
 
-El juego comenzará en el Paleolítico y finalizará cuando comience la Revolución Industrial.
+Technological development will require material conditions.
 
-El sistema deberá contemplar, de forma flexible:
+The main factors will be:
 
-- Primeras herramientas.
-- Dominio del fuego.
-- Agricultura.
-- Domesticación.
-- Cerámica.
-- Metalurgia.
-- Escritura.
-- Matemáticas.
-- Ingeniería antigua.
-- Astronomía.
-- Medicina.
-- Grandes obras de construcción.
-- Mejoras medievales.
-- Navegación avanzada.
-- Imprenta.
-- Ciencia moderna temprana.
-- Ingeniería mecánica.
-- Desarrollos científicos de los siglos XVII y XVIII.
+- Economic resources.
+- Materials.
+- Tools.
+- Specialists.
+- Time.
+- Infrastructure.
+- Institutions.
+- Prior knowledge.
 
-La cronología será una referencia de plausibilidad, no una secuencia obligatoria.
+Resource availability will not automatically guarantee a discovery.
 
-No todas las civilizaciones deberán alcanzar los mismos desarrollos ni hacerlo simultáneamente.
+It will also be necessary to have skilled people, experience and appropriate conditions.
 
-La Revolución Industrial marcará el final del período jugable.
+### Economic viability
+
+A technology may be known and technically possible but not profitable for a civilization.
+
+For example, a society may know a certain hydraulic mechanism but lack the resources needed to build it at a large scale.
+
+Innovation must be related to the real economy of the civilization.
 
 ---
 
-## 25. Integración con otros sistemas
+## 16. Technology and the environment
 
-El sistema estará conectado con prácticamente todos los componentes del juego:
+Technological advances may modify the environment.
 
-| Sistema | Relación |
+However, their environmental consequences will depend on scale, context and manner of use.
+
+Some examples:
+
+- Deforestation.
+- Mining.
+- Irrigation.
+- Land transformation.
+- Pollution.
+- Resource exploitation.
+- Dam construction.
+- Fuel use.
+
+Positive effects may also exist:
+- Better use of resources.
+- More efficient agricultural techniques.
+- Improved irrigation systems.
+- Better waste management.
+- Preservation of certain resources.
+
+It will not be assumed that every technological advance necessarily produces environmental damage.
+
+The outcome will depend on how it is applied.
+
+---
+
+## 17. Obsolescence and technological coexistence
+
+The appearance of a new technology will not automatically eliminate the previous ones.
+
+Old technologies may continue to be used if they remain convenient.
+
+For example:
+- Water mills and windmills.
+- Hand tools and mechanized tools.
+- Different transport systems.
+- Traditional and new construction techniques.
+
+Each alternative will have advantages, limitations and costs.
+
+The player will be able to decide when to modernize their facilities.
+
+Different technological levels may also coexist within the same civilization, especially between urban and rural regions.
+
+---
+
+## 18. Diversity of technological paths
+
+Not all civilizations will have to develop the same technologies in the same order.
+
+The environment and history will influence their priorities and possibilities.
+
+For example:
+
+A civilization without access to rivers, lakes or seas will hardly develop an important naval tradition.
+
+A coastal society may develop advanced maritime knowledge.
+
+A civilization with abundant mineral resources may specialize in certain metallurgical techniques.
+
+A society with great agricultural needs may invest heavily in irrigation and tools.
+
+This does not mean that there are technologies arbitrarily forbidden to certain civilizations.
+
+It means that real conditions will make some developments much more likely than others.
+
+---
+
+## 19. Stagnation and technological development
+
+A civilization may experience periods of stagnation.
+
+This may happen due to:
+- Lack of resources.
+- Scarce investment.
+- Isolation.
+- Lack of specialists.
+- Absence of institutions.
+- Economic difficulties.
+- Lack of needs or incentives to innovate.
+
+However, the system will not allow normal technological regression.
+
+A civilization may halt its progress, but it will retain the knowledge it has already acquired.
+
+The loss of knowledge will be extraordinarily exceptional, as defined above.
+
+Stagnation will not prevent a society from innovating again when its conditions change.
+
+---
+
+## 20. Military technology
+
+Military development will be part of the general technological system.
+
+It will include:
+
+- Weaponry.
+- Military metallurgy.
+- Fortifications.
+- Military engineering.
+- Transport.
+- Logistics.
+- Military medicine.
+- Organization and equipment.
+
+Military technologies may benefit from advances in other disciplines.
+
+For example, a metallurgical improvement may benefit both agricultural tools and weaponry.
+
+War will not be the central axis of the game, but military development will have historical relevance, especially in later stages.
+
+---
+
+## 21. Visual evolution of technological progress
+
+Technological progress must be visible in the world.
+
+It will not be enough to modify statistics or unlock buildings.
+
+Advances must progressively transform:
+
+- Tools.
+- Machinery.
+- Equipment.
+- Construction techniques.
+- Productive facilities.
+- Agricultural systems.
+- Transport.
+- Infrastructure.
+- Lighting.
+- Everyday objects.
+- Scientific instruments.
+- Communication systems.
+
+### Example: evolution of a smithy
+
+An initial smithy may use simple tools and manual techniques.
+
+With technological development it may incorporate:
+- Improved furnaces.
+- New tools.
+- Ventilation systems.
+- Hydraulic mechanisms.
+- Specialized equipment.
+- New metallurgical techniques.
+
+Its production capacity, appearance, interior layout and products will change.
+
+This will connect directly with the Production and Labor system and with the Construction and Architecture system.
+
+The player must be able to visually recognize the technological development of their civilization.
+
+---
+
+## 22. Technology interface
+
+The interface will combine a catalog of knowledge with information about specialists, institutions and research.
+
+The player will be able to consult:
+
+- Existing disciplines.
+- Level of development.
+- Knowledge acquired.
+- Research in progress.
+- Available specialists.
+- Related institutions.
+- Priority technologies.
+- Innovation opportunities.
+- Technologies known by other civilizations.
+
+They will also be able to identify which conditions are missing in order to develop certain technologies.
+
+It will not be necessary to manage each process individually.
+
+---
+
+## 23. Configurable complexity
+
+The system will start with a high level of realism, but will allow greater depth later.
+
+**Basic**
+- General disciplines.
+- Automatic technological advances.
+- Some selectable priorities.
+- Simplified discoveries.
+
+**Intermediate**
+- Specialists.
+- Institutions.
+- Research.
+- Technological exchange.
+- Different levels of mastery.
+- Autonomous innovation.
+
+**Advanced**
+- Detailed experimentation processes.
+- Deep scientific development.
+- Transmission of knowledge.
+- Specialized innovation.
+- Accidental discoveries.
+- Networks of specialists and institutions.
+
+Configuration may be done per system, without altering the fundamental principles of technological progress.
+
+The initial standard will be high realism, with the possibility of advancing toward a deeper simulation.
+
+---
+
+## 24. Historical scope
+
+The game will begin in the Paleolithic and end when the Industrial Revolution begins.
+
+The system must provide, flexibly, for:
+
+- First tools.
+- Mastery of fire.
+- Agriculture.
+- Domestication.
+- Pottery.
+- Metallurgy.
+- Writing.
+- Mathematics.
+- Ancient engineering.
+- Astronomy.
+- Medicine.
+- Great construction works.
+- Medieval improvements.
+- Advanced navigation.
+- Printing.
+- Early modern science.
+- Mechanical engineering.
+- Scientific developments of the 17th and 18th centuries.
+
+The chronology will be a reference of plausibility, not a mandatory sequence.
+
+Not all civilizations will have to reach the same developments or do so simultaneously.
+
+The Industrial Revolution will mark the end of the playable period.
+
+---
+
+## 25. Integration with other systems
+
+The system will be connected to practically all components of the game:
+
+| System | Relationship |
 |---|---|
-| Economía | Costos, recursos, productividad e inversión. |
-| Producción y Trabajo | Herramientas, recetas, procesos y eficiencia. |
-| Construcción | Materiales, técnicas y arquitectura. |
-| Población | Especialistas, educación y transmisión. |
-| Cultura | Innovación, conocimiento y tradiciones. |
-| Religión | Instituciones educativas y conservación del conocimiento. |
-| Política | Financiación, instituciones y prioridades. |
-| Medioambiente | Explotación y transformación del entorno. |
-| Transporte | Navegación, caminos y mecanismos. |
-| Militar | Armamento, fortificaciones y logística. |
-| Diplomacia | Difusión e intercambio tecnológico. |
+| Economy | Costs, resources, productivity and investment. |
+| Production and Labor | Tools, recipes, processes and efficiency. |
+| Construction | Materials, techniques and architecture. |
+| Population | Specialists, education and transmission. |
+| Culture | Innovation, knowledge and traditions. |
+| Religion | Educational institutions and preservation of knowledge. |
+| Politics | Funding, institutions and priorities. |
+| Environment | Exploitation and transformation of the surroundings. |
+| Transport | Navigation, roads and mechanisms. |
+| Military | Weaponry, fortifications and logistics. |
+| Diplomacy | Technological dissemination and exchange. |
 
-La tecnología deberá ser uno de los principales factores de transformación de la civilización.
-
----
-
-## 26. MVP — Primera implementación
-
-La primera versión deberá incluir:
-
-- Disciplinas tecnológicas básicas.
-- Conocimientos iniciales.
-- Evolución autónoma de disciplinas.
-- Posibilidad de establecer prioridades.
-- Especialistas.
-- Transmisión básica de conocimientos.
-- Algunas tecnologías adquiribles mediante experimentación.
-- Mejoras productivas visibles.
-- Evolución de herramientas y equipamiento.
-- Interacción con producción, construcción y agricultura.
-
-Se utilizará una pequeña aldea como escenario de prueba.
-
-El objetivo será comprobar que la tecnología puede evolucionar de forma orgánica y producir mejoras visibles en la vida cotidiana.
-
-La arquitectura deberá permitir incorporar posteriormente todas las disciplinas y procesos históricos.
+Technology must be one of the main factors in the transformation of the civilization.
 
 ---
 
-## 27. Decisiones confirmadas
+## 26. MVP — First implementation
 
-| Tema | Decisión |
+The first version must include:
+
+- Basic technological disciplines.
+- Initial knowledge.
+- Autonomous evolution of disciplines.
+- The ability to set priorities.
+- Specialists.
+- Basic transmission of knowledge.
+- Some technologies obtainable through experimentation.
+- Visible productive improvements.
+- Evolution of tools and equipment.
+- Interaction with production, construction and agriculture.
+
+A small village will be used as a test scenario.
+
+The goal will be to verify that technology can evolve organically and produce visible improvements in everyday life.
+
+The architecture must allow all disciplines and historical processes to be added later.
+
+---
+
+## 27. Confirmed decisions
+
+| Topic | Decision |
 |---|---|
-| Modelo de progreso | Híbrido: orgánico y dirigido. |
-| Origen del conocimiento | Todas las fuentes propuestas. |
-| Descubrimientos | Experimentación, observación, necesidades y casualidades. |
-| Control del jugador | Establece prioridades y financia; los especialistas investigan. |
-| Disciplinas | Todas las propuestas. |
-| Transmisión | Familiar, artesanal, educativa, institucional e internacional. |
-| Pérdida de conocimientos | Extremadamente excepcional. |
-| Intercambio tecnológico | Sí, mediante todos los mecanismos relevantes. |
-| Evolución simultánea | Todas las disciplinas pueden avanzar en paralelo. |
-| Especialización | Sí, con personajes identificables y grupos profesionales. |
-| Innovadores históricos | Sí, podrán introducir avances y mejoras. |
-| Ciencia y tecnología | Diferenciadas, pero relacionadas. |
-| Educación | Fundamental para la transmisión y la innovación. |
-| Economía | Condiciona la capacidad de investigación e innovación. |
-| Medioambiente | Consecuencias contextuales, no automáticas. |
-| Obsolescencia | Las tecnologías antiguas pueden coexistir con las nuevas. |
-| Caminos tecnológicos | Diversos según las condiciones de cada civilización. |
-| Estancamiento | Posible. |
-| Involución | No, salvo pérdida extraordinaria de conocimientos. |
-| Tecnología militar | Incluida, con importancia creciente. |
-| Evolución visual | Fundamental. |
-| Interfaz | Catálogo de conocimientos e investigaciones. |
-| Realismo | Alto inicialmente, con posibilidad de profundizar. |
-| Período | Paleolítico hasta comienzos de la Revolución Industrial. |
+| Progress model | Hybrid: organic and directed. |
+| Origin of knowledge | All proposed sources. |
+| Discoveries | Experimentation, observation, needs and chance. |
+| Player control | Sets priorities and funds; specialists research. |
+| Disciplines | All proposed ones. |
+| Transmission | Family, artisanal, educational, institutional and international. |
+| Loss of knowledge | Extremely exceptional. |
+| Technological exchange | Yes, through all relevant mechanisms. |
+| Simultaneous evolution | All disciplines can advance in parallel. |
+| Specialization | Yes, with identifiable figures and professional groups. |
+| Historical innovators | Yes, they may introduce advances and improvements. |
+| Science and technology | Differentiated but related. |
+| Education | Fundamental for transmission and innovation. |
+| Economy | Conditions the capacity for research and innovation. |
+| Environment | Contextual consequences, not automatic. |
+| Obsolescence | Old technologies can coexist with new ones. |
+| Technological paths | Diverse according to each civilization's conditions. |
+| Stagnation | Possible. |
+| Regression | No, except in cases of extraordinary loss of knowledge. |
+| Military technology | Included, with growing importance. |
+| Visual evolution | Fundamental. |
+| Interface | Catalog of knowledge and research. |
+| Realism | High initially, with the possibility of going deeper. |
+| Period | Paleolithic up to the beginning of the Industrial Revolution. |
 
 ---
 
-## 28. Visión final
+## 28. Final vision
 
-La tecnología debe ser uno de los motores que hagan sentir que el jugador está viendo evolucionar una civilización real.
+Technology must be one of the drivers that make the player feel they are watching a real civilization evolve.
 
-No queremos que el jugador simplemente desbloquee una máquina de vapor.
+We do not want the player to simply unlock a steam engine.
 
-Queremos que observe cómo sus habitantes desarrollan conocimientos, experimentan, perfeccionan técnicas, construyen herramientas, forman especialistas y transforman sus métodos de producción.
+We want them to observe how their inhabitants develop knowledge, experiment, perfect techniques, build tools, train specialists and transform their production methods.
 
-Una pequeña comunidad que utiliza herramientas primitivas podrá convertirse, después de miles de años, en una sociedad con conocimientos matemáticos, medicina desarrollada, arquitectura sofisticada, navegación avanzada y una gran diversidad de tecnologías.
+A small community using primitive tools may become, after thousands of years, a society with mathematical knowledge, developed medicine, sophisticated architecture, advanced navigation and a great diversity of technologies.
 
-Los avances no aparecerán simplemente porque llegó una determinada fecha.
+Advances will not appear simply because a certain date has arrived.
 
-Serán consecuencia de la historia que esa civilización construyó.
+They will be a consequence of the history that civilization built.
 
-**La tecnología no será un árbol que el jugador completa. Será el conocimiento acumulado de una civilización que aprende, experimenta e innova.**
+**Technology will not be a tree that the player completes. It will be the accumulated knowledge of a civilization that learns, experiments and innovates.**

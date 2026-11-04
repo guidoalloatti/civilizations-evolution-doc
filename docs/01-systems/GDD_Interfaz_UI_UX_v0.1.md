@@ -1,287 +1,287 @@
-> **Control documental:** 0.1 | Estado: diseño conceptual; las decisiones marcadas como confirmadas se preservan desde la fuente. **Alcance:** este GDD es fuente de detalle de su dominio; el GDD Maestro establece la visión común. Los conflictos intersistema se registran en AUDIT_REPORT.md y no se resuelven implícitamente.
+> **Document control:** 0.1 | Status: conceptual design; decisions marked as confirmed are preserved from the source. **Scope:** this GDD is the detail source for its domain; the Master GDD establishes the common vision. Cross-system conflicts are recorded in AUDIT_REPORT.md and are not resolved implicitly.
 
 ---
 
-# GDD — INTERFAZ DE USUARIO Y EXPERIENCIA DE JUEGO (UI/UX)
+# GDD — USER INTERFACE AND GAME EXPERIENCE (UI/UX)
 
-**Versión:** 0.1  
-**Estado:** Definición conceptual consolidada
+**Version:** 0.1  
+**Status:** Consolidated conceptual definition
 
-## 1. Visión general
+## 1. Overview
 
-La interfaz deberá permitir gestionar una civilización compleja sin interferir con la experiencia visual del mundo.
+The interface must allow a complex civilization to be managed without interfering with the visual experience of the world.
 
-El diseño priorizará una interfaz moderna, contextual y adaptable.
+The design will prioritize a modern, contextual and adaptable interface.
 
-El jugador interactuará principalmente con el mundo 3D, seleccionando edificios, habitantes, unidades y regiones para consultar información y realizar acciones.
+The player will interact mainly with the 3D world, selecting buildings, inhabitants, units and regions to consult information and perform actions.
 
-Los paneles generales y menús permitirán acceder a información global y administrar sistemas que no se pueden controlar cómodamente desde el mapa.
+General panels and menus will provide access to global information and allow the administration of systems that cannot be comfortably controlled from the map.
 
-**Principio fundamental:**
+**Fundamental principle:**
 
-El mundo será la interfaz principal. Los menús y paneles estarán al servicio de la experiencia, no al revés.
+The world will be the main interface. Menus and panels will be in service of the experience, not the other way around.
 
-## 2. Estilo visual
+## 2. Visual style
 
-Se utilizará una interfaz moderna, limpia y organizada.
+A modern, clean and organized interface will be used.
 
-Características:
-- Paneles contextuales.
-- Ventanas flotantes.
-- Información jerarquizada.
-- Iconografía clara.
-- Indicadores visuales.
-- Transiciones suaves.
-- Uso moderado de elementos permanentes.
-- Buena integración con el entorno 3D.
+Characteristics:
+- Contextual panels.
+- Floating windows.
+- Hierarchical information.
+- Clear iconography.
+- Visual indicators.
+- Smooth transitions.
+- Moderate use of permanent elements.
+- Good integration with the 3D environment.
 
-La interfaz no deberá ocupar innecesariamente la pantalla.
+The interface must not take up the screen unnecessarily.
 
-## 3. Interacción con el mundo
+## 3. Interaction with the world
 
-La interacción directa será fundamental.
+Direct interaction will be fundamental.
 
-El jugador podrá seleccionar:
+The player will be able to select:
 
-- Edificios.
-- Habitantes.
-- Familias.
-- Unidades militares.
-- Recursos.
-- Vehículos.
-- Regiones.
-- Infraestructura.
-- Elementos naturales relevantes.
+- Buildings.
+- Inhabitants.
+- Families.
+- Military units.
+- Resources.
+- Vehicles.
+- Regions.
+- Infrastructure.
+- Relevant natural elements.
 
-Cada elemento ofrecerá información y acciones contextuales.
+Each element will offer contextual information and actions.
 
-Ejemplos:
+Examples:
 
-**Seleccionar una granja**
-- Producción actual.
-- Trabajadores.
-- Recursos utilizados.
-- Rendimiento.
-- Estado del edificio.
-- Mejoras disponibles.
-- Opciones de gestión.
+**Selecting a farm**
+- Current production.
+- Workers.
+- Resources used.
+- Yield.
+- Building status.
+- Available upgrades.
+- Management options.
 
-**Seleccionar un ciudadano**
-- Nombre.
-- Edad.
-- Familia.
-- Profesión.
-- Habilidades.
-- Necesidades.
-- Relaciones.
-- Historia personal.
+**Selecting a citizen**
+- Name.
+- Age.
+- Family.
+- Profession.
+- Skills.
+- Needs.
+- Relationships.
+- Personal history.
 
-**Seleccionar una región**
-- Población.
-- Economía.
-- Producción.
-- Presupuesto.
-- Infraestructura.
-- Administración.
-- Características regionales.
+**Selecting a region**
+- Population.
+- Economy.
+- Production.
+- Budget.
+- Infrastructure.
+- Administration.
+- Regional characteristics.
 
-## 4. Información y estadísticas
+## 4. Information and statistics
 
-Se combinarán dos modalidades:
+Two modes will be combined:
 
-**Información contextual:** aparece al seleccionar un elemento.
+**Contextual information:** appears when an element is selected.
 
-**Información global:** permite consultar el estado general de la civilización.
+**Global information:** allows the general state of the civilization to be consulted.
 
-Los paneles globales contemplarán:
-- Economía.
-- Población.
-- Producción.
-- Recursos.
-- Tecnología.
-- Cultura.
-- Religión.
-- Política.
-- Diplomacia.
-- Territorios.
-- Transporte.
-- Militar.
-- Medioambiente.
+The global panels will cover:
+- Economy.
+- Population.
+- Production.
+- Resources.
+- Technology.
+- Culture.
+- Religion.
+- Politics.
+- Diplomacy.
+- Territories.
+- Transport.
+- Military.
+- Environment.
 
-La información deberá permitir navegar desde los indicadores generales hasta los elementos concretos que los generan.
+The information must allow navigation from general indicators down to the specific elements that generate them.
 
-## 5. Navegación
+## 5. Navigation
 
-Se utilizará una combinación de menús principales y paneles contextuales.
+A combination of main menus and contextual panels will be used.
 
-Los menús generales permitirán acceder a los diferentes sistemas.
+The general menus will provide access to the different systems.
 
-Los paneles contextuales aparecerán al seleccionar elementos del mundo.
+The contextual panels will appear when elements of the world are selected.
 
-La navegación deberá mantener una estructura coherente para que el jugador pueda encontrar información sin memorizar demasiados recorridos.
+Navigation must maintain a coherent structure so that the player can find information without memorizing too many paths.
 
-## 6. Mapas e indicadores visuales
+## 6. Maps and visual indicators
 
-Los mapas temáticos tendrán mucha importancia.
+Thematic maps will be very important.
 
-El jugador podrá activar diferentes visualizaciones:
+The player will be able to activate different visualizations:
 
-- Fertilidad del suelo.
-- Recursos naturales.
-- Densidad poblacional.
-- Actividad económica.
-- Producción.
-- Influencia religiosa.
-- Influencia cultural.
-- Seguridad.
-- Felicidad y bienestar.
-- Infraestructura.
-- Redes de transporte.
-- Territorios y fronteras.
-- Influencia política.
-- Condiciones ambientales.
+- Soil fertility.
+- Natural resources.
+- Population density.
+- Economic activity.
+- Production.
+- Religious influence.
+- Cultural influence.
+- Security.
+- Happiness and welfare.
+- Infrastructure.
+- Transport networks.
+- Territories and borders.
+- Political influence.
+- Environmental conditions.
 
-Se podrán combinar determinados indicadores cuando tenga sentido.
+Certain indicators may be combined when it makes sense.
 
-La interfaz deberá evitar mostrar demasiada información simultáneamente.
+The interface must avoid showing too much information at once.
 
-## 7. Notificaciones
+## 7. Notifications
 
-El sistema de notificaciones será configurable.
+The notification system will be configurable.
 
-El jugador podrá determinar:
-- Qué categorías generan notificaciones.
-- Qué acontecimientos se consideran importantes.
-- Qué eventos requieren intervención.
-- Qué información puede acumularse en un registro.
-- Qué notificaciones pueden permanecer visibles.
+The player will be able to determine:
+- Which categories generate notifications.
+- Which events are considered important.
+- Which events require intervention.
+- Which information can accumulate in a log.
+- Which notifications can remain visible.
 
-Se distinguirán acontecimientos informativos, advertencias y decisiones que requieren atención.
+Informative events, warnings and decisions requiring attention will be distinguished.
 
-Las notificaciones deberán ser útiles y no convertirse en una interrupción constante.
+Notifications must be useful and not become a constant interruption.
 
-## 8. Tutoriales y ayuda contextual
+## 8. Tutorials and contextual help
 
-Se incorporarán ambos mecanismos.
+Both mechanisms will be incorporated.
 
-**Tutorial inicial**
-- Explicará los controles básicos.
-- Introducirá la construcción.
-- Presentará la economía inicial.
-- Explicará la población.
-- Introducirá los principales sistemas.
+**Initial tutorial**
+- Will explain the basic controls.
+- Will introduce construction.
+- Will present the initial economy.
+- Will explain the population.
+- Will introduce the main systems.
 
-**Ayuda contextual**
-- Explicaciones al seleccionar elementos.
-- Descripción de indicadores.
-- Información sobre mecánicas.
-- Recomendaciones.
-- Acceso a documentación de sistemas.
+**Contextual help**
+- Explanations when elements are selected.
+- Description of indicators.
+- Information about mechanics.
+- Recommendations.
+- Access to systems documentation.
 
-El jugador podrá consultar ayuda cuando la necesite, sin depender exclusivamente del tutorial inicial.
+The player will be able to consult help whenever they need it, without depending exclusively on the initial tutorial.
 
-## 9. Personalización
+## 9. Customization
 
-La interfaz tendrá un nivel amplio de personalización.
+The interface will have a broad level of customization.
 
-Se contemplará:
-- Reorganización de paneles.
-- Indicadores visibles.
-- Accesos directos.
-- Escalado de interfaz.
-- Tamaños de texto.
-- Preferencias de notificaciones.
-- Configuración de mapas temáticos.
-- Información contextual visible.
-- Atajos de teclado.
+The following will be considered:
+- Rearrangement of panels.
+- Visible indicators.
+- Shortcuts.
+- Interface scaling.
+- Text sizes.
+- Notification preferences.
+- Thematic map configuration.
+- Visible contextual information.
+- Keyboard shortcuts.
 
-El objetivo es permitir diferentes estilos de juego y preferencias de presentación.
+The goal is to allow different play styles and presentation preferences.
 
-## 10. Información detallada
+## 10. Detailed information
 
-El jugador podrá acceder a información profunda al seleccionar cualquier elemento relevante.
+The player will be able to access in-depth information when selecting any relevant element.
 
-No se limitará a mostrar resúmenes.
+It will not be limited to showing summaries.
 
-Los edificios, habitantes, regiones y unidades podrán ofrecer información específica según su naturaleza.
+Buildings, inhabitants, regions and units may offer specific information according to their nature.
 
-La información se organizará por secciones para evitar paneles excesivamente desordenados.
+Information will be organized into sections to avoid overly cluttered panels.
 
-Se podrá navegar desde información resumida hacia detalles más específicos.
+It will be possible to navigate from summarized information to more specific details.
 
-## 11. Accesibilidad y comodidad
+## 11. Accessibility and comfort
 
-La accesibilidad será una prioridad.
+Accessibility will be a priority.
 
-Se contemplarán:
-- Escalado de interfaz.
-- Tamaños de texto.
-- Contraste.
-- Alternativas visuales para distinguir información.
-- Configuración de colores.
-- Atajos de teclado.
-- Opciones de comodidad.
-- Controles configurables.
-- Ayudas visuales.
+The following will be considered:
+- Interface scaling.
+- Text sizes.
+- Contrast.
+- Visual alternatives for distinguishing information.
+- Color configuration.
+- Keyboard shortcuts.
+- Comfort options.
+- Configurable controls.
+- Visual aids.
 
-La interfaz deberá poder adaptarse a diferentes resoluciones y tamaños de pantalla.
+The interface must be able to adapt to different resolutions and screen sizes.
 
-## 12. Adaptación a la complejidad
+## 12. Adaptation to complexity
 
-La interfaz se adaptará al nivel de complejidad elegido por el jugador.
+The interface will adapt to the level of complexity chosen by the player.
 
 **Simple**
-- Información resumida.
-- Automatizaciones visibles.
-- Menos indicadores.
-- Acciones simplificadas.
+- Summarized information.
+- Visible automations.
+- Fewer indicators.
+- Simplified actions.
 
-**Intermedio**
-- Estadísticas adicionales.
-- Más opciones de gestión.
-- Paneles regionales y económicos.
-- Información contextual ampliada.
+**Intermediate**
+- Additional statistics.
+- More management options.
+- Regional and economic panels.
+- Expanded contextual information.
 
-**Avanzado**
-- Datos detallados.
-- Estadísticas profundas.
-- Mayor control sobre los sistemas.
-- Indicadores especializados.
-- Información técnica y administrativa.
+**Advanced**
+- Detailed data.
+- In-depth statistics.
+- Greater control over the systems.
+- Specialized indicators.
+- Technical and administrative information.
 
-La complejidad de la interfaz deberá poder configurarse independientemente cuando corresponda.
+The complexity of the interface must be configurable independently where applicable.
 
-## 13. MVP — Primera versión jugable
+## 13. MVP — First playable version
 
-- Selección de edificios.
-- Panel contextual de edificios.
-- Información básica de habitantes.
-- Panel general de recursos.
-- Panel de población.
-- Panel de producción.
-- Panel de construcción.
-- Notificaciones básicas.
-- Pausa y aceleración del tiempo.
-- Indicadores de selección.
-- Mapa básico.
-- Ayuda contextual inicial.
+- Building selection.
+- Contextual building panel.
+- Basic information about inhabitants.
+- General resources panel.
+- Population panel.
+- Production panel.
+- Construction panel.
+- Basic notifications.
+- Time pause and acceleration.
+- Selection indicators.
+- Basic map.
+- Initial contextual help.
 
-Los mapas temáticos avanzados, la personalización completa y los paneles históricos detallados se incorporarán progresivamente.
+Advanced thematic maps, full customization and detailed historical panels will be incorporated progressively.
 
-## 14. Decisiones confirmadas
+## 14. Confirmed decisions
 
-| Área | Decisión |
+| Area | Decision |
 |---|---|
-| Estilo | Moderno y contextual |
-| Interacción | Mundo 3D como interfaz principal |
-| Información | Contextual y global |
-| Navegación | Menús y paneles combinados |
-| Mapas temáticos | Muy importantes |
-| Notificaciones | Configurables |
-| Tutoriales | Inicial y contextual |
-| Personalización | Completa |
-| Información de elementos | Detallada |
-| Accesibilidad | Prioridad alta |
-| Complejidad | Adaptable al jugador |
+| Style | Modern and contextual |
+| Interaction | 3D world as main interface |
+| Information | Contextual and global |
+| Navigation | Menus and panels combined |
+| Thematic maps | Very important |
+| Notifications | Configurable |
+| Tutorials | Initial and contextual |
+| Customization | Complete |
+| Element information | Detailed |
+| Accessibility | High priority |
+| Complexity | Adaptable to the player |
 
-**Estado:** GDD conceptual v0.1 consolidado.
+**Status:** Conceptual GDD v0.1 consolidated.

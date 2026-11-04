@@ -1,112 +1,112 @@
 # DESIGN_DECISION_REGISTER — Civilization Evolutions
 
-> **Phase 2 — Registro central de decisiones de diseño.** Tres clases de entrada: **Confirmadas por GDD** (DC-, transcritas de los GDD con fuente), **Confirmadas por delegación** (DR-, resueltas por el asistente porque el usuario delegó explícitamente la decisión — "tomá las decisiones necesarias para avanzar, confío en tu criterio", 2026-11-04) y **Sin resolver** (falta material, no una elección).
-> **Trazabilidad:** las DR- NO son del GDD; son decisiones operativas tomadas por el asistente bajo delegación del usuario, **abiertas y reversibles**. Al aplicarlas a un GDD dueño, registrar responsable/fecha/versión y actualizar el resumen del Maestro. Si en el futuro contradicen una fuente, prevalece lo que el usuario decida.
-> Versión 1.1 · Última actualización: 2026-11-04 · Fuentes: [DOCUMENTATION_INDEX.md](DOCUMENTATION_INDEX.md). Hallazgos: [DESIGN_CONSISTENCY_AUDIT.md](DESIGN_CONSISTENCY_AUDIT.md).
+> **Phase 2 — Central design decision register.** Three classes of entry: **Confirmed by GDD** (DC-, transcribed from the GDDs with a source), **Confirmed by delegation** (DR-, resolved by the assistant because the user explicitly delegated the decision — "make the decisions needed to move forward, I trust your judgment", 2026-11-04), and **Unresolved** (missing material, not a choice).
+> **Traceability:** the DR- entries are NOT from the GDD; they are operational decisions made by the assistant under the user's delegation, **open and reversible**. When applying them to an owner GDD, record owner/date/version and update the Master's summary. If in the future they contradict a source, what the user decides prevails.
+> Version 1.1 · Last updated: 2026-11-04 · Sources: [DOCUMENTATION_INDEX.md](DOCUMENTATION_INDEX.md). Findings: [DESIGN_CONSISTENCY_AUDIT.md](DESIGN_CONSISTENCY_AUDIT.md).
 
-**Estados:** `confirmed` (por GDD) · `confirmed` ✓ (delegada) (adoptada bajo delegación, reversible) · `confirmed` ✓✓ (ratificada por el usuario, con fecha) · `unresolved` · `deprecated`.
+**Statuses:** `confirmed` (by GDD) · `confirmed` ✓ (delegated) (adopted under delegation, reversible) · `confirmed` ✓✓ (ratified by the user, with date) · `unresolved` · `deprecated`.
 
-## Parte 1 — Decisiones confirmadas (transcritas de los GDD)
+## Part 1 — Confirmed decisions (transcribed from the GDDs)
 
-| ID | Tema | Decisión | Fuente | Sistemas afectados |
+| ID | Topic | Decision | Source | Affected systems |
 |---|---|---|---|---|
-| DC-01 | Evolución histórica | Libre y no lineal; los períodos son referencia, no desbloqueos obligatorios. | Maestro §4; GDD general §19; Tecnología | Todos |
-| DC-02 | Rol del jugador | Entidad que guía (no gobernante) con influencia amplia; sociedad y otras civilizaciones conservan autonomía. | Maestro §4; Política §14 | Política, IA, Interfaz |
-| DC-03 | Construcción | Colocación libre con cuadrícula opcional; obra con trabajadores y materiales; evolución arquitectónica elegida por el jugador; conservación de edificios antiguos. | Construcción §22 | Construcción, Producción, Población |
-| DC-04 | Población | Modelo híbrido individuos/familias/grupos; detalle según escala y configuración. | Maestro §4; Población §20 | Población, Entidades, Economía |
-| DC-05 | Economía/producción | Cadenas interdependientes; asignación de trabajo automática con intervención; propiedad **mixta**; complejidad configurable. | Economía §19; Producción §23 | Economía, Producción, Logística |
-| DC-06 | Transporte/comercio | Movimiento físico de recursos desde el inicio (simplificado); comercio en 3 niveles (básico/intermedio/avanzado). | Maestro §4; Logística §22 | Logística, Economía |
-| DC-07 | Recurso único | Un recurso = un identificador e inventario común; sin copias por sistema. | Recursos §17; Maestro §6 | Todos los económicos |
-| DC-08 | Reloj común | Tiempo continuo con reloj global único y ciclos internos de distinta frecuencia; velocidades no alteran resultados. | Tiempo §2/§15 | Todos |
-| DC-09 | Tecnología | Habilita métodos/capacidades por condiciones y conocimiento, **no por el año**; disponibilidad ≠ adopción automática. | Tecnología §27; Maestro §6 | Tecnología, Producción, Construcción, Militar |
-| DC-10 | Guerra | Consecuencias amplias; importante pero **secundaria**; reutiliza logística/recursos. | Guerra §20; Maestro §4 | Guerra, Logística, Población |
-| DC-11 | IA de civilizaciones | Autónomas, con las **mismas reglas** que el jugador; sin omnisciencia ni conocimiento del futuro. | IA §4/§11 | IA, Diplomacia, Economía |
-| DC-12 | Interfaz | El mundo 3D es la interfaz principal; la UI **lee** el estado, no lo posee; accesibilidad prioritaria. | Interfaz §14; Maestro §6 | Interfaz, todos |
-| DC-13 | Finalización | Límite histórico **opcional**; continuación posible; decisión final del jugador; sandbox auténtico. | Progresión §13 | Progresión, Tiempo |
-| DC-14 | Eventos | Registran hechos de los sistemas dueños; no crean efectos sin regla propietaria. | Eventos §17; Maestro §6 | Eventos, todos |
-| DC-15 | Entidades | Identidad persistente y relaciones compartidas; sistemas comparten entidades sin duplicar. | Entidades §2 | Todos |
+| DC-01 | Historical evolution | Free and non-linear; periods are reference, not mandatory unlocks. | Master §4; general GDD §19; Technology | All |
+| DC-02 | Player role | Guiding entity (not ruler) with broad influence; society and other civilizations retain autonomy. | Master §4; Politics §14 | Politics, AI, Interface |
+| DC-03 | Construction | Free placement with optional grid; construction work with workers and materials; architectural evolution chosen by the player; preservation of old buildings. | Construction §22 | Construction, Production, Population |
+| DC-04 | Population | Hybrid model of individuals/families/groups; detail according to scale and configuration. | Master §4; Population §20 | Population, Entities, Economy |
+| DC-05 | Economy/production | Interdependent chains; automatic labor assignment with intervention; **mixed** ownership; configurable complexity. | Economy §19; Production §23 | Economy, Production, Logistics |
+| DC-06 | Transport/trade | Physical movement of resources from the start (simplified); trade in 3 levels (basic/intermediate/advanced). | Master §4; Logistics §22 | Logistics, Economy |
+| DC-07 | Single resource | One resource = one identifier and a common inventory; no per-system copies. | Resources §17; Master §6 | All economic ones |
+| DC-08 | Common clock | Continuous time with a single global clock and internal cycles of different frequency; speeds do not alter results. | Time §2/§15 | All |
+| DC-09 | Technology | Enables methods/capabilities by conditions and knowledge, **not by the year**; availability ≠ automatic adoption. | Technology §27; Master §6 | Technology, Production, Construction, Military |
+| DC-10 | War | Broad consequences; important but **secondary**; reuses logistics/resources. | War §20; Master §4 | War, Logistics, Population |
+| DC-11 | Civilization AI | Autonomous, with the **same rules** as the player; no omniscience or knowledge of the future. | AI §4/§11 | AI, Diplomacy, Economy |
+| DC-12 | Interface | The 3D world is the main interface; the UI **reads** the state, it does not own it; accessibility is a priority. | Interface §14; Master §6 | Interface, all |
+| DC-13 | Ending | **Optional** historical limit; continuation possible; final decision by the player; genuine sandbox. | Progression §13 | Progression, Time |
+| DC-14 | Events | Record facts from the owner systems; do not create effects without an owning rule. | Events §17; Master §6 | Events, all |
+| DC-15 | Entities | Persistent identity and shared relationships; systems share entities without duplicating. | Entities §2 | All |
 
-## Parte 2 — Decisiones tomadas por delegación (conflictos y pendientes)
+## Part 2 — Decisions made by delegation (conflicts and pending items)
 
-> Cada una responde a un hallazgo del audit. **Confirmadas por delegación del usuario (2026-11-04)**, con recomendación, justificación y consecuencias. **Reversibles:** si querés cambiar alguna, se ajusta y se propaga al GDD dueño. La "Propuesta" de cada una es la decisión adoptada.
+> Each one responds to a finding from the audit. **Confirmed by the user's delegation (2026-11-04)**, with recommendation, justification, and consequences. **Reversible:** if you want to change any, it is adjusted and propagated to the owner GDD. The "Proposal" of each one is the adopted decision.
 
-### DR-00 — Trazabilidad de decisiones `confirmed` ✓ (delegada)
-- **Tema/hallazgo:** F-21. Las tablas dicen "confirmada" sin responsable/fecha.
-- **Propuesta:** adoptar este registro como fuente única; al confirmar algo, anotar responsable+fecha+versión y actualizar GDD dueño → Maestro.
-- **Afecta:** gobernanza documental. **Consecuencia:** evita tratar supuestos como confirmados.
+### DR-00 — Decision traceability `confirmed` ✓ (delegated)
+- **Topic/finding:** F-21. The tables say "confirmed" without owner/date.
+- **Proposal:** adopt this register as the single source; when confirming something, note owner+date+version and update the owner GDD → Master.
+- **Affects:** documentary governance. **Consequence:** avoids treating assumptions as confirmed.
 
-### DR-01 — Fecha de corte histórico `confirmed` ✓✓ (ratificada por el usuario 2026-11-04)
-- **Hallazgo:** F-01 (CX). **Afecta:** Progresión, Tiempo, Tecnología, Economía, contenido.
-- **Propuesta (recomendada):** definir el corte como **"inicio de la Revolución Industrial", ~1760–1780**, usado como **límite opcional** (no etapa jugable); después, sandbox sin nuevas etapas industriales. No fijar un año exacto en UI hasta tu OK.
-- **Consecuencia:** acota cronología, contenidos y finalización sin cerrar la continuación sandbox.
+### DR-01 — Historical cutoff date `confirmed` ✓✓ (ratified by the user 2026-11-04)
+- **Finding:** F-01 (CX). **Affects:** Progression, Time, Technology, Economy, content.
+- **Proposal (recommended):** define the cutoff as **"beginning of the Industrial Revolution", ~1760–1780**, used as an **optional limit** (not a playable stage); afterward, sandbox with no new industrial stages. Do not fix an exact year in the UI until your OK.
+- **Consequence:** bounds chronology, content, and ending without closing off the sandbox continuation.
 
-### DR-02 — Perfil del mundo inicial (plano vs relieve) `confirmed` ✓✓ (ratificada por el usuario 2026-11-04)
-- **Hallazgo:** F-02 (CX). **Afecta:** Generación, Geografía, Construcción, Logística.
-- **Propuesta:** interpretar "mapas planos" como **preset opcional** (mundo sin relieve marcado / proyección simple), y usar por **defecto relieve coherente** (como ya hace el código actual, con colinas). "Plano" = una opción de generación, no el valor por defecto.
-- **Consecuencia:** elimina la contradicción; ambos GDD quedan compatibles vía presets.
+### DR-02 — Initial world profile (flat vs relief) `confirmed` ✓✓ (ratified by the user 2026-11-04)
+- **Finding:** F-02 (CX). **Affects:** Generation, Geography, Construction, Logistics.
+- **Proposal:** interpret "flat maps" as an **optional preset** (world without marked relief / simple projection), and use **coherent relief by default** (as the current code already does, with hills). "Flat" = a generation option, not the default value.
+- **Consequence:** eliminates the contradiction; both GDDs become compatible via presets.
 
-### DR-03 — Alcance del clima/estaciones en el MVP `confirmed` ✓ (delegada)
-- **Hallazgo:** F-03 (PI). **Afecta:** Geografía, Economía, Producción, Construcción.
-- **Propuesta:** **Fase 1** = estaciones con efecto **mínimo** sobre agricultura/producción (lo que ya existe) + clima **visual** en construcción; clima avanzado (meteorología, impacto ambiental, desastres) **post-MVP**. "Principalmente visual" en Construcción = sin efectos estructurales al inicio, pero las estaciones sí modulan producción.
-- **Consecuencia:** reconcilia MVP; no bloquea agricultura estacional.
+### DR-03 — Scope of climate/seasons in the MVP `confirmed` ✓ (delegated)
+- **Finding:** F-03 (PI). **Affects:** Geography, Economy, Production, Construction.
+- **Proposal:** **Phase 1** = seasons with a **minimal** effect on agriculture/production (what already exists) + **visual** climate in construction; advanced climate (weather, environmental impact, disasters) **post-MVP**. "Mainly visual" in Construction = no structural effects at the start, but seasons do modulate production.
+- **Consequence:** reconciles the MVP; does not block seasonal agriculture.
 
-### DR-04 — Nombre del proyecto `confirmed` ✓ (delegada)
-- **Hallazgo:** F-04 (PI). **Afecta:** docs/UI.
-- **Propuesta:** usar **"Civilization Evolutions"** como nombre de trabajo oficial y unificar documentación/UI; el nombre de módulo técnico `CivilizationSimulator` puede quedar como identificador interno.
-- **Consecuencia:** coherencia de marca; sin cambios de código obligatorios.
+### DR-04 — Project name `confirmed` ✓ (delegated)
+- **Finding:** F-04 (PI). **Affects:** docs/UI.
+- **Proposal:** use **"Civilization Evolutions"** as the official working name and unify documentation/UI; the technical module name `CivilizationSimulator` can remain as an internal identifier.
+- **Consequence:** brand coherence; no mandatory code changes.
 
-### DR-05 — Rol y poder del jugador `confirmed` ✓✓ (ratificada por el usuario 2026-11-04)
-- **Hallazgo:** F-05 (CX). **Afecta:** Política, Economía, Diplomacia, Interfaz, IA.
-- **Propuesta:** el jugador es una **dirección/abstracción** con intervención amplia; sus acciones se clasifican: **directas** (construcción, asignación, economía propia), **de política** (leyes/impuestos vía gobierno, con resistencia/consecuencias) y **consultivas** (donde hay autonomía social/privada/externa). No es un cargo diegético.
-- **Consecuencia:** define límites para Política/Diplomacia futuras sin reducir la agencia confirmada.
+### DR-05 — Player role and power `confirmed` ✓✓ (ratified by the user 2026-11-04)
+- **Finding:** F-05 (CX). **Affects:** Politics, Economy, Diplomacy, Interface, AI.
+- **Proposal:** the player is a **direction/abstraction** with broad intervention; their actions are classified: **direct** (construction, assignment, own economy), **policy** (laws/taxes via the government, with resistance/consequences), and **advisory** (where there is social/private/external autonomy). It is not a diegetic office.
+- **Consequence:** defines limits for future Politics/Diplomacy without reducing the confirmed agency.
 
-### DR-06 — Límites de escala (prototipo) `confirmed` ✓✓ (ratificada por el usuario 2026-11-04)
-- **Hallazgo:** F-15 (MD). **Afecta:** todos (rendimiento).
-- **Propuesta (solo objetivos de prototipo, revisables):** 1 mapa; **20–100** habitantes con simulación individual; pasar a agregado por encima de ~cientos; **2–3** civilizaciones autónomas en el primer mundo vivo. Son metas de producto, no cambios de arquitectura.
-- **Consecuencia:** hace verificable el rendimiento y condiciona DR-10 (LOD).
+### DR-06 — Scale limits (prototype) `confirmed` ✓✓ (ratified by the user 2026-11-04)
+- **Finding:** F-15 (MD). **Affects:** all (performance).
+- **Proposal (prototype targets only, revisable):** 1 map; **20–100** inhabitants with individual simulation; move to aggregate above ~hundreds; **2–3** autonomous civilizations in the first living world. These are product goals, not architecture changes.
+- **Consequence:** makes performance verifiable and conditions DR-10 (LOD).
 
-### DR-07 — Modelo común de propiedad/titularidad `confirmed` ✓✓ (ratificada por el usuario 2026-11-04)
-- **Hallazgo:** F-07/F-17 (MD). **Afecta:** Economía, Entidades, Recursos, Población, Política.
-- **Propuesta (capas, conceptual; detalle en SHARED_DATA_MODEL):** separar **(a) titularidad del recurso natural** (Estado/civilización), **(b) derechos de explotación**, **(c) propiedad del edificio**, **(d) control operativo** (quién lo opera), **(e) ubicación del inventario**. Mantener "propiedad mixta" (DC-05) como confirmada.
-- **Consecuencia:** evita duplicar titularidad por sistema; base para fiscalidad/herencia futuras.
+### DR-07 — Common property/ownership model `confirmed` ✓✓ (ratified by the user 2026-11-04)
+- **Finding:** F-07/F-17 (MD). **Affects:** Economy, Entities, Resources, Population, Politics.
+- **Proposal (layers, conceptual; detail in SHARED_DATA_MODEL):** separate **(a) ownership of the natural resource** (State/civilization), **(b) exploitation rights**, **(c) ownership of the building**, **(d) operational control** (who operates it), **(e) inventory location**. Keep "mixed ownership" (DC-05) as confirmed.
+- **Consequence:** avoids duplicating ownership per system; a base for future taxation/inheritance.
 
-### DR-08 — Autoridad de los GDD especializados `confirmed` ✓ (delegada)
-- **Hallazgo:** F-06 (PI). **Afecta:** gobernanza.
-- **Propuesta:** tratar los GDD especializados como la **revisión vigente**; el listado "pendiente" del GDD general queda **deprecated**.
-- **Consecuencia:** quita obsolescencia; sin reclasificar nada como decisión nueva.
+### DR-08 — Authority of the specialized GDDs `confirmed` ✓ (delegated)
+- **Finding:** F-06 (PI). **Affects:** governance.
+- **Proposal:** treat the specialized GDDs as the **current revision**; the general GDD's "pending" list becomes **deprecated**.
+- **Consequence:** removes obsolescence; without reclassifying anything as a new decision.
 
-### DR-09 — Escala temporal `confirmed` ✓ (delegada)
-- **Hallazgo:** F-14 (MD). **Afecta:** Tiempo, Población, Economía, Producción, Eventos.
-- **Propuesta:** escala **configurable** (sin número fijo de segundos reales por día); fijar un valor por defecto durante las pruebas de jugabilidad; el envejecimiento/estaciones derivan del reloj, no de constantes dispersas.
-- **Consecuencia:** respeta el GDD de Tiempo; habilita tuning sin recableado.
+### DR-09 — Time scale `confirmed` ✓ (delegated)
+- **Finding:** F-14 (MD). **Affects:** Time, Population, Economy, Production, Events.
+- **Proposal:** **configurable** scale (no fixed number of real seconds per day); fix a default value during gameplay testing; aging/seasons derive from the clock, not from scattered constants.
+- **Consequence:** respects the Time GDD; enables tuning without rewiring.
 
-### DR-10 — Umbrales individuo↔agregado (LOD de simulación) `confirmed` ✓ (delegada)
-- **Hallazgo:** F-16 (MD). **Afecta:** Población, Entidades, IA, Tiempo.
-- **Propuesta:** LOD por **tamaño de asentamiento** (individual bajo un umbral; agregado por encima) y por **distancia/relevancia** para otras civilizaciones (3 niveles, como IA §8), conservando identidad conceptual de las entidades importantes.
-- **Consecuencia:** condición para escalar; se vincula al riesgo RISK-03 (Actor por habitante).
+### DR-10 — Individual↔aggregate thresholds (simulation LOD) `confirmed` ✓ (delegated)
+- **Finding:** F-16 (MD). **Affects:** Population, Entities, AI, Time.
+- **Proposal:** LOD by **settlement size** (individual below a threshold; aggregate above) and by **distance/relevance** for other civilizations (3 levels, as in AI §8), preserving the conceptual identity of the important entities.
+- **Consequence:** a condition for scaling; linked to risk RISK-03 (Actor per inhabitant).
 
-### DR-11 — Disponibilidad/adopción/difusión tecnológica `confirmed` ✓ (delegada)
-- **Hallazgo:** F-18 (MD). **Afecta:** Tecnología, Producción, Construcción.
-- **Propuesta:** habilitación por **condiciones** (conocimiento + recursos + contexto), no por año; **adopción** separada de disponibilidad (el edificio/método se transforma si hay tecnología+materiales+decisión); difusión entre civilizaciones por los mecanismos del GDD. Implementar vía un marco de evolución **compartido** (ver HISTORICAL_EVOLUTION_FRAMEWORK).
-- **Consecuencia:** evita efectos tecnológicos aislados por sistema (RISK-05).
+### DR-11 — Technological availability/adoption/diffusion `confirmed` ✓ (delegated)
+- **Finding:** F-18 (MD). **Affects:** Technology, Production, Construction.
+- **Proposal:** enablement by **conditions** (knowledge + resources + context), not by year; **adoption** separate from availability (the building/method transforms if there is technology+materials+decision); diffusion between civilizations through the GDD's mechanisms. Implement via a **shared** evolution framework (see HISTORICAL_EVOLUTION_FRAMEWORK).
+- **Consequence:** avoids isolated per-system technological effects (RISK-05).
 
-### DR-12 — Alcance del prototipo transversal `confirmed` ✓ (delegada)
-- **Hallazgo:** F-20 (MD). **Afecta:** todos.
-- **Propuesta:** el primer playable integra **Tiempo, Generación/Geografía mínima, Recursos, Entidades, Construcción, Población (individual chica), Producción, Logística, Economía básica, Tecnología básica, UI mínima**; deja fuera Cultura/Religión/Política/Diplomacia/IA/Guerra/Progresión avanzada. Detalle en [DEVELOPMENT_ROADMAP.md](DEVELOPMENT_ROADMAP.md).
-- **Consecuencia:** alinea el MVP transversal con los MVP por sistema.
+### DR-12 — Scope of the cross-cutting prototype `confirmed` ✓ (delegated)
+- **Finding:** F-20 (MD). **Affects:** all.
+- **Proposal:** the first playable integrates **Time, minimal Generation/Geography, Resources, Entities, Construction, Population (small individual), Production, Logistics, basic Economy, basic Technology, minimal UI**; it leaves out Culture/Religion/Politics/Diplomacy/AI/War/advanced Progression. Detail in [DEVELOPMENT_ROADMAP.md](DEVELOPMENT_ROADMAP.md).
+- **Consequence:** aligns the cross-cutting MVP with the per-system MVPs.
 
-### DR-13 — Completar el GDD de Diplomacia `proposed` (borrador a validar, 2026-11-04)
-- **Hallazgo:** F-22. El archivo fuente está **truncado** (corta en §18). **Afecta:** Diplomacia, IA, Guerra.
-- **Estado:** el usuario autorizó (2026-11-04) **proponer** un borrador del faltante. Redactado en [DIPLOMACIA_PROPUESTA_COMPLETADO.md](DIPLOMACIA_PROPUESTA_COMPLETADO.md), **marcado como propuesto, a validar** — NO es canónico ni se incorporó al GDD original (que no se edita). Derivado de lo que ya fijan el propio GDD (hasta §18), IA (DC-11) y Guerra (DC-10); cada supuesto va señalado.
-- **Pendiente:** tu validación para promoverlo a confirmado y recién entonces volcarlo al GDD dueño. No bloquea el prototipo (Diplomacia es etapa E5).
+### DR-13 — Complete the Diplomacy GDD `proposed` (draft to validate, 2026-11-04)
+- **Finding:** F-22. The source file is **truncated** (it cuts off at §18). **Affects:** Diplomacy, AI, War.
+- **Status:** the user authorized (2026-11-04) **proposing** a draft of the missing part. Written in [DIPLOMACIA_PROPUESTA_COMPLETADO.md](DIPLOMACIA_PROPUESTA_COMPLETADO.md), **marked as proposed, to be validated** — it is NOT canonical nor was it incorporated into the original GDD (which is not edited). Derived from what the GDD itself already sets out (up to §18), AI (DC-11), and War (DC-10); each assumption is flagged.
+- **Pending:** your validation to promote it to confirmed and only then transfer it to the owner GDD. It does not block the prototype (Diplomacy is stage E5).
 
 ---
 
-## Índice de estado
+## Status index
 
-- **Confirmadas por GDD:** DC-01…DC-15.
-- **Ratificadas por el usuario (2026-11-04):** DR-01, DR-02, DR-05, DR-06, DR-07 (las de visión/irreversibles que requerían confirmación humana explícita).
-- **Confirmadas por delegación (2026-11-04):** DR-00, DR-03, DR-04, DR-08, DR-09, DR-10, DR-11, DR-12 (en efecto para avanzar; reversibles a tu pedido).
-- **Propuesta a validar:** DR-13 → borrador en [DIPLOMACIA_PROPUESTA_COMPLETADO.md](DIPLOMACIA_PROPUESTA_COMPLETADO.md) (no canónico hasta tu OK).
+- **Confirmed by GDD:** DC-01…DC-15.
+- **Ratified by the user (2026-11-04):** DR-01, DR-02, DR-05, DR-06, DR-07 (the vision/irreversible ones that required explicit human confirmation).
+- **Confirmed by delegation (2026-11-04):** DR-00, DR-03, DR-04, DR-08, DR-09, DR-10, DR-11, DR-12 (in effect to move forward; reversible at your request).
+- **Proposal to validate:** DR-13 → draft in [DIPLOMACIA_PROPUESTA_COMPLETADO.md](DIPLOMACIA_PROPUESTA_COMPLETADO.md) (not canonical until your OK).
 
-> Las DR- de mayor impacto en implementación: **DR-02** (relieve por defecto), **DR-03** (estaciones afectan agricultura; clima avanzado post-MVP), **DR-06** (escala del prototipo), **DR-07** (propiedad en capas), **DR-10** (LOD individuo↔agregado), **DR-12** (alcance del primer playable).
+> The DR- entries with the greatest implementation impact: **DR-02** (relief by default), **DR-03** (seasons affect agriculture; advanced climate post-MVP), **DR-06** (prototype scale), **DR-07** (layered property), **DR-10** (individual↔aggregate LOD), **DR-12** (scope of the first playable).

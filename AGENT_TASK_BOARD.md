@@ -1,129 +1,129 @@
 # AGENT_TASK_BOARD — Civilization Evolutions
 
-> **Tablero de tareas del desarrollo multi-agente.** Organizado por **hito**. Cada tarea trae: ID, Agente (workstream), Descripción, Dependencias, Prioridad, Archivos permitidos, Archivos restringidos, Entregables, Criterios de aceptación, Estado, Bloqueos. Las listas completas de archivos por workstream están en [AGENT_OWNERSHIP_MAP.md](AGENT_OWNERSHIP_MAP.md); los contratos en [SYSTEM_CONTRACTS.md](SYSTEM_CONTRACTS.md).
+> **Multi-agent development task board.** Organized by **milestone**. Each task carries: ID, Agent (workstream), Description, Dependencies, Priority, Allowed files, Restricted files, Deliverables, Acceptance criteria, Status, Blockers. The complete file lists per workstream are in [AGENT_OWNERSHIP_MAP.md](AGENT_OWNERSHIP_MAP.md); the contracts in [SYSTEM_CONTRACTS.md](SYSTEM_CONTRACTS.md).
 >
-> Versión 1.0 · 2026-11-04 · Estado: PROPUESTA (ninguna tarea arranca hasta aprobación).
-> Prioridad: **P0** (crítico/bloqueante) → **P3** (diferible). Estado: `todo` · `in-progress` · `blocked` · `review` · `done`.
-> Origen: se mapea al backlog real del repo UE (`Docs/BACKLOG.md`, P0–P7/DT) y al [DEVELOPMENT_ROADMAP.md](DEVELOPMENT_ROADMAP.md) (E0–E6).
+> Version 1.0 · 2026-11-04 · Status: PROPOSAL (no task starts until approval).
+> Priority: **P0** (critical/blocking) → **P3** (deferrable). Status: `todo` · `in-progress` · `blocked` · `review` · `done`.
+> Origin: mapped to the UE repo's actual backlog (`Docs/BACKLOG.md`, P0–P7/DT) and to the [DEVELOPMENT_ROADMAP.md](DEVELOPMENT_ROADMAP.md) (E0–E6).
 
-## Hitos
+## Milestones
 
-| Hito | Nombre | Objetivo | Depende de |
+| Milestone | Name | Objective | Depends on |
 |---|---|---|---|
-| **M0** | Preparación para paralelizar | Contratos publicados + SimCore partido por dominio + Git/LFS + mocks | — |
-| **M1** | Base jugable coherente | Cerrar el loop: un camino de colocación, obra real, recursos coherentes | M0 |
-| **M2** | Población en SimCore (Task F) | Invertir autoridad Modelo A: SimCore conduce pop; paneles reales | M0, M1 |
-| **M3** | Mundo y contenido data-driven | Biomas/semilla + migrar contenido a datos | M0 |
-| **M4** | UI real + instrumentación | Sustituir mock data; eventos→UI; herramientas de debug | M1, M2 |
-| **∞** | Transversales continuos | Arte y QA a lo largo de todos los hitos | M0 |
+| **M0** | Preparation to parallelize | Contracts published + SimCore split by domain + Git/LFS + mocks | — |
+| **M1** | Coherent playable base | Close the loop: a single placement path, real construction work, coherent resources | M0 |
+| **M2** | Population in SimCore (Task F) | Invert Model A authority: SimCore drives pop; real panels | M0, M1 |
+| **M3** | World and data-driven content | Biomes/seed + migrate content to data | M0 |
+| **M4** | Real UI + instrumentation | Replace mock data; events→UI; debug tools | M1, M2 |
+| **∞** | Continuous cross-cutting | Art and QA throughout all milestones | M0 |
 
-> **Regla de arranque (brief §7):** no se arrancan todos los sistemas antes de definir sus dependencias. Las **tareas iniciales que pueden empezar ya** (tras aprobar M0) están marcadas **[ARRANQUE]**.
+> **Start rule (brief §7):** not all systems are started before their dependencies are defined. The **initial tasks that can start now** (after approving M0) are marked **[START]**.
 
 ---
 
-## M0 — Preparación para paralelizar (lo lidera WS-TD)
+## M0 — Preparation to parallelize (led by WS-TD)
 
-| ID | Agente | Descripción | Deps | Prio | Estado | Bloqueos |
+| ID | Agent | Description | Deps | Prio | Status | Blockers |
 |---|---|---|---|---|---|---|
-| **M0-TD-01** | WS-TD | Publicar y versionar los contratos ([SYSTEM_CONTRACTS.md](SYSTEM_CONTRACTS.md)) y el mapa de propiedad; ratificar Modelo A y DR-01..12 como base | — | P0 | review | aprobación del responsable |
-| **M0-TD-02** | WS-TD | **Refactor M0:** partir `SimCore/Simulation.cpp` y `World.cpp` en pasos de dominio (Production/Logistics/Trade→ECON, Population→POP, Construction→BUILD, orquestador/clock/eventos/save-load→CORE) sin agregar abstracciones vacías | M0-TD-01 | P0 | todo | — |
-| **M0-TD-03** | WS-TD | Git: ramas por workstream + worktrees; crear `.gitattributes` con LFS para `*.uasset`/`*.umap` (**requiere aprobación**: es cambio de config) y migrar binarios | M0-TD-01 | P0 | todo | aprobación config |
-| **M0-CORE-01** | WS-CORE | Commitear el trabajo post-HANDOFF sin commitear (RISK-12) y pushear `origin/main` del repo UE; dejar árbol limpio antes de ramificar | — | P0 | todo | — |
-| **M0-QA-01** | WS-QA | Reinstalar/verificar CMake; correr `simcore_tests` (baseline verde) y documentar cómo correrlos en CI | — | P0 | todo | — |
+| **M0-TD-01** | WS-TD | Publish and version the contracts ([SYSTEM_CONTRACTS.md](SYSTEM_CONTRACTS.md)) and the ownership map; ratify Model A and DR-01..12 as the baseline | — | P0 | review | owner approval |
+| **M0-TD-02** | WS-TD | **M0 refactor:** split `SimCore/Simulation.cpp` and `World.cpp` into domain steps (Production/Logistics/Trade→ECON, Population→POP, Construction→BUILD, orchestrator/clock/events/save-load→CORE) without adding empty abstractions | M0-TD-01 | P0 | todo | — |
+| **M0-TD-03** | WS-TD | Git: branches per workstream + worktrees; create `.gitattributes` with LFS for `*.uasset`/`*.umap` (**requires approval**: it is a config change) and migrate binaries | M0-TD-01 | P0 | todo | config approval |
+| **M0-CORE-01** | WS-CORE | Commit the uncommitted post-HANDOFF work (RISK-12) and push `origin/main` of the UE repo; leave a clean tree before branching | — | P0 | todo | — |
+| **M0-QA-01** | WS-QA | Reinstall/verify CMake; run `simcore_tests` (green baseline) and document how to run them in CI | — | P0 | todo | — |
 
-**Detalle (archivos / entregables / aceptación):**
-- **M0-TD-02** · *Permitidos:* `SimCore/{Simulation,World}.{h,cpp}` (coordinando con CORE/ECON/BUILD/POP), nuevos archivos de paso por dominio · *Restringidos:* presentación UE · *Entregable:* SimCore con un archivo por dominio y `simcore_tests` verde · *Aceptación:* cada workstream puede editar su paso sin tocar el de otro; tests pasan igual que antes (sin cambio de comportamiento).
-- **M0-CORE-01** · *Permitidos:* repo UE completo (es un commit de estado, coordinado con TD) · *Entregable:* `git status` limpio, `origin/main` al día · *Aceptación:* no hay cambios sin commitear antes de abrir ramas.
-- **M0-TD-03** · *Entregable:* `GIT_WORKFLOW.md` operativo + `.gitattributes` + ramas base · *Aceptación:* un `.uasset` nuevo entra por LFS; dos worktrees no se pisan.
+**Detail (files / deliverables / acceptance):**
+- **M0-TD-02** · *Allowed:* `SimCore/{Simulation,World}.{h,cpp}` (coordinating with CORE/ECON/BUILD/POP), new per-domain step files · *Restricted:* UE presentation · *Deliverable:* SimCore with one file per domain and `simcore_tests` green · *Acceptance:* each workstream can edit its step without touching another's; tests pass the same as before (no behavior change).
+- **M0-CORE-01** · *Allowed:* the entire UE repo (it is a state commit, coordinated with TD) · *Deliverable:* clean `git status`, `origin/main` up to date · *Acceptance:* there are no uncommitted changes before opening branches.
+- **M0-TD-03** · *Deliverable:* operational `GIT_WORKFLOW.md` + `.gitattributes` + base branches · *Acceptance:* a new `.uasset` goes through LFS; two worktrees do not step on each other.
 
 ---
 
-## M1 — Base jugable coherente (cerrar el loop)
+## M1 — Coherent playable base (close the loop)
 
-| ID | Agente | Descripción | Deps | Prio | Estado | Bloqueos |
+| ID | Agent | Description | Deps | Prio | Status | Blockers |
 |---|---|---|---|---|---|---|
-| **M1-BUILD-01** | WS-BUILD | Unificar los **dos caminos de colocación** (§6/§9 de contratos): colocación vía `tryPlaceBuilding` + reactivar `CivViewManager::SyncBuildings`; retirar el *spawn* directo duplicado | M0-TD-02 | P0 | todo | M0 |
-| **M1-BUILD-02** | WS-BUILD | **Obra real**: progreso + trabajadores llevando materiales + se detiene si faltan (SimCore ya lo modela; reflejarlo en UE; hoy aparece instantáneo — backlog P1.9) | M1-BUILD-01 | P1 | todo | M1-BUILD-01 |
-| **M1-ECON-01** | WS-ECON | Verificar/mantener el **stock único** (Modelo A) tras M0; que recolección↔producción↔costo↔consumo usen `World::colony()` sin regresar al doble inventario | M0-TD-02 | P0 | todo | M0 |
-| **M1-ECON-02** | WS-ECON | **Regeneración de renovables** (agua rápido, frutal anual ligado al reloj) en el modelo correcto; depósitos/almacenes como destino de acarreo (P1.7/P1.8) | M1-ECON-01 | P1 | todo | — |
-| **M1-ECON-03** | WS-ECON | Clay en recetas/construcción (cerámica, `masonry`) — hoy solo se recolecta (P1.10) | M1-ECON-01 | P2 | todo | — |
-| **M1-WORLD-01** | WS-WORLD | Dueño del acarreo de nodos: estabilizar `CivResourceNode` (water/clay nuevos) y la entrega al town hall contra el stock único | M1-ECON-01 | P1 | todo | — |
+| **M1-BUILD-01** | WS-BUILD | Unify the **two placement paths** (contracts §6/§9): placement via `tryPlaceBuilding` + reactivate `CivViewManager::SyncBuildings`; remove the duplicate direct *spawn* | M0-TD-02 | P0 | todo | M0 |
+| **M1-BUILD-02** | WS-BUILD | **Real construction work**: progress + workers carrying materials + it stops if materials are missing (SimCore already models it; reflect it in UE; today it appears instant — backlog P1.9) | M1-BUILD-01 | P1 | todo | M1-BUILD-01 |
+| **M1-ECON-01** | WS-ECON | Verify/maintain the **single stock** (Model A) after M0; have gathering↔production↔cost↔consumption use `World::colony()` without regressing to the double inventory | M0-TD-02 | P0 | todo | M0 |
+| **M1-ECON-02** | WS-ECON | **Renewable regeneration** (water fast, fruit tree yearly tied to the clock) in the correct model; deposits/storehouses as hauling destinations (P1.7/P1.8) | M1-ECON-01 | P1 | todo | — |
+| **M1-ECON-03** | WS-ECON | Clay in recipes/construction (pottery, `masonry`) — today it is only gathered (P1.10) | M1-ECON-01 | P2 | todo | — |
+| **M1-WORLD-01** | WS-WORLD | Owner of node hauling: stabilize `CivResourceNode` (new water/clay) and delivery to the town hall against the single stock | M1-ECON-01 | P1 | todo | — |
 
-**Detalle:**
-- **M1-BUILD-01** · *Permitidos:* `View/CivBuildingActor.*`, `View/CivViewManager.*` (`SyncBuildings`, con WORLD), `Core/CivPlayerController.*` (coordinado con UI), paso de construcción en SimCore · *Restringidos:* `Inventory`/recetas de ECON, `CivText` salvo labels · *Entregable:* un solo camino de colocación con id de SimCore · *Aceptación:* colocar crea un `buildingId`, descuenta del stock único, y el actor 3D se reconcilia por `GetBuildingViews()`; sin doble modelo de edificio.
-- **M1-ECON-02** · *Permitidos:* paso de economía en SimCore, `Inventory.*`, `data/*.json` · *Entregable:* renovables que vuelven; almacén como destino · *Aceptación:* un frutal agotado se repone en ~1 año sim; el acarreo llega a un almacén además del town hall; sin segundo stock.
-- **M1-WORLD-01** · *Permitidos:* `Units/CivResourceNode.*`, `View/CivViewManager.*` (spawns) · *Aceptación:* los 5 tipos de nodo entregan al inventario único; renovables no se destruyen.
+**Detail:**
+- **M1-BUILD-01** · *Allowed:* `View/CivBuildingActor.*`, `View/CivViewManager.*` (`SyncBuildings`, with WORLD), `Core/CivPlayerController.*` (coordinated with UI), construction step in SimCore · *Restricted:* ECON's `Inventory`/recipes, `CivText` except labels · *Deliverable:* a single placement path with a SimCore id · *Acceptance:* placing creates a `buildingId`, deducts from the single stock, and the 3D actor reconciles via `GetBuildingViews()`; no double building model.
+- **M1-ECON-02** · *Allowed:* economy step in SimCore, `Inventory.*`, `data/*.json` · *Deliverable:* renewables that come back; storehouse as destination · *Acceptance:* a depleted fruit tree replenishes in ~1 sim year; hauling reaches a storehouse in addition to the town hall; no second stock.
+- **M1-WORLD-01** · *Allowed:* `Units/CivResourceNode.*`, `View/CivViewManager.*` (spawns) · *Acceptance:* all 5 node types deliver to the single inventory; renewables are not destroyed.
 
 ---
 
-## M2 — Población en SimCore (Task F)
+## M2 — Population in SimCore (Task F)
 
-| ID | Agente | Descripción | Deps | Prio | Estado | Bloqueos |
+| ID | Agent | Description | Deps | Prio | Status | Blockers |
 |---|---|---|---|---|---|---|
-| **M2-POP-01** | WS-POP | **Invertir autoridad (Modelo A→SimCore):** mover hambre/salud/muerte de `CivUnit` a SimCore (`nutritionPerCitizenPerDay>0`), `CivUnit` pasa a reflejar; coordinar con CORE/ECON | M1-ECON-01 | P0 | blocked | decisión de contrato (WS-TD) |
-| **M2-POP-02** | WS-POP | Envejecimiento con el reloj + natalidad/mortalidad básica; consumo de comida por persona vía inventario único | M2-POP-01 | P1 | todo | M2-POP-01 |
-| **M2-POP-03** | WS-POP | Familias y hogares como entidades (familia≠hogar); vivienda con capacidad (DR-07/SHARED_DATA_MODEL) | M2-POP-02 | P2 | todo | — |
-| **M2-UI-01** | WS-UI | Paneles de info reales (individuo: nombre/edad/oficio/necesidades/salud; edificio: producción/trabajadores/almacén) leyendo contratos | M2-POP-01, M1-BUILD-01 | P1 | todo | — |
-| **M2-UI-02** | WS-UI | Asignación de trabajadores a edificios desde la UI (clic settler → asignar) | M1-BUILD-01 | P2 | todo | — |
+| **M2-POP-01** | WS-POP | **Invert authority (Model A→SimCore):** move hunger/health/death from `CivUnit` to SimCore (`nutritionPerCitizenPerDay>0`), `CivUnit` becomes a reflection; coordinate with CORE/ECON | M1-ECON-01 | P0 | blocked | contract decision (WS-TD) |
+| **M2-POP-02** | WS-POP | Aging with the clock + basic birth rate/mortality; food consumption per person via the single inventory | M2-POP-01 | P1 | todo | M2-POP-01 |
+| **M2-POP-03** | WS-POP | Families and households as entities (family≠household); housing with capacity (DR-07/SHARED_DATA_MODEL) | M2-POP-02 | P2 | todo | — |
+| **M2-UI-01** | WS-UI | Real info panels (individual: name/age/occupation/needs/health; building: production/workers/storehouse) reading contracts | M2-POP-01, M1-BUILD-01 | P1 | todo | — |
+| **M2-UI-02** | WS-UI | Worker assignment to buildings from the UI (click settler → assign) | M1-BUILD-01 | P2 | todo | — |
 
-**Detalle:**
-- **M2-POP-01** · *Permitidos:* paso de población en SimCore, `Units/CivUnit.*` (quitar lógica de sim, dejar reflejo) · *Restringidos:* `Inventory`/`GameDatabase` (ECON), `SimulationClock` (CORE) · *Entregable:* SimCore conduce hambre/salud/muerte; UE refleja · *Aceptación:* un `Citizen` envejece y puede morir de hambre **sin** doble descuento del stock; población agregada coherente con el total; save/load conserva identidad. · **Bloqueo:** es cambio de contrato (§7) → WS-TD lo valida antes.
-- **M2-UI-01** · *Permitidos:* `UI/CivMainHUD.*`, `Core/CivHUD.*`, `CivText.*` (labels) · *Restringidos:* cualquier `.cpp` de SimCore · *Aceptación:* los paneles muestran datos reales del subsystem (no mock); la UI no calcula estado autoritativo.
+**Detail:**
+- **M2-POP-01** · *Allowed:* population step in SimCore, `Units/CivUnit.*` (remove sim logic, keep reflection) · *Restricted:* `Inventory`/`GameDatabase` (ECON), `SimulationClock` (CORE) · *Deliverable:* SimCore drives hunger/health/death; UE reflects · *Acceptance:* a `Citizen` ages and can starve **without** double-deducting the stock; aggregate population coherent with the total; save/load preserves identity. · **Blocker:** it is a contract change (§7) → WS-TD validates it first.
+- **M2-UI-01** · *Allowed:* `UI/CivMainHUD.*`, `Core/CivHUD.*`, `CivText.*` (labels) · *Restricted:* any SimCore `.cpp` · *Acceptance:* the panels show real subsystem data (not mock); the UI does not compute authoritative state.
 
 ---
 
-## M3 — Mundo y contenido data-driven
+## M3 — World and data-driven content
 
-| ID | Agente | Descripción | Deps | Prio | Estado | Bloqueos |
+| ID | Agent | Description | Deps | Prio | Status | Blockers |
 |---|---|---|---|---|---|---|
-| **M3-WORLD-01** | WS-WORLD | **[ARRANQUE]** Semilla configurable expuesta en UI + mundo reproducible (RISK-13); API de *terrain queries* (`HeightAt` ya existe; añadir `IsWalkable`/`BiomeAt`) | M0 | P1 | todo | — |
-| **M3-WORLD-02** | WS-WORLD | Biomas y tipos de suelo; ríos por topografía; distribución de recursos por geología (no puro azar) — C-02/C-03 pendientes de confirmar | M3-WORLD-01 | P2 | blocked | C-02/C-03 (AUDIT) |
-| **M3-ECON-01** | WS-ECON | **Data-driven:** cargar realmente `data/*.json` (o Data Tables/Assets) en vez de hardcode en `DefaultContent.cpp` (RISK-04, DT.27) | M0-TD-02 | P2 | todo | — |
+| **M3-WORLD-01** | WS-WORLD | **[START]** Configurable seed exposed in the UI + reproducible world (RISK-13); terrain-queries API (`HeightAt` already exists; add `IsWalkable`/`BiomeAt`) | M0 | P1 | todo | — |
+| **M3-WORLD-02** | WS-WORLD | Biomes and soil types; rivers by topography; resource distribution by geology (not pure chance) — C-02/C-03 pending confirmation | M3-WORLD-01 | P2 | blocked | C-02/C-03 (AUDIT) |
+| **M3-ECON-01** | WS-ECON | **Data-driven:** actually load `data/*.json` (or Data Tables/Assets) instead of hardcoding in `DefaultContent.cpp` (RISK-04, DT.27) | M0-TD-02 | P2 | todo | — |
 
-**Detalle:**
-- **M3-WORLD-01** · *Permitidos:* `View/CivTerrain.*`, geo/mundo en SimCore, `UI/*` solo para exponer la semilla (coordinado con UI) · *Aceptación:* misma semilla ⇒ mismo mundo; *terrain queries* responden por contrato (§8).
-- **M3-ECON-01** · *Permitidos:* `GameDatabase.*`, `DefaultContent.*`, `data/*.json`, posible parser sin dependencias pesadas · *Aceptación:* agregar un recurso/receta es editar datos, no recompilar lógica; `simcore_tests` verde. · *Nota:* respetar "no dependencias externas innecesarias" (plan técnico §16).
+**Detail:**
+- **M3-WORLD-01** · *Allowed:* `View/CivTerrain.*`, geo/world in SimCore, `UI/*` only to expose the seed (coordinated with UI) · *Acceptance:* same seed ⇒ same world; terrain queries respond per contract (§8).
+- **M3-ECON-01** · *Allowed:* `GameDatabase.*`, `DefaultContent.*`, `data/*.json`, a possible parser without heavy dependencies · *Acceptance:* adding a resource/recipe is editing data, not recompiling logic; `simcore_tests` green. · *Note:* respect "no unnecessary external dependencies" (technical plan §16).
 
 ---
 
-## M4 — UI real + instrumentación
+## M4 — Real UI + instrumentation
 
-| ID | Agente | Descripción | Deps | Prio | Estado | Bloqueos |
+| ID | Agent | Description | Deps | Prio | Status | Blockers |
 |---|---|---|---|---|---|---|
-| **M4-UI-01** | WS-UI | Sustituir **mock data** de `CivMainHUD` (Housing/Wellbeing/Weather/notificaciones) por datos reales; conectar eventos SimCore→UI ("Stage 4") | M2, §2-bridge | P1 | todo | puente de eventos (CORE) |
-| **M4-CORE-01** | WS-CORE | Puente de eventos SimCore→UE: exponer `EventBus` al subsystem para notificaciones reales (hoy la UE hace polling) | M0-TD-02 | P1 | todo | — |
-| **M4-UI-02** | WS-UI | Minimapa + notificaciones configurables + tutorial contextual básico (P6) | M4-UI-01 | P3 | todo | — |
-| **M4-QA-01** | WS-QA | Herramientas de depuración determinista (RISK-19): reproducir un bug con semilla + save; logging de eventos | M0-QA-01 | P1 | todo | — |
+| **M4-UI-01** | WS-UI | Replace **mock data** in `CivMainHUD` (Housing/Wellbeing/Weather/notifications) with real data; connect SimCore→UI events ("Stage 4") | M2, §2-bridge | P1 | todo | event bridge (CORE) |
+| **M4-CORE-01** | WS-CORE | SimCore→UE event bridge: expose `EventBus` to the subsystem for real notifications (today UE polls) | M0-TD-02 | P1 | todo | — |
+| **M4-UI-02** | WS-UI | Minimap + configurable notifications + basic contextual tutorial (P6) | M4-UI-01 | P3 | todo | — |
+| **M4-QA-01** | WS-QA | Deterministic debugging tools (RISK-19): reproduce a bug with seed + save; event logging | M0-QA-01 | P1 | todo | — |
 
 ---
 
-## ∞ — Transversales continuos (Arte y QA)
+## ∞ — Continuous cross-cutting (Art and QA)
 
-| ID | Agente | Descripción | Deps | Prio | Estado | Bloqueos |
+| ID | Agent | Description | Deps | Prio | Status | Blockers |
 |---|---|---|---|---|---|---|
-| **ART-01** | WS-ART | **[ARRANQUE]** Import headless de `ArtStaging/`→`Content/`; reemplazar placeholders (settlers KayKit escala/yaw, animales Quaternius, nat/edificios MegaKit) — solo asset, sin lógica (P0) | M0-TD-03 (LFS) | P1 | todo | LFS config |
-| **ART-02** | WS-ART | Materiales PBR reales (césped/roca/corteza/arcilla) + agua real (plugin UE Water o material) en vez del disco azul | ART-01 | P2 | todo | — |
-| **QA-01** | WS-QA | **[ARRANQUE]** Ampliar la suite: tests de colocación/costos/recetas/consumo/asignación/pausa/velocidad/producción por tiempo (DT.28) | M0-QA-01 | P1 | todo | — |
-| **QA-02** | WS-QA | Medición de rendimiento (RISK-03/07): costo de N `CivUnit`/nodos; definir umbral de agregación (DR-06) | M2 | P2 | todo | — |
-| **UI-ART-01** | WS-UI+WS-ART | Iconos en la barra de recursos; cursor custom; tooltip extendido a animales/edificios (P0.4/P0.5) | — | P3 | todo | coordinación UI↔ART |
+| **ART-01** | WS-ART | **[START]** Headless import of `ArtStaging/`→`Content/`; replace placeholders (settlers KayKit scale/yaw, Quaternius animals, nature/buildings MegaKit) — asset only, no logic (P0) | M0-TD-03 (LFS) | P1 | todo | LFS config |
+| **ART-02** | WS-ART | Real PBR materials (grass/rock/bark/clay) + real water (UE Water plugin or material) instead of the blue disc | ART-01 | P2 | todo | — |
+| **QA-01** | WS-QA | **[START]** Extend the suite: placement/cost/recipe/consumption/assignment/pause/speed/production-over-time tests (DT.28) | M0-QA-01 | P1 | todo | — |
+| **QA-02** | WS-QA | Performance measurement (RISK-03/07): cost of N `CivUnit`/nodes; define the aggregation threshold (DR-06) | M2 | P2 | todo | — |
+| **UI-ART-01** | WS-UI+WS-ART | Icons in the resource bar; custom cursor; tooltip extended to animals/buildings (P0.4/P0.5) | — | P3 | todo | UI↔ART coordination |
 
 ---
 
-## Tareas de arranque inmediato (brief §7) — tras aprobar M0
+## Immediate-start tasks (brief §7) — after approving M0
 
-Priorizadas porque **no** dependen de sistemas ajenos aún por definir (operan con contratos estables o mocks):
+Prioritized because they do **not** depend on other systems still to be defined (they operate against stable contracts or mocks):
 
-1. **M0-TD-01/02/03 + M0-CORE-01 + M0-QA-01** — fundaciones (contratos, refactor, git, baseline de tests). *Prerrequisito de casi todo.*
-2. **M3-WORLD-01** — generación/semilla reproducible (sistema que opera independiente temprano).
-3. **M2-UI-01 / M4-UI-01 con mock data** — la UI ya avanza contra mocks del contrato §10 (no bloquea a nadie).
-4. **ART-01/02** — pipeline de assets (visual, sin tocar lógica).
-5. **QA-01** — ampliar tests sobre lo que ya existe.
+1. **M0-TD-01/02/03 + M0-CORE-01 + M0-QA-01** — foundations (contracts, refactor, git, test baseline). *Prerequisite for almost everything.*
+2. **M3-WORLD-01** — reproducible generation/seed (a system that operates independently early on).
+3. **M2-UI-01 / M4-UI-01 with mock data** — the UI can already progress against §10-contract mocks (blocks no one).
+4. **ART-01/02** — asset pipeline (visual, without touching logic).
+5. **QA-01** — extend tests over what already exists.
 
-**No arrancar aún:** M2-POP-01 (bloqueado por decisión de contrato Modelo A), M3-WORLD-02 (bloqueado por C-02/C-03), y todo sistema de dominio avanzado (cultura/política/diplomacia/IA/guerra — E5+ del roadmap).
+**Do not start yet:** M2-POP-01 (blocked by the Model A contract decision), M3-WORLD-02 (blocked by C-02/C-03), and any advanced domain system (culture/politics/diplomacy/AI/war — roadmap E5+).
 
-## Convenciones del tablero
+## Board conventions
 
-- **Un dueño por tarea**; si una tarea toca un archivo 🤝 compartido, se aplica el protocolo de [AGENT_OWNERSHIP_MAP.md](AGENT_OWNERSHIP_MAP.md).
-- **`blocked`** siempre nombra el bloqueo (decisión, dependencia, aprobación).
-- Al cerrar una tarea: verde + tests + PR a integración (ver [INTEGRATION_STRATEGY.md](INTEGRATION_STRATEGY.md)); WS-TD mueve a `done` y actualiza `IMPLEMENTATION_ALIGNMENT.md`.
-- Cambiar prioridad o dependencia es decisión de WS-TD (registrada aquí).
+- **One owner per task**; if a task touches a 🤝 shared file, the [AGENT_OWNERSHIP_MAP.md](AGENT_OWNERSHIP_MAP.md) protocol applies.
+- **`blocked`** always names the blocker (decision, dependency, approval).
+- When closing a task: green + tests + PR to integration (see [INTEGRATION_STRATEGY.md](INTEGRATION_STRATEGY.md)); WS-TD moves it to `done` and updates `IMPLEMENTATION_ALIGNMENT.md`.
+- Changing a priority or dependency is a WS-TD decision (recorded here).

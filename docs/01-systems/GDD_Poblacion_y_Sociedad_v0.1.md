@@ -1,1382 +1,1382 @@
-> **Control documental:** 0.1 — Documento de diseño conceptual | Estado: diseño conceptual; las decisiones marcadas como confirmadas se preservan desde la fuente. **Alcance:** este GDD es fuente de detalle de su dominio; el GDD Maestro establece la visión común. Los conflictos intersistema se registran en AUDIT_REPORT.md y no se resuelven implícitamente.
+> **Document control:** 0.1 — Conceptual design document | Status: conceptual design; decisions marked as confirmed are preserved from the source. **Scope:** this GDD is the detail source for its domain; the Master GDD establishes the shared vision. Cross-system conflicts are recorded in AUDIT_REPORT.md and are not resolved implicitly.
 
 ---
 
-# GDD — Sistema de Población y Sociedad
-## Versión 0.1 — Documento de diseño conceptual
+# GDD — Population and Society System
+## Version 0.1 — Conceptual design document
 
-# 1. Visión general
+# 1. Overview
 
-El Sistema de Población y Sociedad define cómo viven, se reproducen, trabajan, aprenden, se relacionan y evolucionan los habitantes de una civilización.
+The Population and Society system defines how the inhabitants of a civilization live, reproduce, work, learn, relate to one another, and evolve.
 
-La población no será simplemente un número que aumenta o disminuye. Será el componente humano de la simulación.
+The population will not simply be a number that goes up or down. It will be the human component of the simulation.
 
-El jugador comenzará con una pequeña comunidad donde podrá observar individuos, familias y relaciones personales. A medida que la civilización crezca, la sociedad se volverá más compleja y comenzará a organizarse en grupos, clases sociales, instituciones y movimientos colectivos.
+The player will begin with a small community where they can observe individuals, families, and personal relationships. As the civilization grows, society will become more complex and will begin to organize itself into groups, social classes, institutions, and collective movements.
 
-El jugador pasará progresivamente de gestionar una comunidad a dirigir una sociedad compleja.
+The player will progressively move from managing a community to directing a complex society.
 
-## 1.1. Principios fundamentales
+## 1.1. Fundamental principles
 
-1. La población estará formada por individuos con características propias.
-2. Las familias serán unidades sociales fundamentales.
-3. Cada individuo tendrá un ciclo de vida.
-4. La demografía responderá a condiciones económicas, sociales, sanitarias y culturales.
-5. Las necesidades evolucionarán históricamente.
-6. La sociedad desarrollará clases, profesiones, culturas y grupos de interés.
-7. Existirá movilidad social, condicionada por las características de cada sociedad.
-8. La educación y el conocimiento impulsarán el desarrollo.
-9. La religión y la cultura influirán sobre las costumbres y las relaciones sociales.
-10. La migración podrá transformar la composición de la población.
-11. Los grupos sociales tendrán intereses propios y capacidad de organización.
-12. La sociedad adquirirá autonomía progresivamente.
-13. El jugador podrá intervenir mediante políticas, instituciones y decisiones.
-14. La complejidad será configurable.
-15. La evolución social será libre, pero deberá mantener coherencia histórica.
-
----
-
-# 2. Individuos y modelo poblacional
-
-## 2.1. Individuos
-
-Cada individuo tendrá información propia.
-
-Entre sus características se contemplan:
-
-- Nombre y apellido.
-- Edad.
-- Sexo.
-- Familia.
-- Relaciones familiares.
-- Profesión principal.
-- Habilidades secundarias.
-- Experiencia.
-- Nivel económico.
-- Salud.
-- Educación.
-- Religión.
-- Cultura.
-- Origen.
-- Opiniones políticas.
-- Personalidad.
-- Felicidad.
-- Satisfacción.
-- Condiciones de vida.
-
-La información disponible y su importancia dependerán del período histórico y del nivel de simulación.
-
-## 2.2. Ciclo de vida
-
-Cada individuo tendrá un ciclo de vida:
-
-1. Nacimiento.
-2. Infancia.
-3. Crecimiento.
-4. Educación y aprendizaje.
-5. Incorporación al trabajo.
-6. Formación de relaciones.
-7. Formación de una familia.
-8. Madurez.
-9. Envejecimiento.
-10. Muerte.
-
-La duración de cada etapa dependerá de las condiciones demográficas de la sociedad.
-
-## 2.3. Individualidad y protagonismo
-
-La importancia de los individuos evolucionará con la civilización.
-
-En sociedades pequeñas:
-- Los individuos serán visibles.
-- Tendrán relaciones identificables.
-- Sus habilidades tendrán impacto directo.
-- Las familias serán fácilmente reconocibles.
-- La pérdida de un individuo podrá tener consecuencias importantes.
-
-En sociedades grandes:
-- La simulación individual perderá protagonismo.
-- Los individuos se agruparán en sectores.
-- Las estadísticas colectivas serán más importantes.
-- Los grupos sociales tendrán representantes.
-- El jugador se concentrará en tendencias e intereses colectivos.
-
-## 2.4. Modelo híbrido de simulación
-
-El sistema combinará simulación individual y agregada.
-
-**Pequeñas comunidades**
-
-Simulación detallada de individuos y familias.
-
-**Asentamientos medianos**
-
-Individuos identificables, con determinadas actividades agrupadas.
-
-**Grandes ciudades**
-
-Mayor representación por familias, profesiones, sectores y clases sociales.
-
-**Civilizaciones extensas**
-
-Simulación agregada de grupos poblacionales, regiones e instituciones.
-
-La transición deberá ser progresiva y transparente para el jugador.
-
-El objetivo es preservar la profundidad histórica sin exigir simulación individual completa de cientos de miles de habitantes.
+1. The population will be made up of individuals with their own characteristics.
+2. Families will be fundamental social units.
+3. Each individual will have a life cycle.
+4. Demographics will respond to economic, social, health, and cultural conditions.
+5. Needs will evolve historically.
+6. Society will develop classes, professions, cultures, and interest groups.
+7. Social mobility will exist, conditioned by the characteristics of each society.
+8. Education and knowledge will drive development.
+9. Religion and culture will influence customs and social relationships.
+10. Migration will be able to transform the composition of the population.
+11. Social groups will have their own interests and the capacity to organize.
+12. Society will progressively acquire autonomy.
+13. The player will be able to intervene through policies, institutions, and decisions.
+14. Complexity will be configurable.
+15. Social evolution will be free, but it must maintain historical coherence.
 
 ---
 
-# 3. Familias y estructura demográfica
+# 2. Individuals and population model
 
-## 3.1. Familias como entidades
+## 2.1. Individuals
 
-Las familias serán entidades propias dentro del sistema social.
+Each individual will have their own information.
 
-Podrán tener:
-- Integrantes.
-- Relaciones familiares.
-- Generaciones.
-- Vivienda.
-- Patrimonio.
-- Profesiones.
-- Nivel económico.
-- Identidad cultural.
-- Tradiciones.
-- Linajes.
+Their characteristics include:
 
-Las familias podrán tener continuidad durante generaciones.
+- First and last name.
+- Age.
+- Sex.
+- Family.
+- Family relationships.
+- Main profession.
+- Secondary skills.
+- Experience.
+- Economic level.
+- Health.
+- Education.
+- Religion.
+- Culture.
+- Origin.
+- Political opinions.
+- Personality.
+- Happiness.
+- Satisfaction.
+- Living conditions.
 
-## 3.2. Hogares
+The available information and its importance will depend on the historical period and the level of simulation.
 
-La composición de las viviendas dependerá de:
-- Cultura.
-- Época.
-- Nivel económico.
-- Tipo de vivienda.
-- Costumbres familiares.
-- Condiciones demográficas.
+## 2.2. Life cycle
 
-Podrán existir:
-- Hogares individuales.
-- Familias nucleares.
-- Familias extendidas.
-- Familias multigeneracionales.
-- Hogares compartidos.
+Each individual will have a life cycle:
 
-## 3.3. Formación de nuevas familias
+1. Birth.
+2. Childhood.
+3. Growth.
+4. Education and learning.
+5. Entry into work.
+6. Formation of relationships.
+7. Formation of a family.
+8. Maturity.
+9. Aging.
+10. Death.
 
-Los individuos podrán formar nuevas familias automáticamente.
+The duration of each stage will depend on the society's demographic conditions.
 
-El proceso estará condicionado por:
-- Edad.
-- Cultura.
-- Tradiciones.
-- Situación económica.
-- Disponibilidad de vivienda.
-- Relaciones personales.
-- Condiciones sociales.
+## 2.3. Individuality and prominence
 
-El jugador podrá influir indirectamente mediante políticas y condiciones de vida.
+The importance of individuals will evolve with the civilization.
 
-## 3.4. Natalidad
+In small societies:
+- Individuals will be visible.
+- They will have identifiable relationships.
+- Their skills will have a direct impact.
+- Families will be easily recognizable.
+- The loss of an individual may have significant consequences.
 
-La natalidad dependerá de múltiples factores:
+In large societies:
+- Individual simulation will lose prominence.
+- Individuals will be grouped into sectors.
+- Collective statistics will be more important.
+- Social groups will have representatives.
+- The player will focus on collective trends and interests.
 
-- Edad de la población.
-- Estructura familiar.
-- Cultura.
-- Religión.
-- Alimentación.
-- Salud.
-- Condiciones económicas.
-- Disponibilidad de vivienda.
-- Educación.
-- Políticas gubernamentales.
+## 2.4. Hybrid simulation model
 
-El sistema deberá permitir que las civilizaciones desarrollen diferentes patrones demográficos.
+The system will combine individual and aggregate simulation.
 
-## 3.5. Mortalidad
+**Small communities**
 
-La mortalidad estará influenciada por:
-- Edad.
-- Enfermedades.
-- Alimentación.
-- Higiene.
-- Condiciones sanitarias.
-- Guerras.
-- Accidentes.
-- Desastres.
-- Calidad de vida.
+Detailed simulation of individuals and families.
 
-La mortalidad infantil y la esperanza de vida evolucionarán históricamente.
+**Medium-sized settlements**
 
-## 3.6. Transición demográfica
+Identifiable individuals, with certain activities grouped together.
 
-La sociedad podrá atravesar diferentes etapas demográficas.
+**Large cities**
 
-Por ejemplo:
-- Alta natalidad y mortalidad.
-- Reducción de la mortalidad.
-- Crecimiento poblacional acelerado.
-- Reducción de la natalidad.
-- Envejecimiento poblacional.
-- Estabilización demográfica.
+Greater representation by families, professions, sectors, and social classes.
 
-Estas transformaciones no estarán predeterminadas por una secuencia obligatoria.
+**Extensive civilizations**
 
-## 3.7. Políticas demográficas
+Aggregate simulation of population groups, regions, and institutions.
 
-El jugador podrá implementar políticas orientadas a modificar las tendencias demográficas.
+The transition must be gradual and transparent to the player.
 
-Ejemplos:
-- Incentivos familiares.
-- Ayudas económicas.
-- Acceso a vivienda.
-- Mejoras sanitarias.
-- Educación.
-- Políticas migratorias.
-- Apoyo a la infancia.
-- Programas sociales.
-
-Las políticas tendrán costos y consecuencias no siempre inmediatas.
+The goal is to preserve historical depth without requiring full individual simulation of hundreds of thousands of inhabitants.
 
 ---
 
-# 4. Necesidades de la población
+# 3. Families and demographic structure
 
-Las necesidades serán uno de los principales motores de la simulación.
+## 3.1. Families as entities
 
-No serán estáticas: evolucionarán junto con la complejidad de la civilización.
+Families will be entities in their own right within the social system.
 
-## 4.1. Categorías de necesidades
+They may have:
+- Members.
+- Family relationships.
+- Generations.
+- Housing.
+- Patrimony.
+- Professions.
+- Economic level.
+- Cultural identity.
+- Traditions.
+- Lineages.
 
-Se contemplan cinco grandes categorías.
+Families may have continuity across generations.
 
-**Necesidades básicas**
-- Alimentación.
-- Agua.
-- Vivienda.
-- Vestimenta.
-- Descanso.
-- Protección.
+## 3.2. Households
 
-**Necesidades sociales**
-- Familia.
-- Relaciones personales.
-- Vida comunitaria.
-- Seguridad.
-- Integración social.
-- Reconocimiento.
+The composition of dwellings will depend on:
+- Culture.
+- Era.
+- Economic level.
+- Type of dwelling.
+- Family customs.
+- Demographic conditions.
 
-**Necesidades culturales**
-- Arte.
-- Música.
-- Tradiciones.
-- Educación.
-- Festividades.
-- Actividades culturales.
+There may be:
+- Single-person households.
+- Nuclear families.
+- Extended families.
+- Multigenerational families.
+- Shared households.
 
-**Necesidades religiosas y espirituales**
-- Prácticas religiosas.
-- Espacios de culto.
-- Rituales.
-- Celebraciones.
-- Identidad espiritual.
+## 3.3. Formation of new families
 
-**Necesidades de bienestar y desarrollo**
-- Salud.
-- Higiene.
-- Entretenimiento.
-- Libertad.
-- Participación.
-- Servicios.
-- Comodidad.
+Individuals will be able to form new families automatically.
 
-## 4.2. Evolución histórica
+The process will be conditioned by:
+- Age.
+- Culture.
+- Traditions.
+- Economic situation.
+- Housing availability.
+- Personal relationships.
+- Social conditions.
 
-Las necesidades evolucionarán con:
-- Tecnología.
-- Cultura.
-- Educación.
-- Religión.
-- Organización social.
-- Tipo de gobierno.
-- Desarrollo económico.
-- Condiciones históricas.
+The player will be able to influence it indirectly through policies and living conditions.
 
-Una comunidad primitiva tendrá necesidades relativamente simples.
+## 3.4. Birth rate
 
-Una sociedad avanzada desarrollará expectativas mucho más complejas.
+The birth rate will depend on multiple factors:
 
-Las necesidades básicas continuarán existiendo, pero se incorporarán nuevas dimensiones de bienestar.
+- Age of the population.
+- Family structure.
+- Culture.
+- Religion.
+- Diet.
+- Health.
+- Economic conditions.
+- Housing availability.
+- Education.
+- Government policies.
 
-## 4.3. Necesidades individuales y colectivas
+The system must allow civilizations to develop different demographic patterns.
 
-En comunidades pequeñas, las necesidades podrán calcularse individualmente.
+## 3.5. Mortality
 
-A medida que la sociedad crezca, se utilizarán grupos poblacionales.
+Mortality will be influenced by:
+- Age.
+- Diseases.
+- Diet.
+- Hygiene.
+- Health conditions.
+- Wars.
+- Accidents.
+- Disasters.
+- Quality of life.
 
-Los grupos podrán compartir determinadas necesidades y expectativas, sin perder completamente la diversidad individual.
+Infant mortality and life expectancy will evolve historically.
 
-## 4.4. Necesidades insatisfechas
+## 3.6. Demographic transition
 
-Las necesidades insatisfechas podrán producir consecuencias según su gravedad y duración.
+Society may go through different demographic stages.
 
-Ejemplos:
-- Reducción de felicidad.
-- Menor productividad.
-- Enfermedades.
-- Migración.
-- Conflictos.
-- Protestas.
-- Inestabilidad social.
+For example:
+- High birth rate and mortality.
+- Reduction in mortality.
+- Accelerated population growth.
+- Reduction in the birth rate.
+- Population aging.
+- Demographic stabilization.
 
-No todas las necesidades tendrán las mismas consecuencias.
+These transformations will not be predetermined by a mandatory sequence.
 
-## 4.5. Necesidades básicas y bienestar
+## 3.7. Demographic policies
 
-Las necesidades se diferenciarán entre:
-- Supervivencia.
-- Seguridad y estabilidad.
-- Integración social.
-- Desarrollo personal.
-- Bienestar avanzado.
+The player will be able to implement policies aimed at modifying demographic trends.
 
-La supervivencia tendrá prioridad en las primeras etapas históricas.
+Examples:
+- Family incentives.
+- Economic assistance.
+- Access to housing.
+- Health improvements.
+- Education.
+- Migration policies.
+- Support for children.
+- Social programs.
 
-A medida que se satisfagan las necesidades básicas, otras adquirirán mayor importancia.
-
----
-
-# 5. Felicidad, satisfacción y calidad de vida
-
-## 5.1. Felicidad individual
-
-Los individuos tendrán un indicador propio de felicidad.
-
-Este dependerá de:
-- Alimentación.
-- Vivienda.
-- Salud.
-- Seguridad.
-- Ingresos.
-- Trabajo.
-- Familia.
-- Relaciones sociales.
-- Belleza del entorno.
-- Educación.
-- Religión.
-- Cultura.
-- Libertad.
-- Entretenimiento.
-- Estabilidad política.
-
-La importancia relativa de cada factor dependerá de la cultura, época y características individuales.
-
-## 5.2. Felicidad de la sociedad
-
-Las sociedades tendrán indicadores agregados de felicidad y satisfacción.
-
-En ciudades grandes, la felicidad individual dejará de ser un indicador central para la gestión del jugador.
-
-Se utilizarán estadísticas colectivas.
-
-## 5.3. Expectativas
-
-Las personas tendrán expectativas diferentes.
-
-Estas dependerán de:
-- Clase social.
-- Cultura.
-- Educación.
-- Riqueza.
-- Época.
-- Religión.
-- Condiciones de vida.
-
-Una persona puede estar satisfecha con condiciones que otra considera insuficientes.
-
-## 5.4. Calidad de vida
-
-Existirá un indicador general de calidad de vida.
-
-Podrá integrar:
-- Salud.
-- Ingresos.
-- Educación.
-- Vivienda.
-- Seguridad.
-- Bienestar.
-- Acceso a servicios.
-
-También existirán indicadores individuales para analizar sus componentes.
-
-## 5.5. Desigualdad
-
-La desigualdad tendrá influencia moderada sobre la satisfacción general.
-
-No obstante, podrá generar tensiones sociales cuando se combine con:
-- Pobreza.
-- Falta de oportunidades.
-- Privilegios.
-- Discriminación.
-- Inestabilidad.
-- Diferencias extremas en las condiciones de vida.
+Policies will have costs and consequences that are not always immediate.
 
 ---
 
-# 6. Clases sociales y estratificación
+# 4. Population needs
 
-Las clases sociales representarán las diferencias económicas, políticas y culturales de la población.
+Needs will be one of the main drivers of the simulation.
 
-Su estructura evolucionará según la época y las características de cada civilización.
+They will not be static: they will evolve along with the complexity of the civilization.
 
-## 6.1. Clases sociales posibles
+## 4.1. Categories of needs
 
-Entre otras:
-- Esclavos y personas dependientes.
-- Campesinos.
-- Artesanos.
-- Comerciantes.
-- Trabajadores.
-- Militares.
-- Clero.
-- Nobleza.
-- Burguesía.
-- Funcionarios.
-- Empresarios.
-- Profesionales.
-- Élites económicas.
+Five broad categories are considered.
 
-No todas existirán en todas las sociedades.
+**Basic needs**
+- Food.
+- Water.
+- Housing.
+- Clothing.
+- Rest.
+- Protection.
 
-## 6.2. Formación de clases
+**Social needs**
+- Family.
+- Personal relationships.
+- Community life.
+- Security.
+- Social integration.
+- Recognition.
 
-Las clases surgirán de la evolución económica, política y social.
+**Cultural needs**
+- Art.
+- Music.
+- Traditions.
+- Education.
+- Festivities.
+- Cultural activities.
 
-No serán categorías completamente predeterminadas.
+**Religious and spiritual needs**
+- Religious practices.
+- Places of worship.
+- Rituals.
+- Celebrations.
+- Spiritual identity.
 
-## 6.3. Movilidad social
+**Well-being and development needs**
+- Health.
+- Hygiene.
+- Entertainment.
+- Freedom.
+- Participation.
+- Services.
+- Comfort.
 
-Los individuos podrán cambiar de posición social.
+## 4.2. Historical evolution
 
-La movilidad estará condicionada por:
-- Educación.
-- Riqueza.
-- Profesión.
-- Herencia.
-- Cultura.
-- Leyes.
-- Estructura política.
-- Oportunidades económicas.
-- Instituciones.
+Needs will evolve with:
+- Technology.
+- Culture.
+- Education.
+- Religion.
+- Social organization.
+- Type of government.
+- Economic development.
+- Historical conditions.
 
-Algunas sociedades tendrán mayor movilidad que otras.
+A primitive community will have relatively simple needs.
 
-## 6.4. Intereses colectivos
+An advanced society will develop much more complex expectations.
 
-Las clases sociales tendrán intereses propios.
+Basic needs will continue to exist, but new dimensions of well-being will be added.
 
-Ejemplos:
+## 4.3. Individual and collective needs
 
-**Campesinos**
-- Acceso a tierras.
-- Seguridad.
-- Menores impuestos.
-- Estabilidad productiva.
+In small communities, needs may be calculated individually.
 
-**Comerciantes**
-- Libertad comercial.
-- Infraestructura.
-- Seguridad de rutas.
-- Estabilidad monetaria.
+As society grows, population groups will be used.
 
-**Artesanos**
-- Acceso a materiales.
-- Protección de oficios.
-- Mercados.
-- Formación profesional.
+Groups may share certain needs and expectations, without completely losing individual diversity.
 
-**Trabajadores**
-- Salarios.
-- Condiciones laborales.
-- Seguridad.
-- Protección social.
+## 4.4. Unmet needs
 
-**Nobleza**
-- Privilegios.
-- Propiedad.
-- Influencia política.
-- Continuidad de sus derechos.
+Unmet needs may produce consequences according to their severity and duration.
 
-**Clero**
-- Libertad religiosa.
-- Recursos.
-- Influencia cultural.
-- Autonomía institucional.
+Examples:
+- Reduced happiness.
+- Lower productivity.
+- Diseases.
+- Migration.
+- Conflicts.
+- Protests.
+- Social instability.
 
-Los intereses podrán cambiar históricamente.
+Not all needs will have the same consequences.
 
-## 6.5. Representación política
+## 4.5. Basic needs and well-being
 
-Los grupos podrán tener representación política dependiendo del tipo de gobierno.
+Needs will be differentiated between:
+- Survival.
+- Security and stability.
+- Social integration.
+- Personal development.
+- Advanced well-being.
 
-Podrán influir sobre:
-- Decisiones gubernamentales.
-- Reformas.
-- Impuestos.
-- Leyes.
-- Distribución de recursos.
-- Conflictos sociales.
+Survival will have priority in the early historical stages.
 
----
-
-# 7. Salud y medicina
-
-La salud será un componente fundamental del desarrollo de la civilización.
-
-## 7.1. Salud individual
-
-Cada individuo tendrá un estado sanitario simplificado o detallado según el nivel de simulación.
-
-## 7.2. Factores sanitarios
-
-La salud dependerá de:
-- Alimentación.
-- Agua.
-- Higiene.
-- Vivienda.
-- Condiciones laborales.
-- Contaminación.
-- Medicina.
-- Educación.
-- Clima.
-- Densidad urbana.
-
-## 7.3. Enfermedades
-
-El sistema contemplará enfermedades, inicialmente mediante indicadores poblacionales y eventos sanitarios.
-
-La simulación podrá representar:
-- Enfermedades comunes.
-- Enfermedades endémicas.
-- Enfermedades contagiosas.
-- Epidemias.
-- Problemas derivados de deficiencias nutricionales.
-- Enfermedades asociadas al trabajo y al entorno.
-
-## 7.4. Epidemias
-
-Las epidemias podrán generar impactos demográficos, económicos y sociales.
-
-Su intensidad será configurable.
-
-## 7.5. Medicina e instituciones sanitarias
-
-La medicina evolucionará históricamente.
-
-Podrán desarrollarse:
-- Curanderos.
-- Sanadores.
-- Médicos.
-- Centros de atención.
-- Hospitales.
-- Instituciones sanitarias.
-- Sistemas públicos de salud.
-
-## 7.6. Políticas sanitarias
-
-El jugador podrá desarrollar políticas como:
-- Agua potable.
-- Higiene urbana.
-- Limpieza.
-- Cuarentenas.
-- Hospitales.
-- Campañas sanitarias.
-- Sistemas de alcantarillado.
-- Prevención de enfermedades.
-
-Estas políticas tendrán costos y efectos sobre la población.
+As basic needs are met, others will acquire greater importance.
 
 ---
 
-# 8. Educación y conocimiento
+# 5. Happiness, satisfaction, and quality of life
 
-La educación será uno de los motores fundamentales del progreso social y tecnológico.
+## 5.1. Individual happiness
 
-## 8.1. Transmisión del conocimiento
+Individuals will have their own happiness indicator.
 
-El conocimiento podrá transmitirse mediante:
-- Familia.
-- Maestros.
-- Artesanos.
-- Aprendizaje laboral.
-- Escuelas.
-- Instituciones religiosas.
-- Universidades.
-- Academias.
-- Centros científicos.
+This will depend on:
+- Food.
+- Housing.
+- Health.
+- Security.
+- Income.
+- Work.
+- Family.
+- Social relationships.
+- Beauty of the surroundings.
+- Education.
+- Religion.
+- Culture.
+- Freedom.
+- Entertainment.
+- Political stability.
 
-Cada forma tendrá relevancia según la época.
+The relative importance of each factor will depend on culture, era, and individual characteristics.
 
-## 8.2. Niveles educativos
+## 5.2. Happiness of society
 
-Se contemplan:
-- Educación básica.
-- Educación técnica.
-- Educación superior.
-- Investigación científica.
+Societies will have aggregate indicators of happiness and satisfaction.
 
-Su disponibilidad dependerá de la tecnología, la cultura y la organización social.
+In large cities, individual happiness will cease to be a central indicator for the player's management.
 
-## 8.3. Acceso a la educación
+Collective statistics will be used.
 
-El acceso dependerá de:
-- Recursos disponibles.
-- Instituciones.
-- Políticas públicas.
-- Cultura.
-- Clase social.
-- Religión.
-- Tipo de gobierno.
+## 5.3. Expectations
 
-El jugador podrá ampliar el acceso mediante políticas e inversión.
+People will have different expectations.
 
-## 8.4. Educación y movilidad social
+These will depend on:
+- Social class.
+- Culture.
+- Education.
+- Wealth.
+- Era.
+- Religion.
+- Living conditions.
 
-La educación podrá permitir que personas de origen humilde accedan a nuevas profesiones y posiciones sociales.
+One person may be satisfied with conditions that another considers insufficient.
 
-Su influencia estará condicionada por las oportunidades y restricciones de cada sociedad.
+## 5.4. Quality of life
 
-## 8.5. Alfabetización
+A general quality-of-life indicator will exist.
 
-La alfabetización será una variable poblacional.
+It may integrate:
+- Health.
+- Income.
+- Education.
+- Housing.
+- Security.
+- Well-being.
+- Access to services.
 
-Su evolución dependerá de:
-- Instituciones educativas.
-- Cultura.
-- Tecnología.
-- Religión.
-- Gobierno.
-- Acceso a materiales de escritura.
-- Desarrollo económico.
+Individual indicators will also exist for analyzing its components.
 
----
+## 5.5. Inequality
 
-# 9. Cultura e identidad
+Inequality will have a moderate influence on general satisfaction.
 
-La cultura será una característica dinámica de cada civilización.
-
-## 9.1. Componentes culturales
-
-Se contemplan:
-- Idioma.
-- Gastronomía.
-- Vestimenta.
-- Arquitectura.
-- Música.
-- Arte.
-- Tradiciones.
-- Costumbres.
-- Valores sociales.
-- Festividades.
-- Organización familiar.
-- Rituales.
-
-## 9.2. Evolución cultural
-
-Las culturas podrán evolucionar mediante:
-- Cambios sociales.
-- Tecnología.
-- Educación.
-- Migración.
-- Comercio.
-- Conquista.
-- Intercambio cultural.
-- Reformas políticas.
-- Transformaciones religiosas.
-
-Los cambios podrán producirse mediante acontecimientos y procesos graduales.
-
-## 9.3. Integración cultural
-
-Los individuos de origen extranjero podrán adoptar progresivamente la cultura local.
-
-La integración dependerá de:
-- Tiempo de residencia.
-- Relaciones sociales.
-- Educación.
-- Matrimonios.
-- Instituciones.
-- Políticas.
-- Aceptación social.
-
-La integración no implicará necesariamente la desaparición de las identidades originales.
-
-## 9.4. Tradiciones
-
-Las tradiciones podrán sobrevivir durante siglos.
-
-Algunas permanecerán prácticamente intactas, mientras otras evolucionarán o desaparecerán.
-
-## 9.5. Identidad civilizatoria
-
-La identidad cultural de una civilización podrá transformarse profundamente sin desaparecer.
-
-El jugador podrá observar la continuidad y los cambios de las costumbres a lo largo de generaciones.
+Nevertheless, it may generate social tensions when combined with:
+- Poverty.
+- Lack of opportunities.
+- Privileges.
+- Discrimination.
+- Instability.
+- Extreme differences in living conditions.
 
 ---
 
-# 10. Religión y espiritualidad
+# 6. Social classes and stratification
 
-La religión tendrá una dimensión espiritual, cultural, social, política y económica.
+Social classes will represent the economic, political, and cultural differences of the population.
 
-## 10.1. Creencias individuales
+Their structure will evolve according to the era and the characteristics of each civilization.
 
-Los individuos podrán tener diferentes creencias dentro de una misma sociedad.
+## 6.1. Possible social classes
 
-Podrá existir una religión predominante y otras minoritarias.
+Among others:
+- Slaves and dependent persons.
+- Peasants.
+- Artisans.
+- Merchants.
+- Workers.
+- Military.
+- Clergy.
+- Nobility.
+- Bourgeoisie.
+- Officials.
+- Entrepreneurs.
+- Professionals.
+- Economic elites.
 
-## 10.2. Pluralidad religiosa
+Not all will exist in every society.
 
-La coexistencia religiosa dependerá de:
-- Cultura.
-- Políticas.
-- Gobierno.
-- Instituciones.
-- Tradiciones.
-- Relaciones entre comunidades.
+## 6.2. Formation of classes
 
-Podrá producir convivencia, cooperación, tensiones o conflictos.
+Classes will arise from economic, political, and social evolution.
 
-## 10.3. Influencia cotidiana
+They will not be completely predetermined categories.
 
-La religión podrá influir sobre:
-- Alimentación.
-- Vestimenta.
-- Matrimonios.
-- Festividades.
-- Educación.
-- Trabajo.
-- Costumbres.
-- Leyes.
-- Organización familiar.
+## 6.3. Social mobility
 
-La intensidad dependerá de la época y la sociedad.
+Individuals may change their social position.
 
-## 10.4. Secularización
+Mobility will be conditioned by:
+- Education.
+- Wealth.
+- Profession.
+- Inheritance.
+- Culture.
+- Laws.
+- Political structure.
+- Economic opportunities.
+- Institutions.
 
-Las sociedades podrán desarrollar procesos de secularización.
+Some societies will have greater mobility than others.
 
-La religión podrá perder influencia sobre determinadas dimensiones de la vida pública y privada.
+## 6.4. Collective interests
 
-La secularización no será una religión ni una creencia uniforme, sino un proceso social y cultural.
+Social classes will have their own interests.
 
----
+Examples:
 
-# 11. Migración y diversidad poblacional
+**Peasants**
+- Access to land.
+- Security.
+- Lower taxes.
+- Productive stability.
 
-La migración permitirá que la población cambie mediante el movimiento de personas.
+**Merchants**
+- Commercial freedom.
+- Infrastructure.
+- Route security.
+- Monetary stability.
 
-## 11.1. Migración interna
+**Artisans**
+- Access to materials.
+- Protection of trades.
+- Markets.
+- Professional training.
 
-Los habitantes podrán trasladarse entre asentamientos y regiones.
+**Workers**
+- Wages.
+- Working conditions.
+- Security.
+- Social protection.
 
-Ejemplos:
-- Población rural que migra a ciudades.
-- Trabajadores que se trasladan a regiones productivas.
-- Familias que buscan mejores condiciones de vida.
+**Nobility**
+- Privileges.
+- Property.
+- Political influence.
+- Continuity of their rights.
 
-## 11.2. Inmigración externa
+**Clergy**
+- Religious freedom.
+- Resources.
+- Cultural influence.
+- Institutional autonomy.
 
-Podrán llegar personas desde otras civilizaciones.
+Interests may change historically.
 
-Entre ellas:
-- Comerciantes.
-- Artesanos.
-- Trabajadores.
-- Familias.
-- Refugiados.
-- Especialistas.
-- Grupos religiosos.
+## 6.5. Political representation
 
-## 11.3. Factores de atracción
+Groups may have political representation depending on the type of government.
 
-La migración dependerá de:
-- Empleo.
-- Salarios.
-- Seguridad.
-- Calidad de vida.
-- Libertad religiosa.
-- Oportunidades.
-- Estabilidad política.
-- Belleza urbana.
-- Vivienda.
-- Condiciones económicas.
-
-## 11.4. Políticas migratorias
-
-El jugador podrá establecer políticas migratorias.
-
-Podrá:
-- Favorecer la inmigración.
-- Restringir la entrada.
-- Promover la llegada de trabajadores especializados.
-- Facilitar el asentamiento de familias.
-- Regular la residencia.
-- Establecer requisitos de integración.
-
-La complejidad será configurable.
-
-## 11.5. Diversidad cultural
-
-La presencia de diferentes orígenes podrá generar diversidad cultural.
-
-La diversidad tendrá consecuencias sociales y culturales, que dependerán de las condiciones de integración y convivencia.
+They may influence:
+- Government decisions.
+- Reforms.
+- Taxes.
+- Laws.
+- Distribution of resources.
+- Social conflicts.
 
 ---
 
-# 12. Organización social y política
+# 7. Health and medicine
 
-La sociedad no será pasiva.
+Health will be a fundamental component of the civilization's development.
 
-Los grupos sociales podrán desarrollar intereses, organizarse y ejercer presión sobre las instituciones.
+## 7.1. Individual health
 
-## 12.1. Representantes sociales
+Each individual will have a health status that is simplified or detailed depending on the level of simulation.
 
-Los grupos podrán tener representantes.
+## 7.2. Health factors
 
-Estos expresarán:
-- Demandas.
-- Intereses.
-- Reivindicaciones.
-- Inconformidades.
-- Objetivos colectivos.
+Health will depend on:
+- Food.
+- Water.
+- Hygiene.
+- Housing.
+- Working conditions.
+- Pollution.
+- Medicine.
+- Education.
+- Climate.
+- Urban density.
 
-## 12.2. Organización colectiva
+## 7.3. Diseases
 
-Los grupos podrán organizarse y actuar colectivamente.
+The system will account for diseases, initially through population indicators and health events.
 
-Según la época y la sociedad, podrán surgir:
-- Asociaciones.
-- Consejos.
-- Gremios.
-- Movimientos sociales.
-- Sindicatos.
-- Organizaciones religiosas.
-- Movimientos políticos.
+The simulation may represent:
+- Common diseases.
+- Endemic diseases.
+- Contagious diseases.
+- Epidemics.
+- Problems arising from nutritional deficiencies.
+- Diseases associated with work and the environment.
 
-## 12.3. Conflictos sociales
+## 7.4. Epidemics
 
-Podrán surgir conflictos relacionados con:
-- Desigualdad.
-- Pobreza.
-- Tierras.
-- Impuestos.
-- Religión.
-- Condiciones laborales.
-- Privilegios.
-- Discriminación.
-- Reformas políticas.
+Epidemics may generate demographic, economic, and social impacts.
 
-La intensidad dependerá de la gravedad de los problemas y de la capacidad de las instituciones para gestionarlos.
+Their intensity will be configurable.
 
-## 12.4. Libertades
+## 7.5. Medicine and health institutions
 
-La sociedad tendrá diferentes dimensiones de libertad.
+Medicine will evolve historically.
 
-Entre otras:
-- Libertad de expresión.
-- Libertad de asociación.
-- Libertad religiosa.
-- Libertad de movimiento.
-- Libertad económica.
+The following may develop:
+- Folk healers.
+- Healers.
+- Physicians.
+- Care centers.
+- Hospitals.
+- Health institutions.
+- Public health systems.
 
-Su alcance dependerá del tipo de gobierno y las leyes.
+## 7.6. Health policies
 
-## 12.5. Opiniones políticas
+The player will be able to develop policies such as:
+- Potable water.
+- Urban hygiene.
+- Cleaning.
+- Quarantines.
+- Hospitals.
+- Health campaigns.
+- Sewerage systems.
+- Disease prevention.
 
-Los individuos y grupos podrán desarrollar preferencias políticas.
-
-En poblaciones pequeñas podrán simularse individualmente.
-
-En sociedades grandes se representarán principalmente mediante grupos sociales.
-
----
-
-# 13. Seguridad y criminalidad
-
-## 13.1. Criminalidad
-
-La criminalidad se representará inicialmente mediante indicadores agregados.
-
-Podrá incluir delitos individuales y, en etapas avanzadas, organizaciones criminales.
-
-## 13.2. Factores
-
-La criminalidad dependerá de:
-- Pobreza.
-- Desigualdad.
-- Desempleo.
-- Educación.
-- Inestabilidad.
-- Seguridad.
-- Densidad urbana.
-- Condiciones sociales.
-
-## 13.3. Fuerzas de seguridad
-
-La evolución histórica podrá contemplar:
-- Guardias.
-- Patrullas.
-- Milicias urbanas.
-- Autoridades locales.
-- Fuerzas policiales.
-- Instituciones de seguridad modernas.
-
-## 13.4. Seguridad por zonas
-
-Los diferentes barrios podrán tener niveles de seguridad propios.
-
-Esto podrá influir sobre:
-- Calidad de vida.
-- Comercio.
-- Migración.
-- Valor de las propiedades.
-- Felicidad.
-
-## 13.5. Consecuencias
-
-La criminalidad podrá generar consecuencias económicas y sociales.
-
-La simulación será configurable para evitar un exceso de micromanagement.
+These policies will have costs and effects on the population.
 
 ---
 
-# 14. Evolución histórica de la sociedad
+# 8. Education and knowledge
 
-## 14.1. Evolución libre
+Education will be one of the fundamental drivers of social and technological progress.
 
-Las sociedades no estarán obligadas a seguir una secuencia histórica predeterminada.
+## 8.1. Transmission of knowledge
 
-Podrán desarrollar trayectorias diferentes.
+Knowledge may be transmitted through:
+- Family.
+- Teachers.
+- Artisans.
+- Workplace learning.
+- Schools.
+- Religious institutions.
+- Universities.
+- Academies.
+- Scientific centers.
 
-La evolución deberá mantener coherencia con:
-- Tecnología.
-- Geografía.
-- Economía.
-- Cultura.
-- Política.
-- Religión.
-- Demografía.
+Each form will have relevance depending on the era.
 
-## 14.2. Cambios graduales
+## 8.2. Educational levels
 
-Los cambios sociales normalmente serán graduales.
+The following are considered:
+- Basic education.
+- Technical education.
+- Higher education.
+- Scientific research.
 
-Sin embargo, determinados acontecimientos podrán acelerarlos.
+Their availability will depend on technology, culture, and social organization.
 
-## 14.3. Acontecimientos transformadores
+## 8.3. Access to education
 
-Entre otros:
-- Revoluciones.
-- Guerras.
-- Epidemias.
-- Migraciones masivas.
-- Crisis económicas.
-- Descubrimientos científicos.
-- Reformas religiosas.
-- Cambios políticos.
-- Revoluciones industriales.
+Access will depend on:
+- Available resources.
+- Institutions.
+- Public policies.
+- Culture.
+- Social class.
+- Religion.
+- Type of government.
 
-Los acontecimientos podrán modificar la estructura social.
+The player will be able to broaden access through policies and investment.
 
-## 14.4. Características sociales únicas
+## 8.4. Education and social mobility
 
-Las civilizaciones podrán desarrollar características particulares.
+Education may allow people of humble origin to access new professions and social positions.
 
-Por ejemplo:
-- Sociedades comerciales.
-- Sociedades agrícolas.
-- Sociedades militares.
-- Sociedades religiosas.
-- Sociedades científicas.
-- Sociedades jerárquicas.
-- Sociedades igualitarias.
+Its influence will be conditioned by the opportunities and restrictions of each society.
 
-Estas características podrán surgir de las decisiones del jugador y de la evolución de la sociedad.
+## 8.5. Literacy
 
-## 14.5. Continuidad de identidad
+Literacy will be a population variable.
 
-Una civilización podrá transformar profundamente su organización social sin perder necesariamente su identidad cultural.
-
-El sistema deberá representar tanto la continuidad como la transformación.
-
----
-
-# 15. Interfaz y análisis social
-
-El jugador deberá disponer de herramientas para comprender la situación de su población.
-
-## 15.1. Panel general
-
-Se contemplan indicadores como:
-- Población total.
-- Nacimientos.
-- Muertes.
-- Crecimiento.
-- Esperanza de vida.
-- Distribución por edades.
-- Distribución por género.
-- Clases sociales.
-- Profesiones.
-- Educación.
-- Salud.
-- Felicidad.
-- Calidad de vida.
-- Religiones.
-- Culturas.
-- Migración.
-- Desempleo.
-- Desigualdad.
-- Criminalidad.
-
-## 15.2. Grupos sociales
-
-El jugador podrá consultar cada grupo.
-
-Por ejemplo:
-- Cantidad de integrantes.
-- Distribución económica.
-- Necesidades.
-- Felicidad.
-- Intereses.
-- Demandas.
-- Evolución histórica.
-- Influencia política.
-
-## 15.3. Información territorial
-
-Se podrán consultar indicadores por barrios y regiones.
-
-Esto permitirá comparar:
-- Calidad de vida.
-- Salud.
-- Seguridad.
-- Educación.
-- Composición social.
-- Densidad.
-- Distribución económica.
-
-## 15.4. Individuos y familias
-
-En asentamientos pequeños se podrá seleccionar a un individuo o familia y consultar su información.
-
-En sociedades grandes, estas herramientas tendrán un papel secundario frente a las estadísticas agregadas.
+Its evolution will depend on:
+- Educational institutions.
+- Culture.
+- Technology.
+- Religion.
+- Government.
+- Access to writing materials.
+- Economic development.
 
 ---
 
-# 16. Complejidad configurable
+# 9. Culture and identity
 
-El jugador podrá elegir el grado de profundidad de la simulación.
+Culture will be a dynamic characteristic of each civilization.
 
-## 16.1. Nivel básico
+## 9.1. Cultural components
 
-- Población.
-- Necesidades básicas.
-- Felicidad.
-- Salud simplificada.
-- Crecimiento demográfico.
-- Migración automática.
+The following are considered:
+- Language.
+- Gastronomy.
+- Clothing.
+- Architecture.
+- Music.
+- Art.
+- Traditions.
+- Customs.
+- Social values.
+- Festivities.
+- Family organization.
+- Rituals.
 
-## 16.2. Nivel intermedio
+## 9.2. Cultural evolution
 
-- Familias.
-- Clases sociales.
-- Educación.
-- Salud.
-- Cultura.
-- Religión.
-- Movilidad social.
-- Grupos sociales.
+Cultures may evolve through:
+- Social changes.
+- Technology.
+- Education.
+- Migration.
+- Trade.
+- Conquest.
+- Cultural exchange.
+- Political reforms.
+- Religious transformations.
 
-## 16.3. Nivel avanzado
+Changes may occur through events and gradual processes.
 
-- Individuos detallados.
-- Linajes.
-- Opiniones políticas.
-- Intereses colectivos.
-- Migración detallada.
-- Movilidad social.
-- Criminalidad.
-- Organización social.
-- Demografía avanzada.
+## 9.3. Cultural integration
 
-## 16.4. Configuración individual
+Individuals of foreign origin may progressively adopt the local culture.
 
-El jugador podrá habilitar o deshabilitar sistemas específicos.
+Integration will depend on:
+- Length of residence.
+- Social relationships.
+- Education.
+- Marriages.
+- Institutions.
+- Policies.
+- Social acceptance.
 
-Por ejemplo:
-- Epidemias.
-- Criminalidad.
-- Simulación individual.
-- Conflictos sociales.
-- Migración avanzada.
-- Determinados eventos demográficos.
+Integration will not necessarily imply the disappearance of the original identities.
 
-La configuración no deberá alterar la coherencia general del juego.
+## 9.4. Traditions
 
----
+Traditions may survive for centuries.
 
-# 17. Autonomía progresiva de la sociedad
+Some will remain practically intact, while others will evolve or disappear.
 
-Este principio merece una sección propia porque define una característica central del proyecto.
+## 9.5. Civilizational identity
 
-## 17.1. Evolución del protagonismo
+The cultural identity of a civilization may transform profoundly without disappearing.
 
-En las primeras etapas, el jugador tendrá una relación cercana con cada individuo.
-
-Podrá observar familias, profesiones, necesidades y relaciones.
-
-A medida que la población crezca:
-- Aparecerán grupos sociales.
-- Se desarrollarán instituciones.
-- Se consolidarán clases.
-- Surgirán representantes.
-- Los grupos expresarán intereses.
-- La sociedad adquirirá capacidad de organización.
-
-El jugador dejará de intervenir directamente sobre individuos y comenzará a influir mediante políticas, leyes, instituciones y decisiones generales.
-
-## 17.2. Sociedad activa
-
-La sociedad podrá:
-- Reaccionar a las políticas.
-- Expresar demandas.
-- Organizar movimientos.
-- Generar conflictos.
-- Modificar tendencias culturales.
-- Impulsar reformas.
-- Influir sobre el gobierno.
-
-## 17.3. Equilibrio entre jugador y sociedad
-
-El jugador no tendrá control absoluto sobre todos los acontecimientos.
-
-Sus decisiones influirán sobre la sociedad, pero las personas y los grupos también tendrán intereses propios.
-
-La autonomía social será una consecuencia del desarrollo histórico.
+The player will be able to observe the continuity and the changes of customs across generations.
 
 ---
 
-# 18. Integración con otros sistemas
+# 10. Religion and spirituality
 
-El sistema estará conectado con:
+Religion will have a spiritual, cultural, social, political, and economic dimension.
 
-**Economía**
-- Consumo.
-- Ingresos.
-- Propiedad.
-- Desigualdad.
-- Necesidades.
+## 10.1. Individual beliefs
 
-**Producción y trabajo**
-- Profesiones.
-- Habilidades.
-- Empleo.
-- Productividad.
-- Salarios.
+Individuals may hold different beliefs within a single society.
 
-**Construcción y arquitectura**
-- Vivienda.
-- Densidad.
-- Barrios.
-- Belleza.
-- Servicios urbanos.
+There may be a predominant religion and other minority ones.
 
-**Tecnología**
-- Medicina.
-- Educación.
-- Comunicación.
-- Productividad.
-- Transporte.
+## 10.2. Religious plurality
 
-**Política**
-- Leyes.
-- Representación.
-- Derechos.
-- Instituciones.
-- Conflictos.
+Religious coexistence will depend on:
+- Culture.
+- Policies.
+- Government.
+- Institutions.
+- Traditions.
+- Relationships between communities.
 
-**Religión**
-- Creencias.
-- Tradiciones.
-- Instituciones.
-- Costumbres.
+It may produce coexistence, cooperation, tensions, or conflicts.
 
-**Cultura**
-- Identidad.
-- Educación.
-- Arte.
-- Idioma.
-- Tradiciones.
+## 10.3. Everyday influence
 
-**Medioambiente**
-- Salud.
-- Recursos.
-- Clima.
-- Desastres.
-- Calidad de vida.
+Religion may influence:
+- Food.
+- Clothing.
+- Marriages.
+- Festivities.
+- Education.
+- Work.
+- Customs.
+- Laws.
+- Family organization.
+
+The intensity will depend on the era and the society.
+
+## 10.4. Secularization
+
+Societies may develop secularization processes.
+
+Religion may lose influence over certain dimensions of public and private life.
+
+Secularization will not be a religion or a uniform belief, but a social and cultural process.
 
 ---
 
-# 19. MVP — Primera versión jugable
+# 11. Migration and population diversity
 
-El objetivo será probar la transición desde una pequeña comunidad hacia un asentamiento organizado.
+Migration will allow the population to change through the movement of people.
 
-## 19.1. Escenario inicial
+## 11.1. Internal migration
 
-Una comunidad de aproximadamente 30 habitantes.
+Inhabitants may move between settlements and regions.
 
-## 19.2. Funcionalidades iniciales
+Examples:
+- Rural populations migrating to cities.
+- Workers relocating to productive regions.
+- Families seeking better living conditions.
 
-- Individuos identificables.
-- Familias.
-- Ciclo de vida simplificado.
-- Natalidad y mortalidad.
-- Necesidades básicas.
-- Vivienda.
-- Alimentación.
-- Salud simplificada.
-- Profesiones.
-- Felicidad.
-- Crecimiento poblacional.
-- Formación de nuevas familias.
-- Relaciones entre individuos.
-- Indicadores generales de población.
+## 11.2. External immigration
 
-## 19.3. Evolución inicial
+People may arrive from other civilizations.
 
-El jugador deberá observar cómo:
-1. Se organiza la comunidad.
-2. Se forman familias.
-3. Nacen nuevos habitantes.
-4. Los niños crecen.
-5. Los individuos aprenden profesiones.
-6. Aparecen nuevas viviendas.
-7. Se desarrollan nuevas necesidades.
-8. La población aumenta.
-9. La comunidad comienza a organizarse socialmente.
+Among them:
+- Merchants.
+- Artisans.
+- Workers.
+- Families.
+- Refugees.
+- Specialists.
+- Religious groups.
 
-## 19.4. Arquitectura técnica
+## 11.3. Attraction factors
 
-Aunque el MVP sea sencillo, el sistema deberá estar preparado para incorporar:
-- Clases sociales.
-- Culturas.
-- Religiones.
-- Educación.
-- Salud avanzada.
-- Instituciones.
-- Representantes sociales.
-- Movimientos colectivos.
+Migration will depend on:
+- Employment.
+- Wages.
+- Security.
+- Quality of life.
+- Religious freedom.
+- Opportunities.
+- Political stability.
+- Urban beauty.
+- Housing.
+- Economic conditions.
+
+## 11.4. Migration policies
+
+The player will be able to establish migration policies.
+
+They will be able to:
+- Favor immigration.
+- Restrict entry.
+- Promote the arrival of specialized workers.
+- Facilitate the settlement of families.
+- Regulate residency.
+- Establish integration requirements.
+
+The complexity will be configurable.
+
+## 11.5. Cultural diversity
+
+The presence of different origins may generate cultural diversity.
+
+Diversity will have social and cultural consequences, which will depend on the conditions of integration and coexistence.
 
 ---
 
-# 20. Decisiones confirmadas
+# 12. Social and political organization
 
-| Tema | Decisión |
+Society will not be passive.
+
+Social groups may develop interests, organize themselves, and exert pressure on institutions.
+
+## 12.1. Social representatives
+
+Groups may have representatives.
+
+These will express:
+- Demands.
+- Interests.
+- Claims.
+- Grievances.
+- Collective objectives.
+
+## 12.2. Collective organization
+
+Groups may organize and act collectively.
+
+Depending on the era and the society, the following may arise:
+- Associations.
+- Councils.
+- Guilds.
+- Social movements.
+- Trade unions.
+- Religious organizations.
+- Political movements.
+
+## 12.3. Social conflicts
+
+Conflicts may arise related to:
+- Inequality.
+- Poverty.
+- Land.
+- Taxes.
+- Religion.
+- Working conditions.
+- Privileges.
+- Discrimination.
+- Political reforms.
+
+The intensity will depend on the severity of the problems and the capacity of institutions to manage them.
+
+## 12.4. Freedoms
+
+Society will have different dimensions of freedom.
+
+Among others:
+- Freedom of expression.
+- Freedom of association.
+- Religious freedom.
+- Freedom of movement.
+- Economic freedom.
+
+Their scope will depend on the type of government and the laws.
+
+## 12.5. Political opinions
+
+Individuals and groups may develop political preferences.
+
+In small populations they may be simulated individually.
+
+In large societies they will be represented mainly through social groups.
+
+---
+
+# 13. Security and crime
+
+## 13.1. Crime
+
+Crime will initially be represented through aggregate indicators.
+
+It may include individual offenses and, in advanced stages, criminal organizations.
+
+## 13.2. Factors
+
+Crime will depend on:
+- Poverty.
+- Inequality.
+- Unemployment.
+- Education.
+- Instability.
+- Security.
+- Urban density.
+- Social conditions.
+
+## 13.3. Security forces
+
+Historical evolution may account for:
+- Guards.
+- Patrols.
+- Urban militias.
+- Local authorities.
+- Police forces.
+- Modern security institutions.
+
+## 13.4. Security by zone
+
+Different neighborhoods may have their own security levels.
+
+This may influence:
+- Quality of life.
+- Trade.
+- Migration.
+- Property values.
+- Happiness.
+
+## 13.5. Consequences
+
+Crime may generate economic and social consequences.
+
+The simulation will be configurable to avoid excessive micromanagement.
+
+---
+
+# 14. Historical evolution of society
+
+## 14.1. Free evolution
+
+Societies will not be required to follow a predetermined historical sequence.
+
+They may develop different trajectories.
+
+The evolution must maintain coherence with:
+- Technology.
+- Geography.
+- Economy.
+- Culture.
+- Politics.
+- Religion.
+- Demographics.
+
+## 14.2. Gradual changes
+
+Social changes will normally be gradual.
+
+However, certain events may accelerate them.
+
+## 14.3. Transformative events
+
+Among others:
+- Revolutions.
+- Wars.
+- Epidemics.
+- Mass migrations.
+- Economic crises.
+- Scientific discoveries.
+- Religious reforms.
+- Political changes.
+- Industrial revolutions.
+
+Events may modify the social structure.
+
+## 14.4. Unique social characteristics
+
+Civilizations may develop particular characteristics.
+
+For example:
+- Commercial societies.
+- Agricultural societies.
+- Military societies.
+- Religious societies.
+- Scientific societies.
+- Hierarchical societies.
+- Egalitarian societies.
+
+These characteristics may arise from the player's decisions and from the evolution of society.
+
+## 14.5. Continuity of identity
+
+A civilization may profoundly transform its social organization without necessarily losing its cultural identity.
+
+The system must represent both continuity and transformation.
+
+---
+
+# 15. Interface and social analysis
+
+The player must have tools to understand the situation of their population.
+
+## 15.1. General panel
+
+Indicators are considered such as:
+- Total population.
+- Births.
+- Deaths.
+- Growth.
+- Life expectancy.
+- Age distribution.
+- Gender distribution.
+- Social classes.
+- Professions.
+- Education.
+- Health.
+- Happiness.
+- Quality of life.
+- Religions.
+- Cultures.
+- Migration.
+- Unemployment.
+- Inequality.
+- Crime.
+
+## 15.2. Social groups
+
+The player will be able to consult each group.
+
+For example:
+- Number of members.
+- Economic distribution.
+- Needs.
+- Happiness.
+- Interests.
+- Demands.
+- Historical evolution.
+- Political influence.
+
+## 15.3. Territorial information
+
+Indicators may be consulted by neighborhood and region.
+
+This will make it possible to compare:
+- Quality of life.
+- Health.
+- Security.
+- Education.
+- Social composition.
+- Density.
+- Economic distribution.
+
+## 15.4. Individuals and families
+
+In small settlements it will be possible to select an individual or family and consult their information.
+
+In large societies, these tools will have a secondary role compared to the aggregate statistics.
+
+---
+
+# 16. Configurable complexity
+
+The player will be able to choose the depth of the simulation.
+
+## 16.1. Basic level
+
+- Population.
+- Basic needs.
+- Happiness.
+- Simplified health.
+- Demographic growth.
+- Automatic migration.
+
+## 16.2. Intermediate level
+
+- Families.
+- Social classes.
+- Education.
+- Health.
+- Culture.
+- Religion.
+- Social mobility.
+- Social groups.
+
+## 16.3. Advanced level
+
+- Detailed individuals.
+- Lineages.
+- Political opinions.
+- Collective interests.
+- Detailed migration.
+- Social mobility.
+- Crime.
+- Social organization.
+- Advanced demographics.
+
+## 16.4. Individual configuration
+
+The player will be able to enable or disable specific systems.
+
+For example:
+- Epidemics.
+- Crime.
+- Individual simulation.
+- Social conflicts.
+- Advanced migration.
+- Certain demographic events.
+
+The configuration must not alter the overall coherence of the game.
+
+---
+
+# 17. Progressive autonomy of society
+
+This principle deserves its own section because it defines a central characteristic of the project.
+
+## 17.1. Evolution of prominence
+
+In the early stages, the player will have a close relationship with each individual.
+
+They will be able to observe families, professions, needs, and relationships.
+
+As the population grows:
+- Social groups will appear.
+- Institutions will develop.
+- Classes will consolidate.
+- Representatives will emerge.
+- Groups will express interests.
+- Society will acquire the capacity to organize.
+
+The player will stop intervening directly on individuals and will begin to influence through policies, laws, institutions, and general decisions.
+
+## 17.2. Active society
+
+Society will be able to:
+- React to policies.
+- Express demands.
+- Organize movements.
+- Generate conflicts.
+- Modify cultural trends.
+- Drive reforms.
+- Influence the government.
+
+## 17.3. Balance between player and society
+
+The player will not have absolute control over all events.
+
+Their decisions will influence society, but people and groups will also have their own interests.
+
+Social autonomy will be a consequence of historical development.
+
+---
+
+# 18. Integration with other systems
+
+The system will be connected with:
+
+**Economy**
+- Consumption.
+- Income.
+- Property.
+- Inequality.
+- Needs.
+
+**Production and labor**
+- Professions.
+- Skills.
+- Employment.
+- Productivity.
+- Wages.
+
+**Construction and architecture**
+- Housing.
+- Density.
+- Neighborhoods.
+- Beauty.
+- Urban services.
+
+**Technology**
+- Medicine.
+- Education.
+- Communication.
+- Productivity.
+- Transport.
+
+**Politics**
+- Laws.
+- Representation.
+- Rights.
+- Institutions.
+- Conflicts.
+
+**Religion**
+- Beliefs.
+- Traditions.
+- Institutions.
+- Customs.
+
+**Culture**
+- Identity.
+- Education.
+- Art.
+- Language.
+- Traditions.
+
+**Environment**
+- Health.
+- Resources.
+- Climate.
+- Disasters.
+- Quality of life.
+
+---
+
+# 19. MVP — First playable version
+
+The goal will be to test the transition from a small community to an organized settlement.
+
+## 19.1. Initial scenario
+
+A community of approximately 30 inhabitants.
+
+## 19.2. Initial functionality
+
+- Identifiable individuals.
+- Families.
+- Simplified life cycle.
+- Birth rate and mortality.
+- Basic needs.
+- Housing.
+- Food.
+- Simplified health.
+- Professions.
+- Happiness.
+- Population growth.
+- Formation of new families.
+- Relationships between individuals.
+- General population indicators.
+
+## 19.3. Initial evolution
+
+The player must observe how:
+1. The community organizes itself.
+2. Families form.
+3. New inhabitants are born.
+4. Children grow up.
+5. Individuals learn professions.
+6. New dwellings appear.
+7. New needs develop.
+8. The population increases.
+9. The community begins to organize socially.
+
+## 19.4. Technical architecture
+
+Although the MVP is simple, the system must be prepared to incorporate:
+- Social classes.
+- Cultures.
+- Religions.
+- Education.
+- Advanced health.
+- Institutions.
+- Social representatives.
+- Collective movements.
+
+---
+
+# 20. Confirmed decisions
+
+| Topic | Decision |
 |---|---|
-| Individuos | Información individual completa |
-| Ciclo de vida | Simulado según escala |
-| Protagonismo individual | Alto inicialmente, decreciente con el crecimiento |
-| Seguimiento individual | Principalmente en poblaciones pequeñas |
-| Familias | Entidades propias |
-| Hogares | Dependientes de cultura y época |
-| Formación familiar | Automática |
-| Estructuras familiares | Diversas |
-| Natalidad y mortalidad | Influenciadas por múltiples factores |
-| Demografía | Evolución profunda |
-| Políticas demográficas | Sí |
-| Necesidades | Básicas, sociales, culturales, religiosas y otras |
-| Evolución de necesidades | Histórica y progresiva |
-| Simulación de necesidades | Híbrida |
-| Necesidades insatisfechas | Consecuencias según gravedad |
-| Felicidad | Individual y agregada |
-| Expectativas | Según cultura, época y posición social |
-| Calidad de vida | Indicador complementario |
-| Desigualdad | Influencia moderada |
-| Clases sociales | Sí, según época y cultura |
-| Movilidad social | Condicionada |
-| Intereses de clases | Sí, propios |
-| Representación política | Según gobierno |
-| Salud | Sistema poblacional inicialmente |
-| Enfermedades | Simulación simplificada |
-| Epidemias | Sí, configurables |
-| Medicina | Evolución histórica |
-| Políticas sanitarias | Sí |
-| Educación | Múltiples formas históricas |
-| Niveles educativos | Todos, según contexto |
-| Acceso educativo | Influenciado por recursos y políticas |
-| Alfabetización | Sí |
-| Cultura | Dinámica y con influencias externas |
-| Integración cultural | Progresiva |
-| Tradiciones | Pueden sobrevivir durante siglos |
-| Religión | Influencia multidimensional |
-| Pluralidad religiosa | Sí |
-| Secularización | Sí |
-| Migración interna | Sí |
-| Inmigración externa | Sí, condicionada |
-| Minorías | No prioritarias inicialmente |
-| Políticas migratorias | Configurables |
-| Representantes sociales | Sí |
-| Organización colectiva | Sí |
-| Conflictos sociales | Sí, simplificados inicialmente |
-| Libertades | Diferentes dimensiones |
-| Opiniones políticas | Individuales y agregadas |
-| Criminalidad | Indicadores agregados |
-| Seguridad | Por zonas |
-| Evolución histórica | Libre y coherente |
-| Cambios sociales | Graduales, con posibles aceleraciones |
-| Identidad civilizatoria | Puede transformarse conservando continuidad |
-| Interfaz | Información detallada y territorial |
-| Complejidad | Configurable |
-| Autonomía social | Creciente |
+| Individuals | Complete individual information |
+| Life cycle | Simulated according to scale |
+| Individual prominence | High initially, decreasing with growth |
+| Individual tracking | Mainly in small populations |
+| Families | Entities in their own right |
+| Households | Dependent on culture and era |
+| Family formation | Automatic |
+| Family structures | Diverse |
+| Birth rate and mortality | Influenced by multiple factors |
+| Demographics | Deep evolution |
+| Demographic policies | Yes |
+| Needs | Basic, social, cultural, religious, and others |
+| Evolution of needs | Historical and progressive |
+| Simulation of needs | Hybrid |
+| Unmet needs | Consequences according to severity |
+| Happiness | Individual and aggregate |
+| Expectations | According to culture, era, and social position |
+| Quality of life | Complementary indicator |
+| Inequality | Moderate influence |
+| Social classes | Yes, according to era and culture |
+| Social mobility | Conditioned |
+| Class interests | Yes, their own |
+| Political representation | According to government |
+| Health | Population system initially |
+| Diseases | Simplified simulation |
+| Epidemics | Yes, configurable |
+| Medicine | Historical evolution |
+| Health policies | Yes |
+| Education | Multiple historical forms |
+| Educational levels | All, according to context |
+| Educational access | Influenced by resources and policies |
+| Literacy | Yes |
+| Culture | Dynamic and with external influences |
+| Cultural integration | Progressive |
+| Traditions | May survive for centuries |
+| Religion | Multidimensional influence |
+| Religious plurality | Yes |
+| Secularization | Yes |
+| Internal migration | Yes |
+| External immigration | Yes, conditioned |
+| Minorities | Not a priority initially |
+| Migration policies | Configurable |
+| Social representatives | Yes |
+| Collective organization | Yes |
+| Social conflicts | Yes, simplified initially |
+| Freedoms | Different dimensions |
+| Political opinions | Individual and aggregate |
+| Crime | Aggregate indicators |
+| Security | By zone |
+| Historical evolution | Free and coherent |
+| Social changes | Gradual, with possible accelerations |
+| Civilizational identity | May transform while preserving continuity |
+| Interface | Detailed and territorial information |
+| Complexity | Configurable |
+| Social autonomy | Increasing |
 
 ---
 
-# 21. Temas pendientes para profundizar
+# 21. Topics pending further development
 
-Algunos aspectos deberán desarrollarse en documentos o etapas posteriores:
+Some aspects must be developed in later documents or stages:
 
-- Modelo matemático de necesidades.
-- Cálculo de felicidad y calidad de vida.
-- Algoritmos demográficos.
-- Formación y evolución de linajes.
-- Representación de grupos sociales.
-- Modelado de movilidad social.
-- Instituciones educativas y sanitarias.
-- Integración cultural.
-- Modelado de creencias individuales.
-- Representación política de grupos.
-- Autonomía y comportamiento colectivo.
-- Escalabilidad de la simulación poblacional.
+- Mathematical model of needs.
+- Calculation of happiness and quality of life.
+- Demographic algorithms.
+- Formation and evolution of lineages.
+- Representation of social groups.
+- Modeling of social mobility.
+- Educational and health institutions.
+- Cultural integration.
+- Modeling of individual beliefs.
+- Political representation of groups.
+- Autonomy and collective behavior.
+- Scalability of population simulation.
 
 ---
 
-# 22. Visión final
+# 22. Final vision
 
-La población debe ser mucho más que un recurso económico.
+The population must be much more than an economic resource.
 
-Es el elemento humano que da sentido a la civilización.
+It is the human element that gives meaning to the civilization.
 
-El jugador comenzará con unas pocas familias que luchan por sobrevivir. Con el paso del tiempo, esas familias crecerán, se dividirán, se mezclarán con otras y formarán nuevas generaciones.
+The player will begin with a few families struggling to survive. Over time, those families will grow, split apart, mix with others, and form new generations.
 
-Surgirán profesiones, clases sociales, religiones, culturas, instituciones y movimientos.
+Professions, social classes, religions, cultures, institutions, and movements will emerge.
 
-La sociedad cambiará sus necesidades, sus valores y sus expectativas.
+Society will change its needs, its values, and its expectations.
 
-Una civilización podrá comenzar siendo una comunidad agrícola, transformarse en una sociedad comercial, desarrollar una cultura urbana y convertirse siglos después en una potencia industrial.
+A civilization may begin as an agricultural community, transform into a commercial society, develop an urban culture, and centuries later become an industrial power.
 
-El jugador tendrá influencia sobre ese proceso, pero no control absoluto.
+The player will have influence over that process, but not absolute control.
 
-**La civilización no será solamente lo que el jugador construya. También será lo que sus habitantes hagan con ella.**
+**The civilization will not only be what the player builds. It will also be what its inhabitants make of it.**

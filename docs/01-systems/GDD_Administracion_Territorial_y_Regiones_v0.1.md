@@ -1,217 +1,217 @@
-> **Control documental:** 0.1 | Estado: diseño conceptual; las decisiones marcadas como confirmadas se preservan desde la fuente. **Alcance:** este GDD es fuente de detalle de su dominio; el GDD Maestro establece la visión común. Los conflictos intersistema se registran en AUDIT_REPORT.md y no se resuelven implícitamente.
+> **Document control:** 0.1 | Status: conceptual design; decisions marked as confirmed are preserved from the source. **Scope:** this GDD is the detail source for its domain; the Master GDD establishes the common vision. Cross-system conflicts are recorded in AUDIT_REPORT.md and are not resolved implicitly.
 
 ---
 
-# GDD — ADMINISTRACIÓN TERRITORIAL Y GESTIÓN DE REGIONES
+# GDD — TERRITORIAL ADMINISTRATION AND REGION MANAGEMENT
 
-**Versión:** 0.1  
-**Estado:** Definición conceptual simplificada
+**Version:** 0.1  
+**Status:** Simplified conceptual definition
 
-## 1. Visión general
+## 1. Overview
 
-Este sistema define cómo se organizan y administran los territorios de una civilización a medida que crece.
+This system defines how a civilization's territories are organized and administered as it grows.
 
-El objetivo es permitir que el jugador gestione desde pequeñas comunidades hasta grandes civilizaciones sin necesidad de controlar individualmente cada asentamiento.
+The goal is to allow the player to manage everything from small communities to large civilizations without needing to control each settlement individually.
 
-La administración combinará decisiones centrales del jugador con gestión autónoma de ciudades y regiones.
+Administration will combine central decisions by the player with autonomous management of cities and regions.
 
-**Principio fundamental:**
+**Fundamental principle:**
 
-El jugador establece el rumbo de su civilización. Las regiones y sus administradores se encargan de desarrollar y gestionar los territorios.
+The player sets the course of their civilization. The regions and their administrators are responsible for developing and managing the territories.
 
-## 2. Organización territorial
+## 2. Territorial organization
 
-Se utilizará un modelo mixto:
+A mixed model will be used:
 
-- Las ciudades y asentamientos conservarán su identidad y funcionamiento individual.
-- Varias ciudades podrán agruparse en regiones o provincias.
-- Las regiones podrán tener características económicas, culturales y geográficas propias.
-- La organización territorial evolucionará históricamente.
+- Cities and settlements will retain their individual identity and operation.
+- Several cities may be grouped into regions or provinces.
+- Regions may have their own economic, cultural and geographic characteristics.
+- Territorial organization will evolve historically.
 
-La estructura podrá variar según la época y el sistema político.
+The structure may vary according to the era and the political system.
 
-## 3. Administración regional
+## 3. Regional administration
 
-La administración combinará intervención directa y autonomía.
+Administration will combine direct intervention and autonomy.
 
-El jugador podrá:
-- Definir políticas regionales.
-- Establecer prioridades económicas.
-- Asignar presupuestos.
-- Determinar prioridades de construcción.
-- Regular impuestos.
-- Definir objetivos de desarrollo.
-- Establecer políticas de seguridad y bienestar.
+The player will be able to:
+- Define regional policies.
+- Set economic priorities.
+- Allocate budgets.
+- Determine construction priorities.
+- Regulate taxes.
+- Define development objectives.
+- Establish security and welfare policies.
 
-Los administradores regionales ejecutarán las políticas y tomarán decisiones cotidianas dentro de los límites establecidos.
+Regional administrators will carry out the policies and make everyday decisions within the established limits.
 
-Podrán existir gobernadores, representantes, consejos u otras figuras según la organización histórica.
+There may be governors, representatives, councils or other figures according to the historical organization.
 
-## 4. Gestión de las regiones
+## 4. Region management
 
-Cada región podrá gestionar de manera simplificada:
+Each region may manage, in a simplified way:
 
-- Impuestos y presupuesto.
-- Economía y producción.
-- Construcción e infraestructura.
-- Seguridad y defensa.
-- Servicios y bienestar.
+- Taxes and budget.
+- Economy and production.
+- Construction and infrastructure.
+- Security and defense.
+- Services and welfare.
 
-El jugador podrá intervenir directamente o dejar que la administración regional tome decisiones.
+The player will be able to intervene directly or let the regional administration make decisions.
 
-La gestión utilizará los sistemas económicos, productivos, sociales y constructivos existentes, sin duplicar sus funcionalidades.
+Management will use the existing economic, production, social and construction systems, without duplicating their functionality.
 
-## 5. Identidad y especialización regional
+## 5. Regional identity and specialization
 
-Las regiones podrán desarrollar identidades propias.
+Regions may develop their own identities.
 
-Por ejemplo:
-- Regiones agrícolas.
-- Regiones ganaderas.
-- Regiones mineras.
-- Regiones comerciales.
-- Regiones industriales preindustriales.
-- Regiones religiosas.
-- Centros culturales.
-- Regiones militares o estratégicas.
+For example:
+- Agricultural regions.
+- Livestock regions.
+- Mining regions.
+- Commercial regions.
+- Pre-industrial manufacturing regions.
+- Religious regions.
+- Cultural centers.
+- Military or strategic regions.
 
-Las especializaciones podrán surgir orgánicamente o ser impulsadas por el jugador.
+Specializations may arise organically or be driven by the player.
 
-Estarán condicionadas por geografía, recursos, población, infraestructura, tecnología y oportunidades económicas.
+They will be conditioned by geography, resources, population, infrastructure, technology and economic opportunities.
 
-Las regiones no estarán obligadas a mantener una única especialización.
+Regions will not be obliged to maintain a single specialization.
 
-## 6. Autonomía regional
+## 6. Regional autonomy
 
-La autonomía será configurable.
+Autonomy will be configurable.
 
-Se contemplarán:
-- Control centralizado.
-- Autonomía administrativa limitada.
-- Autonomía regional amplia.
-- Modelos mixtos.
+The following will be considered:
+- Centralized control.
+- Limited administrative autonomy.
+- Broad regional autonomy.
+- Mixed models.
 
-La autonomía podrá variar según el sistema político, la época y las decisiones del jugador.
+Autonomy may vary according to the political system, the era and the player's decisions.
 
-Las regiones podrán desarrollar intereses propios y solicitar cambios en sus condiciones administrativas.
+Regions may develop their own interests and request changes to their administrative conditions.
 
-## 7. Impuestos y economía regional
+## 7. Taxes and regional economy
 
-El sistema tributario permitirá diferentes niveles de gestión:
+The tax system will allow different levels of management:
 
-- Tasa general para toda la civilización.
-- Tasas diferenciadas por región.
-- Impuestos según actividades económicas.
+- A general rate for the whole civilization.
+- Differentiated rates by region.
+- Taxes according to economic activities.
 
-El jugador podrá establecer políticas generales y excepciones regionales.
+The player will be able to establish general policies and regional exceptions.
 
-Los presupuestos regionales podrán financiar infraestructura, servicios, seguridad y desarrollo económico.
+Regional budgets may finance infrastructure, services, security and economic development.
 
-La administración deberá mostrar ingresos, gastos y resultados de manera clara, evitando una contabilidad excesivamente detallada.
+Administration must show revenue, expenses and results clearly, avoiding overly detailed accounting.
 
-## 8. Relaciones entre regiones
+## 8. Relations between regions
 
-Las regiones podrán colaborar y competir orgánicamente.
+Regions will be able to collaborate and compete organically.
 
-**Colaboración:**
-- Intercambio de recursos.
-- Comercio.
-- Infraestructura compartida.
-- Especialización complementaria.
-- Movilidad de trabajadores.
-- Cooperación económica.
+**Collaboration:**
+- Exchange of resources.
+- Trade.
+- Shared infrastructure.
+- Complementary specialization.
+- Worker mobility.
+- Economic cooperation.
 
-**Competencia:**
-- Atracción de población.
-- Inversiones.
-- Actividades comerciales.
-- Recursos.
-- Influencia política.
-- Prestigio.
+**Competition:**
+- Attraction of population.
+- Investments.
+- Commercial activities.
+- Resources.
+- Political influence.
+- Prestige.
 
-Estas relaciones podrán generar oportunidades y tensiones, pero no deberán convertirse en un sistema de gestión independiente demasiado complejo.
+These relations may generate opportunities and tensions, but they must not become an overly complex independent management system.
 
-## 9. Evolución histórica
+## 9. Historical evolution
 
-La organización territorial evolucionará junto con las instituciones y la tecnología.
+Territorial organization will evolve alongside institutions and technology.
 
-Se contemplarán diferentes formas históricas:
+Different historical forms will be considered:
 
-- Comunidades y territorios tribales.
-- Ciudades y territorios asociados.
-- Reinos y dominios.
-- Provincias.
-- Regiones administrativas.
-- Territorios dependientes.
-- Sistemas federativos y otras formas de organización.
+- Tribal communities and territories.
+- Cities and associated territories.
+- Kingdoms and domains.
+- Provinces.
+- Administrative regions.
+- Dependent territories.
+- Federative systems and other forms of organization.
 
-El jugador podrá influir en las transformaciones, mientras que las instituciones también podrán evolucionar orgánicamente.
+The player will be able to influence the transformations, while institutions will also be able to evolve organically.
 
-No existirá una secuencia histórica obligatoria.
+There will be no mandatory historical sequence.
 
-## 10. Distancia y administración
+## 10. Distance and administration
 
-La distancia respecto del centro de poder tendrá poca importancia como penalización directa.
+Distance from the center of power will have little importance as a direct penalty.
 
-No se busca que administrar regiones alejadas sea innecesariamente complicado.
+The intent is not for administering distant regions to be unnecessarily complicated.
 
-Podrá influir moderadamente en:
-- Comunicación.
-- Transporte.
-- Coordinación.
-- Tiempo de respuesta.
+It may moderately influence:
+- Communication.
+- Transport.
+- Coordination.
+- Response time.
 
-La autonomía regional permitirá resolver buena parte de estos problemas sin micromanagement.
+Regional autonomy will allow a good part of these problems to be resolved without micromanagement.
 
-## 11. Complejidad configurable
+## 11. Configurable complexity
 
-El sistema tendrá tres enfoques:
+The system will have three approaches:
 
 **Simple**
-- Administración automática.
-- Políticas generales.
-- Pocas decisiones regionales.
+- Automatic administration.
+- General policies.
+- Few regional decisions.
 
-**Intermedio**
-- Presupuestos regionales.
-- Administradores.
-- Prioridades económicas y de infraestructura.
-- Autonomía limitada.
+**Intermediate**
+- Regional budgets.
+- Administrators.
+- Economic and infrastructure priorities.
+- Limited autonomy.
 
-**Avanzado**
-- Control tributario diferenciado.
-- Autonomía regional.
-- Especialización.
-- Competencia y cooperación.
-- Mayor intervención del jugador.
+**Advanced**
+- Differentiated tax control.
+- Regional autonomy.
+- Specialization.
+- Competition and cooperation.
+- Greater player intervention.
 
-La automatización podrá configurarse por región o por módulo.
+Automation may be configured by region or by module.
 
-## 12. MVP — Primera versión jugable
+## 12. MVP — First playable version
 
-- Agrupación básica de ciudades en regiones.
-- Presupuestos regionales simplificados.
-- Prioridades de producción y construcción.
-- Políticas tributarias generales.
-- Administradores automáticos.
-- Especialización regional básica.
-- Integración con economía y población.
+- Basic grouping of cities into regions.
+- Simplified regional budgets.
+- Production and construction priorities.
+- General tax policies.
+- Automatic administrators.
+- Basic regional specialization.
+- Integration with economy and population.
 
-Las estructuras políticas regionales avanzadas y los modelos complejos de autonomía quedarán para versiones posteriores.
+Advanced regional political structures and complex autonomy models will be deferred to later versions.
 
-## 13. Decisiones confirmadas
+## 13. Confirmed decisions
 
-| Área | Decisión |
+| Area | Decision |
 |---|---|
-| Organización | Ciudades individuales agrupadas en regiones |
-| Administración | Modelo mixto |
-| Herramientas de gestión | Todas, simplificadas |
-| Identidad regional | Orgánica e influenciable |
-| Autonomía | Configurable |
-| Impuestos | Generales y diferenciados |
-| Relaciones regionales | Cooperación y competencia |
-| Evolución histórica | Automática e influenciable |
-| Distancia administrativa | Importancia baja |
-| Complejidad | Configurable, con automatización |
+| Organization | Individual cities grouped into regions |
+| Administration | Mixed model |
+| Management tools | All, simplified |
+| Regional identity | Organic and influenceable |
+| Autonomy | Configurable |
+| Taxes | General and differentiated |
+| Regional relations | Cooperation and competition |
+| Historical evolution | Automatic and influenceable |
+| Administrative distance | Low importance |
+| Complexity | Configurable, with automation |
 
-**Estado:** GDD conceptual v0.1 consolidado.
+**Status:** Conceptual GDD v0.1 consolidated.

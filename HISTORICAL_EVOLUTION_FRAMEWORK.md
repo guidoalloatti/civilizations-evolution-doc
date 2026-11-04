@@ -1,90 +1,90 @@
 # HISTORICAL_EVOLUTION_FRAMEWORK — Civilization Evolutions
 
-> **Phase 2 — Marco conceptual de evolución histórica.** Cómo representar la evolución histórica **sin** un árbol tecnológico rígido ni una cronología obligatoria. Idea central: un **marco compartido** de descubrimientos, condiciones y eventos al que **todos los sistemas reaccionan**, en vez de efectos aislados dentro de cada sistema. Autoridad: [GDD_Tecnologia_Ciencia_e_Innovacion](docs/01-systems/GDD_Tecnologia_Ciencia_e_Innovacion_v0.1.md), [GDD_Eventos...](docs/01-systems/GDD_Eventos_y_Evolucion_Historica_v0.1.md), [GDD_Construccion...](docs/01-systems/GDD_Construccion_y_Arquitectura_v0.1.md). Decisiones: DC-01, DC-09, DR-01, DR-11.
-> Versión 1.0 · Estado: conceptual.
+> **Phase 2 — Conceptual framework for historical evolution.** How to represent historical evolution **without** a rigid technology tree or a mandatory chronology. Core idea: a **shared framework** of discoveries, conditions and events that **all systems react to**, instead of isolated effects within each system. Authority: [GDD_Tecnologia_Ciencia_e_Innovacion](docs/01-systems/GDD_Tecnologia_Ciencia_e_Innovacion_v0.1.md), [GDD_Eventos...](docs/01-systems/GDD_Eventos_y_Evolucion_Historica_v0.1.md), [GDD_Construccion...](docs/01-systems/GDD_Construccion_y_Arquitectura_v0.1.md). Decisions: DC-01, DC-09, DR-01, DR-11.
+> Version 1.0 · Status: conceptual.
 
-## 1. Principios
+## 1. Principles
 
-1. **Períodos = referencias, no etapas obligatorias** (DC-01). Paleolítico→inicio Revolución Industrial sirve de contexto de plausibilidad; una civilización puede seguir caminos distintos.
-2. **Evolución dirigida por condiciones, no por el año** (DC-09): un avance ocurre cuando existen **conocimiento + recursos + contexto social/económico**, no porque llegó una fecha.
-3. **Disponibilidad ≠ adopción** (DR-11): descubrir algo lo **habilita**; adoptarlo requiere materiales, mano de obra y decisión. Lo viejo puede coexistir.
-4. **Reacción, no scripting** (RISK-05): los sistemas **escuchan** descubrimientos/condiciones/eventos comunes y aplican sus propias reglas; el conocimiento no implementa efectos dentro de otros sistemas.
-5. **Pérdida de conocimiento excepcional** (Tecnología): la involución no es normal.
+1. **Periods = references, not mandatory stages** (DC-01). Paleolithic→start of the Industrial Revolution serves as a plausibility context; a civilization may follow different paths.
+2. **Evolution driven by conditions, not by the year** (DC-09): an advance occurs when there is **knowledge + resources + social/economic context**, not because a date arrived.
+3. **Availability ≠ adoption** (DR-11): discovering something **enables** it; adopting it requires materials, labor and a decision. The old can coexist.
+4. **Reaction, not scripting** (RISK-05): systems **listen** to shared discoveries/conditions/events and apply their own rules; knowledge does not implement effects inside other systems.
+5. **Exceptional knowledge loss** (Technology): regression is not the norm.
 
-## 2. Modelo conceptual
+## 2. Conceptual model
 
 ```mermaid
 flowchart TB
-    subgraph COND["Condiciones (estado del mundo)"]
-        K["Conocimiento acumulado"]
-        R["Recursos disponibles"]
-        S["Contexto social/económico"]
-        G["Geografía / medioambiente"]
+    subgraph COND["Conditions (state of the world)"]
+        K["Accumulated knowledge"]
+        R["Available resources"]
+        S["Social/economic context"]
+        G["Geography / environment"]
     end
-    COND --> DISC["Descubrimiento / Innovación<br/>(hecho histórico con id)"]
-    DISC --> BUS["Marco compartido de evolución<br/>(publica el hecho + condiciones)"]
-    BUS --> PRODr["Producción reacciona<br/>(nuevas recetas/métodos)"]
-    BUS --> CONr["Construcción reacciona<br/>(materiales/arquitectura)"]
-    BUS --> LOGr["Logística reacciona<br/>(vehículos/infra)"]
-    BUS --> MILr["Militar reacciona<br/>(armas/fortificación)"]
-    BUS --> SOCr["Sociedad/Cultura reacciona<br/>(organización/instituciones)"]
-    BUS --> EVT["Eventos registra el hito"]
-    PRODr --> VIS["Evolución visible del mundo"]
+    COND --> DISC["Discovery / Innovation<br/>(historical fact with id)"]
+    DISC --> BUS["Shared evolution framework<br/>(publishes the fact + conditions)"]
+    BUS --> PRODr["Production reacts<br/>(new recipes/methods)"]
+    BUS --> CONr["Construction reacts<br/>(materials/architecture)"]
+    BUS --> LOGr["Logistics reacts<br/>(vehicles/infra)"]
+    BUS --> MILr["Military reacts<br/>(weapons/fortification)"]
+    BUS --> SOCr["Society/Culture reacts<br/>(organization/institutions)"]
+    BUS --> EVT["Events records the milestone"]
+    PRODr --> VIS["Visible evolution of the world"]
     CONr --> VIS
 ```
 
-Un **Descubrimiento** es una entidad (id, disciplina, prerrequisitos de condición, efectos habilitados). El **marco compartido** lo publica junto con las condiciones; cada sistema decide **si/cómo** adopta, con sus reglas. Así una misma innovación cambia varios dominios sin que Tecnología conozca su implementación.
+A **Discovery** is an entity (id, discipline, condition prerequisites, enabled effects). The **shared framework** publishes it together with the conditions; each system decides **whether/how** it adopts, with its own rules. This way the same innovation changes several domains without Technology knowing their implementation.
 
-## 3. Condiciones para descubrimientos e innovación
+## 3. Conditions for discoveries and innovation
 
-Un descubrimiento se vuelve **posible** cuando se cumplen condiciones combinables (no un prerrequisito único por año):
-- **Conocimiento previo** (otras tecnologías/disciplinas relacionadas).
-- **Recursos accesibles** (p. ej. minerales para metalurgia).
-- **Contexto social/económico** (especialización, excedentes, educación, instituciones).
-- **Geografía** (ríos→riego/transporte; costas→navegación; montañas→minería).
-- **Intercambio** (difusión desde otra civilización).
-Se vuelve **adoptado** cuando además hay materiales + mano de obra + decisión (del jugador o autónoma).
+A discovery becomes **possible** when combinable conditions are met (not a single prerequisite per year):
+- **Prior knowledge** (other related technologies/disciplines).
+- **Accessible resources** (e.g. minerals for metallurgy).
+- **Social/economic context** (specialization, surpluses, education, institutions).
+- **Geography** (rivers→irrigation/transport; coasts→navigation; mountains→mining).
+- **Exchange** (diffusion from another civilization).
+It becomes **adopted** when, in addition, there are materials + labor + a decision (by the player or autonomous).
 
-## 4. Interacción tecnología ↔ geografía ↔ recursos ↔ sociedad
+## 4. Interaction technology ↔ geography ↔ resources ↔ society
 
-- La **geografía/recursos** condicionan qué descubrimientos son plausibles y cuándo (metalurgia temprana con minerales + artesanía).
-- La **sociedad** (especialización, educación, instituciones, excedentes) acelera o frena la innovación.
-- La **tecnología** cambia producción/construcción/transporte/militar/organización, que a su vez cambian la sociedad (bucle).
-- Nada de esto depende del **año**; depende del **estado**.
+- **Geography/resources** condition which discoveries are plausible and when (early metallurgy with minerals + craftsmanship).
+- **Society** (specialization, education, institutions, surpluses) accelerates or slows innovation.
+- **Technology** changes production/construction/transport/military/organization, which in turn change society (a loop).
+- None of this depends on the **year**; it depends on the **state**.
 
-## 5. Difusión entre civilizaciones
+## 5. Diffusion between civilizations
 
-- El conocimiento se transmite por **comercio, migración, diplomacia, guerra y contacto** (Tecnología §9).
-- Cada civilización adopta según sus condiciones; la difusión **no** homogeneiza automáticamente (IA/caminos diversos).
-- La difusión produce **eventos** (intercambio tecnológico) que Eventos registra.
+- Knowledge is transmitted through **trade, migration, diplomacy, war and contact** (Technology §9).
+- Each civilization adopts according to its conditions; diffusion does **not** automatically homogenize (AI/diverse paths).
+- Diffusion produces **events** (technology exchange) that Events records.
 
-## 6. Evolución cultural e institucional
+## 6. Cultural and institutional evolution
 
-- **Cultura/Religión/Política** evolucionan de forma orgánica e influenciable, no por desbloqueo (Cultura §17, Religión §17, Política §14).
-- Instituciones y prácticas surgen/cambian/desaparecen; las tradiciones pueden sobrevivir siglos (Población/Cultura).
-- La evolución institucional reacciona a condiciones (tamaño, economía, tecnología, eventos), igual que la tecnológica.
+- **Culture/Religion/Politics** evolve organically and can be influenced, not by unlocking (Culture §17, Religion §17, Politics §14).
+- Institutions and practices emerge/change/disappear; traditions can survive for centuries (Population/Culture).
+- Institutional evolution reacts to conditions (size, economy, technology, events), just like technological evolution.
 
-## 7. Edificios e infraestructura a lo largo de los siglos
+## 7. Buildings and infrastructure across the centuries
 
-- Los **edificios evolucionan** visual y funcionalmente por desencadenantes (tecnológicos/históricos/culturales/económicos), **elegido por el jugador**, no automático (DC-03, Producción §11, Construcción §4).
-- Lo **viejo coexiste** con lo nuevo: edificios obsoletos siguen funcionando; se puede conservar patrimonio; el abandono lleva a deterioro/ruinas.
-- La ciudad conserva la **huella** de su historia (centros históricos).
+- **Buildings evolve** visually and functionally through triggers (technological/historical/cultural/economic), **chosen by the player**, not automatically (DC-03, Production §11, Construction §4).
+- The **old coexists** with the new: obsolete buildings keep working; heritage can be preserved; abandonment leads to decay/ruins.
+- The city preserves the **imprint** of its history (historic centers).
 
-## 8. Caminos de desarrollo alternativos
+## 8. Alternative development paths
 
-- No hay una secuencia única: una civilización puede priorizar agricultura, comercio, ciencia, religión o milicia y llegar a configuraciones distintas.
-- El **estancamiento** es posible (sin condiciones, no hay avance).
-- Los períodos históricos describen *rangos de plausibilidad*, no checkpoints.
+- There is no single sequence: a civilization may prioritize agriculture, trade, science, religion or the military and arrive at different configurations.
+- **Stagnation** is possible (without conditions, there is no advance).
+- Historical periods describe *ranges of plausibility*, not checkpoints.
 
-## 9. Consecuencias duraderas de los eventos
+## 9. Lasting consequences of events
 
-- Los **eventos** (sequías, epidemias, guerras, reformas, descubrimientos) generan cadenas de consecuencias de corto y largo plazo (Eventos §5) y quedan en la **memoria histórica**.
-- Las consecuencias las aplican los **sistemas dueños**; Eventos **registra** (DC-14). El legado alimenta Progresión.
+- **Events** (droughts, epidemics, wars, reforms, discoveries) generate chains of short- and long-term consequences (Events §5) and remain in the **historical memory**.
+- Consequences are applied by the **owning systems**; Events **records** (DC-14). The legacy feeds Progression.
 
-## 10. Implicaciones de implementación (para no scriptear)
+## 10. Implementation implications (so as not to script)
 
-- Modelar los **descubrimientos/condiciones como datos** (no código por sistema).
-- Un **canal común** (eventos tipados) publica hechos históricos; los sistemas se **suscriben**.
-- Separar **habilitar** (Tecnología) de **adoptar/transformar** (Producción/Construcción) de **registrar** (Eventos).
-- Evitar `if (año == X)`; usar condiciones de estado.
-- Diferir a E4 del [DEVELOPMENT_ROADMAP.md](DEVELOPMENT_ROADMAP.md); confirmar DR-01/DR-11 antes.
+- Model the **discoveries/conditions as data** (not code per system).
+- A **shared channel** (typed events) publishes historical facts; systems **subscribe**.
+- Separate **enabling** (Technology) from **adopting/transforming** (Production/Construction) from **recording** (Events).
+- Avoid `if (año == X)`; use state conditions.
+- Defer to E4 of the [DEVELOPMENT_ROADMAP.md](DEVELOPMENT_ROADMAP.md); confirm DR-01/DR-11 first.

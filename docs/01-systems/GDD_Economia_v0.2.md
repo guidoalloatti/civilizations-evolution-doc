@@ -1,972 +1,972 @@
-> **Control documental:** 0.2 | Estado: diseño conceptual; las decisiones marcadas como confirmadas se preservan desde la fuente. **Alcance:** este GDD es fuente de detalle de su dominio; el GDD Maestro establece la visión común. Los conflictos intersistema se registran en AUDIT_REPORT.md y no se resuelven implícitamente.
+> **Document control:** 0.2 | Status: conceptual design; the decisions marked as confirmed are preserved from the source. **Scope:** this GDD is the detail source for its domain; the GDD Maestro establishes the shared vision. Cross-system conflicts are recorded in AUDIT_REPORT.md and are not resolved implicitly.
 
 ---
 
-# GDD — SISTEMA ECONÓMICO
-**Versión:** 0.2  
-**Estado:** Diseño conceptual  
-**Período histórico:** Paleolítico – aproximadamente 1800 d.C.
+# GDD — ECONOMIC SYSTEM
+**Version:** 0.2  
+**Status:** Conceptual design  
+**Historical period:** Paleolithic – approximately 1800 AD
 
 ---
 
-# 1. Visión general
+# 1. Overview
 
-El sistema económico será uno de los pilares fundamentales del juego.
+The economic system will be one of the game's fundamental pillars.
 
-El objetivo es simular la evolución económica de una civilización desde sus formas más primitivas de subsistencia hasta economías complejas, con especialización laboral, mercados, propiedad privada, comercio, instituciones financieras e industrias.
+The goal is to simulate the economic evolution of a civilization from its most primitive forms of subsistence to complex economies, with labor specialization, markets, private property, trade, financial institutions and industries.
 
-La economía no debe funcionar como un simple sistema de recolección y consumo de recursos. Debe representar una red de relaciones entre:
+The economy must not function as a simple system of resource gathering and consumption. It must represent a network of relationships between:
 
-- Recursos naturales.
-- Producción.
-- Población.
-- Mano de obra.
-- Consumo.
-- Almacenamiento.
-- Transporte.
-- Comercio.
-- Propiedad.
-- Finanzas.
-- Instituciones.
-- Tecnología.
-- Medioambiente.
+- Natural resources.
+- Production.
+- Population.
+- Labor.
+- Consumption.
+- Storage.
+- Transport.
+- Trade.
+- Property.
+- Finance.
+- Institutions.
+- Technology.
+- Environment.
 
-Las decisiones económicas tendrán consecuencias sociales, políticas y culturales.
+Economic decisions will have social, political and cultural consequences.
 
-## 1.1. Principios de diseño
+## 1.1. Design principles
 
-1. **Coherencia histórica:** las posibilidades económicas evolucionan con la tecnología y la sociedad.
-2. **Libertad:** el jugador puede desarrollar su civilización por diferentes caminos.
-3. **Especialización:** no todos los asentamientos deben producir todo.
-4. **Interdependencia:** los recursos y productos deben formar cadenas económicas.
-5. **Consecuencias reales:** la escasez, la mala gestión y las decisiones económicas deben tener efectos.
-6. **Complejidad configurable:** el jugador puede elegir cuánto detalle quiere administrar.
-7. **Evolución orgánica:** las instituciones económicas aparecen cuando existen las condiciones sociales y tecnológicas necesarias.
-
----
-
-# 2. Modelo general de la economía
-
-La economía se organiza en seis grandes sistemas:
-
-1. Recursos y materias primas.
-2. Producción y transformación.
-3. Población y mano de obra.
-4. Consumo y necesidades.
-5. Logística, almacenamiento y transporte.
-6. Mercados, comercio y finanzas.
-
-Todos estos sistemas estarán conectados.
-
-Por ejemplo:
-
-La población necesita alimentarse. Para producir alimentos hacen falta trabajadores, tierras, herramientas y materias primas. Los alimentos deben transportarse y almacenarse. Los excedentes pueden comercializarse. El comercio genera riqueza y puede favorecer la especialización de los asentamientos.
+1. **Historical coherence:** economic possibilities evolve with technology and society.
+2. **Freedom:** the player can develop their civilization along different paths.
+3. **Specialization:** not every settlement must produce everything.
+4. **Interdependence:** resources and products must form economic chains.
+5. **Real consequences:** scarcity, mismanagement and economic decisions must have effects.
+6. **Configurable complexity:** the player can choose how much detail to manage.
+7. **Organic evolution:** economic institutions appear when the necessary social and technological conditions exist.
 
 ---
 
-# 3. Recursos
+# 2. General model of the economy
 
-Los recursos representan todos los elementos que una civilización puede obtener, producir, transformar o consumir.
+The economy is organized into six broad systems:
 
-## 3.1. Categorías de recursos
+1. Resources and raw materials.
+2. Production and transformation.
+3. Population and labor.
+4. Consumption and needs.
+5. Logistics, storage and transport.
+6. Markets, trade and finance.
 
-### Recursos naturales
-- Madera.
-- Piedra.
-- Arcilla.
-- Arena.
-- Hierro.
-- Cobre.
-- Estaño.
-- Oro.
-- Plata.
-- Carbón.
-- Agua.
-- Pieles.
-- Fibras vegetales.
+All these systems will be connected.
 
-### Alimentos
-- Bayas.
-- Frutas.
-- Carne.
-- Pescado.
-- Cereales.
-- Verduras.
-- Leche.
-- Huevos.
-- Miel.
+For example:
 
-### Productos procesados
-- Harina.
-- Pan.
-- Queso.
-- Carne conservada.
-- Aceite.
-- Vino.
-- Cerveza.
-- Telas.
-- Cuero.
-- Cerámica.
-
-### Productos manufacturados
-- Herramientas.
-- Armas.
-- Armaduras.
-- Muebles.
-- Construcciones prefabricadas.
-- Maquinaria.
-- Embarcaciones.
-
-### Servicios
-- Transporte.
-- Educación.
-- Salud.
-- Administración.
-- Servicios religiosos.
-- Servicios comerciales.
-
-Los servicios podrán incorporarse progresivamente a medida que la civilización se desarrolle.
-
-## 3.2. Propiedades de los recursos
-
-Cada recurso podrá tener diferentes características:
-
-- Cantidad disponible.
-- Ubicación geográfica.
-- Calidad.
-- Peso y volumen.
-- Valor económico.
-- Costo de producción.
-- Tiempo de producción.
-- Vida útil.
-- Requisitos tecnológicos.
-- Posibilidades de almacenamiento.
-- Usos posibles.
-
-No todos los recursos se comportarán igual.
-
-Por ejemplo, los alimentos perecederos necesitarán condiciones de conservación, mientras que los minerales podrán almacenarse durante largos períodos.
-
-## 3.3. Recursos renovables y no renovables
-
-Los recursos naturales tendrán comportamientos diferentes:
-
-**Renovables:**
-- Bosques.
-- Peces.
-- Animales.
-- Cultivos.
-- Agua, dependiendo de la disponibilidad local.
-
-**No renovables:**
-- Minerales.
-- Metales.
-- Carbón.
-- Otros depósitos geológicos.
-
-La explotación excesiva podrá provocar escasez, degradación ambiental o agotamiento de depósitos.
+The population needs to feed itself. To produce food, workers, land, tools and raw materials are needed. Food must be transported and stored. Surpluses can be traded. Trade generates wealth and can encourage the specialization of settlements.
 
 ---
 
-# 4. Producción y transformación
+# 3. Resources
 
-La producción será uno de los sistemas centrales del juego.
+Resources represent all the elements that a civilization can obtain, produce, transform or consume.
 
-Los edificios productivos transformarán recursos mediante procesos que requieren tiempo, trabajadores y materias primas.
+## 3.1. Resource categories
 
-## 4.1. Recetas de producción
+### Natural resources
+- Wood.
+- Stone.
+- Clay.
+- Sand.
+- Iron.
+- Copper.
+- Tin.
+- Gold.
+- Silver.
+- Coal.
+- Water.
+- Hides.
+- Plant fibers.
 
-Cada proceso productivo tendrá:
+### Food
+- Berries.
+- Fruit.
+- Meat.
+- Fish.
+- Cereals.
+- Vegetables.
+- Milk.
+- Eggs.
+- Honey.
 
-- Recursos de entrada.
-- Productos de salida.
-- Tiempo de producción.
-- Cantidad de trabajadores necesarios.
-- Tecnología requerida.
-- Herramientas necesarias.
-- Capacidad máxima.
-- Consumo de energía, cuando corresponda.
-- Costos de mantenimiento.
+### Processed products
+- Flour.
+- Bread.
+- Cheese.
+- Preserved meat.
+- Oil.
+- Wine.
+- Beer.
+- Textiles.
+- Leather.
+- Pottery.
 
-Ejemplo:
+### Manufactured products
+- Tools.
+- Weapons.
+- Armor.
+- Furniture.
+- Prefabricated structures.
+- Machinery.
+- Vessels.
 
-**Panadería**
+### Services
+- Transport.
+- Education.
+- Health.
+- Administration.
+- Religious services.
+- Commercial services.
 
-Entradas:
-- Harina.
-- Agua.
-- Combustible.
+Services may be incorporated progressively as the civilization develops.
 
-Salida:
-- Pan.
+## 3.2. Resource properties
 
-Requisitos:
-- Edificio adecuado.
-- Trabajadores.
-- Tecnología correspondiente.
+Each resource may have different characteristics:
 
-## 4.2. Productividad
+- Available quantity.
+- Geographic location.
+- Quality.
+- Weight and volume.
+- Economic value.
+- Production cost.
+- Production time.
+- Shelf life.
+- Technological requirements.
+- Storage possibilities.
+- Possible uses.
 
-La productividad dependerá de diferentes factores:
+Not all resources will behave the same way.
 
-- Cantidad de trabajadores.
-- Capacitación.
-- Herramientas disponibles.
-- Tecnología.
-- Calidad de las materias primas.
-- Condiciones ambientales.
-- Distancia a los recursos.
-- Organización del trabajo.
+For example, perishable foods will need preservation conditions, while minerals may be stored for long periods.
 
-La tecnología permitirá mejorar la productividad sin necesariamente aumentar la cantidad de trabajadores.
+## 3.3. Renewable and non-renewable resources
 
-## 4.3. Capacidad productiva
+Natural resources will behave differently:
 
-Cada edificio tendrá una capacidad máxima.
+**Renewable:**
+- Forests.
+- Fish.
+- Animals.
+- Crops.
+- Water, depending on local availability.
 
-El jugador podrá construir más edificios, mejorar los existentes o incorporar nuevas tecnologías para aumentar la producción.
+**Non-renewable:**
+- Minerals.
+- Metals.
+- Coal.
+- Other geological deposits.
 
-No todos los edificios deberán funcionar permanentemente. Algunos podrán trabajar de manera estacional o según la disponibilidad de recursos.
-
----
-
-# 5. Población y mano de obra
-
-La población será el motor de la economía.
-
-Los habitantes no serán simplemente unidades que consumen alimentos: serán trabajadores, productores, consumidores y participantes de la sociedad.
-
-## 5.1. Modelo híbrido de población
-
-Se utilizará un modelo híbrido que combine individuos y grupos sociales.
-
-### Asentamientos pequeños
-
-Los habitantes se simularán individualmente.
-
-Cada individuo podrá tener:
-- Edad.
-- Familia.
-- Vivienda.
-- Profesión.
-- Habilidades.
-- Necesidades.
-- Condición económica.
-- Relaciones sociales.
-
-Esto permitirá observar cómo funciona una comunidad pequeña y cómo se organiza.
-
-### Asentamientos grandes
-
-A medida que crezca la población, los individuos podrán agruparse automáticamente en estructuras como:
-
-- Familias.
-- Grupos profesionales.
-- Sectores económicos.
-- Clases sociales.
-- Grupos culturales.
-
-Los grupos conservarán características estadísticas y comportamientos propios.
-
-### Representación de intereses
-
-Los grupos podrán contar con representantes que expresen sus intereses y demandas.
-
-Por ejemplo:
-- Campesinos que reclaman mejores condiciones.
-- Comerciantes que solicitan mayor libertad comercial.
-- Artesanos que buscan protección de sus actividades.
-- Terratenientes que defienden sus propiedades.
-- Trabajadores que demandan mejores salarios.
-
-Esto conectará la economía con los sistemas político y social.
-
-## 5.2. Asignación de trabajadores
-
-**Decisión adoptada: asignación automática con intervención del jugador.**
-
-Los habitantes buscarán oportunidades laborales de acuerdo con:
-
-- Disponibilidad de puestos.
-- Necesidades de la comunidad.
-- Salarios o beneficios.
-- Habilidades.
-- Distancia al lugar de trabajo.
-- Condiciones laborales.
-- Prioridades económicas.
-
-El jugador podrá intervenir estableciendo:
-
-- Prioridades de producción.
-- Límites de trabajadores por edificio.
-- Sectores prioritarios.
-- Restricciones laborales.
-- Políticas de empleo.
-
-El objetivo es evitar que el jugador tenga que asignar manualmente cada habitante a un edificio.
-
-## 5.3. Especialización laboral
-
-Con el desarrollo de la civilización aparecerán profesiones cada vez más especializadas.
-
-Ejemplos:
-- Recolectores.
-- Cazadores.
-- Agricultores.
-- Constructores.
-- Mineros.
-- Herreros.
-- Carpinteros.
-- Comerciantes.
-- Administradores.
-- Ingenieros.
-
-La especialización mejorará la productividad, pero también generará dependencia entre diferentes sectores económicos.
-
-## 5.4. Salarios y condiciones laborales
-
-En etapas avanzadas podrán aparecer diferentes modelos de remuneración:
-
-- Trabajo comunitario.
-- Trabajo familiar.
-- Trabajo obligatorio.
-- Trabajo asalariado.
-- Trabajo esclavo, cuando corresponda históricamente.
-- Trabajo especializado.
-
-Los salarios y las condiciones laborales podrán afectar la satisfacción, la productividad, la migración y los conflictos sociales.
+Overexploitation may cause scarcity, environmental degradation or depletion of deposits.
 
 ---
 
-# 6. Consumo y necesidades
+# 4. Production and transformation
 
-La población tendrá necesidades que evolucionarán con el desarrollo de la civilización.
+Production will be one of the game's central systems.
 
-## 6.1. Necesidades básicas
+Productive buildings will transform resources through processes that require time, workers and raw materials.
 
-- Alimentación.
-- Agua.
-- Vivienda.
-- Protección.
-- Vestimenta.
+## 4.1. Production recipes
 
-La falta de satisfacción de estas necesidades podrá provocar enfermedades, mortalidad, emigración y pérdida de productividad.
+Each production process will have:
 
-## 6.2. Necesidades avanzadas
+- Input resources.
+- Output products.
+- Production time.
+- Number of workers needed.
+- Required technology.
+- Necessary tools.
+- Maximum capacity.
+- Energy consumption, where applicable.
+- Maintenance costs.
 
-A medida que la sociedad evolucione aparecerán nuevas demandas:
+Example:
 
-- Mejor alimentación.
-- Vestimenta de mayor calidad.
-- Educación.
-- Salud.
-- Entretenimiento.
-- Servicios religiosos.
-- Bienes de lujo.
-- Cultura.
-- Seguridad.
+**Bakery**
 
-No todos los sectores sociales tendrán las mismas necesidades ni el mismo acceso a los productos.
+Inputs:
+- Flour.
+- Water.
+- Fuel.
 
-## 6.3. Diferencias sociales
+Output:
+- Bread.
 
-El nivel económico de cada grupo influirá en su consumo.
+Requirements:
+- A suitable building.
+- Workers.
+- The corresponding technology.
 
-Una familia campesina no tendrá las mismas posibilidades que un comerciante rico o un miembro de la nobleza.
+## 4.2. Productivity
 
-Estas diferencias podrán generar:
-- Desigualdad.
-- Aspiraciones sociales.
-- Conflictos.
-- Movilidad social.
-- Cambios culturales y políticos.
+Productivity will depend on different factors:
 
----
+- Number of workers.
+- Training.
+- Available tools.
+- Technology.
+- Quality of raw materials.
+- Environmental conditions.
+- Distance to resources.
+- Work organization.
 
-# 7. Agricultura y producción de alimentos
+Technology will make it possible to improve productivity without necessarily increasing the number of workers.
 
-La agricultura tendrá un sistema específico debido a su importancia histórica.
+## 4.3. Productive capacity
 
-## 7.1. Ciclos agrícolas
+Each building will have a maximum capacity.
 
-Los cultivos dependerán de:
-- Estaciones.
-- Clima.
-- Tipo de suelo.
-- Disponibilidad de agua.
-- Tecnología.
-- Semillas.
-- Mano de obra.
+The player will be able to build more buildings, improve existing ones or incorporate new technologies to increase production.
 
-No todos los cultivos podrán producirse en todas las regiones.
-
-## 7.2. Estacionalidad
-
-La producción agrícola variará durante el año.
-
-El jugador deberá planificar:
-- Siembra.
-- Cosecha.
-- Almacenamiento.
-- Consumo.
-- Reservas para períodos de escasez.
-
-## 7.3. Crisis alimentarias
-
-Las malas cosechas podrán generar:
-- Escasez.
-- Aumento de precios.
-- Hambre.
-- Migraciones.
-- Conflictos sociales.
-- Inestabilidad política.
-
-El almacenamiento y la planificación serán fundamentales para evitar estas situaciones.
+Not all buildings will need to operate permanently. Some may work seasonally or according to resource availability.
 
 ---
 
-# 8. Almacenamiento y logística
+# 5. Population and labor
 
-Los recursos deberán almacenarse y distribuirse.
+The population will be the engine of the economy.
 
-## 8.1. Almacenamiento
+Inhabitants will not simply be units that consume food: they will be workers, producers, consumers and participants in society.
 
-Existirán diferentes tipos de almacenamiento:
+## 5.1. Hybrid population model
 
-- Depósitos generales.
-- Graneros.
+A hybrid model combining individuals and social groups will be used.
+
+### Small settlements
+
+Inhabitants will be simulated individually.
+
+Each individual may have:
+- Age.
+- Family.
+- Dwelling.
+- Profession.
+- Skills.
+- Needs.
+- Economic condition.
+- Social relationships.
+
+This will allow observing how a small community functions and how it organizes itself.
+
+### Large settlements
+
+As the population grows, individuals may automatically group into structures such as:
+
+- Families.
+- Professional groups.
+- Economic sectors.
+- Social classes.
+- Cultural groups.
+
+The groups will retain their own statistical characteristics and behaviors.
+
+### Representation of interests
+
+Groups may have representatives who express their interests and demands.
+
+For example:
+- Peasants demanding better conditions.
+- Merchants requesting greater commercial freedom.
+- Artisans seeking protection for their activities.
+- Landowners defending their properties.
+- Workers demanding better wages.
+
+This will connect the economy with the political and social systems.
+
+## 5.2. Worker assignment
+
+**Decision adopted: automatic assignment with player intervention.**
+
+Inhabitants will seek job opportunities according to:
+
+- Availability of positions.
+- The community's needs.
+- Wages or benefits.
+- Skills.
+- Distance to the workplace.
+- Working conditions.
+- Economic priorities.
+
+The player will be able to intervene by setting:
+
+- Production priorities.
+- Worker limits per building.
+- Priority sectors.
+- Labor restrictions.
+- Employment policies.
+
+The goal is to avoid the player having to manually assign each inhabitant to a building.
+
+## 5.3. Labor specialization
+
+As the civilization develops, increasingly specialized professions will appear.
+
+Examples:
+- Gatherers.
+- Hunters.
+- Farmers.
+- Builders.
+- Miners.
+- Blacksmiths.
+- Carpenters.
+- Merchants.
+- Administrators.
+- Engineers.
+
+Specialization will improve productivity, but it will also generate dependence between different economic sectors.
+
+## 5.4. Wages and working conditions
+
+In advanced stages, different remuneration models may appear:
+
+- Community labor.
+- Family labor.
+- Forced labor.
+- Wage labor.
+- Slave labor, where historically appropriate.
+- Specialized labor.
+
+Wages and working conditions may affect satisfaction, productivity, migration and social conflicts.
+
+---
+
+# 6. Consumption and needs
+
+The population will have needs that will evolve with the development of the civilization.
+
+## 6.1. Basic needs
+
+- Food.
+- Water.
+- Housing.
+- Protection.
+- Clothing.
+
+Failure to meet these needs may cause disease, mortality, emigration and loss of productivity.
+
+## 6.2. Advanced needs
+
+As society evolves, new demands will appear:
+
+- Better food.
+- Higher-quality clothing.
+- Education.
+- Health.
+- Entertainment.
+- Religious services.
+- Luxury goods.
+- Culture.
+- Security.
+
+Not all social sectors will have the same needs or the same access to products.
+
+## 6.3. Social differences
+
+The economic level of each group will influence its consumption.
+
+A peasant family will not have the same possibilities as a wealthy merchant or a member of the nobility.
+
+These differences may generate:
+- Inequality.
+- Social aspirations.
+- Conflicts.
+- Social mobility.
+- Cultural and political changes.
+
+---
+
+# 7. Agriculture and food production
+
+Agriculture will have a specific system due to its historical importance.
+
+## 7.1. Agricultural cycles
+
+Crops will depend on:
+- Seasons.
+- Climate.
+- Soil type.
+- Water availability.
+- Technology.
+- Seeds.
+- Labor.
+
+Not all crops can be produced in all regions.
+
+## 7.2. Seasonality
+
+Agricultural production will vary throughout the year.
+
+The player must plan:
+- Sowing.
+- Harvest.
+- Storage.
+- Consumption.
+- Reserves for periods of scarcity.
+
+## 7.3. Food crises
+
+Poor harvests may generate:
+- Scarcity.
+- Rising prices.
+- Hunger.
+- Migrations.
+- Social conflicts.
+- Political instability.
+
+Storage and planning will be essential to avoid these situations.
+
+---
+
+# 8. Storage and logistics
+
+Resources must be stored and distributed.
+
+## 8.1. Storage
+
+There will be different types of storage:
+
+- General storehouses.
+- Granaries.
 - Silos.
-- Almacenes comerciales.
-- Depósitos especializados.
-- Almacenes portuarios.
+- Commercial warehouses.
+- Specialized storehouses.
+- Port warehouses.
 
-Cada uno tendrá diferentes capacidades y condiciones.
+Each will have different capacities and conditions.
 
-Los productos perecederos podrán deteriorarse con el tiempo si no se almacenan correctamente.
+Perishable products may deteriorate over time if not stored correctly.
 
-## 8.2. Transporte físico
+## 8.2. Physical transport
 
-**Decisión adoptada: los recursos se transportarán físicamente desde el principio.**
+**Decision adopted: resources will be transported physically from the start.**
 
-Los productos deberán desplazarse entre los lugares donde se producen, almacenan y consumen.
+Products must move between the places where they are produced, stored and consumed.
 
-Por ejemplo:
+For example:
 
-Una granja produce trigo. El trigo debe trasladarse a un molino. El molino produce harina. La harina debe llegar a una panadería. Finalmente, el pan debe distribuirse entre la población.
+A farm produces wheat. The wheat must be moved to a mill. The mill produces flour. The flour must reach a bakery. Finally, the bread must be distributed among the population.
 
-Esto permitirá que la ubicación de los edificios y la organización de los asentamientos tengan importancia económica.
+This will make the location of buildings and the organization of settlements economically important.
 
-## 8.3. Evolución logística
+## 8.3. Logistics evolution
 
-La logística evolucionará históricamente.
+Logistics will evolve historically.
 
-Al principio:
-- Transporte manual.
-- Animales de carga.
-- Carros sencillos.
+At first:
+- Manual transport.
+- Pack animals.
+- Simple carts.
 
-Más adelante:
-- Carreteras.
-- Carretas especializadas.
-- Barcos comerciales.
-- Infraestructuras portuarias.
-- Sistemas de transporte más eficientes.
+Later:
+- Roads.
+- Specialized carts.
+- Commercial ships.
+- Port infrastructure.
+- More efficient transport systems.
 
-## 8.4. Complejidad configurable
+## 8.4. Configurable complexity
 
-El transporte será físico, pero no necesariamente requerirá controlar cada movimiento.
+Transport will be physical, but it will not necessarily require controlling every movement.
 
-La simulación podrá simplificarse internamente para evitar un exceso de micromanagement.
+The simulation may be simplified internally to avoid excessive micromanagement.
 
-El jugador podrá elegir entre una gestión automática y una gestión logística más detallada.
-
----
-
-# 9. Mercados y precios
-
-Los mercados conectarán la producción con el consumo y el comercio.
-
-## 9.1. Formación de precios
-
-Los precios podrán depender de:
-
-- Oferta.
-- Demanda.
-- Disponibilidad local.
-- Costos de producción.
-- Costos de transporte.
-- Distancia.
-- Calidad.
-- Estacionalidad.
-- Impuestos.
-
-Los precios no serán necesariamente iguales en todos los asentamientos.
-
-## 9.2. Mercados locales y regionales
-
-Los mercados podrán evolucionar desde intercambios directos hasta redes comerciales complejas.
-
-Una región con abundancia de madera podrá venderla a otra región que tenga escasez.
-
-Esto incentivará la especialización geográfica.
-
-## 9.3. Excedentes y escasez
-
-La acumulación de excedentes podrá reducir precios y favorecer el comercio.
-
-La escasez podrá generar aumentos de precios, especulación y tensiones sociales.
-
-En etapas avanzadas podrán aparecer expectativas sobre futuras cosechas, disponibilidad de recursos y precios.
+The player will be able to choose between automatic management and more detailed logistics management.
 
 ---
 
-# 10. Comercio
+# 9. Markets and prices
 
-El comercio permitirá intercambiar recursos entre edificios, asentamientos y civilizaciones.
+Markets will connect production with consumption and trade.
 
-## 10.1. Tres niveles de complejidad
+## 9.1. Price formation
 
-### Nivel básico: automático
+Prices may depend on:
 
-El jugador establece qué recursos necesita y cuáles tiene disponibles para intercambiar.
+- Supply.
+- Demand.
+- Local availability.
+- Production costs.
+- Transport costs.
+- Distance.
+- Quality.
+- Seasonality.
+- Taxes.
 
-El sistema realiza las operaciones automáticamente.
+Prices will not necessarily be the same in all settlements.
 
-Ideal para jugadores que prefieren concentrarse en la construcción y el desarrollo.
+## 9.2. Local and regional markets
 
-### Nivel intermedio: gestión comercial
+Markets may evolve from direct exchange to complex commercial networks.
 
-El jugador podrá configurar:
-- Cantidades máximas y mínimas.
-- Reservas.
-- Contratos.
-- Presupuestos.
-- Prioridades comerciales.
+A region with an abundance of wood may sell it to another region that has a shortage.
 
-### Nivel avanzado: gestión logística
+This will encourage geographic specialization.
 
-El jugador podrá administrar:
-- Rutas comerciales.
-- Vehículos.
-- Barcos.
-- Cargas.
-- Capacidad de transporte.
-- Costos.
-- Riesgos.
-- Aranceles.
-- Relaciones comerciales.
+## 9.3. Surpluses and scarcity
 
-## 10.2. Comercio entre asentamientos
+The accumulation of surpluses may lower prices and encourage trade.
 
-Los asentamientos podrán especializarse y depender económicamente unos de otros.
+Scarcity may generate price increases, speculation and social tensions.
 
-Por ejemplo:
-- Una región agrícola produce alimentos.
-- Una región minera produce metales.
-- Una ciudad concentra manufacturas.
-- Un puerto conecta las diferentes regiones.
-
-## 10.3. Comercio internacional
-
-En etapas avanzadas se incorporará el comercio entre civilizaciones.
-
-Esto permitirá:
-- Importaciones.
-- Exportaciones.
-- Tratados comerciales.
-- Aranceles.
-- Monopolios.
-- Bloqueos comerciales.
-- Competencia económica.
+In advanced stages, expectations about future harvests, resource availability and prices may appear.
 
 ---
 
-# 11. Dinero y finanzas
+# 10. Trade
 
-El dinero no estará necesariamente presente desde el comienzo.
+Trade will make it possible to exchange resources between buildings, settlements and civilizations.
 
-Su aparición dependerá del desarrollo histórico, social y económico.
+## 10.1. Three levels of complexity
 
-## 11.1. Evolución monetaria
+### Basic level: automatic
 
-La economía podrá atravesar diferentes etapas:
+The player sets which resources they need and which they have available to exchange.
 
-1. Intercambio directo.
-2. Intercambio basado en bienes de valor.
-3. Bienes utilizados como medios de pago.
-4. Monedas.
-5. Sistemas monetarios más complejos.
-6. Crédito y banca.
-7. Finanzas modernas.
+The system carries out the operations automatically.
 
-La evolución no será estrictamente lineal ni idéntica para todas las civilizaciones.
+Ideal for players who prefer to concentrate on construction and development.
 
-## 11.2. Tesorería pública
+### Intermediate level: commercial management
 
-El jugador administrará los recursos económicos de las instituciones que gobierne.
+The player will be able to configure:
+- Maximum and minimum quantities.
+- Reserves.
+- Contracts.
+- Budgets.
+- Commercial priorities.
 
-Podrá gestionar:
-- Ingresos.
-- Gastos.
-- Reservas.
-- Impuestos.
-- Inversiones.
-- Deudas.
-- Presupuestos.
+### Advanced level: logistics management
 
-## 11.3. Finanzas privadas
+The player will be able to manage:
+- Trade routes.
+- Vehicles.
+- Ships.
+- Cargo.
+- Transport capacity.
+- Costs.
+- Risks.
+- Tariffs.
+- Commercial relationships.
 
-En etapas avanzadas aparecerán:
-- Comerciantes ricos.
-- Prestamistas.
-- Bancos.
-- Inversores.
-- Sociedades comerciales.
-- Empresas.
+## 10.2. Trade between settlements
 
-Estos actores podrán tener intereses propios y participar en la economía de la civilización.
+Settlements may specialize and depend on each other economically.
 
----
+For example:
+- An agricultural region produces food.
+- A mining region produces metals.
+- A city concentrates manufacturing.
+- A port connects the different regions.
 
-# 12. Propiedad económica
+## 10.3. International trade
 
-**Decisión adoptada: modelo mixto y evolutivo.**
+In advanced stages, trade between civilizations will be incorporated.
 
-La propiedad no será exclusivamente del jugador.
-
-Su organización dependerá de la época, las instituciones y las características de cada sociedad.
-
-## 12.1. Tipos de propiedad
-
-- Comunitaria.
-- Familiar.
-- Privada.
-- Estatal.
-- Religiosa.
-- Corporativa.
-- Feudal o señorial.
-
-## 12.2. Evolución de la propiedad
-
-En sociedades primitivas predominarán formas comunitarias y familiares.
-
-Con el desarrollo económico podrán aparecer propiedades privadas, instituciones religiosas propietarias de tierras, grandes terratenientes, empresas y organizaciones estatales.
-
-## 12.3. Consecuencias
-
-La propiedad determinará:
-- Quién controla la producción.
-- Quién recibe los beneficios.
-- Quién paga impuestos.
-- Quién toma decisiones.
-- Qué grupos concentran riqueza.
-- Qué sectores tienen influencia política.
-
-El jugador podrá influir en estos modelos mediante instituciones, leyes y políticas.
+This will allow:
+- Imports.
+- Exports.
+- Trade treaties.
+- Tariffs.
+- Monopolies.
+- Trade blockades.
+- Economic competition.
 
 ---
 
-# 13. Impuestos y políticas económicas
+# 11. Money and finance
 
-Las instituciones políticas podrán intervenir en la economía.
+Money will not necessarily be present from the start.
 
-## 13.1. Impuestos
+Its appearance will depend on historical, social and economic development.
 
-Dependiendo de la época y el sistema político podrán existir:
+## 11.1. Monetary evolution
 
-- Impuestos sobre producción.
-- Impuestos sobre tierras.
-- Impuestos comerciales.
-- Aranceles.
-- Tributos.
-- Impuestos sobre ingresos.
-- Tasas por servicios.
+The economy may go through different stages:
 
-## 13.2. Políticas económicas
+1. Direct exchange.
+2. Exchange based on valuable goods.
+3. Goods used as means of payment.
+4. Coins.
+5. More complex monetary systems.
+6. Credit and banking.
+7. Modern finance.
 
-El jugador podrá implementar políticas como:
+The evolution will not be strictly linear or identical for all civilizations.
 
-- Subsidios.
-- Protección comercial.
-- Inversión pública.
-- Control de precios.
-- Regulación de mercados.
-- Incentivos a determinados sectores.
-- Restricciones comerciales.
-- Inversión en infraestructura.
+## 11.2. Public treasury
 
-Cada política tendrá beneficios y costos.
+The player will manage the economic resources of the institutions they govern.
 
-Una política favorable a los comerciantes podría perjudicar a determinados productores locales, mientras que una política proteccionista podría favorecer industrias nacionales, pero encarecer productos.
+They will be able to manage:
+- Income.
+- Expenditure.
+- Reserves.
+- Taxes.
+- Investments.
+- Debts.
+- Budgets.
 
----
+## 11.3. Private finance
 
-# 14. Evolución económica histórica
+In advanced stages the following will appear:
+- Wealthy merchants.
+- Moneylenders.
+- Banks.
+- Investors.
+- Trading companies.
+- Enterprises.
 
-La economía evolucionará de acuerdo con las posibilidades tecnológicas, sociales y culturales de cada civilización.
-
-## Paleolítico
-
-- Recolección.
-- Caza.
-- Pesca.
-- Producción comunitaria.
-- Intercambio directo.
-- Baja especialización.
-
-## Neolítico
-
-- Agricultura.
-- Ganadería.
-- Sedentarismo.
-- Almacenamiento.
-- Excedentes.
-- Especialización inicial.
-- Propiedad familiar y comunitaria.
-
-## Edad del Bronce y del Hierro
-
-- Metalurgia.
-- Oficios especializados.
-- Comercio regional.
-- Mercados.
-- Mayor división del trabajo.
-- Crecimiento de asentamientos.
-
-## Antigüedad
-
-- Grandes redes comerciales.
-- Monedas.
-- Impuestos.
-- Comercio marítimo.
-- Grandes explotaciones agrícolas.
-- Artesanía especializada.
-- Instituciones económicas.
-
-## Edad Media
-
-- Feudalismo en determinadas sociedades.
-- Gremios.
-- Ferias comerciales.
-- Mercados regionales.
-- Propiedad religiosa.
-- Desarrollo de rutas comerciales.
-- Mayor especialización urbana.
-
-## Edad Moderna
-
-- Comercio internacional.
-- Expansión marítima.
-- Banca.
-- Crédito.
-- Empresas comerciales.
-- Manufacturas.
-- Sistemas fiscales más complejos.
-
-## Período preindustrial
-
-- Mayor división del trabajo.
-- Manufactura a gran escala.
-- Inversiones.
-- Sistemas financieros avanzados.
-- Comercio global.
-- Mecanización inicial.
-
-Estas etapas son referencias históricas, no caminos obligatorios. Las civilizaciones podrán evolucionar de maneras diferentes.
+These actors may have their own interests and participate in the civilization's economy.
 
 ---
 
-# 15. Medioambiente y sostenibilidad
+# 12. Economic property
 
-La economía tendrá consecuencias sobre el entorno natural.
+**Decision adopted: a mixed and evolving model.**
 
-La explotación de recursos podrá provocar:
+Property will not belong exclusively to the player.
 
-- Deforestación.
-- Erosión.
-- Agotamiento de depósitos minerales.
-- Sobrepesca.
-- Pérdida de fertilidad del suelo.
-- Contaminación.
-- Escasez de agua.
+Its organization will depend on the era, the institutions and the characteristics of each society.
 
-El jugador deberá encontrar un equilibrio entre crecimiento económico y disponibilidad de recursos.
+## 12.1. Types of property
 
-La degradación ambiental podrá afectar la productividad y las condiciones de vida de la población.
+- Community.
+- Family.
+- Private.
+- State.
+- Religious.
+- Corporate.
+- Feudal or manorial.
 
----
+## 12.2. Evolution of property
 
-# 16. Interfaz económica
+In primitive societies, community and family forms will predominate.
 
-La interfaz deberá permitir comprender rápidamente el funcionamiento de la economía.
+With economic development, private property, religious institutions owning land, large landowners, enterprises and state organizations may appear.
 
-## Panel general
+## 12.3. Consequences
 
-- Población.
-- Producción total.
-- Consumo.
-- Recursos disponibles.
-- Ingresos.
-- Gastos.
-- Balance económico.
+Property will determine:
+- Who controls production.
+- Who receives the benefits.
+- Who pays taxes.
+- Who makes decisions.
+- Which groups concentrate wealth.
+- Which sectors have political influence.
 
-## Panel de recursos
-
-- Cantidad disponible.
-- Producción.
-- Consumo.
-- Existencias.
-- Reservas.
-- Tendencias.
-
-## Panel de edificios
-
-- Producción actual.
-- Capacidad.
-- Trabajadores.
-- Recursos necesarios.
-- Eficiencia.
-- Estado operativo.
-
-## Panel de población
-
-- Población total.
-- Distribución laboral.
-- Necesidades.
-- Condiciones de vida.
-- Grupos sociales.
-- Desempleo.
-
-## Panel comercial
-
-- Compras.
-- Ventas.
-- Precios.
-- Rutas.
-- Contratos.
-- Importaciones.
-- Exportaciones.
-
-La interfaz deberá incluir alertas cuando existan problemas importantes, como escasez de alimentos, falta de trabajadores o interrupciones logísticas.
+The player will be able to influence these models through institutions, laws and policies.
 
 ---
 
-# 17. Simulación y rendimiento
+# 13. Taxes and economic policies
 
-El sistema deberá poder manejar desde pequeñas aldeas hasta grandes ciudades.
+Political institutions will be able to intervene in the economy.
 
-Para conseguirlo se utilizará una simulación híbrida.
+## 13.1. Taxes
 
-## 17.1. Simulación detallada
+Depending on the era and the political system, the following may exist:
 
-En asentamientos pequeños se simularán individuos, trabajadores, movimientos y necesidades con mayor detalle.
+- Production taxes.
+- Land taxes.
+- Commercial taxes.
+- Tariffs.
+- Tributes.
+- Income taxes.
+- Service fees.
 
-## 17.2. Simulación agregada
+## 13.2. Economic policies
 
-En ciudades grandes se agruparán individuos y actividades en unidades estadísticas.
+The player will be able to implement policies such as:
 
-Se podrán simular grupos de trabajadores, familias y sectores económicos.
+- Subsidies.
+- Commercial protection.
+- Public investment.
+- Price controls.
+- Market regulation.
+- Incentives for certain sectors.
+- Trade restrictions.
+- Investment in infrastructure.
 
-## 17.3. Consistencia
+Each policy will have benefits and costs.
 
-La transición entre simulación individual y agregada no deberá modificar arbitrariamente las reglas económicas.
-
-El objetivo es mantener la coherencia del sistema independientemente del tamaño de la civilización.
-
----
-
-# 18. Prototipo económico inicial (MVP)
-
-La primera implementación deberá ser pequeña y controlable.
-
-No intentaremos construir toda la economía histórica desde el principio.
-
-## 18.1. Recursos iniciales
-
-- Madera.
-- Piedra.
-- Bayas.
-- Carne.
-- Trigo.
-- Harina.
-- Pan.
-
-## 18.2. Edificios iniciales
-
-- Vivienda.
-- Recolector.
-- Leñador.
-- Cantera.
-- Granja.
-- Molino.
-- Panadería.
-- Almacén.
-
-## 18.3. Funcionalidades
-
-El prototipo deberá permitir:
-
-1. Crear un asentamiento.
-2. Construir edificios.
-3. Asignar trabajadores automáticamente.
-4. Recolectar recursos.
-5. Producir alimentos.
-6. Transformar materias primas.
-7. Transportar recursos físicamente.
-8. Almacenar productos.
-9. Distribuir alimentos.
-10. Consumir recursos según la población.
-11. Experimentar con estacionalidad.
-12. Observar problemas de producción y abastecimiento.
-
-## 18.4. Objetivo del MVP
-
-Demostrar que una economía básica puede funcionar sin intervención constante del jugador.
-
-El jugador deberá poder concentrarse en diseñar y desarrollar su asentamiento mientras la economía responde a sus decisiones.
+A policy favorable to merchants could harm certain local producers, while a protectionist policy could favor domestic industries but make products more expensive.
 
 ---
 
-# 19. Decisiones de diseño confirmadas
+# 14. Historical economic evolution
 
-Las siguientes decisiones quedan establecidas para esta versión:
+The economy will evolve according to the technological, social and cultural possibilities of each civilization.
 
-| Sistema | Decisión |
+## Paleolithic
+
+- Gathering.
+- Hunting.
+- Fishing.
+- Community production.
+- Direct exchange.
+- Low specialization.
+
+## Neolithic
+
+- Agriculture.
+- Livestock farming.
+- Sedentism.
+- Storage.
+- Surpluses.
+- Initial specialization.
+- Family and community property.
+
+## Bronze and Iron Ages
+
+- Metallurgy.
+- Specialized trades.
+- Regional trade.
+- Markets.
+- Greater division of labor.
+- Growth of settlements.
+
+## Antiquity
+
+- Large commercial networks.
+- Coins.
+- Taxes.
+- Maritime trade.
+- Large agricultural estates.
+- Specialized craftsmanship.
+- Economic institutions.
+
+## Middle Ages
+
+- Feudalism in certain societies.
+- Guilds.
+- Trade fairs.
+- Regional markets.
+- Religious property.
+- Development of trade routes.
+- Greater urban specialization.
+
+## Early Modern period
+
+- International trade.
+- Maritime expansion.
+- Banking.
+- Credit.
+- Trading companies.
+- Manufacturing.
+- More complex tax systems.
+
+## Pre-industrial period
+
+- Greater division of labor.
+- Large-scale manufacturing.
+- Investments.
+- Advanced financial systems.
+- Global trade.
+- Initial mechanization.
+
+These stages are historical references, not mandatory paths. Civilizations may evolve in different ways.
+
+---
+
+# 15. Environment and sustainability
+
+The economy will have consequences for the natural environment.
+
+Resource exploitation may cause:
+
+- Deforestation.
+- Erosion.
+- Depletion of mineral deposits.
+- Overfishing.
+- Loss of soil fertility.
+- Pollution.
+- Water scarcity.
+
+The player must find a balance between economic growth and resource availability.
+
+Environmental degradation may affect productivity and the living conditions of the population.
+
+---
+
+# 16. Economic interface
+
+The interface must make it possible to quickly understand how the economy works.
+
+## General panel
+
+- Population.
+- Total production.
+- Consumption.
+- Available resources.
+- Income.
+- Expenditure.
+- Economic balance.
+
+## Resource panel
+
+- Available quantity.
+- Production.
+- Consumption.
+- Stocks.
+- Reserves.
+- Trends.
+
+## Building panel
+
+- Current production.
+- Capacity.
+- Workers.
+- Required resources.
+- Efficiency.
+- Operational status.
+
+## Population panel
+
+- Total population.
+- Labor distribution.
+- Needs.
+- Living conditions.
+- Social groups.
+- Unemployment.
+
+## Commercial panel
+
+- Purchases.
+- Sales.
+- Prices.
+- Routes.
+- Contracts.
+- Imports.
+- Exports.
+
+The interface must include alerts when important problems exist, such as food scarcity, a lack of workers or logistics disruptions.
+
+---
+
+# 17. Simulation and performance
+
+The system must be able to handle everything from small villages to large cities.
+
+To achieve this, a hybrid simulation will be used.
+
+## 17.1. Detailed simulation
+
+In small settlements, individuals, workers, movements and needs will be simulated in greater detail.
+
+## 17.2. Aggregate simulation
+
+In large cities, individuals and activities will be grouped into statistical units.
+
+Groups of workers, families and economic sectors may be simulated.
+
+## 17.3. Consistency
+
+The transition between individual and aggregate simulation must not arbitrarily change the economic rules.
+
+The goal is to maintain the coherence of the system regardless of the size of the civilization.
+
+---
+
+# 18. Initial economic prototype (MVP)
+
+The first implementation must be small and controllable.
+
+We will not attempt to build the entire historical economy from the start.
+
+## 18.1. Initial resources
+
+- Wood.
+- Stone.
+- Berries.
+- Meat.
+- Wheat.
+- Flour.
+- Bread.
+
+## 18.2. Initial buildings
+
+- Dwelling.
+- Gatherer.
+- Woodcutter.
+- Quarry.
+- Farm.
+- Mill.
+- Bakery.
+- Storehouse.
+
+## 18.3. Functionalities
+
+The prototype must allow:
+
+1. Creating a settlement.
+2. Building buildings.
+3. Assigning workers automatically.
+4. Gathering resources.
+5. Producing food.
+6. Transforming raw materials.
+7. Transporting resources physically.
+8. Storing products.
+9. Distributing food.
+10. Consuming resources according to the population.
+11. Experimenting with seasonality.
+12. Observing production and supply problems.
+
+## 18.4. MVP objective
+
+Demonstrate that a basic economy can function without constant player intervention.
+
+The player must be able to concentrate on designing and developing their settlement while the economy responds to their decisions.
+
+---
+
+# 19. Confirmed design decisions
+
+The following decisions are established for this version:
+
+| System | Decision |
 |---|---|
-| Propiedad | Modelo mixto y evolutivo |
-| Asignación laboral | Automática, con intervención del jugador |
-| Transporte | Físico desde el principio, con simulación simplificada |
-| Población | Modelo híbrido: individuos y grupos |
-| Complejidad económica | Configurable según el estilo de juego |
-| Comercio | Tres niveles de gestión: básico, intermedio y avanzado |
-| Evolución histórica | Flexible, no lineal y condicionada por la sociedad y la tecnología |
-| Simulación | Detallada en asentamientos pequeños y agregada en grandes ciudades |
+| Property | Mixed and evolving model |
+| Labor assignment | Automatic, with player intervention |
+| Transport | Physical from the start, with simplified simulation |
+| Population | Hybrid model: individuals and groups |
+| Economic complexity | Configurable according to play style |
+| Trade | Three management levels: basic, intermediate and advanced |
+| Historical evolution | Flexible, non-linear and conditioned by society and technology |
+| Simulation | Detailed in small settlements and aggregate in large cities |
 
 ---
 
-# 20. Cuestiones pendientes de diseño
+# 20. Pending design questions
 
-Estos temas todavía necesitan definiciones más detalladas:
+These topics still need more detailed definitions:
 
-1. Cómo se calcula exactamente la productividad.
-2. Cómo se determinan los salarios y los incentivos laborales.
-3. Cómo funcionan los mercados y la formación de precios.
-4. Cómo se distribuyen automáticamente los recursos.
-5. Cómo se representa la propiedad de edificios y tierras.
-6. Cómo se administra el transporte y la logística.
-7. Cómo se integran las economías de diferentes asentamientos.
-8. Cómo aparecen y evolucionan las instituciones financieras.
-9. Qué recursos existen en cada período histórico.
-10. Cómo se balancea la economía para evitar estrategias dominantes.
+1. How productivity is calculated exactly.
+2. How wages and labor incentives are determined.
+3. How markets and price formation work.
+4. How resources are distributed automatically.
+5. How the ownership of buildings and land is represented.
+6. How transport and logistics are managed.
+7. How the economies of different settlements are integrated.
+8. How financial institutions appear and evolve.
+9. Which resources exist in each historical period.
+10. How the economy is balanced to avoid dominant strategies.
 
 ---
 
-# 21. Principio fundamental del sistema económico
+# 21. Fundamental principle of the economic system
 
-La economía no debe ser un sistema aislado de recolección, producción y consumo.
+The economy must not be an isolated system of gathering, production and consumption.
 
-Debe ser el mecanismo que conecte los recursos naturales con la organización social, el desarrollo tecnológico, las instituciones políticas y la evolución histórica de la civilización.
+It must be the mechanism that connects natural resources with social organization, technological development, political institutions and the historical evolution of the civilization.
 
-Una civilización debe desarrollarse porque consigue organizar mejor sus recursos, su población y sus conocimientos, no simplemente porque acumula puntos o desbloquea edificios.
+A civilization must develop because it manages to better organize its resources, its population and its knowledge, not simply because it accumulates points or unlocks buildings.
 
-**El objetivo es que cada civilización pueda desarrollar una economía propia, coherente con su entorno, sus decisiones y su evolución histórica.**
+**The goal is for each civilization to be able to develop its own economy, coherent with its environment, its decisions and its historical evolution.**

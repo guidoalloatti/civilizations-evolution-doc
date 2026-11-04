@@ -1,164 +1,164 @@
 # IMPLEMENTATION_RISK_REGISTER — Civilization Evolutions
 
-> **Phase 2 — Registro de riesgos de arquitectura y desarrollo.** Para cada riesgo: por qué importa, sistemas afectados, consecuencias, mitigación y cuándo abordarlo. No es implementación. Relacionado con [DESIGN_CONSISTENCY_AUDIT.md](DESIGN_CONSISTENCY_AUDIT.md) (sección E) e [IMPLEMENTATION_ALIGNMENT.md](IMPLEMENTATION_ALIGNMENT.md).
-> Versión 1.1 · Última actualización 2026-11-04 · Severidad: 🔴 alta · 🟠 media · 🟡 baja.
-> **¿Bloquea MVP?** = si no mitigarlo **impide** alcanzar el primer playable (Escenarios A–D / roadmap E1–E2). *Sí* = hay que atacarlo antes o durante el MVP; *No* = puede diferirse sin bloquear el MVP (pero sigue siendo deuda). Esto es ortogonal a la severidad: un riesgo puede ser 🔴 y **no** bloquear el MVP si solo aparece a gran escala.
+> **Phase 2 — Architecture and development risk register.** For each risk: why it matters, affected systems, consequences, mitigation and when to address it. This is not implementation. Related to [DESIGN_CONSISTENCY_AUDIT.md](DESIGN_CONSISTENCY_AUDIT.md) (section E) and [IMPLEMENTATION_ALIGNMENT.md](IMPLEMENTATION_ALIGNMENT.md).
+> Version 1.1 · Last updated 2026-11-04 · Severity: 🔴 high · 🟠 medium · 🟡 low.
+> **Blocks MVP?** = whether not mitigating it **prevents** reaching the first playable (Scenarios A–D / roadmap E1–E2). *Yes* = it must be tackled before or during the MVP; *No* = it can be deferred without blocking the MVP (but it remains debt). This is orthogonal to severity: a risk can be 🔴 and **not** block the MVP if it only appears at large scale.
 
-| ID | Riesgo | Sev | ¿Bloquea MVP? | Cuándo abordar |
+| ID | Risk | Sev | Blocks MVP? | When to address |
 |---|---|---|---|---|
-| RISK-01 | Lógica de simulación en la capa de presentación (UE) | 🔴 | **Sí** | Ya (antes de ampliar gameplay) |
-| RISK-02 | Duplicación de datos (doble modelo de población/economía) | 🔴 | **Sí** | Ya |
-| RISK-03 | Rendimiento con miles de entidades (un Actor por habitante) | 🔴 | No (MVP ~20–30) | Antes de escalar población |
-| RISK-04 | Contenido hardcodeado en vez de data-driven | 🟠 | No | Al crecer el catálogo |
-| RISK-05 | Evolución histórica "scripteada" / efectos tecnológicos aislados | 🟠 | Parcial | Antes de implementar Tecnología a fondo |
-| RISK-06 | Acoplamiento fuerte entre sistemas | 🟠 | **Sí** (marca el patrón desde el inicio) | Continuo |
-| RISK-07 | Frecuencia de actualización excesiva (todo por Tick) | 🟠 | No | Continuo |
-| RISK-08 | Complejidad de guardar/cargar al crecer el estado | 🟠 | No | Antes de persistir sistemas nuevos |
-| RISK-09 | Escalabilidad de la generación procedural | 🟡 | No | Al pasar de mundos chicos a grandes |
-| RISK-10 | Migración de entidades persistentes (individual↔agregado, versiones) | 🟠 | No | Al introducir LOD y evolución |
-| RISK-11 | Simulación demasiado compleja para el prototipo (sobre-ingeniería) | 🟠 | **Sí** | Continuo |
-| RISK-12 | Trabajo sin commitear / dos sesiones sobre el mismo árbol | 🟠 | **Sí** | Ya |
-| RISK-13 | **Determinismo / reproducibilidad** de la simulación | 🟠 | Parcial | Al definir el reloj y la serialización |
-| RISK-14 | **Huella de memoria** del estado persistente (individuos/historia) | 🟠 | No | Al escalar población/siglos |
-| RISK-15 | **Streaming de mapas grandes** (mundo no residente en memoria) | 🟡 | No | Al pasar a mundos grandes |
-| RISK-16 | **Compatibilidad de saves a largo plazo** (versiones de esquema) | 🟠 | No | Antes de publicar builds con saves que importen |
-| RISK-17 | **Costo de la IA** de civilizaciones no jugadoras | 🟠 | No | Al introducir IA estratégica |
-| RISK-18 | **Actualizaciones en cascada** / tormentas de feedback entre sistemas | 🟠 | Parcial | Al conectar economía↔población↔política |
-| RISK-19 | **Depurar comportamiento emergente** (reproducir/entender bugs sistémicos) | 🟠 | **Sí** (sin esto, el MVP es indepurable) | Ya (herramientas desde el inicio) |
+| RISK-01 | Simulation logic in the presentation layer (UE) | 🔴 | **Yes** | Now (before expanding gameplay) |
+| RISK-02 | Data duplication (double population/economy model) | 🔴 | **Yes** | Now |
+| RISK-03 | Performance with thousands of entities (one Actor per inhabitant) | 🔴 | No (MVP ~20–30) | Before scaling population |
+| RISK-04 | Hardcoded content instead of data-driven | 🟠 | No | As the catalog grows |
+| RISK-05 | "Scripted" historical evolution / isolated technological effects | 🟠 | Partial | Before implementing Technology in depth |
+| RISK-06 | Strong coupling between systems | 🟠 | **Yes** (sets the pattern from the start) | Continuous |
+| RISK-07 | Excessive update frequency (everything per Tick) | 🟠 | No | Continuous |
+| RISK-08 | Save/load complexity as the state grows | 🟠 | No | Before persisting new systems |
+| RISK-09 | Scalability of procedural generation | 🟡 | No | When moving from small to large worlds |
+| RISK-10 | Migration of persistent entities (individual↔aggregate, versions) | 🟠 | No | When introducing LOD and evolution |
+| RISK-11 | Simulation too complex for the prototype (over-engineering) | 🟠 | **Yes** | Continuous |
+| RISK-12 | Uncommitted work / two sessions on the same tree | 🟠 | **Yes** | Now |
+| RISK-13 | **Determinism / reproducibility** of the simulation | 🟠 | Partial | When defining the clock and serialization |
+| RISK-14 | **Memory footprint** of the persistent state (individuals/history) | 🟠 | No | When scaling population/centuries |
+| RISK-15 | **Streaming of large maps** (world not resident in memory) | 🟡 | No | When moving to large worlds |
+| RISK-16 | **Long-term save compatibility** (schema versions) | 🟠 | No | Before publishing builds with saves that matter |
+| RISK-17 | **AI cost** of non-player civilizations | 🟠 | No | When introducing strategic AI |
+| RISK-18 | **Cascading updates** / feedback storms between systems | 🟠 | Partial | When connecting economy↔population↔politics |
+| RISK-19 | **Debugging emergent behavior** (reproducing/understanding systemic bugs) | 🟠 | **Yes** (without this, the MVP is undebuggable) | Now (tooling from the start) |
 
-**Bloqueantes de MVP (atacar ya o durante el MVP):** RISK-01, RISK-02, RISK-06, RISK-11, RISK-12, RISK-19 (+ parcialmente RISK-05/13/18). El resto es deuda diferible que **no** impide el primer playable.
+**MVP blockers (tackle now or during the MVP):** RISK-01, RISK-02, RISK-06, RISK-11, RISK-12, RISK-19 (+ partially RISK-05/13/18). The rest is deferrable debt that does **not** prevent the first playable.
 
 ---
 
-### RISK-01 — Simulación acoplada a la presentación 🔴
-- **Por qué importa:** el plan técnico exige separar simulación de render; es lo que permite escalar y testear. El gameplay nuevo (settlers, nodos, stock de colonia, producción de edificios) vive en la **capa UE**, no en SimCore.
-- **Afecta:** Población, Economía, Producción, Logística.
-- **Consecuencias:** queda fuera de los tests de SimCore; difícil de escalar; difícil de simular sin render.
-- **Mitigación:** definir el **hogar** de la lógica de colonia (recomendado: bajar a SimCore — DR pendiente) y dejar en UE solo presentación/entrada.
-- **Cuándo:** antes de ampliar gameplay (cada feature nueva agranda la deuda).
+### RISK-01 — Simulation coupled to presentation 🔴
+- **Why it matters:** the technical plan requires separating simulation from render; that is what allows scaling and testing. The new gameplay (settlers, nodes, colony stock, building production) lives in the **UE layer**, not in SimCore.
+- **Affects:** Population, Economy, Production, Logistics.
+- **Consequences:** it stays outside the SimCore tests; hard to scale; hard to simulate without render.
+- **Mitigation:** define the **home** of the colony logic (recommended: move down to SimCore — DR pending) and leave only presentation/input in UE.
+- **When:** before expanding gameplay (each new feature grows the debt).
 
-### RISK-02 — Duplicación de datos 🔴
-- **Por qué importa:** coexisten dos modelos de población/economía (agregado en SimCore ↔ individual/colonia en UE), contra "una identidad por sistema" (DC-07/DC-15).
-- **Afecta:** Población, Recursos, Economía, Entidades.
-- **Consecuencias:** estados divergentes, bugs de consistencia, lógica repetida.
-- **Mitigación:** una sola fuente de verdad por entidad/recurso; unificar los dos modelos (ver SHARED_DATA_MODEL + DR-07/DR-10).
-- **Cuándo:** ya.
+### RISK-02 — Data duplication 🔴
+- **Why it matters:** two population/economy models coexist (aggregate in SimCore ↔ individual/colony in UE), against "one identity per system" (DC-07/DC-15).
+- **Affects:** Population, Resources, Economy, Entities.
+- **Consequences:** divergent states, consistency bugs, repeated logic.
+- **Mitigation:** a single source of truth per entity/resource; unify the two models (see SHARED_DATA_MODEL + DR-07/DR-10).
+- **When:** now.
 
-### RISK-03 — Rendimiento con miles de entidades 🔴
-- **Por qué importa:** `CivUnit` es un **Actor por habitante**; el plan pide explícitamente no hacerlo y soportar agregación.
-- **Afecta:** Población, Tiempo, render.
-- **Consecuencias:** a 20 va bien; a cientos/miles cae el rendimiento.
-- **Mitigación:** nivel de simulación agregada (LOD) por tamaño/distancia/relevancia (DR-10); representar individuos como datos, con actores solo para los visibles/activos.
-- **Cuándo:** antes de subir la población objetivo.
+### RISK-03 — Performance with thousands of entities 🔴
+- **Why it matters:** `CivUnit` is one **Actor per inhabitant**; the plan explicitly calls for not doing that and for supporting aggregation.
+- **Affects:** Population, Time, render.
+- **Consequences:** at 20 it works fine; at hundreds/thousands performance drops.
+- **Mitigation:** an aggregate simulation level (LOD) by size/distance/relevance (DR-10); represent individuals as data, with actors only for the visible/active ones.
+- **When:** before raising the target population.
 
-### RISK-04 — Contenido hardcodeado 🟠
-- **Por qué importa:** recursos/edificios/recetas/tecnologías viven en C++ (`DefaultContent`), no en Data Tables/Assets.
-- **Afecta:** Recursos, Producción, Construcción, Tecnología.
-- **Consecuencias:** balancear/añadir contenido obliga a recompilar; difícil de iterar por diseño.
-- **Mitigación:** migrar gradualmente a Data Tables/Data Assets (plan §4.2).
-- **Cuándo:** cuando el catálogo crezca.
+### RISK-04 — Hardcoded content 🟠
+- **Why it matters:** resources/buildings/recipes/technologies live in C++ (`DefaultContent`), not in Data Tables/Assets.
+- **Affects:** Resources, Production, Construction, Technology.
+- **Consequences:** balancing/adding content forces a recompile; hard to iterate by design.
+- **Mitigation:** gradually migrate to Data Tables/Data Assets (plan §4.2).
+- **When:** when the catalog grows.
 
-### RISK-05 — Evolución histórica scripteada / efectos aislados 🟠
-- **Por qué importa:** si cada sistema implementa los efectos de una tecnología por su cuenta, el resultado es rígido y difícil de extender (contra DC-01/DC-09).
-- **Afecta:** Tecnología, Producción, Construcción, Militar, Cultura.
-- **Consecuencias:** árbol tecnológico rígido; reescritura al añadir sistemas.
-- **Mitigación:** marco **compartido** de descubrimientos/condiciones/eventos al que los sistemas **reaccionan** (ver [HISTORICAL_EVOLUTION_FRAMEWORK.md](HISTORICAL_EVOLUTION_FRAMEWORK.md)).
-- **Cuándo:** antes de implementar Tecnología a fondo.
+### RISK-05 — Scripted historical evolution / isolated effects 🟠
+- **Why it matters:** if each system implements a technology's effects on its own, the result is rigid and hard to extend (against DC-01/DC-09).
+- **Affects:** Technology, Production, Construction, Military, Culture.
+- **Consequences:** rigid technology tree; rewrites when adding systems.
+- **Mitigation:** a **shared** framework of discoveries/conditions/events that systems **react** to (see [HISTORICAL_EVOLUTION_FRAMEWORK.md](HISTORICAL_EVOLUTION_FRAMEWORK.md)).
+- **When:** before implementing Technology in depth.
 
-### RISK-06 — Acoplamiento fuerte entre sistemas 🟠
-- **Por qué importa:** la visión pide que los sistemas interactúen sin conocer su implementación interna.
-- **Afecta:** todos.
-- **Consecuencias:** cambios locales rompen otros sistemas; difícil de testear aislado.
-- **Mitigación:** comunicación por eventos tipados + interfaces; respetar el mapa de autoridad (Maestro §5).
-- **Cuándo:** continuo.
+### RISK-06 — Strong coupling between systems 🟠
+- **Why it matters:** the vision calls for systems to interact without knowing each other's internal implementation.
+- **Affects:** all.
+- **Consequences:** local changes break other systems; hard to test in isolation.
+- **Mitigation:** communication via typed events + interfaces; respect the authority map (Maestro §5).
+- **When:** continuous.
 
-### RISK-07 — Frecuencia de actualización excesiva 🟠
-- **Por qué importa:** actualizar todo cada frame no escala.
-- **Afecta:** todos.
-- **Consecuencias:** CPU desperdiciada; caídas de FPS.
-- **Mitigación:** cadencias por sistema + event-driven (ver SYSTEM_DEPENDENCY_MAP §E); el reloj independiente del FPS ya existe.
-- **Cuándo:** continuo.
+### RISK-07 — Excessive update frequency 🟠
+- **Why it matters:** updating everything every frame does not scale.
+- **Affects:** all.
+- **Consequences:** wasted CPU; FPS drops.
+- **Mitigation:** per-system cadences + event-driven (see SYSTEM_DEPENDENCY_MAP §E); the FPS-independent clock already exists.
+- **When:** continuous.
 
-### RISK-08 — Complejidad de guardar/cargar 🟠
-- **Por qué importa:** SimCore ya serializa; al sumar entidades/relaciones/historia, la persistencia se complica.
-- **Afecta:** Entidades, Eventos, todos los que persisten.
-- **Consecuencias:** saves frágiles o incompatibles entre versiones.
-- **Mitigación:** identidad estable + versionado de save; serializar el modelo compartido, no copias por sistema.
-- **Cuándo:** antes de persistir sistemas nuevos.
+### RISK-08 — Save/load complexity 🟠
+- **Why it matters:** SimCore already serializes; as entities/relationships/history are added, persistence gets more complex.
+- **Affects:** Entities, Events, everything that persists.
+- **Consequences:** fragile saves or saves incompatible across versions.
+- **Mitigation:** stable identity + save versioning; serialize the shared model, not copies per system.
+- **When:** before persisting new systems.
 
-### RISK-09 — Escalabilidad de la generación procedural 🟡
-- **Por qué importa:** el GDD contempla mundos grandes y variados; el terreno actual es un parche chico.
-- **Afecta:** Generación, Geografía, render.
-- **Consecuencias:** generación/mallas lentas o pesadas en mundos grandes.
-- **Mitigación:** generación por capas/chunks, semilla reproducible, LOD de terreno.
-- **Cuándo:** al pasar de mundos chicos a grandes.
+### RISK-09 — Scalability of procedural generation 🟡
+- **Why it matters:** the GDD contemplates large and varied worlds; the current terrain is a small patch.
+- **Affects:** Generation, Geography, render.
+- **Consequences:** slow or heavy generation/meshes in large worlds.
+- **Mitigation:** generation by layers/chunks, reproducible seed, terrain LOD.
+- **When:** when moving from small to large worlds.
 
-### RISK-10 — Migración de entidades persistentes 🟠
-- **Por qué importa:** pasar individuos a grupos (y viceversa) y evolucionar edificios conservando identidad es complejo.
-- **Afecta:** Población, Entidades, Construcción.
-- **Consecuencias:** pérdida de identidad/historia; inconsistencias al agregar/desagregar.
-- **Mitigación:** identidad conceptual estable independiente del nivel de simulación (DR-10; Entidades §11).
-- **Cuándo:** al introducir LOD y evolución histórica.
+### RISK-10 — Migration of persistent entities 🟠
+- **Why it matters:** moving individuals into groups (and vice versa) and evolving buildings while preserving identity is complex.
+- **Affects:** Population, Entities, Construction.
+- **Consequences:** loss of identity/history; inconsistencies when aggregating/disaggregating.
+- **Mitigation:** stable conceptual identity independent of the simulation level (DR-10; Entities §11).
+- **When:** when introducing LOD and historical evolution.
 
-### RISK-11 — Sobre-ingeniería / sobre-simplificación 🟠
-- **Por qué importa:** el plan pide evitar abstracciones vacías y, a la vez, no simplificar la arquitectura para que "entre" el prototipo.
-- **Afecta:** todos.
-- **Consecuencias:** complejidad inútil o rediseño caro.
-- **Mitigación:** implementar lo pedido por etapa; mantener extensibilidad sin construir sistemas no solicitados.
-- **Cuándo:** continuo.
+### RISK-11 — Over-engineering / over-simplification 🟠
+- **Why it matters:** the plan calls for avoiding empty abstractions and, at the same time, for not simplifying the architecture just to "fit" the prototype.
+- **Affects:** all.
+- **Consequences:** useless complexity or costly redesign.
+- **Mitigation:** implement what is required per stage; keep extensibility without building unrequested systems.
+- **When:** continuous.
 
-### RISK-12 — Trabajo sin commitear / dos sesiones sobre el mismo árbol 🟠
-- **Por qué importa:** todo lo posterior al commit HANDOFF está sin commitear; dos sesiones editan el mismo árbol (último-en-guardar gana).
-- **Afecta:** todo el código.
-- **Consecuencias:** pérdida de trabajo, colisiones.
-- **Mitigación:** commitear en checkpoints verdes; una sola sesión escribe gameplay a la vez; el repo de docs ya está versionado aparte.
-- **Cuándo:** ya.
+### RISK-12 — Uncommitted work / two sessions on the same tree 🟠
+- **Why it matters:** everything after the HANDOFF commit is uncommitted; two sessions edit the same tree (last-to-save wins).
+- **Affects:** all the code.
+- **Consequences:** loss of work, collisions.
+- **Mitigation:** commit at green checkpoints; a single session writes gameplay at a time; the docs repo is already versioned separately.
+- **When:** now.
 
-### RISK-13 — Determinismo / reproducibilidad 🟠 · ¿Bloquea MVP? Parcial
-- **Por qué importa:** una simulación histórica que guarda/carga y que algún día podría replicar o depurar necesita que, dada la misma semilla y entradas, produzca el mismo resultado. Punto flotante, orden de iteración de contenedores y RNG mal sembrado rompen esto.
-- **Afecta:** Tiempo, todos los sistemas con azar (demografía, eventos, IA), guardar/cargar.
-- **Consecuencias:** bugs irreproducibles; saves que divergen; imposible comparar "misma partida" entre builds.
-- **Mitigación:** un RNG con semilla explícita y por-subsistema; evitar depender del orden de `TMap`/punteros; fijar el orden de actualización; aislar lo no determinista (render) de la simulación.
-- **Cuándo:** al definir el reloj y la serialización (barato ahora, caro después).
+### RISK-13 — Determinism / reproducibility 🟠 · Blocks MVP? Partial
+- **Why it matters:** a historical simulation that saves/loads and that could one day replay or be debugged needs that, given the same seed and inputs, it produces the same result. Floating point, container iteration order and a poorly seeded RNG break this.
+- **Affects:** Time, all systems with randomness (demographics, events, AI), save/load.
+- **Consequences:** irreproducible bugs; saves that diverge; impossible to compare "the same game" across builds.
+- **Mitigation:** an RNG with an explicit, per-subsystem seed; avoid depending on `TMap`/pointer ordering; fix the update order; isolate the non-deterministic (render) from the simulation.
+- **When:** when defining the clock and serialization (cheap now, expensive later).
 
-### RISK-14 — Huella de memoria del estado persistente 🟠 · ¿Bloquea MVP? No
-- **Por qué importa:** individuos con historia + registro histórico creciente + varias civilizaciones pueden consumir mucha RAM a lo largo de siglos.
-- **Afecta:** Población, Entidades, Eventos/Registro histórico.
-- **Consecuencias:** crecimiento de memoria sin techo; partidas largas que se degradan.
-- **Mitigación:** agregación (DR-10) libera detalle; resumir/compactar historia antigua; estructuras compactas (SoA, ids en vez de punteros); presupuestos de memoria por subsistema.
-- **Cuándo:** al escalar población/duración (no en el MVP de ~20–30).
+### RISK-14 — Memory footprint of the persistent state 🟠 · Blocks MVP? No
+- **Why it matters:** individuals with history + a growing historical record + several civilizations can consume a lot of RAM across centuries.
+- **Affects:** Population, Entities, Events/Historical record.
+- **Consequences:** unbounded memory growth; long games that degrade.
+- **Mitigation:** aggregation (DR-10) frees detail; summarize/compact old history; compact structures (SoA, ids instead of pointers); memory budgets per subsystem.
+- **When:** when scaling population/duration (not in the ~20–30 MVP).
 
-### RISK-15 — Streaming de mapas grandes 🟡 · ¿Bloquea MVP? No
-- **Por qué importa:** un mundo grande no cabe residente en memoria ni conviene simularlo entero al detalle.
-- **Afecta:** Generación, Geografía, Logística, render.
-- **Consecuencias:** picos de memoria/carga; hitches al moverse por el mundo.
-- **Mitigación:** chunks con carga/descarga; simulación agregada de zonas lejanas (coherente con LOD); separar estado de simulación de mallas de render.
-- **Cuándo:** al pasar de mundos chicos a grandes (relacionado con RISK-09).
+### RISK-15 — Streaming of large maps 🟡 · Blocks MVP? No
+- **Why it matters:** a large world does not fit resident in memory nor is it worth simulating in full detail.
+- **Affects:** Generation, Geography, Logistics, render.
+- **Consequences:** memory/load spikes; hitches when moving around the world.
+- **Mitigation:** chunks with load/unload; aggregate simulation of distant zones (consistent with LOD); separate simulation state from render meshes.
+- **When:** when moving from small to large worlds (related to RISK-09).
 
-### RISK-16 — Compatibilidad de saves a largo plazo 🟠 · ¿Bloquea MVP? No
-- **Por qué importa:** el esquema del estado cambiará muchas veces; sin versionado, cada cambio invalida los saves existentes.
-- **Afecta:** Entidades, Eventos, todos los que persisten.
-- **Consecuencias:** pérdida de partidas al actualizar; migraciones ad-hoc frágiles.
-- **Mitigación:** número de versión de esquema + migradores por versión; campos opcionales con defaults; tests de carga de saves antiguos. Distinto de RISK-08 (que es la *complejidad estructural*; esto es *evolución del esquema en el tiempo*).
-- **Cuándo:** antes de publicar builds cuyos saves importen a usuarios.
+### RISK-16 — Long-term save compatibility 🟠 · Blocks MVP? No
+- **Why it matters:** the state schema will change many times; without versioning, each change invalidates existing saves.
+- **Affects:** Entities, Events, everything that persists.
+- **Consequences:** loss of games on update; fragile ad-hoc migrations.
+- **Mitigation:** a schema version number + migrators per version; optional fields with defaults; tests loading old saves. Different from RISK-08 (which is the *structural complexity*; this is *schema evolution over time*).
+- **When:** before publishing builds whose saves matter to users.
 
-### RISK-17 — Costo de la IA de civilizaciones 🟠 · ¿Bloquea MVP? No
-- **Por qué importa:** cada civilización no jugadora decide (economía, diplomacia, guerra, expansión); hacerlo cada tick y para muchas no escala.
-- **Afecta:** IA, Diplomacia, Economía, Guerra.
-- **Consecuencias:** CPU saturada con pocas civilizaciones; o IA tan barata que es tonta.
-- **Mitigación:** IA por cadencia baja/por hito (ver SYSTEM_DEPENDENCY_MAP §E); profundidad por relevancia/cercanía (IA §8); presupuesto de tiempo por frame repartido entre civilizaciones.
-- **Cuándo:** al introducir IA estratégica (post-MVP).
+### RISK-17 — AI cost of civilizations 🟠 · Blocks MVP? No
+- **Why it matters:** each non-player civilization decides (economy, diplomacy, war, expansion); doing it every tick and for many does not scale.
+- **Affects:** AI, Diplomacy, Economy, War.
+- **Consequences:** CPU saturated with few civilizations; or AI so cheap that it is dumb.
+- **Mitigation:** AI at a low cadence/per milestone (see SYSTEM_DEPENDENCY_MAP §E); depth by relevance/proximity (AI §8); a per-frame time budget split among civilizations.
+- **When:** when introducing strategic AI (post-MVP).
 
-### RISK-18 — Actualizaciones en cascada / tormentas de feedback 🟠 · ¿Bloquea MVP? Parcial
-- **Por qué importa:** economía↔población↔política se retroalimentan; un evento puede disparar una cascada que oscile o explote (precios que rebotan, migraciones en bucle).
-- **Afecta:** Economía, Población, Política, Eventos.
-- **Consecuencias:** inestabilidad numérica, bucles infinitos de eventos, comportamiento no plausible.
-- **Mitigación:** amortiguación/inercia en los modelos; procesar cascadas por cadencia (no recursión inmediata); límites y detección de ciclos; resolver en pasos discretos del reloj.
-- **Cuándo:** al conectar los tres núcleos (empieza en el MVP con economía↔población).
+### RISK-18 — Cascading updates / feedback storms 🟠 · Blocks MVP? Partial
+- **Why it matters:** economy↔population↔politics feed back on each other; an event can trigger a cascade that oscillates or explodes (bouncing prices, looping migrations).
+- **Affects:** Economy, Population, Politics, Events.
+- **Consequences:** numerical instability, infinite event loops, implausible behavior.
+- **Mitigation:** damping/inertia in the models; process cascades by cadence (not immediate recursion); limits and cycle detection; resolve in discrete clock steps.
+- **When:** when connecting the three cores (it starts in the MVP with economy↔population).
 
-### RISK-19 — Depurar comportamiento emergente 🟠 · ¿Bloquea MVP? Sí
-- **Por qué importa:** en una simulación integrada, los bugs surgen de la interacción de muchos sistemas y a menudo horas adentro; sin herramientas, son casi imposibles de reproducir y entender.
-- **Afecta:** todos.
-- **Consecuencias:** tiempo de desarrollo perdido; bugs que no se pueden aislar; pérdida de confianza en la simulación.
-- **Mitigación:** inspección del estado por entidad; línea de tiempo/registro de eventos consultable (lo aporta el sistema de Eventos); reproducibilidad (RISK-13); logs por cadencia; modo paso a paso del reloj; escenarios de validación ([CROSS_SYSTEM_VALIDATION_SCENARIOS.md](CROSS_SYSTEM_VALIDATION_SCENARIOS.md)) como pruebas repetibles.
-- **Cuándo:** ya — las herramientas de depuración deben nacer con la simulación, no después.
+### RISK-19 — Debugging emergent behavior 🟠 · Blocks MVP? Yes
+- **Why it matters:** in an integrated simulation, bugs arise from the interaction of many systems and often hours in; without tooling, they are nearly impossible to reproduce and understand.
+- **Affects:** all.
+- **Consequences:** lost development time; bugs that cannot be isolated; loss of confidence in the simulation.
+- **Mitigation:** per-entity state inspection; a queryable timeline/event log (provided by the Events system); reproducibility (RISK-13); logs by cadence; a step-by-step clock mode; validation scenarios ([CROSS_SYSTEM_VALIDATION_SCENARIOS.md](CROSS_SYSTEM_VALIDATION_SCENARIOS.md)) as repeatable tests.
+- **When:** now — debugging tooling must be born with the simulation, not after.

@@ -1,153 +1,153 @@
 # SYSTEM_CONTRACTS — Civilization Evolutions
 
-> **Contratos de los sistemas compartidos.** Define las interfaces que cruzan workstreams, con su **dueño**, su **API real hoy** (no inventada: tomada del código en disco — `SimCore/` y `Source/CivilizationSimulator/`), sus **entradas/salidas**, sus **consumidores** y las **reglas** que nadie puede violar. Un consumidor **programa contra este contrato**, no contra la implementación del dueño.
+> **Contracts for the shared systems.** Defines the interfaces that cross workstreams, with their **owner**, their **actual API today** (not invented: taken from the code on disk — `SimCore/` and `Source/CivilizationSimulator/`), their **inputs/outputs**, their **consumers** and the **rules** no one may violate. A consumer **programs against this contract**, not against the owner's implementation.
 >
-> Autoridad de diseño: GDD + [SHARED_DATA_MODEL.md](SHARED_DATA_MODEL.md) + [SYSTEM_DEPENDENCY_MAP.md](SYSTEM_DEPENDENCY_MAP.md). Organización: [AGENT_ORGANIZATION.md](AGENT_ORGANIZATION.md).
-> Versión 1.0 · 2026-11-04 · Estado: PROPUESTA. Los contratos marcados *(estable)* reflejan código actual; *(a definir)* requieren diseño del dueño antes de que los consumidores implementen.
+> Design authority: GDD + [SHARED_DATA_MODEL.md](SHARED_DATA_MODEL.md) + [SYSTEM_DEPENDENCY_MAP.md](SYSTEM_DEPENDENCY_MAP.md). Organization: [AGENT_ORGANIZATION.md](AGENT_ORGANIZATION.md).
+> Version 1.0 · 2026-11-04 · Status: PROPOSAL. Contracts marked *(stable)* reflect current code; *(to be defined)* require design by the owner before consumers implement.
 
-## Cómo se usan estos contratos
+## How these contracts are used
 
-1. **El dueño publica y versiona el contrato** (firma + semántica) antes de que nadie implemente contra él.
-2. **Los consumidores usan solo lo publicado.** Si falta algo (p. ej. un *getter*), lo **piden al dueño**; no lo agregan en archivos ajenos.
-3. **Un cambio incompatible de contrato** pasa por el Director Técnico (WS-TD) y se anuncia a todos los consumidores (ver [INTEGRATION_STRATEGY.md](INTEGRATION_STRATEGY.md)).
-4. **Mientras el contrato esté *(a definir)*,** los consumidores trabajan contra **mocks** acordados (ej.: la UI ya consume datos mock en `UCivMainHUD`).
+1. **The owner publishes and versions the contract** (signature + semantics) before anyone implements against it.
+2. **Consumers use only what is published.** If something is missing (e.g. a *getter*), they **request it from the owner**; they do not add it in others' files.
+3. **An incompatible contract change** goes through the Technical Director (WS-TD) and is announced to all consumers (see [INTEGRATION_STRATEGY.md](INTEGRATION_STRATEGY.md)).
+4. **While the contract is *(to be defined)*,** consumers work against agreed **mocks** (e.g.: the UI already consumes mock data in `UCivMainHUD`).
 
-## Dos espacios de identidad (clave para todo lo demás)
+## Two identity spaces (key to everything else)
 
-- **IDs de definición/contenido = `std::string` estables** (data-driven, orientados al diseñador): `ResourceId`, `RecipeId`, `BuildingDefId`, tech id. Ej.: `"wood"`, `"farm"`, `"mill_flour"`, `"masonry"`. **Nunca** se referencia por nombre visible (el nombre localizado vive en `CivText`/`CivLoc`).
-- **IDs de instancia viva = `int` en runtime**, asignados por `World` (monótonos desde 1): `buildingId`, `citizenId`. `settlementId` es `int` (0 = colonia/asentamiento compartido). Centinela "sin empleo/sin hogar" = `-1`.
+- **Definition/content IDs = stable `std::string`** (data-driven, designer-oriented): `ResourceId`, `RecipeId`, `BuildingDefId`, tech id. E.g.: `"wood"`, `"farm"`, `"mill_flour"`, `"masonry"`. **Never** referenced by display name (the localized name lives in `CivText`/`CivLoc`).
+- **Live-instance IDs = runtime `int`**, assigned by `World` (monotonic from 1): `buildingId`, `citizenId`. `settlementId` is `int` (0 = colony/shared settlement). "No job/no home" sentinel = `-1`.
 
-> **La frontera SimCore↔UE es un único punto:** `UCivSimSubsystem` (`Simulation/CivSimSubsystem.{h,cpp}`) es **la única** clase UE que incluye headers de SimCore. Toda la capa UE lee/ordena a través de sus `UFUNCTION`. Ese es, de hecho, el **contrato de acceso UI** (§10). Dueño del archivo puente: **WS-CORE**.
+> **The SimCore↔UE boundary is a single point:** `UCivSimSubsystem` (`Simulation/CivSimSubsystem.{h,cpp}`) is **the only** UE class that includes SimCore headers. The entire UE layer reads/commands through its `UFUNCTION`s. That is, in fact, the **UI access contract** (§10). Owner of the bridge file: **WS-CORE**.
 
 ---
 
-## 1. Tiempo de simulación *(estable)*
+## 1. Simulation time *(stable)*
 
-- **Dueño:** WS-CORE. **Fuente:** `simcore::SimulationClock` (`SimulationClock.h`), orquestado por `simcore::Simulation`. DC-08, DR-09.
-- **Entradas:** `advanceDays(double)`, `update(double realSeconds)→double` (días sim transcurridos), `pause()/resume()/setSpeed(double)`; `Simulation::dailyTick()` es **la unidad determinista** de avance (1 día sim).
-- **Salidas (solo lectura):** `year()`, `month()` (1..12), `dayOfMonth()` (1..30), `dayOfYear()`, `season()→Season{Spring,Summer,Autumn,Winter}`, `totalDays()`, `isPaused()`, `speed()`; helpers `Simulation::dayFraction()` (0..1), `Simulation::seasonalFactor(BuildingCategory,Season)`.
-- **Calendario:** 30 días/mes × 12 = **360 días/año**, 4 estaciones de 90 días. `CalendarConfig{daysPerMonth,monthsPerYear,startYear,daysPerRealSecond}`.
-- **Puente UE:** `UCivSimSubsystem` expone `Pause/Resume/IsPaused/SetSpeed/AdvanceDays/GetDateString/GetSeason/GetSeasonName/GetDayFraction`.
-- **Reglas:** el reloj es **independiente del FPS** (RISK-07); ningún sistema hace trabajo por `Tick()` de render — reacciona a `dailyTick`/eventos. Las velocidades **no** cambian el resultado (determinismo, RISK-13). Hay **un solo reloj** (sin relojes paralelos por sistema).
-- **Consumidores:** todos.
+- **Owner:** WS-CORE. **Source:** `simcore::SimulationClock` (`SimulationClock.h`), orchestrated by `simcore::Simulation`. DC-08, DR-09.
+- **Inputs:** `advanceDays(double)`, `update(double realSeconds)→double` (sim days elapsed), `pause()/resume()/setSpeed(double)`; `Simulation::dailyTick()` is **the deterministic unit** of advance (1 sim day).
+- **Outputs (read-only):** `year()`, `month()` (1..12), `dayOfMonth()` (1..30), `dayOfYear()`, `season()→Season{Spring,Summer,Autumn,Winter}`, `totalDays()`, `isPaused()`, `speed()`; helpers `Simulation::dayFraction()` (0..1), `Simulation::seasonalFactor(BuildingCategory,Season)`.
+- **Calendar:** 30 days/month × 12 = **360 days/year**, 4 seasons of 90 days. `CalendarConfig{daysPerMonth,monthsPerYear,startYear,daysPerRealSecond}`.
+- **UE bridge:** `UCivSimSubsystem` exposes `Pause/Resume/IsPaused/SetSpeed/AdvanceDays/GetDateString/GetSeason/GetSeasonName/GetDayFraction`.
+- **Rules:** the clock is **FPS-independent** (RISK-07); no system does work on render `Tick()` — it reacts to `dailyTick`/events. Speeds do **not** change the result (determinism, RISK-13). There is **a single clock** (no parallel per-system clocks).
+- **Consumers:** all.
 
-## 2. Comunicación por eventos *(estable, a extender)*
+## 2. Event communication *(stable, to be extended)*
 
-- **Dueño:** WS-CORE. **Fuente:** `simcore::EventBus` (`EventBus.h`), accesible por `Simulation::events()`. DC-14.
-- **API:** `subscribe(std::function<void(const Event&)>)`; `emit(const Event&)` (síncrono, en orden, sin prioridades ni *unsubscribe*).
-- **`Event`:** `{ EventType type; int intA; std::string strA; double numA; }` (campos de interpretación flexible).
-- **`EventType` hoy:** `YearChanged, SeasonChanged, ResourceProduced, ProductionBlocked, BuildingConstructed, BuildingEvolved, TechnologyDiscovered, PopulationChanged, CitizenHired, CitizenDied`.
-- **Convención de campos por evento (contrato de payload):**
-  | Evento | `intA` | `strA` | `numA` |
+- **Owner:** WS-CORE. **Source:** `simcore::EventBus` (`EventBus.h`), accessible via `Simulation::events()`. DC-14.
+- **API:** `subscribe(std::function<void(const Event&)>)`; `emit(const Event&)` (synchronous, in order, no priorities and no *unsubscribe*).
+- **`Event`:** `{ EventType type; int intA; std::string strA; double numA; }` (fields with flexible interpretation).
+- **`EventType` today:** `YearChanged, SeasonChanged, ResourceProduced, ProductionBlocked, BuildingConstructed, BuildingEvolved, TechnologyDiscovered, PopulationChanged, CitizenHired, CitizenDied`.
+- **Per-event field convention (payload contract):**
+  | Event | `intA` | `strA` | `numA` |
   |---|---|---|---|
-  | `ResourceProduced` | buildingId | resourceId | cantidad |
+  | `ResourceProduced` | buildingId | resourceId | amount |
   | `ProductionBlocked` | buildingId | buildingDefId | — |
   | `BuildingConstructed` | buildingId | defId | — |
-  | `BuildingEvolved` | buildingId | nuevo defId | — |
+  | `BuildingEvolved` | buildingId | new defId | — |
   | `TechnologyDiscovered` | — | techId | — |
   | `CitizenHired` | buildingId | buildingDefId | — |
   | `CitizenDied` | citizenId | — | — |
   | `PopulationChanged` | delta (±) | — | — |
   | `SeasonChanged` | — | seasonName | — |
   | `YearChanged` | year | — | — |
-- **Reglas (DC-14):** el **evento lo origina el sistema dueño del hecho**; Eventos solo registra/notifica; **ningún efecto de juego nace del bus**. Agregar un `EventType` es cambio de contrato → pasa por WS-TD. No convertir el bus en un framework genérico (RISK-11).
-- **Consumidores:** todos. *(A definir: puente de eventos SimCore→UE —hoy la UE lee estado por polling en el subsystem, no se suscribe al bus; conectar eventos reales es trabajo de UI "Stage 4" + CORE.)*
+- **Rules (DC-14):** the **event is originated by the system that owns the fact**; Events only record/notify; **no game effect is born from the bus**. Adding an `EventType` is a contract change → goes through WS-TD. Do not turn the bus into a generic framework (RISK-11).
+- **Consumers:** all. *(To be defined: SimCore→UE event bridge — today UE reads state by polling the subsystem, it does not subscribe to the bus; wiring up real events is UI "Stage 4" + CORE work.)*
 
-## 3. Identificadores persistentes de entidad *(parcial)*
+## 3. Persistent entity identifiers *(partial)*
 
-- **Dueño:** WS-CORE (identidad), con el modelo conceptual en [SHARED_DATA_MODEL.md](SHARED_DATA_MODEL.md). DC-15.
-- **Hoy:** `int` de instancia asignados por `World::addBuilding(...)→int` y `World::addCitizen(...)→int`; lookup `World::building(int)→Building*` (búsqueda lineal). **No** hay `World::citizen(int)` público (se itera `citizens()`); existe `findCitizen` interno en `Simulation.cpp`. Contador persistido: `nextBuildingId()/nextCitizenId()` + setters (para save/load).
-- **Entradas:** alta de entidad (devuelve id), marca de bajas (`Citizen.alive=false`). **Salidas:** vectores `buildings()`, `citizens()`; agregados `population()`, `employed()`, `housingCapacity()`.
-- **Reglas:** id **estable** por vida de la entidad; se **referencia por id**, nunca por nombre/índice de vector; identidad **sobrevive** a guardar/cargar (RISK-16). Sin duplicar identidad en otro sistema (RISK-02).
-- **A definir (WS-CORE + WS-POP):** accesor `citizen(int)`; relaciones de primera clase (familia/hogar/linaje) del modelo de datos; política de id al pasar individual↔agregado (DR-10, RISK-10).
-- **Consumidores:** todos.
+- **Owner:** WS-CORE (identity), with the conceptual model in [SHARED_DATA_MODEL.md](SHARED_DATA_MODEL.md). DC-15.
+- **Today:** instance `int`s assigned by `World::addBuilding(...)→int` and `World::addCitizen(...)→int`; lookup `World::building(int)→Building*` (linear search). There is **no** public `World::citizen(int)` (you iterate `citizens()`); an internal `findCitizen` exists in `Simulation.cpp`. Persisted counter: `nextBuildingId()/nextCitizenId()` + setters (for save/load).
+- **Inputs:** entity registration (returns id), death marking (`Citizen.alive=false`). **Outputs:** vectors `buildings()`, `citizens()`; aggregates `population()`, `employed()`, `housingCapacity()`.
+- **Rules:** id **stable** for the entity's lifetime; it is **referenced by id**, never by name/vector index; identity **survives** save/load (RISK-16). No duplicating identity in another system (RISK-02).
+- **To be defined (WS-CORE + WS-POP):** `citizen(int)` accessor; first-class relationships (family/household/lineage) of the data model; id policy when crossing individual↔aggregate (DR-10, RISK-10).
+- **Consumers:** all.
 
-## 4. Definiciones de recursos *(estable)*
+## 4. Resource definitions *(stable)*
 
-- **Dueño:** WS-ECON (catálogo único). **Fuente:** `GameDatabase` + `ResourceDef` (`GameDatabase.h`); datos espejo en `SimCore/data/resources.json`. DC-07.
+- **Owner:** WS-ECON (single catalog). **Source:** `GameDatabase` + `ResourceDef` (`GameDatabase.h`); mirror data in `SimCore/data/resources.json`. DC-07.
 - **`ResourceDef`:** `{ ResourceId id; std::string displayName; ResourceCategory category; bool perishable; bool isFood; double foodValue; }`. `ResourceCategory{Natural,Food,Processed,Manufactured,Economic}`.
-- **API:** `addResource(def)`, `hasResource(id)`, `resource(id)→const ResourceDef*`, `resources()→const map&`. Alias `ResourceAmount=pair<ResourceId,int>`, `ResourceList=vector<ResourceAmount>`.
-- **Catálogo MVP:** `wood, stone, berries, meat, wheat, flour, bread` (+ `water, clay` del lado UE/nodos).
-- **Reglas (DC-07):** **un recurso = un id e inventario común**; se agrega por **datos** (editar JSON/catálogo), no hardcode disperso (RISK-04). Nombre visible solo en `CivLoc::Resource(id)` (i18n), nunca como clave.
-- **Consumidores:** BUILD (costos), POP (consumo), LOG, UI (barra), WORLD (recursos naturales).
-- **Nota de deuda:** el núcleo C++ **no parsea** el JSON hoy (catálogo hardcodeado en `DefaultContent.cpp`); migrar a carga real de datos / Data Assets es tarea de ECON (RISK-04, backlog DT.27).
+- **API:** `addResource(def)`, `hasResource(id)`, `resource(id)→const ResourceDef*`, `resources()→const map&`. Aliases `ResourceAmount=pair<ResourceId,int>`, `ResourceList=vector<ResourceAmount>`.
+- **MVP catalog:** `wood, stone, berries, meat, wheat, flour, bread` (+ `water, clay` on the UE/node side).
+- **Rules (DC-07):** **one resource = one id and a common inventory**; it is added via **data** (editing JSON/catalog), not scattered hardcode (RISK-04). Display name only in `CivLoc::Resource(id)` (i18n), never as a key.
+- **Consumers:** BUILD (costs), POP (consumption), LOG, UI (bar), WORLD (natural resources).
+- **Debt note:** the C++ core **does not parse** the JSON today (the catalog is hardcoded in `DefaultContent.cpp`); migrating to real data loading / Data Assets is an ECON task (RISK-04, backlog DT.27).
 
-## 5. Inventarios *(estable — modelo A)*
+## 5. Inventories *(stable — model A)*
 
-- **Dueño:** WS-ECON. **Fuente:** `simcore::Inventory` (`Inventory.h`); el **stock único** de la colonia es `World::colony()` (asentamiento 0, capacidad ilimitada). DC-06/DC-07.
-- **API `Inventory`:** `count(id)`, `total()`, `capacity()/setCapacity(c)` (`<0`=ilimitado), `freeSpace()`, `has(id,qty)`, `add(id,qty)→int añadido`, `remove(id,qty)→int quitado`, `items()→const map&`.
-- **Agregados de stock:** `World::resourceStock(id)` (colonia + inventarios de edificios), `foodStock()`, variantes por `settlementId`.
-- **Puente UE:** `GetColonyResource(id)` / `AddColonyResource(id,qty)` en `UCivSimSubsystem` (delegan en `world().colony()`).
-- **Reglas:** **una ubicación física por contenedor** (DC-06); **nada se consume sin entrega**; **no** se replica stock en otro sistema (ya se eliminó el `ColonyStock` duplicado — **no reintroducir**).
-- **Punto de contención (crítico para multi-agente):** hoy **tres** escritores UE mutan `world().colony()` vía `AddColonyResource` — `ACivUnit` (acarreo + consumo de hambre), `ACivBuildingActor` (producción v1), `ACivPlayerController` (costo de construcción). Al paralelizar, cada escritor pertenece a un workstream distinto (POP/BUILD/UI) → **todos escriben el mismo dato por el mismo contrato**; cambios en la semántica de ese contrato pasan por WS-TD.
-- **Consumidores:** BUILD, POP, UI, LOG.
+- **Owner:** WS-ECON. **Source:** `simcore::Inventory` (`Inventory.h`); the colony's **single stock** is `World::colony()` (settlement 0, unlimited capacity). DC-06/DC-07.
+- **`Inventory` API:** `count(id)`, `total()`, `capacity()/setCapacity(c)` (`<0`=unlimited), `freeSpace()`, `has(id,qty)`, `add(id,qty)→int added`, `remove(id,qty)→int removed`, `items()→const map&`.
+- **Stock aggregates:** `World::resourceStock(id)` (colony + building inventories), `foodStock()`, variants by `settlementId`.
+- **UE bridge:** `GetColonyResource(id)` / `AddColonyResource(id,qty)` in `UCivSimSubsystem` (delegate to `world().colony()`).
+- **Rules:** **one physical location per container** (DC-06); **nothing is consumed without delivery**; stock is **not** replicated in another system (the duplicate `ColonyStock` has already been removed — **do not reintroduce**).
+- **Contention point (critical for multi-agent):** today **three** UE writers mutate `world().colony()` via `AddColonyResource` — `ACivUnit` (hauling + hunger consumption), `ACivBuildingActor` (production v1), `ACivPlayerController` (construction cost). On parallelizing, each writer belongs to a different workstream (POP/BUILD/UI) → **they all write the same datum through the same contract**; changes to that contract's semantics go through WS-TD.
+- **Consumers:** BUILD, POP, UI, LOG.
 
-## 6. Edificios *(estable, dos caminos a reconciliar)*
+## 6. Buildings *(stable, two paths to reconcile)*
 
-- **Dueño:** WS-BUILD (estructura/estado) + WS-ECON (función productiva como dato). DC-03.
-- **Definición (`BuildingDef`, de ECON/BUILD en `GameDatabase`):** `{ id; displayName; category; workerSlots; recipeId; storageCapacity; housingCapacity; buildCost; requiredTechs; evolvesTo; evolveTechs; evolveCost; }`. `BuildingCategory{Housing,Extraction,PrimaryProduction,Transformation,Storage,Service}`.
-- **Instancia (`World::Building`):** `{ int id; BuildingDefId defId; int settlementId; double x,y; ProductionPriority priority; Inventory inventory; vector<int> workers; bool batchActive; double batchProgress; bool blocked; string blockReason; }`.
-- **API (en `Simulation`):** `canAfford(defId)`, `tryPlaceBuilding(defId,x,y,chargeCost)→int` (−1 si falta tech/material), `demolish(id,refund)`, `canEvolve(id)`, `evolveBuilding(id,chargeCost)`, `assignWorkers()`.
-- **Puente UE / DTO de lectura:** `FCivBuildingView{ Id, DefId, DisplayName, X, Y, Workers, Slots, bBlocked, BlockReason, Category, bCanEvolve }`; `UCivSimSubsystem::GetBuildingViews()`, `Demolish`, `EvolveBuilding`, `PlaceBuildingWithCost`.
-- **⚠️ Dos caminos de colocación a reconciliar (contrato a unificar — BUILD + UI + CORE):**
-  1. **Activo:** `ACivPlayerController::TryPlaceAtCursor` cobra madera/piedra y **spawnea `ACivBuildingActor` directo** (sin id de SimCore).
-  2. **Diseñado (dormido):** `Simulation::tryPlaceBuilding` + `CivViewManager::SyncBuildings()` reconcilia actores por `GetBuildingViews()` — **comentado** hoy.
-  La construcción "real" (obra con progreso, backlog P1.9) exige unificar a (2). **Mientras tanto, el contrato de colocación lo define BUILD; UI solo pide `PlaceBuildingWithCost`.**
-- **Reglas:** colocar descuenta del **stock único**; no se coloca sin recursos ni fuera de terreno válido (§8/§9); evolución por tecnología (habilita, no obliga — DC-09).
-- **Consumidores:** ECON (recetas/almacén), POP (vivienda/puestos), UI (menú/panel), ART (mesh).
+- **Owner:** WS-BUILD (structure/state) + WS-ECON (production function as data). DC-03.
+- **Definition (`BuildingDef`, from ECON/BUILD in `GameDatabase`):** `{ id; displayName; category; workerSlots; recipeId; storageCapacity; housingCapacity; buildCost; requiredTechs; evolvesTo; evolveTechs; evolveCost; }`. `BuildingCategory{Housing,Extraction,PrimaryProduction,Transformation,Storage,Service}`.
+- **Instance (`World::Building`):** `{ int id; BuildingDefId defId; int settlementId; double x,y; ProductionPriority priority; Inventory inventory; vector<int> workers; bool batchActive; double batchProgress; bool blocked; string blockReason; }`.
+- **API (in `Simulation`):** `canAfford(defId)`, `tryPlaceBuilding(defId,x,y,chargeCost)→int` (−1 if tech/material is missing), `demolish(id,refund)`, `canEvolve(id)`, `evolveBuilding(id,chargeCost)`, `assignWorkers()`.
+- **UE bridge / read DTO:** `FCivBuildingView{ Id, DefId, DisplayName, X, Y, Workers, Slots, bBlocked, BlockReason, Category, bCanEvolve }`; `UCivSimSubsystem::GetBuildingViews()`, `Demolish`, `EvolveBuilding`, `PlaceBuildingWithCost`.
+- **⚠️ Two placement paths to reconcile (contract to unify — BUILD + UI + CORE):**
+  1. **Active:** `ACivPlayerController::TryPlaceAtCursor` charges wood/stone and **spawns `ACivBuildingActor` directly** (no SimCore id).
+  2. **Designed (dormant):** `Simulation::tryPlaceBuilding` + `CivViewManager::SyncBuildings()` reconciles actors via `GetBuildingViews()` — **commented out** today.
+  "Real" construction (work with progress, backlog P1.9) requires unifying to (2). **In the meantime, the placement contract is defined by BUILD; UI only requests `PlaceBuildingWithCost`.**
+- **Rules:** placing deducts from the **single stock**; it cannot be placed without resources or outside valid terrain (§8/§9); evolution by technology (enables, does not force — DC-09).
+- **Consumers:** ECON (recipes/storehouse), POP (housing/slots), UI (menu/panel), ART (mesh).
 
-## 7. Población *(parcial — Task F en curso)*
+## 7. Population *(partial — Task F in progress)*
 
-- **Dueño:** WS-POP. **Fuente:** `World::Citizen` + pasos de población en `Simulation`. DC-04, DR-10.
+- **Owner:** WS-POP. **Source:** `World::Citizen` + population steps in `Simulation`. DC-04, DR-10.
 - **`Citizen`:** `{ int id; string name; int settlementId; double ageDays; string profession; int workBuildingId; int homeBuildingId; double hunger; double health; bool alive; }`.
 - **API:** `World::addCitizen(name,ageDays,settlementId)→int`, `citizens()`, `population()`, `employed()`, `housingCapacity()`; `Simulation::assignWorkers()`.
-- **Puente UE:** `GetAliveCitizenIds()`, `GetCitizenName/GetCitizenAgeYears/GetCitizenProfession(id)`, `KillCitizen(id)`. Cada `ACivUnit` se mapea **1:1** a un `Citizen` por `CitizenId`.
-- **⚠️ Autoridad dividida (Modelo A, decisión registrada):** hoy la **capa UE (`ACivUnit`) gobierna hambre/salud/muerte** y SimCore corre con `nutritionPerCitizenPerDay=0` para no doble-descontar. **Task F (próximos slices)** invierte esto: que **SimCore** conduzca hambre/salud/envejecimiento/familias y la UE lo refleje. Ese cambio es de contrato → coordinado WS-POP + WS-CORE + WS-TD; no lo hace UI unilateralmente.
-- **A definir (WS-POP):** familias/hogares/linaje (familia≠hogar), natalidad/mortalidad, necesidades múltiples, clases, transición individual↔agregado (DR-10).
-- **Reglas:** la población agregada debe ser **coherente** con el total; el consumo pasa por el inventario único (sin doble descuento); identidad persiste en save/load.
-- **Consumidores:** ECON (trabajo/consumo), UI (paneles), Cultura/Religión (futuro).
+- **UE bridge:** `GetAliveCitizenIds()`, `GetCitizenName/GetCitizenAgeYears/GetCitizenProfession(id)`, `KillCitizen(id)`. Each `ACivUnit` maps **1:1** to a `Citizen` by `CitizenId`.
+- **⚠️ Split authority (Model A, recorded decision):** today the **UE layer (`ACivUnit`) governs hunger/health/death** and SimCore runs with `nutritionPerCitizenPerDay=0` so as not to double-deduct. **Task F (upcoming slices)** inverts this: have **SimCore** drive hunger/health/aging/families and UE reflect it. That change is a contract one → coordinated WS-POP + WS-CORE + WS-TD; UI does not do it unilaterally.
+- **To be defined (WS-POP):** families/households/lineage (family≠household), birth rate/mortality, multiple needs, classes, individual↔aggregate transition (DR-10).
+- **Rules:** the aggregate population must be **coherent** with the total; consumption goes through the single inventory (no double deduction); identity persists across save/load.
+- **Consumers:** ECON (labor/consumption), UI (panels), Culture/Religion (future).
 
-## 8. Consultas de terreno *(parcial)*
+## 8. Terrain queries *(partial)*
 
-- **Dueño:** WS-WORLD. **Fuente:** `ACivTerrain` (`View/CivTerrain.{h,cpp}`). DR-02, C-02/C-03.
-- **Hoy:** `HeightAt(X,Y)→float` (ruido determinista suma-de-senos, centro plano `FlatRadius`, escala `HeightScale`); plano de agua a `WaterLevel`; color de vértice grass→rock por altura (bioma crudo); `ApplySeason(0..3)` re-tiñe terreno/hojas/agua. `Resolution=96`, `Extent=16000`.
-- **⚠️ Realidad a tener en cuenta:** actores (units/animales/nodos) hacen *ground-snap* por **line trace**, **no** llaman `HeightAt`. El contrato de "terrain query" hoy es de uso interno; exponerlo como servicio (altura/caminable/bioma por punto) es trabajo de WORLD.
-- **A definir (WS-WORLD):** `IsWalkable(x,y)`, `BiomeAt(x,y)`, semilla configurable expuesta en UI, distribución de recursos por geología. Sin esto, BUILD valida colocación por reglas propias/trace.
-- **Reglas:** misma semilla ⇒ mismo mundo (RISK-13); el índice de estación lo **empuja** `CivViewManager` (WORLD no llama al reloj directo, lo recibe).
-- **Consumidores:** BUILD (colocación), ECON/PROD (recursos naturales), UI (minimapa), ART (texturas por bioma).
+- **Owner:** WS-WORLD. **Source:** `ACivTerrain` (`View/CivTerrain.{h,cpp}`). DR-02, C-02/C-03.
+- **Today:** `HeightAt(X,Y)→float` (deterministic sum-of-sines noise, flat center `FlatRadius`, scale `HeightScale`); water plane at `WaterLevel`; vertex color grass→rock by height (raw biome); `ApplySeason(0..3)` re-tints terrain/leaves/water. `Resolution=96`, `Extent=16000`.
+- **⚠️ Reality to keep in mind:** actors (units/animals/nodes) *ground-snap* via **line trace**, they do **not** call `HeightAt`. The "terrain query" contract is internal-use today; exposing it as a service (height/walkable/biome per point) is WORLD's work.
+- **To be defined (WS-WORLD):** `IsWalkable(x,y)`, `BiomeAt(x,y)`, a configurable seed exposed in the UI, resource distribution by geology. Without this, BUILD validates placement by its own rules/trace.
+- **Rules:** same seed ⇒ same world (RISK-13); the season index is **pushed** by `CivViewManager` (WORLD does not call the clock directly, it receives it).
+- **Consumers:** BUILD (placement), ECON/PROD (natural resources), UI (minimap), ART (textures by biome).
 
-## 9. Colocación de construcción *(a unificar — ver §6)*
+## 9. Construction placement *(to be unified — see §6)*
 
-- **Dueño:** WS-BUILD (reglas de colocación) con WS-WORLD (validez sobre terreno) y WS-UI (gesto del jugador).
-- **Entradas:** `defId`, posición `(x,y)`/cursor, rotación, confirmación. **Salidas:** `buildingId` nuevo (o fallo con motivo), feedback válido/ inválido, costo descontado.
-- **Contrato objetivo:** `UI` captura el gesto → pide `PlaceBuildingWithCost(defId, world-pos)` → `BUILD` valida (recursos vía §5, terreno vía §8, tech vía §6) y devuelve `buildingId`/motivo → `CivViewManager::SyncBuildings` materializa el `ACivBuildingActor` (reactivar el *sync* dormido) → `ART` provee el mesh por categoría/época.
-- **Reglas:** un solo camino de colocación (eliminar el *spawn* directo duplicado al cerrar la obra real); no colocar sin recursos/terreno/tech.
-- **Consumidores:** UI, ART, ECON.
+- **Owner:** WS-BUILD (placement rules) with WS-WORLD (validity over terrain) and WS-UI (player gesture).
+- **Inputs:** `defId`, position `(x,y)`/cursor, rotation, confirmation. **Outputs:** new `buildingId` (or failure with reason), valid/invalid feedback, deducted cost.
+- **Target contract:** `UI` captures the gesture → requests `PlaceBuildingWithCost(defId, world-pos)` → `BUILD` validates (resources via §5, terrain via §8, tech via §6) and returns `buildingId`/reason → `CivViewManager::SyncBuildings` materializes the `ACivBuildingActor` (reactivate the dormant *sync*) → `ART` provides the mesh by category/era.
+- **Rules:** a single placement path (remove the duplicate direct *spawn* when closing real construction work); do not place without resources/terrain/tech.
+- **Consumers:** UI, ART, ECON.
 
-## 10. Acceso a datos desde la UI *(estable — es el subsystem)*
+## 10. UI access to state *(stable — it is the subsystem)*
 
-- **Dueño del puente:** WS-CORE (`UCivSimSubsystem`). **Consumidor principal:** WS-UI. DC-12.
-- **Contrato:** la UI **lee** estado llamando `GI->GetSubsystem<UCivSimSubsystem>()` y nunca escribe reglas de simulación. Superficie de lectura actual (UFUNCTION): `GetPopulation`, `GetEmployed`, `GetColonyResource(id)`, `GetDateString`, `GetSeason/GetSeasonName`, `IsPaused`, `GetDayFraction`, `GetBuildingViews()`, `GetCitizenName/AgeYears/Profession(id)`, `availableTechs`/research reads. Comandos permitidos a la UI: `Pause/Resume/SetSpeed/AdvanceDays`, `PlaceBuildingWithCost`, `Demolish`, `EvolveBuilding`, `SaveGame/LoadGame`.
-- **Ruta real de HUD:** `UCivMainHUD` refresca cada 0.2 s (`RefreshData()`); `ACivHUD` (Canvas) y el debug de `CivViewManager` son rutas secundarias.
-- **⚠️ Datos mock a sustituir (UI "Stage 4"):** en `UCivMainHUD`, *Housing/Wellbeing/Weather* y las tarjetas de notificación son **placeholders** marcados `*`. Conectarlos a estado real requiere getters nuevos (pedidos a los dueños) y el puente de eventos (§2), no cálculo en la UI.
-- **Reglas:** si la UI necesita un dato que no existe en el subsystem, **se agrega un getter del lado del dueño** (CORE expone, el dominio provee), no se calcula estado autoritativo en la UI (RISK-01).
-- **Consumidores:** WS-UI (y herramientas de WS-QA para debug).
+- **Bridge owner:** WS-CORE (`UCivSimSubsystem`). **Main consumer:** WS-UI. DC-12.
+- **Contract:** the UI **reads** state by calling `GI->GetSubsystem<UCivSimSubsystem>()` and never writes simulation rules. Current read surface (UFUNCTION): `GetPopulation`, `GetEmployed`, `GetColonyResource(id)`, `GetDateString`, `GetSeason/GetSeasonName`, `IsPaused`, `GetDayFraction`, `GetBuildingViews()`, `GetCitizenName/AgeYears/Profession(id)`, `availableTechs`/research reads. Commands allowed to the UI: `Pause/Resume/SetSpeed/AdvanceDays`, `PlaceBuildingWithCost`, `Demolish`, `EvolveBuilding`, `SaveGame/LoadGame`.
+- **Actual HUD path:** `UCivMainHUD` refreshes every 0.2 s (`RefreshData()`); `ACivHUD` (Canvas) and the `CivViewManager` debug are secondary paths.
+- **⚠️ Mock data to replace (UI "Stage 4"):** in `UCivMainHUD`, *Housing/Wellbeing/Weather* and the notification cards are **placeholders** marked `*`. Connecting them to real state requires new getters (requested from the owners) and the event bridge (§2), not computation in the UI.
+- **Rules:** if the UI needs a datum that does not exist in the subsystem, **a getter is added on the owner's side** (CORE exposes, the domain provides), authoritative state is not computed in the UI (RISK-01).
+- **Consumers:** WS-UI (and WS-QA tools for debugging).
 
 ---
 
-## Resumen: dueño → consumidores por contrato
+## Summary: owner → consumers per contract
 
-| # | Contrato | Dueño | Consumidores | Estado |
+| # | Contract | Owner | Consumers | Status |
 |---|---|---|---|---|
-| 1 | Tiempo de simulación | WS-CORE | todos | estable |
-| 2 | Eventos | WS-CORE | todos | estable (puente UE a definir) |
-| 3 | Identidad de entidades | WS-CORE (+POP) | todos | parcial |
-| 4 | Definiciones de recursos | WS-ECON | BUILD, POP, UI, WORLD | estable |
-| 5 | Inventarios (stock único) | WS-ECON | BUILD, POP, UI | estable |
-| 6 | Edificios | WS-BUILD (+ECON) | ECON, POP, UI, ART | estable (2 caminos) |
-| 7 | Población | WS-POP | ECON, UI | parcial (Task F) |
-| 8 | Consultas de terreno | WS-WORLD | BUILD, ECON, UI, ART | parcial |
-| 9 | Colocación de construcción | WS-BUILD (+WORLD/UI) | UI, ART, ECON | a unificar |
-| 10 | Acceso UI al estado | WS-CORE (puente) | UI, QA | estable |
+| 1 | Simulation time | WS-CORE | all | stable |
+| 2 | Events | WS-CORE | all | stable (UE bridge to be defined) |
+| 3 | Entity identity | WS-CORE (+POP) | all | partial |
+| 4 | Resource definitions | WS-ECON | BUILD, POP, UI, WORLD | stable |
+| 5 | Inventories (single stock) | WS-ECON | BUILD, POP, UI | stable |
+| 6 | Buildings | WS-BUILD (+ECON) | ECON, POP, UI, ART | stable (2 paths) |
+| 7 | Population | WS-POP | ECON, UI | partial (Task F) |
+| 8 | Terrain queries | WS-WORLD | BUILD, ECON, UI, ART | partial |
+| 9 | Construction placement | WS-BUILD (+WORLD/UI) | UI, ART, ECON | to be unified |
+| 10 | UI access to state | WS-CORE (bridge) | UI, QA | stable |
 
-**Regla transversal:** cualquier cambio **incompatible** en estas firmas o semánticas se propone al Director Técnico, se versiona aquí y se avisa a los consumidores antes de integrar.
+**Cross-cutting rule:** any **incompatible** change in these signatures or semantics is proposed to the Technical Director, versioned here, and announced to the consumers before integrating.

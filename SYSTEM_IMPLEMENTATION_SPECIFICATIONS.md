@@ -1,188 +1,188 @@
 # SYSTEM_IMPLEMENTATION_SPECIFICATIONS — Civilization Evolutions
 
-> **Phase 2 — Especificaciones de "preparación para implementar", por sistema.** Sin código. Objetivo: que cada tarea futura sea fácil de definir y delegar. Campos por sistema: Propósito · Alcance · Responsabilidades · Entradas · Salidas · Entidades compartidas · Dependencias · Eventos · Reglas de negocio · MVP · Extensiones futuras · Aceptación.
-> Fuentes: GDD de cada dominio ([DOCUMENTATION_INDEX.md](DOCUMENTATION_INDEX.md)). Entidades: [SHARED_DATA_MODEL.md](SHARED_DATA_MODEL.md). Orden/dep.: [SYSTEM_DEPENDENCY_MAP.md](SYSTEM_DEPENDENCY_MAP.md). Versión 1.0 · conceptual.
+> **Phase 2 — "Readiness-to-implement" specifications, per system.** No code. Goal: make each future task easy to define and delegate. Fields per system: Purpose · Scope · Responsibilities · Inputs · Outputs · Shared entities · Dependencies · Events · Business rules · MVP · Future extensions · Acceptance.
+> Sources: the GDD of each domain ([DOCUMENTATION_INDEX.md](DOCUMENTATION_INDEX.md)). Entities: [SHARED_DATA_MODEL.md](SHARED_DATA_MODEL.md). Order/dep.: [SYSTEM_DEPENDENCY_MAP.md](SYSTEM_DEPENDENCY_MAP.md). Version 1.0 · conceptual.
 
 ---
 
-# Parte A — Sistemas fundacionales
+# Part A — Foundational systems
 
-## 1. Tiempo y Simulación
-- **Propósito:** reloj global único + ciclos internos de distinta frecuencia; coordinar la simulación.
-- **Alcance:** fecha/calendario, velocidades (pausa/x1/x2/x3/x5), estaciones, cadencias; NO reglas de dominio.
-- **Responsabilidades:** avanzar el tiempo independiente del FPS; emitir ticks/estaciones/año; permitir pausa/aceleración sin alterar resultados.
-- **Entradas:** configuración de escala/velocidad; condiciones estacionales por región (de Geografía).
-- **Salidas:** eventos de tiempo (TickDía/EstaciónCambió/AñoCambió), fecha actual.
-- **Entidades compartidas:** World (fecha).
-- **Dependencias:** ninguna (Nivel 0).
-- **Eventos:** produce `SeasonChanged`, `YearChanged`, ticks periódicos; reacciona a pausa/velocidad.
-- **Reglas:** la aceleración no cambia resultados; los sistemas no usan `Tick()` para todo; estados se conservan entre actualizaciones.
-- **MVP:** pausa + velocidades + día/mes/año + estaciones (ya existe en SimCore/CivSimSubsystem).
-- **Futuro:** escala configurable fina; estaciones por región; aceleración automática.
-- **Aceptación:** el reloj avanza sin depender del FPS; pausar/acelerar no altera el estado resultante.
+## 1. Time and Simulation
+- **Purpose:** single global clock + internal cycles of different frequency; coordinate the simulation.
+- **Scope:** date/calendar, speeds (pause/x1/x2/x3/x5), seasons, cadences; NOT domain rules.
+- **Responsibilities:** advance time independently of the FPS; emit ticks/seasons/year; allow pause/acceleration without altering results.
+- **Inputs:** scale/speed configuration; seasonal conditions per region (from Geography).
+- **Outputs:** time events (DayTick/SeasonChanged/YearChanged), current date.
+- **Shared entities:** World (date).
+- **Dependencies:** none (Level 0).
+- **Events:** produces `SeasonChanged`, `YearChanged`, periodic ticks; reacts to pause/speed.
+- **Rules:** acceleration does not change results; systems do not use `Tick()` for everything; states are preserved between updates.
+- **MVP:** pause + speeds + day/month/year + seasons (already exists in SimCore/CivSimSubsystem).
+- **Future:** fine configurable scale; seasons per region; automatic acceleration.
+- **Acceptance:** the clock advances without depending on the FPS; pausing/accelerating does not alter the resulting state.
 
-## 2. Generación del Mundo
-- **Propósito:** crear el estado inicial del mundo (procedural, reproducible) y el editor.
-- **Alcance:** topografía, hidrología, biomas, suelos, recursos, ubicación inicial de civilizaciones; presets; semilla.
-- **Responsabilidades:** generar un mundo determinista a partir de (semilla + config); exponer el estado a Geografía.
-- **Entradas:** semilla, preset, parámetros (tamaño, tierra/agua, relieve, clima, recursos).
-- **Salidas:** Terreno/Regiones poblados, recursos naturales ubicados.
-- **Entidades compartidas:** World, Terreno, Recurso natural.
-- **Dependencias:** Geografía (modelo climático), Recursos (catálogo).
-- **Eventos:** `WorldGenerated`.
-- **Reglas:** mismo seed+config ⇒ mismo mundo; "plano" es preset, no default (DR-02).
-- **MVP:** terreno con relieve, agua, recursos y zona plana central (parte existe en CivTerrain).
-- **Futuro:** tipos de mapa, biomas variados, editor, mundos grandes por chunks.
-- **Aceptación:** genera y muestra un mundo básico reproducible por semilla.
+## 2. World Generation
+- **Purpose:** create the initial state of the world (procedural, reproducible) and the editor.
+- **Scope:** topography, hydrology, biomes, soils, resources, initial location of civilizations; presets; seed.
+- **Responsibilities:** generate a deterministic world from (seed + config); expose the state to Geography.
+- **Inputs:** seed, preset, parameters (size, land/water, relief, climate, resources).
+- **Outputs:** populated Terrain/Regions, located natural resources.
+- **Shared entities:** World, Terrain, Natural resource.
+- **Dependencies:** Geography (climate model), Resources (catalog).
+- **Events:** `WorldGenerated`.
+- **Rules:** same seed+config ⇒ same world; "flat" is a preset, not a default (DR-02).
+- **MVP:** terrain with relief, water, resources and a central flat zone (part exists in CivTerrain).
+- **Future:** map types, varied biomes, editor, large worlds via chunks.
+- **Acceptance:** generates and shows a basic world reproducible by seed.
 
-## 3. Recursos y Materiales
-- **Propósito:** catálogo único de bienes con identidad, unidades y reglas compartidas.
-- **Alcance:** definición de recursos (id, categoría, función económica, calidad, almacenamiento, deterioro, unidad, moneda).
-- **Responsabilidades:** ser la **única** fuente de identidad de recursos; proveer inventarios.
-- **Entradas:** definiciones data-driven.
-- **Salidas:** catálogo + reglas consumidas por todos los económicos.
-- **Entidades compartidas:** Recurso/Material, Inventario, Recurso natural (identidad).
-- **Dependencias:** ninguna (Nivel 0); Geografía indica dónde hay recursos.
-- **Eventos:** —.
-- **Reglas:** un id por bien; sin copias por sistema (DC-07); moneda universal; unidades abstractas consistentes.
-- **MVP:** subconjunto inicial (wood, stone, berries, meat, wheat, flour, bread, +water) con ids estables (existe en SimCore).
-- **Futuro:** calidad/deterioro, recursos estratégicos, catálogo por período.
-- **Aceptación:** todos los sistemas referencian el mismo catálogo por id; no hay recursos duplicados.
+## 3. Resources and Materials
+- **Purpose:** single catalog of goods with identity, units and shared rules.
+- **Scope:** resource definition (id, category, economic function, quality, storage, decay, unit, currency).
+- **Responsibilities:** be the **single** source of resource identity; provide inventories.
+- **Inputs:** data-driven definitions.
+- **Outputs:** catalog + rules consumed by all the economic ones.
+- **Shared entities:** Resource/Material, Inventory, Natural resource (identity).
+- **Dependencies:** none (Level 0); Geography indicates where resources are.
+- **Events:** —.
+- **Rules:** one id per good; no copies per system (DC-07); universal currency; consistent abstract units.
+- **MVP:** initial subset (wood, stone, berries, meat, wheat, flour, bread, +water) with stable ids (exists in SimCore).
+- **Future:** quality/decay, strategic resources, catalog per period.
+- **Acceptance:** all systems reference the same catalog by id; there are no duplicated resources.
 
-## 4. Entidades y Relaciones
-- **Propósito:** base compartida de identidad y relaciones persistentes.
-- **Alcance:** habitantes, familias, edificios, asentamientos, regiones, organizaciones; relaciones; historia persistente.
-- **Responsabilidades:** identificadores estables; relaciones múltiples con memoria; evolución/fusión/división sin perder identidad.
-- **Entradas:** altas/bajas/cambios de los sistemas de dominio.
-- **Salidas:** consultas de identidad/relaciones para todos.
-- **Entidades compartidas:** todas.
-- **Dependencias:** ninguna (Nivel 0).
-- **Eventos:** `EntityCreated/Changed/Removed/Merged`.
-- **Reglas:** no duplicar entidades; identidad independiente del nivel de simulación (DR-10); propiedad en capas (DR-07).
-- **MVP:** identidad básica para edificios/asentamientos/individuos (hoy implícita en SimCore/UE — **unificar**, RISK-02).
-- **Futuro:** relaciones sociales ricas, organizaciones, biografías.
-- **Aceptación:** una entidad conserva id e historia al evolucionar/agregarse.
+## 4. Entities and Relationships
+- **Purpose:** shared base of persistent identity and relationships.
+- **Scope:** inhabitants, families, buildings, settlements, regions, organizations; relationships; persistent history.
+- **Responsibilities:** stable identifiers; multiple relationships with memory; evolution/merge/split without losing identity.
+- **Inputs:** additions/removals/changes from the domain systems.
+- **Outputs:** identity/relationship queries for all.
+- **Shared entities:** all.
+- **Dependencies:** none (Level 0).
+- **Events:** `EntityCreated/Changed/Removed/Merged`.
+- **Rules:** do not duplicate entities; identity independent of the simulation level (DR-10); layered property (DR-07).
+- **MVP:** basic identity for buildings/settlements/individuals (today implicit in SimCore/UE — **unify**, RISK-02).
+- **Future:** rich social relationships, organizations, biographies.
+- **Acceptance:** an entity keeps its id and history as it evolves/aggregates.
 
-## 5. Construcción y Arquitectura
-- **Propósito:** construir y transformar físicamente los asentamientos.
-- **Alcance:** colocación (libre + cuadrícula opcional), obra con materiales/trabajadores, evolución, patrimonio, infraestructura.
-- **Responsabilidades:** validar y ejecutar obra; gestionar estado/condición; soportar evolución elegida por el jugador.
-- **Entradas:** materiales (Recursos), mano de obra (Población), tecnología (habilitación).
-- **Salidas:** Edificios/infraestructura; demanda de materiales/trabajo.
-- **Entidades compartidas:** Edificio, Asentamiento, Inventario.
-- **Dependencias:** Entidades, Recursos, Geografía; Producción, Tecnología.
-- **Eventos:** `BuildingConstructed/Upgraded/Abandoned`.
-- **Reglas:** si faltan materiales, la obra se detiene; evolución **no** automática; lo viejo coexiste.
-- **MVP:** colocación con costo + validación + selección + evolución simple (existe parcial en SimCore + CivBuildingActor/menú UE).
-- **Futuro:** construcción libre real, materiales por época, ruinas, patrimonio, urbanismo orgánico.
-- **Aceptación:** el jugador coloca/inspecciona edificios y la obra respeta costos.
+## 5. Construction and Architecture
+- **Purpose:** physically build and transform the settlements.
+- **Scope:** placement (free + optional grid), construction work with materials/workers, evolution, heritage, infrastructure.
+- **Responsibilities:** validate and execute construction work; manage state/condition; support player-chosen evolution.
+- **Inputs:** materials (Resources), labor (Population), technology (enablement).
+- **Outputs:** Buildings/infrastructure; demand for materials/labor.
+- **Shared entities:** Building, Settlement, Inventory.
+- **Dependencies:** Entities, Resources, Geography; Production, Technology.
+- **Events:** `BuildingConstructed/Upgraded/Abandoned`.
+- **Rules:** if materials are missing, the construction work stops; evolution is **not** automatic; the old coexists.
+- **MVP:** placement with cost + validation + selection + simple evolution (exists partially in SimCore + CivBuildingActor/UE menu).
+- **Future:** real free construction, materials per era, ruins, heritage, organic urban planning.
+- **Acceptance:** the player places/inspects buildings and the construction work respects costs.
 
-## 6. Población y Sociedad
-- **Propósito:** dinámica demográfica y social de los habitantes.
-- **Alcance:** individuos/familias/clases, necesidades, salud, educación, migración, felicidad (según escala).
-- **Responsabilidades:** nacimiento/envejecimiento/muerte; necesidades y su satisfacción; clases/representantes; agregación.
-- **Entradas:** vivienda (Construcción), alimentos/consumo (Economía), empleo (Producción), condiciones (Geografía).
-- **Salidas:** fuerza de trabajo, consumo, estado social, felicidad.
-- **Entidades compartidas:** Individuo, Familia/Hogar, Organización.
-- **Dependencias:** Tiempo, Entidades, Construcción.
-- **Eventos:** `PopulationChanged`, `Migration`, `Epidemic`.
-- **Reglas:** modelo híbrido; el agregado conserva coherencia con el total; protagonismo individual decreciente con la escala.
-- **MVP:** población (individual chica); necesidades básicas; crecimiento simple. **Divergencia a resolver:** unificar el agregado de SimCore con los settlers UE (RISK-02, DR-10).
-- **Futuro:** familias/linajes, clases, salud/educación, migración, modelos matemáticos.
-- **Aceptación:** una colonia crece/consume de forma coherente a lo largo de años.
+## 6. Population and Society
+- **Purpose:** demographic and social dynamics of the inhabitants.
+- **Scope:** individuals/families/classes, needs, health, education, migration, happiness (according to scale).
+- **Responsibilities:** birth/aging/death; needs and their satisfaction; classes/representatives; aggregation.
+- **Inputs:** housing (Construction), food/consumption (Economy), employment (Production), conditions (Geography).
+- **Outputs:** workforce, consumption, social state, happiness.
+- **Shared entities:** Individual, Family/Household, Organization.
+- **Dependencies:** Time, Entities, Construction.
+- **Events:** `PopulationChanged`, `Migration`, `Epidemic`.
+- **Rules:** hybrid model; the aggregate stays coherent with the total; individual prominence decreasing with scale.
+- **MVP:** population (small individual); basic needs; simple growth. **Divergence to resolve:** unify the SimCore aggregate with the UE settlers (RISK-02, DR-10).
+- **Future:** families/lineages, classes, health/education, migration, mathematical models.
+- **Acceptance:** a colony grows/consumes coherently over years.
 
-## 7. Producción y Trabajo
-- **Propósito:** transformar recursos en bienes/servicios y organizar el trabajo.
-- **Alcance:** edificios productivos, recetas, productividad, empleo, evolución de edificios.
-- **Responsabilidades:** ejecutar recetas (consumir insumos/producir salidas); asignar trabajadores; adaptar producción a prioridades.
-- **Entradas:** insumos (Recursos/Inventario), trabajadores (Población), recetas, tecnología.
-- **Salidas:** bienes producidos; demanda de insumos/trabajo.
-- **Entidades compartidas:** Edificio, Receta, Profesión, Inventario.
-- **Dependencias:** Recursos, Población, Construcción, Tecnología; Logística.
-- **Eventos:** `ResourceProduced/Consumed`, `ProductionBlocked`.
-- **Reglas:** no produce sin insumos; asignación automática con intervención; evolución visible.
-- **MVP:** cadena trigo→molino→harina→panadería→pan + asignación automática (existe en SimCore). (Producción de edificios UE a unificar, RISK-01.)
-- **Futuro:** habilidades/calidad/salarios, módulos, mantenimiento.
-- **Aceptación:** una cadena productiva funciona consumiendo y generando recursos.
+## 7. Production and Labor
+- **Purpose:** transform resources into goods/services and organize labor.
+- **Scope:** productive buildings, recipes, productivity, employment, building evolution.
+- **Responsibilities:** execute recipes (consume inputs/produce outputs); assign workers; adapt production to priorities.
+- **Inputs:** inputs (Resources/Inventory), workers (Population), recipes, technology.
+- **Outputs:** produced goods; demand for inputs/labor.
+- **Shared entities:** Building, Recipe, Profession, Inventory.
+- **Dependencies:** Resources, Population, Construction, Technology; Logistics.
+- **Events:** `ResourceProduced/Consumed`, `ProductionBlocked`.
+- **Rules:** does not produce without inputs; automatic assignment with intervention; visible evolution.
+- **MVP:** chain wheat→mill→flour→bakery→bread + automatic assignment (exists in SimCore). (UE building production to be unified, RISK-01.)
+- **Future:** skills/quality/wages, modules, maintenance.
+- **Acceptance:** a production chain works, consuming and generating resources.
 
-## 8. Almacenamiento y Logística
-- **Propósito:** mover y almacenar recursos físicamente.
-- **Alcance:** inventarios por ubicación, transporte simplificado, rutas, infraestructura, comercio (niveles).
-- **Responsabilidades:** trasladar recursos entre inventarios; impedir consumo sin entrega.
-- **Entradas:** inventarios de origen/destino, geografía/distancia, infraestructura.
-- **Salidas:** entregas, costos/tiempos (futuro), precios regionales.
-- **Entidades compartidas:** Inventario, Ruta, Recurso.
-- **Dependencias:** Recursos, Geografía; Producción, Economía.
-- **Eventos:** `TransportRequested/Delivered`.
-- **Reglas:** nada se consume en destino sin entrega real (DC-06); transporte físico desde el inicio (simplificado).
-- **MVP:** transferencia física simplificada (existe en SimCore). Acarreo de settlers al town hall (UE, a unificar).
-- **Futuro:** rutas/vehículos/capacidad/costos, comercio marítimo, congestión.
-- **Aceptación:** un recurso producido solo se consume en destino tras ser entregado.
+## 8. Storage and Logistics
+- **Purpose:** physically move and store resources.
+- **Scope:** inventories per location, simplified transport, routes, infrastructure, trade (levels).
+- **Responsibilities:** move resources between inventories; prevent consumption without delivery.
+- **Inputs:** source/destination inventories, geography/distance, infrastructure.
+- **Outputs:** deliveries, costs/times (future), regional prices.
+- **Shared entities:** Inventory, Route, Resource.
+- **Dependencies:** Resources, Geography; Production, Economy.
+- **Events:** `TransportRequested/Delivered`.
+- **Rules:** nothing is consumed at the destination without a real delivery (DC-06); physical transport from the start (simplified).
+- **MVP:** simplified physical transfer (exists in SimCore). Hauling of settlers to the town hall (UE, to be unified).
+- **Future:** routes/vehicles/capacity/costs, maritime trade, congestion.
+- **Acceptance:** a produced resource is only consumed at the destination after being delivered.
 
-## 9. Economía
-- **Propósito:** propiedad, consumo, mercados, moneda, impuestos.
-- **Alcance:** stocks económicos, precios/oferta/demanda, propiedad mixta, tesorería, impuestos, comercio.
-- **Responsabilidades:** marco económico común; precios; consumo; fiscalidad (futuro).
-- **Entradas:** producción, trabajo, población (demanda), logística (costos).
-- **Salidas:** precios, tesorería, señales de prioridad.
-- **Entidades compartidas:** Inventario, Recurso, Civilización (tesorería), Organización.
-- **Dependencias:** Recursos, Población, Producción, Logística.
-- **Eventos:** `PriceChanged`, `TradeCompleted`.
-- **Reglas:** propiedad mixta (DC-05); complejidad configurable; mismo sistema económico en los 3 niveles de comercio.
-- **MVP:** stocks + consumo + comercio entre asentamientos simple (existe parcial en SimCore). Sin mercados/precios aún.
-- **Futuro:** mercados con precios dinámicos, moneda operativa, impuestos, finanzas.
-- **Aceptación:** consumo y comercio básicos coherentes; sin recursos "mágicos".
+## 9. Economy
+- **Purpose:** property, consumption, markets, currency, taxes.
+- **Scope:** economic stocks, prices/supply/demand, mixed property, treasury, taxes, trade.
+- **Responsibilities:** a common economic framework; prices; consumption; taxation (future).
+- **Inputs:** production, labor, population (demand), logistics (costs).
+- **Outputs:** prices, treasury, priority signals.
+- **Shared entities:** Inventory, Resource, Civilization (treasury), Organization.
+- **Dependencies:** Resources, Population, Production, Logistics.
+- **Events:** `PriceChanged`, `TradeCompleted`.
+- **Rules:** mixed property (DC-05); configurable complexity; the same economic system in the 3 trade levels.
+- **MVP:** stocks + consumption + simple trade between settlements (exists partially in SimCore). No markets/prices yet.
+- **Future:** markets with dynamic prices, operational currency, taxes, finance.
+- **Acceptance:** basic consumption and trade are coherent; no "magic" resources.
 
-## 10. Tecnología, Ciencia e Innovación
-- **Propósito:** conocimiento que habilita métodos/capacidades por condiciones.
-- **Alcance:** disciplinas, descubrimientos, transmisión, difusión, obsolescencia; marco de evolución compartido.
-- **Responsabilidades:** habilitar (no adoptar); publicar descubrimientos al marco común.
-- **Entradas:** condiciones (conocimiento+recursos+contexto), financiación (Economía), intercambio (Diplomacia).
-- **Salidas:** habilitaciones para Producción/Construcción/Logística/Militar; eventos de descubrimiento.
-- **Entidades compartidas:** Tecnología/Conocimiento (estado por civilización).
-- **Dependencias:** Tiempo, Economía.
-- **Eventos:** `TechnologyDiscovered`, `TechnologyDiffused`.
-- **Reglas:** por condiciones, no por año (DC-09); disponibilidad ≠ adopción (DR-11); pérdida excepcional.
-- **MVP:** árbol/condiciones simples + evolución de edificios (existe en SimCore). Migrar a marco compartido (RISK-05).
-- **Futuro:** disciplinas, personajes, difusión, obsolescencia con coexistencia.
-- **Aceptación:** un descubrimiento habilita efectos en varios sistemas sin que estos conozcan su implementación.
+## 10. Technology, Science and Innovation
+- **Purpose:** knowledge that enables methods/capabilities by conditions.
+- **Scope:** disciplines, discoveries, transmission, diffusion, obsolescence; a shared evolution framework.
+- **Responsibilities:** enable (not adopt); publish discoveries to the shared framework.
+- **Inputs:** conditions (knowledge+resources+context), funding (Economy), exchange (Diplomacy).
+- **Outputs:** enablements for Production/Construction/Logistics/Military; discovery events.
+- **Shared entities:** Technology/Knowledge (state per civilization).
+- **Dependencies:** Time, Economy.
+- **Events:** `TechnologyDiscovered`, `TechnologyDiffused`.
+- **Rules:** by conditions, not by year (DC-09); availability ≠ adoption (DR-11); exceptional loss.
+- **MVP:** simple tree/conditions + building evolution (exists in SimCore). Migrate to the shared framework (RISK-05).
+- **Future:** disciplines, characters, diffusion, obsolescence with coexistence.
+- **Acceptance:** a discovery enables effects across several systems without those systems knowing its implementation.
 
 ---
 
-# Parte B — Sistemas restantes (nivel apropiado)
+# Part B — Remaining systems (appropriate level)
 
-## 11. Cultura, Identidad y Tradiciones
-- **Propósito/alcance:** identidad cultural (idioma, arte, tradiciones, festividades) evolutiva y visible. **Dep.:** Población, Religión, Construcción. **Entidades:** Cultura. **Reglas:** evolución orgánica; fusión no destructiva; evolución visual. **MVP:** identidad básica + diferencias regionales simples. **Aceptación:** la cultura se ve en el mundo y cambia con el tiempo.
+## 11. Culture, Identity and Traditions
+- **Purpose/scope:** cultural identity (language, art, traditions, festivities) that is evolving and visible. **Dep.:** Population, Religion, Construction. **Entities:** Culture. **Rules:** organic evolution; non-destructive fusion; visual evolution. **MVP:** basic identity + simple regional differences. **Acceptance:** culture is visible in the world and changes over time.
 
-## 12. Religión y Espiritualidad
-- **Propósito/alcance:** creencias, instituciones, arquitectura y figuras religiosas. **Dep.:** Población, Política, Construcción, Cultura. **Entidades:** Religión, Organización, Edificio. **Reglas:** origen orgánico + creación por el jugador; convivencia según contexto. **MVP:** una religión básica + seguidores + un edificio + festividades. **Aceptación:** una religión influye en la sociedad y deja huella física.
+## 12. Religion and Spirituality
+- **Purpose/scope:** beliefs, institutions, architecture and religious figures. **Dep.:** Population, Politics, Construction, Culture. **Entities:** Religion, Organization, Building. **Rules:** organic origin + player creation; coexistence according to context. **MVP:** a basic religion + followers + a building + festivities. **Acceptance:** a religion influences society and leaves a physical imprint.
 
-## 13. Política y Gobierno
-- **Propósito/alcance:** poder, leyes, instituciones, estabilidad. **Dep.:** Población, Economía. **Entidades:** Institución política, Civilización. **Reglas:** el jugador guía (DC-02/DR-05); cambios con consecuencias. **MVP:** estructura simple + estabilidad + pocas políticas/impuestos. **Aceptación:** cambiar una política produce consecuencias coherentes.
+## 13. Politics and Government
+- **Purpose/scope:** power, laws, institutions, stability. **Dep.:** Population, Economy. **Entities:** Political institution, Civilization. **Rules:** the player guides (DC-02/DR-05); changes with consequences. **MVP:** simple structure + stability + a few policies/taxes. **Acceptance:** changing a policy produces coherent consequences.
 
-## 14. Administración Territorial y Regiones
-- **Propósito/alcance:** agrupar/administrar asentamientos en regiones con autonomía configurable. **Dep.:** Política, Entidades; usa Economía/Población/Construcción existentes. **Entidades:** Región/Territorio. **Reglas:** modelo mixto; no duplica funcionalidades. **MVP:** regiones + presupuestos/impuestos simples + administradores automáticos. **Aceptación:** gestionar varias ciudades sin microgestión individual.
+## 14. Territorial Administration and Regions
+- **Purpose/scope:** group/administer settlements into regions with configurable autonomy. **Dep.:** Politics, Entities; uses existing Economy/Population/Construction. **Entities:** Region/Territory. **Rules:** mixed model; does not duplicate functionality. **MVP:** regions + simple budgets/taxes + automatic administrators. **Acceptance:** manage several cities without individual micromanagement.
 
-## 15. Transporte, Comercio y Logística (comercio)
-- Ver sistema 8 (almacenamiento/logística). **Comercio:** niveles básico/intermedio/avanzado sobre el mismo sistema económico; rutas dinámicas; comercio marítimo (futuro). **Aceptación:** comercio local/regional con precios por condiciones.
+## 15. Transport, Trade and Logistics (trade)
+- See system 8 (storage/logistics). **Trade:** basic/intermediate/advanced levels over the same economic system; dynamic routes; maritime trade (future). **Acceptance:** local/regional trade with prices by conditions.
 
-## 16. Exploración y Expansión Territorial
-- **Propósito/alcance:** conocer/ocupar/colonizar el mundo (dirigido + autónomo). **Dep.:** Geografía, Logística. **Entidades:** Región, Asentamiento, Civilización. **Reglas:** conocimiento ≠ ocupación; reutiliza logística. **MVP:** exploración con estados de conocimiento + fundación de asentamientos. **Aceptación:** descubrir territorio y fundar un asentamiento nuevo.
+## 16. Exploration and Territorial Expansion
+- **Purpose/scope:** know/occupy/colonize the world (guided + autonomous). **Dep.:** Geography, Logistics. **Entities:** Region, Settlement, Civilization. **Rules:** knowledge ≠ occupation; reuses logistics. **MVP:** exploration with knowledge states + founding of settlements. **Acceptance:** discover territory and found a new settlement.
 
-## 17. Diplomacia y Relaciones Internacionales ⚠️
-- **GDD truncado (DR-13)** — spec limitada a lo disponible. **Propósito/alcance:** relaciones multidimensionales con memoria histórica entre civilizaciones; tratados; negociación en 3 niveles. **Dep.:** Entidades, Exploración, IA; integra Religión. **Entidades:** Civilización, Registro histórico. **Reglas:** autonomía + intervención amplia; cooperación preferente. **MVP:** por definir (falta en la fuente). **Aceptación:** por definir tras completar el GDD.
+## 17. Diplomacy and International Relations ⚠️
+- **GDD truncated (DR-13)** — spec limited to what is available. **Purpose/scope:** multidimensional relationships with historical memory between civilizations; treaties; negotiation at 3 levels. **Dep.:** Entities, Exploration, AI; integrates Religion. **Entities:** Civilization, Historical record. **Rules:** autonomy + broad intervention; cooperation preferred. **MVP:** to be defined (missing in the source). **Acceptance:** to be defined after completing the GDD.
 
-## 18. IA y Autonomía de Civilizaciones
-- **Propósito/alcance:** civilizaciones autónomas con objetivos/personalidad/historia; mundo que evoluciona sin el jugador. **Dep.:** usa las mismas reglas que el jugador (todos los sistemas). **Entidades:** Civilización. **Reglas:** sin omnisciencia ni conocimiento del futuro; 3 niveles de simulación por distancia/relevancia. **MVP:** 2–3 civilizaciones con economía/tecnología/diplomacia básicas. **Aceptación:** una IA evoluciona de forma plausible sin intervención.
+## 18. AI and Civilization Autonomy
+- **Purpose/scope:** autonomous civilizations with objectives/personality/history; a world that evolves without the player. **Dep.:** uses the same rules as the player (all systems). **Entities:** Civilization. **Rules:** no omniscience or knowledge of the future; 3 simulation levels by distance/relevance. **MVP:** 2–3 civilizations with basic economy/technology/diplomacy. **Acceptance:** an AI evolves plausibly without intervention.
 
-## 19. Guerra y Sistemas Militares
-- **Propósito/alcance:** organización militar, combate configurable, fortificaciones, conflictos; secundario. **Dep.:** Logística, Población, Construcción, Diplomacia. **Entidades:** Organización (fuerzas), Edificio (fortificación). **Reglas:** reutiliza logística/recursos; diplomacia para prevenir; consecuencias amplias. **MVP:** conflicto simple + fortificación básica. **Aceptación:** un conflicto coherente con el período, sin volverse el eje.
+## 19. War and Military Systems
+- **Purpose/scope:** military organization, configurable combat, fortifications, conflicts; secondary. **Dep.:** Logistics, Population, Construction, Diplomacy. **Entities:** Organization (forces), Building (fortification). **Rules:** reuses logistics/resources; diplomacy to prevent; broad consequences. **MVP:** simple conflict + basic fortification. **Acceptance:** a conflict coherent with the period, without becoming the axis.
 
-## 20. Eventos y Evolución Histórica
-- **Propósito/alcance:** generar/registrar/representar acontecimientos; historia emergente. **Dep.:** Tiempo; recibe de todos. **Entidades:** Evento, Registro histórico. **Reglas:** el hecho lo origina el sistema dueño; Eventos registra (DC-14). **MVP:** generación mixta simple + registro + notificaciones. **Aceptación:** una partida produce una crónica propia y coherente.
+## 20. Events and Historical Evolution
+- **Purpose/scope:** generate/record/represent occurrences; emergent history. **Dep.:** Time; receives from all. **Entities:** Event, Historical record. **Rules:** the fact is originated by the owner system; Events records (DC-14). **MVP:** simple mixed generation + record + notifications. **Acceptance:** a game produces its own coherent chronicle.
 
-## 21. Interfaz UI/UX
-- **Propósito/alcance:** mundo 3D como interfaz principal + paneles/mapas; lee el estado. **Dep.:** lee todos. **Reglas:** no posee reglas; notificaciones desde cambios simulados; accesibilidad prioritaria. **MVP:** HUD de depuración (fecha, recursos, población, construcción, selección, tooltips) — existe. **Aceptación:** valida que la simulación funciona; no invierte en arte final aún.
+## 21. Interface UI/UX
+- **Purpose/scope:** the 3D world as the primary interface + panels/maps; reads the state. **Dep.:** reads all. **Rules:** owns no rules; notifications from simulated changes; accessibility a priority. **MVP:** debug HUD (date, resources, population, construction, selection, tooltips) — exists. **Acceptance:** validates that the simulation works; does not invest in final art yet.
 
-## 22. Progresión y Finalización
-- **Propósito/alcance:** objetivos, puntuación, dificultad, finalización opcional (sandbox). **Dep.:** Tiempo, Eventos; indicadores de todos. **Entidades:** — (lee indicadores). **Reglas:** sandbox auténtico (objetivos desactivables); límite histórico opcional; decisión final del jugador. **MVP:** progresión por períodos + objetivos simples opcionales. **Aceptación:** se puede jugar en sandbox sin objetivos y, opcionalmente, con metas.
+## 22. Progression and Ending
+- **Purpose/scope:** objectives, scoring, difficulty, optional ending (sandbox). **Dep.:** Time, Events; indicators from all. **Entities:** — (reads indicators). **Rules:** authentic sandbox (objectives can be disabled); optional historical limit; final decision by the player. **MVP:** progression by periods + simple optional objectives. **Acceptance:** it can be played in sandbox without objectives and, optionally, with goals.

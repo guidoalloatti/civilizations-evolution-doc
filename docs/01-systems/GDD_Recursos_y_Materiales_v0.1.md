@@ -1,368 +1,368 @@
-> **Control documental:** 0.1 | Estado: diseño conceptual; las decisiones marcadas como confirmadas se preservan desde la fuente. **Alcance:** este GDD es fuente de detalle de su dominio; el GDD Maestro establece la visión común. Los conflictos intersistema se registran en AUDIT_REPORT.md y no se resuelven implícitamente.
+> **Document control:** 0.1 | Status: conceptual design; decisions marked as confirmed are preserved from the source. **Scope:** this GDD is the detail source for its domain; the Master GDD establishes the common vision. Cross-system conflicts are recorded in AUDIT_REPORT.md and are not resolved implicitly.
 
 ---
 
-# GDD — Sistema Global de Recursos y Materiales
+# GDD — Global Resources and Materials System
 
-**Versión:** 0.1  
-**Estado:** Diseño conceptual
+**Version:** 0.1  
+**Status:** Conceptual design
 
-## 1. Visión general
+## 1. Overview
 
-El juego utilizará un sistema global y unificado de recursos.
+The game will use a global, unified resource system.
 
-Cada recurso tendrá una identidad única y podrá ser utilizado por todos los sistemas que lo necesiten: economía, producción, construcción, población, comercio, transporte, tecnología, instituciones y actividades militares.
+Each resource will have a unique identity and may be used by all the systems that need it: economy, production, construction, population, trade, transport, technology, institutions and military activities.
 
-No existirán recursos duplicados para representar un mismo material en diferentes sistemas.
+There will be no duplicate resources to represent the same material across different systems.
 
-Por ejemplo, la madera producida por un leñador será la misma que puede utilizar una construcción, consumir una industria, almacenar un depósito o transportar un comerciante.
+For example, the wood produced by a woodcutter will be the same wood that a construction can use, an industry can consume, a warehouse can store or a trader can transport.
 
-El catálogo, detalle y complejidad serán configurables.
+The catalog, detail and complexity will be configurable.
 
-## 2. Clasificación de recursos
+## 2. Resource classification
 
-Los recursos tendrán dos clasificaciones complementarias.
+Resources will have two complementary classifications.
 
-### 2.1. Por naturaleza y categoría
+### 2.1. By nature and category
 
-- Recursos naturales.
-- Recursos agrícolas.
-- Recursos ganaderos.
-- Recursos pesqueros.
-- Alimentos y bebidas.
-- Materiales de construcción.
-- Metales y minerales.
-- Combustibles y fuentes de energía.
-- Materias primas textiles.
-- Productos manufacturados.
-- Herramientas y equipamiento.
-- Bienes de consumo.
-- Productos comerciales especiales.
-- Recursos estratégicos.
+- Natural resources.
+- Agricultural resources.
+- Livestock resources.
+- Fishing resources.
+- Food and drink.
+- Construction materials.
+- Metals and minerals.
+- Fuels and energy sources.
+- Textile raw materials.
+- Manufactured products.
+- Tools and equipment.
+- Consumer goods.
+- Special trade products.
+- Strategic resources.
 
-### 2.2. Por función económica
+### 2.2. By economic function
 
-- **Materias primas:** recursos extraídos o producidos directamente de la naturaleza.
-- **Productos intermedios:** materiales transformados que sirven como insumos.
-- **Productos finales:** bienes destinados al consumo, construcción, comercio o utilización directa.
+- **Raw materials:** resources extracted or produced directly from nature.
+- **Intermediate products:** transformed materials that serve as inputs.
+- **Final products:** goods intended for consumption, construction, trade or direct use.
 
-Un mismo recurso podrá cumplir distintas funciones según su utilización.
+The same resource may fulfill different functions depending on its use.
 
-## 3. Nivel de detalle
+## 3. Level of detail
 
-El nivel de detalle será configurable.
+The level of detail will be configurable.
 
-La configuración intermedia será la referencia inicial.
+The intermediate configuration will be the initial reference.
 
-Ejemplos:
-- Madera.
-- Piedra.
-- Arcilla.
-- Arena.
-- Hierro.
-- Cobre.
-- Estaño.
-- Trigo.
-- Harina.
-- Pan.
-- Carne.
-- Pieles.
-- Lana.
-- Cuero.
+Examples:
+- Wood.
+- Stone.
+- Clay.
+- Sand.
+- Iron.
+- Copper.
+- Tin.
+- Wheat.
+- Flour.
+- Bread.
+- Meat.
+- Hides.
+- Wool.
+- Leather.
 
-En configuraciones más avanzadas podrán existir variedades y propiedades adicionales.
+In more advanced configurations there may be additional varieties and properties.
 
-El catálogo podrá ampliarse con el progreso tecnológico, comercial y cultural, sin necesidad de reemplazar los recursos básicos.
+The catalog may be expanded with technological, commercial and cultural progress, without needing to replace the basic resources.
 
-## 4. Calidad y propiedades
+## 4. Quality and properties
 
-Los recursos podrán adquirir calidad y propiedades diferenciadas.
+Resources may acquire differentiated quality and properties.
 
-La calidad aparecerá progresivamente según el desarrollo histórico y tecnológico.
+Quality will appear progressively according to historical and technological development.
 
-Podrá depender de:
-- Características naturales.
-- Procedencia.
-- Técnicas de extracción.
-- Métodos de producción.
-- Herramientas utilizadas.
-- Especialización laboral.
-- Procesamiento.
-- Conservación.
-- Tecnología.
+It may depend on:
+- Natural characteristics.
+- Origin.
+- Extraction techniques.
+- Production methods.
+- Tools used.
+- Labor specialization.
+- Processing.
+- Preservation.
+- Technology.
 
-En etapas iniciales, las diferencias podrán ser simplificadas. Con el desarrollo de la civilización podrán incorporarse distinciones más precisas.
+In early stages, the differences may be simplified. As the civilization develops, more precise distinctions may be incorporated.
 
-La calidad podrá influir sobre:
-- Precio.
-- Durabilidad.
-- Rendimiento.
-- Eficiencia productiva.
-- Valor comercial.
-- Prestigio.
-- Preferencias de consumo.
+Quality may influence:
+- Price.
+- Durability.
+- Performance.
+- Production efficiency.
+- Commercial value.
+- Prestige.
+- Consumption preferences.
 
-No todos los recursos necesitarán tener calidad de la misma manera.
+Not all resources will need to have quality in the same way.
 
-## 5. Recursos naturales
+## 5. Natural resources
 
-Los recursos naturales tendrán comportamientos diferentes según su naturaleza.
+Natural resources will behave differently according to their nature.
 
-Se contemplarán:
-- Recursos renovables.
-- Recursos parcialmente renovables.
-- Recursos no renovables.
-- Recursos agotables.
-- Recursos regenerables bajo determinadas condiciones.
+The following will be considered:
+- Renewable resources.
+- Partially renewable resources.
+- Non-renewable resources.
+- Exhaustible resources.
+- Resources regenerable under certain conditions.
 
-La explotación podrá provocar:
-- Deforestación.
-- Agotamiento de suelos.
-- Sobrepesca.
-- Reducción de fauna.
-- Agotamiento de depósitos.
-- Degradación ambiental.
+Exploitation may cause:
+- Deforestation.
+- Soil depletion.
+- Overfishing.
+- Reduction of fauna.
+- Depletion of deposits.
+- Environmental degradation.
 
-Los recursos renovables podrán agotarse temporalmente o degradarse si su explotación supera su capacidad de regeneración.
+Renewable resources may become temporarily depleted or degraded if their exploitation exceeds their capacity for regeneration.
 
-La recuperación dependerá de las características ambientales y de las prácticas de explotación.
+Recovery will depend on environmental characteristics and on exploitation practices.
 
-## 6. Almacenamiento
+## 6. Storage
 
-El almacenamiento evolucionará históricamente.
+Storage will evolve historically.
 
-Podrán existir:
-- Depósitos generales.
-- Graneros.
+There may be:
+- General warehouses.
+- Granaries.
 - Silos.
-- Almacenes especializados.
-- Bodegas.
-- Depósitos comerciales.
-- Almacenes portuarios.
-- Instalaciones especiales.
+- Specialized warehouses.
+- Cellars.
+- Commercial warehouses.
+- Port warehouses.
+- Special facilities.
 
-Las capacidades y condiciones dependerán de la infraestructura y tecnología.
+Capacities and conditions will depend on infrastructure and technology.
 
-Los recursos almacenados podrán estar sujetos a:
-- Capacidad máxima.
-- Deterioro.
-- Plagas.
-- Humedad.
-- Robos.
-- Pérdidas.
-- Costos de mantenimiento.
+Stored resources may be subject to:
+- Maximum capacity.
+- Deterioration.
+- Pests.
+- Humidity.
+- Theft.
+- Losses.
+- Maintenance costs.
 
-El nivel de detalle será configurable.
+The level of detail will be configurable.
 
-## 7. Deterioro y conservación
+## 7. Deterioration and preservation
 
-Los recursos podrán deteriorarse según sus propiedades.
+Resources may deteriorate according to their properties.
 
-Los factores posibles incluyen:
-- Naturaleza del producto.
-- Tiempo de almacenamiento.
-- Temperatura.
-- Humedad.
-- Instalaciones.
-- Técnicas de conservación.
-- Embalaje.
-- Transporte.
+Possible factors include:
+- Nature of the product.
+- Storage time.
+- Temperature.
+- Humidity.
+- Facilities.
+- Preservation techniques.
+- Packaging.
+- Transport.
 
-Alimentos, bebidas, materiales orgánicos y ciertos productos químicos o manufacturados podrán tener comportamientos específicos.
+Food, drink, organic materials and certain chemical or manufactured products may have specific behaviors.
 
-La complejidad y frecuencia de deterioro serán configurables.
+The complexity and frequency of deterioration will be configurable.
 
-## 8. Consumo y utilización
+## 8. Consumption and use
 
-Los recursos se utilizarán mediante dos mecanismos integrados:
+Resources will be used through two integrated mechanisms:
 
-1. Consumo asociado a necesidades de población, hogares, instituciones y organizaciones.
-2. Consumo asociado a actividades productivas, construcciones, mantenimiento, transporte y otras operaciones.
+1. Consumption associated with the needs of population, households, institutions and organizations.
+2. Consumption associated with production activities, construction, maintenance, transport and other operations.
 
-Los sistemas deberán consultar el inventario común.
+Systems must query the common inventory.
 
-El consumo dependerá de:
-- Necesidades.
-- Capacidad económica.
-- Disponibilidad.
-- Prioridades.
-- Tecnología.
-- Calidad.
-- Condiciones locales.
+Consumption will depend on:
+- Needs.
+- Economic capacity.
+- Availability.
+- Priorities.
+- Technology.
+- Quality.
+- Local conditions.
 
-Las necesidades insatisfechas podrán generar consecuencias sociales y económicas según su importancia y duración.
+Unmet needs may generate social and economic consequences according to their importance and duration.
 
-## 9. Distribución geográfica
+## 9. Geographic distribution
 
-Los recursos tendrán distribuciones geográficas diferenciadas.
+Resources will have differentiated geographic distributions.
 
-La disponibilidad dependerá de:
-- Geología.
-- Biomas.
-- Suelos.
-- Clima.
-- Hidrología.
-- Flora y fauna.
-- Recursos marinos.
-- Condiciones ambientales.
+Availability will depend on:
+- Geology.
+- Biomes.
+- Soils.
+- Climate.
+- Hydrology.
+- Flora and fauna.
+- Marine resources.
+- Environmental conditions.
 
-La configuración del mundo permitirá ajustar abundancia y distribución.
+The world configuration will allow abundance and distribution to be adjusted.
 
-La ubicación de recursos generará ventajas y limitaciones regionales, influyendo en asentamientos, especialización productiva y comercio.
+The location of resources will generate regional advantages and limitations, influencing settlements, production specialization and trade.
 
-## 10. Sustitución de recursos
+## 10. Resource substitution
 
-Los procesos productivos y construcciones podrán utilizar sustitutos cuando sea posible.
+Production processes and constructions may use substitutes when possible.
 
-Las alternativas podrán depender de:
-- Tecnología.
-- Disponibilidad.
-- Precio.
-- Distancia.
-- Calidad.
-- Propiedades físicas.
-- Tradiciones constructivas o productivas.
+The alternatives may depend on:
+- Technology.
+- Availability.
+- Price.
+- Distance.
+- Quality.
+- Physical properties.
+- Building or production traditions.
 
-Ejemplos:
-- Distintos materiales para construcción.
-- Combustibles alternativos.
-- Herramientas fabricadas con diferentes materiales.
-- Insumos agrícolas alternativos.
+Examples:
+- Different materials for construction.
+- Alternative fuels.
+- Tools made from different materials.
+- Alternative agricultural inputs.
 
-La sustitución no será universal: deberá respetar las limitaciones físicas y técnicas de cada actividad.
+Substitution will not be universal: it must respect the physical and technical limitations of each activity.
 
-## 11. Propiedad y control
+## 11. Property and control
 
-Los recursos pertenecerán al Estado o a la civilización.
+Resources will belong to the State or to the civilization.
 
-Esto no significa que todas las actividades productivas deban ser administradas directamente por el gobierno.
+This does not mean that all production activities must be administered directly by the government.
 
-Los productores podrán operar autónomamente y gestionar sus actividades mediante mecanismos económicos.
+Producers will be able to operate autonomously and manage their activities through economic mechanisms.
 
-El sistema deberá permitir:
-- Asignación de recursos.
-- Inventarios públicos.
-- Presupuestos.
-- Compras y ventas.
-- Impuestos.
-- Subsidios.
-- Incentivos.
-- Prioridades productivas.
-- Regulaciones.
-- Reservas estratégicas.
+The system must allow:
+- Resource allocation.
+- Public inventories.
+- Budgets.
+- Purchases and sales.
+- Taxes.
+- Subsidies.
+- Incentives.
+- Production priorities.
+- Regulations.
+- Strategic reserves.
 
-La propiedad privada de edificios y empresas podrá existir como modalidad organizativa, pero no modificará la regla general de titularidad de los recursos.
+Private ownership of buildings and enterprises may exist as an organizational form, but it will not alter the general rule of resource title.
 
-## 12. Recursos especiales y estratégicos
+## 12. Special and strategic resources
 
-Existirán recursos con importancia comercial, cultural, económica o estratégica.
+There will be resources with commercial, cultural, economic or strategic importance.
 
-Ejemplos:
-- Sal.
-- Especias.
-- Seda.
-- Tintes.
-- Piedras preciosas.
-- Caballos.
-- Metales especiales.
-- Productos medicinales.
-- Bienes artesanales de lujo.
+Examples:
+- Salt.
+- Spices.
+- Silk.
+- Dyes.
+- Precious stones.
+- Horses.
+- Special metals.
+- Medicinal products.
+- Luxury craft goods.
 
-Estos recursos podrán generar:
-- Rutas comerciales.
-- Especialización regional.
-- Prestigio.
-- Ingresos.
-- Dependencias económicas.
-- Intereses diplomáticos.
-- Conflictos por acceso o control.
+These resources may generate:
+- Trade routes.
+- Regional specialization.
+- Prestige.
+- Revenue.
+- Economic dependencies.
+- Diplomatic interests.
+- Conflicts over access or control.
 
-No todos los recursos estratégicos tendrán importancia militar: algunos serán relevantes principalmente por su valor económico o cultural.
+Not all strategic resources will have military importance: some will be relevant mainly for their economic or cultural value.
 
-## 13. Dinero y unidad monetaria
+## 13. Money and monetary unit
 
-El juego utilizará una unidad monetaria universal desde el comienzo.
+The game will use a universal monetary unit from the start.
 
-No será obligatorio simular la transición histórica desde el trueque hacia los sistemas monetarios.
+It will not be mandatory to simulate the historical transition from barter to monetary systems.
 
-La unidad monetaria permitirá:
-- Valorar recursos.
-- Establecer precios.
-- Pagar salarios.
-- Calcular impuestos.
-- Gestionar presupuestos.
-- Financiar construcciones.
-- Realizar comercio.
-- Medir riqueza y actividad económica.
+The monetary unit will allow:
+- Valuing resources.
+- Setting prices.
+- Paying wages.
+- Calculating taxes.
+- Managing budgets.
+- Financing constructions.
+- Carrying out trade.
+- Measuring wealth and economic activity.
 
-Los precios podrán evolucionar según oferta, demanda, escasez, distancia, transporte, calidad y condiciones comerciales.
+Prices may evolve according to supply, demand, scarcity, distance, transport, quality and commercial conditions.
 
-La existencia de una unidad monetaria común será una abstracción del modelo económico, no una afirmación histórica de que todas las sociedades utilizaron dinero de la misma manera.
+The existence of a common monetary unit will be an abstraction of the economic model, not a historical claim that all societies used money in the same way.
 
-## 14. Unidades y contabilización
+## 14. Units and accounting
 
-Los recursos utilizarán unidades abstractas como representación principal.
+Resources will use abstract units as their main representation.
 
-Esto permitirá mantener consistencia y rendimiento sin obligar a convertir cada operación a kilogramos, litros o toneladas.
+This will allow consistency and performance to be maintained without forcing every operation to be converted into kilograms, liters or tons.
 
-Las unidades podrán representar cantidades físicas aproximadas cuando sea útil para la interfaz.
+Units may represent approximate physical quantities when useful for the interface.
 
-La escala de unidades deberá ser consistente entre:
-- Producción.
-- Consumo.
-- Construcción.
-- Almacenamiento.
-- Transporte.
-- Comercio.
+The unit scale must be consistent across:
+- Production.
+- Consumption.
+- Construction.
+- Storage.
+- Transport.
+- Trade.
 
-La precisión será configurable.
+Precision will be configurable.
 
-## 15. Integración con otros sistemas
+## 15. Integration with other systems
 
-El sistema global de recursos será compartido por:
+The global resource system will be shared by:
 
-- Economía.
-- Producción y trabajo.
-- Construcción y arquitectura.
-- Población y sociedad.
-- Transporte y logística.
-- Comercio.
-- Tecnología.
-- Agricultura y ganadería.
-- Geografía y medioambiente.
-- Administración territorial.
-- Diplomacia.
-- Guerra.
+- Economy.
+- Production and labor.
+- Construction and architecture.
+- Population and society.
+- Transport and logistics.
+- Trade.
+- Technology.
+- Agriculture and livestock.
+- Geography and environment.
+- Territorial administration.
+- Diplomacy.
+- War.
 
-Todos los sistemas utilizarán el mismo catálogo y las mismas reglas generales.
+All systems will use the same catalog and the same general rules.
 
 ## 16. MVP
 
-Primera implementación:
+First implementation:
 
-- Catálogo básico de recursos.
-- Clasificación por categoría y función.
-- Unidades abstractas.
-- Inventarios compartidos.
-- Producción y consumo.
-- Almacenamiento.
-- Recursos naturales renovables y agotables.
-- Precios básicos.
-- Sustitutos definidos para algunas recetas.
-- Deterioro simplificado de alimentos.
+- Basic resource catalog.
+- Classification by category and function.
+- Abstract units.
+- Shared inventories.
+- Production and consumption.
+- Storage.
+- Renewable and exhaustible natural resources.
+- Basic prices.
+- Substitutes defined for some recipes.
+- Simplified food deterioration.
 
-Recursos iniciales:
-- Madera.
-- Piedra.
-- Arcilla.
-- Bayas.
-- Carne.
-- Trigo.
-- Harina.
-- Pan.
+Initial resources:
+- Wood.
+- Stone.
+- Clay.
+- Berries.
+- Meat.
+- Wheat.
+- Flour.
+- Bread.
 
-El sistema deberá permitir que una misma cantidad de recursos sea utilizada y contabilizada coherentemente en toda la simulación.
+The system must allow the same quantity of resources to be used and accounted for coherently throughout the simulation.
 
-## 17. Principio rector
+## 17. Guiding principle
 
-**Cada recurso representa algo real dentro del mundo simulado. No debe existir una versión diferente del mismo material para cada sistema: la economía, la producción, la construcción y el comercio comparten una única realidad material.**
+**Each resource represents something real within the simulated world. There must not be a different version of the same material for each system: the economy, production, construction and trade share a single material reality.**

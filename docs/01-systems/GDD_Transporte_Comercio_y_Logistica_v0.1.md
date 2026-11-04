@@ -1,918 +1,918 @@
-> **Control documental:** 0.1 | Estado: diseño conceptual; las decisiones marcadas como confirmadas se preservan desde la fuente. **Alcance:** este GDD es fuente de detalle de su dominio; el GDD Maestro establece la visión común. Los conflictos intersistema se registran en AUDIT_REPORT.md y no se resuelven implícitamente.
+> **Document control:** 0.1 | Status: conceptual design; decisions marked as confirmed are preserved from the source. **Scope:** this GDD is the detail source for its domain; the Master GDD establishes the shared vision. Cross-system conflicts are recorded in AUDIT_REPORT.md and are not resolved implicitly.
 
 ---
 
-# GDD — Sistema de Transporte, Comercio y Logística
-**Versión:** 0.1  
-**Estado:** Diseño conceptual  
-**Período histórico:** Paleolítico – comienzos de la Revolución Industrial
+# GDD — Transport, Trade and Logistics System
+**Version:** 0.1  
+**Status:** Conceptual design  
+**Historical period:** Paleolithic – beginning of the Industrial Revolution
 
 ---
 
-# 1. Visión general
+# 1. General overview
 
-El sistema de Transporte, Comercio y Logística será uno de los principales componentes de la simulación económica y territorial.
+The Transport, Trade and Logistics system will be one of the main components of the economic and territorial simulation.
 
-Su función será conectar físicamente los diferentes elementos de la civilización: productores, consumidores, almacenes, mercados, ciudades, regiones y otras civilizaciones.
+Its function will be to physically connect the different elements of the civilization: producers, consumers, storehouses, markets, cities, regions and other civilizations.
 
-Los recursos no aparecerán mágicamente donde se necesitan. Deberán trasladarse mediante personas, animales, vehículos, embarcaciones e infraestructura, utilizando los medios disponibles en cada momento histórico.
+Resources will not magically appear where they are needed. They will have to be moved by people, animals, vehicles, vessels and infrastructure, using the means available at each historical moment.
 
-El sistema deberá evolucionar desde el transporte manual de pequeñas comunidades hasta complejas redes terrestres y marítimas de comercio internacional.
+The system must evolve from the manual transport of small communities to complex land and maritime networks of international trade.
 
-### Principios fundamentales
+### Fundamental principles
 
-1. **Transporte físico:** los recursos deben desplazarse entre sus puntos de origen y destino.
-2. **Distancia relevante:** transportar recursos tiene costos, tiempos y limitaciones.
-3. **Evolución histórica:** los medios e infraestructuras evolucionan según los conocimientos y las condiciones de cada civilización.
-4. **Autonomía económica:** comerciantes, productores y organizaciones pueden desarrollar actividades logísticas sin intervención constante del jugador.
-5. **Control del jugador:** el jugador puede establecer prioridades, restricciones y rutas específicas.
-6. **Geografía determinante:** ríos, mares, montañas, bosques y llanuras influyen en las posibilidades de transporte.
-7. **Complejidad configurable:** desde una logística prácticamente automática hasta una administración detallada.
-8. **Representación visual:** el transporte y el comercio deben poder observarse en el mundo.
-
----
-
-# 2. Modelo general de transporte
-
-El transporte será necesario para conectar las distintas etapas de la economía.
-
-Ejemplo:
-
-1. Una cantera extrae piedra.
-2. La piedra se transporta a un almacén.
-3. Un constructor necesita piedra.
-4. El sistema identifica una fuente disponible.
-5. Se organiza el transporte.
-6. La piedra llega a la construcción.
-7. La obra puede continuar.
-
-Si no existe una conexión logística viable, la construcción deberá esperar.
-
-Este modelo se aplicará a todos los recursos que necesiten desplazarse.
-
-### 2.1. Modalidades de transporte
-
-Se contemplarán dos modalidades principales:
-
-**Transporte propio**
-
-- Los edificios cuentan con trabajadores que realizan tareas de transporte.
-- Pueden trasladar productos a almacenes, mercados u otros edificios.
-- Su capacidad depende de la cantidad de trabajadores, herramientas y medios disponibles.
-
-**Transporte especializado**
-
-- Trabajadores dedicados específicamente al traslado de mercancías.
-- Transportistas independientes.
-- Organizaciones comerciales y logísticas.
-- Servicios especializados que aparecen con el desarrollo económico.
-
-Ambas modalidades podrán coexistir.
-
-La organización dependerá de la época, la tecnología, la economía y las características de la sociedad.
-
-### 2.2. Asignación logística
-
-El sistema deberá decidir automáticamente cómo transportar cada mercancía considerando:
-
-- Disponibilidad de recursos.
-- Distancia.
-- Tiempo estimado.
-- Capacidad de transporte.
-- Costo.
-- Prioridad del destino.
-- Disponibilidad de trabajadores.
-- Estado de las rutas.
-- Medios de transporte disponibles.
-
-El jugador podrá establecer prioridades y restricciones.
+1. **Physical transport:** resources must move between their points of origin and destination.
+2. **Distance matters:** transporting resources has costs, times and limitations.
+3. **Historical evolution:** means and infrastructure evolve according to the knowledge and conditions of each civilization.
+4. **Economic autonomy:** merchants, producers and organizations can carry out logistics activities without constant player intervention.
+5. **Player control:** the player can set priorities, restrictions and specific routes.
+6. **Geography is decisive:** rivers, seas, mountains, forests and plains influence transport possibilities.
+7. **Configurable complexity:** from practically automatic logistics to detailed administration.
+8. **Visual representation:** transport and trade must be observable in the world.
 
 ---
 
-# 3. Evolución de los medios de transporte
+# 2. General transport model
 
-El sistema incluirá diferentes medios de transporte, que aparecerán progresivamente según el desarrollo histórico y tecnológico.
+Transport will be necessary to connect the different stages of the economy.
 
-### 3.1. Transporte terrestre
+Example:
 
-Categorías previstas:
+1. A quarry extracts stone.
+2. The stone is transported to a storehouse.
+3. A builder needs stone.
+4. The system identifies an available source.
+5. Transport is organized.
+6. The stone reaches the construction site.
+7. The construction work can continue.
 
-- Transporte manual.
-- Cestos y recipientes.
-- Trineos.
-- Animales de carga.
-- Carretas primitivas.
-- Carros de dos ruedas.
-- Carros de cuatro ruedas.
-- Carretas tiradas por bueyes.
-- Carros tirados por caballos.
-- Vehículos especializados para mercancías.
+If there is no viable logistics connection, construction will have to wait.
 
-Cada medio tendrá características propias:
+This model will apply to all resources that need to be moved.
 
-- Capacidad de carga.
-- Velocidad.
-- Costo de construcción.
-- Costo de mantenimiento.
-- Necesidades de trabajadores.
-- Necesidades de animales.
-- Terrenos transitables.
-- Eficiencia según el tipo de camino.
+### 2.1. Transport modalities
 
-### 3.2. Transporte fluvial
+Two main modalities will be considered:
 
-Se podrán desarrollar embarcaciones adaptadas a ríos, lagos y canales.
+**Own transport**
 
-Su disponibilidad dependerá de:
-- Geografía.
-- Conocimientos navales.
-- Materiales.
-- Técnicas de construcción.
-- Capacidad productiva.
+- Buildings have workers who perform transport tasks.
+- They can move products to storehouses, markets or other buildings.
+- Their capacity depends on the number of workers, tools and available means.
 
-### 3.3. Transporte marítimo
+**Specialized transport**
 
-Incluirá:
-- Embarcaciones costeras.
-- Barcos mercantes.
-- Barcos de carga especializada.
-- Grandes embarcaciones comerciales.
-- Flotas mercantiles.
-- Embarcaciones de apoyo logístico.
+- Workers dedicated specifically to moving goods.
+- Independent carriers.
+- Commercial and logistics organizations.
+- Specialized services that appear with economic development.
 
-Las embarcaciones tendrán capacidades, velocidades, costos y necesidades de mantenimiento diferentes.
+Both modalities may coexist.
 
-### 3.4. Características de los vehículos
+The organization will depend on the era, the technology, the economy and the characteristics of the society.
 
-Cada vehículo podrá tener:
+### 2.2. Logistics assignment
 
-- Capacidad de carga.
-- Velocidad.
-- Resistencia.
-- Durabilidad.
-- Consumo de recursos.
-- Necesidades de mantenimiento.
-- Cantidad de tripulantes o trabajadores.
-- Requisitos tecnológicos.
+The system must automatically decide how to transport each good, considering:
 
-Los medios antiguos no desaparecerán automáticamente. Podrán seguir utilizándose cuando sean convenientes.
+- Resource availability.
+- Distance.
+- Estimated time.
+- Transport capacity.
+- Cost.
+- Priority of the destination.
+- Availability of workers.
+- Condition of the routes.
+- Available means of transport.
+
+The player will be able to set priorities and restrictions.
 
 ---
 
-# 4. Infraestructura de transporte
+# 3. Evolution of the means of transport
 
-El jugador podrá construir y desarrollar infraestructura logística.
+The system will include different means of transport, which will appear progressively according to historical and technological development.
 
-La disponibilidad dependerá de los materiales, técnicas, conocimientos y condiciones históricas.
+### 3.1. Land transport
 
-### 4.1. Infraestructura terrestre
+Planned categories:
 
-- Senderos.
-- Caminos de tierra.
-- Caminos mejorados.
-- Calzadas.
-- Caminos pavimentados.
-- Caminos de montaña.
-- Puentes.
-- Pasarelas.
-- Estaciones de postas.
+- Manual transport.
+- Baskets and containers.
+- Sledges.
+- Pack animals.
+- Primitive carts.
+- Two-wheeled carts.
+- Four-wheeled carts.
+- Ox-drawn carts.
+- Horse-drawn carts.
+- Specialized goods vehicles.
 
-### 4.2. Infraestructura fluvial y marítima
+Each means will have its own characteristics:
 
-- Muelles.
-- Puertos.
-- Puertos comerciales.
-- Puertos especializados.
-- Canales.
-- Esclusas.
-- Faros.
-- Astilleros.
-- Depósitos portuarios.
-- Infraestructura de carga y descarga.
+- Load capacity.
+- Speed.
+- Construction cost.
+- Maintenance cost.
+- Worker requirements.
+- Animal requirements.
+- Passable terrain.
+- Efficiency according to the type of road.
 
-### 4.3. Infraestructura de almacenamiento
+### 3.2. River transport
 
-- Almacenes.
-- Graneros.
+Vessels adapted to rivers, lakes and canals may be developed.
+
+Their availability will depend on:
+- Geography.
+- Naval knowledge.
+- Materials.
+- Construction techniques.
+- Production capacity.
+
+### 3.3. Maritime transport
+
+It will include:
+- Coastal vessels.
+- Merchant ships.
+- Specialized cargo ships.
+- Large commercial vessels.
+- Merchant fleets.
+- Logistics support vessels.
+
+Vessels will have different capacities, speeds, costs and maintenance needs.
+
+### 3.4. Vehicle characteristics
+
+Each vehicle may have:
+
+- Load capacity.
+- Speed.
+- Durability.
+- Lifespan.
+- Resource consumption.
+- Maintenance needs.
+- Number of crew or workers.
+- Technological requirements.
+
+Old means will not disappear automatically. They may continue to be used when convenient.
+
+---
+
+# 4. Transport infrastructure
+
+The player will be able to build and develop logistics infrastructure.
+
+Its availability will depend on materials, techniques, knowledge and historical conditions.
+
+### 4.1. Land infrastructure
+
+- Trails.
+- Dirt roads.
+- Improved roads.
+- Paved roads.
+- Cobbled roads.
+- Mountain roads.
+- Bridges.
+- Walkways.
+- Posting stations.
+
+### 4.2. River and maritime infrastructure
+
+- Docks.
+- Ports.
+- Commercial ports.
+- Specialized ports.
+- Canals.
+- Locks.
+- Lighthouses.
+- Shipyards.
+- Port warehouses.
+- Loading and unloading infrastructure.
+
+### 4.3. Storage infrastructure
+
+- Storehouses.
+- Granaries.
 - Silos.
-- Depósitos comerciales.
-- Depósitos portuarios.
-- Depósitos militares.
-- Instalaciones especializadas según el producto.
+- Commercial warehouses.
+- Port warehouses.
+- Military depots.
+- Specialized facilities according to the product.
 
-### 4.4. Evolución de infraestructura
+### 4.4. Infrastructure evolution
 
-La infraestructura podrá mejorarse con el tiempo.
+Infrastructure may be improved over time.
 
-Por ejemplo, un camino de tierra podrá convertirse en una calzada mejorada.
+For example, a dirt road may become an improved cobbled road.
 
-Las mejoras serán opcionales y dependerán de:
-- Tecnología.
-- Recursos.
-- Capacidad económica.
-- Necesidades logísticas.
-- Decisiones del jugador.
+Improvements will be optional and will depend on:
+- Technology.
+- Resources.
+- Economic capacity.
+- Logistics needs.
+- Player decisions.
 
-La infraestructura antigua podrá conservarse si sigue siendo útil o si el jugador desea preservar su valor histórico.
-
----
-
-# 5. Sistema de caminos y circulación
-
-Los caminos serán mucho más que conexiones visuales entre edificios.
-
-Su calidad afectará directamente la eficiencia logística.
-
-### 5.1. Factores que afectan el transporte
-
-- Distancia.
-- Pendiente.
-- Tipo de terreno.
-- Estado del camino.
-- Clima.
-- Estaciones.
-- Capacidad de circulación.
-- Congestión.
-- Mantenimiento.
-
-### 5.2. Calidad de las rutas
-
-Se podrán diferenciar distintos niveles de infraestructura.
-
-Un sendero tendrá menor capacidad y velocidad que una calzada bien construida.
-
-### 5.3. Congestión
-
-Las rutas podrán experimentar congestión cuando exista demasiado tránsito para su capacidad.
-
-Esto podrá provocar:
-- Retrasos.
-- Menor eficiencia.
-- Mayor tiempo de transporte.
-- Necesidad de ampliar o mejorar caminos.
-
-La congestión tendrá mayor relevancia en ciudades grandes y centros comerciales.
-
-### 5.4. Mantenimiento
-
-Los caminos y puentes se deteriorarán según su uso y las condiciones ambientales.
-
-El jugador podrá establecer políticas de mantenimiento.
+Old infrastructure may be preserved if it remains useful or if the player wishes to preserve its historical value.
 
 ---
 
-# 6. Logística urbana
+# 5. Road and circulation system
 
-Las ciudades deberán desarrollar sistemas de abastecimiento acordes con su tamaño y organización.
+Roads will be much more than visual connections between buildings.
 
-Se contemplarán:
+Their quality will directly affect logistics efficiency.
 
-- Mercados.
-- Almacenes.
-- Depósitos.
-- Zonas comerciales.
-- Distritos productivos.
-- Puertos urbanos.
-- Calles y caminos de circulación.
-- Infraestructura de carga y descarga.
+### 5.1. Factors that affect transport
 
-### 6.1. Abastecimiento urbano
+- Distance.
+- Slope.
+- Type of terrain.
+- Condition of the road.
+- Climate.
+- Seasons.
+- Traffic capacity.
+- Congestion.
+- Maintenance.
 
-Los edificios necesitarán recibir los recursos correspondientes.
+### 5.2. Route quality
 
-Los mercados deberán abastecerse para satisfacer las necesidades de la población.
+Different levels of infrastructure may be distinguished.
 
-Las industrias y talleres necesitarán materias primas.
+A trail will have lower capacity and speed than a well-built cobbled road.
 
-Las construcciones necesitarán materiales.
+### 5.3. Congestion
 
-### 6.2. Especialización urbana
+Routes may experience congestion when there is too much traffic for their capacity.
 
-Con el crecimiento de las ciudades podrán aparecer zonas especializadas:
+This may cause:
+- Delays.
+- Lower efficiency.
+- Longer transport time.
+- The need to widen or improve roads.
 
-- Barrios comerciales.
-- Distritos artesanales.
-- Zonas industriales preindustriales.
-- Centros de almacenamiento.
-- Distritos portuarios.
+Congestion will be more relevant in large cities and commercial centers.
 
-La organización urbana influirá en la eficiencia logística.
+### 5.4. Maintenance
 
-### 6.3. Representación visual
+Roads and bridges will deteriorate according to their use and environmental conditions.
 
-El jugador podrá observar:
-- Trabajadores transportando mercancías.
-- Animales de carga.
-- Carretas circulando.
-- Mercancías entrando y saliendo de almacenes.
-- Mercados abasteciéndose.
-- Actividad portuaria.
-
-La representación será visualmente importante, aunque la simulación no dependerá de mostrar cada operación individual.
+The player will be able to set maintenance policies.
 
 ---
 
-# 7. Comercio local, regional e internacional
+# 6. Urban logistics
 
-El comercio se organizará en tres escalas.
+Cities will have to develop supply systems in keeping with their size and organization.
 
-### 7.1. Comercio local
+The following will be considered:
 
-Intercambios dentro de una ciudad o asentamiento.
+- Markets.
+- Storehouses.
+- Depots.
+- Commercial zones.
+- Productive districts.
+- Urban ports.
+- Streets and circulation roads.
+- Loading and unloading infrastructure.
 
-Incluye:
-- Mercados.
-- Comerciantes.
-- Intercambio de productos.
-- Abastecimiento cotidiano.
-- Distribución de recursos.
+### 6.1. Urban supply
 
-### 7.2. Comercio regional
+Buildings will need to receive their corresponding resources.
 
-Intercambio entre asentamientos y ciudades de una misma civilización.
+Markets will have to be supplied in order to meet the needs of the population.
 
-Permitirá:
-- Especialización regional.
-- Distribución de excedentes.
-- Abastecimiento de regiones deficitarias.
-- Desarrollo de centros comerciales.
-- Integración económica territorial.
+Industries and workshops will need raw materials.
 
-### 7.3. Comercio internacional
+Construction works will need materials.
 
-Intercambio entre civilizaciones.
+### 6.2. Urban specialization
 
-Permitirá:
-- Exportaciones.
-- Importaciones.
-- Tratados comerciales.
-- Aranceles.
-- Embargos.
-- Monopolios.
-- Acuerdos de intercambio.
-- Desarrollo de mercados internacionales.
+As cities grow, specialized zones may appear:
 
-La intensidad del comercio dependerá de las relaciones diplomáticas, las condiciones económicas, la infraestructura y la tecnología.
+- Commercial neighborhoods.
+- Artisanal districts.
+- Pre-industrial industrial zones.
+- Storage centers.
+- Port districts.
 
----
+Urban organization will influence logistics efficiency.
 
-# 8. Sistema de precios y mercados
+### 6.3. Visual representation
 
-Los precios se determinarán dinámicamente mediante oferta y demanda.
+The player will be able to observe:
+- Workers transporting goods.
+- Pack animals.
+- Carts in circulation.
+- Goods entering and leaving storehouses.
+- Markets being supplied.
+- Port activity.
 
-### 8.1. Factores que influyen en los precios
-
-- Producción regional.
-- Consumo.
-- Disponibilidad de recursos.
-- Escasez.
-- Excedentes.
-- Costos de transporte.
-- Distancia.
-- Impuestos.
-- Aranceles.
-- Condiciones comerciales.
-- Conflictos y bloqueos.
-
-### 8.2. Diferencias regionales
-
-Los precios podrán variar entre regiones.
-
-Por ejemplo:
-
-Una ciudad agrícola con abundancia de trigo tendrá precios relativamente bajos.
-
-Una ciudad distante con escasa producción agrícola podrá tener precios más elevados debido a la escasez y al costo de transporte.
-
-### 8.3. Integración económica
-
-La eficiencia del transporte podrá reducir las diferencias de precios entre regiones conectadas.
-
-Sin embargo, nunca se asumirá que los mercados están perfectamente integrados.
-
-La distancia, los costos y las limitaciones logísticas seguirán teniendo importancia.
+The representation will be visually important, although the simulation will not depend on showing each individual operation.
 
 ---
 
-# 9. Rutas comerciales dinámicas
+# 7. Local, regional and international trade
 
-Las rutas comerciales serán una de las principales características del sistema.
+Trade will be organized at three scales.
 
-No serán conexiones permanentes e inmutables.
+### 7.1. Local trade
 
-Podrán surgir, modificarse, expandirse o desaparecer según las condiciones económicas.
+Exchanges within a city or settlement.
 
-### 9.1. Formación de rutas
+Includes:
+- Markets.
+- Merchants.
+- Exchange of products.
+- Everyday supply.
+- Resource distribution.
 
-Las rutas podrán desarrollarse cuando existan:
+### 7.2. Regional trade
 
-- Diferencias regionales de oferta y demanda.
-- Recursos comercializables.
-- Infraestructura suficiente.
-- Medios de transporte.
-- Incentivos económicos.
-- Condiciones políticas y de seguridad favorables.
+Exchange between settlements and cities of the same civilization.
 
-### 9.2. Administración del jugador
+It will allow:
+- Regional specialization.
+- Distribution of surpluses.
+- Supply of deficit regions.
+- Development of commercial centers.
+- Territorial economic integration.
 
-El jugador podrá establecer rutas manualmente.
+### 7.3. International trade
 
-Podrá definir:
-- Origen.
-- Destino.
-- Productos.
-- Cantidades.
-- Frecuencia.
-- Medios de transporte.
-- Prioridades.
-- Condiciones comerciales.
+Exchange between civilizations.
 
-También podrá permitir que el sistema genere rutas automáticamente.
+It will allow:
+- Exports.
+- Imports.
+- Trade treaties.
+- Tariffs.
+- Embargoes.
+- Monopolies.
+- Exchange agreements.
+- Development of international markets.
 
-### 9.3. Evolución de las rutas
-
-Las rutas podrán cambiar cuando:
-- Aparezcan nuevos mercados.
-- Cambien los precios.
-- Se desarrollen nuevas infraestructuras.
-- Surjan conflictos.
-- Cambien las condiciones políticas.
-- Se descubran nuevos territorios.
-- Aparezcan mejores medios de transporte.
+The intensity of trade will depend on diplomatic relations, economic conditions, infrastructure and technology.
 
 ---
 
-# 10. Comercio marítimo
+# 8. Price and market system
 
-El comercio marítimo será fundamental para las civilizaciones con acceso al mar, ríos y lagos navegables.
+Prices will be determined dynamically through supply and demand.
 
-### 10.1. Desarrollo naval
+### 8.1. Factors that influence prices
 
-Las civilizaciones podrán desarrollar:
-- Flotas comerciales.
-- Puertos especializados.
-- Barcos de distintas capacidades.
-- Rutas marítimas.
-- Centros de intercambio.
-- Colonias comerciales.
-- Grandes redes de comercio internacional.
+- Regional production.
+- Consumption.
+- Resource availability.
+- Scarcity.
+- Surpluses.
+- Transport costs.
+- Distance.
+- Taxes.
+- Tariffs.
+- Trade conditions.
+- Conflicts and blockades.
 
-### 10.2. Navegación y condiciones naturales
+### 8.2. Regional differences
 
-En etapas tecnológicas tempranas, los factores naturales tendrán una influencia importante:
+Prices may vary between regions.
 
-- Vientos.
-- Corrientes.
-- Mareas.
-- Tormentas.
-- Estaciones.
-- Condiciones marítimas.
+For example:
 
-A medida que mejore la tecnología naval, la navegación se volverá progresivamente más segura y predecible.
+An agricultural city with an abundance of wheat will have relatively low prices.
 
-Estos factores no desaparecerán por completo, pero tendrán un impacto menor en civilizaciones tecnológicamente avanzadas.
+A distant city with scarce agricultural production may have higher prices due to scarcity and transport cost.
 
-### 10.3. Puertos
+### 8.3. Economic integration
 
-Los puertos podrán evolucionar en capacidad, infraestructura y especialización.
+Transport efficiency may reduce price differences between connected regions.
 
-Un puerto pequeño podrá convertirse en un gran centro comercial.
+However, it will never be assumed that markets are perfectly integrated.
 
-Su desarrollo dependerá de:
-- Ubicación.
-- Tráfico comercial.
-- Tecnología.
-- Inversión.
-- Recursos.
-- Conexiones terrestres.
-- Relaciones internacionales.
+Distance, costs and logistics limitations will continue to matter.
 
 ---
 
-# 11. Comerciantes y organizaciones comerciales
+# 9. Dynamic trade routes
 
-El comercio podrá desarrollarse tanto mediante intervención del jugador como de forma autónoma.
+Trade routes will be one of the main features of the system.
 
-### 11.1. Comerciantes individuales
+They will not be permanent, immutable connections.
 
-Personajes que realizan actividades comerciales.
+They may emerge, change, expand or disappear according to economic conditions.
 
-Podrán tener:
+### 9.1. Formation of routes
+
+Routes may develop when the following exist:
+
+- Regional differences in supply and demand.
+- Tradable resources.
+- Sufficient infrastructure.
+- Means of transport.
+- Economic incentives.
+- Favorable political and security conditions.
+
+### 9.2. Player administration
+
+The player will be able to set routes manually.
+
+They may define:
+- Origin.
+- Destination.
+- Products.
+- Quantities.
+- Frequency.
+- Means of transport.
+- Priorities.
+- Trade conditions.
+
+They may also allow the system to generate routes automatically.
+
+### 9.3. Evolution of routes
+
+Routes may change when:
+- New markets appear.
+- Prices change.
+- New infrastructure is developed.
+- Conflicts arise.
+- Political conditions change.
+- New territories are discovered.
+- Better means of transport appear.
+
+---
+
+# 10. Maritime trade
+
+Maritime trade will be fundamental for civilizations with access to the sea and navigable rivers and lakes.
+
+### 10.1. Naval development
+
+Civilizations may develop:
+- Commercial fleets.
+- Specialized ports.
+- Ships of different capacities.
+- Maritime routes.
+- Exchange centers.
+- Commercial colonies.
+- Large international trade networks.
+
+### 10.2. Navigation and natural conditions
+
+In early technological stages, natural factors will have an important influence:
+
+- Winds.
+- Currents.
+- Tides.
+- Storms.
+- Seasons.
+- Maritime conditions.
+
+As naval technology improves, navigation will become progressively safer and more predictable.
+
+These factors will not disappear completely, but they will have a lesser impact in technologically advanced civilizations.
+
+### 10.3. Ports
+
+Ports may evolve in capacity, infrastructure and specialization.
+
+A small port may become a great commercial center.
+
+Its development will depend on:
+- Location.
+- Commercial traffic.
+- Technology.
+- Investment.
+- Resources.
+- Land connections.
+- International relations.
+
+---
+
+# 11. Merchants and commercial organizations
+
+Trade may develop both through player intervention and autonomously.
+
+### 11.1. Individual merchants
+
+Figures who carry out commercial activities.
+
+They may have:
 - Capital.
-- Propiedades.
-- Relaciones.
-- Especialización.
-- Experiencia.
-- Reputación.
-- Rutas comerciales.
+- Properties.
+- Relationships.
+- Specialization.
+- Experience.
+- Reputation.
+- Trade routes.
 
-### 11.2. Organizaciones comerciales
+### 11.2. Commercial organizations
 
-Con el desarrollo económico podrán aparecer:
+With economic development, the following may appear:
 
-- Familias comerciales.
-- Gremios.
-- Asociaciones mercantiles.
-- Compañías comerciales.
-- Sociedades mercantiles.
-- Grandes redes de comerciantes.
+- Merchant families.
+- Guilds.
+- Mercantile associations.
+- Trading companies.
+- Commercial partnerships.
+- Large networks of merchants.
 
-### 11.3. Autonomía comercial
+### 11.3. Commercial autonomy
 
-Los comerciantes privados podrán tomar decisiones según sus intereses económicos.
+Private merchants may make decisions according to their economic interests.
 
-El jugador podrá influir mediante:
-- Impuestos.
-- Incentivos.
-- Subsidios.
-- Regulaciones.
-- Restricciones.
-- Políticas comerciales.
-- Tratados.
+The player will be able to influence them through:
+- Taxes.
+- Incentives.
+- Subsidies.
+- Regulations.
+- Restrictions.
+- Trade policies.
+- Treaties.
 
-El sistema será coherente con el modelo de propiedad mixta definido en el sistema económico.
+The system will be consistent with the mixed-ownership model defined in the economic system.
 
 ---
 
-# 12. Almacenamiento y conservación
+# 12. Storage and preservation
 
-El almacenamiento será una parte esencial de la logística.
+Storage will be an essential part of logistics.
 
-Los recursos deberán guardarse en instalaciones apropiadas.
+Resources will have to be kept in appropriate facilities.
 
-### 12.1. Tipos de almacenamiento
+### 12.1. Types of storage
 
-- Almacenes generales.
-- Graneros.
+- General storehouses.
+- Granaries.
 - Silos.
-- Depósitos especializados.
-- Almacenes comerciales.
-- Depósitos portuarios.
-- Depósitos militares.
+- Specialized depots.
+- Commercial warehouses.
+- Port warehouses.
+- Military depots.
 
-### 12.2. Conservación de productos
+### 12.2. Product preservation
 
-Los recursos podrán sufrir deterioro por:
-- Humedad.
-- Plagas.
-- Condiciones ambientales.
-- Mala conservación.
-- Robos.
-- Manipulación inadecuada.
+Resources may suffer deterioration due to:
+- Humidity.
+- Pests.
+- Environmental conditions.
+- Poor preservation.
+- Theft.
+- Improper handling.
 
-Sin embargo, las pérdidas ordinarias deberán mantenerse muy reducidas para no generar una carga excesiva de gestión.
+However, ordinary losses must be kept very low so as not to generate an excessive management burden.
 
-Las pérdidas importantes deberán estar asociadas principalmente a condiciones desfavorables o problemas específicos.
+Significant losses must be associated mainly with unfavorable conditions or specific problems.
 
-### 12.3. Capacidad y organización
+### 12.3. Capacity and organization
 
-Cada instalación tendrá:
-- Capacidad máxima.
-- Tipos de productos admitidos.
-- Velocidad de carga y descarga.
-- Personal disponible.
-- Condiciones de conservación.
-- Costos de mantenimiento.
-
----
-
-# 13. Problemas y riesgos logísticos
-
-El sistema contemplará problemas logísticos que podrán afectar la economía.
-
-Ejemplos:
-
-- Caminos bloqueados.
-- Puentes destruidos.
-- Puertos congestionados.
-- Falta de transportistas.
-- Escasez de animales de carga.
-- Robos.
-- Piratería.
-- Clima adverso.
-- Distancias excesivas.
-- Interrupciones comerciales.
-
-### 13.1. Configuración opcional
-
-Los problemas logísticos podrán configurarse individualmente.
-
-El jugador podrá elegir una experiencia más tranquila o una simulación más exigente.
-
-Esto permitirá que los desafíos logísticos no sean obligatorios para quienes prefieran concentrarse en la construcción y evolución de su civilización.
+Each facility will have:
+- Maximum capacity.
+- Types of products accepted.
+- Loading and unloading speed.
+- Available personnel.
+- Preservation conditions.
+- Maintenance costs.
 
 ---
 
-# 14. Transporte de personas
+# 13. Logistics problems and risks
 
-El desplazamiento de personas estará contemplado, pero tendrá una simulación limitada.
+The system will provide for logistics problems that may affect the economy.
 
-No se pretende convertir el juego en un simulador detallado de viajes individuales.
+Examples:
 
-Se considerarán principalmente:
+- Blocked roads.
+- Destroyed bridges.
+- Congested ports.
+- Lack of carriers.
+- Shortage of pack animals.
+- Theft.
+- Piracy.
+- Adverse weather.
+- Excessive distances.
+- Trade disruptions.
 
-- Migraciones.
-- Desplazamientos laborales.
-- Viajes comerciales.
-- Peregrinaciones.
-- Viajes diplomáticos.
-- Movimientos militares.
+### 13.1. Optional configuration
 
-Las distancias, los costos y los medios de transporte podrán influir en estos desplazamientos.
+Logistics problems may be configured individually.
 
-La simulación deberá integrarse con el sistema de población y sociedad sin generar una carga innecesaria.
+The player will be able to choose a more relaxed experience or a more demanding simulation.
 
----
-
-# 15. Logística militar
-
-Aunque la guerra no sea el eje principal del juego, las operaciones militares necesitarán una infraestructura logística.
-
-Se contemplarán:
-
-- Abastecimiento de ejércitos.
-- Transporte de alimentos.
-- Transporte de armas.
-- Transporte de materiales.
-- Abastecimiento de fortificaciones.
-- Construcción de caminos militares.
-- Transporte fluvial y marítimo.
-
-La logística militar utilizará la infraestructura y los medios de transporte generales.
-
-No será un sistema completamente independiente.
+This will allow logistics challenges not to be mandatory for those who prefer to focus on building and evolving their civilization.
 
 ---
 
-# 16. Evolución histórica y tecnológica
+# 14. Transport of people
 
-El transporte evolucionará según los conocimientos, recursos y condiciones de cada civilización.
+The movement of people will be provided for, but it will have a limited simulation.
 
-No existirán desbloqueos automáticos por época.
+The intention is not to turn the game into a detailed simulator of individual journeys.
 
-### 16.1. Evolución no lineal
+Mainly the following will be considered:
 
-Cada civilización podrá desarrollar diferentes especializaciones.
+- Migrations.
+- Labor movements.
+- Commercial journeys.
+- Pilgrimages.
+- Diplomatic journeys.
+- Military movements.
 
-Por ejemplo:
+Distances, costs and means of transport may influence these movements.
 
-- Una civilización puede desarrollar una red terrestre avanzada sin tener una navegación importante.
-- Otra puede tener una tradición marítima muy desarrollada, pero caminos terrestres limitados.
-- Una sociedad montañosa puede desarrollar soluciones adaptadas a su geografía.
-- Una civilización fluvial puede aprovechar sus ríos como principales corredores comerciales.
-
-### 16.2. Factores determinantes
-
-- Conocimientos tecnológicos.
-- Materiales.
-- Geografía.
-- Recursos naturales.
-- Necesidades económicas.
-- Especialistas.
-- Instituciones.
-- Intercambio cultural.
-- Contacto con otras civilizaciones.
-
-### 16.3. Convivencia tecnológica
-
-Los medios antiguos podrán continuar utilizándose.
-
-El jugador no estará obligado a reemplazar toda su infraestructura cuando aparezcan alternativas mejores.
+The simulation must integrate with the population and society system without generating an unnecessary burden.
 
 ---
 
-# 17. Control del jugador y automatización
+# 15. Military logistics
 
-El sistema tendrá tres niveles de administración, siguiendo la configuración general del juego.
+Although war is not the main axis of the game, military operations will require logistics infrastructure.
 
-### Básico
+The following will be considered:
 
-- Transporte automático.
-- Distribución de recursos.
-- Rutas generadas por el sistema.
-- Comercio automático.
-- Pocas decisiones logísticas.
+- Supplying armies.
+- Transport of food.
+- Transport of weapons.
+- Transport of materials.
+- Supplying fortifications.
+- Construction of military roads.
+- River and maritime transport.
 
-### Intermedio
+Military logistics will use the general infrastructure and means of transport.
 
-- Prioridades de abastecimiento.
-- Administración de inventarios.
-- Control de rutas.
-- Políticas comerciales.
-- Gestión de importaciones y exportaciones.
-
-### Avanzado
-
-- Rutas específicas.
-- Asignación de vehículos.
-- Administración de flotas.
-- Cantidades y frecuencias.
-- Contratos.
-- Precios.
-- Aranceles.
-- Gestión detallada de inventarios.
-- Políticas logísticas.
-
-El jugador podrá modificar el nivel de complejidad según sus preferencias.
-
-La automatización no deberá eliminar las reglas fundamentales de la simulación.
+It will not be a completely independent system.
 
 ---
 
-# 18. Interfaz y visualización
+# 16. Historical and technological evolution
 
-La interfaz deberá permitir comprender cómo se mueve la economía.
+Transport will evolve according to the knowledge, resources and conditions of each civilization.
 
-### 18.1. Panel logístico general
+There will be no automatic unlocks by era.
 
-Incluirá:
-- Recursos transportados.
-- Capacidad logística.
-- Medios de transporte disponibles.
-- Costos.
-- Rutas.
-- Problemas de abastecimiento.
-- Eficiencia de transporte.
+### 16.1. Non-linear evolution
 
-### 18.2. Paneles regionales
+Each civilization may develop different specializations.
 
-Permitirá analizar:
-- Producción regional.
-- Consumo.
-- Excedentes.
-- Déficits.
-- Comercio.
-- Conectividad.
-- Costos de transporte.
+For example:
 
-### 18.3. Visualización del mapa
+- A civilization may develop an advanced land network without having significant navigation.
+- Another may have a highly developed maritime tradition but limited land roads.
+- A mountainous society may develop solutions adapted to its geography.
+- A river civilization may use its rivers as its main trade corridors.
 
-Se podrán consultar capas específicas:
+### 16.2. Determining factors
 
-- Caminos.
-- Rutas comerciales.
-- Puertos.
-- Conexiones regionales.
-- Flujos de mercancías.
-- Áreas con problemas logísticos.
+- Technological knowledge.
+- Materials.
+- Geography.
+- Natural resources.
+- Economic needs.
+- Specialists.
+- Institutions.
+- Cultural exchange.
+- Contact with other civilizations.
 
-### 18.4. Información contextual
+### 16.3. Technological coexistence
 
-Al seleccionar una ruta o instalación, el jugador podrá consultar su funcionamiento, capacidad, costos y eficiencia.
+Old means may continue to be used.
+
+The player will not be obliged to replace all of their infrastructure when better alternatives appear.
 
 ---
 
-# 19. Integración con otros sistemas
+# 17. Player control and automation
 
-Este sistema tendrá conexiones profundas con prácticamente todos los componentes del juego.
+The system will have three levels of administration, following the general configuration of the game.
 
-| Sistema | Interacción |
+### Basic
+
+- Automatic transport.
+- Resource distribution.
+- Routes generated by the system.
+- Automatic trade.
+- Few logistics decisions.
+
+### Intermediate
+
+- Supply priorities.
+- Inventory administration.
+- Route control.
+- Trade policies.
+- Management of imports and exports.
+
+### Advanced
+
+- Specific routes.
+- Vehicle assignment.
+- Fleet administration.
+- Quantities and frequencies.
+- Contracts.
+- Prices.
+- Tariffs.
+- Detailed inventory management.
+- Logistics policies.
+
+The player will be able to modify the level of complexity according to their preferences.
+
+Automation must not eliminate the fundamental rules of the simulation.
+
+---
+
+# 18. Interface and visualization
+
+The interface must allow the player to understand how the economy moves.
+
+### 18.1. General logistics panel
+
+It will include:
+- Resources transported.
+- Logistics capacity.
+- Available means of transport.
+- Costs.
+- Routes.
+- Supply problems.
+- Transport efficiency.
+
+### 18.2. Regional panels
+
+It will allow analysis of:
+- Regional production.
+- Consumption.
+- Surpluses.
+- Deficits.
+- Trade.
+- Connectivity.
+- Transport costs.
+
+### 18.3. Map visualization
+
+Specific layers may be consulted:
+
+- Roads.
+- Trade routes.
+- Ports.
+- Regional connections.
+- Flows of goods.
+- Areas with logistics problems.
+
+### 18.4. Contextual information
+
+When selecting a route or facility, the player will be able to consult its operation, capacity, costs and efficiency.
+
+---
+
+# 19. Integration with other systems
+
+This system will have deep connections with practically all components of the game.
+
+| System | Interaction |
 |---|---|
-| Economía | Costos, precios, oferta, demanda y comercio. |
-| Producción y trabajo | Traslado de insumos y productos. |
-| Construcción | Abastecimiento de materiales. |
-| Población y sociedad | Movilidad, migraciones y empleo. |
-| Tecnología | Desarrollo de vehículos e infraestructura. |
-| Política | Impuestos, regulaciones y tratados. |
-| Cultura | Intercambio y difusión cultural. |
-| Religión | Peregrinaciones y centros religiosos. |
-| Diplomacia | Relaciones y acuerdos comerciales. |
-| Guerra | Abastecimiento militar y bloqueos. |
-| Medioambiente | Terreno, clima y condiciones naturales. |
+| Economy | Costs, prices, supply, demand and trade. |
+| Production and labor | Movement of inputs and products. |
+| Construction | Supply of materials. |
+| Population and society | Mobility, migrations and employment. |
+| Technology | Development of vehicles and infrastructure. |
+| Politics | Taxes, regulations and treaties. |
+| Culture | Cultural exchange and dissemination. |
+| Religion | Pilgrimages and religious centers. |
+| Diplomacy | Relations and trade agreements. |
+| War | Military supply and blockades. |
+| Environment | Terrain, climate and natural conditions. |
 
-El transporte será un sistema transversal: los cambios en cualquier área podrán modificar las necesidades y posibilidades logísticas.
-
----
-
-# 20. Principio fundamental: la distancia importa
-
-Este principio será una de las reglas centrales del juego.
-
-La disponibilidad de un recurso no significa que pueda utilizarse inmediatamente.
-
-Su ubicación, distancia y accesibilidad determinarán su valor económico real.
-
-Ejemplos:
-
-**Región minera**
-
-Una región puede tener grandes reservas de hierro, pero necesitar caminos, transportistas e infraestructura para aprovecharlas.
-
-**Ciudad portuaria**
-
-Una ciudad con pocos recursos naturales puede prosperar gracias a su ubicación y sus conexiones comerciales.
-
-**Región aislada**
-
-Una región fértil puede tener dificultades para desarrollarse si carece de conexiones eficientes.
-
-**Centro comercial**
-
-Una ciudad ubicada en un cruce de caminos o rutas fluviales puede convertirse en un importante centro económico.
-
-La geografía deberá tener consecuencias económicas concretas.
+Transport will be a cross-cutting system: changes in any area may modify logistics needs and possibilities.
 
 ---
 
-# 21. MVP — Primera implementación
+# 20. Fundamental principle: distance matters
 
-El MVP deberá demostrar que el transporte físico funciona y que tiene consecuencias económicas.
+This principle will be one of the central rules of the game.
 
-### Escenario inicial
+The availability of a resource does not mean it can be used immediately.
 
-Una aldea de aproximadamente 30 habitantes.
+Its location, distance and accessibility will determine its real economic value.
 
-### Elementos incluidos
+Examples:
 
-**Infraestructura**
-- Caminos básicos.
-- Almacén.
-- Edificios productivos.
-- Viviendas.
+**Mining region**
 
-**Medios de transporte**
-- Transporte manual.
-- Transporte mediante trabajadores.
+A region may have large iron reserves but need roads, carriers and infrastructure to exploit them.
 
-**Recursos**
-- Madera.
-- Piedra.
-- Bayas.
-- Carne.
-- Trigo.
-- Harina.
-- Pan.
+**Port city**
 
-**Mecánicas**
-- Transporte entre edificios.
-- Almacenamiento.
-- Abastecimiento de construcciones.
-- Distribución de recursos.
-- Priorización de destinos.
-- Costos y tiempos simplificados.
-- Problemas básicos de abastecimiento.
+A city with few natural resources may prosper thanks to its location and commercial connections.
 
-### Objetivo del MVP
+**Isolated region**
 
-Demostrar que una economía necesita una red logística funcional.
+A fertile region may have difficulty developing if it lacks efficient connections.
 
-Por ejemplo, que una panadería no pueda producir si la harina no llega hasta ella, aunque exista harina disponible en otra parte del asentamiento.
+**Commercial hub**
 
-La arquitectura deberá permitir incorporar posteriormente animales, carretas, caminos avanzados, comercio regional y transporte marítimo sin tener que reconstruir el sistema desde cero.
+A city located at a crossroads of roads or river routes may become an important economic center.
+
+Geography must have concrete economic consequences.
 
 ---
 
-# 22. Decisiones confirmadas
+# 21. MVP — First implementation
 
-| Área | Decisión |
+The MVP must demonstrate that physical transport works and that it has economic consequences.
+
+### Initial scenario
+
+A village of approximately 30 inhabitants.
+
+### Elements included
+
+**Infrastructure**
+- Basic roads.
+- Storehouse.
+- Productive buildings.
+- Dwellings.
+
+**Means of transport**
+- Manual transport.
+- Transport by workers.
+
+**Resources**
+- Wood.
+- Stone.
+- Berries.
+- Meat.
+- Wheat.
+- Flour.
+- Bread.
+
+**Mechanics**
+- Transport between buildings.
+- Storage.
+- Supply of construction sites.
+- Resource distribution.
+- Prioritization of destinations.
+- Simplified costs and times.
+- Basic supply problems.
+
+### Goal of the MVP
+
+Demonstrate that an economy needs a functional logistics network.
+
+For example, that a bakery cannot produce if flour does not reach it, even if flour is available elsewhere in the settlement.
+
+The architecture must allow animals, carts, advanced roads, regional trade and maritime transport to be added later without having to rebuild the system from scratch.
+
+---
+
+# 22. Confirmed decisions
+
+| Area | Decision |
 |---|---|
-| Transporte físico | Todos los recursos deberán transportarse físicamente. |
-| Organización | Transporte propio y transportistas especializados. |
-| Medios | Todos los medios históricos relevantes. |
-| Infraestructura | Amplia variedad de infraestructura terrestre y marítima. |
-| Caminos | Distancia, terreno, clima, capacidad y mantenimiento tendrán consecuencias. |
-| Logística urbana | Mercados, depósitos y circulación de mercancías. |
-| Escalas comerciales | Local, regional e internacional. |
-| Comercio | Tres niveles de complejidad. |
-| Precios | Dinámicos y determinados por condiciones económicas reales. |
-| Rutas | Dinámicas y adaptables a las circunstancias. |
-| Comercio marítimo | Flotas, puertos, rutas y centros comerciales. |
-| Navegación | Influencia de condiciones naturales decreciente con el avance tecnológico. |
-| Comercio internacional | Todas las modalidades comerciales propuestas. |
-| Comerciantes | Actividad privada y autónoma, además de intervención del jugador. |
-| Almacenamiento | Diversos tipos de instalaciones y pérdidas muy reducidas. |
-| Problemas logísticos | Configurables y opcionales. |
-| Transporte de personas | Incluido, pero limitado. |
-| Logística militar | Integrada al sistema general. |
-| Evolución histórica | Flexible, no lineal y condicionada por la realidad. |
-| Control | Configurable, desde automático hasta avanzado. |
-| Visualización | Visible en el mundo, sin ser un requisito central de la experiencia. |
-| Geografía | La distancia y la accesibilidad tendrán consecuencias económicas reales. |
+| Physical transport | All resources must be transported physically. |
+| Organization | Own transport and specialized carriers. |
+| Means | All relevant historical means. |
+| Infrastructure | A wide variety of land and maritime infrastructure. |
+| Roads | Distance, terrain, climate, capacity and maintenance will have consequences. |
+| Urban logistics | Markets, depots and circulation of goods. |
+| Commercial scales | Local, regional and international. |
+| Trade | Three levels of complexity. |
+| Prices | Dynamic and determined by real economic conditions. |
+| Routes | Dynamic and adaptable to circumstances. |
+| Maritime trade | Fleets, ports, routes and commercial centers. |
+| Navigation | Influence of natural conditions decreasing with technological advance. |
+| International trade | All proposed commercial modalities. |
+| Merchants | Private and autonomous activity, in addition to player intervention. |
+| Storage | Various types of facilities and very low losses. |
+| Logistics problems | Configurable and optional. |
+| Transport of people | Included, but limited. |
+| Military logistics | Integrated into the general system. |
+| Historical evolution | Flexible, non-linear and conditioned by reality. |
+| Control | Configurable, from automatic to advanced. |
+| Visualization | Visible in the world, without being a central requirement of the experience. |
+| Geography | Distance and accessibility will have real economic consequences. |
 
 ---
 
-# 23. Temas para futuras iteraciones
+# 23. Topics for future iterations
 
-No es necesario resolverlos ahora, pero podrán desarrollarse cuando avancemos en el diseño detallado:
+They do not need to be resolved now, but they may be developed as we advance in the detailed design:
 
-1. Modelado específico de costos y tiempos de transporte.
-2. Algoritmos de selección de rutas.
-3. Capacidad y congestión de redes.
-4. Funcionamiento detallado de los mercados.
-5. Administración avanzada de flotas.
-6. Modelado de contratos y organizaciones comerciales.
-7. Relaciones entre comercio, diplomacia y conflictos.
-8. Simulación de grandes redes comerciales.
-9. Optimización de rendimiento en mapas extensos.
+1. Specific modeling of transport costs and times.
+2. Route selection algorithms.
+3. Network capacity and congestion.
+4. Detailed functioning of markets.
+5. Advanced fleet administration.
+6. Modeling of contracts and commercial organizations.
+7. Relationships between trade, diplomacy and conflicts.
+8. Simulation of large trade networks.
+9. Performance optimization on large maps.
 
 ---
 
-# 24. Visión final
+# 24. Final vision
 
-El sistema de Transporte, Comercio y Logística deberá hacer que el mundo se sienta conectado y económicamente vivo.
+The Transport, Trade and Logistics system must make the world feel connected and economically alive.
 
-Los recursos tendrán origen, destino y recorrido. Las ciudades dependerán de sus conexiones. Las regiones desarrollarán especializaciones. Los comerciantes buscarán oportunidades. Los puertos podrán convertirse en centros de prosperidad y las rutas comerciales podrán transformar el destino económico de una civilización.
+Resources will have an origin, a destination and a journey. Cities will depend on their connections. Regions will develop specializations. Merchants will seek opportunities. Ports may become centers of prosperity, and trade routes may transform the economic destiny of a civilization.
 
-El jugador deberá poder observar cómo su territorio se conecta y evoluciona a lo largo de los siglos.
+The player must be able to observe how their territory connects and evolves over the centuries.
 
-**Principio rector: una civilización no prospera solamente por lo que produce, sino también por su capacidad de mover, intercambiar y distribuir aquello que necesita.**
+**Guiding principle: a civilization does not prosper solely by what it produces, but also by its capacity to move, exchange and distribute what it needs.**

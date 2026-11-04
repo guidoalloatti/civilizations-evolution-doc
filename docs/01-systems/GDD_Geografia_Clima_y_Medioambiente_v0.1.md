@@ -1,880 +1,880 @@
-> **Control documental:** 0.1 | Estado: diseño conceptual; las decisiones marcadas como confirmadas se preservan desde la fuente. **Alcance:** este GDD es fuente de detalle de su dominio; el GDD Maestro establece la visión común. Los conflictos intersistema se registran en AUDIT_REPORT.md y no se resuelven implícitamente.
+> **Document control:** 0.1 | Status: conceptual design; decisions marked as confirmed are preserved from the source. **Scope:** this GDD is the detail source for its domain; the Master GDD establishes the shared vision. Cross-system conflicts are recorded in AUDIT_REPORT.md and are not resolved implicitly.
 
 ---
 
-# GDD — Sistema de Geografía, Clima y Medioambiente
+# GDD — Geography, Climate, and Environment System
 
-**Versión:** 0.1  
-**Estado:** Diseño conceptual  
-**Período histórico:** Paleolítico – comienzos de la Revolución Industrial
-
----
-
-# 1. Visión general
-
-El sistema de Geografía, Clima y Medioambiente será la base natural sobre la que se desarrollarán todas las civilizaciones.
-
-El mundo deberá ser un entorno geográficamente coherente, visualmente realista y dinámico, con características naturales que condicionen el desarrollo económico, social, tecnológico y territorial.
-
-La geografía no será simplemente un escenario decorativo. Determinará oportunidades, limitaciones y desafíos para cada civilización.
-
-Una civilización que nace junto a un gran río tendrá posibilidades diferentes a otra que se desarrolla en una isla, una región montañosa o una gran llanura.
-
-El entorno natural existirá independientemente de las civilizaciones y tendrá una historia propia.
-
-### Principios fundamentales
-
-1. Geografía realista y coherente.
-2. Generación natural de continentes, montañas, ríos y costas.
-3. Diversidad de biomas y ecosistemas.
-4. Clima regional y estacional.
-5. Recursos naturales condicionados por la geología y el ambiente.
-6. Ecosistemas con flora y fauna propias.
-7. Impacto humano progresivo sobre el entorno.
-8. Interacción entre geografía y desarrollo económico.
-9. Configuración de complejidad.
-10. Desastres naturales opcionales y deshabilitados por defecto.
+**Version:** 0.1  
+**Status:** Conceptual design  
+**Historical period:** Paleolithic – beginnings of the Industrial Revolution
 
 ---
 
-# 2. Geografía del mundo
+# 1. Overview
 
-El mundo deberá contar con una geografía variada y natural.
+The Geography, Climate, and Environment system will be the natural foundation on which all civilizations develop.
 
-Se contemplarán todos los principales accidentes geográficos.
+The world must be a geographically coherent, visually realistic, and dynamic environment, with natural features that condition economic, social, technological, and territorial development.
 
-### 2.1. Formaciones terrestres
+Geography will not simply be a decorative backdrop. It will determine opportunities, limitations, and challenges for each civilization.
 
-- Llanuras.
-- Colinas.
-- Montañas.
-- Cordilleras.
-- Valles.
-- Mesetas.
-- Cuencas.
-- Depresiones.
-- Desiertos.
-- Bosques.
-- Selvas.
-- Pantanos.
+A civilization born beside a great river will have different possibilities than one that develops on an island, a mountainous region, or a vast plain.
+
+The natural environment will exist independently of the civilizations and will have a history of its own.
+
+### Fundamental principles
+
+1. Realistic and coherent geography.
+2. Natural generation of continents, mountains, rivers, and coasts.
+3. Diversity of biomes and ecosystems.
+4. Regional and seasonal climate.
+5. Natural resources conditioned by geology and the environment.
+6. Ecosystems with their own flora and fauna.
+7. Progressive human impact on the environment.
+8. Interaction between geography and economic development.
+9. Complexity configuration.
+10. Natural disasters optional and disabled by default.
+
+---
+
+# 2. World geography
+
+The world must have varied and natural geography.
+
+All the main landforms are considered.
+
+### 2.1. Land formations
+
+- Plains.
+- Hills.
+- Mountains.
+- Mountain ranges.
+- Valleys.
+- Plateaus.
+- Basins.
+- Depressions.
+- Deserts.
+- Forests.
+- Rainforests.
+- Marshes.
 - Tundras.
-- Estepas.
-- Praderas.
+- Steppes.
+- Grasslands.
 
-### 2.2. Formaciones marítimas
+### 2.2. Maritime formations
 
-- Océanos.
-- Mares interiores.
-- Golfos.
-- Bahías.
-- Estuarios.
-- Fiordos.
-- Arrecifes.
-- Costas rocosas.
-- Playas.
+- Oceans.
+- Inland seas.
+- Gulfs.
+- Bays.
+- Estuaries.
+- Fjords.
+- Reefs.
+- Rocky coasts.
+- Beaches.
 - Deltas.
-- Penínsulas.
-- Islas.
-- Archipiélagos.
+- Peninsulas.
+- Islands.
+- Archipelagos.
 
-Todas estas formaciones podrán coexistir dentro de un mismo mundo.
+All of these formations may coexist within a single world.
 
-### 2.3. Escala geográfica
+### 2.3. Geographic scale
 
-El tamaño del mundo será configurable.
+The size of the world will be configurable.
 
-Se contemplarán:
+The following are considered:
 
-- Mapas regionales.
-- Mapas continentales.
-- Grandes mapas con múltiples continentes.
-- Mapas insulares.
-- Archipiélagos.
+- Regional maps.
+- Continental maps.
+- Large maps with multiple continents.
+- Insular maps.
+- Archipelagos.
 
-La escala determinará la cantidad de regiones, civilizaciones, recursos y ecosistemas que podrán existir.
-
----
-
-# 3. Topografía y relieve
-
-El terreno tendrá una topografía continua y realista.
-
-No se tratará simplemente de colocar diferentes tipos de terreno sobre una superficie plana.
-
-### 3.1. Características topográficas
-
-- Elevación.
-- Pendiente.
-- Curvatura del terreno.
-- Valles.
-- Cuencas hidrográficas.
-- Cordilleras.
-- Pasos montañosos.
-- Mesetas.
-- Depresiones.
-- Llanuras aluviales.
-
-### 3.2. Consecuencias sobre el gameplay
-
-La topografía influirá en:
-
-- Construcción.
-- Agricultura.
-- Ganadería.
-- Transporte.
-- Navegación.
-- Asentamientos.
-- Expansión territorial.
-- Disponibilidad de recursos.
-- Defensa militar.
-- Desarrollo urbano.
-
-Por ejemplo, construir una ciudad en una región montañosa tendrá desafíos diferentes a establecerla en una llanura fértil.
-
-### 3.3. Representación visual
-
-El terreno deberá lucir natural y convincente.
-
-Se priorizarán:
-
-- Transiciones suaves.
-- Elevaciones coherentes.
-- Formaciones geológicas.
-- Variaciones naturales.
-- Vegetación adaptada al terreno.
-- Integración visual entre biomas.
+The scale will determine the number of regions, civilizations, resources, and ecosystems that may exist.
 
 ---
 
-# 4. Sistemas fluviales
+# 3. Topography and relief
 
-Los ríos serán elementos geográficos y económicos fundamentales.
+The terrain will have a continuous, realistic topography.
 
-Deberán generarse siguiendo una lógica hidrográfica realista.
+It will not simply be a matter of placing different types of terrain on a flat surface.
 
-### 4.1. Características
+### 3.1. Topographic features
 
-- Nacimiento en montañas, lagos, manantiales o zonas húmedas.
-- Afluentes.
-- Cuencas hidrográficas.
-- Cursos principales y secundarios.
-- Desembocaduras.
+- Elevation.
+- Slope.
+- Terrain curvature.
+- Valleys.
+- Drainage basins.
+- Mountain ranges.
+- Mountain passes.
+- Plateaus.
+- Depressions.
+- Alluvial plains.
+
+### 3.2. Consequences for gameplay
+
+The topography will influence:
+
+- Construction.
+- Agriculture.
+- Livestock farming.
+- Transport.
+- Navigation.
+- Settlements.
+- Territorial expansion.
+- Resource availability.
+- Military defense.
+- Urban development.
+
+For example, building a city in a mountainous region will pose different challenges than establishing it on a fertile plain.
+
+### 3.3. Visual representation
+
+The terrain must look natural and convincing.
+
+Priority will be given to:
+
+- Smooth transitions.
+- Coherent elevations.
+- Geological formations.
+- Natural variations.
+- Vegetation adapted to the terrain.
+- Visual integration between biomes.
+
+---
+
+# 4. River systems
+
+Rivers will be fundamental geographic and economic elements.
+
+They must be generated following a realistic hydrographic logic.
+
+### 4.1. Characteristics
+
+- Source in mountains, lakes, springs, or wetlands.
+- Tributaries.
+- Drainage basins.
+- Main and secondary courses.
+- River mouths.
 - Deltas.
-- Variaciones estacionales.
-- Caudal.
-- Inundaciones.
-- Posibilidades de navegación.
+- Seasonal variations.
+- Flow.
+- Floods.
+- Navigation possibilities.
 
-### 4.2. Influencia económica
+### 4.2. Economic influence
 
-Los ríos podrán proporcionar:
+Rivers may provide:
 
-- Agua.
-- Suelos fértiles.
-- Recursos pesqueros.
-- Transporte.
-- Energía hidráulica.
-- Posibilidades de irrigación.
-- Oportunidades de asentamiento.
+- Water.
+- Fertile soils.
+- Fishing resources.
+- Transport.
+- Hydraulic energy.
+- Irrigation possibilities.
+- Settlement opportunities.
 
-### 4.3. Evolución
+### 4.3. Evolution
 
-Los cursos de agua podrán experimentar cambios naturales graduales.
+Watercourses may undergo gradual natural changes.
 
-No se pretende simular constantemente cambios geológicos profundos, pero sí contemplar procesos plausibles durante períodos históricos extensos.
+The intent is not to constantly simulate deep geological changes, but to account for plausible processes over extended historical periods.
 
-### 4.4. Importancia estratégica
+### 4.4. Strategic importance
 
-Los ríos navegables podrán convertirse en corredores comerciales fundamentales.
+Navigable rivers may become fundamental trade corridors.
 
-La disponibilidad de transporte fluvial dependerá de las características del río y de la tecnología de cada civilización.
+The availability of river transport will depend on the characteristics of the river and the technology of each civilization.
 
 ---
 
-# 5. Océanos, mares y costas
+# 5. Oceans, seas, and coasts
 
-Los entornos marítimos tendrán características diferentes.
+Maritime environments will have different characteristics.
 
-Se contemplarán:
+The following are considered:
 
-- Océanos abiertos.
-- Mares interiores.
-- Golfos.
-- Bahías.
-- Estuarios.
-- Fiordos.
-- Arrecifes.
-- Costas rocosas.
-- Playas.
+- Open oceans.
+- Inland seas.
+- Gulfs.
+- Bays.
+- Estuaries.
+- Fjords.
+- Reefs.
+- Rocky coasts.
+- Beaches.
 - Deltas.
 
-### 5.1. Influencia sobre las civilizaciones
+### 5.1. Influence on civilizations
 
-Los entornos marítimos influirán en:
+Maritime environments will influence:
 
-- Pesca.
-- Comercio.
-- Transporte.
-- Navegación.
-- Construcción de puertos.
-- Asentamientos.
-- Disponibilidad de recursos.
-- Relaciones internacionales.
+- Fishing.
+- Trade.
+- Transport.
+- Navigation.
+- Port construction.
+- Settlements.
+- Resource availability.
+- International relations.
 
-### 5.2. Navegación
+### 5.2. Navigation
 
-Las condiciones marítimas afectarán la navegación, especialmente durante las primeras etapas tecnológicas.
+Maritime conditions will affect navigation, especially during the early technological stages.
 
-La tecnología naval reducirá progresivamente ciertas limitaciones, como ya definimos en el sistema de Transporte y Logística.
+Naval technology will progressively reduce certain limitations, as already defined in the Transport and Logistics system.
 
 ---
 
-# 6. Biomas y ecosistemas
+# 6. Biomes and ecosystems
 
-El mundo tendrá diferentes biomas, cada uno con características ambientales propias.
+The world will have different biomes, each with its own environmental characteristics.
 
-### 6.1. Biomas contemplados
+### 6.1. Biomes considered
 
-- Bosques templados.
-- Bosques boreales.
-- Selvas tropicales.
-- Sabanas.
-- Praderas.
-- Estepas.
-- Desiertos cálidos.
-- Desiertos fríos.
+- Temperate forests.
+- Boreal forests.
+- Tropical rainforests.
+- Savannas.
+- Grasslands.
+- Steppes.
+- Hot deserts.
+- Cold deserts.
 - Tundras.
 - Taigas.
-- Humedales.
-- Regiones mediterráneas.
-- Regiones alpinas.
+- Wetlands.
+- Mediterranean regions.
+- Alpine regions.
 
-### 6.2. Características de los biomas
+### 6.2. Biome characteristics
 
-Cada bioma tendrá:
+Each biome will have:
 
-- Temperaturas características.
-- Precipitaciones.
-- Humedad.
-- Vegetación.
+- Characteristic temperatures.
+- Precipitation.
+- Humidity.
+- Vegetation.
 - Fauna.
-- Tipos de suelo.
-- Recursos naturales.
-- Productividad potencial.
-- Condiciones de habitabilidad.
+- Soil types.
+- Natural resources.
+- Potential productivity.
+- Habitability conditions.
 
-Los biomas deberán responder a las condiciones geográficas y climáticas, no distribuirse aleatoriamente.
+Biomes must respond to geographic and climatic conditions, not be distributed randomly.
 
-### 6.3. Transiciones
+### 6.3. Transitions
 
-Los biomas podrán presentar transiciones naturales.
+Biomes may present natural transitions.
 
-Por ejemplo, una región puede pasar gradualmente de un bosque templado a una estepa.
+For example, a region can gradually shift from a temperate forest to a steppe.
 
-Se evitarán fronteras artificiales entre ecosistemas.
-
----
-
-# 7. Clima y meteorología
-
-El clima tendrá consecuencias reales sobre el mundo y las civilizaciones.
-
-### 7.1. Variables climáticas
-
-- Temperatura.
-- Precipitaciones.
-- Humedad.
-- Vientos.
-- Presión atmosférica.
-- Nubosidad.
-- Nevadas.
-- Heladas.
-- Sequías.
-- Tormentas.
-- Olas de calor.
-
-### 7.2. Distribución climática
-
-Las condiciones climáticas dependerán de:
-
-- Latitud.
-- Altitud.
-- Cercanía al mar.
-- Relieve.
-- Corrientes marítimas.
-- Vientos predominantes.
-- Características geográficas regionales.
-
-### 7.3. Consecuencias
-
-El clima influirá en:
-
-- Agricultura.
-- Ganadería.
-- Disponibilidad de agua.
-- Transporte.
-- Construcción.
-- Salud.
-- Productividad.
-- Necesidades de la población.
-- Actividad económica.
-
-Por ejemplo, una temporada de precipitaciones insuficientes podrá reducir la producción agrícola y afectar los precios de los alimentos.
+Artificial borders between ecosystems will be avoided.
 
 ---
 
-# 8. Estaciones del año
+# 7. Climate and weather
 
-Las estaciones tendrán comportamientos diferentes según la ubicación geográfica.
+Climate will have real consequences for the world and for civilizations.
 
-No todas las regiones tendrán necesariamente cuatro estaciones diferenciadas.
+### 7.1. Climatic variables
 
-### 8.1. Regiones templadas
+- Temperature.
+- Precipitation.
+- Humidity.
+- Winds.
+- Atmospheric pressure.
+- Cloud cover.
+- Snowfall.
+- Frosts.
+- Droughts.
+- Storms.
+- Heat waves.
 
-Podrán experimentar:
+### 7.2. Climate distribution
 
-- Primavera.
-- Verano.
-- Otoño.
-- Invierno.
+Climatic conditions will depend on:
 
-### 8.2. Regiones tropicales
+- Latitude.
+- Altitude.
+- Proximity to the sea.
+- Relief.
+- Ocean currents.
+- Prevailing winds.
+- Regional geographic features.
 
-Podrán presentar principalmente:
+### 7.3. Consequences
 
-- Estación húmeda.
-- Estación seca.
+Climate will influence:
 
-### 8.3. Regiones polares y subpolares
+- Agriculture.
+- Livestock farming.
+- Water availability.
+- Transport.
+- Construction.
+- Health.
+- Productivity.
+- Population needs.
+- Economic activity.
 
-Tendrán variaciones estacionales particulares, con períodos prolongados de frío y luz solar limitada.
-
-### 8.4. Consecuencias económicas
-
-Las estaciones afectarán:
-
-- Siembra.
-- Cosecha.
-- Crecimiento de cultivos.
-- Ganadería.
-- Disponibilidad de alimentos.
-- Actividad forestal.
-- Transporte.
-- Condiciones laborales.
-
-El calendario agrícola deberá adaptarse a cada región.
-
----
-
-# 9. Variabilidad climática histórica
-
-El sistema contemplará variaciones climáticas normales y regionales.
-
-Sin embargo, los cambios climáticos de largo plazo no serán una mecánica central.
-
-No se pretende implementar una simulación paleoclimática profunda ni introducir grandes transformaciones climáticas constantemente.
-
-El clima deberá mantener una coherencia general durante la partida, con variaciones naturales y estacionales.
-
-Los fenómenos extraordinarios podrán formar parte del sistema de eventos cuando corresponda.
+For example, a season of insufficient precipitation may reduce agricultural output and affect food prices.
 
 ---
 
-# 10. Impacto humano sobre el medioambiente
+# 8. Seasons of the year
 
-La actividad humana podrá modificar progresivamente el entorno.
+Seasons will behave differently depending on geographic location.
 
-Este impacto será inicialmente limitado y aumentará conforme crezcan las poblaciones, las economías y las capacidades tecnológicas.
+Not all regions will necessarily have four distinct seasons.
 
-### 10.1. Transformaciones ambientales
+### 8.1. Temperate regions
 
-- Deforestación.
-- Expansión agrícola.
-- Ganadería.
-- Irrigación.
-- Construcción de canales.
-- Drenaje de humedales.
-- Modificación de cursos de agua.
-- Erosión.
-- Sobreexplotación de recursos.
-- Alteración de ecosistemas.
+They may experience:
 
-### 10.2. Evolución histórica
+- Spring.
+- Summer.
+- Autumn.
+- Winter.
 
-Las primeras comunidades tendrán un impacto relativamente limitado.
+### 8.2. Tropical regions
 
-Con el crecimiento de las ciudades y la expansión de la agricultura, el impacto podrá aumentar considerablemente.
+They may mainly present:
 
-### 10.3. Consecuencias
+- Wet season.
+- Dry season.
 
-Las transformaciones podrán generar:
+### 8.3. Polar and subpolar regions
 
-- Pérdida de bosques.
-- Degradación del suelo.
-- Alteración de ecosistemas.
-- Disminución de fauna.
-- Cambios en la disponibilidad de agua.
-- Modificaciones en la productividad agrícola.
+They will have particular seasonal variations, with prolonged periods of cold and limited sunlight.
 
-También podrán existir consecuencias positivas, como irrigación, recuperación de tierras y reforestación.
+### 8.4. Economic consequences
 
-El sistema deberá evitar que toda intervención humana sea necesariamente perjudicial.
+Seasons will affect:
 
----
+- Sowing.
+- Harvest.
+- Crop growth.
+- Livestock farming.
+- Food availability.
+- Forestry activity.
+- Transport.
+- Working conditions.
 
-# 11. Recursos naturales y geología
-
-La distribución de recursos deberá responder a características geológicas y ambientales.
-
-No se colocarán depósitos minerales de manera completamente aleatoria.
-
-### 11.1. Recursos geológicos
-
-- Hierro.
-- Cobre.
-- Estaño.
-- Oro.
-- Plata.
-- Otros metales.
-- Piedra.
-- Arcilla.
-- Sal.
-- Minerales diversos.
-
-Su distribución dependerá de la geología y las formaciones del terreno.
-
-### 11.2. Recursos biológicos
-
-- Madera.
-- Plantas silvestres.
-- Frutas.
-- Bayas.
-- Animales.
-- Recursos pesqueros.
-- Plantas medicinales.
-- Otros productos naturales.
-
-Su disponibilidad dependerá de los ecosistemas.
-
-### 11.3. Recursos agrícolas
-
-La productividad potencial dependerá de:
-
-- Tipo de suelo.
-- Fertilidad.
-- Temperatura.
-- Precipitaciones.
-- Disponibilidad de agua.
-- Topografía.
-- Técnicas agrícolas.
-
-### 11.4. Distribución geográfica
-
-Las regiones tendrán diferentes ventajas naturales.
-
-Esto generará especialización económica y dependencia comercial entre asentamientos.
+The agricultural calendar must adapt to each region.
 
 ---
 
-# 12. Regeneración y agotamiento de recursos
+# 9. Historical climate variability
 
-Los recursos tendrán comportamientos diferentes según su naturaleza.
+The system will account for normal and regional climatic variations.
 
-Se utilizará un modelo realista.
+However, long-term climate change will not be a central mechanic.
 
-### 12.1. Recursos renovables
+The intent is not to implement a deep paleoclimatic simulation or to introduce major climatic transformations constantly.
 
-Ejemplos:
+The climate must maintain general coherence during the playthrough, with natural and seasonal variations.
 
-- Bosques.
+Extraordinary phenomena may form part of the events system where appropriate.
+
+---
+
+# 10. Human impact on the environment
+
+Human activity will be able to progressively modify the environment.
+
+This impact will initially be limited and will increase as populations, economies, and technological capabilities grow.
+
+### 10.1. Environmental transformations
+
+- Deforestation.
+- Agricultural expansion.
+- Livestock farming.
+- Irrigation.
+- Canal construction.
+- Wetland drainage.
+- Modification of watercourses.
+- Erosion.
+- Overexploitation of resources.
+- Alteration of ecosystems.
+
+### 10.2. Historical evolution
+
+The first communities will have a relatively limited impact.
+
+With the growth of cities and the expansion of agriculture, the impact may increase considerably.
+
+### 10.3. Consequences
+
+Transformations may generate:
+
+- Loss of forests.
+- Soil degradation.
+- Alteration of ecosystems.
+- Decline in fauna.
+- Changes in water availability.
+- Changes in agricultural productivity.
+
+Positive consequences may also exist, such as irrigation, land reclamation, and reforestation.
+
+The system must avoid making every human intervention necessarily harmful.
+
+---
+
+# 11. Natural resources and geology
+
+The distribution of resources must respond to geological and environmental characteristics.
+
+Mineral deposits will not be placed in a completely random way.
+
+### 11.1. Geological resources
+
+- Iron.
+- Copper.
+- Tin.
+- Gold.
+- Silver.
+- Other metals.
+- Stone.
+- Clay.
+- Salt.
+- Various minerals.
+
+Their distribution will depend on the geology and the landforms.
+
+### 11.2. Biological resources
+
+- Wood.
+- Wild plants.
+- Fruits.
+- Berries.
+- Animals.
+- Fishing resources.
+- Medicinal plants.
+- Other natural products.
+
+Their availability will depend on the ecosystems.
+
+### 11.3. Agricultural resources
+
+Potential productivity will depend on:
+
+- Soil type.
+- Fertility.
+- Temperature.
+- Precipitation.
+- Water availability.
+- Topography.
+- Agricultural techniques.
+
+### 11.4. Geographic distribution
+
+Regions will have different natural advantages.
+
+This will generate economic specialization and commercial dependence between settlements.
+
+---
+
+# 12. Resource regeneration and depletion
+
+Resources will behave differently depending on their nature.
+
+A realistic model will be used.
+
+### 12.1. Renewable resources
+
+Examples:
+
+- Forests.
 - Fauna.
-- Pesca.
-- Vegetación.
-- Recursos agrícolas.
+- Fishing.
+- Vegetation.
+- Agricultural resources.
 
-Podrán regenerarse, pero también agotarse si la explotación supera su capacidad de recuperación.
+They may regenerate, but they can also be depleted if exploitation exceeds their capacity to recover.
 
-### 12.2. Recursos no renovables
+### 12.2. Non-renewable resources
 
-Ejemplos:
+Examples:
 
-- Depósitos minerales.
-- Metales.
-- Piedras de determinadas formaciones.
-- Otros recursos geológicos.
+- Mineral deposits.
+- Metals.
+- Stone from certain formations.
+- Other geological resources.
 
-Tendrán depósitos limitados y podrán agotarse.
+They will have limited deposits and may be depleted.
 
-### 12.3. Gestión
+### 12.3. Management
 
-El jugador podrá administrar la explotación mediante:
+The player will be able to manage exploitation through:
 
-- Restricciones.
-- Regulaciones.
-- Políticas.
-- Áreas protegidas.
-- Técnicas de extracción.
-- Prácticas de recuperación.
+- Restrictions.
+- Regulations.
+- Policies.
+- Protected areas.
+- Extraction techniques.
+- Recovery practices.
 
 ---
 
-# 13. Flora y fauna
+# 13. Flora and fauna
 
-El mundo tendrá ecosistemas con especies animales y vegetales propias.
+The world will have ecosystems with their own animal and plant species.
 
 ### 13.1. Fauna
 
-Se contemplarán:
+The following are considered:
 
-- Herbívoros.
-- Depredadores.
-- Animales omnívoros.
-- Especies migratorias.
-- Animales domesticables.
-- Animales salvajes.
+- Herbivores.
+- Predators.
+- Omnivorous animals.
+- Migratory species.
+- Domesticable animals.
+- Wild animals.
 
 ### 13.2. Flora
 
-Se contemplarán:
+The following are considered:
 
-- Bosques.
-- Pastizales.
-- Arbustos.
-- Plantas silvestres.
-- Árboles frutales.
-- Plantas medicinales.
-- Vegetación adaptada a cada bioma.
+- Forests.
+- Grasslands.
+- Shrubs.
+- Wild plants.
+- Fruit trees.
+- Medicinal plants.
+- Vegetation adapted to each biome.
 
-### 13.3. Evolución de ecosistemas
+### 13.3. Evolution of ecosystems
 
-Las poblaciones animales y vegetales podrán cambiar según:
+Animal and plant populations may change according to:
 
-- Clima.
-- Disponibilidad de recursos.
-- Presión humana.
-- Caza.
-- Deforestación.
-- Competencia.
-- Alteraciones ambientales.
+- Climate.
+- Resource availability.
+- Human pressure.
+- Hunting.
+- Deforestation.
+- Competition.
+- Environmental alterations.
 
-No se pretende simular individualmente cada organismo. Se utilizarán modelos agregados cuando sea necesario.
-
----
-
-# 14. Domesticación y biodiversidad
-
-La domesticación tendrá especial importancia durante las primeras etapas históricas.
-
-Las civilizaciones podrán domesticar especies disponibles en su entorno y desarrollar variedades agrícolas y ganaderas.
-
-### 14.1. Domesticación animal
-
-La disponibilidad dependerá de:
-
-- Especies existentes.
-- Características del animal.
-- Conocimientos.
-- Experiencia.
-- Prácticas de domesticación.
-
-### 14.2. Desarrollo agrícola
-
-Las civilizaciones podrán desarrollar y seleccionar variedades vegetales mediante prácticas acumuladas.
-
-Esto podrá generar:
-
-- Cultivos adaptados a regiones específicas.
-- Diferencias de productividad.
-- Resistencia a condiciones ambientales.
-- Variedades culturales propias.
-- Nuevas posibilidades alimentarias.
-
-### 14.3. Integración tecnológica
-
-La domesticación y el desarrollo de cultivos estarán conectados con Tecnología, Ciencia e Innovación.
-
-La disponibilidad de especies y variedades no será idéntica en todas las regiones.
+The intent is not to simulate each organism individually. Aggregate models will be used when necessary.
 
 ---
 
-# 15. Desastres naturales
+# 14. Domestication and biodiversity
 
-El sistema contemplará diferentes fenómenos naturales.
+Domestication will be especially important during the early historical stages.
 
-### 15.1. Fenómenos incluidos
+Civilizations will be able to domesticate species available in their environment and develop agricultural and livestock varieties.
 
-- Terremotos.
-- Erupciones volcánicas.
+### 14.1. Animal domestication
+
+Availability will depend on:
+
+- Existing species.
+- The animal's characteristics.
+- Knowledge.
+- Experience.
+- Domestication practices.
+
+### 14.2. Agricultural development
+
+Civilizations will be able to develop and select plant varieties through accumulated practices.
+
+This may generate:
+
+- Crops adapted to specific regions.
+- Differences in productivity.
+- Resistance to environmental conditions.
+- Culturally distinct varieties.
+- New food possibilities.
+
+### 14.3. Technological integration
+
+Domestication and crop development will be connected with Technology, Science, and Innovation.
+
+The availability of species and varieties will not be identical across all regions.
+
+---
+
+# 15. Natural disasters
+
+The system will account for different natural phenomena.
+
+### 15.1. Phenomena included
+
+- Earthquakes.
+- Volcanic eruptions.
 - Tsunamis.
-- Inundaciones.
-- Sequías.
-- Incendios forestales.
-- Deslizamientos.
-- Tormentas extremas.
-- Huracanes y ciclones.
-- Avalanchas.
+- Floods.
+- Droughts.
+- Wildfires.
+- Landslides.
+- Extreme storms.
+- Hurricanes and cyclones.
+- Avalanches.
 
-### 15.2. Configuración
+### 15.2. Configuration
 
-**Los desastres naturales estarán deshabilitados por defecto.**
+**Natural disasters will be disabled by default.**
 
-El jugador podrá habilitar los fenómenos que desee y configurar su frecuencia e intensidad.
+The player will be able to enable the phenomena they wish and configure their frequency and intensity.
 
-Esto permitirá disfrutar del juego sin desastres o incorporar desafíos ambientales adicionales.
-
----
-
-# 16. Frecuencia e impacto de los desastres
-
-Cuando estén habilitados, los desastres deberán responder a condiciones geográficas reales.
-
-### 16.1. Factores determinantes
-
-- Ubicación.
-- Geología.
-- Clima.
-- Ecosistemas.
-- Condiciones naturales.
-- Estacionalidad.
-- Vulnerabilidad de los asentamientos.
-
-### 16.2. Impacto
-
-Las consecuencias dependerán de:
-
-- Intensidad.
-- Duración.
-- Población afectada.
-- Infraestructura.
-- Preparación.
-- Capacidad de recuperación.
-
-### 16.3. Prevención
-
-Cuando corresponda, las civilizaciones podrán desarrollar infraestructura y políticas que reduzcan los daños.
+This will make it possible to enjoy the game without disasters or to add further environmental challenges.
 
 ---
 
-# 17. Conservación y protección ambiental
+# 16. Frequency and impact of disasters
 
-Las civilizaciones podrán desarrollar políticas de protección ambiental.
+When enabled, disasters must respond to real geographic conditions.
 
-Se contemplarán:
+### 16.1. Determining factors
 
-- Protección de bosques.
-- Reservas naturales.
-- Protección de especies.
-- Regulación de caza.
-- Regulación de tala.
-- Gestión del agua.
-- Reforestación.
-- Recuperación de suelos.
+- Location.
+- Geology.
+- Climate.
+- Ecosystems.
+- Natural conditions.
+- Seasonality.
+- Vulnerability of settlements.
 
-Este sistema tendrá una profundidad secundaria y configurable.
+### 16.2. Impact
 
-No deberá convertirse en una obligación de micromanagement para el jugador.
+The consequences will depend on:
 
----
+- Intensity.
+- Duration.
+- Affected population.
+- Infrastructure.
+- Preparedness.
+- Recovery capacity.
 
-# 18. Geografía y desarrollo de asentamientos
+### 16.3. Prevention
 
-La geografía será uno de los factores más importantes para determinar el desarrollo de una civilización.
-
-### 18.1. Factores de ubicación
-
-- Disponibilidad de agua.
-- Fertilidad del suelo.
-- Acceso a recursos.
-- Protección natural.
-- Conectividad.
-- Acceso al mar.
-- Posibilidades agrícolas.
-- Riesgos ambientales.
-- Posibilidad de expansión.
-
-### 18.2. Consecuencias
-
-La ubicación inicial podrá condicionar profundamente el futuro de una civilización.
-
-Una ciudad fluvial podrá desarrollar una economía diferente a una ciudad montañosa o portuaria.
-
-Las ventajas y desventajas geográficas no serán necesariamente permanentes: la tecnología y las decisiones del jugador podrán modificarlas parcialmente.
+Where appropriate, civilizations will be able to develop infrastructure and policies that reduce the damage.
 
 ---
 
-# 19. Generación y configuración del mundo
+# 17. Conservation and environmental protection
 
-El jugador tendrá herramientas para configurar el mundo antes de comenzar una partida.
+Civilizations will be able to develop environmental protection policies.
 
-### 19.1. Configuración geográfica
+The following are considered:
 
-- Tamaño del mapa.
-- Cantidad de continentes.
-- Distribución de islas.
-- Proporción de tierra y agua.
-- Diversidad de biomas.
-- Cantidad de montañas.
-- Cantidad de ríos y lagos.
+- Forest protection.
+- Nature reserves.
+- Species protection.
+- Hunting regulation.
+- Logging regulation.
+- Water management.
+- Reforestation.
+- Soil recovery.
 
-### 19.2. Configuración ambiental
+This system will have secondary, configurable depth.
 
-- Abundancia de recursos.
-- Distribución de ecosistemas.
-- Variabilidad climática.
-- Frecuencia de desastres.
-- Intensidad de fenómenos naturales.
-
-### 19.3. Configuración de civilizaciones
-
-- Cantidad de civilizaciones.
-- Distribución inicial.
-- Condiciones de aparición.
-- Distancia entre asentamientos.
-
-### 19.4. Semillas y reproducibilidad
-
-Cada mundo procedural deberá poder generarse utilizando una semilla configurable.
-
-Esto permitirá reproducir mapas, compartir mundos y desarrollar escenarios de prueba.
-
-### 19.5. Mapas históricos
-
-Además de mundos procedurales, el juego podrá incorporar escenarios geográficos predefinidos basados en regiones históricas reales.
+It must not become a micromanagement obligation for the player.
 
 ---
 
-# 20. Complejidad configurable
+# 18. Geography and settlement development
 
-El sistema seguirá el criterio general del proyecto.
+Geography will be one of the most important factors in determining the development of a civilization.
 
-### Básico
+### 18.1. Location factors
 
-- Geografía simplificada.
-- Biomas.
-- Clima regional.
-- Recursos naturales.
-- Estaciones simplificadas.
+- Water availability.
+- Soil fertility.
+- Access to resources.
+- Natural protection.
+- Connectivity.
+- Access to the sea.
+- Agricultural possibilities.
+- Environmental risks.
+- Possibility of expansion.
 
-### Intermedio
+### 18.2. Consequences
 
-- Clima más detallado.
-- Precipitaciones.
-- Variaciones estacionales.
-- Ecosistemas.
-- Regeneración de recursos.
-- Impacto ambiental.
+The initial location may deeply condition the future of a civilization.
 
-### Avanzado
+A river city may develop a different economy than a mountain or port city.
 
-- Simulación climática más profunda.
-- Hidrología.
-- Ecosistemas detallados.
-- Agotamiento de recursos.
-- Transformaciones ambientales.
-- Interacciones ecológicas complejas.
-
-Los desastres y otros fenómenos podrán configurarse independientemente.
+Geographic advantages and disadvantages will not necessarily be permanent: technology and the player's decisions may partially modify them.
 
 ---
 
-# 21. Integración con otros sistemas
+# 19. World generation and configuration
 
-| Sistema | Interacción |
+The player will have tools to configure the world before starting a playthrough.
+
+### 19.1. Geographic configuration
+
+- Map size.
+- Number of continents.
+- Island distribution.
+- Land-to-water ratio.
+- Biome diversity.
+- Number of mountains.
+- Number of rivers and lakes.
+
+### 19.2. Environmental configuration
+
+- Resource abundance.
+- Ecosystem distribution.
+- Climate variability.
+- Disaster frequency.
+- Intensity of natural phenomena.
+
+### 19.3. Civilization configuration
+
+- Number of civilizations.
+- Initial distribution.
+- Appearance conditions.
+- Distance between settlements.
+
+### 19.4. Seeds and reproducibility
+
+Each procedural world must be able to be generated using a configurable seed.
+
+This will make it possible to reproduce maps, share worlds, and develop test scenarios.
+
+### 19.5. Historical maps
+
+In addition to procedural worlds, the game will be able to incorporate predefined geographic scenarios based on real historical regions.
+
+---
+
+# 20. Configurable complexity
+
+The system will follow the project's general criterion.
+
+### Basic
+
+- Simplified geography.
+- Biomes.
+- Regional climate.
+- Natural resources.
+- Simplified seasons.
+
+### Intermediate
+
+- More detailed climate.
+- Precipitation.
+- Seasonal variations.
+- Ecosystems.
+- Resource regeneration.
+- Environmental impact.
+
+### Advanced
+
+- Deeper climate simulation.
+- Hydrology.
+- Detailed ecosystems.
+- Resource depletion.
+- Environmental transformations.
+- Complex ecological interactions.
+
+Disasters and other phenomena may be configured independently.
+
+---
+
+# 21. Integration with other systems
+
+| System | Interaction |
 |---|---|
-| Economía | Disponibilidad y valor de los recursos. |
-| Producción | Materias primas y productividad. |
-| Agricultura | Suelos, clima, agua y estaciones. |
-| Construcción | Topografía y materiales. |
-| Población | Habitabilidad, salud y asentamientos. |
-| Transporte | Pendientes, ríos, mares y terrenos. |
-| Tecnología | Irrigación, navegación, extracción y adaptación. |
-| Diplomacia | Recursos estratégicos y fronteras naturales. |
-| Guerra | Terreno, clima y posiciones defensivas. |
-| Cultura | Adaptación a condiciones regionales. |
-| Religión | Paisajes y lugares naturales de importancia espiritual. |
+| Economy | Availability and value of resources. |
+| Production | Raw materials and productivity. |
+| Agriculture | Soils, climate, water, and seasons. |
+| Construction | Topography and materials. |
+| Population | Habitability, health, and settlements. |
+| Transport | Slopes, rivers, seas, and terrain. |
+| Technology | Irrigation, navigation, extraction, and adaptation. |
+| Diplomacy | Strategic resources and natural borders. |
+| War | Terrain, climate, and defensive positions. |
+| Culture | Adaptation to regional conditions. |
+| Religion | Landscapes and natural places of spiritual importance. |
 
-El sistema ambiental deberá proporcionar información a los demás sistemas para que sus decisiones tengan coherencia geográfica.
-
----
-
-# 22. MVP — Primera implementación
-
-La primera implementación deberá establecer la base geográfica y ambiental del mundo.
-
-### Elementos incluidos
-
-**Geografía**
-- Generación procedural.
-- Terreno tridimensional.
-- Elevación.
-- Llanuras.
-- Colinas.
-- Montañas.
-- Agua.
-- Lagos básicos.
-
-**Clima**
-- Temperatura simplificada.
-- Biomas básicos.
-- Estaciones.
-- Precipitaciones simplificadas.
-
-**Recursos**
-- Distribución de recursos naturales.
-- Bosques.
-- Piedra.
-- Depósitos minerales básicos.
-- Suelos agrícolas diferenciados.
-
-**Configuración**
-- Tamaño del mapa.
-- Semilla.
-- Proporción de tierra y agua.
-- Distribución básica de biomas.
-
-### Objetivo del MVP
-
-Demostrar que es posible generar mundos variados y coherentes, donde la geografía influya en las posibilidades de desarrollo de los asentamientos.
-
-Los sistemas complejos de hidrología, ecosistemas, clima avanzado y desastres se incorporarán posteriormente.
+The environmental system must provide information to the other systems so that their decisions have geographic coherence.
 
 ---
 
-# 23. Decisiones confirmadas
+# 22. MVP — First implementation
 
-| Área | Decisión |
+The first implementation must establish the geographic and environmental base of the world.
+
+### Elements included
+
+**Geography**
+- Procedural generation.
+- Three-dimensional terrain.
+- Elevation.
+- Plains.
+- Hills.
+- Mountains.
+- Water.
+- Basic lakes.
+
+**Climate**
+- Simplified temperature.
+- Basic biomes.
+- Seasons.
+- Simplified precipitation.
+
+**Resources**
+- Distribution of natural resources.
+- Forests.
+- Stone.
+- Basic mineral deposits.
+- Differentiated agricultural soils.
+
+**Configuration**
+- Map size.
+- Seed.
+- Land-to-water ratio.
+- Basic biome distribution.
+
+### MVP objective
+
+To demonstrate that it is possible to generate varied and coherent worlds, where geography influences the development possibilities of settlements.
+
+The complex systems of hydrology, ecosystems, advanced climate, and disasters will be incorporated later.
+
+---
+
+# 23. Confirmed decisions
+
+| Area | Decision |
 |---|---|
-| Geografía | Todas las principales formaciones geográficas. |
-| Escala | Configurable desde mapas regionales hasta continentales. |
-| Topografía | Realista y continua. |
-| Ríos | Sistemas fluviales coherentes y completos. |
-| Mares y costas | Diversidad de ambientes marítimos. |
-| Biomas | Todos los principales biomas terrestres. |
-| Clima | Simulación de variables meteorológicas relevantes. |
-| Estaciones | Adaptadas a cada región, sin imponer cuatro estaciones en todas partes. |
-| Cambio climático histórico | No será una mecánica central. |
-| Impacto humano | Progresivo y creciente con el desarrollo. |
-| Recursos | Distribución geológica y ambiental realista. |
-| Regeneración | Modelo diferenciado entre recursos renovables y no renovables. |
-| Flora y fauna | Ecosistemas propios y dinámicos. |
-| Domesticación | Muy importante durante las primeras etapas. |
-| Desastres | Incluidos, pero deshabilitados por defecto. |
-| Frecuencia e intensidad | Configurables. |
-| Protección ambiental | Disponible, con importancia secundaria. |
-| Asentamientos | Geografía determinante para su desarrollo. |
-| Generación del mundo | Altamente configurable. |
-| Complejidad | Básica, intermedia y avanzada. |
+| Geography | All the main geographic formations. |
+| Scale | Configurable from regional to continental maps. |
+| Topography | Realistic and continuous. |
+| Rivers | Coherent and complete river systems. |
+| Seas and coasts | Diversity of maritime environments. |
+| Biomes | All the main terrestrial biomes. |
+| Climate | Simulation of relevant weather variables. |
+| Seasons | Adapted to each region, without imposing four seasons everywhere. |
+| Historical climate change | Will not be a central mechanic. |
+| Human impact | Progressive and increasing with development. |
+| Resources | Realistic geological and environmental distribution. |
+| Regeneration | Differentiated model between renewable and non-renewable resources. |
+| Flora and fauna | Ecosystems that are distinct and dynamic. |
+| Domestication | Very important during the early stages. |
+| Disasters | Included, but disabled by default. |
+| Frequency and intensity | Configurable. |
+| Environmental protection | Available, with secondary importance. |
+| Settlements | Geography decisive for their development. |
+| World generation | Highly configurable. |
+| Complexity | Basic, intermediate, and advanced. |
 
 ---
 
-# 24. Visión final
+# 24. Final vision
 
-El mundo deberá sentirse como un entorno natural que existía antes de la llegada de las civilizaciones y que continuará evolucionando junto con ellas.
+The world must feel like a natural environment that existed before the arrival of civilizations and that will continue to evolve alongside them.
 
-Las montañas, ríos, bosques, mares, llanuras y ecosistemas no serán simples elementos decorativos.
+The mountains, rivers, forests, seas, plains, and ecosystems will not be mere decorative elements.
 
-Determinarán dónde pueden asentarse las poblaciones, qué recursos estarán disponibles, cómo se desarrollará la agricultura, qué tecnologías tendrán sentido y qué oportunidades económicas existirán.
+They will determine where populations can settle, which resources will be available, how agriculture will develop, which technologies will make sense, and which economic opportunities will exist.
 
-Con el paso de los siglos, las civilizaciones también transformarán el paisaje: construirán canales, modificarán ríos, expandirán sus campos, talarán bosques y desarrollarán nuevas formas de aprovechar el entorno.
+Over the centuries, civilizations will also transform the landscape: they will build canals, modify rivers, expand their fields, cut down forests, and develop new ways of making use of the environment.
 
-**Principio rector: la geografía condiciona la historia, y la historia transforma la geografía.**
+**Guiding principle: geography conditions history, and history transforms geography.**
