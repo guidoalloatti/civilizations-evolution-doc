@@ -14,13 +14,14 @@ Documentos de análisis en la raíz del proyecto. **Derivados** de los GDD origi
 | Documento | Propósito |
 |---|---|
 | [DESIGN_CONSISTENCY_AUDIT.md](DESIGN_CONSISTENCY_AUDIT.md) | Hallazgos clasificados (CC/PI/CX/MD/AR/FC): contradicciones, duplicaciones, faltantes, riesgos. |
-| [DESIGN_DECISION_REGISTER.md](DESIGN_DECISION_REGISTER.md) | Decisiones confirmadas (DC-01..) + **propuestas** para conflictos (DR-00..DR-13, pendientes de confirmación). |
-| [SHARED_DATA_MODEL.md](SHARED_DATA_MODEL.md) | Modelo conceptual de entidades compartidas, propiedad en capas y relaciones. |
-| [SYSTEM_DEPENDENCY_MAP.md](SYSTEM_DEPENDENCY_MAP.md) | Grafo de dependencias, flujos de información, propagación de eventos y cadencias. |
+| [DESIGN_DECISION_REGISTER.md](DESIGN_DECISION_REGISTER.md) | Decisiones confirmadas por GDD (DC-01..) + DR-00..DR-12 **confirmadas por delegación** (2026-11-04, reversibles); DR-13 sin resolver. |
+| [SHARED_DATA_MODEL.md](SHARED_DATA_MODEL.md) | Entidades compartidas, familia≠hogar, propiedad/autoridad en capas, persistencia de agregación, MVP/futuro. |
+| [SYSTEM_DEPENDENCY_MAP.md](SYSTEM_DEPENDENCY_MAP.md) | Grafo de dependencias, clasificación de sistemas, dueño autoritativo del dato, flujos, eventos y cadencias. |
+| [CROSS_SYSTEM_VALIDATION_SCENARIOS.md](CROSS_SYSTEM_VALIDATION_SCENARIOS.md) | Escenarios A–G que validan (a nivel diseño) que la arquitectura soporta la simulación integrada. |
 | [DEVELOPMENT_ROADMAP.md](DEVELOPMENT_ROADMAP.md) | Etapas E0–E6 con objetivos, dependencias, aceptación, riesgos y qué NO hacer aún. |
 | [SYSTEM_IMPLEMENTATION_SPECIFICATIONS.md](SYSTEM_IMPLEMENTATION_SPECIFICATIONS.md) | Spec de preparación por sistema (entradas/salidas/eventos/reglas/MVP/aceptación). |
 | [HISTORICAL_EVOLUTION_FRAMEWORK.md](HISTORICAL_EVOLUTION_FRAMEWORK.md) | Evolución histórica como marco compartido (reacción a descubrimientos/condiciones, no scripting). |
-| [IMPLEMENTATION_RISK_REGISTER.md](IMPLEMENTATION_RISK_REGISTER.md) | Riesgos arquitectónicos/de desarrollo (RISK-01..12) con mitigación y cuándo abordarlos. |
+| [IMPLEMENTATION_RISK_REGISTER.md](IMPLEMENTATION_RISK_REGISTER.md) | Riesgos arquitectónicos/de desarrollo (RISK-01..19) con severidad, ¿bloquea MVP?, mitigación y cuándo abordarlos. |
 
 Además: [IMPLEMENTATION_ALIGNMENT.md](IMPLEMENTATION_ALIGNMENT.md) (código vs diseño) y [SYSTEM_ARCHITECTURE_MAP.md](SYSTEM_ARCHITECTURE_MAP.md) (mapa conceptual).
 

@@ -1,7 +1,7 @@
 # SYSTEM_DEPENDENCY_MAP — Civilization Evolutions
 
 > **Phase 2 — Mapa de dependencias e interacción entre sistemas.** Qué sistemas deben existir antes que otros, cómo fluye la información, cómo se propagan los eventos y qué cadencia de actualización necesita cada uno. Fuentes: Maestro §6, fichas de los GDD (ver [DOCUMENTATION_INDEX.md](DOCUMENTATION_INDEX.md)). Complementa [SYSTEM_ARCHITECTURE_MAP.md](SYSTEM_ARCHITECTURE_MAP.md).
-> Versión 1.0 · Estado: conceptual.
+> Versión 1.1 · Última actualización 2026-11-04 · Estado: conceptual.
 
 ## A. Grafo de dependencias (orden de implementación fiable)
 
@@ -65,6 +65,39 @@ flowchart TB
 ```
 
 **Lectura:** implementar de abajo hacia arriba. **Nivel 0** (Tiempo, Entidades, Recursos) es prerequisito de casi todo. El prototipo jugable vive en Niveles 0–3 (ver [DEVELOPMENT_ROADMAP.md](DEVELOPMENT_ROADMAP.md)).
+
+## A.2 Clasificación de sistemas y dueño autoritativo del dato
+
+> **Clase:** *Fundacional* = base de la que casi todo depende; *Núcleo (core)* = corazón de la simulación civil y del primer playable; *De apoyo (supporting)* = enriquece el núcleo, no imprescindible para el MVP; *Avanzado* = mundo vivo/meta, etapas tardías; *Transversal* = cruza a todos (no encaja en un nivel).
+> **¿Opera independiente en desarrollo temprano?** = si puede desarrollarse y probarse en aislamiento (con stubs mínimos) antes de integrar el resto. Útil para paralelizar.
+> **Dueño autoritativo del dato** = única fuente de verdad; los demás **leen** (no copian). Alinea con [SHARED_DATA_MODEL.md](SHARED_DATA_MODEL.md).
+
+| Sistema | Clase | ¿Opera independiente temprano? | Dato del que es **dueño autoritativo** |
+|---|---|---|---|
+| Tiempo | **Fundacional** | **Sí** (reloj puro, ya en SimCore) | fecha/estación/velocidad, cadencias |
+| Entidades y Relaciones | **Fundacional** | **Sí** (identidad/relaciones puras) | id estable y relaciones de toda entidad |
+| Recursos y Materiales | **Fundacional** | **Sí** (catálogo + inventarios) | catálogo de recursos/materiales e inventarios |
+| Geografía/Clima | Fundacional (mundo) | Parcial (necesita Tiempo) | terreno, biomas, clima, existencia de recursos naturales |
+| Generación del Mundo | De apoyo | **Sí** (genera a archivo/estado) | estado inicial del mundo (semilla, layout) |
+| Construcción | **Núcleo** | Parcial (necesita Recursos/Entidades) | estructuras físicas y su estado de obra/evolución |
+| Población | **Núcleo** | Parcial (necesita Entidades/Tiempo) | individuos, hogares, linajes, demografía |
+| Producción y Trabajo | **Núcleo** | Parcial (necesita Recursos/Población) | recetas, asignación de trabajo, transformación |
+| Transporte y Logística | **Núcleo** | Parcial (necesita Recursos/Geografía) | rutas, movimiento físico de bienes |
+| Economía | **Núcleo** | No (integra varios) | precios, mercados, moneda, fiscalidad |
+| Tecnología | **Núcleo** (habilitador) | **Sí** (árbol/condiciones puras) | estado de conocimiento por civilización |
+| Eventos e Historia | Transversal | **Sí** (bus + registro) | crónica/registro histórico (no origina efectos) |
+| Exploración/Expansión | De apoyo | Parcial | conocimiento territorial y ocupación |
+| Cultura | De apoyo | Parcial (necesita Población) | identidad cultural, prácticas, difusión |
+| Religión | De apoyo | Parcial (necesita Población) | creencias, instituciones religiosas |
+| Política y Gobierno | De apoyo | No | forma de gobierno, leyes/políticas, soberanía |
+| Administración Territorial | De apoyo | No | regiones administrativas, autoridad local/impuestos |
+| Diplomacia | Avanzado | No | relaciones/tratados entre civilizaciones |
+| IA de Civilizaciones | Avanzado | No (consume a casi todos) | decisiones y personalidad de las no jugadoras |
+| Guerra | Avanzado | No | fuerzas militares, fortificaciones, conflicto |
+| Progresión | Avanzado (meta) | **Sí** (lee indicadores) | objetivos, legado, condiciones de fin |
+| Interfaz | Transversal | **Sí** (lee todo, no escribe sim) | nada de simulación (solo presentación) |
+
+**Candidatos a paralelizar desde ya** (operan independientes): Tiempo, Entidades, Recursos, Tecnología, Eventos, Progresión, Interfaz. Son los que un fork puede avanzar con stubs sin bloquear el núcleo.
 
 ## B. Dependencias por sistema
 

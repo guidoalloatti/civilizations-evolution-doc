@@ -48,6 +48,22 @@ BACKUP_PRE_AUDIT_2026-11-03/            Respaldo inmutable (no editar)
 
 **Regla general:** casi todo toca **Recursos**, **Entidades**, **Tiempo** y **Población**. Ante la duda, revisá esos cuatro + el Maestro §6.
 
+### Análisis derivado (blueprint Phase 2, raíz del proyecto)
+
+Para **planificar implementación** (no reemplaza a los GDD; es análisis derivado):
+
+| Si necesitás… | Leé |
+|---|---|
+| Saber qué conflictos/decisiones hay abiertos y su severidad | [DESIGN_CONSISTENCY_AUDIT.md](DESIGN_CONSISTENCY_AUDIT.md) + [DESIGN_DECISION_REGISTER.md](DESIGN_DECISION_REGISTER.md) |
+| Modelar entidades sin duplicar (familia≠hogar, propiedad, agregación) | [SHARED_DATA_MODEL.md](SHARED_DATA_MODEL.md) |
+| Orden de implementación, qué depende de qué, dueño del dato | [SYSTEM_DEPENDENCY_MAP.md](SYSTEM_DEPENDENCY_MAP.md) |
+| Validar que un flujo multi-sistema "cierra" antes de codear | [CROSS_SYSTEM_VALIDATION_SCENARIOS.md](CROSS_SYSTEM_VALIDATION_SCENARIOS.md) (escenarios A–G) |
+| Qué construir en cada etapa y qué NO aún | [DEVELOPMENT_ROADMAP.md](DEVELOPMENT_ROADMAP.md) + [SYSTEM_IMPLEMENTATION_SPECIFICATIONS.md](SYSTEM_IMPLEMENTATION_SPECIFICATIONS.md) |
+| Implementar evolución histórica/tecnología sin scripting | [HISTORICAL_EVOLUTION_FRAMEWORK.md](HISTORICAL_EVOLUTION_FRAMEWORK.md) |
+| Anticipar riesgos y si bloquean el MVP | [IMPLEMENTATION_RISK_REGISTER.md](IMPLEMENTATION_RISK_REGISTER.md) |
+
+> **Antes de implementar una feature multi-sistema**, recorré su escenario en CROSS_SYSTEM_VALIDATION_SCENARIOS para confirmar que los datos y eventos ya existen en el modelo.
+
 ## Cómo encontrar…
 
 - **Decisiones confirmadas:** sección "Decisiones confirmadas" (tabla) al final de cada GDD. Nota: `Recursos`, `Tiempo`, `IA`, `Entidades` y `Diplomacia` **no** tienen esa tabla — sus reglas están afirmadas en el cuerpo / en "principios" o "criterios de aceptación". Resumen transversal en Maestro §4.

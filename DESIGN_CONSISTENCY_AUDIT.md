@@ -1,7 +1,7 @@
 # DESIGN_CONSISTENCY_AUDIT — Civilization Evolutions
 
-> **Phase 2 — Auditoría de consistencia de diseño.** Revisión conjunta de los 22 GDD de sistema + Maestro + plan técnico. Análisis, no implementación. **No se resuelven conflictos de diseño por cuenta propia**: se clasifican y, donde corresponde, se remite a una resolución **propuesta** en [DESIGN_DECISION_REGISTER.md](DESIGN_DECISION_REGISTER.md) (pendiente de confirmación del diseñador).
-> Versión: 1.0 · Estado: análisis · Fuentes: ver [DOCUMENTATION_INDEX.md](DOCUMENTATION_INDEX.md). Extiende (no reemplaza) [AUDIT_REPORT.md](AUDIT_REPORT.md).
+> **Phase 2 — Auditoría de consistencia de diseño.** Revisión conjunta de los 22 GDD de sistema + Maestro + plan técnico. Análisis, no implementación. **No se resuelven conflictos de diseño por cuenta propia**: se clasifican y, donde corresponde, se remite a una resolución en [DESIGN_DECISION_REGISTER.md](DESIGN_DECISION_REGISTER.md). Desde el 2026-11-04, DR-00…DR-12 están **confirmadas por delegación** del diseñador (reversibles y auditables); DR-13 sigue **sin resolver** (fuente truncada). La columna **Severidad** y **¿Confirmación del usuario?** (§ Severidad abajo) indica cuáles requieren todavía una decisión humana explícita antes de implementar.
+> Versión: 1.1 · Última actualización: 2026-11-04 · Estado: análisis · Fuentes: ver [DOCUMENTATION_INDEX.md](DOCUMENTATION_INDEX.md). Extiende (no reemplaza) [AUDIT_REPORT.md](AUDIT_REPORT.md).
 
 ## Clasificación usada
 
@@ -75,6 +75,46 @@
 - Clima avanzado, hidrología, ecosistemas, desastres (Geografía): post-MVP.
 - Multijugador: fuera del alcance inicial.
 - Organizaciones internacionales, estados dependientes, espionaje avanzado (Diplomacia): niveles avanzados.
+
+---
+
+## G. Severidad y confirmación requerida (por hallazgo)
+
+> **Severidad:** *Critical* = bloquea arquitectura/MVP o fuerza refactor caro si se ignora; *High* = afecta varios sistemas, decidir antes de E1–E2; *Medium* = acotable, decidir antes del sistema afectado; *Low* = cosmético/futuro.
+> **¿Confirmación del usuario?** *Sí* = decisión humana irreversible o de visión que **no** debo tomar solo (aunque haya DR propuesto); *Delegada* = ya cubierta por la delegación 2026-11-04 (reversible); *No* = regla documental/arquitectónica sin decisión de visión pendiente.
+
+| ID | Clase | Severidad | ¿Confirmación del usuario? | Estado |
+|---|---|---|---|---|
+| F-01 | CX | **Critical** | **Sí** (corte histórico = alcance del juego) | DR-01 delegada, marcar como visión a ratificar |
+| F-02 | CX | **High** | **Sí** (perfil del mundo afecta generación y geografía) | DR-02 delegada |
+| F-03 | PI | Medium | Delegada | DR-03 |
+| F-04 | PI | Low | Delegada (nombre de producto) | DR-04 |
+| F-05 | CX | **Critical** | **Sí** (define el rol del jugador = pilar de diseño) | DR-05 delegada, ratificar |
+| F-06 | PI | Medium | No | DR-08 resuelto (el especializado es vigente) |
+| F-07 | MD | **High** | **Sí** (modelo de propiedad/herencia/fiscalidad) | DR-07 delegada |
+| F-08 | PI | Medium | No | regla de dominio (Maestro §5) |
+| F-09 | AR | **High** | No | dueño único = Recursos |
+| F-10 | PI | Medium | No | regla de dominio |
+| F-11 | PI | Medium | No | regla de dominio |
+| F-12 | PI | Medium | No | regla de dominio |
+| F-13 | AR | Medium | No | reutilizar Logística |
+| F-14 | MD | **High** | Delegada | DR-09 (escala temporal) |
+| F-15 | MD | **Critical** | **Sí** (límites de escala = presupuesto de rendimiento) | DR-06 delegada, ratificar |
+| F-16 | MD | **High** | Delegada | DR-10 (LOD individual↔agregado) |
+| F-17 | MD | **High** | **Sí** (propiedad/moneda operativa) | DR-07 delegada |
+| F-18 | MD | Medium | Delegada | DR-11 (adopción tecnológica) |
+| F-19 | MD | Medium | No (modelos matemáticos, por etapa) | pendiente de etapa |
+| F-20 | MD | **High** | Delegada | DR-12 (alcance del prototipo) |
+| F-21 | MD | Medium | No | DR-00 (gobernanza) |
+| F-22 | CX/MD | **Critical** | **Sí** (fuente truncada; no inventar diplomacia) | DR-13 **sin resolver** |
+| F-23 | PI | Low | No | nota documental |
+| F-24 | PI | Low | No | nota documental |
+| F-25 | AR | **Critical** | No (regla arquitectónica) | RISK-01/02 |
+| F-26 | AR | **High** | No | RISK-03 |
+| F-27 | AR | **High** | No | RISK-05 |
+| F-28 | AR | Medium | No | RISK-04 |
+
+**Pendientes de confirmación humana explícita (no basta la delegación):** F-01, F-02, F-05, F-07/F-17, F-15, F-22. Son decisiones de **visión o irreversibles**; las demás quedan cubiertas por la delegación (reversibles) o son reglas documentales/arquitectónicas.
 
 ---
 

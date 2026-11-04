@@ -38,8 +38,9 @@ Civilization Evolutions/            (raíz de trabajo = este repo; hay una copia
 ├── IMPLEMENTATION_ALIGNMENT.md      ← qué dice el diseño vs qué hay implementado
 ├── DOCUMENTATION_READING_GUIDE.md   ← qué leer antes de cada tipo de tarea
 ├── (Blueprint Phase 2) DESIGN_CONSISTENCY_AUDIT · DESIGN_DECISION_REGISTER · SHARED_DATA_MODEL ·
-│       SYSTEM_DEPENDENCY_MAP · DEVELOPMENT_ROADMAP · SYSTEM_IMPLEMENTATION_SPECIFICATIONS ·
-│       HISTORICAL_EVOLUTION_FRAMEWORK · IMPLEMENTATION_RISK_REGISTER   (análisis derivado de los GDD)
+│       SYSTEM_DEPENDENCY_MAP · CROSS_SYSTEM_VALIDATION_SCENARIOS · DEVELOPMENT_ROADMAP ·
+│       SYSTEM_IMPLEMENTATION_SPECIFICATIONS · HISTORICAL_EVOLUTION_FRAMEWORK ·
+│       IMPLEMENTATION_RISK_REGISTER   (análisis derivado de los GDD; DR-00..DR-12 confirmadas por delegación 2026-11-04)
 ├── AUDIT_REPORT.md                  ← contradicciones (C-01..C-08) y pendientes transversales
 ├── docs/
 │   ├── 00-project/GDD_MAESTRO.md    ← visión, pilares, mapa de autoridad, integraciones, vocabulario

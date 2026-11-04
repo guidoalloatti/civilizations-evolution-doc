@@ -1,7 +1,7 @@
 # SHARED_DATA_MODEL — Civilization Evolutions
 
 > **Phase 2 — Modelo de datos compartido (conceptual).** Entidades centrales de la simulación, sus atributos, identidad, relaciones, quién las posee/gestiona y quién las consume. **No son structs C++ finales**: es un modelo conceptual para evitar duplicación entre sistemas. Autoridad: [GDD_Entidades_y_Relaciones](docs/01-systems/GDD_Entidades_y_Relaciones_v0.1.md) + [GDD_Recursos_y_Materiales](docs/01-systems/GDD_Recursos_y_Materiales_v0.1.md). Propiedad: ver DR-07 en [DESIGN_DECISION_REGISTER.md](DESIGN_DECISION_REGISTER.md).
-> Versión 1.0 · Estado: conceptual.
+> Versión 1.1 · Última actualización 2026-11-04 · Estado: conceptual.
 
 ## Principios del modelo
 
@@ -10,7 +10,9 @@
 3. **Relaciones como datos de primera clase:** múltiples, simultáneas, con memoria histórica; cambian/desaparecen/reaparecen. (Entidades §9.)
 4. **Dueño vs consumidores:** cada entidad tiene un sistema **dueño** de su comportamiento; otros **leen**.
 5. **Individual ↔ agregado:** una entidad puede simularse en detalle o agregada sin perder identidad conceptual (LOD, DR-10).
-6. **Propiedad en capas:** titularidad ≠ derechos de explotación ≠ propiedad del edificio ≠ control operativo ≠ ubicación del inventario (DR-07).
+6. **Propiedad en capas:** titularidad ≠ derechos de explotación ≠ propiedad del edificio ≠ control operativo ≠ ubicación del inventario ≠ **autoridad administrativa** ≠ **soberanía política** ≠ **influencia territorial** (DR-07; ver § Modelo de propiedad).
+7. **Familia ≠ Hogar:** la **familia/linaje** es parentesco y herencia (puede abarcar varios hogares y asentamientos); el **hogar** es la unidad de residencia/economía doméstica que ocupa **una** vivienda. Un individuo pertenece a una familia aunque viva en otro hogar.
+8. **Persistencia en la agregación:** al pasar de individual a agregado (DR-10) se conserva lo identitario/histórico; se promedia/resume lo dinámico. Ver § Persistencia de la agregación.
 
 ## Entidades centrales
 
@@ -58,12 +60,21 @@ Formato por entidad: **Propósito · Atributos · Identidad · Relaciones · Due
 - **Dueño:** Población y Sociedad. **Consumidores:** Producción (trabajo), Economía (consumo), Eventos, Cultura/Religión.
 - **Escala:** individual o agregado. **Evolución:** nace, envejece, cambia de profesión/clase, migra, muere.
 
-### Familia / Hogar
-- **Propósito:** unidad social y económica básica.
-- **Atributos:** miembros, linaje, vivienda, economía doméstica, estructura (según cultura/época).
-- **Identidad:** persistente (linaje). **Relaciones:** agrupa Individuos; ocupa una Vivienda; herencia de propiedad (DR-07, pendiente).
-- **Dueño:** Población. **Consumidores:** Economía, Cultura, Construcción (vivienda).
-- **Escala:** individual (chico) / agregada. **Evolución:** se forma, crece, se divide, se extingue.
+### Familia / Linaje (kinship)
+- **Propósito:** red de parentesco y vehículo de **herencia** e identidad a través de generaciones. **No** es una unidad de residencia.
+- **Atributos:** id de linaje, miembros (vivos y difuntos), relaciones de parentesco, apellido/casa (si la cultura lo usa), bienes heredables, prestigio/estatus.
+- **Identidad:** persistente a través de generaciones (sobrevive a la muerte de miembros). **Relaciones:** agrupa Individuos (pueden vivir en hogares distintos); herencia de propiedad entre miembros (DR-07); puede abarcar varios Asentamientos.
+- **Dueño:** Población (con Entidades para la identidad/relaciones). **Consumidores:** Economía (herencia), Cultura, Política (dinastías).
+- **Escala:** individual (chico) / agregada (linajes irrelevantes se resumen). **Evolución:** nace, se ramifica, se extingue; el linaje perdura aunque cambien los hogares.
+
+### Hogar (household)
+- **Propósito:** unidad **de residencia y economía doméstica**: quiénes viven y consumen juntos en una vivienda.
+- **Atributos:** miembros actuales (de una o varias familias), vivienda ocupada, economía doméstica (ingresos/consumo), estructura (según cultura/época).
+- **Identidad:** persistente mientras exista; menos duradera que el linaje. **Relaciones:** ocupa **una** Vivienda; agrupa Individuos (que además pertenecen a su(s) Familia(s)); unidad base de consumo/vivienda.
+- **Dueño:** Población. **Consumidores:** Economía (consumo/vivienda), Construcción (demanda de vivienda), Logística (entrega de bienes).
+- **Escala:** individual (chico) / agregada. **Evolución:** se forma (matrimonio/migración), crece, se divide, se disuelve.
+
+> **Por qué separarlos:** permite migración y servicio doméstico (un individuo de la familia A vive en el hogar B), herencia entre hogares, y que la demografía (linaje) y la demanda de vivienda (hogar) escalen con reglas distintas sin duplicar al Individuo.
 
 ### Organización / Institución
 - **Propósito:** gremios, instituciones religiosas, políticas, comerciales, educativas, militares.
@@ -151,18 +162,66 @@ Formato por entidad: **Propósito · Atributos · Identidad · Relaciones · Due
 - **Dueño:** Eventos. **Consumidores:** Progresión, Interfaz, Diplomacia (memoria de relaciones).
 - **Escala:** agregada. **Evolución:** crece durante la partida.
 
-## Modelo de propiedad (DR-07, en capas)
+## Modelo de propiedad y autoridad (DR-07, en capas)
+
+Ocho capas distintas, que **no** deben colapsarse en un único campo "dueño":
+
+| Capa | Qué expresa | Ejemplo | Sistema dueño |
+|---|---|---|---|
+| **Titularidad** | quién es dueño legal del recurso/tierra | el Estado posee el bosque | Economía/Política |
+| **Derechos de explotación** | quién puede extraer/usar | una familia tala con licencia | Economía |
+| **Propiedad del edificio** | quién es dueño de la estructura | gremio dueño del taller | Construcción/Economía |
+| **Control operativo** | quién lo opera día a día | capataz/trabajadores | Producción |
+| **Ubicación del inventario** | dónde están físicamente los bienes | almacén del taller | Recursos/Logística |
+| **Autoridad administrativa** | quién gestiona/recauda localmente | gobernador de la región | Administración Territorial |
+| **Soberanía política** | bajo qué poder soberano cae | Estado al que pertenece la región | Política y Gobierno |
+| **Influencia territorial** | alcance de hecho (cultural/económico/militar), no jurídico | zona de influencia disputada | Exploración/Diplomacia |
 
 ```mermaid
 flowchart LR
-    NAT["Recurso natural en el mundo"] -->|titularidad| CIV["Estado / Civilización"]
-    NAT -->|derechos de explotación| OP["Operador (familia / organización / privado)"]
-    BLD["Edificio"] -->|propiedad| OWN["Dueño (civilización / organización / familia)"]
+    NAT["Recurso natural"] -->|titularidad| CIV["Estado / Civilización"]
+    NAT -->|derechos de explotación| OP["Operador (familia/organización/privado)"]
+    BLD["Edificio"] -->|propiedad| OWN["Dueño (civ/organización/familia)"]
     BLD -->|control operativo| OP
     INV["Inventario"] -->|ubicación física| BLD
     INV -->|pertenece a| OWN
+    REG["Región"] -->|autoridad administrativa| ADMIN["Gobierno regional"]
+    REG -->|soberanía política| CIV
+    REG -->|influencia territorial de hecho| INF["Civilizaciones vecinas (puede diferir de la soberanía)"]
 ```
-Distinguir estas cinco capas evita duplicar "propiedad" en cada sistema y habilita fiscalidad, herencia y comercio coherentes (pendiente de confirmación: DR-07).
+Distinguir estas capas evita duplicar "propiedad" en cada sistema y habilita fiscalidad, herencia, comercio, autonomía regional y zonas de influencia disputadas de forma coherente. **Soberanía ≠ influencia:** una región puede ser soberana de una civilización y estar bajo influencia económica/cultural de otra (base para vasallaje, zonas grises y conflicto). DR-07 **confirmada por delegación** (reversible).
+
+## Persistencia de la agregación (individual ↔ agregado, DR-10)
+
+Al cruzar el umbral de agregación (DR-10/DR-06), una entidad deja de simularse en detalle pero **no pierde identidad**. Qué se conserva y qué se resume:
+
+| Se **conserva** (identitario/histórico) | Se **resume/promedia** (dinámico) | Se puede **reconstruir** al desagregar |
+|---|---|---|
+| id estable de la entidad y de sus relaciones clave | necesidades/salud/felicidad individuales → promedios y distribución | individuos representativos a partir de la distribución |
+| linaje y figuras históricas relevantes | posiciones exactas → densidad por zona | hogares a partir de tamaño medio y vivienda disponible |
+| afiliación cultural/religiosa y clase (proporciones) | inventarios individuales → stock agregado del asentamiento | profesiones a partir de la mezcla ocupacional |
+| hechos/eventos ya registrados | tareas/trayectos en curso → tasas de producción | — |
+
+**Reglas:** (1) la agregación es **reversible** sin inventar historia (lo resumido se regenera de forma plausible, no idéntica); (2) nunca se duplica el estado: una entidad está en modo individual **o** agregado, no ambos; (3) los eventos ya registrados permanecen aunque sus protagonistas se agreguen (sostiene el Escenario G de [CROSS_SYSTEM_VALIDATION_SCENARIOS.md](CROSS_SYSTEM_VALIDATION_SCENARIOS.md)). Umbrales y presupuestos concretos: pendientes de etapa (DR-06).
+
+## Alcance por entidad (MVP vs futuro)
+
+| Entidad | ¿En el MVP/primer playable? | Nota |
+|---|---|---|
+| Mundo, Terreno/Región geográfica | **MVP** | base de todo |
+| Asentamiento | **MVP** | uno al inicio |
+| Individuo | **MVP** | ~20–30 individuales |
+| Hogar | **MVP (básico)** | vivienda/consumo |
+| Familia/Linaje | **MVP mínimo** | herencia completa → futuro |
+| Edificio, Inventario, Recurso natural, Recurso/Material, Receta, Profesión | **MVP** | corazón de la economía (Escenarios A–B) |
+| Tecnología/Conocimiento | **MVP (árbol inicial)** | difusión entre civilizaciones → futuro |
+| Región administrativa | Futuro | aparece con varias ciudades (Escenario E) |
+| Civilización (IA) | Futuro | la propia, mínima en MVP; otras IA → futuro |
+| Organización/Institución | Futuro | gremios/religión posteriores |
+| Cultura/Religión | Futuro | Escenario F |
+| Institución política/Gobierno | Futuro | tras administración regional |
+| Ruta comercial | **MVP (intra-asentamiento)** / Futuro (inter) | logística simple ya existe en SimCore |
+| Evento/Registro histórico | **MVP (básico)** | crónica mínima; biografías → futuro |
 
 ## Diagrama de relaciones (alto nivel)
 
@@ -173,7 +232,9 @@ erDiagram
     CIVILIZATION ||--o{ REGION : administra
     SETTLEMENT ||--o{ BUILDING : contiene
     SETTLEMENT ||--o{ INDIVIDUAL : habita
-    FAMILY ||--o{ INDIVIDUAL : agrupa
+    FAMILY ||--o{ INDIVIDUAL : parentesco
+    HOUSEHOLD ||--o{ INDIVIDUAL : reside
+    HOUSEHOLD }o--|| BUILDING : ocupa_vivienda
     BUILDING ||--o{ INVENTORY : tiene
     BUILDING }o--|| RECIPE : produce
     RECIPE }o--o{ RESOURCE : usa
