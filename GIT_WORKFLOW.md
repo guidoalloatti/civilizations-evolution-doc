@@ -3,6 +3,44 @@
 > **Git and workspace workflow for multi-agent development.** Defines branches, worktrees, commits, reporting, integration, conflicts, tests and delivery. Designed so several agents can work in parallel **without stepping on each other** or corrupting Unreal binaries.
 >
 > Version 1.0 · 2026-11-04 · Status: PROPOSAL. Worktrees are neither created nor deleted without verifying the repo state.
+>
+> **Update 2026-11-11 · Worktree-per-session is now ACTIVE (see §0bis).** The 8-workstream scheme below (§1) is the long-term target; the live team runs 3 sessions, each on its own worktree.
+
+## 0bis. Live setup (ACTIVE, 2026-11-11) — one worktree per session
+
+The team was losing time because all sessions shared **one** UE checkout + file-locks: the editor/build was a global mutex and shared uncommitted WIP forced a constant "commit-before-release" dance (the Save/Load Esc-menu integration deadlocked on it). Fix: **each session gets its own git worktree of the UE repo** and edits/commits in parallel. File-locks (`orch.ps1`) are kept **only** for `.uasset`/`Content` and to serialize the build.
+
+**Helper:** `C:\Users\PC\.ue-sem\ue-worktree.ps1`
+```
+pwsh ue-worktree.ps1 create -Name <name> [-Base main]   # worktree + branch ws/<name>
+pwsh ue-worktree.ps1 build  -Name <name>                # build that worktree (take the build lock first)
+pwsh ue-worktree.ps1 list
+pwsh ue-worktree.ps1 remove -Name <name> [-DeleteBranch]
+```
+
+**Convention:** dir `C:\Users\PC\ue-worktrees\<name>`, branch `ws/<name>`. Live sessions:
+
+| Session | Domain | Branch / worktree |
+|---|---|---|
+| Core (Main) | gameplay: `Units/`, `CivAnimal`, `CivResourceNode`, spawn/resources of `CivViewManager` | `ws/core` |
+| UI (Assets) | HUD: `UI/CivMainHUD`, top-bar, menus | `ws/ui` |
+| TechDir | buildings/town hall, UI-cursor, integration | `ws/techdir` (created + build-validated) |
+
+**What worktrees give:** parallel editing with **no file-locks**, **no clobber**, and **commit freely to your own branch** (no more "commit your WIP so I can touch the file"). You can also run **multiple editors at once** (one per worktree; the installed engine's binaries are shared read-only).
+
+**What STILL needs coordination (don't skip):**
+- **Build/editor is serialized (hard limit of a single installed engine).** `Build.bat` runs **one at a time**, and — verified 2026-11-11 — **any open editor with Live Coding active blocks all builds engine-wide** ("Unable to build while Live Coding is active"). So worktrees parallelize **editing, not building**: you can edit + commit your own branch freely in parallel, but to *build* you still take the `ue-editor` lock (`orch.ps1`) and no one else can have an editor open with Live Coding. Mitigations: disable Live Coding when not iterating in-editor; build from the command line; keep builds short and batched. (Fixing this for real would need a separate engine install per session — out of scope.)
+- **`.uasset`/`Content` stay single-owner.** Binaries don't merge; the owner regenerates on conflict (§5). Use `orch.ps1 file:` locks **only** for assets both sessions might touch.
+- **Shared text config** (`Config/DefaultEngine.ini`, `Config/DefaultInput.ini`) is mergeable but shared — coordinate who edits it, or expect a merge at integration.
+- **DDC is global** for the installed engine (`%LOCALAPPDATA%\UnrealEngine\Common\DerivedDataCache`), so worktrees **share cooked-asset cache automatically** — no re-cook, no config needed.
+
+**Migrating a session that is still on the shared checkout:**
+1. Commit your current WIP (to `main` or straight onto your `ws/<name>` branch). Don't branch over uncommitted work.
+2. `pwsh ue-worktree.ps1 create -Name <name>` (off `main`).
+3. `pwsh ue-worktree.ps1 build -Name <name>` once (first build is from scratch, ~minutes; cached DDC skips asset cooking). Binaries/Intermediate start empty per worktree (~2.8 GB after build; 477 GB free, fine).
+4. Work in `C:\Users\PC\ue-worktrees\<name>` from now on; open **that** worktree's `.uproject`.
+
+**Integration:** each session commits to its `ws/<name>` branch; **TechDir merges branches into `main` at green checkpoints** (code merges are text; `.uasset` per §5). `main` stays the integration trunk.
 
 ## 0. Repository reality (read first)
 
